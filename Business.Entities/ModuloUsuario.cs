@@ -9,7 +9,7 @@ namespace Business.Entities
     class ModuloUsuario
     {
         private int idUsuario, idModulo;
-        private bool permiteAlta, permiteBaja, permiteModificacion, permiteConsulta;
+        private bool permiteAlta, permiteBaja, permiteModificacion, permiteConsulta; 
 
         public int IdUsuario { get => idUsuario; set => idUsuario = value; }
         public int IdModulo { get => idModulo; set => idModulo = value; }
