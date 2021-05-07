@@ -11,7 +11,7 @@ namespace Business.Entities
         private int idUsuario, idModulo;
         private bool permiteAlta, permiteBaja, permiteModificacion, permiteConsulta; 
 
-        public int IdUsuario { get => idUsuario; set => idUsuario = value; }
+        public int IdUsuario { get => idUsuario; set => idUsuario = value; } 
         public int IdModulo { get => idModulo; set => idModulo = value; }
         public bool PermiteAlta { get => permiteAlta; set => permiteAlta = value; }
         public bool PermiteBaja { get => permiteBaja; set => permiteBaja = value; }
