@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Business.Entities
 {
-    public class Usuario
+    public class Usuario : BusinessEntity                                       //Nos tiraba error en ID y State, puse que Usuario hereda de Entity
     {
         private string nombreUsuario, clave, nombre, apellido, email;
         private bool habilitado;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Business.Entities;
 
+
 namespace Data.Database
 {
     public class UsuarioAdapter:Adapter
