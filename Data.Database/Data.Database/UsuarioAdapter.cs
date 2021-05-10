@@ -8,6 +8,8 @@ namespace Data.Database
 {
     public class UsuarioAdapter:Adapter
     {
+
+
         #region DatosEnMemoria
         // Esta región solo se usa en esta etapa donde los datos se mantienen en memoria.
         // Al modificar este proyecto para que acceda a la base de datos esta será eliminada
@@ -100,5 +102,7 @@ namespace Data.Database
             }
             usuario.State = BusinessEntity.States.Unmodified;            
         }
+
+        
     }
 }
