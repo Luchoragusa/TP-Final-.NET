@@ -78,6 +78,11 @@ namespace UI.Consola
             }
         }
 
+        private void MostrarDatos()
+        {
+            
+        }
+
         private void ListadoGeneral()
         {
             Console.Clear();
@@ -102,6 +107,7 @@ namespace UI.Consola
         {
 
         }
+
         private void MostrarDatos(Usuario usr)
         {
             Console.WriteLine("Usuario: {0}", usr.ID);
@@ -109,7 +115,7 @@ namespace UI.Consola
             Console.WriteLine("\t\t Apellido: {0} ", usr.Apellido);
             Console.WriteLine("\t\tNombre de Usuario: {0}", usr.NombreUsuario);
             Console.WriteLine("\t\tClave: {0}", usr.Clave);
-            //Console.WriteLine("\t\tEmail: {0}", usr.EMail);                   el mail tiraba error de antes
+            Console.WriteLine("\t\tEmail: {0}", usr.Email);                  
             Console.WriteLine("\t\tHabilitado: {0}", usr.Habilitado);
             // \t dentro de un string representa un TAB
             Console.WriteLine();
