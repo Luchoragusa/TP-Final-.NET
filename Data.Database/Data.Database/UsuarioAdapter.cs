@@ -67,9 +67,13 @@ namespace Data.Database
             return new List<Usuario>(Usuarios);
         }
 
-        public Business.Entities.Usuario GetOne(int ID)
+        public Business.Entities.Usuario GetOne(int ID)         //como funcionan los 2 return (creemos que devuelve u)
         {
-            return Usuarios.Find(delegate(Usuario u) { return u.ID == ID; });
+            return Usuarios.Find(delegate(Usuario u) 
+            { 
+                return u.ID == ID; 
+            }
+            );
         }
 
         public void Delete(int ID)
