@@ -8,14 +8,15 @@ using Business.Logic;
 
 namespace UI.Consola
 {
-    class Program
+    static class Program
     {
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
         static void Main(string[] args)
         {
-
             new Usuarios().Menu();
-            
         }
-    
     }
 }
