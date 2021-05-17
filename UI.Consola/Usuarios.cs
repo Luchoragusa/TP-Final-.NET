@@ -16,7 +16,6 @@ namespace UI.Consola
         {
             
         }
-
         public Business.Logic.UsuarioLogic UsuarioNegocio
         {
             get
