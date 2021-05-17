@@ -77,7 +77,6 @@ namespace UI.Consola
             }
         }
 
-
         private void ListadoGeneral()
         {
             Console.Clear();
