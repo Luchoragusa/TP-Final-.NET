@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Database", "Data.Datab
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI.Consola", "UI.Consola\UI.Consola.csproj", "{4F92627B-CEE4-4500-9708-4289BE266E56}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabGrilla", "LabGrilla\LabGrilla.csproj", "{CBA5172C-0E62-47EE-8DDF-3DA4BA5D4EAF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{4F92627B-CEE4-4500-9708-4289BE266E56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F92627B-CEE4-4500-9708-4289BE266E56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F92627B-CEE4-4500-9708-4289BE266E56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBA5172C-0E62-47EE-8DDF-3DA4BA5D4EAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBA5172C-0E62-47EE-8DDF-3DA4BA5D4EAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBA5172C-0E62-47EE-8DDF-3DA4BA5D4EAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBA5172C-0E62-47EE-8DDF-3DA4BA5D4EAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
