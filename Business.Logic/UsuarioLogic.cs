@@ -12,6 +12,11 @@ namespace Business.Logic
     {
         private Data.Database.UsuarioAdapter usData;
 
+        public UsuarioLogic()
+        {
+            usData = new Data.Database.UsuarioAdapter();
+        }
+
         public Data.Database.UsuarioAdapter UsuarioData
         {
             get 
@@ -23,6 +28,7 @@ namespace Business.Logic
                 usData = value; 
             }
         }
+
 
         public Business.Entities.Usuario GetOne(int id)
         {

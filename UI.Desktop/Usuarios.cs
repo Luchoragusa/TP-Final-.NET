@@ -32,7 +32,7 @@ namespace UI.Desktop
 
         private void Usuarios_Load(object sender, EventArgs e)
         {
-            //Listar();
+            Listar();
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
