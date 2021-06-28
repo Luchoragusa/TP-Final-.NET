@@ -5,6 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Business.Entities;
+using Business.Logic;
 
 namespace UI.Desktop
 {
@@ -13,6 +15,28 @@ namespace UI.Desktop
         public UsuarioDesktop()
         {
             InitializeComponent();
+        }
+
+        public UsuarioDesktop(ModoForm modo) : this()
+        {
+            this.Modo = modo;
+        }
+
+        public UsuarioDesktop(int ID, ModoForm modo) : this()
+        {
+            this.Modo = modo;
+            UsuarioLogic usLogic = new UsuarioLogic();
+            UsuarioActual = usLogic.GetOne(ID);
+            MapearADatos();
+        }
+
+        private Usuario _usActual;
+        public Usuario UsuarioActual
+        {
+            get
+            { return _usActual; }
+            set
+            { _usActual = value; }
         }
 
         //enum
@@ -25,20 +49,66 @@ namespace UI.Desktop
         };
 
         //propiedad
-        public ModoForm _modoform
+        public ModoForm Modo
         {
             get
-            {
-                return _modoform;
-            }
+            { return Modo; }
             set
-            {
-                _modoform = value;
-            }
+            { Modo = value;}
         }
 
-        public virtual void MapearDeDatos() { }
-        public virtual void MapearADatos() { }
+        public virtual void MapearDeDatos() 
+        {
+            this.txtID.Text = this.UsuarioActual.ID.ToString();
+            this.chkHabilitado.Checked = this.UsuarioActual.Habilitado;
+            this.txtNombre.Text = this.UsuarioActual.Nombre;
+            this.txtEmail.Text = this.UsuarioActual.Email;
+            this.txtClave.Text = this.UsuarioActual.Clave;
+            this.txtApellido.Text = this.UsuarioActual.Apellido;
+            this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;    
+            this.txtConfClave.Text = this.UsuarioActual.Clave;                  //va?
+      
+            if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
+            {
+                this.btnModo.Text = "Guardar";
+            } 
+            else if (Modo == ModoForm.Baja)
+            {
+                this.btnModo.Text = "Eliminar";
+            }
+            else if (Modo == ModoForm.Consulta)
+            {
+                this.btnModo.Text = "Aceptar";
+            }
+        }
+        public virtual void MapearADatos() 
+        {
+            if (Modo == ModoForm.Alta)
+            {
+                UsuarioActual = new Usuario();
+                UsuarioActual.State = BusinessEntity.States.New;
+            }
+
+            if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
+            {
+                if (Modo != ModoForm.Alta) {
+                    this.UsuarioActual.ID = int.Parse(this.txtID.Text);
+                    UsuarioActual.State = BusinessEntity.States.Modified;
+                }
+
+                this.UsuarioActual.Habilitado = this.chkHabilitado.Checked;
+                this.UsuarioActual.Nombre = this.txtNombre.Text;
+                this.UsuarioActual.Email = this.txtEmail.Text;
+                this.UsuarioActual.Clave = this.txtClave.Text;
+                this.UsuarioActual.Apellido = this.txtApellido.Text;
+                this.UsuarioActual.NombreUsuario = this.txtUsuario.Text;
+                this.UsuarioActual.Clave = this.txtConfClave.Text;
+            }
+
+            if(this.Modo == ModoForm.Baja) UsuarioActual.State = BusinessEntity.States.Deleted;
+            if (this.Modo == ModoForm.Consulta) UsuarioActual.State = BusinessEntity.States.Unmodified;
+        }
+
         public virtual void GuardarCambios() { }
         public virtual bool Validar() { return false; }
         public void Notificar(string titulo, string mensaje, MessageBoxButtons
