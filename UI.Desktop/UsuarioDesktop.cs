@@ -109,8 +109,50 @@ namespace UI.Desktop
             if (this.Modo == ModoForm.Consulta) UsuarioActual.State = BusinessEntity.States.Unmodified;
         }
 
-        public virtual void GuardarCambios() { }
-        public virtual bool Validar() { return false; }
+        public virtual void GuardarCambios()
+        {
+            MapearADatos();
+            UsuarioLogic usuarioLogic = new UsuarioLogic();
+            usuarioLogic.Save(UsuarioActual);
+
+        }
+        public virtual bool Validar()
+        {
+            if (
+                txtNombre.Text.Equals(String.Empty) ||
+                txtApellido.Text.Equals(String.Empty) ||
+                txtEmail.Text.Equals(String.Empty) ||
+                txtUsuario.Text.Equals(String.Empty) ||
+                txtClave.Text.Equals(String.Empty) ||
+                txtConfClave.Text.Equals(String.Empty)
+                )
+            {
+                Notificar("Alguno de los campos esta incompleto", "Intente nuevamente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (!txtClave.Text.Equals(txtConfClave.Text))
+            {
+                Notificar("Contraseña invalida", "Intente nuevamente",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
+
+        }
+        private void botonAceptarClick(object sender, EventArgs e)
+        {
+            if (Validar())
+            {
+                GuardarCambios();
+                this.Close();
+            }
+        }
+        private void botonCancelarClick(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         public void Notificar(string titulo, string mensaje, MessageBoxButtons
         botones, MessageBoxIcon icono)
         {

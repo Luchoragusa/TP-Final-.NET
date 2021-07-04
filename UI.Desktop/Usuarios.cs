@@ -44,5 +44,37 @@ namespace UI.Desktop
         {
             this.Close();
         }
+        private void tsbNuevo_Click(object sender, EventArgs e)
+        {
+            UsuarioDesktop formUsuario = new UsuarioDesktop(UsuarioDesktop.ModoForm.Alta); // nosotros deberiamos haber creado el ModoForm en ApplicationForm
+            formUsuario.ShowDialog();
+            this.Listar();
+        }
+        private void tsbEditar_Click(object sender, EventArgs e)
+        {
+            if (this.dgvUsuarios.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Accion Invalida", "Seleccione una fila", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            int ID = ((Business.Entities.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
+            UsuarioDesktop formUsuario = new UsuarioDesktop(ID, UsuarioDesktop.ModoForm.Modificacion); // nosotros deberiamos haber creado el ModoForm en ApplicationForm
+            formUsuario.ShowDialog();
+            this.Listar();
+        }
+        private void tsbEliminar_Click(object sender, EventArgs e)
+        {
+            if (this.dgvUsuarios.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Acción invalida", "Seleccione una fila.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            int ID = ((Business.Entities.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
+            UsuarioDesktop formUsuario = new UsuarioDesktop(ID, UsuarioDesktop.ModoForm.Baja);
+            formUsuario.ShowDialog();
+            this.Listar();
+        }
+
     }
 }
