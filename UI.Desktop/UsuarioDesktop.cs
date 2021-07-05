@@ -39,25 +39,8 @@ namespace UI.Desktop
             { _usActual = value; }
         }
 
-        //enum
-        public enum ModoForm
-        {
-            Alta,
-            Baja,
-            Modificacion,
-            Consulta
-        };
 
-        //propiedad
-        public ModoForm Modo
-        {
-            get
-            { return Modo; }
-            set
-            { Modo = value;}
-        }
-
-        public virtual void MapearDeDatos() 
+        public override void MapearDeDatos()
         {
             this.txtID.Text = this.UsuarioActual.ID.ToString();
             this.chkHabilitado.Checked = this.UsuarioActual.Habilitado;
@@ -65,13 +48,13 @@ namespace UI.Desktop
             this.txtEmail.Text = this.UsuarioActual.Email;
             this.txtClave.Text = this.UsuarioActual.Clave;
             this.txtApellido.Text = this.UsuarioActual.Apellido;
-            this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;    
+            this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
             this.txtConfClave.Text = this.UsuarioActual.Clave;                  //va?
-      
+
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
                 this.btnModo.Text = "Guardar";
-            } 
+            }
             else if (Modo == ModoForm.Baja)
             {
                 this.btnModo.Text = "Eliminar";
@@ -81,7 +64,8 @@ namespace UI.Desktop
                 this.btnModo.Text = "Aceptar";
             }
         }
-        public virtual void MapearADatos() 
+
+        public override void MapearADatos()
         {
             if (Modo == ModoForm.Alta)
             {
@@ -91,7 +75,8 @@ namespace UI.Desktop
 
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
-                if (Modo != ModoForm.Alta) {
+                if (Modo != ModoForm.Alta)
+                {
                     this.UsuarioActual.ID = int.Parse(this.txtID.Text);
                     UsuarioActual.State = BusinessEntity.States.Modified;
                 }
@@ -105,18 +90,18 @@ namespace UI.Desktop
                 this.UsuarioActual.Clave = this.txtConfClave.Text;
             }
 
-            if(this.Modo == ModoForm.Baja) UsuarioActual.State = BusinessEntity.States.Deleted;
+            if (this.Modo == ModoForm.Baja) UsuarioActual.State = BusinessEntity.States.Deleted;
             if (this.Modo == ModoForm.Consulta) UsuarioActual.State = BusinessEntity.States.Unmodified;
         }
 
-        public virtual void GuardarCambios()
+        public override void GuardarCambios()
         {
             MapearADatos();
             UsuarioLogic usuarioLogic = new UsuarioLogic();
             usuarioLogic.Save(UsuarioActual);
 
         }
-        public virtual bool Validar()
+        public override bool Validar()
         {
             if (
                 txtNombre.Text.Equals(String.Empty) ||
@@ -132,7 +117,7 @@ namespace UI.Desktop
             }
             if (!txtClave.Text.Equals(txtConfClave.Text))
             {
-                Notificar("Contraseña invalida", "Intente nuevamente",
+                Notificar("ContraseÃ±a invalida", "Intente nuevamente",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
@@ -163,6 +148,7 @@ namespace UI.Desktop
         {
             this.Notificar(this.Text, mensaje, botones, icono);
         }
+
 
     }
 }
