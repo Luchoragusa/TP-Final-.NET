@@ -49,7 +49,7 @@ namespace UI.Desktop
             this.txtClave.Text = this.UsuarioActual.Clave;
             this.txtApellido.Text = this.UsuarioActual.Apellido;
             this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
-            this.txtConfClave.Text = this.UsuarioActual.Clave;                  //va?
+            //this.txtConfClave.Text = this.UsuarioActual.Clave;                  //va?
 
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
@@ -77,17 +77,9 @@ namespace UI.Desktop
             {
                 if (Modo != ModoForm.Alta)
                 {
-                    this.UsuarioActual.ID = int.Parse(this.txtID.Text);
                     UsuarioActual.State = BusinessEntity.States.Modified;
-                }
-
-                this.UsuarioActual.Habilitado = this.chkHabilitado.Checked;
-                this.UsuarioActual.Nombre = this.txtNombre.Text;
-                this.UsuarioActual.Email = this.txtEmail.Text;
-                this.UsuarioActual.Clave = this.txtClave.Text;
-                this.UsuarioActual.Apellido = this.txtApellido.Text;
-                this.UsuarioActual.NombreUsuario = this.txtUsuario.Text;
-                this.UsuarioActual.Clave = this.txtConfClave.Text;
+                    this.txtID.Text = this.UsuarioActual.ID.ToString();          
+                }             
             }
 
             if (this.Modo == ModoForm.Baja) UsuarioActual.State = BusinessEntity.States.Deleted;
@@ -97,9 +89,17 @@ namespace UI.Desktop
         public override void GuardarCambios()
         {
             MapearADatos();
+            this.UsuarioActual.Habilitado = this.chkHabilitado.Checked;
+            this.UsuarioActual.Nombre = this.txtNombre.Text;
+            this.UsuarioActual.Email = this.txtEmail.Text;
+            this.UsuarioActual.Clave = this.txtClave.Text;
+            this.UsuarioActual.Apellido = this.txtApellido.Text;
+            this.UsuarioActual.NombreUsuario = this.txtUsuario.Text;
+            this.UsuarioActual.Clave = this.txtConfClave.Text;
+            //this.UsuarioActual.Clave = this.txtConfClave.Text;            preguntar si es a clave o confclave
+
             UsuarioLogic usuarioLogic = new UsuarioLogic();
             usuarioLogic.Save(UsuarioActual);
-
         }
         public override bool Validar()
         {
@@ -117,7 +117,7 @@ namespace UI.Desktop
             }
             if (!txtClave.Text.Equals(txtConfClave.Text))
             {
-                Notificar("ContraseÃ±a invalida", "Intente nuevamente",
+                Notificar("Contraseña invalida", "Intente nuevamente",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
@@ -137,18 +137,5 @@ namespace UI.Desktop
         {
             this.Close();
         }
-
-        public void Notificar(string titulo, string mensaje, MessageBoxButtons
-        botones, MessageBoxIcon icono)
-        {
-            MessageBox.Show(mensaje, titulo, botones, icono);
-        }
-        public void Notificar(string mensaje, MessageBoxButtons botones,
-        MessageBoxIcon icono)
-        {
-            this.Notificar(this.Text, mensaje, botones, icono);
-        }
-
-
     }
 }

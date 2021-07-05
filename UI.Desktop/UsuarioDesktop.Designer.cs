@@ -56,7 +56,7 @@ namespace UI.Desktop
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.02564F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.97436F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 82F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 278F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 279F));
             this.tableLayoutPanel1.Controls.Add(this.txtID, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtNombre, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtEmail, 1, 2);
@@ -117,47 +117,49 @@ namespace UI.Desktop
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(424, 37);
+            this.txtApellido.Location = new System.Drawing.Point(423, 37);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(256, 20);
             this.txtApellido.TabIndex = 4;
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(424, 72);
+            this.txtUsuario.Location = new System.Drawing.Point(423, 72);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(256, 20);
             this.txtUsuario.TabIndex = 5;
             // 
             // txtConfClave
             // 
-            this.txtConfClave.Location = new System.Drawing.Point(424, 101);
+            this.txtConfClave.Location = new System.Drawing.Point(423, 101);
             this.txtConfClave.Name = "txtConfClave";
             this.txtConfClave.Size = new System.Drawing.Size(256, 20);
             this.txtConfClave.TabIndex = 6;
             // 
             // btnModo
             // 
-            this.btnModo.Location = new System.Drawing.Point(342, 134);
+            this.btnModo.Location = new System.Drawing.Point(341, 134);
             this.btnModo.Name = "btnModo";
             this.btnModo.Size = new System.Drawing.Size(75, 23);
             this.btnModo.TabIndex = 7;
             this.btnModo.Text = "Aceptar";
             this.btnModo.UseVisualStyleBackColor = true;
+            this.btnModo.Click += new System.EventHandler(this.botonAceptarClick);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(424, 134);
+            this.btnCancelar.Location = new System.Drawing.Point(423, 134);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.botonCancelarClick);
             // 
             // chkHabilitado
             // 
             this.chkHabilitado.AutoSize = true;
-            this.chkHabilitado.Location = new System.Drawing.Point(342, 3);
+            this.chkHabilitado.Location = new System.Drawing.Point(341, 3);
             this.chkHabilitado.Name = "chkHabilitado";
             this.chkHabilitado.Size = new System.Drawing.Size(73, 17);
             this.chkHabilitado.TabIndex = 9;
@@ -203,7 +205,7 @@ namespace UI.Desktop
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(342, 34);
+            this.lblApellido.Location = new System.Drawing.Point(341, 34);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(44, 13);
             this.lblApellido.TabIndex = 14;
@@ -212,7 +214,7 @@ namespace UI.Desktop
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(342, 69);
+            this.lblUsuario.Location = new System.Drawing.Point(341, 69);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(43, 13);
             this.lblUsuario.TabIndex = 15;
@@ -221,7 +223,7 @@ namespace UI.Desktop
             // lblConfirmarClave
             // 
             this.lblConfirmarClave.AutoSize = true;
-            this.lblConfirmarClave.Location = new System.Drawing.Point(342, 98);
+            this.lblConfirmarClave.Location = new System.Drawing.Point(341, 98);
             this.lblConfirmarClave.Name = "lblConfirmarClave";
             this.lblConfirmarClave.Size = new System.Drawing.Size(54, 26);
             this.lblConfirmarClave.TabIndex = 16;

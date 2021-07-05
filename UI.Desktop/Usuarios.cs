@@ -23,7 +23,7 @@ namespace UI.Desktop
             //this.dgvUsuarios.ColumnAdded = false;
             //this.dgvUsuarios.ColumnRemoved = false;
         }
-
+        
         public void Listar()
         {
             UsuarioLogic ul = new UsuarioLogic();

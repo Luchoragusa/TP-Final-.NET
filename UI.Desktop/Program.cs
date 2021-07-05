@@ -19,8 +19,6 @@ namespace UI.Desktop
             //Application.Run(new frmLogin());
             //Application.Run(new formMain());
             Application.Run(new Usuarios());
-
-
         }
     }
 }
