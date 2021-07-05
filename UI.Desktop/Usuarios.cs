@@ -60,8 +60,7 @@ namespace UI.Desktop
                 return;
             }
             int ID = ((Business.Entities.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
-
-            UsuarioDesktop formUsuario = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Modificacion); // nosotros deberiamos haber creado el ModoForm en ApplicationForm
+            UsuarioDesktop formUsuario = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Modificacion); 
             formUsuario.ShowDialog();
             this.Listar();
         }
@@ -73,7 +72,6 @@ namespace UI.Desktop
                 MessageBox.Show("Acción invalida", "Seleccione una fila.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
             int ID = ((Business.Entities.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
             UsuarioDesktop formUsuario = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Baja);
             formUsuario.ShowDialog();
