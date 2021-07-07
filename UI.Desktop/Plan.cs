@@ -17,16 +17,29 @@ namespace UI.Desktop
         public Plan()
         {
             InitializeComponent();
-            this.dgvPlan.AutoGenerateColumns = false;
-            this.dgvPlan.ReadOnly = true;
+            this.dgvPlanes.AutoGenerateColumns = false;
+            this.dgvPlanes.ReadOnly = true;
         }
 
         public void Listar()
         {
             UsuarioLogic ul = new UsuarioLogic();
-            this.dgvPlan.DataSource = ul.GetAll();
+            this.dgvPlanes.DataSource = ul.GetAll();
         }
 
+        private void tsbNuevo_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void tsbEditar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsbEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
