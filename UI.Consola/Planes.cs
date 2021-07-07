@@ -8,23 +8,20 @@ using Business.Logic;
 
 namespace UI.Consola
 {
-    public class Usuarios
+    public class Planes 
     {
-        private Business.Logic.UsuarioLogic usNegocio;
+        private Business.Logic.PlanLogic plNegocio;
 
-        public Usuarios()
-        {
-            
-        }
-        public Business.Logic.UsuarioLogic UsuarioNegocio
+        public Planes() { }
+        public Business.Logic.PlanLogic PlanNegocio
         {
             get
             {
-                return usNegocio;
+                return plNegocio;
             }
             set
             {
-                usNegocio = value;
+                plNegocio = value;
             }
         }
 
@@ -39,16 +36,16 @@ namespace UI.Consola
             Console.WriteLine("5) Eliminar");
             Console.WriteLine("6) Salir");
             Console.WriteLine("Ingrese una opcion: ");
-            
+
             op = Console.ReadKey();
 
             switch (op.KeyChar)
             {
                 case '1':
-                {
+                    {
                         ListadoGeneral();
                         break;
-                }
+                    }
                 case '2':
                     {
                         Consultar();
@@ -79,9 +76,9 @@ namespace UI.Consola
         private void ListadoGeneral()
         {
             Console.Clear();
-            foreach (Usuario usr in UsuarioNegocio.GetAll())
+            foreach (Plan pl in PlanNegocio.GetAll())
             {
-                MostrarDatos(usr);
+                MostrarDatos(pl);
             }
         }
         private void Consultar()
@@ -89,9 +86,9 @@ namespace UI.Consola
             try
             {
                 Console.Clear();
-                Console.Write("Ingrese el ID del usuario a consultar: ");
+                Console.Write("Ingrese el ID del plan a consultar: ");
                 int ID = int.Parse(Console.ReadLine());
-                this.MostrarDatos(UsuarioNegocio.GetOne(ID));
+                this.MostrarDatos(PlanNegocio.GetOne(ID));
             }
             catch (FormatException)
             {
@@ -107,67 +104,41 @@ namespace UI.Consola
                 Console.ReadKey();
             }
 
-        }       
+        }
         private void Agregar()
         {
-            Usuario usuario = new Usuario();
+            Plan plan = new Plan();
             Console.Clear();
-            Console.Write("Ingrese Nombre: ");
+            //Console.Write("Ingrese ID del plan: ");   se tiene que autogenerar
+            //plan.ID = int.Parse(Console.ReadLine());
 
-            usuario.Nombre = Console.ReadLine();
-            Console.Write("Ingrese Apellido: ");
+            Console.Write("Ingrese ID de la especialidad del plan: ");
+            plan.IDEspecialidad = int.Parse(Console.ReadLine());
 
-            usuario.Apellido = Console.ReadLine();
-            Console.Write("Ingrese Nombre de Usuario: ");
+            Console.Write("Ingrese la descripcion del plan: ");
+            plan.Descripcion = Console.ReadLine();
 
-            usuario.NombreUsuario = Console.ReadLine();
-            Console.Write("Ingrese Clave: ");
-
-            usuario.Clave = Console.ReadLine();
-            Console.Write("Ingrese Email: ");
-
-            usuario.Email = Console.ReadLine();
-            Console.Write("Ingrese Habilitación de Usuario (1-Si/otro-No): ");
-
-            usuario.Habilitado = (Console.ReadLine() == "1");
-            usuario.State = BusinessEntity.States.New;
-
-            UsuarioNegocio.Save(usuario);
+            PlanNegocio.Save(plan);
             Console.WriteLine();
-            Console.WriteLine("ID: {0}", usuario.ID);
+            Console.WriteLine("ID: {0}", plan.ID);
         }
         private void Modificar()
         {
             try
             {
                 Console.Clear();
-                Console.Write("Ingrese el ID del usuario a modificar: ");
+                Console.Write("Ingrese el ID de la especialidad del plan a modificar: ");
                 int ID = int.Parse(Console.ReadLine());
+                Plan plan = PlanNegocio.GetOne(ID);
 
-                Usuario usuario = UsuarioNegocio.GetOne(ID);
+                Console.Write("Ingrese la descripcion del plan a modificar: ");
+                plan.Descripcion = Console.ReadLine();
 
-                Console.Write("Ingrese Nombre: ");
-                usuario.Nombre = Console.ReadLine();
+                plan.State = BusinessEntity.States.Modified;
 
-                Console.Write("Ingrese Apellido: ");
-                usuario.Apellido = Console.ReadLine();
-
-                Console.Write("Ingrese Nombre de Usuario: ");
-                usuario.NombreUsuario = Console.ReadLine();
-
-                Console.Write("Ingrese Clave: ");
-                usuario.Clave = Console.ReadLine();
-
-                Console.Write("Ingrese Email: ");
-                usuario.Email = Console.ReadLine();
-
-                Console.Write("Ingrese Habilitación de Usuario (1-Si/otro-No): ");
-                usuario.Habilitado = (Console.ReadLine() == "1");
-                usuario.State = BusinessEntity.States.Modified;
-
-                UsuarioNegocio.Save(usuario);
+                PlanNegocio.Save(plan);
             }
-            catch (FormatException)
+            catch (FormatException) 
             {
                 Console.WriteLine("La ID ingresada debe ser un número entero");
             }
@@ -181,9 +152,9 @@ namespace UI.Consola
             try
             {
                 Console.Clear();
-                Console.Write("Ingrese el ID del usuario a eliminar: ");
+                Console.Write("Ingrese el ID del plan a eliminar: ");
                 int ID = int.Parse(Console.ReadLine());
-                UsuarioNegocio.Delete(ID);
+                PlanNegocio.Delete(ID);
             }
             catch (FormatException)
             {
@@ -200,17 +171,14 @@ namespace UI.Consola
             }
         }
 
-        private void MostrarDatos(Usuario usr)
+        private void MostrarDatos(Plan plan)
         {
-            Console.WriteLine("Usuario: {0}", usr.ID);
-            Console.WriteLine("\t\t Nombre: {0} ", usr.Nombre);
-            Console.WriteLine("\t\t Apellido: {0} ", usr.Apellido);
-            Console.WriteLine("\t\tNombre de Usuario: {0}", usr.NombreUsuario);
-            Console.WriteLine("\t\tClave: {0}", usr.Clave);
-            Console.WriteLine("\t\tEmail: {0}", usr.Email);                  
-            Console.WriteLine("\t\tHabilitado: {0}", usr.Habilitado);
-            // \t dentro de un string representa un TAB
+            Console.WriteLine("Plan: {0}", plan.ID);
+            Console.WriteLine("\t\t ID Especialidad: {0} ", plan.IDEspecialidad);
+            Console.WriteLine("\t\t Descripcion: {0} ", plan.Descripcion);
             Console.WriteLine();
         }
     }
+
+}
 }
