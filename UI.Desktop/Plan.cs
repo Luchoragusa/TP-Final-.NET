@@ -23,8 +23,8 @@ namespace UI.Desktop
 
         public void Listar()
         {
-            UsuarioLogic ul = new UsuarioLogic();
-            this.dgvPlanes.DataSource = ul.GetAll();
+            PlanLogic pl = new PlanLogic();
+            this.dgvPlanes.DataSource = pl.GetAll();
         }
 
         private void Planes_Load(object sender, EventArgs e)

@@ -25,8 +25,8 @@ namespace UI.Desktop
 
         public void Listar()
         {
-            UsuarioLogic ul = new UsuarioLogic();
-            this.dgvComisiones.DataSource = ul.GetAll();
+            ComisionLogic cl = new ComisionLogic();
+            this.dgvComisiones.DataSource = cl.GetAll();
         }
 
         private void Comisiones_Load(object sender, EventArgs e)
@@ -46,8 +46,8 @@ namespace UI.Desktop
 
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
-            UsuarioDesktop formUDesktop = new UsuarioDesktop(ApplicationForm.ModoForm.Alta);        //ComisionDesktop
-            formUDesktop.ShowDialog();
+            ComisionesDesktop formCDesktop = new ComisionesDesktop(ApplicationForm.ModoForm.Alta);
+            formCDesktop.ShowDialog();
             this.Listar();
         }
 
@@ -58,15 +58,23 @@ namespace UI.Desktop
                 MessageBox.Show("Accion Invalida", "Seleccione una fila", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            int ID = ((Business.Entities.Usuario)this.dgvComisiones.SelectedRows[0].DataBoundItem).ID;
-            UsuarioDesktop formUsuario = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Modificacion);
-            formUsuario.ShowDialog();
+            int ID = ((Business.Entities.Comision)this.dgvComisiones.SelectedRows[0].DataBoundItem).ID;
+            ComisionesDesktop formCDesktop = new ComisionesDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+            formCDesktop.ShowDialog();
             this.Listar();
         }
 
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
-
+            if (this.dgvComisiones.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Acción invalida", "Seleccione una fila.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            int ID = ((Business.Entities.Comision)this.dgvComisiones.SelectedRows[0].DataBoundItem).ID;
+            ComisionesDesktop formCDesktop = new ComisionesDesktop(ID, ApplicationForm.ModoForm.Baja);
+            formCDesktop.ShowDialog();
+            this.Listar();
         }
     }
 }
