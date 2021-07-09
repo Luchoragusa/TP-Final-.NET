@@ -52,6 +52,12 @@
     <Compile Include="ApplicationForm.Designer.cs">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Comisiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comisiones.Designer.cs">
+      <DependentUpon>Comisiones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Plan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Comisiones.resx">
+      <DependentUpon>Comisiones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Plan.resx">
       <DependentUpon>Plan.cs</DependentUpon>
     </EmbeddedResource>
