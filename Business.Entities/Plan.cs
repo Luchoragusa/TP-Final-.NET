@@ -12,6 +12,6 @@ namespace Business.Entities
         private int _IDEspecialidad;
 
         public string Descripcion { get => _Descripcion; set => _Descripcion = value; }
-        public int IDEspecialidad { get => IDEspecialidad; set => _IDEspecialidad = value; }
+        public int IDEspecialidad { get => _IDEspecialidad; set => _IDEspecialidad = value; }
     }
 }

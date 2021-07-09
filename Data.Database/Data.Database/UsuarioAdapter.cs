@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using Business.Entities;
 
-
-namespace Data.Database
+        
+namespace Data.Database                             //hacer el lab05 para pasarlo de hardcore a SQL
 {
     public class UsuarioAdapter:Adapter
     {

@@ -133,7 +133,7 @@ namespace UI.Desktop
                 return false;
             }
 
-            if (!Validaciones.validarTexto(txtNombre.Text))
+            if (!Validaciones.validarTexto(txtUsuario.Text))
             {
                 Notificar("Nombre de Usuario incorrecto.", "Intente nuevamente. Recuerde que no puede llevar numeros.",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);

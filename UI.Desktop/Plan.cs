@@ -27,6 +27,23 @@ namespace UI.Desktop
             this.dgvPlanes.DataSource = ul.GetAll();
         }
 
+        private void Planes_Load(object sender, EventArgs e)
+        {
+            dgvPlanes.AutoGenerateColumns = false;
+            this.Listar();
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            dgvPlanes.AutoGenerateColumns = false;
+            this.Listar();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
 

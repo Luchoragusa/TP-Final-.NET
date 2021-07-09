@@ -37,8 +37,8 @@ namespace Business.Logic
 
         public List<Usuario> GetAll()
         {
-            return UsuarioData.GetAll();                //este llama al otro getAll y es un pasamanos, es decir
-        }                                               //le pide a pepito y pepito pide, se lo pasa y se lo vuelve a pasar
+            return UsuarioData.GetAll();                
+        }                                               
 
         public void Save(Business.Entities.Usuario usuario)
         {

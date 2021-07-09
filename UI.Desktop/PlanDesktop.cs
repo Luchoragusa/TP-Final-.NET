@@ -20,26 +20,94 @@ namespace UI.Desktop
         public PlanDesktop(ModoForm modo)
         {
             this.Modo = modo;
+            PlanActual = new Business.Entities.Plan();
         }
+
+        private Business.Entities.Plan _plan;
+        public Business.Entities.Plan PlanActual { get; set; }
 
         public PlanDesktop(int ID, ModoForm modo) : this()
         {
             this.Modo = modo;
-            UsuarioLogic usLogic = new UsuarioLogic();
-            //planActual = usLogic.GetOne(ID);
+            Business.Logic.PlanLogic pl = new Business.Logic.PlanLogic();
+            PlanActual = pl.GetOne(ID);
             MapearDeDatos();
         }
-
-        private Plan _plan;
-        public Plan PlanActual
+  
+        public override void MapearDeDatos()
         {
-            get { return _plan; }
-            set { _plan = value; }
+            this.txtID.Text = this.PlanActual.ID.ToString();
+            this.txtDesc.Text = this.PlanActual.Descripcion;
+            this.txtIDEspecialidad.Text = this.PlanActual.IDEspecialidad.ToString();
+
+            if (Modo == ModoForm.Consulta) this.btnModo.Text = "Aceptar";
+            else if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion) this.btnModo.Text = "Guardar";
+            else if (Modo == ModoForm.Baja) this.btnModo.Text = "Eliminar";
         }
 
+        public override void MapearADatos()
+        {
+            if (Modo == ModoForm.Alta)
+            {
+                PlanActual = new Business.Entities.Plan();
+                PlanActual.State = BusinessEntity.States.New;
+            }
+
+            if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
+            {
+                if (Modo != ModoForm.Alta)
+                {
+                    PlanActual.State = BusinessEntity.States.Modified;
+                    this.txtID.Text = this.PlanActual.ID.ToString();
+                }
+                this.PlanActual.Descripcion = this.txtDesc.Text;
+                this.PlanActual.IDEspecialidad = Convert.ToInt32(this.txtIDEspecialidad.Text);
+            }
+
+            if (this.Modo == ModoForm.Baja) PlanActual.State = BusinessEntity.States.Deleted;
+            if (this.Modo == ModoForm.Consulta) PlanActual.State = BusinessEntity.States.Unmodified;
+        }
+
+        public override void GuardarCambios()
+        {
+            MapearADatos();
+            PlanLogic planLogic = new PlanLogic();
+
+            planLogic.Save(PlanActual);
+        }
+
+        public override bool Validar()
+        {
+            if (txtDesc.Text.Equals(String.Empty) || txtIDEspecialidad.Text.Equals(String.Empty))
+            {
+                Notificar("Algunos de los campos están vaciós", "Complete todos para continuar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (!Validaciones.validarTexto(txtDesc.Text))
+            {
+                Notificar("Descripcion incorrecta.", "Intente nuevamente",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
 
 
 
 
+
+
+
+            return true;
+        }
+
+        private void btnModo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

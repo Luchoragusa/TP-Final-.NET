@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Business.Entities;
+using Data.Database;
 
 namespace Business.Logic
 {
@@ -18,14 +19,8 @@ namespace Business.Logic
 
         public Data.Database.PlanAdapter PlanData
         {
-            get
-            {
-                return planData;
-            }
-            set
-            {
-                planData = value;
-            }
+            get { return planData;}
+            set{ planData = value; }
         }
 
 
