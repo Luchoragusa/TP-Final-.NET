@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-
+using System.Windows.Forms;
 
 namespace Business.Logic
 {
@@ -64,23 +64,27 @@ namespace Business.Logic
             }
         }
 
-        private void validarNumero(object sender, KeyPressEventArgs e)
+        public static bool validarNumero(object sender, KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar))
             {
                 e.Handled = false;
+                return false;
             }
             else if (Char.IsControl(e.KeyChar))
             {
                 e.Handled = false;
+                return false;
             }
             else if (Char.IsSeparator(e.KeyChar))
             {
                 e.Handled = false;
+                return false;
             }
             else
             {
                 e.Handled = true;
+                return true;
             }
         }
     }

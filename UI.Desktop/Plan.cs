@@ -29,13 +29,11 @@ namespace UI.Desktop
 
         private void Planes_Load(object sender, EventArgs e)
         {
-            dgvPlanes.AutoGenerateColumns = false;
             this.Listar();
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            dgvPlanes.AutoGenerateColumns = false;
             this.Listar();
         }
 
@@ -46,17 +44,36 @@ namespace UI.Desktop
 
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
-
+            PlanDesktop formPDesktop = new PlanDesktop(ApplicationForm.ModoForm.Alta);
+            formPDesktop.ShowDialog();
+            this.Listar();
         }
 
         private void tsbEditar_Click(object sender, EventArgs e)
         {
-
+            if (this.dgvPlanes.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Accion Invalida", "Seleccione una fila", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+                
+            }
+            int ID = ((Business.Entities.Plan)this.dgvPlanes.SelectedRows[0].DataBoundItem).ID;
+            PlanDesktop formPlan = new PlanDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+            formPlan.ShowDialog();
+            this.Listar();
         }
 
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
-
+            if (this.dgvPlanes.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Acción invalida", "Seleccione una fila.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            int ID = ((Business.Entities.Plan)this.dgvPlanes.SelectedRows[0].DataBoundItem).ID;
+            PlanDesktop formPlan = new PlanDesktop(ID, ApplicationForm.ModoForm.Baja);
+            formPlan.ShowDialog();
+            this.Listar();
         }
     }
 }

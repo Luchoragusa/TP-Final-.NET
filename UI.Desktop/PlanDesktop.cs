@@ -90,19 +90,22 @@ namespace UI.Desktop
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-
-
-
-
-
-
-
+            if (Validaciones.validarTexto(txtIDEspecialidad.Text))    //quitamos el "!", siguiendo logica de UsuarioDesktop 
+            {
+                Notificar("ID incorrecta.", "Intente nuevamente",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
             return true;
         }
 
         private void btnModo_Click(object sender, EventArgs e)
         {
-
+            if (Validar())
+            {
+                GuardarCambios();
+                this.Close();
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
