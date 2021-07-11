@@ -8,20 +8,20 @@ using Business.Logic;
 
 namespace UI.Consola
 {
-    public class Planes 
-    {
-        private PlanLogic plNegocio;
+    public class Materias
+     {
+        private MateriaLogic matNegocio;
 
-        public Planes() { }
-        public PlanLogic PlanNegocio
+        public Materias() { }
+        public MateriaLogic MateriaNegocio
         {
             get
             {
-                return plNegocio;
+                return matNegocio;
             }
             set
             {
-                plNegocio = value;
+                matNegocio = value;
             }
         }
 
@@ -76,9 +76,9 @@ namespace UI.Consola
         private void ListadoGeneral()
         {
             Console.Clear();
-            foreach (Plan pl in PlanNegocio.GetAll())
+            foreach (Materia mat in MateriaNegocio.GetAll())
             {
-                MostrarDatos(pl);
+                MostrarDatos(mat);
             }
         }
         private void Consultar()
@@ -86,9 +86,9 @@ namespace UI.Consola
             try
             {
                 Console.Clear();
-                Console.Write("Ingrese el ID del plan a consultar: ");
+                Console.Write("Ingrese el ID de la materia a consultar: ");
                 int ID = int.Parse(Console.ReadLine());
-                this.MostrarDatos(PlanNegocio.GetOne(ID));
+                this.MostrarDatos(MateriaNegocio.GetOne(ID));
             }
             catch (FormatException)
             {
@@ -107,36 +107,47 @@ namespace UI.Consola
         }
         private void Agregar()
         {
-            Plan plan = new Plan();
+            Materia materia = new Materia();
             Console.Clear();
-            //Console.Write("Ingrese ID del plan: ");   se tiene que autogenerar
-            //plan.ID = int.Parse(Console.ReadLine());
 
-            Console.Write("Ingrese ID de la especialidad del plan: ");
-            plan.IDEspecialidad = int.Parse(Console.ReadLine());
+            Console.Write("Ingrese ID de la especialidad de la materia: ");
+            materia.IDEspecialidad = int.Parse(Console.ReadLine());
 
-            Console.Write("Ingrese la descripcion del plan: ");
-            plan.Descripcion = Console.ReadLine();
+            Console.Write("Ingrese la descripcion de la materia: ");
+            materia.Descripcion = Console.ReadLine();
 
-            PlanNegocio.Save(plan);
+            Console.Write("Ingrese el total de horas semanales de la materia: ");
+            materia.HSSSemanales = int.Parse(Console.ReadLine());
+
+            Console.Write("Ingrese el total de horas de la materia: ");
+            materia.HSTotales = int.Parse(Console.ReadLine());
+
+            MateriaNegocio.Save(materia);
             Console.WriteLine();
-            Console.WriteLine("ID: {0}", plan.ID);
+            Console.WriteLine("ID: {0}", materia.ID);
         }
         private void Modificar()
         {
             try
             {
                 Console.Clear();
-                Console.Write("Ingrese el ID de la especialidad del plan a modificar: ");
+                Console.Write("Ingrese el ID de la especialidad a modificar: ");
                 int ID = int.Parse(Console.ReadLine());
-                Plan plan = PlanNegocio.GetOne(ID);
+                //Plan plan = PlanNegocio.GetOne(ID);                                   mepa que esto esta mal, directamente tendriamos que pedir el id de la materia
+                Materia materia = MateriaNegocio.GetOne(ID);
 
-                Console.Write("Ingrese la descripcion del plan a modificar: ");
-                plan.Descripcion = Console.ReadLine();
+                Console.Write("Ingrese la nueva descripcion: ");
+                materia.Descripcion = Console.ReadLine();
 
-                plan.State = BusinessEntity.States.Modified;
+                Console.Write("Ingrese el nuevo total de horas semanales: ");
+                materia.HSSSemanales = int.Parse(Console.ReadLine());
 
-                PlanNegocio.Save(plan);
+                Console.Write("Ingrese el nuevo total de horas: ");
+                materia.HSTotales = int.Parse(Console.ReadLine());
+
+                materia.State = BusinessEntity.States.Modified;
+
+                MateriaNegocio.Save(materia);
             }
             catch (FormatException) 
             {
@@ -152,9 +163,9 @@ namespace UI.Consola
             try
             {
                 Console.Clear();
-                Console.Write("Ingrese el ID del plan a eliminar: ");
+                Console.Write("Ingrese el ID de la materia a eliminar: ");
                 int ID = int.Parse(Console.ReadLine());
-                PlanNegocio.Delete(ID);
+                MateriaNegocio.Delete(ID);
             }
             catch (FormatException)
             {
@@ -171,14 +182,14 @@ namespace UI.Consola
             }
         }
 
-        private void MostrarDatos(Plan plan)
+        private void MostrarDatos(Materia mat)
         {
-            Console.WriteLine("Plan: {0}", plan.ID);
-            Console.WriteLine("\t\t ID Especialidad: {0} ", plan.IDEspecialidad);
-            Console.WriteLine("\t\t Descripcion: {0} ", plan.Descripcion);
+            Console.WriteLine("Materia: {0}", mat.ID);
+            Console.WriteLine("\t\t ID Especialidad: {0} ", mat.IDEspecialidad);
+            Console.WriteLine("\t\t Descripcion: {0} ", mat.Descripcion);
+            Console.WriteLine("\t\t Horas semanales: {0} ", mat.HSSSemanales);
+            Console.WriteLine("\t\t Horas totales: {0} ", mat.HSTotales);
             Console.WriteLine();
         }
     }
-
 }
-
