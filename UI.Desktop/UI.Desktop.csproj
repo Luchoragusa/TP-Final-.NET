@@ -123,6 +123,9 @@
     <EmbeddedResource Include="Materia.resx">
       <DependentUpon>Materia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MateriaDesktop.resx">
+      <DependentUpon>MateriaDesktop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Plan.resx">
       <DependentUpon>Plan.cs</DependentUpon>
     </EmbeddedResource>

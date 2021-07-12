@@ -19,8 +19,8 @@ namespace Business.Logic
 
         public MateriaAdapter MateriaData
         {
-            get { return MateriaData; }
-            set { MateriaData = value; }
+            get { return materiaData; }
+            set { materiaData = value; }
         }
 
 
