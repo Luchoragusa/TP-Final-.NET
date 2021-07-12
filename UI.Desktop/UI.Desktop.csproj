@@ -64,6 +64,18 @@
     <Compile Include="ComisionesDesktop.Designer.cs">
       <DependentUpon>ComisionesDesktop.cs</DependentUpon>
     </Compile>
+    <Compile Include="MateriaDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MateriaDesktop.Designer.cs">
+      <DependentUpon>MateriaDesktop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Materia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materia.Designer.cs">
+      <DependentUpon>Materia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Plan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ComisionesDesktop.resx">
       <DependentUpon>ComisionesDesktop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Materia.resx">
+      <DependentUpon>Materia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Plan.resx">
       <DependentUpon>Plan.cs</DependentUpon>

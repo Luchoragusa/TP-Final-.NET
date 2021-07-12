@@ -10,7 +10,7 @@ using Business.Logic;
 
 namespace UI.Desktop
 {
-    public partial class PlanDesktop : UI.Desktop.ApplicationForm
+    public partial class PlanDesktop : ApplicationForm
     {
         public PlanDesktop()
         {
