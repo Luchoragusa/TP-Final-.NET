@@ -17,7 +17,7 @@ namespace UI.Desktop
             InitializeComponent();
         }
 
-        public PlanDesktop(ModoForm modo)
+        public PlanDesktop(ModoForm modo) : this()
         {
             this.Modo = modo;
             PlanActual = new Business.Entities.Plan();

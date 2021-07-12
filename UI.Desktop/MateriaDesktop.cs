@@ -17,7 +17,7 @@ namespace UI.Desktop
             InitializeComponent();
         }
 
-        public MateriaDesktop(ModoForm modo)
+        public MateriaDesktop(ModoForm modo) : this()
         {
             this.Modo = modo;
             //MateriaActual = new Business.Entities.Materia();
@@ -103,12 +103,16 @@ namespace UI.Desktop
             return true;
         }
 
-        private void btnModo_Click(object sender, EventArgs e)
+        private void btnModo_Click_1(object sender, EventArgs e)
         {
-
+            if (Validar())
+            {
+                GuardarCambios();
+                this.Close();
+            }
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void btnCancelar_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
