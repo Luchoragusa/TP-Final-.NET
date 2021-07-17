@@ -183,6 +183,7 @@ namespace UI.Desktop
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(748, 413);
             this.Controls.Add(this.tcPlanes);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Plan";
             this.Text = "Plan";
             this.tcPlanes.ContentPanel.ResumeLayout(false);

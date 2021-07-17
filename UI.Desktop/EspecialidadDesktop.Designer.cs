@@ -1,7 +1,7 @@
 ﻿
 namespace UI.Desktop
 {
-    partial class ApplicationForm
+    partial class EspecialidadDesktop
     {
         /// <summary>
         /// Required designer variable.
@@ -31,14 +31,14 @@ namespace UI.Desktop
         {
             this.SuspendLayout();
             // 
-            // ApplicationForm
+            // EspecialidadDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "ApplicationForm";
-            this.Text = "ApplicationForm";
+            this.Name = "EspecialidadDesktop";
+            this.Text = "EspecialidadDesktop";
             this.ResumeLayout(false);
 
         }

@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessEntity.cs" />
+    <Compile Include="Especialidad.cs" />
     <Compile Include="Comision.cs" />
     <Compile Include="Materia.cs" />
     <Compile Include="Modulo.cs" />

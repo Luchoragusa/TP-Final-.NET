@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Especialidad.cs" />
     <Compile Include="Comisiones.cs" />
     <Compile Include="Materias.cs" />
     <Compile Include="Planes.cs" />

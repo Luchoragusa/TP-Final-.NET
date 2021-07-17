@@ -51,7 +51,7 @@ namespace UI.Desktop
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.62645F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.37355F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 84F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 91F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.txtID, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtDesc, 1, 1);
@@ -81,7 +81,7 @@ namespace UI.Desktop
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(135, 3);
+            this.txtID.Location = new System.Drawing.Point(134, 3);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(256, 20);
@@ -89,14 +89,14 @@ namespace UI.Desktop
             // 
             // txtDesc
             // 
-            this.txtDesc.Location = new System.Drawing.Point(135, 30);
+            this.txtDesc.Location = new System.Drawing.Point(134, 30);
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(256, 20);
             this.txtDesc.TabIndex = 1;
             // 
             // txtIDEspecialidad
             // 
-            this.txtIDEspecialidad.Location = new System.Drawing.Point(135, 58);
+            this.txtIDEspecialidad.Location = new System.Drawing.Point(134, 58);
             this.txtIDEspecialidad.Name = "txtIDEspecialidad";
             this.txtIDEspecialidad.Size = new System.Drawing.Size(256, 20);
             this.txtIDEspecialidad.TabIndex = 2;
@@ -139,7 +139,7 @@ namespace UI.Desktop
             // 
             // btnModo
             // 
-            this.btnModo.Location = new System.Drawing.Point(434, 423);
+            this.btnModo.Location = new System.Drawing.Point(433, 423);
             this.btnModo.Name = "btnModo";
             this.btnModo.Size = new System.Drawing.Size(75, 23);
             this.btnModo.TabIndex = 7;
@@ -149,7 +149,7 @@ namespace UI.Desktop
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(518, 423);
+            this.btnCancelar.Location = new System.Drawing.Point(517, 423);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 8;
@@ -168,14 +168,14 @@ namespace UI.Desktop
             // 
             // txtHSSemanales
             // 
-            this.txtHSSemanales.Location = new System.Drawing.Point(135, 87);
+            this.txtHSSemanales.Location = new System.Drawing.Point(134, 87);
             this.txtHSSemanales.Name = "txtHSSemanales";
             this.txtHSSemanales.Size = new System.Drawing.Size(256, 20);
             this.txtHSSemanales.TabIndex = 15;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(135, 116);
+            this.textBox2.Location = new System.Drawing.Point(134, 116);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(256, 20);
             this.textBox2.TabIndex = 16;
@@ -185,6 +185,7 @@ namespace UI.Desktop
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(606, 450);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MateriaDesktop";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
