@@ -26,7 +26,14 @@ namespace UI.Desktop
         public void Listar()
         {
             ComisionLogic cl = new ComisionLogic();
-            this.dgvComisiones.DataSource = cl.GetAll();
+            try
+            {
+                this.dgvComisiones.DataSource = cl.GetAll();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "Error detected: ", "Ha habido un error interno.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }           
         }
 
         private void Comisiones_Load(object sender, EventArgs e)
@@ -47,8 +54,15 @@ namespace UI.Desktop
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
             ComisionesDesktop formCDesktop = new ComisionesDesktop(ApplicationForm.ModoForm.Alta);
-            formCDesktop.ShowDialog();
-            this.Listar();
+            try
+            {
+                formCDesktop.ShowDialog();
+                this.Listar();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }            
         }
 
         private void tsbEditar_Click(object sender, EventArgs e)
@@ -59,9 +73,17 @@ namespace UI.Desktop
                 return;
             }
             int ID = ((Business.Entities.Comision)this.dgvComisiones.SelectedRows[0].DataBoundItem).ID;
+
             ComisionesDesktop formCDesktop = new ComisionesDesktop(ID, ApplicationForm.ModoForm.Modificacion);
-            formCDesktop.ShowDialog();
-            this.Listar();
+            try
+            {
+                formCDesktop.ShowDialog();
+                this.Listar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "Error detected: ", "Ha habido un error interno.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }            
         }
 
         private void tsbEliminar_Click(object sender, EventArgs e)
@@ -72,9 +94,17 @@ namespace UI.Desktop
                 return;
             }
             int ID = ((Business.Entities.Comision)this.dgvComisiones.SelectedRows[0].DataBoundItem).ID;
+
             ComisionesDesktop formCDesktop = new ComisionesDesktop(ID, ApplicationForm.ModoForm.Baja);
-            formCDesktop.ShowDialog();
-            this.Listar();
+            try
+            {
+                formCDesktop.ShowDialog();
+                this.Listar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "Error detected: ", "Ha habido un error interno.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }            
         }
     }
 }

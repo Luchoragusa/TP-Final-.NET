@@ -25,7 +25,14 @@ namespace UI.Desktop
         {
             InitializeComponent();
             EspecialidadLogic esp = new EspecialidadLogic();
-            this.dgvEspecialidad.DataSource = esp.GetAll();
+            try
+            {
+                this.dgvEspecialidad.DataSource = esp.GetAll();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }            
         }
 
         private void Especialidad_Load(object sender, EventArgs e)

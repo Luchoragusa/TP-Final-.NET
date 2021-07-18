@@ -23,7 +23,14 @@ namespace UI.Desktop
         public void Listar()
         {
             MateriaLogic mat = new MateriaLogic();
-            this.dgvMaterias.DataSource = mat.GetAll();
+            try
+            {
+                this.dgvMaterias.DataSource = mat.GetAll();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "Error detected: ", "Ha habido un error interno.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }            
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -44,8 +51,15 @@ namespace UI.Desktop
         private void tsbNuevo_Click_1(object sender, EventArgs e)
         {
             MateriaDesktop formMDesktop = new MateriaDesktop(ApplicationForm.ModoForm.Alta);
-            formMDesktop.ShowDialog();
-            this.Listar();
+            try
+            {
+                formMDesktop.ShowDialog();
+                this.Listar();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }            
         }
 
         private void tsbEditar_Click_1(object sender, EventArgs e)
@@ -57,9 +71,18 @@ namespace UI.Desktop
 
             }
             int ID = ((Business.Entities.Materia)this.dgvMaterias.SelectedRows[0].DataBoundItem).ID;
-            MateriaDesktop formPlan = new MateriaDesktop(ID, ApplicationForm.ModoForm.Modificacion);
-            formPlan.ShowDialog();
-            this.Listar();
+
+            MateriaDesktop formMateria = new MateriaDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+            try
+            {
+                formMateria.ShowDialog();
+                this.Listar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "Error detected: ", "Ha habido un error interno.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void tsbEliminar_Click_1(object sender, EventArgs e)
@@ -70,9 +93,17 @@ namespace UI.Desktop
                 return;
             }
             int ID = ((Business.Entities.Plan)this.dgvMaterias.SelectedRows[0].DataBoundItem).ID;
-            MateriaDesktop formPlan = new MateriaDesktop(ID, ApplicationForm.ModoForm.Baja);
-            formPlan.ShowDialog();
-            this.Listar();
+
+            MateriaDesktop formMateria = new MateriaDesktop(ID, ApplicationForm.ModoForm.Baja);
+            try
+            {
+                formMateria.ShowDialog();
+                this.Listar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "Error detected: ", "Ha habido un error interno.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }            
         }
     }
 }

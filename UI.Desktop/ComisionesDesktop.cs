@@ -30,8 +30,15 @@ namespace UI.Desktop
         {
             this.Modo = modo;
             Business.Logic.ComisionLogic coml = new Business.Logic.ComisionLogic();
-            ComisionActual = coml.GetOne(ID);
-            MapearDeDatos();
+            try
+            {
+                ComisionActual = coml.GetOne(ID);
+                MapearDeDatos();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }            
         }
 
         public override void MapearDeDatos()
@@ -73,8 +80,14 @@ namespace UI.Desktop
         {
             MapearADatos();
             ComisionLogic ComisionLogic = new ComisionLogic();
-
-            ComisionLogic.Save(ComisionActual);
+            try
+            {
+                ComisionLogic.Save(ComisionActual);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public override bool Validar()
@@ -105,7 +118,6 @@ namespace UI.Desktop
             }
             return true;
         }
-
         private void btnModo_Click(object sender, EventArgs e)
         {
             if (Validar())
@@ -114,7 +126,6 @@ namespace UI.Desktop
                 this.Close();
             }
         }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();

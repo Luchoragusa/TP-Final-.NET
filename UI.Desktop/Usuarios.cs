@@ -22,34 +22,43 @@ namespace UI.Desktop
             this.dgvUsuarios.ReadOnly = true;
             //this.dgvUsuarios.ColumnAdded = false;
             //this.dgvUsuarios.ColumnRemoved = false;
-        }
-        
+        }     
         public void Listar()
         {
             UsuarioLogic ul = new UsuarioLogic();
-            this.dgvUsuarios.DataSource = ul.GetAll();
+            try
+            {
+                this.dgvUsuarios.DataSource = ul.GetAll();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "Error: ", "Ha habido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }       
         }
-
         private void Usuarios_Load(object sender, EventArgs e)
         {
             Listar();
         }
-
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             Listar();
         }
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
             UsuarioDesktop formUDesktop = new UsuarioDesktop(ApplicationForm.ModoForm.Alta);
-            formUDesktop.ShowDialog();
-            this.Listar();
+            try
+            {
+                formUDesktop.ShowDialog();
+                Listar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "Error: ", "Ha habido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }    
         }
 
         private void tsbEditar_Click(object sender, EventArgs e)
@@ -60,9 +69,17 @@ namespace UI.Desktop
                 return;
             }
             int ID = ((Business.Entities.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
-            UsuarioDesktop formUsuario = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Modificacion); 
-            formUsuario.ShowDialog();
-            this.Listar();
+
+            UsuarioDesktop formUsuario = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+            try
+            {
+                formUsuario.ShowDialog();
+                this.Listar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "Error: ", "Ha habido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }         
         }
 
         private void tsbEliminar_Click(object sender, EventArgs e)
@@ -73,9 +90,17 @@ namespace UI.Desktop
                 return;
             }
             int ID = ((Business.Entities.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
+
             UsuarioDesktop formUsuario = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Baja);
-            formUsuario.ShowDialog();
-            this.Listar();
+            try
+            {
+                formUsuario.ShowDialog();
+                this.Listar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "Error: ", "Ha habido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

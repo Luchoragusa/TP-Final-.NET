@@ -30,8 +30,15 @@ namespace UI.Desktop
         {
             this.Modo = modo;
             MateriaLogic mat = new MateriaLogic();
-            MateriaActual = mat.GetOne(ID);
-            MapearDeDatos();
+            try
+            {
+                MateriaActual = mat.GetOne(ID);
+                MapearDeDatos();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }            
         }
   
         public override void MapearDeDatos()
@@ -76,8 +83,14 @@ namespace UI.Desktop
         {
             MapearADatos();
             MateriaLogic materiaLogic = new MateriaLogic();
-
-            materiaLogic.Save(MateriaActual);
+            try
+            {
+                materiaLogic.Save(MateriaActual);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }            
         }
 
         public override bool Validar()

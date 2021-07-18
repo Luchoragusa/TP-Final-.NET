@@ -17,30 +17,52 @@ namespace Business.Logic
         }
         public Data.Database.ComisionAdapter ComisionData
         {
-            get
-            {
-                return comData;
-            }
-            set
-            {
-                comData = value;
-            }
+            get{ return comData;}
+            set{ comData = value;}
         }
         public Business.Entities.Comision GetOne(int id)
         {
-            return ComisionData.GetOne(id);
+            try
+            {
+                return ComisionData.GetOne(id);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         public List<Comision> GetAll()
         {
-            return ComisionData.GetAll();
+            try
+            {
+                return ComisionData.GetAll();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }       
         }
         public void Save(Business.Entities.Comision comision)
         {
-            ComisionData.Save(comision);
+            try
+            {
+                ComisionData.Save(comision);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }   
         }
         public void Delete(int id)
         {
-            ComisionData.Delete(id);
+            try
+            {
+                ComisionData.Delete(id);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }  
         }
     }
 }

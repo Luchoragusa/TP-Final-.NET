@@ -16,38 +16,56 @@ namespace Business.Logic
         {
             usData = new Data.Database.UsuarioAdapter();
         }
-
         public Data.Database.UsuarioAdapter UsuarioData
         {
-            get 
-            {
-               return usData; 
-            }
-            set
-            {
-                usData = value; 
-            }
+            get { return usData;}
+            set { usData = value;}
         }
-
-
         public Business.Entities.Usuario GetOne(int id)
         {
-            return UsuarioData.GetOne(id);
+            try
+            {
+                return UsuarioData.GetOne(id);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public List<Usuario> GetAll()
         {
-            return UsuarioData.GetAll();                
+            try
+            {
+                return UsuarioData.GetAll();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }                
         }                                               
 
         public void Save(Business.Entities.Usuario usuario)
         {
-            UsuarioData.Save(usuario);
+            try
+            {
+                UsuarioData.Save(usuario);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         public void Delete(int id)
         {
-            UsuarioData.Delete(id);
+            try
+            {
+                UsuarioData.Delete(id);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
-
     }
 }

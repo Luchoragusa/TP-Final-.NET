@@ -16,31 +16,56 @@ namespace Business.Logic
         {
             materiaData = new MateriaAdapter();
         }
-
         public MateriaAdapter MateriaData
         {
             get { return materiaData; }
             set { materiaData = value; }
         }
-
-
         public Materia GetOne(int id)
         {
-            return MateriaData.GetOne(id);
+            try
+            {
+                return MateriaData.GetOne(id);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }  
         }
 
         public List<Materia> GetAll()
         {
-            return MateriaData.GetAll();                //este llama al otro getAll y es un pasamanos, es decir
-        }                                               //le pide a pepito y pepito pide, se lo pasa y se lo vuelve a pasar
+            try
+            {
+                return MateriaData.GetAll();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }               
+        }                                               
 
         public void Save(Materia plan)
         {
-            MateriaData.Save(plan);
+            try
+            {
+                MateriaData.Save(plan);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         public void Delete(int id)
         {
-            MateriaData.Delete(id);
+            try
+            {
+                MateriaData.Delete(id);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

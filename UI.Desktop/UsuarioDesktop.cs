@@ -26,8 +26,15 @@ namespace UI.Desktop
         {
             this.Modo = modo;
             UsuarioLogic usLogic = new UsuarioLogic();
-            UsuarioActual = usLogic.GetOne(ID);
-            MapearDeDatos();
+            try
+            {
+                UsuarioActual = usLogic.GetOne(ID);
+                MapearDeDatos();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }  
         }
 
         private Usuario _usActual;
@@ -95,7 +102,14 @@ namespace UI.Desktop
         {
             MapearADatos();
             UsuarioLogic usuarioLogic = new UsuarioLogic();
-            usuarioLogic.Save(UsuarioActual);
+            try
+            {
+                usuarioLogic.Save(UsuarioActual);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            } 
         }
         public override bool Validar()
         {

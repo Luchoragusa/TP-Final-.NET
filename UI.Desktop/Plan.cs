@@ -24,7 +24,14 @@ namespace UI.Desktop
         public void Listar()
         {
             PlanLogic pl = new PlanLogic();
-            this.dgvPlanes.DataSource = pl.GetAll();
+            try
+            {
+                this.dgvPlanes.DataSource = pl.GetAll();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "Error detected: ", "Ha habido un error interno.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }    
         }
 
         private void Planes_Load(object sender, EventArgs e)
@@ -45,8 +52,15 @@ namespace UI.Desktop
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
             PlanDesktop formPDesktop = new PlanDesktop(ApplicationForm.ModoForm.Alta);
-            formPDesktop.ShowDialog();
-            this.Listar();
+            try
+            {
+                formPDesktop.ShowDialog();
+                this.Listar();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }            
         }
 
         private void tsbEditar_Click(object sender, EventArgs e)
@@ -58,9 +72,17 @@ namespace UI.Desktop
                 
             }
             int ID = ((Business.Entities.Plan)this.dgvPlanes.SelectedRows[0].DataBoundItem).ID;
+
             PlanDesktop formPlan = new PlanDesktop(ID, ApplicationForm.ModoForm.Modificacion);
-            formPlan.ShowDialog();
-            this.Listar();
+            try
+            {
+                formPlan.ShowDialog();
+                this.Listar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "Error detected: ", "Ha habido un error interno.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }    
         }
 
         private void tsbEliminar_Click(object sender, EventArgs e)
@@ -71,9 +93,17 @@ namespace UI.Desktop
                 return;
             }
             int ID = ((Business.Entities.Plan)this.dgvPlanes.SelectedRows[0].DataBoundItem).ID;
+
             PlanDesktop formPlan = new PlanDesktop(ID, ApplicationForm.ModoForm.Baja);
-            formPlan.ShowDialog();
-            this.Listar();
+            try
+            {
+                formPlan.ShowDialog();
+                this.Listar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "Error detected: ", "Ha habido un error interno.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

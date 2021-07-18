@@ -16,31 +16,54 @@ namespace Business.Logic
         {
             planData = new Data.Database.PlanAdapter();
         }
-
         public Data.Database.PlanAdapter PlanData
         {
-            get { return planData;}
-            set{ planData = value; }
+            get{ return planData;}
+            set{ planData = value;}
         }
-
-
         public Business.Entities.Plan GetOne(int id)
         {
-            return PlanData.GetOne(id);
+            try
+            {
+                return PlanData.GetOne(id);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }     
         }
-
         public List<Plan> GetAll()
         {
-            return PlanData.GetAll();                //este llama al otro getAll y es un pasamanos, es decir
-        }                                               //le pide a pepito y pepito pide, se lo pasa y se lo vuelve a pasar
-
+            try
+            {
+                return PlanData.GetAll();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }                    
+        }                                               
         public void Save(Business.Entities.Plan plan)
         {
-            PlanData.Save(plan);
+            try
+            {
+                PlanData.Save(plan);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }        
         }
         public void Delete(int id)
         {
-            PlanData.Delete(id);
+            try
+            {
+                PlanData.Delete(id);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

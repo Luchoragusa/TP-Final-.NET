@@ -10,7 +10,7 @@ using Business.Logic;
 
 namespace UI.Desktop
 {
-    public partial class PlanDesktop : ApplicationForm
+    public partial class PlanDesktop : UI.Desktop.ApplicationForm
     {
         public PlanDesktop()
         {
@@ -30,8 +30,15 @@ namespace UI.Desktop
         {
             this.Modo = modo;
             Business.Logic.PlanLogic pl = new Business.Logic.PlanLogic();
-            PlanActual = pl.GetOne(ID);
-            MapearDeDatos();
+            try
+            {
+                PlanActual = pl.GetOne(ID);
+                MapearDeDatos();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }            
         }
   
         public override void MapearDeDatos()
@@ -72,8 +79,14 @@ namespace UI.Desktop
         {
             MapearADatos();
             PlanLogic planLogic = new PlanLogic();
-
-            planLogic.Save(PlanActual);
+            try
+            {
+                planLogic.Save(PlanActual);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }            
         }
 
         public override bool Validar()
@@ -98,7 +111,6 @@ namespace UI.Desktop
             }
             return true;
         }
-
         private void btnModo_Click(object sender, EventArgs e)
         {
             if (Validar())
@@ -107,7 +119,6 @@ namespace UI.Desktop
                 this.Close();
             }
         }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
