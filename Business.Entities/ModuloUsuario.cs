@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Business.Entities
 {
-    class ModuloUsuario
+    public class ModuloUsuario
     {
         private int idUsuario, idModulo;
         private bool permiteAlta, permiteBaja, permiteModificacion, permiteConsulta; 
