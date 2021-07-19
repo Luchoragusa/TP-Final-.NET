@@ -111,15 +111,15 @@ namespace UI.Consola
                 Especialidad especialidad = new Especialidad();
                 Console.Clear();
 
-                Console.Write("Ingrese ID de la especialidad: ");
-                especialidad.IDEspecialidad = int.Parse(Console.ReadLine());
+              /*  Console.Write("Ingrese ID de la especialidad: ");
+                especialidad.IDEspecialidad = int.Parse(Console.ReadLine()); */
 
                 Console.Write("Ingrese la descripcion de la especialidad: ");
-                especialidad.Descripcion = Console.ReadLine();
+                especialidad.DescEspecialidad = Console.ReadLine();
 
                 EspecialidadNegocio.Save(especialidad);
                 Console.WriteLine();
-                Console.WriteLine("ID: {0}", especialidad.IDEspecialidad);
+               // Console.WriteLine("ID: {0}", especialidad.IDEspecialidad);
             }
             private void Modificar()
             {
@@ -132,7 +132,7 @@ namespace UI.Consola
                     Especialidad especialidad = EspecialidadNegocio.GetOne(ID);
 
                     Console.Write("Ingrese la nueva descripcion: ");
-                    especialidad.Descripcion = Console.ReadLine();
+                    especialidad.DescEspecialidad = Console.ReadLine();
 
                     especialidad.State = BusinessEntity.States.Modified;
 
@@ -173,8 +173,8 @@ namespace UI.Consola
 
             private void MostrarDatos(Especialidad esp)
             {
-                Console.WriteLine("Especialidad: {0}", esp.IDEspecialidad);
-                Console.WriteLine("\t\t Descripcion: {0} ", esp.Descripcion);
+               /* Console.WriteLine("Especialidad: {0}", esp.IDEspecialidad);*/
+                Console.WriteLine("\t\t Descripcion: {0} ", esp.DescEspecialidad);
                 Console.WriteLine();
             }
         }

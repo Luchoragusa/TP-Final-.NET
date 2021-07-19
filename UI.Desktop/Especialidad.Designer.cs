@@ -32,20 +32,20 @@ namespace UI.Desktop
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Especialidad));
             this.tcPlanes = new System.Windows.Forms.ToolStripContainer();
             this.tlPlanes = new System.Windows.Forms.TableLayoutPanel();
-            this.dgvComisiones = new System.Windows.Forms.DataGridView();
+            this.dgvEspecialidades = new System.Windows.Forms.DataGridView();
+            this.IDEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.tsPlanes = new System.Windows.Forms.ToolStrip();
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
-            this.IDEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tcPlanes.ContentPanel.SuspendLayout();
             this.tcPlanes.TopToolStripPanel.SuspendLayout();
             this.tcPlanes.SuspendLayout();
             this.tlPlanes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvComisiones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEspecialidades)).BeginInit();
             this.tsPlanes.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,7 +72,7 @@ namespace UI.Desktop
             this.tlPlanes.ColumnCount = 2;
             this.tlPlanes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlPlanes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tlPlanes.Controls.Add(this.dgvComisiones, 0, 0);
+            this.tlPlanes.Controls.Add(this.dgvEspecialidades, 0, 0);
             this.tlPlanes.Controls.Add(this.btnSalir, 1, 1);
             this.tlPlanes.Controls.Add(this.btnActualizar, 0, 1);
             this.tlPlanes.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -84,18 +84,28 @@ namespace UI.Desktop
             this.tlPlanes.Size = new System.Drawing.Size(800, 425);
             this.tlPlanes.TabIndex = 0;
             // 
-            // dgvComisiones
+            // dgvEspecialidades
             // 
-            this.dgvComisiones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvComisiones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvEspecialidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEspecialidades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDEspecialidad,
             this.Descripcion});
-            this.tlPlanes.SetColumnSpan(this.dgvComisiones, 2);
-            this.dgvComisiones.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvComisiones.Location = new System.Drawing.Point(3, 3);
-            this.dgvComisiones.Name = "dgvComisiones";
-            this.dgvComisiones.Size = new System.Drawing.Size(794, 390);
-            this.dgvComisiones.TabIndex = 0;
+            this.tlPlanes.SetColumnSpan(this.dgvEspecialidades, 2);
+            this.dgvEspecialidades.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvEspecialidades.Location = new System.Drawing.Point(3, 3);
+            this.dgvEspecialidades.Name = "dgvEspecialidades";
+            this.dgvEspecialidades.Size = new System.Drawing.Size(794, 390);
+            this.dgvEspecialidades.TabIndex = 0;
+            // 
+            // IDEspecialidad
+            // 
+            this.IDEspecialidad.HeaderText = "ID_Especialidad";
+            this.IDEspecialidad.Name = "IDEspecialidad";
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
             // 
             // btnSalir
             // 
@@ -105,6 +115,7 @@ namespace UI.Desktop
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnActualizar
             // 
@@ -115,6 +126,7 @@ namespace UI.Desktop
             this.btnActualizar.TabIndex = 1;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // tsPlanes
             // 
@@ -155,16 +167,6 @@ namespace UI.Desktop
             this.tsbEliminar.Size = new System.Drawing.Size(23, 22);
             this.tsbEliminar.Text = "Eliminar";
             // 
-            // IDEspecialidad
-            // 
-            this.IDEspecialidad.HeaderText = "ID_Especialidad";
-            this.IDEspecialidad.Name = "IDEspecialidad";
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            // 
             // Especialidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,7 +181,7 @@ namespace UI.Desktop
             this.tcPlanes.ResumeLayout(false);
             this.tcPlanes.PerformLayout();
             this.tlPlanes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvComisiones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEspecialidades)).EndInit();
             this.tsPlanes.ResumeLayout(false);
             this.tsPlanes.PerformLayout();
             this.ResumeLayout(false);
@@ -190,7 +192,7 @@ namespace UI.Desktop
 
         private System.Windows.Forms.ToolStripContainer tcPlanes;
         private System.Windows.Forms.TableLayoutPanel tlPlanes;
-        private System.Windows.Forms.DataGridView dgvComisiones;
+        private System.Windows.Forms.DataGridView dgvEspecialidades;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.ToolStrip tsPlanes;
