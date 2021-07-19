@@ -47,41 +47,38 @@ namespace UI.Desktop
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.62645F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.37355F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 84F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 91F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.txtID, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtDesc, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtIDEspecialidad, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.lblIDMateria, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblDesc, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblEspecialidad, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lblHSSemanales, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.btnModo, 2, 6);
-            this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 3, 6);
             this.tableLayoutPanel1.Controls.Add(this.txtHSTotales, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.txtHSSemanales, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.btnModo, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.lblHSSemanales, 0, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 7;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.20635F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.79365F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 278F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(606, 450);
+            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(420, 342);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(134, 3);
+            this.txtID.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtID.Location = new System.Drawing.Point(131, 20);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(256, 20);
@@ -89,22 +86,25 @@ namespace UI.Desktop
             // 
             // txtDesc
             // 
-            this.txtDesc.Location = new System.Drawing.Point(134, 30);
+            this.txtDesc.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtDesc.Location = new System.Drawing.Point(131, 80);
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(256, 20);
             this.txtDesc.TabIndex = 1;
             // 
             // txtIDEspecialidad
             // 
-            this.txtIDEspecialidad.Location = new System.Drawing.Point(134, 58);
+            this.txtIDEspecialidad.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtIDEspecialidad.Location = new System.Drawing.Point(131, 140);
             this.txtIDEspecialidad.Name = "txtIDEspecialidad";
             this.txtIDEspecialidad.Size = new System.Drawing.Size(256, 20);
             this.txtIDEspecialidad.TabIndex = 2;
             // 
             // lblIDMateria
             // 
+            this.lblIDMateria.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblIDMateria.AutoSize = true;
-            this.lblIDMateria.Location = new System.Drawing.Point(3, 0);
+            this.lblIDMateria.Location = new System.Drawing.Point(3, 23);
             this.lblIDMateria.Name = "lblIDMateria";
             this.lblIDMateria.Size = new System.Drawing.Size(71, 13);
             this.lblIDMateria.TabIndex = 10;
@@ -112,8 +112,9 @@ namespace UI.Desktop
             // 
             // lblDesc
             // 
+            this.lblDesc.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblDesc.AutoSize = true;
-            this.lblDesc.Location = new System.Drawing.Point(3, 27);
+            this.lblDesc.Location = new System.Drawing.Point(3, 83);
             this.lblDesc.Name = "lblDesc";
             this.lblDesc.Size = new System.Drawing.Size(116, 13);
             this.lblDesc.TabIndex = 11;
@@ -121,8 +122,9 @@ namespace UI.Desktop
             // 
             // lblEspecialidad
             // 
+            this.lblEspecialidad.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblEspecialidad.AutoSize = true;
-            this.lblEspecialidad.Location = new System.Drawing.Point(3, 55);
+            this.lblEspecialidad.Location = new System.Drawing.Point(3, 143);
             this.lblEspecialidad.Name = "lblEspecialidad";
             this.lblEspecialidad.Size = new System.Drawing.Size(67, 13);
             this.lblEspecialidad.TabIndex = 12;
@@ -130,8 +132,9 @@ namespace UI.Desktop
             // 
             // lblHSSemanales
             // 
+            this.lblHSSemanales.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblHSSemanales.AutoSize = true;
-            this.lblHSSemanales.Location = new System.Drawing.Point(3, 84);
+            this.lblHSSemanales.Location = new System.Drawing.Point(3, 203);
             this.lblHSSemanales.Name = "lblHSSemanales";
             this.lblHSSemanales.Size = new System.Drawing.Size(90, 13);
             this.lblHSSemanales.TabIndex = 13;
@@ -139,7 +142,8 @@ namespace UI.Desktop
             // 
             // btnModo
             // 
-            this.btnModo.Location = new System.Drawing.Point(433, 423);
+            this.btnModo.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnModo.Location = new System.Drawing.Point(50, 309);
             this.btnModo.Name = "btnModo";
             this.btnModo.Size = new System.Drawing.Size(75, 23);
             this.btnModo.TabIndex = 7;
@@ -149,7 +153,8 @@ namespace UI.Desktop
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(517, 423);
+            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnCancelar.Location = new System.Drawing.Point(342, 309);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 8;
@@ -159,8 +164,9 @@ namespace UI.Desktop
             // 
             // txtHSTotales
             // 
+            this.txtHSTotales.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtHSTotales.AutoSize = true;
-            this.txtHSTotales.Location = new System.Drawing.Point(3, 113);
+            this.txtHSTotales.Location = new System.Drawing.Point(3, 263);
             this.txtHSTotales.Name = "txtHSTotales";
             this.txtHSTotales.Size = new System.Drawing.Size(73, 13);
             this.txtHSTotales.TabIndex = 14;
@@ -168,14 +174,16 @@ namespace UI.Desktop
             // 
             // txtHSSemanales
             // 
-            this.txtHSSemanales.Location = new System.Drawing.Point(134, 87);
+            this.txtHSSemanales.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtHSSemanales.Location = new System.Drawing.Point(131, 200);
             this.txtHSSemanales.Name = "txtHSSemanales";
             this.txtHSSemanales.Size = new System.Drawing.Size(256, 20);
             this.txtHSSemanales.TabIndex = 15;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(134, 116);
+            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox2.Location = new System.Drawing.Point(131, 260);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(256, 20);
             this.textBox2.TabIndex = 16;
@@ -183,9 +191,8 @@ namespace UI.Desktop
             // MateriaDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(606, 450);
+            this.ClientSize = new System.Drawing.Size(420, 342);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MateriaDesktop";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

@@ -56,7 +56,7 @@ namespace UI.Desktop
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.02564F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.97436F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 82F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 280F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 281F));
             this.tableLayoutPanel1.Controls.Add(this.txtID, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtNombre, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtEmail, 1, 2);
@@ -78,67 +78,75 @@ namespace UI.Desktop
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.20635F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.79365F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 196F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(700, 328);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(661, 283);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(74, 3);
+            this.txtID.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtID.Location = new System.Drawing.Point(65, 20);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(256, 20);
+            this.txtID.Size = new System.Drawing.Size(229, 20);
             this.txtID.TabIndex = 0;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(74, 37);
+            this.txtNombre.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtNombre.Location = new System.Drawing.Point(65, 80);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(256, 20);
+            this.txtNombre.Size = new System.Drawing.Size(229, 20);
             this.txtNombre.TabIndex = 1;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(74, 72);
+            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtEmail.Location = new System.Drawing.Point(65, 140);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(256, 20);
+            this.txtEmail.Size = new System.Drawing.Size(229, 20);
             this.txtEmail.TabIndex = 2;
             // 
             // txtClave
             // 
-            this.txtClave.Location = new System.Drawing.Point(74, 101);
+            this.txtClave.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtClave.Location = new System.Drawing.Point(65, 200);
             this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(256, 20);
+            this.txtClave.Size = new System.Drawing.Size(229, 20);
             this.txtClave.TabIndex = 3;
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(422, 37);
+            this.txtApellido.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtApellido.Location = new System.Drawing.Point(382, 80);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(256, 20);
             this.txtApellido.TabIndex = 4;
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(422, 72);
+            this.txtUsuario.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtUsuario.Location = new System.Drawing.Point(382, 140);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(256, 20);
             this.txtUsuario.TabIndex = 5;
             // 
             // txtConfClave
             // 
-            this.txtConfClave.Location = new System.Drawing.Point(422, 101);
+            this.txtConfClave.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtConfClave.Location = new System.Drawing.Point(382, 200);
             this.txtConfClave.Name = "txtConfClave";
             this.txtConfClave.Size = new System.Drawing.Size(256, 20);
             this.txtConfClave.TabIndex = 6;
             // 
             // btnModo
             // 
-            this.btnModo.Location = new System.Drawing.Point(340, 134);
+            this.btnModo.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnModo.Location = new System.Drawing.Point(301, 250);
             this.btnModo.Name = "btnModo";
             this.btnModo.Size = new System.Drawing.Size(75, 23);
             this.btnModo.TabIndex = 7;
@@ -148,7 +156,8 @@ namespace UI.Desktop
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(422, 134);
+            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnCancelar.Location = new System.Drawing.Point(583, 250);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 8;
@@ -158,8 +167,9 @@ namespace UI.Desktop
             // 
             // chkHabilitado
             // 
+            this.chkHabilitado.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.chkHabilitado.AutoSize = true;
-            this.chkHabilitado.Location = new System.Drawing.Point(340, 3);
+            this.chkHabilitado.Location = new System.Drawing.Point(303, 21);
             this.chkHabilitado.Name = "chkHabilitado";
             this.chkHabilitado.Size = new System.Drawing.Size(73, 17);
             this.chkHabilitado.TabIndex = 9;
@@ -168,8 +178,9 @@ namespace UI.Desktop
             // 
             // lblID
             // 
+            this.lblID.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(3, 0);
+            this.lblID.Location = new System.Drawing.Point(3, 23);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(18, 13);
             this.lblID.TabIndex = 10;
@@ -177,8 +188,9 @@ namespace UI.Desktop
             // 
             // lblNombre
             // 
+            this.lblNombre.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(3, 34);
+            this.lblNombre.Location = new System.Drawing.Point(3, 83);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(44, 13);
             this.lblNombre.TabIndex = 11;
@@ -186,8 +198,9 @@ namespace UI.Desktop
             // 
             // lblEmail
             // 
+            this.lblEmail.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(3, 69);
+            this.lblEmail.Location = new System.Drawing.Point(3, 143);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(32, 13);
             this.lblEmail.TabIndex = 12;
@@ -195,8 +208,9 @@ namespace UI.Desktop
             // 
             // lblClave
             // 
+            this.lblClave.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblClave.AutoSize = true;
-            this.lblClave.Location = new System.Drawing.Point(3, 98);
+            this.lblClave.Location = new System.Drawing.Point(3, 203);
             this.lblClave.Name = "lblClave";
             this.lblClave.Size = new System.Drawing.Size(34, 13);
             this.lblClave.TabIndex = 13;
@@ -204,8 +218,9 @@ namespace UI.Desktop
             // 
             // lblApellido
             // 
+            this.lblApellido.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(340, 34);
+            this.lblApellido.Location = new System.Drawing.Point(300, 83);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(44, 13);
             this.lblApellido.TabIndex = 14;
@@ -213,8 +228,9 @@ namespace UI.Desktop
             // 
             // lblUsuario
             // 
+            this.lblUsuario.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(340, 69);
+            this.lblUsuario.Location = new System.Drawing.Point(300, 143);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(43, 13);
             this.lblUsuario.TabIndex = 15;
@@ -222,8 +238,9 @@ namespace UI.Desktop
             // 
             // lblConfirmarClave
             // 
+            this.lblConfirmarClave.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblConfirmarClave.AutoSize = true;
-            this.lblConfirmarClave.Location = new System.Drawing.Point(340, 98);
+            this.lblConfirmarClave.Location = new System.Drawing.Point(300, 197);
             this.lblConfirmarClave.Name = "lblConfirmarClave";
             this.lblConfirmarClave.Size = new System.Drawing.Size(54, 26);
             this.lblConfirmarClave.TabIndex = 16;
@@ -232,9 +249,8 @@ namespace UI.Desktop
             // UsuarioDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(700, 328);
+            this.ClientSize = new System.Drawing.Size(661, 283);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "UsuarioDesktop";
             this.Text = "Usuario";
             this.tableLayoutPanel1.ResumeLayout(false);

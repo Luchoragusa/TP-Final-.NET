@@ -7,8 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Business.Entities;
-using Business.Logic;
 
 namespace UI.Desktop
 {
@@ -17,37 +15,6 @@ namespace UI.Desktop
         public Especialidad()
         {
             InitializeComponent();
-            this.dgvEspecialidad.AutoGenerateColumns = false;
-            this.dgvEspecialidad.ReadOnly = true;
-        }
-        public void Listar()
-
-        {
-            InitializeComponent();
-            EspecialidadLogic esp = new EspecialidadLogic();
-            try
-            {
-                this.dgvEspecialidad.DataSource = esp.GetAll();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }            
-        }
-
-        private void Especialidad_Load(object sender, EventArgs e)
-        {
-            this.Listar();
-        }
-
-        private void btnActualizar_Click(object sender, EventArgs e)
-        {
-            this.Listar();
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
