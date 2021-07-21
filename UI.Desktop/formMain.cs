@@ -30,5 +30,11 @@ namespace UI.Desktop
                 this.Dispose();
             }
         }
+
+        private void btn_Usuario_Click(object sender, EventArgs e)
+        {
+            Usuarios us = new Usuarios();
+            us.ShowDialog();
+        }
     }
 }
