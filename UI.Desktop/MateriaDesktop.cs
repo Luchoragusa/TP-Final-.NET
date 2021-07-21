@@ -107,7 +107,7 @@ namespace UI.Desktop
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (Validaciones.validarTexto(txtIDPlan.Text))    //quitamos el "!", siguiendo logica de UsuarioDesktop 
+            if (Validaciones.validarTexto(txtIDPlan.Text))
             {
                 Notificar("ID incorrecta.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
