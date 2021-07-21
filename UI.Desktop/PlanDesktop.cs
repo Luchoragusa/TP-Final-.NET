@@ -47,32 +47,39 @@ namespace UI.Desktop
             this.txtDesc.Text = this.PlanActual.Descripcion;
             this.txtIDEspecialidad.Text = this.PlanActual.IDEspecialidad.ToString();
 
-            if (Modo == ModoForm.Consulta) this.btnModo.Text = "Aceptar";
-            else if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion) this.btnModo.Text = "Guardar";
+            if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion) this.btnModo.Text = "Guardar";
             else if (Modo == ModoForm.Baja) this.btnModo.Text = "Eliminar";
         }
 
         public override void MapearADatos()
         {
-            if (Modo == ModoForm.Alta)
+            try
             {
-                PlanActual = new Business.Entities.Plan();
-                PlanActual.State = BusinessEntity.States.New;
-            }
-
-            if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
-            {
-                if (Modo != ModoForm.Alta)
+                if (Modo == ModoForm.Alta)
                 {
-                    PlanActual.State = BusinessEntity.States.Modified;
-                    this.txtID.Text = this.PlanActual.ID.ToString();
+                    PlanActual = new Business.Entities.Plan();
+                    PlanActual.State = BusinessEntity.States.New;
                 }
-                this.PlanActual.Descripcion = this.txtDesc.Text;
-                this.PlanActual.IDEspecialidad = Convert.ToInt32(this.txtIDEspecialidad.Text);
+
+                if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
+                {
+                    if (Modo != ModoForm.Alta)
+                    {
+                        PlanActual.State = BusinessEntity.States.Modified;
+                        this.txtID.Text = this.PlanActual.ID.ToString();
+                    }
+                    this.PlanActual.Descripcion = this.txtDesc.Text;
+                    this.PlanActual.IDEspecialidad = int.Parse(this.txtIDEspecialidad.Text);
+                }
+
+                if (this.Modo == ModoForm.Baja) PlanActual.State = BusinessEntity.States.Deleted;
+                if (this.Modo == ModoForm.Consulta) PlanActual.State = BusinessEntity.States.Unmodified;
+            }
+            catch (Exception)
+            {
+                Notificar("Error", "Se produjo un error al conectar con la BD.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            if (this.Modo == ModoForm.Baja) PlanActual.State = BusinessEntity.States.Deleted;
-            if (this.Modo == ModoForm.Consulta) PlanActual.State = BusinessEntity.States.Unmodified;
         }
 
         public override void GuardarCambios()
