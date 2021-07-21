@@ -29,7 +29,8 @@ namespace Business.Logic
             }
             catch (Exception ex)
             {
-                throw ex;
+                Exception ExcepcionManejada = new Exception("Error al recuperar el usuario", ex);
+                throw ExcepcionManejada;
             }
         }
 
@@ -41,8 +42,9 @@ namespace Business.Logic
             }
             catch (Exception ex)
             {
-                throw ex;
-            }                
+                Exception ExcepcionManejada = new Exception("Error al recuperar la lista de usuarios", ex);
+                throw ExcepcionManejada;
+            }
         }                                               
 
         public void Save(Business.Entities.Usuario usuario)
@@ -53,7 +55,8 @@ namespace Business.Logic
             }
             catch (Exception ex)
             {
-                throw ex;
+                Exception ExcepcionManejada = new Exception("Error al guardar el usuario", ex);
+                throw ExcepcionManejada;
             }
         }
         public void Delete(int id)
@@ -64,7 +67,8 @@ namespace Business.Logic
             }
             catch (Exception ex)
             {
-                throw ex;
+                Exception ExcepcionManejada = new Exception("Error al eliminar el usuario", ex);
+                throw ExcepcionManejada;
             }
         }
     }

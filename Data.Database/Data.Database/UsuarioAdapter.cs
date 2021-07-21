@@ -65,41 +65,50 @@ namespace Data.Database
         public List<Usuario> GetAll()
         {
             List<Usuario> usuarios = new List<Usuario>();
-            this.OpenConnection();
+            try
+            {                
+                this.OpenConnection();
 
-            SqlCommand cmdUsuarios = new SqlCommand("SELECT * FROM usuarios", sqlConn);
+                SqlCommand cmdUsuarios = new SqlCommand("SELECT * FROM usuarios", sqlConn);
 
-            SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
+                SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
 
-            while (drUsuarios.Read())
-            {
-                Usuario usr = new Usuario();
+                while (drUsuarios.Read())
+                {
+                    Usuario usr = new Usuario();
 
-                usr.ID = (int)drUsuarios["id_usuario"];
-                usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
-                usr.Clave = (string)drUsuarios["clave"];
-                usr.Habilitado = (bool)drUsuarios["habilitado"];
-                usr.Nombre= (string)drUsuarios["nombre"];
-                usr.Apellido = (string)drUsuarios["apellido"];
-                usr.Email = (string)drUsuarios["email"];
+                    usr.ID = (int)drUsuarios["id_usuario"];
+                    usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
+                    usr.Clave = (string)drUsuarios["clave"];
+                    usr.Habilitado = (bool)drUsuarios["habilitado"];
+                    usr.Nombre = (string)drUsuarios["nombre"];
+                    usr.Apellido = (string)drUsuarios["apellido"];
+                    usr.Email = (string)drUsuarios["email"];
 
-                usuarios.Add(usr);
+                    usuarios.Add(usr);
+                }
+                drUsuarios.Close();                
             }
-            drUsuarios.Close();
-            this.CloseConnection();
-
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar la lista de usuarios", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {                
+                this.CloseConnection();
+            }
             return usuarios;
         }
 
         public Business.Entities.Usuario GetOne(int ID)         
         {
-            //return Usuarios.Find(delegate(Usuario u) { return u.ID == ID; });
             Usuario usr = new Usuario();
             try
             {
                 OpenConnection();
-                SqlCommand cmdUsuarios = new SqlCommand("SELECT * FROM usuarios WHERE id_usuario = @id_usuario", sqlConn);
-                cmdUsuarios.Parameters.Add("@id_usuario", SqlDbType.Int).Value = ID;
+                SqlCommand cmdUsuarios = new SqlCommand("SELECT * FROM usuarios WHERE id_usuario = @id", sqlConn);  
+                cmdUsuarios.Parameters.Add("@id", SqlDbType.Int).Value = ID;   
                 SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
                 while (drUsuarios.Read())
                 {
@@ -122,7 +131,9 @@ namespace Data.Database
             {
                 CloseConnection();
             }
-            if (usr.NombreUsuario != null)
+            return usr;
+            #region If usuario empty
+            /*if (usr.NombreUsuario != null)
             {
                 return usr;
             }
@@ -130,14 +141,12 @@ namespace Data.Database
             {
                 Exception Ex = new Exception(" ");
                 throw new Exception("El usuario no existe", Ex);
-            }
-
-
+            }*/
+            #endregion
         }
 
         public void Delete(int ID)
         {
-            ////Usuarios.Remove(this.GetOne(ID));
             try
             {
                 OpenConnection();
@@ -172,8 +181,6 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = usuario.Email;
 
                 usuario.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
-
-                //cmdSave.ExecuteNonQuery();
             }
             catch (Exception Ex)
             {
@@ -213,7 +220,6 @@ namespace Data.Database
             {
                 CloseConnection();
             }
-
         }
         
         public void Save(Usuario usuario)                   

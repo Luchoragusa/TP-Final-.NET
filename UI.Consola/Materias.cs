@@ -110,9 +110,6 @@ namespace UI.Consola
             Materia materia = new Materia();
             Console.Clear();
 
-            Console.Write("Ingrese ID de la especialidad de la materia: ");
-            materia.IDEspecialidad = int.Parse(Console.ReadLine());
-
             Console.Write("Ingrese la descripcion de la materia: ");
             materia.Descripcion = Console.ReadLine();
 
@@ -185,7 +182,6 @@ namespace UI.Consola
         private void MostrarDatos(Materia mat)
         {
             Console.WriteLine("Materia: {0}", mat.ID);
-            Console.WriteLine("\t\t ID Especialidad: {0} ", mat.IDEspecialidad);
             Console.WriteLine("\t\t Descripcion: {0} ", mat.Descripcion);
             Console.WriteLine("\t\t Horas semanales: {0} ", mat.HSSSemanales);
             Console.WriteLine("\t\t Horas totales: {0} ", mat.HSTotales);

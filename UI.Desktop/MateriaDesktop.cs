@@ -45,7 +45,6 @@ namespace UI.Desktop
         {
             this.txtID.Text = this.MateriaActual.ID.ToString();
             this.txtDesc.Text = this.MateriaActual.Descripcion;
-            this.txtIDEspecialidad.Text = this.MateriaActual.IDEspecialidad.ToString();
             this.txtHSSemanales.Text = this.MateriaActual.HSSSemanales.ToString();
             this.txtHSTotales.Text = this.MateriaActual.HSTotales.ToString();
 
@@ -70,7 +69,6 @@ namespace UI.Desktop
                     this.txtID.Text = this.MateriaActual.ID.ToString();
                 }
                 this.MateriaActual.Descripcion = this.txtDesc.Text;
-                this.MateriaActual.IDEspecialidad = Convert.ToInt32(this.txtIDEspecialidad.Text);
                 this.MateriaActual.HSSSemanales = Convert.ToInt32(this.txtHSSemanales.Text);
                 this.MateriaActual.HSTotales = Convert.ToInt32(this.txtHSTotales.Text);
             }
