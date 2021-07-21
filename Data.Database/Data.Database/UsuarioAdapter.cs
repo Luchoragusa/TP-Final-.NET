@@ -164,7 +164,7 @@ namespace Data.Database
                 CloseConnection();
             }
         }
-        protected void Insert(Usuario usuario)
+        public void Insert(Usuario usuario)
         {
             try
             {
@@ -193,7 +193,7 @@ namespace Data.Database
             }
         }
 
-        protected void Update(Usuario usuario)
+        public void Update(Usuario usuario)
         {
             try
             {

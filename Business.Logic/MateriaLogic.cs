@@ -29,7 +29,8 @@ namespace Business.Logic
             }
             catch (Exception ex)
             {
-                throw ex;
+                Exception ExcepcionManejada = new Exception("Error al recuperar el la materia.", ex);
+                throw ExcepcionManejada;
             }  
         }
 
@@ -41,19 +42,21 @@ namespace Business.Logic
             }
             catch (Exception ex)
             {
-                throw ex;
+                Exception ExcepcionManejada = new Exception("Error al recuperar la lista de materias.", ex);
+                throw ExcepcionManejada;
             }               
         }                                               
 
-        public void Save(Materia plan)
+        public void Save(Materia materia)
         {
             try
             {
-                MateriaData.Save(plan);
+                MateriaData.Save(materia);
             }
             catch (Exception ex)
             {
-                throw ex;
+                Exception ExcepcionManejada = new Exception("Error al guardar la materia.", ex);
+                throw ExcepcionManejada;
             }
         }
         public void Delete(int id)
@@ -64,7 +67,34 @@ namespace Business.Logic
             }
             catch (Exception ex)
             {
-                throw ex;
+                Exception ExcepcionManejada = new Exception("Error al eliminar la materia.", ex);
+                throw ExcepcionManejada;
+            }
+        }
+
+        public void Insert(Materia materia)
+        {
+            try
+            {
+                MateriaData.Insert(materia);
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al insertar una materia.", ex);
+                throw ExcepcionManejada;
+            }
+        }
+
+        public void Update(Materia materia)
+        {
+            try
+            {
+                MateriaData.Update(materia);
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al actualizar la materia.", ex);
+                throw ExcepcionManejada;
             }
         }
     }

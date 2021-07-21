@@ -29,7 +29,7 @@ namespace Business.Logic
             }
             catch (Exception ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al recuperar el usuario", ex);
+                Exception ExcepcionManejada = new Exception("Error al recuperar el usuario.", ex);
                 throw ExcepcionManejada;
             }
         }
@@ -42,7 +42,7 @@ namespace Business.Logic
             }
             catch (Exception ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al recuperar la lista de usuarios", ex);
+                Exception ExcepcionManejada = new Exception("Error al recuperar la lista de usuarios.", ex);
                 throw ExcepcionManejada;
             }
         }                                               
@@ -55,10 +55,11 @@ namespace Business.Logic
             }
             catch (Exception ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al guardar el usuario", ex);
+                Exception ExcepcionManejada = new Exception("Error al guardar el usuario.", ex);
                 throw ExcepcionManejada;
             }
         }
+        
         public void Delete(int id)
         {
             try
@@ -67,7 +68,33 @@ namespace Business.Logic
             }
             catch (Exception ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al eliminar el usuario", ex);
+                Exception ExcepcionManejada = new Exception("Error al eliminar el usuario.", ex);
+                throw ExcepcionManejada;
+            }
+        }
+
+        public void Insert(Usuario usuario)
+        {
+            try
+            {
+                UsuarioData.Insert(usuario);
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al insertar un usuario.", ex);
+                throw ExcepcionManejada;
+            }
+        }
+
+        public void Update(Usuario usuario)
+        {
+            try
+            {
+                UsuarioData.Update(usuario);
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al actualizar el usuario.", ex);
                 throw ExcepcionManejada;
             }
         }

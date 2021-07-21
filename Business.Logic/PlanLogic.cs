@@ -21,6 +21,8 @@ namespace Business.Logic
             get { return planData; }
             set { planData = value; }
         }
+        
+        
         public Business.Entities.Plan GetOne(int id)
         {
             try
@@ -29,7 +31,8 @@ namespace Business.Logic
             }
             catch (Exception ex)
             {
-                throw ex;
+                Exception ExcepcionManejada = new Exception("Error al recuperar el plan.", ex);
+                throw ExcepcionManejada;
             }
         }
         public List<Plan> GetAll()
@@ -40,7 +43,8 @@ namespace Business.Logic
             }
             catch (Exception ex)
             {
-                throw ex;
+                Exception ExcepcionManejada = new Exception("Error al recuperar la lista de planes.", ex);
+                throw ExcepcionManejada;
             }
         }
         public void Save(Business.Entities.Plan plan)
@@ -51,7 +55,8 @@ namespace Business.Logic
             }
             catch (Exception ex)
             {
-                throw ex;
+                Exception ExcepcionManejada = new Exception("Error al guardar el plan.", ex);
+                throw ExcepcionManejada;
             }
         }
         public void Delete(int id)
@@ -62,7 +67,34 @@ namespace Business.Logic
             }
             catch (Exception ex)
             {
-                throw ex;
+                Exception ExcepcionManejada = new Exception("Error al eliminar el plan.", ex);
+                throw ExcepcionManejada;
+            }
+        }
+    
+        public void Insert(Plan plan)
+        {
+            try
+            {
+                PlanData.Insert(plan);
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al insertar un plan.", ex);
+                throw ExcepcionManejada;
+            }
+        }
+    
+        public void Update(Plan plan)
+        {
+            try
+            {
+                PlanData.Insert(plan);
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al insertar un plan.", ex);
+                throw ExcepcionManejada;
             }
         }
     }

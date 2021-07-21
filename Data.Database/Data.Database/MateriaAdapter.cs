@@ -61,6 +61,7 @@ namespace Data.Database
                 SqlDataReader drMaterias = cmdMaterias.ExecuteReader();
                 while (drMaterias.Read())
                 {
+                    mat.ID = (int)drMaterias["id_materia"];
                     mat.Descripcion = (string)drMaterias["desc_materia"];
                     mat.HSSSemanales = (int)drMaterias["hs_semanales"];
                     mat.HSTotales = (int)drMaterias["hs_totales"];
@@ -100,7 +101,7 @@ namespace Data.Database
             }
         }
 
-        protected void Insert(Materia materia)
+        public void Insert(Materia materia)
         {
             try
             {
@@ -126,7 +127,7 @@ namespace Data.Database
             }
         }
 
-        protected void Update(Materia materia)
+        public void Update(Materia materia)
         {
             try
             {
@@ -135,10 +136,10 @@ namespace Data.Database
                     "hs_totales = @hs_totales" +
                     "WHERE id_materia = @id ", sqlConn);
 
-                cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = materia.IDMateria;
-                cmdSave.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = materia.Descripcion;
-                cmdSave.Parameters.Add("@clave", SqlDbType.Int).Value = materia.HSSSemanales;
-                cmdSave.Parameters.Add("@habilitado", SqlDbType.Int).Value = materia.HSTotales;
+                cmdSave.Parameters.Add("@id_materia", SqlDbType.Int).Value = materia.IDMateria;
+                cmdSave.Parameters.Add("@desc_materia", SqlDbType.VarChar, 50).Value = materia.Descripcion;
+                cmdSave.Parameters.Add("@hs_semanales", SqlDbType.Int).Value = materia.HSSSemanales;
+                cmdSave.Parameters.Add("@hs_totales", SqlDbType.Int).Value = materia.HSTotales;
                 cmdSave.ExecuteNonQuery();
             }
             catch (Exception Ex)

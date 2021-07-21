@@ -29,8 +29,9 @@ namespace Business.Logic
             }
             catch (Exception ex)
             {
-                throw ex;
-            }  
+                Exception ExcepcionManejada = new Exception("Error al recuperar la especialidad.", ex);
+                throw ExcepcionManejada;
+            }
         }
         public List<Especialidad> GetAll()
         {
@@ -40,9 +41,10 @@ namespace Business.Logic
             }
             catch (Exception ex)
             {
-                throw ex;
+                Exception ExcepcionManejada = new Exception("Error al recuperar la lista de especialidades.", ex);
+                throw ExcepcionManejada;
             }
-                            
+
         }
         public void Save(Business.Entities.Especialidad especialidad)
         {
@@ -52,8 +54,9 @@ namespace Business.Logic
             }
             catch (Exception ex)
             {
-                throw ex;
-            }   
+                Exception ExcepcionManejada = new Exception("Error al guardar la especialidad.", ex);
+                throw ExcepcionManejada;
+            }
         }
         public void Delete(int id)
         {
@@ -63,8 +66,36 @@ namespace Business.Logic
             }
             catch (Exception ex)
             {
-                throw ex;
-            }     
+                Exception ExcepcionManejada = new Exception("Error al eliminar la especialidad.", ex);
+                throw ExcepcionManejada;
+            }
+        }
+
+        public void Update(Especialidad especialidad)
+        {
+            try
+            {
+                EspecialidadData.Update(especialidad);
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al actualizar el usuario.", ex);
+                throw ExcepcionManejada;
+            }
+
+        }
+
+        public void Insert(Especialidad especialidad)
+        {
+            try
+            {
+                EspecialidadData.Insert(especialidad);
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al insertar la especialidad.", ex);
+                throw ExcepcionManejada;
+            }
         }
     }
 }

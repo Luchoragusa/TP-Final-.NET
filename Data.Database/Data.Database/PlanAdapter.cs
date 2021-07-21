@@ -15,159 +15,153 @@ namespace Data.Database
 
         public List<Plan> GetAll()
         {
-            //List<Materia> materias = new List<Materia>();
-            //try
-            //{
-            //    this.OpenConnection();
+            List<Plan> planes = new List<Plan>();
+            try
+            {
+                this.OpenConnection();
 
-            //    SqlCommand cmdMaterias = new SqlCommand("SELECT * FROM materias", sqlConn);
+                SqlCommand cmdPlanes = new SqlCommand("SELECT * FROM planes", sqlConn);
 
-            //    SqlDataReader drMaterias = cmdMaterias.ExecuteReader();
+                SqlDataReader drPlanes = cmdPlanes.ExecuteReader();
 
-            //    while (drMaterias.Read())
-            //    {
-            //        Materia mat = new Materia();
+                while (drPlanes.Read())
+                {
+                    Plan plan = new Plan();
 
-            //        mat.IDMateria = (int)drMaterias["id_materia"];
-            //        mat.Descripcion = (string)drMaterias["desc_materia"];
-            //        mat.HSSSemanales = (int)drMaterias["hs_semanales"];
-            //        mat.HSTotales = (int)drMaterias["hs_totales"];
-            //        mat.ID = (int)drMaterias["id_plan"];
+                    plan.ID = (int)drPlanes["id_plan"];
+                    plan.Descripcion = (string)drPlanes["desc_plan"];
+                    plan.IDEspecialidad = (int)drPlanes["id_especialidad"];
 
-            //        materias.Add(mat);
-            //    }
-            //    drMaterias.Close();
-            //}
-            //catch (Exception Ex)
-            //{
-            //    Exception ExcepcionManejada = new Exception("Error al recuperar la lista de materias", Ex);
-            //    throw ExcepcionManejada;
-            //}
-            //finally
-            //{
-            //    this.CloseConnection();
-            //}
-            return null;
+                    planes.Add(plan);
+                }
+                drPlanes.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar la lista de planes", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return planes;
         }
 
         public Plan GetOne(int ID)
         {
-            //Materia mat = new Materia();
-            //try
-            //{
-            //    OpenConnection();
-            //    SqlCommand cmdMaterias = new SqlCommand("SELECT * FROM materias WHERE id_materia = @id", sqlConn);
-            //    cmdMaterias.Parameters.Add("@id", SqlDbType.Int).Value = ID;
-            //    SqlDataReader drMaterias = cmdMaterias.ExecuteReader();
-            //    while (drMaterias.Read())
-            //    {
-            //        mat.Descripcion = (string)drMaterias["desc_materia"];
-            //        mat.HSSSemanales = (int)drMaterias["hs_semanales"];
-            //        mat.HSTotales = (int)drMaterias["hs_totales"];
-            //        mat.ID = (int)drMaterias["id_plan"];
-            //    }
-            //    drMaterias.Close();
-            //}
-            //catch (Exception Ex)
-            //{
-            //    Exception ExcepcionManejada = new Exception("Error al recuperar los datos de la materia", Ex);
-            //    throw ExcepcionManejada;
-            //}
-            //finally
-            //{
-            //    CloseConnection();
-            //}
-            return null;
+            Plan plan = new Plan();
+            try
+            {
+                OpenConnection();
+                SqlCommand cmdPlanes = new SqlCommand("SELECT * FROM planes WHERE id_plan = @id", sqlConn);
+                cmdPlanes.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+                SqlDataReader drPlanes = cmdPlanes.ExecuteReader();
+                while (drPlanes.Read())
+                {
+                    plan.ID = (int)drPlanes["id_plan"];
+                    plan.Descripcion = (string)drPlanes["desc_plan"];
+                    plan.IDEspecialidad = (int)drPlanes["id_especialidad"];
+                }
+                drPlanes.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar datos del plan", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+            return plan;
         }
 
         public void Delete(int ID)
         {
-            //try
-            //{
-            //    OpenConnection();
-            //    SqlCommand cmdDelete = new SqlCommand("delete materias where id_materia = @id", sqlConn);
-            //    cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = ID;
-            //    cmdDelete.ExecuteNonQuery();
-            //}
-            //catch (Exception Ex)
-            //{
-            //    Exception ExcepcionManjeada = new Exception("Error al eliminar la materia", Ex);
-            //    throw ExcepcionManjeada;
-            //}
-            //finally
-            //{
-            //    CloseConnection();
-            //}
+            try
+            {
+                OpenConnection();
+                SqlCommand cmdDelete = new SqlCommand("delete planes where id_plan = @id", sqlConn);
+                cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+                cmdDelete.ExecuteNonQuery();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManjeada = new Exception("Error al eliminar plan", Ex);
+                throw ExcepcionManjeada;
+            }
+            finally
+            {
+                CloseConnection();
+            }
         }
 
-        protected void Insert(Plan plan)
+        public void Insert(Plan plan)
         {
-            //try
-            //{
-            //    OpenConnection();
-            //    SqlCommand cmdSave = new SqlCommand("INSERT INTO materias (desc_materia,hs_semanales,hs_totales)" +
-            //        "values(@desc_materia,@hs_semanales,@hs_totales)" +
-            //        "select @@identity ", sqlConn);
+            try
+            {
+                OpenConnection();
+                SqlCommand cmdSave = new SqlCommand("INSERT INTO planes (desc_plan,id_especialidad)" +
+                    "values(@desc_plan,@id_especialidad)" +
+                    "select @@identity ", sqlConn);
 
-            //    cmdSave.Parameters.Add("@desc_materia", SqlDbType.VarChar, 50).Value = materia.Descripcion;
-            //    cmdSave.Parameters.Add("@hs_semanales", SqlDbType.Int).Value = materia.HSSSemanales;
-            //    cmdSave.Parameters.Add("@hs_totales", SqlDbType.Int).Value = materia.HSTotales;
+                cmdSave.Parameters.Add("@desc_plan", SqlDbType.VarChar, 50).Value = plan.Descripcion;
+                cmdSave.Parameters.Add("@id_especialidad", SqlDbType.VarChar, 50).Value = plan.IDEspecialidad;
 
-            //    materia.IDMateria = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
-            //}
-            //catch (Exception Ex)
-            //{
-            //    Exception ExceptionManejada = new Exception("Error al crear materia", Ex);
-            //    throw ExceptionManejada;
-            //}
-            //finally
-            //{
-            //    CloseConnection();
-            //}
+                plan.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
+            }
+            catch (Exception Ex)
+            {
+                Exception ExceptionManejada = new Exception("Error al crear plan", Ex);
+                throw ExceptionManejada;
+            }
+            finally
+            {
+                CloseConnection();
+            }
         }
 
-        protected void Update(Plan plan)
+        public void Update(Plan plan)
         {
-            //try
-            //{
-            //    OpenConnection();
-            //    SqlCommand cmdSave = new SqlCommand("UPDATE materias SET desc_materia = @desc_materia, hs_semanales = @hs_semanales, " +
-            //        "hs_totales = @hs_totales" +
-            //        "WHERE id_materia = @id ", sqlConn);
+            try
+            {
+                OpenConnection();
+                SqlCommand cmdSave = new SqlCommand("UPDATE planes SET desc_plan = @desc_plan, id_especialidad = @id_especialidad, " +
+                    "WHERE id_plan = @id ", sqlConn);
 
-            //    cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = materia.IDMateria;
-            //    cmdSave.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = materia.Descripcion;
-            //    cmdSave.Parameters.Add("@clave", SqlDbType.Int).Value = materia.HSSSemanales;
-            //    cmdSave.Parameters.Add("@habilitado", SqlDbType.Int).Value = materia.HSTotales;
-            //    cmdSave.ExecuteNonQuery();
-            //}
-            //catch (Exception Ex)
-            //{
-            //    Exception ExceptionManejada = new Exception("Error al modificar datos de la materia", Ex);
-            //    throw ExceptionManejada;
-            //}
-            //finally
-            //{
-            //    CloseConnection();
-            //}
+                cmdSave.Parameters.Add("@id_especialidad", SqlDbType.Int).Value = plan.IDEspecialidad;
+                cmdSave.Parameters.Add("@desc_plan", SqlDbType.VarChar, 50).Value = plan.Descripcion;
+
+                cmdSave.ExecuteNonQuery();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExceptionManejada = new Exception("Error al modificar datos del plan", Ex);
+                throw ExceptionManejada;
+            }
+            finally
+            {
+                CloseConnection();
+            }
         }
 
         public void Save(Plan plan)
         {
-            //if (materia.State == BusinessEntity.States.Deleted)
-            //{
-            //    Delete(materia.ID);
-            //}
+            if (plan.State == BusinessEntity.States.Deleted)
+            {
+                Delete(plan.ID);
+            }
 
-            //else if (materia.State == BusinessEntity.States.New)
-            //{
-            //    this.Insert(materia);
-            //}
-            //else if (materia.State == BusinessEntity.States.Modified)
-            //{
-            //    Update(materia);
-            //}
-            //materia.State = BusinessEntity.States.Unmodified;
+            else if (plan.State == BusinessEntity.States.New)
+            {
+                this.Insert(plan);
+            }
+            else if (plan.State == BusinessEntity.States.Modified)
+            {
+                Update(plan);
+            }
+            plan.State = BusinessEntity.States.Unmodified;
         }
     }
 }

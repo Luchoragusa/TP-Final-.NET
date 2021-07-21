@@ -28,7 +28,8 @@ namespace Business.Logic
             }
             catch (Exception ex)
             {
-                throw ex;
+                Exception ExcepcionManejada = new Exception("Error al recuperar la comision.", ex);
+                throw ExcepcionManejada;
             }
         }
         public List<Comision> GetAll()
@@ -39,7 +40,8 @@ namespace Business.Logic
             }
             catch (Exception ex)
             {
-                throw ex;
+                Exception ExcepcionManejada = new Exception("Error al recuperar la lista de comisiones.", ex);
+                throw ExcepcionManejada;
             }       
         }
         public void Save(Business.Entities.Comision comision)
@@ -50,7 +52,8 @@ namespace Business.Logic
             }
             catch (Exception ex)
             {
-                throw ex;
+                Exception ExcepcionManejada = new Exception("Error al guardar la comision.", ex);
+                throw ExcepcionManejada;
             }   
         }
         public void Delete(int id)
@@ -61,8 +64,35 @@ namespace Business.Logic
             }
             catch (Exception ex)
             {
-                throw ex;
+                Exception ExcepcionManejada = new Exception("Error al eliminar la comision.", ex);
+                throw ExcepcionManejada;
             }  
+        }
+
+        public void Insert(Comision comision)
+        {
+            try
+            {
+                ComisionData.Insert(comision);
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al insertar una materia.", ex);
+                throw ExcepcionManejada;
+            }
+        }
+
+        public void Update(Comision comision)
+        {
+            try
+            {
+                ComisionData.Update(comision);
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al actualizar la materia.", ex);
+                throw ExcepcionManejada;
+            }
         }
     }
 }
