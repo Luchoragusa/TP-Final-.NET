@@ -33,14 +33,14 @@ namespace UI.Desktop
             this.tcPlanes = new System.Windows.Forms.ToolStripContainer();
             this.tlPlanes = new System.Windows.Forms.TableLayoutPanel();
             this.dgvEspecialidades = new System.Windows.Forms.DataGridView();
-            this.IDEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.tsPlanes = new System.Windows.Forms.ToolStrip();
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
+            this.IDEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tcPlanes.ContentPanel.SuspendLayout();
             this.tcPlanes.TopToolStripPanel.SuspendLayout();
             this.tcPlanes.SuspendLayout();
@@ -96,16 +96,6 @@ namespace UI.Desktop
             this.dgvEspecialidades.Name = "dgvEspecialidades";
             this.dgvEspecialidades.Size = new System.Drawing.Size(794, 390);
             this.dgvEspecialidades.TabIndex = 0;
-            // 
-            // IDEspecialidad
-            // 
-            this.IDEspecialidad.HeaderText = "ID_Especialidad";
-            this.IDEspecialidad.Name = "IDEspecialidad";
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
             // 
             // btnSalir
             // 
@@ -166,6 +156,18 @@ namespace UI.Desktop
             this.tsbEliminar.Name = "tsbEliminar";
             this.tsbEliminar.Size = new System.Drawing.Size(23, 22);
             this.tsbEliminar.Text = "Eliminar";
+            // 
+            // IDEspecialidad
+            // 
+            this.IDEspecialidad.DataPropertyName = "ID";
+            this.IDEspecialidad.HeaderText = "ID_Especialidad";
+            this.IDEspecialidad.Name = "IDEspecialidad";
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "DescEspecialidad";
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
             // 
             // Especialidad
             // 

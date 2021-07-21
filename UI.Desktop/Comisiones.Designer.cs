@@ -42,6 +42,7 @@ namespace UI.Desktop
             this.IDPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Anio_Especialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tcPlanes.ContentPanel.SuspendLayout();
             this.tcPlanes.TopToolStripPanel.SuspendLayout();
             this.tcPlanes.SuspendLayout();
@@ -91,7 +92,8 @@ namespace UI.Desktop
             this.dgvComisiones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDPlan,
             this.Anio_Especialidad,
-            this.Descripcion});
+            this.Descripcion,
+            this.IDComision});
             this.tlPlanes.SetColumnSpan(this.dgvComisiones, 2);
             this.dgvComisiones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvComisiones.Location = new System.Drawing.Point(3, 3);
@@ -164,7 +166,7 @@ namespace UI.Desktop
             // 
             // IDPlan
             // 
-            this.IDPlan.DataPropertyName = "ID";
+            this.IDPlan.DataPropertyName = "IDPlan";
             this.IDPlan.HeaderText = "ID_Plan";
             this.IDPlan.Name = "IDPlan";
             // 
@@ -179,6 +181,13 @@ namespace UI.Desktop
             this.Descripcion.DataPropertyName = "DescComision";
             this.Descripcion.HeaderText = "Descripcion";
             this.Descripcion.Name = "Descripcion";
+            // 
+            // IDComision
+            // 
+            this.IDComision.DataPropertyName = "ID";
+            this.IDComision.HeaderText = "ID_Comision";
+            this.IDComision.Name = "IDComision";
+            this.IDComision.ReadOnly = true;
             // 
             // Comisiones
             // 
@@ -215,5 +224,6 @@ namespace UI.Desktop
         private System.Windows.Forms.DataGridViewTextBoxColumn IDPlan;
         private System.Windows.Forms.DataGridViewTextBoxColumn Anio_Especialidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDComision;
     }
 }
