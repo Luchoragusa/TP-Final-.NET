@@ -20,7 +20,6 @@ namespace UI.Desktop
         public MateriaDesktop(ModoForm modo) : this()
         {
             this.Modo = modo;
-            //MateriaActual = new Business.Entities.Materia();
         }
 
         private Business.Entities.Materia _materia;
