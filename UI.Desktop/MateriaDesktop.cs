@@ -23,7 +23,13 @@ namespace UI.Desktop
         }
 
         private Business.Entities.Materia _materia;
-        public Business.Entities.Materia MateriaActual { get; set; }
+        public Business.Entities.Materia MateriaActual
+        {
+            get
+            { return _materia; }
+            set
+            { _materia = value; }
+        }
 
         public MateriaDesktop(int ID, ModoForm modo) : this()
         {
