@@ -166,27 +166,32 @@ namespace UI.Desktop
             // 
             // IDPlan
             // 
+            this.IDPlan.DataPropertyName = "ID";
             this.IDPlan.HeaderText = "ID_Plan";
             this.IDPlan.Name = "IDPlan";
             // 
             // IDMateria
             // 
+            this.IDMateria.DataPropertyName = "IDMateria";
             this.IDMateria.HeaderText = "ID_Materia";
             this.IDMateria.Name = "IDMateria";
             // 
             // Descripcion
             // 
+            this.Descripcion.DataPropertyName = "Descripcion";
             this.Descripcion.HeaderText = "Descripcion";
             this.Descripcion.Name = "Descripcion";
             // 
             // HSSemanales
             // 
+            this.HSSemanales.DataPropertyName = "HSSSemanales";
             this.HSSemanales.HeaderText = "Horas Semanales";
             this.HSSemanales.Name = "HSSemanales";
             this.HSSemanales.Width = 150;
             // 
             // HSTotales
             // 
+            this.HSTotales.DataPropertyName = "HSTotales";
             this.HSTotales.HeaderText = "Horas Totales";
             this.HSTotales.Name = "HSTotales";
             // 
