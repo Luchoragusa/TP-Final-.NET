@@ -10,6 +10,6 @@ namespace Business.Entities
     {
         private string _DescEspecialidad;
 
-        public string DescEspecialidad { get; set; }
+        public string DescEspecialidad { get => _DescEspecialidad; set => _DescEspecialidad = value; }
     } 
 }
