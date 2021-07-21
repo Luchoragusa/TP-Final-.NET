@@ -20,8 +20,6 @@ namespace UI.Desktop
             InitializeComponent();
             this.dgvUsuarios.AutoGenerateColumns = false;
             this.dgvUsuarios.ReadOnly = true;
-            //this.dgvUsuarios.ColumnAdded = false;
-            //this.dgvUsuarios.ColumnRemoved = false;
         }     
         public void Listar()
         {
