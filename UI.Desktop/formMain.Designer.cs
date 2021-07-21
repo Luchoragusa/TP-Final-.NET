@@ -35,6 +35,8 @@ namespace UI.Desktop
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_Usuario = new System.Windows.Forms.Button();
             this.btnMateria = new System.Windows.Forms.Button();
+            this.btnComision = new System.Windows.Forms.Button();
+            this.btnPlan = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -45,7 +47,7 @@ namespace UI.Desktop
             this.mnuArchivo});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(280, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(289, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -71,13 +73,15 @@ namespace UI.Desktop
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.btn_Usuario, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnMateria, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnComision, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btnPlan, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(280, 122);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(289, 134);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // btn_Usuario
@@ -92,7 +96,7 @@ namespace UI.Desktop
             // 
             // btnMateria
             // 
-            this.btnMateria.Location = new System.Drawing.Point(143, 3);
+            this.btnMateria.Location = new System.Drawing.Point(147, 3);
             this.btnMateria.Name = "btnMateria";
             this.btnMateria.Size = new System.Drawing.Size(75, 23);
             this.btnMateria.TabIndex = 1;
@@ -100,11 +104,32 @@ namespace UI.Desktop
             this.btnMateria.UseVisualStyleBackColor = true;
             this.btnMateria.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnComision
+            // 
+            this.btnComision.Location = new System.Drawing.Point(3, 70);
+            this.btnComision.Name = "btnComision";
+            this.btnComision.Size = new System.Drawing.Size(75, 23);
+            this.btnComision.TabIndex = 2;
+            this.btnComision.Text = "Comision";
+            this.btnComision.UseVisualStyleBackColor = true;
+            this.btnComision.Click += new System.EventHandler(this.btnComision_Click);
+            // 
+            // btnPlan
+            // 
+            this.btnPlan.Location = new System.Drawing.Point(147, 70);
+            this.btnPlan.Name = "btnPlan";
+            this.btnPlan.Size = new System.Drawing.Size(75, 23);
+            this.btnPlan.TabIndex = 3;
+            this.btnPlan.Text = "Plan";
+            this.btnPlan.UseVisualStyleBackColor = true;
+            this.btnPlan.Click += new System.EventHandler(this.btnPlan_Click);
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(280, 146);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(289, 158);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
@@ -129,5 +154,7 @@ namespace UI.Desktop
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btn_Usuario;
         private System.Windows.Forms.Button btnMateria;
+        private System.Windows.Forms.Button btnComision;
+        private System.Windows.Forms.Button btnPlan;
     }
 }

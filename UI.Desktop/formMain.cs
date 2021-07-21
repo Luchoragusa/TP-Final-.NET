@@ -42,5 +42,17 @@ namespace UI.Desktop
             Materia mat = new Materia();
             mat.ShowDialog();
         }
+
+        private void btnComision_Click(object sender, EventArgs e)
+        {
+            Comisiones com = new Comisiones();
+            com.ShowDialog();
+        }
+
+        private void btnPlan_Click(object sender, EventArgs e)
+        {
+            Plan plan = new Plan();
+            plan.ShowDialog();
+        }
     }
 }
