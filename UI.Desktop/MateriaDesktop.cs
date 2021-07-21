@@ -93,7 +93,7 @@ namespace UI.Desktop
 
         public override bool Validar()
         {
-            if (txtDesc.Text.Equals(String.Empty) || txtIDEspecialidad.Text.Equals(String.Empty) || txtHSTotales.Text.Equals(String.Empty) || txtHSSemanales.Text.Equals(String.Empty))
+            if (txtDesc.Text.Equals(String.Empty) || /*txtIDEspecialidad.Text.Equals(String.Empty) ||*/ txtHSTotales.Text.Equals(String.Empty) || txtHSSemanales.Text.Equals(String.Empty))
             {
                 Notificar("Algunos de los campos están vaciós", "Complete todos para continuar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;

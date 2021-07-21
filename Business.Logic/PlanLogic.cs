@@ -18,8 +18,8 @@ namespace Business.Logic
         }
         public Data.Database.PlanAdapter PlanData
         {
-            get{ return planData;}
-            set{ planData = value;}
+            get { return planData; }
+            set { planData = value; }
         }
         public Business.Entities.Plan GetOne(int id)
         {
@@ -30,7 +30,7 @@ namespace Business.Logic
             catch (Exception ex)
             {
                 throw ex;
-            }     
+            }
         }
         public List<Plan> GetAll()
         {
@@ -41,8 +41,8 @@ namespace Business.Logic
             catch (Exception ex)
             {
                 throw ex;
-            }                    
-        }                                               
+            }
+        }
         public void Save(Business.Entities.Plan plan)
         {
             try
@@ -52,7 +52,7 @@ namespace Business.Logic
             catch (Exception ex)
             {
                 throw ex;
-            }        
+            }
         }
         public void Delete(int id)
         {

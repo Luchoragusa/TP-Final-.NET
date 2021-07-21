@@ -36,12 +36,12 @@ namespace UI.Desktop
             this.lblIDMateria = new System.Windows.Forms.Label();
             this.lblDesc = new System.Windows.Forms.Label();
             this.lblEspecialidad = new System.Windows.Forms.Label();
-            this.lblHSSemanales = new System.Windows.Forms.Label();
-            this.btnModo = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.txtHSTotales = new System.Windows.Forms.Label();
             this.txtHSSemanales = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btnModo = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.lblHSSemanales = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -130,38 +130,6 @@ namespace UI.Desktop
             this.lblEspecialidad.TabIndex = 12;
             this.lblEspecialidad.Text = "Especialidad";
             // 
-            // lblHSSemanales
-            // 
-            this.lblHSSemanales.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblHSSemanales.AutoSize = true;
-            this.lblHSSemanales.Location = new System.Drawing.Point(3, 203);
-            this.lblHSSemanales.Name = "lblHSSemanales";
-            this.lblHSSemanales.Size = new System.Drawing.Size(90, 13);
-            this.lblHSSemanales.TabIndex = 13;
-            this.lblHSSemanales.Text = "Horas Semanales";
-            // 
-            // btnModo
-            // 
-            this.btnModo.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnModo.Location = new System.Drawing.Point(50, 309);
-            this.btnModo.Name = "btnModo";
-            this.btnModo.Size = new System.Drawing.Size(75, 23);
-            this.btnModo.TabIndex = 7;
-            this.btnModo.Text = "Aceptar";
-            this.btnModo.UseVisualStyleBackColor = true;
-            this.btnModo.Click += new System.EventHandler(this.btnModo_Click_1);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnCancelar.Location = new System.Drawing.Point(342, 309);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 8;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
-            // 
             // txtHSTotales
             // 
             this.txtHSTotales.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -188,12 +156,45 @@ namespace UI.Desktop
             this.textBox2.Size = new System.Drawing.Size(256, 20);
             this.textBox2.TabIndex = 16;
             // 
+            // btnModo
+            // 
+            this.btnModo.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnModo.Location = new System.Drawing.Point(50, 309);
+            this.btnModo.Name = "btnModo";
+            this.btnModo.Size = new System.Drawing.Size(75, 23);
+            this.btnModo.TabIndex = 7;
+            this.btnModo.Text = "Aceptar";
+            this.btnModo.UseVisualStyleBackColor = true;
+            this.btnModo.Click += new System.EventHandler(this.btnModo_Click_1);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnCancelar.Location = new System.Drawing.Point(342, 309);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 8;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
+            // 
+            // lblHSSemanales
+            // 
+            this.lblHSSemanales.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblHSSemanales.AutoSize = true;
+            this.lblHSSemanales.Location = new System.Drawing.Point(3, 203);
+            this.lblHSSemanales.Name = "lblHSSemanales";
+            this.lblHSSemanales.Size = new System.Drawing.Size(90, 13);
+            this.lblHSSemanales.TabIndex = 13;
+            this.lblHSSemanales.Text = "Horas Semanales";
+            // 
             // MateriaDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(420, 342);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "MateriaDesktop";
+            this.Text = "Materia";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

@@ -36,5 +36,11 @@ namespace UI.Desktop
             Usuarios us = new Usuarios();
             us.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Materia mat = new Materia();
+            mat.ShowDialog();
+        }
     }
 }
