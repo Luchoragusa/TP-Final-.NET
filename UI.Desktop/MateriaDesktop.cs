@@ -43,7 +43,8 @@ namespace UI.Desktop
   
         public override void MapearDeDatos()
         {
-            this.txtID.Text = this.MateriaActual.ID.ToString();
+            this.txtID.Text = this.MateriaActual.IDMateria.ToString();
+            this.txtIDPlan.Text = this.MateriaActual.ID.ToString();
             this.txtDesc.Text = this.MateriaActual.Descripcion;
             this.txtHSSemanales.Text = this.MateriaActual.HSSSemanales.ToString();
             this.txtHSTotales.Text = this.MateriaActual.HSTotales.ToString();
@@ -66,7 +67,8 @@ namespace UI.Desktop
                 if (Modo != ModoForm.Alta)
                 {
                     MateriaActual.State = BusinessEntity.States.Modified;
-                    this.txtID.Text = this.MateriaActual.ID.ToString();
+                    this.txtID.Text = this.MateriaActual.IDMateria.ToString();
+                    this.MateriaActual.ID = Convert.ToInt32(this.txtIDPlan.Text);  // OJO que tiene que ser de algun plan ya creado
                 }
                 this.MateriaActual.Descripcion = this.txtDesc.Text;
                 this.MateriaActual.HSSSemanales = Convert.ToInt32(this.txtHSSemanales.Text);
@@ -91,7 +93,7 @@ namespace UI.Desktop
             }            
         }
 
-        public override bool Validar()
+        public override bool Validar()              // validar lo de abajo con que sea correspondiente a un plan ya creado
         {
             if (txtDesc.Text.Equals(String.Empty) || /*txtIDEspecialidad.Text.Equals(String.Empty) ||*/ txtHSTotales.Text.Equals(String.Empty) || txtHSSemanales.Text.Equals(String.Empty))
             {
@@ -105,7 +107,7 @@ namespace UI.Desktop
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (Validaciones.validarTexto(txtIDEspecialidad.Text))    //quitamos el "!", siguiendo logica de UsuarioDesktop 
+            if (Validaciones.validarTexto(txtIDPlan.Text))    //quitamos el "!", siguiendo logica de UsuarioDesktop 
             {
                 Notificar("ID incorrecta.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);

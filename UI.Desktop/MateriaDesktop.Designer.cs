@@ -32,10 +32,10 @@ namespace UI.Desktop
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtDesc = new System.Windows.Forms.TextBox();
-            this.txtIDEspecialidad = new System.Windows.Forms.TextBox();
+            this.txtIDPlan = new System.Windows.Forms.TextBox();
             this.lblIDMateria = new System.Windows.Forms.Label();
             this.lblDesc = new System.Windows.Forms.Label();
-            this.lblEspecialidad = new System.Windows.Forms.Label();
+            this.lblPlan = new System.Windows.Forms.Label();
             this.txtHSTotales = new System.Windows.Forms.Label();
             this.txtHSSemanales = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -52,10 +52,10 @@ namespace UI.Desktop
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.37355F));
             this.tableLayoutPanel1.Controls.Add(this.txtID, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtDesc, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtIDEspecialidad, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txtIDPlan, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.lblIDMateria, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblDesc, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblEspecialidad, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lblPlan, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtHSTotales, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.txtHSSemanales, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 4);
@@ -92,13 +92,13 @@ namespace UI.Desktop
             this.txtDesc.Size = new System.Drawing.Size(256, 20);
             this.txtDesc.TabIndex = 1;
             // 
-            // txtIDEspecialidad
+            // txtIDPlan
             // 
-            this.txtIDEspecialidad.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtIDEspecialidad.Location = new System.Drawing.Point(131, 140);
-            this.txtIDEspecialidad.Name = "txtIDEspecialidad";
-            this.txtIDEspecialidad.Size = new System.Drawing.Size(256, 20);
-            this.txtIDEspecialidad.TabIndex = 2;
+            this.txtIDPlan.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtIDPlan.Location = new System.Drawing.Point(131, 140);
+            this.txtIDPlan.Name = "txtIDPlan";
+            this.txtIDPlan.Size = new System.Drawing.Size(256, 20);
+            this.txtIDPlan.TabIndex = 2;
             // 
             // lblIDMateria
             // 
@@ -120,15 +120,15 @@ namespace UI.Desktop
             this.lblDesc.TabIndex = 11;
             this.lblDesc.Text = "Descripcion de Materia";
             // 
-            // lblEspecialidad
+            // lblPlan
             // 
-            this.lblEspecialidad.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblEspecialidad.AutoSize = true;
-            this.lblEspecialidad.Location = new System.Drawing.Point(3, 143);
-            this.lblEspecialidad.Name = "lblEspecialidad";
-            this.lblEspecialidad.Size = new System.Drawing.Size(67, 13);
-            this.lblEspecialidad.TabIndex = 12;
-            this.lblEspecialidad.Text = "Especialidad";
+            this.lblPlan.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblPlan.AutoSize = true;
+            this.lblPlan.Location = new System.Drawing.Point(3, 143);
+            this.lblPlan.Name = "lblPlan";
+            this.lblPlan.Size = new System.Drawing.Size(57, 13);
+            this.lblPlan.TabIndex = 12;
+            this.lblPlan.Text = "ID de Plan";
             // 
             // txtHSTotales
             // 
@@ -206,11 +206,11 @@ namespace UI.Desktop
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtDesc;
-        private System.Windows.Forms.TextBox txtIDEspecialidad;
+        private System.Windows.Forms.TextBox txtIDPlan;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lblIDMateria;
         private System.Windows.Forms.Label lblDesc;
-        private System.Windows.Forms.Label lblEspecialidad;
+        private System.Windows.Forms.Label lblPlan;
         private System.Windows.Forms.Button btnModo;
         private System.Windows.Forms.Label lblHSSemanales;
         private System.Windows.Forms.Label txtHSTotales;

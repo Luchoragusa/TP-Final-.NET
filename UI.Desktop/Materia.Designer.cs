@@ -33,17 +33,17 @@ namespace UI.Desktop
             this.tscMaterias = new System.Windows.Forms.ToolStripContainer();
             this.tlMaterias = new System.Windows.Forms.TableLayoutPanel();
             this.dgvMaterias = new System.Windows.Forms.DataGridView();
-            this.IDEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HSSemanales = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HSTotales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.tsMaterias = new System.Windows.Forms.ToolStrip();
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
+            this.IDPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HSSemanales = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HSTotales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tscMaterias.ContentPanel.SuspendLayout();
             this.tscMaterias.TopToolStripPanel.SuspendLayout();
             this.tscMaterias.SuspendLayout();
@@ -91,7 +91,7 @@ namespace UI.Desktop
             // 
             this.dgvMaterias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMaterias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IDEspecialidad,
+            this.IDPlan,
             this.IDMateria,
             this.Descripcion,
             this.HSSemanales,
@@ -102,32 +102,6 @@ namespace UI.Desktop
             this.dgvMaterias.Name = "dgvMaterias";
             this.dgvMaterias.Size = new System.Drawing.Size(794, 390);
             this.dgvMaterias.TabIndex = 0;
-            // 
-            // IDEspecialidad
-            // 
-            this.IDEspecialidad.HeaderText = "ID_Especialidad";
-            this.IDEspecialidad.Name = "IDEspecialidad";
-            // 
-            // IDMateria
-            // 
-            this.IDMateria.HeaderText = "ID_Materia";
-            this.IDMateria.Name = "IDMateria";
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            // 
-            // HSSemanales
-            // 
-            this.HSSemanales.HeaderText = "Horas Semanales";
-            this.HSSemanales.Name = "HSSemanales";
-            this.HSSemanales.Width = 150;
-            // 
-            // HSTotales
-            // 
-            this.HSTotales.HeaderText = "Horas Totales";
-            this.HSTotales.Name = "HSTotales";
             // 
             // btnSalir
             // 
@@ -190,6 +164,32 @@ namespace UI.Desktop
             this.tsbEliminar.Text = "Eliminar";
             this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click_1);
             // 
+            // IDPlan
+            // 
+            this.IDPlan.HeaderText = "ID_Plan";
+            this.IDPlan.Name = "IDPlan";
+            // 
+            // IDMateria
+            // 
+            this.IDMateria.HeaderText = "ID_Materia";
+            this.IDMateria.Name = "IDMateria";
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            // 
+            // HSSemanales
+            // 
+            this.HSSemanales.HeaderText = "Horas Semanales";
+            this.HSSemanales.Name = "HSSemanales";
+            this.HSSemanales.Width = 150;
+            // 
+            // HSTotales
+            // 
+            this.HSTotales.HeaderText = "Horas Totales";
+            this.HSTotales.Name = "HSTotales";
+            // 
             // Materia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -224,7 +224,7 @@ namespace UI.Desktop
         private System.Windows.Forms.ToolStripButton tsbNuevo;
         private System.Windows.Forms.ToolStripButton tsbEditar;
         private System.Windows.Forms.ToolStripButton tsbEliminar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDEspecialidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDPlan;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDMateria;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn HSSemanales;
