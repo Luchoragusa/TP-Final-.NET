@@ -166,13 +166,13 @@ namespace UI.Desktop
             // 
             // IDPlan
             // 
-            this.IDPlan.DataPropertyName = "ID";
+            this.IDPlan.DataPropertyName = "IDPlan";
             this.IDPlan.HeaderText = "ID_Plan";
             this.IDPlan.Name = "IDPlan";
             // 
             // IDMateria
             // 
-            this.IDMateria.DataPropertyName = "IDMateria";
+            this.IDMateria.DataPropertyName = "ID";
             this.IDMateria.HeaderText = "ID_Materia";
             this.IDMateria.Name = "IDMateria";
             // 

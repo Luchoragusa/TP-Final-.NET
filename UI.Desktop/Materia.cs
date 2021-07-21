@@ -45,7 +45,7 @@ namespace UI.Desktop
 
         private void Materia_Load(object sender, EventArgs e)
         {
-            this.Listar();
+            Listar();
         }
 
         private void tsbNuevo_Click_1(object sender, EventArgs e)

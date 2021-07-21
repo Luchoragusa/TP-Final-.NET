@@ -48,8 +48,8 @@ namespace UI.Desktop
   
         public override void MapearDeDatos()
         {
-            this.txtID.Text = this.MateriaActual.IDMateria.ToString();
-            this.txtIDPlan.Text = this.MateriaActual.ID.ToString();
+            this.txtID.Text = this.MateriaActual.ID.ToString();
+            this.txtIDPlan.Text = this.MateriaActual.IDPlan.ToString();
             this.txtDesc.Text = this.MateriaActual.Descripcion;
             this.txtHSSemanales.Text = this.MateriaActual.HSSSemanales.ToString();
             this.txtHSTotales.Text = this.MateriaActual.HSTotales.ToString();
@@ -72,8 +72,8 @@ namespace UI.Desktop
                 if (Modo != ModoForm.Alta)
                 {
                     MateriaActual.State = BusinessEntity.States.Modified;
-                    this.txtID.Text = this.MateriaActual.IDMateria.ToString();
-                    this.MateriaActual.ID = Convert.ToInt32(this.txtIDPlan.Text);  // OJO que tiene que ser de algun plan ya creado
+                    this.txtID.Text = this.MateriaActual.ID.ToString();
+                    this.MateriaActual.IDPlan = Convert.ToInt32(this.txtIDPlan.Text);  // OJO que tiene que ser de algun plan ya creado
                 }
                 this.MateriaActual.Descripcion = this.txtDesc.Text;
                 this.MateriaActual.HSSSemanales = Convert.ToInt32(this.txtHSSemanales.Text);

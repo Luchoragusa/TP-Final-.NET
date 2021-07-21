@@ -33,15 +33,15 @@ namespace UI.Desktop
             this.tcPlanes = new System.Windows.Forms.ToolStripContainer();
             this.tlPlanes = new System.Windows.Forms.TableLayoutPanel();
             this.dgvComisiones = new System.Windows.Forms.DataGridView();
-            this.IDPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Anio_Especialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.tsPlanes = new System.Windows.Forms.ToolStrip();
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
+            this.IDPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Anio_Especialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tcPlanes.ContentPanel.SuspendLayout();
             this.tcPlanes.TopToolStripPanel.SuspendLayout();
             this.tcPlanes.SuspendLayout();
@@ -98,21 +98,6 @@ namespace UI.Desktop
             this.dgvComisiones.Name = "dgvComisiones";
             this.dgvComisiones.Size = new System.Drawing.Size(794, 390);
             this.dgvComisiones.TabIndex = 0;
-            // 
-            // IDPlan
-            // 
-            this.IDPlan.HeaderText = "ID_Plan";
-            this.IDPlan.Name = "IDPlan";
-            // 
-            // Anio_Especialidad
-            // 
-            this.Anio_Especialidad.HeaderText = "AnioEspecialidad";
-            this.Anio_Especialidad.Name = "Anio_Especialidad";
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
             // 
             // btnSalir
             // 
@@ -176,6 +161,24 @@ namespace UI.Desktop
             this.tsbEliminar.Size = new System.Drawing.Size(23, 22);
             this.tsbEliminar.Text = "Eliminar";
             this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
+            // 
+            // IDPlan
+            // 
+            this.IDPlan.DataPropertyName = "ID";
+            this.IDPlan.HeaderText = "ID_Plan";
+            this.IDPlan.Name = "IDPlan";
+            // 
+            // Anio_Especialidad
+            // 
+            this.Anio_Especialidad.DataPropertyName = "AnioEspecialidad";
+            this.Anio_Especialidad.HeaderText = "AnioEspecialidad";
+            this.Anio_Especialidad.Name = "Anio_Especialidad";
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "DescComision";
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
             // 
             // Comisiones
             // 
