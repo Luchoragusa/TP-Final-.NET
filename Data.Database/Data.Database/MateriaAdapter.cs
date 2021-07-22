@@ -86,7 +86,7 @@ namespace Data.Database
             try
             {
                 OpenConnection();
-                SqlCommand cmdDelete = new SqlCommand("delete materias where id_materia = @id", sqlConn);
+                SqlCommand cmdDelete = new SqlCommand("DELETE materias WHERE id_materia = @id", sqlConn);
                 cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 cmdDelete.ExecuteNonQuery();
             }

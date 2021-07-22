@@ -54,11 +54,11 @@ namespace UI.Desktop
             try
             {
                 formMDesktop.ShowDialog();
-                this.Listar();
+                Listar();
             }
             catch (Exception ex)
             {
-                throw ex;
+                MessageBox.Show(ex.Message + "Error: ", "Ha habido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }            
         }
 

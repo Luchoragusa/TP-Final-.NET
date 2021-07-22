@@ -79,8 +79,8 @@ namespace UI.Desktop
                 {
                     MateriaActual.State = BusinessEntity.States.Modified;
                     this.txtID.Text = this.MateriaActual.ID.ToString();
-                    this.MateriaActual.IDPlan = Convert.ToInt32(this.txtIDPlan.Text);  // OJO que tiene que ser de algun plan ya creado
                 }
+                this.MateriaActual.IDPlan = Convert.ToInt32(this.txtIDPlan.Text);  // OJO que tiene que ser de algun plan ya creado
                 this.MateriaActual.Descripcion = this.txtDesc.Text;
                 this.MateriaActual.HSSSemanales = Convert.ToInt32(this.txtHSSemanales.Text);
                 this.MateriaActual.HSTotales = Convert.ToInt32(this.txtHSTotales.Text);
