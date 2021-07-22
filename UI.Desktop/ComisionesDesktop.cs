@@ -57,7 +57,7 @@ namespace UI.Desktop
                 else if (Modo == ModoForm.Modificacion) this.btnModo.Text = "Guardar";
                 else if (Modo == ModoForm.Baja) this.btnModo.Text = "Eliminar";
 
-               // this.txtAnioEsp_Com.Text = this.ComisionActual.AnioEspecialidad.ToString();
+                this.txtAnioEsp_Com.Text = this.ComisionActual.AnioEspecialidad.ToString();
                 this.txtDesc_Com.Text = this.ComisionActual.DescComision;
                 this.txtIDPlan_Com.Text = this.ComisionActual.IDPlan.ToString();
             }
