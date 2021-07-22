@@ -57,6 +57,7 @@ namespace UI.Desktop
                 else if (Modo == ModoForm.Modificacion) this.btnModo.Text = "Guardar";
                 else if (Modo == ModoForm.Baja) this.btnModo.Text = "Eliminar";
 
+                this.txtIDCom.Text = this.ComisionActual.ID.ToString();
                 this.txtAnioEsp_Com.Text = this.ComisionActual.AnioEspecialidad.ToString();
                 this.txtDesc_Com.Text = this.ComisionActual.DescComision;
                 this.txtIDPlan_Com.Text = this.ComisionActual.IDPlan.ToString();
@@ -76,10 +77,11 @@ namespace UI.Desktop
                 if (Modo != ModoForm.Alta)
                 {
                     ComisionActual.State = BusinessEntity.States.Modified;
-                    this.ComisionActual.IDPlan = int.Parse(this.txtIDPlan_Com.Text);            
+                    this.txtIDCom.Text = this.ComisionActual.ID.ToString();
                 }
                 this.ComisionActual.DescComision = this.txtDesc_Com.Text;
                 this.ComisionActual.AnioEspecialidad = Convert.ToInt32(this.txtAnioEsp_Com.Text);
+                this.ComisionActual.IDPlan = int.Parse(this.txtIDPlan_Com.Text);
             }
 
             if (this.Modo == ModoForm.Baja) ComisionActual.State = BusinessEntity.States.Deleted;

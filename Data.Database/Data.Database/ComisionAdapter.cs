@@ -102,9 +102,7 @@ namespace Data.Database
             try
             {
                 OpenConnection();
-                SqlCommand cmdSave = new SqlCommand("INSERT INTO comisiones (desc_comision,anio_especialidad,id_plan)" +
-                    "values(@desc_comision,@anio_especialidad,@id_plan)" +
-                    "select @@identity ", sqlConn);
+                SqlCommand cmdSave = new SqlCommand("INSERT INTO comisiones (desc_comision,anio_especialidad,id_plan) values(@desc_comision,@anio_especialidad,@id_plan) select @@identity", sqlConn);
 
                 cmdSave.Parameters.Add("@desc_comision", SqlDbType.VarChar, 50).Value = comision.DescComision;
                 cmdSave.Parameters.Add("@anio_especialidad", SqlDbType.Int).Value = comision.AnioEspecialidad;
@@ -128,9 +126,7 @@ namespace Data.Database
             try
             {
                 OpenConnection();
-                SqlCommand cmdSave = new SqlCommand("UPDATE comisiones SET desc_comision = @desc_comision, anio_especialidad = @anio_especialdiad, " +
-                    "id_plan = @id_plan" +
-                    "WHERE id_comision = @id ", sqlConn);
+                SqlCommand cmdSave = new SqlCommand("UPDATE comisiones SET desc_comision = @desc_comision, anio_especialidad = @anio_especialdiad, id_plan = @id_plan WHERE id_comision = @id ", sqlConn);
 
                 cmdSave.Parameters.Add("@id_comision", SqlDbType.Int).Value = comision.ID;
                 cmdSave.Parameters.Add("@desc_comision", SqlDbType.VarChar, 50).Value = comision.DescComision;
