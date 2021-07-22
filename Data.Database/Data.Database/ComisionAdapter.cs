@@ -60,7 +60,7 @@ namespace Data.Database
                 {
                     com.ID = (int)drComision["id_comision"];
                     com.DescComision = (string)drComision["desc_comision"];
-                    com.AnioEspecialidad = (int)drComision["anio_especialdiad"];
+                    com.AnioEspecialidad = (int)drComision["anio_especialidad"];
                     com.IDPlan = (int)drComision["id_plan"];
                 }
                 drComision.Close();
@@ -107,7 +107,7 @@ namespace Data.Database
                     "select @@identity ", sqlConn);
 
                 cmdSave.Parameters.Add("@desc_comision", SqlDbType.VarChar, 50).Value = comision.DescComision;
-                cmdSave.Parameters.Add("@anio_especialdiad", SqlDbType.Int).Value = comision.AnioEspecialidad;
+                cmdSave.Parameters.Add("@anio_especialidad", SqlDbType.Int).Value = comision.AnioEspecialidad;
                 cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = comision.IDPlan;
 
                 comision.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
@@ -134,7 +134,7 @@ namespace Data.Database
 
                 cmdSave.Parameters.Add("@id_comision", SqlDbType.Int).Value = comision.ID;
                 cmdSave.Parameters.Add("@desc_comision", SqlDbType.VarChar, 50).Value = comision.DescComision;
-                cmdSave.Parameters.Add("@anio_especialdiad", SqlDbType.Int).Value = comision.AnioEspecialidad;
+                cmdSave.Parameters.Add("@anio_especialidad", SqlDbType.Int).Value = comision.AnioEspecialidad;
                 cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = comision.IDPlan;
                 cmdSave.ExecuteNonQuery();
             }

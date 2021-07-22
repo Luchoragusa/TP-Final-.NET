@@ -138,6 +138,7 @@ namespace Data.Database
                     "WHERE id_materia = @id ", sqlConn);
 
                 cmdSave.Parameters.Add("@id_materia", SqlDbType.Int).Value = materia.ID;
+
                 cmdSave.Parameters.Add("@desc_materia", SqlDbType.VarChar, 50).Value = materia.Descripcion;
                 cmdSave.Parameters.Add("@hs_semanales", SqlDbType.Int).Value = materia.HSSSemanales;
                 cmdSave.Parameters.Add("@hs_totales", SqlDbType.Int).Value = materia.HSTotales;

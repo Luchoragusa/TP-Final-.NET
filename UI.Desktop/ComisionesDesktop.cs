@@ -17,10 +17,10 @@ namespace UI.Desktop
             InitializeComponent();
         }
 
-        public ComisionesDesktop(ModoForm modo)
+        public ComisionesDesktop(ModoForm modo) : this()
         {
             this.Modo = modo;
-            ComisionActual = new Business.Entities.Comision();
+            MapearDeDatos();
         }
 
         private Business.Entities.Comision _Comision;
@@ -49,13 +49,18 @@ namespace UI.Desktop
 
         public override void MapearDeDatos()
         {
-            this.txtAnioEsp_Com.Text = this.ComisionActual.AnioEspecialidad.ToString();
-            this.txtDesc_Com.Text = this.ComisionActual.DescComision;
-            this.txtIDPlan_Com.Text = this.ComisionActual.IDPlan.ToString();
+            if (Modo == ModoForm.Alta)
+                this.btnModo.Text = "Guardar";
+            else
+            {
+                if (Modo == ModoForm.Consulta) this.btnModo.Text = "Aceptar";
+                else if (Modo == ModoForm.Modificacion) this.btnModo.Text = "Guardar";
+                else if (Modo == ModoForm.Baja) this.btnModo.Text = "Eliminar";
 
-            if (Modo == ModoForm.Consulta) this.btnModo.Text = "Aceptar";
-            else if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion) this.btnModo.Text = "Guardar";
-            else if (Modo == ModoForm.Baja) this.btnModo.Text = "Eliminar";
+               // this.txtAnioEsp_Com.Text = this.ComisionActual.AnioEspecialidad.ToString();
+                this.txtDesc_Com.Text = this.ComisionActual.DescComision;
+                this.txtIDPlan_Com.Text = this.ComisionActual.IDPlan.ToString();
+            }
         }
 
         public override void MapearADatos()
