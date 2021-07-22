@@ -19,8 +19,6 @@ namespace UI.Desktop
             InitializeComponent();
             this.dgvComisiones.AutoGenerateColumns = false;
             this.dgvComisiones.ReadOnly = true;
-            //this.dgvComisiones.ColumnAdded = false;
-            //this.dgvComisiones.ColumnRemoved = false;
         }
 
         public void Listar()

@@ -24,8 +24,14 @@ namespace UI.Desktop
         }
 
         private Business.Entities.Comision _Comision;
-        public Business.Entities.Comision ComisionActual { get; set; }
 
+        public Business.Entities.Comision ComisionActual
+        {
+            get
+            { return _Comision; }
+            set
+            { _Comision = value; }
+        }
         public ComisionesDesktop(int ID, ModoForm modo) : this()
         {
             this.Modo = modo;
