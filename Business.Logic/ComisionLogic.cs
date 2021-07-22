@@ -40,7 +40,7 @@ namespace Business.Logic
             }
             catch (Exception ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al recuperar la lista de comisiones.", ex);
+                Exception ExcepcionManejada = new Exception("Error al recuperar la lista logica de Comisiones.", ex);
                 throw ExcepcionManejada;
             }       
         }
