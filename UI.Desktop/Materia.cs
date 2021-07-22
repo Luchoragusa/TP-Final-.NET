@@ -92,7 +92,7 @@ namespace UI.Desktop
                 MessageBox.Show("Acción invalida", "Seleccione una fila.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            int ID = ((Business.Entities.Plan)this.dgvMaterias.SelectedRows[0].DataBoundItem).ID;
+            int ID = ((Business.Entities.Materia)this.dgvMaterias.SelectedRows[0].DataBoundItem).ID;
 
             MateriaDesktop formMateria = new MateriaDesktop(ID, ApplicationForm.ModoForm.Baja);
             try
