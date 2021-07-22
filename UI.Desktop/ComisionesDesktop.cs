@@ -71,11 +71,10 @@ namespace UI.Desktop
                 if (Modo != ModoForm.Alta)
                 {
                     ComisionActual.State = BusinessEntity.States.Modified;
-                    //this.txtID.Text = this.ComisionActual.ID.ToString();              preguntar
+                    this.ComisionActual.IDPlan = int.Parse(this.txtIDPlan_Com.Text);            
                 }
                 this.ComisionActual.DescComision = this.txtDesc_Com.Text;
                 this.ComisionActual.AnioEspecialidad = Convert.ToInt32(this.txtAnioEsp_Com.Text);
-                this.ComisionActual.IDPlan = Convert.ToInt32(this.txtIDPlan_Com.Text);
             }
 
             if (this.Modo == ModoForm.Baja) ComisionActual.State = BusinessEntity.States.Deleted;
