@@ -80,7 +80,7 @@ namespace UI.Desktop
                     MateriaActual.State = BusinessEntity.States.Modified;
                     this.txtID.Text = this.MateriaActual.ID.ToString();
                 }
-                this.MateriaActual.IDPlan = Convert.ToInt32(this.txtIDPlan.Text);  // OJO que tiene que ser de algun plan ya creado
+                this.MateriaActual.IDPlan = int.Parse(this.txtIDPlan.Text);  // OJO que tiene que ser de algun plan ya creado
                 this.MateriaActual.Descripcion = this.txtDesc.Text;
                 this.MateriaActual.HSSSemanales = Convert.ToInt32(this.txtHSSemanales.Text);
                 this.MateriaActual.HSTotales = Convert.ToInt32(this.txtHSTotales.Text);
@@ -104,9 +104,9 @@ namespace UI.Desktop
             }            
         }
 
-        public override bool Validar()              // validar lo de abajo con que sea correspondiente a un plan ya creado
+        public override bool Validar()              
         {
-            if (txtDesc.Text.Equals(String.Empty) || /*txtIDEspecialidad.Text.Equals(String.Empty) ||*/ lblHSTotales.Text.Equals(String.Empty) || txtHSSemanales.Text.Equals(String.Empty))
+            if (txtDesc.Text.Equals(String.Empty) || txtIDPlan.Text.Equals(String.Empty) || lblHSTotales.Text.Equals(String.Empty) || txtHSSemanales.Text.Equals(String.Empty))
             {
                 Notificar("Algunos de los campos están vaciós", "Complete todos para continuar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -118,7 +118,7 @@ namespace UI.Desktop
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (Validaciones.validarTexto(txtIDPlan.Text))
+            if (Validaciones.validarTexto(txtIDPlan.Text)) // validar lo de abajo con que sea correspondiente a un plan ya creado
             {
                 Notificar("ID incorrecta.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);

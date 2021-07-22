@@ -28,7 +28,7 @@ namespace Data.Database
 
                     com.ID = (int)drComision["id_comision"];
                     com.DescComision = (string)drComision["desc_comision"];
-                    com.AnioEspecialidad = (int)drComision["anio_especialdiad"];
+                    com.AnioEspecialidad = (int)drComision["anio_especialidad"];
                     com.IDPlan = (int)drComision["id_plan"];
 
                     comisiones.Add(com);

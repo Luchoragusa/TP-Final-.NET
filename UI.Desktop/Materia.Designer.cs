@@ -33,17 +33,17 @@ namespace UI.Desktop
             this.tscMaterias = new System.Windows.Forms.ToolStripContainer();
             this.tlMaterias = new System.Windows.Forms.TableLayoutPanel();
             this.dgvMaterias = new System.Windows.Forms.DataGridView();
+            this.IDPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HSSemanales = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HSTotales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.tsMaterias = new System.Windows.Forms.ToolStrip();
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
-            this.IDPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HSSemanales = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HSTotales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tscMaterias.ContentPanel.SuspendLayout();
             this.tscMaterias.TopToolStripPanel.SuspendLayout();
             this.tscMaterias.SuspendLayout();
@@ -103,6 +103,37 @@ namespace UI.Desktop
             this.dgvMaterias.Size = new System.Drawing.Size(794, 390);
             this.dgvMaterias.TabIndex = 0;
             // 
+            // IDPlan
+            // 
+            this.IDPlan.DataPropertyName = "IDPlan";
+            this.IDPlan.HeaderText = "ID_Plan";
+            this.IDPlan.Name = "IDPlan";
+            // 
+            // IDMateria
+            // 
+            this.IDMateria.DataPropertyName = "ID";
+            this.IDMateria.HeaderText = "ID_Materia";
+            this.IDMateria.Name = "IDMateria";
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "Descripcion";
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            // 
+            // HSSemanales
+            // 
+            this.HSSemanales.DataPropertyName = "HSSSemanales";
+            this.HSSemanales.HeaderText = "Horas Semanales";
+            this.HSSemanales.Name = "HSSemanales";
+            this.HSSemanales.Width = 150;
+            // 
+            // HSTotales
+            // 
+            this.HSTotales.DataPropertyName = "HSTotales";
+            this.HSTotales.HeaderText = "Horas Totales";
+            this.HSTotales.Name = "HSTotales";
+            // 
             // btnSalir
             // 
             this.btnSalir.Location = new System.Drawing.Point(722, 399);
@@ -111,6 +142,7 @@ namespace UI.Desktop
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnActualizar
             // 
@@ -121,6 +153,7 @@ namespace UI.Desktop
             this.btnActualizar.TabIndex = 1;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // tsMaterias
             // 
@@ -163,37 +196,6 @@ namespace UI.Desktop
             this.tsbEliminar.Size = new System.Drawing.Size(23, 22);
             this.tsbEliminar.Text = "Eliminar";
             this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click_1);
-            // 
-            // IDPlan
-            // 
-            this.IDPlan.DataPropertyName = "IDPlan";
-            this.IDPlan.HeaderText = "ID_Plan";
-            this.IDPlan.Name = "IDPlan";
-            // 
-            // IDMateria
-            // 
-            this.IDMateria.DataPropertyName = "ID";
-            this.IDMateria.HeaderText = "ID_Materia";
-            this.IDMateria.Name = "IDMateria";
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.DataPropertyName = "Descripcion";
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            // 
-            // HSSemanales
-            // 
-            this.HSSemanales.DataPropertyName = "HSSSemanales";
-            this.HSSemanales.HeaderText = "Horas Semanales";
-            this.HSSemanales.Name = "HSSemanales";
-            this.HSSemanales.Width = 150;
-            // 
-            // HSTotales
-            // 
-            this.HSTotales.DataPropertyName = "HSTotales";
-            this.HSTotales.HeaderText = "Horas Totales";
-            this.HSTotales.Name = "HSTotales";
             // 
             // Materia
             // 

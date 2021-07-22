@@ -55,7 +55,7 @@ namespace Business.Logic
             }
             catch (Exception ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al guardar la materia.", ex);
+                Exception ExcepcionManejada = new Exception("Error al guardar la materia (logic).", ex);
                 throw ExcepcionManejada;
             }
         }
