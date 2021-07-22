@@ -82,7 +82,6 @@ namespace UI.Desktop
             {
                 MessageBox.Show(ex.Message + "Error detected: ", "Ha habido un error interno.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
         }
 
         private void tsbEliminar_Click_1(object sender, EventArgs e)

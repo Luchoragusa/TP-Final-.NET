@@ -65,7 +65,7 @@ namespace Data.Database
                     mat.Descripcion = (string)drMaterias["desc_materia"];
                     mat.HSSSemanales = (int)drMaterias["hs_semanales"];
                     mat.HSTotales = (int)drMaterias["hs_totales"];
-                    mat.ID = (int)drMaterias["id_plan"];
+                    mat.IDPlan = (int)drMaterias["id_plan"];
                 }
                 drMaterias.Close();
             }
