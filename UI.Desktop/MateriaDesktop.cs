@@ -20,6 +20,7 @@ namespace UI.Desktop
         public MateriaDesktop(ModoForm modo) : this()
         {
             this.Modo = modo;
+            MapearDeDatos();
         }
 
         private Business.Entities.Materia _materia;
@@ -48,15 +49,20 @@ namespace UI.Desktop
   
         public override void MapearDeDatos()
         {
-            this.txtID.Text = this.MateriaActual.ID.ToString();
-            this.txtIDPlan.Text = this.MateriaActual.IDPlan.ToString();
-            this.txtDesc.Text = this.MateriaActual.Descripcion;
-            this.txtHSSemanales.Text = this.MateriaActual.HSSSemanales.ToString();
-            this.txtHSTotales.Text = this.MateriaActual.HSTotales.ToString();
+            if(Modo == ModoForm.Alta)
+                this.btnModo.Text = "Guardar";
+            else
+            {
+                if (Modo == ModoForm.Consulta) this.btnModo.Text = "Aceptar";
+                else if (Modo == ModoForm.Modificacion) this.btnModo.Text = "Guardar";
+                else if (Modo == ModoForm.Baja) this.btnModo.Text = "Eliminar";
 
-            if (Modo == ModoForm.Consulta) this.btnModo.Text = "Aceptar";
-            else if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion) this.btnModo.Text = "Guardar";
-            else if (Modo == ModoForm.Baja) this.btnModo.Text = "Eliminar";
+                this.txtID.Text = this.MateriaActual.ID.ToString();
+                this.txtIDPlan.Text = this.MateriaActual.IDPlan.ToString();
+                this.txtDesc.Text = this.MateriaActual.Descripcion;
+                this.txtHSSemanales.Text = this.MateriaActual.HSSSemanales.ToString();
+                this.txtHSTotales.Text = this.MateriaActual.HSTotales.ToString();
+            }
         }
 
         public override void MapearADatos()
@@ -100,7 +106,7 @@ namespace UI.Desktop
 
         public override bool Validar()              // validar lo de abajo con que sea correspondiente a un plan ya creado
         {
-            if (txtDesc.Text.Equals(String.Empty) || /*txtIDEspecialidad.Text.Equals(String.Empty) ||*/ txtHSTotales.Text.Equals(String.Empty) || txtHSSemanales.Text.Equals(String.Empty))
+            if (txtDesc.Text.Equals(String.Empty) || /*txtIDEspecialidad.Text.Equals(String.Empty) ||*/ lblHSTotales.Text.Equals(String.Empty) || txtHSSemanales.Text.Equals(String.Empty))
             {
                 Notificar("Algunos de los campos están vaciós", "Complete todos para continuar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
