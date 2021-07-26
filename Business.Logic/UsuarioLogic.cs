@@ -34,18 +34,11 @@ namespace Business.Logic
             }
         }
 
-        public bool login(Usuario usuario)
+        public Usuario login(Usuario usuario)
         {
             try
             {
-                if (UsuarioData.GetOneLogin(usuario) == usuario)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return UsuarioData.GetOneLogin(usuario);
             }
             catch (Exception ex)
             {
@@ -53,6 +46,8 @@ namespace Business.Logic
                 throw ExcepcionManejada;
             }
         }
+
+
 
         public List<Usuario> GetAll()
         {

@@ -28,27 +28,15 @@ namespace UI.Desktop
 
             UsuarioLogic loginUsuario = new UsuarioLogic();
 
-            if (loginUsuario.login(usuario))
+            if (loginUsuario.login(usuario) is null)
             {
-        
+                MessageBox.Show("Usted ingreso al sistema.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.DialogResult = DialogResult.OK;
             }
             else
             {
-                MessageBox.Show("Usuario y/o contraseña incorrectos", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Usuario y/o contraseña incorrectos", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);              
             }
-
-            /*//la propiedad Text de los TextBox contiene el texto escrito en ellos
-            if (this.txtUsuario.Text == "Admin" && this.txtPass.Text == "admin")
-            {
-                this.DialogResult = DialogResult.OK;
-                //MessageBox.Show("Usted ha ingresado al sistema correctamente.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                
-                MessageBox.Show("Usuario y/o contraseña incorrectos", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }*/
         }
 
         private void lnkOlvidaPass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
