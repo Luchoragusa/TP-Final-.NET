@@ -97,6 +97,7 @@ namespace UI.Desktop
             this.tlPlanes.SetColumnSpan(this.dgvComisiones, 2);
             this.dgvComisiones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvComisiones.Location = new System.Drawing.Point(3, 3);
+            this.dgvComisiones.MultiSelect = false;
             this.dgvComisiones.Name = "dgvComisiones";
             this.dgvComisiones.Size = new System.Drawing.Size(794, 390);
             this.dgvComisiones.TabIndex = 0;
