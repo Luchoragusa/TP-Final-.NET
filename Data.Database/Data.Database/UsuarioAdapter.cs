@@ -264,5 +264,35 @@ namespace Data.Database
             }
             usuario.State = BusinessEntity.States.Unmodified;
         }
+
+        public Business.Entities.Usuario GetOneLogin(Usuario usuario)
+        {
+            Usuario usr = new Usuario();
+            try
+            {
+                OpenConnection();
+                SqlCommand cmdUsuarios = new SqlCommand("SELECT * FROM usuarios WHERE nombre_usuario = @nombre_usuario and clave = @clave", sqlConn);
+                cmdUsuarios.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
+                cmdUsuarios.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave; 
+                SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
+                while (drUsuarios.Read())
+                {
+                    usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
+                    usr.Clave = (string)drUsuarios["clave"];
+
+                }
+                drUsuarios.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar datos de usuario", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+            return usr;
+        }
     }
 }

@@ -34,6 +34,26 @@ namespace Business.Logic
             }
         }
 
+        public bool login(Usuario usuario)
+        {
+            try
+            {
+                if (UsuarioData.GetOneLogin(usuario) != null)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar el usuario.", ex);
+                throw ExcepcionManejada;
+            }
+        }
+
         public List<Usuario> GetAll()
         {
             try

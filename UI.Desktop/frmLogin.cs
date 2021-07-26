@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Business.Entities;
+using Business.Logic;
 
 namespace UI.Desktop
 {
@@ -19,6 +21,22 @@ namespace UI.Desktop
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
+            Usuario usuario = new Usuario();
+
+            usuario.NombreUsuario = this.txtUsuario.Text;
+            usuario.Clave = this.txtPass.Text;
+
+            UsuarioLogic loginUsuario = new UsuarioLogic();
+
+            if (loginUsuario.login(usuario))
+            {
+                this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                MessageBox.Show("Usuario y/o contraseña incorrectos", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             /*//la propiedad Text de los TextBox contiene el texto escrito en ellos
             if (this.txtUsuario.Text == "Admin" && this.txtPass.Text == "admin")
             {
