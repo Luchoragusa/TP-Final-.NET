@@ -50,7 +50,7 @@ namespace UI.Desktop
         public override void MapearDeDatos()
         {
             if (Modo == ModoForm.Alta)
-                this.btnModo.Text = "Guardar";
+                this.btnModo.Text = "Aceptar";
             else
             {
                 if (Modo == ModoForm.Consulta) this.btnModo.Text = "Aceptar";
