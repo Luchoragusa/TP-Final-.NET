@@ -95,6 +95,7 @@ namespace UI.Desktop
             this.tlPlanes.SetColumnSpan(this.dgvPlanes, 2);
             this.dgvPlanes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPlanes.Location = new System.Drawing.Point(3, 3);
+            this.dgvPlanes.MultiSelect = false;
             this.dgvPlanes.Name = "dgvPlanes";
             this.dgvPlanes.Size = new System.Drawing.Size(742, 353);
             this.dgvPlanes.TabIndex = 0;
