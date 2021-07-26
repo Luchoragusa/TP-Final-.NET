@@ -37,6 +37,7 @@ namespace UI.Desktop
             this.btnMateria = new System.Windows.Forms.Button();
             this.btnComision = new System.Windows.Forms.Button();
             this.btnPlan = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -47,7 +48,7 @@ namespace UI.Desktop
             this.mnuArchivo});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(312, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(225, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -68,26 +69,29 @@ namespace UI.Desktop
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.btn_Usuario, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnMateria, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnComision, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.btnPlan, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btnPlan, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.btnMateria, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.button1, 0, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(312, 155);
+            this.tableLayoutPanel1.RowCount = 5;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.74627F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.25373F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(225, 205);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // btn_Usuario
             // 
             this.btn_Usuario.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_Usuario.Location = new System.Drawing.Point(40, 27);
+            this.btn_Usuario.Location = new System.Drawing.Point(75, 8);
             this.btn_Usuario.Name = "btn_Usuario";
             this.btn_Usuario.Size = new System.Drawing.Size(75, 23);
             this.btn_Usuario.TabIndex = 0;
@@ -98,7 +102,7 @@ namespace UI.Desktop
             // btnMateria
             // 
             this.btnMateria.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnMateria.Location = new System.Drawing.Point(196, 27);
+            this.btnMateria.Location = new System.Drawing.Point(75, 129);
             this.btnMateria.Name = "btnMateria";
             this.btnMateria.Size = new System.Drawing.Size(75, 23);
             this.btnMateria.TabIndex = 1;
@@ -109,7 +113,7 @@ namespace UI.Desktop
             // btnComision
             // 
             this.btnComision.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnComision.Location = new System.Drawing.Point(40, 104);
+            this.btnComision.Location = new System.Drawing.Point(75, 48);
             this.btnComision.Name = "btnComision";
             this.btnComision.Size = new System.Drawing.Size(75, 23);
             this.btnComision.TabIndex = 2;
@@ -120,7 +124,7 @@ namespace UI.Desktop
             // btnPlan
             // 
             this.btnPlan.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPlan.Location = new System.Drawing.Point(196, 104);
+            this.btnPlan.Location = new System.Drawing.Point(75, 87);
             this.btnPlan.Name = "btnPlan";
             this.btnPlan.Size = new System.Drawing.Size(75, 23);
             this.btnPlan.TabIndex = 3;
@@ -128,12 +132,22 @@ namespace UI.Desktop
             this.btnPlan.UseVisualStyleBackColor = true;
             this.btnPlan.Click += new System.EventHandler(this.btnPlan_Click);
             // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.Location = new System.Drawing.Point(75, 172);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(312, 179);
+            this.ClientSize = new System.Drawing.Size(225, 229);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -160,5 +174,6 @@ namespace UI.Desktop
         private System.Windows.Forms.Button btnMateria;
         private System.Windows.Forms.Button btnComision;
         private System.Windows.Forms.Button btnPlan;
+        private System.Windows.Forms.Button button1;
     }
 }
