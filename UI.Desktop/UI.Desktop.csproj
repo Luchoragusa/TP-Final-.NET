@@ -57,64 +57,64 @@
     <Compile Include="ApplicationForm.Designer.cs">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Comisiones.cs">
+    <Compile Include="Comision\Comisiones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Comisiones.Designer.cs">
+    <Compile Include="Comision\Comisiones.Designer.cs">
       <DependentUpon>Comisiones.cs</DependentUpon>
     </Compile>
-    <Compile Include="ComisionesDesktop.cs">
+    <Compile Include="Comision\ComisionesDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ComisionesDesktop.Designer.cs">
+    <Compile Include="Comision\ComisionesDesktop.Designer.cs">
       <DependentUpon>ComisionesDesktop.cs</DependentUpon>
     </Compile>
-    <Compile Include="Especialidad.cs">
+    <Compile Include="Especialidad\Especialidad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Especialidad.Designer.cs">
+    <Compile Include="Especialidad\Especialidad.Designer.cs">
       <DependentUpon>Especialidad.cs</DependentUpon>
     </Compile>
-    <Compile Include="EspecialidadDesktop.cs">
+    <Compile Include="Especialidad\EspecialidadDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EspecialidadDesktop.Designer.cs">
+    <Compile Include="Especialidad\EspecialidadDesktop.Designer.cs">
       <DependentUpon>EspecialidadDesktop.cs</DependentUpon>
     </Compile>
-    <Compile Include="MateriaDesktop.cs">
+    <Compile Include="Materia\MateriaDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MateriaDesktop.Designer.cs">
+    <Compile Include="Materia\MateriaDesktop.Designer.cs">
       <DependentUpon>MateriaDesktop.cs</DependentUpon>
     </Compile>
-    <Compile Include="Materia.cs">
+    <Compile Include="Materia\Materia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Materia.Designer.cs">
+    <Compile Include="Materia\Materia.Designer.cs">
       <DependentUpon>Materia.cs</DependentUpon>
     </Compile>
-    <Compile Include="Plan.cs">
+    <Compile Include="Plan\Plan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Plan.Designer.cs">
+    <Compile Include="Plan\Plan.Designer.cs">
       <DependentUpon>Plan.cs</DependentUpon>
     </Compile>
-    <Compile Include="PlanDesktop.cs">
+    <Compile Include="Plan\PlanDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PlanDesktop.Designer.cs">
+    <Compile Include="Plan\PlanDesktop.Designer.cs">
       <DependentUpon>PlanDesktop.cs</DependentUpon>
     </Compile>
-    <Compile Include="UsuarioDesktop.cs">
+    <Compile Include="Usuario\UsuarioDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UsuarioDesktop.Designer.cs">
+    <Compile Include="Usuario\UsuarioDesktop.Designer.cs">
       <DependentUpon>UsuarioDesktop.cs</DependentUpon>
     </Compile>
-    <Compile Include="Usuarios.cs">
+    <Compile Include="Usuario\Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Usuarios.Designer.cs">
+    <Compile Include="Usuario\Usuarios.Designer.cs">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
@@ -134,34 +134,34 @@
     <EmbeddedResource Include="ApplicationForm.resx">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Comisiones.resx">
+    <EmbeddedResource Include="Comision\Comisiones.resx">
       <DependentUpon>Comisiones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ComisionesDesktop.resx">
+    <EmbeddedResource Include="Comision\ComisionesDesktop.resx">
       <DependentUpon>ComisionesDesktop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Especialidad.resx">
+    <EmbeddedResource Include="Especialidad\Especialidad.resx">
       <DependentUpon>Especialidad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EspecialidadDesktop.resx">
+    <EmbeddedResource Include="Especialidad\EspecialidadDesktop.resx">
       <DependentUpon>EspecialidadDesktop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Materia.resx">
+    <EmbeddedResource Include="Materia\Materia.resx">
       <DependentUpon>Materia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MateriaDesktop.resx">
+    <EmbeddedResource Include="Materia\MateriaDesktop.resx">
       <DependentUpon>MateriaDesktop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Plan.resx">
+    <EmbeddedResource Include="Plan\Plan.resx">
       <DependentUpon>Plan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PlanDesktop.resx">
+    <EmbeddedResource Include="Plan\PlanDesktop.resx">
       <DependentUpon>PlanDesktop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UsuarioDesktop.resx">
+    <EmbeddedResource Include="Usuario\UsuarioDesktop.resx">
       <DependentUpon>UsuarioDesktop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Usuarios.resx">
+    <EmbeddedResource Include="Usuario\Usuarios.resx">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
