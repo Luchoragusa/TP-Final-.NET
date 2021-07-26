@@ -125,13 +125,12 @@ namespace Data.Database
             try
             {
                 OpenConnection();
-                SqlCommand cmdSave = new SqlCommand("UPDATE especialidades SET desc_especialidad = @desc_especialidad" +                   
-                    "WHERE id_especialidad = @id ", sqlConn);
+                SqlCommand cmdUpd = new SqlCommand("UPDATE especialidades SET desc_especialidad = @desc_especialidad WHERE id_especialidad = @id ", sqlConn);
 
-                cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = especialidad.ID;
-                cmdSave.Parameters.Add("@desc_especialidad", SqlDbType.VarChar, 50).Value = especialidad.DescEspecialidad;
+                cmdUpd.Parameters.Add("@id", SqlDbType.Int).Value = especialidad.ID;
+                cmdUpd.Parameters.Add("@desc_especialidad", SqlDbType.VarChar, 50).Value = especialidad.DescEspecialidad;
                 
-                cmdSave.ExecuteNonQuery();
+                cmdUpd.ExecuteNonQuery();
             }
             catch (Exception Ex)
             {

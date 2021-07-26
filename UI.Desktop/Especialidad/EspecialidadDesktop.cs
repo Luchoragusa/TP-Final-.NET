@@ -96,7 +96,7 @@ namespace UI.Desktop
 
         public override bool Validar()
         {
-            if (txtDescEsp.Text.Equals(String.Empty) || txtIDEsp.Text.Equals(String.Empty))
+            if (txtDescEsp.Text.Equals(String.Empty))
             {
                 Notificar("Algunos de los campos están vaciós", "Complete todos para continuar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -107,14 +107,7 @@ namespace UI.Desktop
                 Notificar("Descripcion incorrecta.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
-            }
-            if (Validaciones.validarTexto(txtIDEsp.Text))    //quitamos el "!", siguiendo logica de UsuarioDesktop 
-            {
-                Notificar("Año especialidad incorrecto.", "Intente nuevamente",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            
+            }            
             return true;
         }
         private void btnModo_Click(object sender, EventArgs e)

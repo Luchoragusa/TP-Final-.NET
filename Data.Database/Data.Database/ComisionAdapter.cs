@@ -126,13 +126,13 @@ namespace Data.Database
             try
             {
                 OpenConnection();
-                SqlCommand cmdSave = new SqlCommand("UPDATE comisiones SET desc_comision = @desc_comision, anio_especialidad = @anio_especialdiad, id_plan = @id_plan WHERE id_comision = @id ", sqlConn);
+                SqlCommand cmdUpd = new SqlCommand("UPDATE comisiones SET desc_comision = @desc_comision, anio_especialidad = @anio_especialdiad, id_plan = @id_plan WHERE id_comision = @id ", sqlConn);
 
-                cmdSave.Parameters.Add("@id_comision", SqlDbType.Int).Value = comision.ID;
-                cmdSave.Parameters.Add("@desc_comision", SqlDbType.VarChar, 50).Value = comision.DescComision;
-                cmdSave.Parameters.Add("@anio_especialidad", SqlDbType.Int).Value = comision.AnioEspecialidad;
-                cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = comision.IDPlan;
-                cmdSave.ExecuteNonQuery();
+                cmdUpd.Parameters.Add("@id_comision", SqlDbType.Int).Value = comision.ID;
+                cmdUpd.Parameters.Add("@desc_comision", SqlDbType.VarChar, 50).Value = comision.DescComision;
+                cmdUpd.Parameters.Add("@anio_especialidad", SqlDbType.Int).Value = comision.AnioEspecialidad;
+                cmdUpd.Parameters.Add("@id_plan", SqlDbType.Int).Value = comision.IDPlan;
+                cmdUpd.ExecuteNonQuery();
             }
             catch (Exception Ex)
             {

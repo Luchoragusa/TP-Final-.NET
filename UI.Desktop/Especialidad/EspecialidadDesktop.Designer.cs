@@ -109,6 +109,7 @@ namespace UI.Desktop
             this.btnModo.TabIndex = 2;
             this.btnModo.Text = "Aceptar";
             this.btnModo.UseVisualStyleBackColor = true;
+            this.btnModo.Click += new System.EventHandler(this.btnModo_Click);
             // 
             // btnCancelar
             // 

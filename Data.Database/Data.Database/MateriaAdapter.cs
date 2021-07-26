@@ -133,15 +133,15 @@ namespace Data.Database
             try
             {
                 OpenConnection();
-                SqlCommand cmdSave = new SqlCommand("UPDATE materias SET desc_materia = @desc_materia, hs_semanales = @hs_semanales, hs_totales = @hs_totales, id_plan = @id_plan WHERE id_materia = @id ", sqlConn);
+                SqlCommand cmdUpd = new SqlCommand("UPDATE materias SET desc_materia = @desc_materia, hs_semanales = @hs_semanales, hs_totales = @hs_totales, id_plan = @id_plan WHERE id_materia = @id ", sqlConn);
 
-                cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = materia.ID;
-                cmdSave.Parameters.Add("@desc_materia", SqlDbType.VarChar, 50).Value = materia.Descripcion;
-                cmdSave.Parameters.Add("@hs_semanales", SqlDbType.Int).Value = materia.HSSSemanales;
-                cmdSave.Parameters.Add("@hs_totales", SqlDbType.Int).Value = materia.HSTotales;
-                cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = materia.IDPlan;
+                cmdUpd.Parameters.Add("@id", SqlDbType.Int).Value = materia.ID;
+                cmdUpd.Parameters.Add("@desc_materia", SqlDbType.VarChar, 50).Value = materia.Descripcion;
+                cmdUpd.Parameters.Add("@hs_semanales", SqlDbType.Int).Value = materia.HSSSemanales;
+                cmdUpd.Parameters.Add("@hs_totales", SqlDbType.Int).Value = materia.HSTotales;
+                cmdUpd.Parameters.Add("@id_plan", SqlDbType.Int).Value = materia.IDPlan;
 
-                cmdSave.ExecuteNonQuery();
+                cmdUpd.ExecuteNonQuery();
             }
             catch (Exception Ex)
             {
