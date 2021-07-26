@@ -30,6 +30,7 @@ namespace UI.Desktop
 
             if (loginUsuario.login(usuario))
             {
+        
                 this.DialogResult = DialogResult.OK;
             }
             else

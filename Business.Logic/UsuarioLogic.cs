@@ -38,7 +38,7 @@ namespace Business.Logic
         {
             try
             {
-                if (UsuarioData.GetOneLogin(usuario) != null)
+                if (UsuarioData.GetOneLogin(usuario) == usuario)
                 {
                     return true;
                 }
