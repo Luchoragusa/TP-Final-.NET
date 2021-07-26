@@ -34,7 +34,7 @@ namespace Business.Logic
             }
         }
 
-        public Usuario login(Usuario usuario)
+        public int login(Usuario usuario)
         {
             try
             {

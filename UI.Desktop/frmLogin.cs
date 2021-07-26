@@ -17,6 +17,12 @@ namespace UI.Desktop
         public frmLogin()
         {
             InitializeComponent();
+            US = new UsuarioLogic();
+        }
+
+        public UsuarioLogic US
+        {
+            get; set;
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -28,14 +34,14 @@ namespace UI.Desktop
 
             UsuarioLogic loginUsuario = new UsuarioLogic();
 
-            if (loginUsuario.login(usuario) is null)
+            if (loginUsuario.login(usuario) != -1)
             {
-                MessageBox.Show("Usted ingreso al sistema.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                this.DialogResult = DialogResult.OK;
-            }
+                MessageBox.Show("Usted ingreso al sistema.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK;               
+            }                           
             else
             {
-                MessageBox.Show("Usuario y/o contraseña incorrectos", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);              
+                MessageBox.Show("Usuario y/o contraseña incorrectos", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -265,23 +265,23 @@ namespace Data.Database
             usuario.State = BusinessEntity.States.Unmodified;
         }
 
-        public Business.Entities.Usuario GetOneLogin(Usuario usuario)
+        public int GetOneLogin(Usuario usuario)
         {
-            Usuario usr = new Usuario();
+            int tipo_persona = -1;
             try
             {
                 OpenConnection();
-                SqlCommand cmdUsuarios = new SqlCommand("SELECT * FROM usuarios WHERE nombre_usuario = @nombre_usuario and clave = @clave", sqlConn);
+                SqlCommand cmdUsuarios = new SqlCommand("SELECT personas.tipo_persona FROM usuarios inner join personas on personas.id_persona = usuarios.id_persona WHERE nombre_usuario = @nombre_usuario and clave = @clave", sqlConn);             
                 cmdUsuarios.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
-                cmdUsuarios.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave; 
+                cmdUsuarios.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;              
                 SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
+
                 while (drUsuarios.Read())
                 {
-                    usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
-                    usr.Clave = (string)drUsuarios["clave"];
-
+                    tipo_persona = (int)drUsuarios["tipo_persona"];
                 }
-                drUsuarios.Close();
+
+                drUsuarios.Close();               
             }
             catch (Exception Ex)
             {
@@ -292,7 +292,7 @@ namespace Data.Database
             {
                 CloseConnection();
             }
-            return usr;
+            return tipo_persona;
         }
     }
 }
