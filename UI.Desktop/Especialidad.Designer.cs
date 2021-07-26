@@ -181,6 +181,7 @@ namespace UI.Desktop
             this.Controls.Add(this.tcPlanes);
             this.Name = "Especialidad";
             this.Text = "Especialidad";
+            this.Load += new System.EventHandler(this.Especialidades_Load);
             this.tcPlanes.ContentPanel.ResumeLayout(false);
             this.tcPlanes.TopToolStripPanel.ResumeLayout(false);
             this.tcPlanes.TopToolStripPanel.PerformLayout();

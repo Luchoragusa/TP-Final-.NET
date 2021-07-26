@@ -190,6 +190,7 @@ namespace UI.Desktop
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Plan";
             this.Text = "Plan";
+            this.Load += new System.EventHandler(this.Planes_Load);
             this.tcPlanes.ContentPanel.ResumeLayout(false);
             this.tcPlanes.TopToolStripPanel.ResumeLayout(false);
             this.tcPlanes.TopToolStripPanel.PerformLayout();
