@@ -99,6 +99,7 @@ namespace UI.Desktop
             this.tlMaterias.SetColumnSpan(this.dgvMaterias, 2);
             this.dgvMaterias.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMaterias.Location = new System.Drawing.Point(3, 3);
+            this.dgvMaterias.MultiSelect = false;
             this.dgvMaterias.Name = "dgvMaterias";
             this.dgvMaterias.Size = new System.Drawing.Size(794, 390);
             this.dgvMaterias.TabIndex = 0;
