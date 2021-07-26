@@ -24,11 +24,12 @@ namespace UI.Desktop
 
         private void formMain_Shown(object sender, EventArgs e)
         {
-            frmLogin appLogin = new frmLogin();
+           frmLogin appLogin = new frmLogin();
            if (appLogin.ShowDialog() != DialogResult.OK)
-            {
+           {
                 this.Dispose();
-            }
+           }
+           //tipoPersona(tipo);
         }
 
         private void btn_Usuario_Click(object sender, EventArgs e)
@@ -53,6 +54,14 @@ namespace UI.Desktop
         {
             Plan plan = new Plan();
             plan.ShowDialog();
+        }
+
+        internal void tipoPersona(int tipo)
+        {
+            if (tipo == 1)  //alumno
+            {
+                btnEspecialidad.Enabled = false;
+            }
         }
 
         private void btnEspecialidad_Click(object sender, EventArgs e)

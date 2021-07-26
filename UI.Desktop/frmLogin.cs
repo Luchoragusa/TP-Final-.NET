@@ -28,16 +28,25 @@ namespace UI.Desktop
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             Usuario usuario = new Usuario();
+            int tipo = 0;
 
             usuario.NombreUsuario = this.txtUsuario.Text;
             usuario.Clave = this.txtPass.Text;
 
             UsuarioLogic loginUsuario = new UsuarioLogic();
 
-            if (loginUsuario.login(usuario) != -1)
+            tipo = loginUsuario.login(usuario);
+
+            if (tipo != -1)       
             {
                 MessageBox.Show("Usted ingreso al sistema.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.DialogResult = DialogResult.OK;               
+                this.DialogResult = DialogResult.OK;    
+                
+                if (tipo == 1)      //seria alumno
+                {
+                    formMain main = new formMain();
+                    main.tipoPersona(tipo);
+                }
             }                           
             else
             {
