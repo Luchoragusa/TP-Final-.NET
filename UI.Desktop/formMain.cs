@@ -54,5 +54,11 @@ namespace UI.Desktop
             Plan plan = new Plan();
             plan.ShowDialog();
         }
+
+        private void btnEspecialidad_Click(object sender, EventArgs e)
+        {
+            Especialidad esp = new Especialidad();
+            esp.ShowDialog();
+        }
     }
 }

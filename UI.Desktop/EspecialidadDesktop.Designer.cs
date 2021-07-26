@@ -106,7 +106,7 @@ namespace UI.Desktop
             this.btnModo.Location = new System.Drawing.Point(20, 131);
             this.btnModo.Name = "btnModo";
             this.btnModo.Size = new System.Drawing.Size(75, 23);
-            this.btnModo.TabIndex = 7;
+            this.btnModo.TabIndex = 2;
             this.btnModo.Text = "Aceptar";
             this.btnModo.UseVisualStyleBackColor = true;
             // 
@@ -116,7 +116,7 @@ namespace UI.Desktop
             this.btnCancelar.Location = new System.Drawing.Point(294, 131);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 8;
+            this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);

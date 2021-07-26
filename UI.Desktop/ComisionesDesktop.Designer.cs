@@ -30,16 +30,16 @@ namespace UI.Desktop
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtIDCom = new System.Windows.Forms.TextBox();
-            this.txtDesc_Com = new System.Windows.Forms.TextBox();
-            this.lblDescCom = new System.Windows.Forms.Label();
-            this.txtAnioEsp_Com = new System.Windows.Forms.TextBox();
             this.lblID_Plan = new System.Windows.Forms.Label();
             this.txtIDPlan_Com = new System.Windows.Forms.TextBox();
-            this.lblAnioEsp = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.lblIDComision = new System.Windows.Forms.Label();
             this.btnModo = new System.Windows.Forms.Button();
+            this.txtAnioEsp_Com = new System.Windows.Forms.TextBox();
+            this.lblAnioEsp = new System.Windows.Forms.Label();
+            this.lblDescCom = new System.Windows.Forms.Label();
+            this.txtDesc_Com = new System.Windows.Forms.TextBox();
+            this.lblIDComision = new System.Windows.Forms.Label();
+            this.txtIDCom = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,41 +70,6 @@ namespace UI.Desktop
             this.tableLayoutPanel1.Size = new System.Drawing.Size(384, 262);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
-            // txtIDCom
-            // 
-            this.txtIDCom.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtIDCom.Location = new System.Drawing.Point(105, 80);
-            this.txtIDCom.Name = "txtIDCom";
-            this.txtIDCom.ReadOnly = true;
-            this.txtIDCom.Size = new System.Drawing.Size(256, 20);
-            this.txtIDCom.TabIndex = 14;
-            // 
-            // txtDesc_Com
-            // 
-            this.txtDesc_Com.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtDesc_Com.Location = new System.Drawing.Point(105, 140);
-            this.txtDesc_Com.Name = "txtDesc_Com";
-            this.txtDesc_Com.Size = new System.Drawing.Size(256, 20);
-            this.txtDesc_Com.TabIndex = 1;
-            // 
-            // lblDescCom
-            // 
-            this.lblDescCom.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblDescCom.AutoSize = true;
-            this.lblDescCom.Location = new System.Drawing.Point(3, 137);
-            this.lblDescCom.Name = "lblDescCom";
-            this.lblDescCom.Size = new System.Drawing.Size(92, 26);
-            this.lblDescCom.TabIndex = 11;
-            this.lblDescCom.Text = "Descripcion de la comision";
-            // 
-            // txtAnioEsp_Com
-            // 
-            this.txtAnioEsp_Com.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtAnioEsp_Com.Location = new System.Drawing.Point(105, 195);
-            this.txtAnioEsp_Com.Name = "txtAnioEsp_Com";
-            this.txtAnioEsp_Com.Size = new System.Drawing.Size(256, 20);
-            this.txtAnioEsp_Com.TabIndex = 0;
-            // 
             // lblID_Plan
             // 
             this.lblID_Plan.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -121,7 +86,37 @@ namespace UI.Desktop
             this.txtIDPlan_Com.Location = new System.Drawing.Point(105, 20);
             this.txtIDPlan_Com.Name = "txtIDPlan_Com";
             this.txtIDPlan_Com.Size = new System.Drawing.Size(256, 20);
-            this.txtIDPlan_Com.TabIndex = 2;
+            this.txtIDPlan_Com.TabIndex = 0;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.Location = new System.Drawing.Point(306, 236);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 5;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnModo
+            // 
+            this.btnModo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnModo.Location = new System.Drawing.Point(3, 236);
+            this.btnModo.Name = "btnModo";
+            this.btnModo.Size = new System.Drawing.Size(75, 23);
+            this.btnModo.TabIndex = 4;
+            this.btnModo.Text = "Aceptar";
+            this.btnModo.UseVisualStyleBackColor = true;
+            this.btnModo.Click += new System.EventHandler(this.btnModo_Click);
+            // 
+            // txtAnioEsp_Com
+            // 
+            this.txtAnioEsp_Com.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtAnioEsp_Com.Location = new System.Drawing.Point(105, 195);
+            this.txtAnioEsp_Com.Name = "txtAnioEsp_Com";
+            this.txtAnioEsp_Com.Size = new System.Drawing.Size(256, 20);
+            this.txtAnioEsp_Com.TabIndex = 3;
             // 
             // lblAnioEsp
             // 
@@ -133,16 +128,23 @@ namespace UI.Desktop
             this.lblAnioEsp.TabIndex = 10;
             this.lblAnioEsp.Text = "Año Especialidad";
             // 
-            // btnCancelar
+            // lblDescCom
             // 
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.Location = new System.Drawing.Point(306, 236);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 8;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.lblDescCom.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblDescCom.AutoSize = true;
+            this.lblDescCom.Location = new System.Drawing.Point(3, 137);
+            this.lblDescCom.Name = "lblDescCom";
+            this.lblDescCom.Size = new System.Drawing.Size(92, 26);
+            this.lblDescCom.TabIndex = 11;
+            this.lblDescCom.Text = "Descripcion de la comision";
+            // 
+            // txtDesc_Com
+            // 
+            this.txtDesc_Com.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtDesc_Com.Location = new System.Drawing.Point(105, 140);
+            this.txtDesc_Com.Name = "txtDesc_Com";
+            this.txtDesc_Com.Size = new System.Drawing.Size(256, 20);
+            this.txtDesc_Com.TabIndex = 2;
             // 
             // lblIDComision
             // 
@@ -154,16 +156,14 @@ namespace UI.Desktop
             this.lblIDComision.TabIndex = 13;
             this.lblIDComision.Text = "ID Comision";
             // 
-            // btnModo
+            // txtIDCom
             // 
-            this.btnModo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnModo.Location = new System.Drawing.Point(3, 236);
-            this.btnModo.Name = "btnModo";
-            this.btnModo.Size = new System.Drawing.Size(75, 23);
-            this.btnModo.TabIndex = 7;
-            this.btnModo.Text = "Aceptar";
-            this.btnModo.UseVisualStyleBackColor = true;
-            this.btnModo.Click += new System.EventHandler(this.btnModo_Click);
+            this.txtIDCom.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtIDCom.Location = new System.Drawing.Point(105, 80);
+            this.txtIDCom.Name = "txtIDCom";
+            this.txtIDCom.ReadOnly = true;
+            this.txtIDCom.Size = new System.Drawing.Size(256, 20);
+            this.txtIDCom.TabIndex = 1;
             // 
             // ComisionesDesktop
             // 
