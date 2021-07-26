@@ -47,7 +47,7 @@ namespace UI.Desktop
             this.mnuArchivo});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(289, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(312, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -81,12 +81,13 @@ namespace UI.Desktop
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(289, 134);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(312, 155);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // btn_Usuario
             // 
-            this.btn_Usuario.Location = new System.Drawing.Point(3, 3);
+            this.btn_Usuario.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_Usuario.Location = new System.Drawing.Point(40, 27);
             this.btn_Usuario.Name = "btn_Usuario";
             this.btn_Usuario.Size = new System.Drawing.Size(75, 23);
             this.btn_Usuario.TabIndex = 0;
@@ -96,7 +97,8 @@ namespace UI.Desktop
             // 
             // btnMateria
             // 
-            this.btnMateria.Location = new System.Drawing.Point(147, 3);
+            this.btnMateria.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnMateria.Location = new System.Drawing.Point(196, 27);
             this.btnMateria.Name = "btnMateria";
             this.btnMateria.Size = new System.Drawing.Size(75, 23);
             this.btnMateria.TabIndex = 1;
@@ -106,7 +108,8 @@ namespace UI.Desktop
             // 
             // btnComision
             // 
-            this.btnComision.Location = new System.Drawing.Point(3, 70);
+            this.btnComision.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnComision.Location = new System.Drawing.Point(40, 104);
             this.btnComision.Name = "btnComision";
             this.btnComision.Size = new System.Drawing.Size(75, 23);
             this.btnComision.TabIndex = 2;
@@ -116,7 +119,8 @@ namespace UI.Desktop
             // 
             // btnPlan
             // 
-            this.btnPlan.Location = new System.Drawing.Point(147, 70);
+            this.btnPlan.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPlan.Location = new System.Drawing.Point(196, 104);
             this.btnPlan.Name = "btnPlan";
             this.btnPlan.Size = new System.Drawing.Size(75, 23);
             this.btnPlan.TabIndex = 3;
@@ -129,14 +133,14 @@ namespace UI.Desktop
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(289, 158);
+            this.ClientSize = new System.Drawing.Size(312, 179);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "formMain";
             this.Text = "Academia";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Shown += new System.EventHandler(this.formMain_Shown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
