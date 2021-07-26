@@ -19,7 +19,7 @@ namespace UI.Desktop
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            //la propiedad Text de los TextBox contiene el texto escrito en ellos
+            /*//la propiedad Text de los TextBox contiene el texto escrito en ellos
             if (this.txtUsuario.Text == "Admin" && this.txtPass.Text == "admin")
             {
                 this.DialogResult = DialogResult.OK;
@@ -29,7 +29,7 @@ namespace UI.Desktop
             {
                 
                 MessageBox.Show("Usuario y/o contraseña incorrectos", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }*/
         }
 
         private void lnkOlvidaPass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
