@@ -17,14 +17,20 @@ namespace UI.Desktop
         {
             InitializeComponent();
         }
-        public EspecialidadDesktop(ModoForm modo)
+        public EspecialidadDesktop(ModoForm modo) : this()
         {
             this.Modo = modo;
             EspecialidadActual = new Business.Entities.Especialidad();
         }
 
-        private Business.Entities.Especialidad _Especialidad;
-        public Business.Entities.Especialidad EspecialidadActual { get; set; }
+        private Business.Entities.Especialidad _especialidad;
+        public Business.Entities.Especialidad EspecialidadActual
+        {
+            get
+            { return _especialidad; }
+            set
+            { _especialidad = value; }
+        }
 
         public EspecialidadDesktop(int ID, ModoForm modo) : this()
         {
