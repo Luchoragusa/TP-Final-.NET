@@ -38,6 +38,7 @@ namespace UI.Desktop
             this.btnPlan = new System.Windows.Forms.Button();
             this.btnMateria = new System.Windows.Forms.Button();
             this.btnEspecialidad = new System.Windows.Forms.Button();
+            this.btnCurso = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -70,28 +71,30 @@ namespace UI.Desktop
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.btn_Usuario, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnComision, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnPlan, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.btnMateria, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.btnEspecialidad, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.btnCurso, 0, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.74627F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.25373F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(225, 205);
+            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(225, 180);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // btn_Usuario
             // 
             this.btn_Usuario.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_Usuario.Location = new System.Drawing.Point(75, 8);
+            this.btn_Usuario.Location = new System.Drawing.Point(75, 3);
             this.btn_Usuario.Name = "btn_Usuario";
             this.btn_Usuario.Size = new System.Drawing.Size(75, 23);
             this.btn_Usuario.TabIndex = 0;
@@ -102,7 +105,7 @@ namespace UI.Desktop
             // btnComision
             // 
             this.btnComision.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnComision.Location = new System.Drawing.Point(75, 48);
+            this.btnComision.Location = new System.Drawing.Point(75, 33);
             this.btnComision.Name = "btnComision";
             this.btnComision.Size = new System.Drawing.Size(75, 23);
             this.btnComision.TabIndex = 1;
@@ -113,7 +116,7 @@ namespace UI.Desktop
             // btnPlan
             // 
             this.btnPlan.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPlan.Location = new System.Drawing.Point(75, 87);
+            this.btnPlan.Location = new System.Drawing.Point(75, 63);
             this.btnPlan.Name = "btnPlan";
             this.btnPlan.Size = new System.Drawing.Size(75, 23);
             this.btnPlan.TabIndex = 2;
@@ -124,7 +127,7 @@ namespace UI.Desktop
             // btnMateria
             // 
             this.btnMateria.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnMateria.Location = new System.Drawing.Point(75, 129);
+            this.btnMateria.Location = new System.Drawing.Point(75, 93);
             this.btnMateria.Name = "btnMateria";
             this.btnMateria.Size = new System.Drawing.Size(75, 23);
             this.btnMateria.TabIndex = 3;
@@ -135,7 +138,7 @@ namespace UI.Desktop
             // btnEspecialidad
             // 
             this.btnEspecialidad.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEspecialidad.Location = new System.Drawing.Point(75, 172);
+            this.btnEspecialidad.Location = new System.Drawing.Point(75, 123);
             this.btnEspecialidad.Name = "btnEspecialidad";
             this.btnEspecialidad.Size = new System.Drawing.Size(75, 23);
             this.btnEspecialidad.TabIndex = 4;
@@ -143,12 +146,23 @@ namespace UI.Desktop
             this.btnEspecialidad.UseVisualStyleBackColor = true;
             this.btnEspecialidad.Click += new System.EventHandler(this.btnEspecialidad_Click);
             // 
+            // btnCurso
+            // 
+            this.btnCurso.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCurso.Location = new System.Drawing.Point(75, 153);
+            this.btnCurso.Name = "btnCurso";
+            this.btnCurso.Size = new System.Drawing.Size(75, 23);
+            this.btnCurso.TabIndex = 5;
+            this.btnCurso.Text = "Curso";
+            this.btnCurso.UseVisualStyleBackColor = true;
+            this.btnCurso.Click += new System.EventHandler(this.btnCurso_Click);
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(225, 229);
+            this.ClientSize = new System.Drawing.Size(225, 204);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -176,5 +190,6 @@ namespace UI.Desktop
         private System.Windows.Forms.Button btnComision;
         private System.Windows.Forms.Button btnPlan;
         private System.Windows.Forms.Button btnEspecialidad;
+        private System.Windows.Forms.Button btnCurso;
     }
 }

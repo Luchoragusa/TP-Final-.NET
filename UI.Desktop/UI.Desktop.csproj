@@ -69,6 +69,18 @@
     <Compile Include="Comision\ComisionesDesktop.Designer.cs">
       <DependentUpon>ComisionesDesktop.cs</DependentUpon>
     </Compile>
+    <Compile Include="Curso\Cursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Curso\Cursos.Designer.cs">
+      <DependentUpon>Cursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Curso\CursosDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Curso\CursosDesktop.Designer.cs">
+      <DependentUpon>CursosDesktop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Especialidad\Especialidad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +151,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Comision\ComisionesDesktop.resx">
       <DependentUpon>ComisionesDesktop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Curso\Cursos.resx">
+      <DependentUpon>Cursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Curso\CursosDesktop.resx">
+      <DependentUpon>CursosDesktop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Especialidad\Especialidad.resx">
       <DependentUpon>Especialidad.cs</DependentUpon>

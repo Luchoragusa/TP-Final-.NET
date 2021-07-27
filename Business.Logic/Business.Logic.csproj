@@ -43,12 +43,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLogic.cs" />
-    <Compile Include="EspecialidadLogic.cs" />
-    <Compile Include="ComisionLogic.cs" />
-    <Compile Include="MateriaLogic.cs" />
-    <Compile Include="PlanLogic.cs" />
+    <Compile Include="EntidadesLogic\CursoLogic.cs" />
+    <Compile Include="EntidadesLogic\EspecialidadLogic.cs" />
+    <Compile Include="EntidadesLogic\ComisionLogic.cs" />
+    <Compile Include="EntidadesLogic\MateriaLogic.cs" />
+    <Compile Include="EntidadesLogic\PlanLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UsuarioLogic.cs" />
+    <Compile Include="EntidadesLogic\UsuarioLogic.cs" />
     <Compile Include="Validaciones.cs" />
   </ItemGroup>
   <ItemGroup>

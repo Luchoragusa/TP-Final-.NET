@@ -69,5 +69,11 @@ namespace UI.Desktop
             Especialidad esp = new Especialidad();
             esp.ShowDialog();
         }
+
+        private void btnCurso_Click(object sender, EventArgs e)
+        {
+            UI.Desktop.Cursos curso = new UI.Desktop.Cursos();
+            curso.ShowDialog();            
+        }
     }
 }
