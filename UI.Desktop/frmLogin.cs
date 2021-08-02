@@ -40,11 +40,9 @@ namespace UI.Desktop
             if (tipo != -1)       
             {
                 MessageBox.Show("Usted ingreso al sistema.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.DialogResult = DialogResult.OK;    
+                this.DialogResult = DialogResult.OK;
                 
-                formMain main = new formMain();
-                main.tipoPersona(tipo);
-
+                _ = new formMain(tipo);
             }                           
             else
             {

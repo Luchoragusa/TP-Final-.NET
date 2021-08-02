@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Business.Entities
 {
-    public class Usuario : BusinessEntity                                  
+    public class Usuario : BusinessEntity                      //sacar nombre y apellido y mail           
     {
         private string nombreUsuario, clave, nombre, apellido, email;
         private bool habilitado;

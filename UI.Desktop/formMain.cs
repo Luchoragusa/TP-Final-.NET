@@ -12,9 +12,17 @@ namespace UI.Desktop
 {
     public partial class formMain : Form
     {
+        private int tipo;
+
         public formMain()
         {
             InitializeComponent();
+        }
+
+        public formMain(int tipo)
+        {
+            this.tipo = tipo;
+            tipoPersona(tipo);
         }
 
         private void mnuSalir_Click(object sender, EventArgs e)
@@ -29,7 +37,6 @@ namespace UI.Desktop
            {
                 this.Dispose();
            }
-           //tipoPersona(tipo);
         }
 
 
@@ -59,15 +66,17 @@ namespace UI.Desktop
 
         internal void tipoPersona(int tipo)
         {
-            if (tipo == 0)  //alumno
+            if (tipo == 1)  //alumno
             {
-                //COMO ESCONDER LOS BOTONES?
-
-                //btnEspecialidad.Hide();
+                btnEspecialidad.Visible = false;
             }
-            else if (tipo == 1)     //docente
+            else if (tipo == 3)     //docente
             {
                 //como hacer para ver si es titular, auxiliar, jefe
+            }
+            else if (tipo == 4)
+            {
+
             }
         }
 

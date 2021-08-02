@@ -167,4 +167,6 @@ namespace Data.Database.EntidadesDB
             }
             Alumnos_Inscripciones.State = BusinessEntity.States.Unmodified;
         }
+
     }
+}

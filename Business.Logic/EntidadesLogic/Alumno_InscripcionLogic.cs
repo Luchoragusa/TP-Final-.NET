@@ -12,13 +12,13 @@ namespace Business.Logic.EntidadesLogic
 {
     public class Alumno_InscripcionLogic : BusinessLogic
     {
-        private AlumnosIncriptosAdapter aiData;
+        private Data.Database.EntidadesDB.AlumnosIncriptosAdapter aiData;
 
         public Alumno_InscripcionLogic()
         {
-            aiData = new AlumnosIncriptosAdapter();
+            aiData = new Data.Database.EntidadesDB.AlumnosIncriptosAdapter();
         }
-        public AlumnosIncriptosAdapter Alumno_InscripcionData
+        public Data.Database.EntidadesDB.AlumnosIncriptosAdapter Alumno_InscripcionData
         {
             get { return aiData; }
             set { aiData = value; }

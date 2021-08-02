@@ -16,9 +16,9 @@ namespace Business.Entities.Entidades
 
         public enum TipoCargos
         {
-            Titular,
-            Auxiliar,
-            JefeCatedra
+            Titular = 1,
+            Auxiliar = 2,
+            JefeCatedra = 3
         }
     }
 }
