@@ -129,7 +129,7 @@ namespace UI.Desktop.Alum_Inscrip
             return true;
         }
 
-        private void btnModo_Click_1(object sender, EventArgs e)
+        private void btnModo_Click(object sender, EventArgs e)
         {
             if (Validar())
             {
@@ -138,10 +138,9 @@ namespace UI.Desktop.Alum_Inscrip
             }
         }
 
-        private void btnCancelar_Click_1(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
     }
 }

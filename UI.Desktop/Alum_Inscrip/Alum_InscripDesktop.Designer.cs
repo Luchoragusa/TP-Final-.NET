@@ -39,9 +39,9 @@ namespace UI.Desktop.Alum_Inscrip
             this.lblCurso = new System.Windows.Forms.Label();
             this.txtIDCurso = new System.Windows.Forms.TextBox();
             this.lblIDAlumno = new System.Windows.Forms.Label();
-            this.txtID = new System.Windows.Forms.TextBox();
             this.lblInscripcion = new System.Windows.Forms.Label();
             this.txtIDAlumno = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,6 +110,7 @@ namespace UI.Desktop.Alum_Inscrip
             this.btnModo.TabIndex = 5;
             this.btnModo.Text = "Aceptar";
             this.btnModo.UseVisualStyleBackColor = true;
+            this.btnModo.Click += new System.EventHandler(this.btnModo_Click);
             // 
             // btnCancelar
             // 
@@ -120,6 +121,7 @@ namespace UI.Desktop.Alum_Inscrip
             this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lblCondicion
             // 
@@ -159,15 +161,6 @@ namespace UI.Desktop.Alum_Inscrip
             this.lblIDAlumno.TabIndex = 10;
             this.lblIDAlumno.Text = "ID del Alumno";
             // 
-            // txtID
-            // 
-            this.txtID.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtID.Location = new System.Drawing.Point(124, 20);
-            this.txtID.Name = "txtID";
-            this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(256, 20);
-            this.txtID.TabIndex = 1;
-            // 
             // lblInscripcion
             // 
             this.lblInscripcion.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -185,6 +178,15 @@ namespace UI.Desktop.Alum_Inscrip
             this.txtIDAlumno.Name = "txtIDAlumno";
             this.txtIDAlumno.Size = new System.Drawing.Size(256, 20);
             this.txtIDAlumno.TabIndex = 0;
+            // 
+            // txtID
+            // 
+            this.txtID.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtID.Location = new System.Drawing.Point(124, 20);
+            this.txtID.Name = "txtID";
+            this.txtID.ReadOnly = true;
+            this.txtID.Size = new System.Drawing.Size(256, 20);
+            this.txtID.TabIndex = 1;
             // 
             // Alum_InscripDesktop
             // 
