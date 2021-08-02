@@ -89,14 +89,20 @@ namespace UI.Desktop
 
         private void btnCurso_Click(object sender, EventArgs e)
         {
-            UI.Desktop.Cursos curso = new UI.Desktop.Cursos();
+            Cursos curso = new UI.Desktop.Cursos();
             curso.ShowDialog();            
         }
 
         private void btnDC_Click(object sender, EventArgs e)
         {
-            UI.Desktop.DocenteCurso.DocenteCurso dc = new UI.Desktop.DocenteCurso.DocenteCurso();
+            DocenteCurso.DocenteCurso dc = new UI.Desktop.DocenteCurso.DocenteCurso();
             dc.ShowDialog();
+        }
+
+        private void Alum_Inscrip_Click(object sender, EventArgs e)
+        {
+            Alum_Inscrip.Alum_Inscrip a_i = new Alum_Inscrip.Alum_Inscrip();
+            a_i.ShowDialog();
         }
     }
 }
