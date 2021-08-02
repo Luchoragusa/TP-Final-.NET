@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Business.Entities;
+using Business.Entities.Entidades;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -278,7 +279,7 @@ namespace Data.Database
 
                 while (drUsuarios.Read())
                 {
-                    tipo_persona = (int)drUsuarios["tipo_persona"];
+                    tipo_persona = (int)(Personas.TipoPersonas)drUsuarios["tipo_persona"];
                 }
 
                 drUsuarios.Close();               

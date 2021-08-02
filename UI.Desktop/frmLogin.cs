@@ -42,11 +42,9 @@ namespace UI.Desktop
                 MessageBox.Show("Usted ingreso al sistema.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK;    
                 
-                if (tipo == 1)      //seria alumno
-                {
-                    formMain main = new formMain();
-                    main.tipoPersona(tipo);
-                }
+                formMain main = new formMain();
+                main.tipoPersona(tipo);
+
             }                           
             else
             {

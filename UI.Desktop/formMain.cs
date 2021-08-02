@@ -59,9 +59,15 @@ namespace UI.Desktop
 
         internal void tipoPersona(int tipo)
         {
-            if (tipo == 1)  //alumno
+            if (tipo == 0)  //alumno
             {
-                btnEspecialidad.Enabled = false;
+                //COMO ESCONDER LOS BOTONES?
+
+                //btnEspecialidad.Hide();
+            }
+            else if (tipo == 1)     //docente
+            {
+                //como hacer para ver si es titular, auxiliar, jefe
             }
         }
 

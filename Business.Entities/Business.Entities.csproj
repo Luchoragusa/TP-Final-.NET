@@ -42,12 +42,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessEntity.cs" />
+    <Compile Include="Entidades\Alumnos_Inscripciones.cs" />
     <Compile Include="Entidades\Curso.cs" />
+    <Compile Include="Entidades\DocenteCurso.cs" />
     <Compile Include="Entidades\Especialidad.cs" />
     <Compile Include="Entidades\Comision.cs" />
     <Compile Include="Entidades\Materia.cs" />
     <Compile Include="Entidades\Modulo.cs" />
     <Compile Include="Entidades\ModuloUsuario.cs" />
+    <Compile Include="Entidades\Personas.cs" />
     <Compile Include="Entidades\Plan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entidades\Usuario.cs" />
