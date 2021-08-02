@@ -6,48 +6,49 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Business.Entities;
-using Business.Logic;
+using Business.Entities.Entidades;
 using Business.Logic;
 using Business.Logic.EntidadesLogic;
 
 namespace UI.Desktop
 {
-    public partial class PlanDesktop : UI.Desktop.ApplicationForm
+    public partial class DCDesktop : UI.Desktop.ApplicationForm
     {
-        public PlanDesktop()
+        public DCDesktop()
         {
             InitializeComponent();
         }
 
-        public PlanDesktop(ModoForm modo) : this()
+        public DCDesktop(ModoForm modo) : this()
         {
             this.Modo = modo;
-            PlanActual = new Business.Entities.Plan();
+            DCActual = new Business.Entities.Entidades.DocenteCurso();
         }
 
-        private Business.Entities.Plan _plan;
-        public Business.Entities.Plan PlanActual { get; set; }
+        private Business.Entities.Entidades.DocenteCurso _dc;
+        public Business.Entities.Entidades.DocenteCurso DCActual  { get; set; }
 
-        public PlanDesktop(int ID, ModoForm modo) : this()
+        public DCDesktop(int ID, ModoForm modo) : this()
         {
             this.Modo = modo;
-            Business.Logic.PlanLogic pl = new Business.Logic.PlanLogic();
+            Business.Logic.EntidadesLogic.DocenteCursoLogic dcl = new Business.Logic.EntidadesLogic.DocenteCursoLogic();
             try
             {
-                PlanActual = pl.GetOne(ID);
+                DCActual = dcl.GetOne(ID);
                 MapearDeDatos();
             }
             catch (Exception ex)
             {
                 throw ex;
-            }            
+            }
         }
-  
+
         public override void MapearDeDatos()
         {
-            this.txtID.Text = this.PlanActual.ID.ToString();
-            this.txtDesc.Text = this.PlanActual.Descripcion;
-            this.txtIDEspecialidad.Text = this.PlanActual.IDEspecialidad.ToString();
+            this.txtIDDictado.Text = this.DCActual.ID.ToString();
+            this.txtIDCurso.Text = this.DCActual.IDCurso.ToString();
+            this.txtIDDocente.Text = this.DCActual.IDDocente.ToString();
+            this.txtCargo.Text = this.DCActual.Cargo.ToString();
 
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion) this.btnModo.Text = "Guardar";
             else if (Modo == ModoForm.Baja) this.btnModo.Text = "Eliminar";
@@ -59,23 +60,24 @@ namespace UI.Desktop
             {
                 if (Modo == ModoForm.Alta)
                 {
-                    PlanActual = new Business.Entities.Plan();
-                    PlanActual.State = BusinessEntity.States.New;
+                    DCActual = new Business.Entities.Entidades.DocenteCurso();
+                    DCActual.State = BusinessEntity.States.New;
                 }
 
                 if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
                 {
                     if (Modo != ModoForm.Alta)
                     {
-                        PlanActual.State = BusinessEntity.States.Modified;
-                        this.txtID.Text = this.PlanActual.ID.ToString();
+                        DCActual.State = BusinessEntity.States.Modified;
+                        this.txtIDDictado.Text = this.DCActual.ID.ToString();
                     }
-                    this.PlanActual.Descripcion = this.txtDesc.Text;
-                    this.PlanActual.IDEspecialidad = int.Parse(this.txtIDEspecialidad.Text);
+                    this.DCActual.IDCurso = int.Parse(this.txtIDCurso.Text);
+                    this.DCActual.IDDocente = int.Parse(this.txtIDDocente.Text);
+                    this.DCActual.Cargo = (Business.Entities.Entidades.DocenteCurso.TipoCargos)int.Parse(this.txtCargo.Text);
                 }
 
-                if (this.Modo == ModoForm.Baja) PlanActual.State = BusinessEntity.States.Deleted;
-                if (this.Modo == ModoForm.Consulta) PlanActual.State = BusinessEntity.States.Unmodified;
+                if (this.Modo == ModoForm.Baja) DCActual.State = BusinessEntity.States.Deleted;
+                if (this.Modo == ModoForm.Consulta) DCActual.State = BusinessEntity.States.Unmodified;
             }
             catch (Exception)
             {
@@ -87,34 +89,40 @@ namespace UI.Desktop
         public override void GuardarCambios()
         {
             MapearADatos();
-            PlanLogic planLogic = new PlanLogic();
+            DocenteCursoLogic dcLogic = new DocenteCursoLogic();
             try
             {
-                planLogic.Save(PlanActual);
+                dcLogic.Save(DCActual);
             }
             catch (Exception ex)
             {
                 throw ex;
-            }            
+            }
         }
 
         public override bool Validar()
         {
-            if (txtDesc.Text.Equals(String.Empty) || txtIDEspecialidad.Text.Equals(String.Empty))
+            if (txtIDCurso.Text.Equals(String.Empty) || txtIDDocente.Text.Equals(String.Empty) || txtCargo.Text.Equals(String.Empty))
             {
                 Notificar("Algunos de los campos están vaciós", "Complete todos para continuar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
-            if (!Validaciones.validarTexto(txtDesc.Text))
+            if (!Validaciones.validarTexto(txtIDCurso.Text))
             {
-                Notificar("Descripcion incorrecta.", "Intente nuevamente",
+                Notificar("ID del curso incorrecta.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (Validaciones.validarTexto(txtIDEspecialidad.Text))    //quitamos el "!", siguiendo logica de UsuarioDesktop 
+            if (!Validaciones.validarTexto(txtIDDocente.Text))    
             {
-                Notificar("ID incorrecta.", "Intente nuevamente",
+                Notificar("ID del docente incorrecta.", "Intente nuevamente",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (!Validaciones.validarTexto(txtCargo.Text))
+            {
+                Notificar("Cargo incorrecto.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }

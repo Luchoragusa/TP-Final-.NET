@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.Desktop.DocenteCurso;
 
 namespace UI.Desktop
 {
@@ -90,6 +91,12 @@ namespace UI.Desktop
         {
             UI.Desktop.Cursos curso = new UI.Desktop.Cursos();
             curso.ShowDialog();            
+        }
+
+        private void btnDC_Click(object sender, EventArgs e)
+        {
+            UI.Desktop.DocenteCurso.DocenteCurso dc = new UI.Desktop.DocenteCurso.DocenteCurso();
+            dc.ShowDialog();
         }
     }
 }
