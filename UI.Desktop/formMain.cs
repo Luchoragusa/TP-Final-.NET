@@ -23,7 +23,7 @@ namespace UI.Desktop
         public formMain(int tipo)
         {
             this.tipo = tipo;
-            tipoPersona(tipo);
+            //tipoPersona(tipo);
         }
 
         private void mnuSalir_Click(object sender, EventArgs e)
