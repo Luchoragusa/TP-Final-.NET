@@ -29,6 +29,7 @@ namespace Data.Database.EntidadesDB
                 {
                     Alumnos_Inscripciones Alumnos_Inscripciones = new Alumnos_Inscripciones();
 
+                    Alumnos_Inscripciones.ID = (int)drAlumnos_Inscripcioneses["id_inscripcion"];
                     Alumnos_Inscripciones.IDAlumno = (int)drAlumnos_Inscripcioneses["id_alumno"];
                     Alumnos_Inscripciones.IDCurso = (int)drAlumnos_Inscripcioneses["id_curso"];
                     Alumnos_Inscripciones.Condicion = (string)drAlumnos_Inscripcioneses["condicion"];
@@ -61,6 +62,7 @@ namespace Data.Database.EntidadesDB
                 SqlDataReader drAlumnos_Inscripcioneses = cmdAlumnos_Inscripcioneses.ExecuteReader();
                 while (drAlumnos_Inscripcioneses.Read())
                 {
+                    Alumnos_Inscripciones.ID = (int)drAlumnos_Inscripcioneses["id_inscripcion"];
                     Alumnos_Inscripciones.IDAlumno = (int)drAlumnos_Inscripcioneses["id_alumno"];
                     Alumnos_Inscripciones.IDCurso = (int)drAlumnos_Inscripcioneses["id_curso"];
                     Alumnos_Inscripciones.Condicion = (string)drAlumnos_Inscripcioneses["condicion"];
