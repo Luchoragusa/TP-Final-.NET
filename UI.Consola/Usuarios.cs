@@ -114,20 +114,11 @@ namespace UI.Consola
             Console.Clear();
             Console.Write("Ingrese Nombre: ");
 
-            usuario.Nombre = Console.ReadLine();
-            Console.Write("Ingrese Apellido: ");
-
-            usuario.Apellido = Console.ReadLine();
-            Console.Write("Ingrese Nombre de Usuario: ");
-
             usuario.NombreUsuario = Console.ReadLine();
             Console.Write("Ingrese Clave: ");
 
             usuario.Clave = Console.ReadLine();
             Console.Write("Ingrese Email: ");
-
-            usuario.Email = Console.ReadLine();
-            Console.Write("Ingrese Habilitación de Usuario (1-Si/otro-No): ");
 
             usuario.Habilitado = (Console.ReadLine() == "1");
             usuario.State = BusinessEntity.States.New;
@@ -146,20 +137,11 @@ namespace UI.Consola
 
                 Usuario usuario = UsuarioNegocio.GetOne(ID);
 
-                Console.Write("Ingrese Nombre: ");
-                usuario.Nombre = Console.ReadLine();
-
-                Console.Write("Ingrese Apellido: ");
-                usuario.Apellido = Console.ReadLine();
-
                 Console.Write("Ingrese Nombre de Usuario: ");
                 usuario.NombreUsuario = Console.ReadLine();
 
                 Console.Write("Ingrese Clave: ");
                 usuario.Clave = Console.ReadLine();
-
-                Console.Write("Ingrese Email: ");
-                usuario.Email = Console.ReadLine();
 
                 Console.Write("Ingrese Habilitación de Usuario (1-Si/otro-No): ");
                 usuario.Habilitado = (Console.ReadLine() == "1");
@@ -203,11 +185,8 @@ namespace UI.Consola
         private void MostrarDatos(Usuario usr)
         {
             Console.WriteLine("Usuario: {0}", usr.ID);
-            Console.WriteLine("\t\t Nombre: {0} ", usr.Nombre);
-            Console.WriteLine("\t\t Apellido: {0} ", usr.Apellido);
             Console.WriteLine("\t\tNombre de Usuario: {0}", usr.NombreUsuario);
-            Console.WriteLine("\t\tClave: {0}", usr.Clave);
-            Console.WriteLine("\t\tEmail: {0}", usr.Email);                  
+            Console.WriteLine("\t\tClave: {0}", usr.Clave);             
             Console.WriteLine("\t\tHabilitado: {0}", usr.Habilitado);
             // \t dentro de un string representa un TAB
             Console.WriteLine();

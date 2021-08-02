@@ -108,36 +108,12 @@ namespace UI.Desktop
         public override bool Validar()
         {
             if (
-                txtNombre.Text.Equals(String.Empty) ||
-                txtApellido.Text.Equals(String.Empty) ||
-                txtEmail.Text.Equals(String.Empty) ||
                 txtUsuario.Text.Equals(String.Empty) ||
                 txtClave.Text.Equals(String.Empty) ||
                 txtConfClave.Text.Equals(String.Empty)
                 )
             {
                 Notificar("Alguno de los campos esta incompleto", "Intente nuevamente", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-
-            if (!Validaciones.validarTexto(txtNombre.Text))
-            {
-                Notificar("Nombre incorrecto.", "Intente nuevamente",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-
-            if (!Validaciones.validarTexto(txtApellido.Text))
-            {
-                Notificar("Apellido incorrecto.", "Intente nuevamente",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-
-            if (!Validaciones.EsMailValido(txtEmail.Text))
-            {
-                Notificar("Mail invalido", "Intente nuevamente.",
-                   MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
