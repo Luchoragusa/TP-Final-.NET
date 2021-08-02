@@ -51,9 +51,6 @@ namespace UI.Desktop
         {
             this.txtID.Text = this.UsuarioActual.ID.ToString();
             this.chkHabilitado.Checked = this.UsuarioActual.Habilitado;
-            this.txtNombre.Text = this.UsuarioActual.Nombre;
-            this.txtEmail.Text = this.UsuarioActual.Email;    
-            this.txtApellido.Text = this.UsuarioActual.Apellido;
             this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;              
 
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
@@ -86,10 +83,7 @@ namespace UI.Desktop
                     this.txtID.Text = this.UsuarioActual.ID.ToString();          
                 }
                 this.UsuarioActual.Habilitado = this.chkHabilitado.Checked;
-                this.UsuarioActual.Nombre = this.txtNombre.Text;
-                this.UsuarioActual.Email = this.txtEmail.Text;
                 this.UsuarioActual.Clave = this.txtClave.Text;
-                this.UsuarioActual.Apellido = this.txtApellido.Text;
                 this.UsuarioActual.NombreUsuario = this.txtUsuario.Text;
                 this.UsuarioActual.Clave = this.txtConfClave.Text;
             }
