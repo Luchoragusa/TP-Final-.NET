@@ -39,6 +39,7 @@ namespace UI.Desktop
             this.btnMateria = new System.Windows.Forms.Button();
             this.btnEspecialidad = new System.Windows.Forms.Button();
             this.btnCurso = new System.Windows.Forms.Button();
+            this.btnDC = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -78,23 +79,25 @@ namespace UI.Desktop
             this.tableLayoutPanel1.Controls.Add(this.btnMateria, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.btnEspecialidad, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.btnCurso, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.btnDC, 0, 6);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowCount = 7;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(225, 180);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(225, 226);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // btn_Usuario
             // 
             this.btn_Usuario.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_Usuario.Location = new System.Drawing.Point(75, 3);
+            this.btn_Usuario.Location = new System.Drawing.Point(75, 4);
             this.btn_Usuario.Name = "btn_Usuario";
             this.btn_Usuario.Size = new System.Drawing.Size(75, 23);
             this.btn_Usuario.TabIndex = 0;
@@ -105,7 +108,7 @@ namespace UI.Desktop
             // btnComision
             // 
             this.btnComision.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnComision.Location = new System.Drawing.Point(75, 33);
+            this.btnComision.Location = new System.Drawing.Point(75, 36);
             this.btnComision.Name = "btnComision";
             this.btnComision.Size = new System.Drawing.Size(75, 23);
             this.btnComision.TabIndex = 1;
@@ -116,7 +119,7 @@ namespace UI.Desktop
             // btnPlan
             // 
             this.btnPlan.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPlan.Location = new System.Drawing.Point(75, 63);
+            this.btnPlan.Location = new System.Drawing.Point(75, 68);
             this.btnPlan.Name = "btnPlan";
             this.btnPlan.Size = new System.Drawing.Size(75, 23);
             this.btnPlan.TabIndex = 2;
@@ -127,7 +130,7 @@ namespace UI.Desktop
             // btnMateria
             // 
             this.btnMateria.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnMateria.Location = new System.Drawing.Point(75, 93);
+            this.btnMateria.Location = new System.Drawing.Point(75, 100);
             this.btnMateria.Name = "btnMateria";
             this.btnMateria.Size = new System.Drawing.Size(75, 23);
             this.btnMateria.TabIndex = 3;
@@ -138,7 +141,7 @@ namespace UI.Desktop
             // btnEspecialidad
             // 
             this.btnEspecialidad.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEspecialidad.Location = new System.Drawing.Point(75, 123);
+            this.btnEspecialidad.Location = new System.Drawing.Point(75, 132);
             this.btnEspecialidad.Name = "btnEspecialidad";
             this.btnEspecialidad.Size = new System.Drawing.Size(75, 23);
             this.btnEspecialidad.TabIndex = 4;
@@ -149,7 +152,7 @@ namespace UI.Desktop
             // btnCurso
             // 
             this.btnCurso.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCurso.Location = new System.Drawing.Point(75, 153);
+            this.btnCurso.Location = new System.Drawing.Point(75, 164);
             this.btnCurso.Name = "btnCurso";
             this.btnCurso.Size = new System.Drawing.Size(75, 23);
             this.btnCurso.TabIndex = 5;
@@ -157,12 +160,23 @@ namespace UI.Desktop
             this.btnCurso.UseVisualStyleBackColor = true;
             this.btnCurso.Click += new System.EventHandler(this.btnCurso_Click);
             // 
+            // btnDC
+            // 
+            this.btnDC.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDC.Location = new System.Drawing.Point(69, 197);
+            this.btnDC.Name = "btnDC";
+            this.btnDC.Size = new System.Drawing.Size(86, 23);
+            this.btnDC.TabIndex = 6;
+            this.btnDC.Text = "DocenteCurso";
+            this.btnDC.UseVisualStyleBackColor = true;
+            this.btnDC.Click += new System.EventHandler(this.btnDC_Click);
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(225, 204);
+            this.ClientSize = new System.Drawing.Size(225, 250);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -191,5 +205,6 @@ namespace UI.Desktop
         private System.Windows.Forms.Button btnPlan;
         private System.Windows.Forms.Button btnEspecialidad;
         private System.Windows.Forms.Button btnCurso;
+        private System.Windows.Forms.Button btnDC;
     }
 }
