@@ -93,10 +93,10 @@
     <Compile Include="Curso\CursosDesktop.Designer.cs">
       <DependentUpon>CursosDesktop.cs</DependentUpon>
     </Compile>
-    <Compile Include="DCDesktop.cs">
+    <Compile Include="DocenteCurso\DCDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DCDesktop.Designer.cs">
+    <Compile Include="DocenteCurso\DCDesktop.Designer.cs">
       <DependentUpon>DCDesktop.cs</DependentUpon>
     </Compile>
     <Compile Include="DocenteCurso\DocenteCurso.cs">
@@ -188,7 +188,7 @@
     <EmbeddedResource Include="Curso\CursosDesktop.resx">
       <DependentUpon>CursosDesktop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DCDesktop.resx">
+    <EmbeddedResource Include="DocenteCurso\DCDesktop.resx">
       <DependentUpon>DCDesktop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DocenteCurso\DocenteCurso.resx">
