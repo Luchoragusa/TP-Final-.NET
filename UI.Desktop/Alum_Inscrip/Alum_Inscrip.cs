@@ -7,33 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Business.Entities;
 using Business.Entities.Entidades;
-using Business.Logic;
 using Business.Logic.EntidadesLogic;
 
-namespace UI.Desktop.DocenteCurso
+namespace UI.Desktop.Alum_Inscrip
 {
-    public partial class DocenteCurso : Form
+    public partial class Alum_Inscrip : Form
     {
-        public DocenteCurso()
+        public Alum_Inscrip()
         {
             InitializeComponent();
-            this.dgvDocenteCurso.AutoGenerateColumns = false;
-            this.dgvDocenteCurso.ReadOnly = true;
-        }
-
-        private void DocenteCurso_Load(object sender, EventArgs e)
-        {
-            this.Listar();
+            this.dgvAlum_Incrip.AutoGenerateColumns = false;
+            this.dgvAlum_Incrip.ReadOnly = true;
         }
 
         public void Listar()
         {
-            DocenteCursoLogic dcl = new DocenteCursoLogic();
+            Alumno_InscripcionLogic mat = new Alumno_InscripcionLogic();
             try
             {
-                this.dgvDocenteCurso.DataSource = dcl.GetAll();
+                this.dgvAlum_Incrip.DataSource = mat.GetAll();
             }
             catch (Exception ex)
             {
@@ -53,34 +46,53 @@ namespace UI.Desktop.DocenteCurso
 
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
-            DCDesktop formDCDesktop = new DCDesktop(ApplicationForm.ModoForm.Alta);
+            Alum_InscripDesktop formMDesktop = new Alum_InscripDesktop(ApplicationForm.ModoForm.Alta);
             try
             {
-                formDCDesktop.ShowDialog();
-                this.Listar();
+                formMDesktop.ShowDialog();
+                Listar();
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-
         }
 
         private void tsbEditar_Click(object sender, EventArgs e)
         {
-
-            if (this.dgvDocenteCurso.SelectedRows.Count == 0)
+            if (this.dgvAlum_Incrip.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Accion Invalida", "Seleccione una fila", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
 
             }
-            int ID = ((Business.Entities.Plan)this.dgvDocenteCurso.SelectedRows[0].DataBoundItem).ID;
+            int ID = ((Alumnos_Inscripciones)this.dgvAlum_Incrip.SelectedRows[0].DataBoundItem).ID;
 
-            DCDesktop formDC = new DCDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+            Alum_InscripDesktop formAlum_Inscrip = new Alum_InscripDesktop(ID, ApplicationForm.ModoForm.Modificacion);
             try
             {
-                formDC.ShowDialog();
+                formAlum_Inscrip.ShowDialog();
+                this.Listar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "Error al editar ", "Ha habido un error interno.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void tsbEliminar_Click(object sender, EventArgs e)
+        {
+            if (this.dgvAlum_Incrip.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Acción invalida", "Seleccione una fila.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            int ID = ((Alumnos_Inscripciones)this.dgvAlum_Incrip.SelectedRows[0].DataBoundItem).ID;
+
+            Alum_InscripDesktop formAlum_Inscrip = new Alum_InscripDesktop(ID, ApplicationForm.ModoForm.Baja);
+            try
+            {
+                formAlum_Inscrip.ShowDialog();
                 this.Listar();
             }
             catch (Exception ex)
@@ -89,25 +101,9 @@ namespace UI.Desktop.DocenteCurso
             }
         }
 
-        private void tsbEliminar_Click(object sender, EventArgs e)
+        private void Alum_Inscrip_Load(object sender, EventArgs e)
         {
-            if (this.dgvDocenteCurso.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Acción invalida", "Seleccione una fila.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            int ID = ((Business.Entities.Plan)this.dgvDocenteCurso.SelectedRows[0].DataBoundItem).ID;
-
-            DCDesktop formDC = new DCDesktop(ID, ApplicationForm.ModoForm.Baja);
-            try
-            {
-                formDC.ShowDialog();
-                this.Listar();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + "Error detected: ", "Ha habido un error interno.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            Listar();
         }
     }
 }

@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alum_Inscrip\Alum_Inscrip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alum_Inscrip\Alum_Inscrip.Designer.cs">
+      <DependentUpon>Alum_Inscrip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alum_Inscrip\Alum_InscripDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alum_Inscrip\Alum_InscripDesktop.Designer.cs">
+      <DependentUpon>Alum_InscripDesktop.cs</DependentUpon>
+    </Compile>
     <Compile Include="App.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -80,6 +92,12 @@
     </Compile>
     <Compile Include="Curso\CursosDesktop.Designer.cs">
       <DependentUpon>CursosDesktop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocenteCurso\DCDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocenteCurso\DCDesktop.Designer.cs">
+      <DependentUpon>DCDesktop.cs</DependentUpon>
     </Compile>
     <Compile Include="DocenteCurso\DocenteCurso.cs">
       <SubType>Form</SubType>
@@ -161,6 +179,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Alum_Inscrip\Alum_Inscrip.resx">
+      <DependentUpon>Alum_Inscrip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alum_Inscrip\Alum_InscripDesktop.resx">
+      <DependentUpon>Alum_InscripDesktop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ApplicationForm.resx">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,6 +199,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Curso\CursosDesktop.resx">
       <DependentUpon>CursosDesktop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocenteCurso\DCDesktop.resx">
+      <DependentUpon>DCDesktop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocenteCurso\DocenteCurso.resx">
+      <DependentUpon>DocenteCurso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Especialidad\Especialidad.resx">
       <DependentUpon>Especialidad.cs</DependentUpon>

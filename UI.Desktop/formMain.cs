@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.Desktop.DocenteCurso;
 
 namespace UI.Desktop
 {
@@ -22,7 +23,7 @@ namespace UI.Desktop
         public formMain(int tipo)
         {
             this.tipo = tipo;
-            tipoPersona(tipo);
+            //tipoPersona(tipo);
         }
 
         private void mnuSalir_Click(object sender, EventArgs e)
@@ -88,8 +89,20 @@ namespace UI.Desktop
 
         private void btnCurso_Click(object sender, EventArgs e)
         {
-            UI.Desktop.Cursos curso = new UI.Desktop.Cursos();
+            Cursos curso = new UI.Desktop.Cursos();
             curso.ShowDialog();            
+        }
+
+        private void btnDC_Click(object sender, EventArgs e)
+        {
+            DocenteCurso.DocenteCurso dc = new UI.Desktop.DocenteCurso.DocenteCurso();
+            dc.ShowDialog();
+        }
+
+        private void Alum_Inscrip_Click(object sender, EventArgs e)
+        {
+            Alum_Inscrip.Alum_Inscrip a_i = new Alum_Inscrip.Alum_Inscrip();
+            a_i.ShowDialog();
         }
     }
 }
