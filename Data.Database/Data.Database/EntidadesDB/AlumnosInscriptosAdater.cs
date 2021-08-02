@@ -107,12 +107,12 @@ namespace Data.Database.EntidadesDB
             try
             {
                 OpenConnection();
-                SqlCommand cmdSave = new SqlCommand("INSERT INTO alumnos_inscripciones (id_alumno,id_curso,condicion,nota) values(@id_alumno,@id_curso,@condicion,@nota) select @@identity ", sqlConn);
+                SqlCommand cmdSave = new SqlCommand("INSERT INTO alumnos_inscripciones (id_alumno,id_curso,condicion,nota) values(@id_alumno, @id_curso, @condicion, @nota) select @@identity ", sqlConn);
 
-                cmdSave.Parameters.Add("@id_alumno", SqlDbType.VarChar, 50).Value = Alumnos_Inscripciones.IDAlumno;
-                cmdSave.Parameters.Add("@id_curso", SqlDbType.VarChar, 50).Value = Alumnos_Inscripciones.IDCurso;
+                cmdSave.Parameters.Add("@id_alumno", SqlDbType.Int).Value = Alumnos_Inscripciones.IDAlumno;
+                cmdSave.Parameters.Add("@id_curso", SqlDbType.Int).Value = Alumnos_Inscripciones.IDCurso;
                 cmdSave.Parameters.Add("@condicion", SqlDbType.VarChar, 50).Value = Alumnos_Inscripciones.Condicion;
-                cmdSave.Parameters.Add("@nota", SqlDbType.VarChar, 50).Value = Alumnos_Inscripciones.Nota;
+                cmdSave.Parameters.Add("@nota", SqlDbType.Int).Value = Alumnos_Inscripciones.Nota;
 
                 Alumnos_Inscripciones.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
             }
