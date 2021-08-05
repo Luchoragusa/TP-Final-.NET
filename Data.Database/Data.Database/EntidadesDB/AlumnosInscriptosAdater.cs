@@ -149,7 +149,9 @@ namespace Data.Database.EntidadesDB
                 cmdUpd.Parameters.Add("@id_alumno", SqlDbType.VarChar, 50).Value = Alumnos_Inscripciones.IDAlumno;
                 cmdUpd.Parameters.Add("@id_curso", SqlDbType.VarChar, 50).Value = Alumnos_Inscripciones.IDCurso;
                 cmdUpd.Parameters.Add("@condicion", SqlDbType.VarChar, 50).Value = Alumnos_Inscripciones.Condicion;
-                cmdUpd.Parameters.Add("@nota", SqlDbType.Int).Value = 5;
+
+
+                cmdUpd.Parameters.Add("@nota", SqlDbType.Int).Value = 5; // esto es de prueba
 
 
                 //if (Alumnos_Inscripciones.Nota != " - ") // verifico si la nota quq carga el usuario es null
