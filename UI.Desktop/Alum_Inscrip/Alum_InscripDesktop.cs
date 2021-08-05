@@ -7,7 +7,6 @@ using System.Text;
 using System.Windows.Forms;
 using Business.Entities;
 using Business.Entities.Entidades;
-using Business.Logic;
 using Business.Logic.EntidadesLogic;
 
 namespace UI.Desktop.Alum_Inscrip
@@ -55,8 +54,7 @@ namespace UI.Desktop.Alum_Inscrip
                 this.btnModo.Text = "Aceptar";
             else
             {
-                if (Modo == ModoForm.Consulta) this.btnModo.Text = "Aceptar";
-                else if (Modo == ModoForm.Modificacion) this.btnModo.Text = "Guardar";
+                if (Modo == ModoForm.Modificacion) this.btnModo.Text = "Guardar";
                 else if (Modo == ModoForm.Baja) this.btnModo.Text = "Eliminar";
 
                 this.txtID.Text = this.Alum_InscripActual.ID.ToString();
@@ -82,10 +80,10 @@ namespace UI.Desktop.Alum_Inscrip
                     Alum_InscripActual.State = BusinessEntity.States.Modified;
                     this.txtID.Text = this.Alum_InscripActual.ID.ToString();
                 }
-                this.txtIDAlumno.Text = this.Alum_InscripActual.IDAlumno.ToString();
-                this.txtIDCurso.Text = this.Alum_InscripActual.IDCurso.ToString();
-                this.txtCondicion.Text = this.Alum_InscripActual.Condicion;
-                this.txtNota.Text = this.Alum_InscripActual.Nota.ToString();
+                this.Alum_InscripActual.IDAlumno = int.Parse(this.txtIDAlumno.Text);
+                this.Alum_InscripActual.IDCurso = int.Parse(this.txtIDCurso.Text);
+                this.Alum_InscripActual.Condicion = this.txtCondicion.Text;
+                this.Alum_InscripActual.Nota = this.txtNota.Text;
             }
 
             if (this.Modo == ModoForm.Baja) Alum_InscripActual.State = BusinessEntity.States.Deleted;

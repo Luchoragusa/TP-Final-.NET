@@ -36,9 +36,9 @@ namespace Data.Database.EntidadesDB
 
 
                     if (string.IsNullOrEmpty(drAlumnos_Inscripcioneses["nota"].ToString())) // verifico si la nota es null
-                        Alumnos_Inscripciones.Nota = -1;
+                        Alumnos_Inscripciones.Nota = " - ";
                     else
-                        Alumnos_Inscripciones.Nota = (int)drAlumnos_Inscripcioneses["nota"];
+                        Alumnos_Inscripciones.Nota = (string)drAlumnos_Inscripcioneses["nota"].ToString();
 
                     Alumnos_Inscripcioneses.Add(Alumnos_Inscripciones);
                 }
@@ -72,7 +72,11 @@ namespace Data.Database.EntidadesDB
                     Alumnos_Inscripciones.IDAlumno = (int)drAlumnos_Inscripcioneses["id_alumno"];
                     Alumnos_Inscripciones.IDCurso = (int)drAlumnos_Inscripcioneses["id_curso"];
                     Alumnos_Inscripciones.Condicion = (string)drAlumnos_Inscripcioneses["condicion"];
-                    Alumnos_Inscripciones.Nota = (int)drAlumnos_Inscripcioneses["nota"];
+
+                    if (string.IsNullOrEmpty(drAlumnos_Inscripcioneses["nota"].ToString())) // verifico si la nota es null
+                        Alumnos_Inscripciones.Nota = " - ";
+                    else
+                        Alumnos_Inscripciones.Nota = (string)drAlumnos_Inscripcioneses["nota"].ToString();
                 }
                 drAlumnos_Inscripcioneses.Close();
             }
@@ -118,7 +122,9 @@ namespace Data.Database.EntidadesDB
                 cmdSave.Parameters.Add("@id_alumno", SqlDbType.Int).Value = Alumnos_Inscripciones.IDAlumno;
                 cmdSave.Parameters.Add("@id_curso", SqlDbType.Int).Value = Alumnos_Inscripciones.IDCurso;
                 cmdSave.Parameters.Add("@condicion", SqlDbType.VarChar, 50).Value = Alumnos_Inscripciones.Condicion;
-                cmdSave.Parameters.Add("@nota", SqlDbType.Int).Value = Alumnos_Inscripciones.Nota;
+
+                if (!string.IsNullOrEmpty(Alumnos_Inscripciones.Nota)) // verifico si la nota quq carga el usuario es null
+                    cmdSave.Parameters.Add("@nota", SqlDbType.Int).Value = int.Parse(Alumnos_Inscripciones.Nota);
 
                 Alumnos_Inscripciones.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
             }
@@ -143,7 +149,11 @@ namespace Data.Database.EntidadesDB
                 cmdUpd.Parameters.Add("@id_alumno", SqlDbType.VarChar, 50).Value = Alumnos_Inscripciones.IDAlumno;
                 cmdUpd.Parameters.Add("@id_curso", SqlDbType.VarChar, 50).Value = Alumnos_Inscripciones.IDCurso;
                 cmdUpd.Parameters.Add("@condicion", SqlDbType.VarChar, 50).Value = Alumnos_Inscripciones.Condicion;
-                cmdUpd.Parameters.Add("@nota", SqlDbType.VarChar, 50).Value = Alumnos_Inscripciones.Nota;
+                cmdUpd.Parameters.Add("@nota", SqlDbType.Int).Value = 5;
+
+
+                //if (Alumnos_Inscripciones.Nota != " - ") // verifico si la nota quq carga el usuario es null
+                //    cmdUpd.Parameters.Add("@nota", SqlDbType.Int).Value = int.Parse(Alumnos_Inscripciones.Nota);
 
                 cmdUpd.ExecuteNonQuery();
             }

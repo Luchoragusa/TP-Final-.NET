@@ -23,10 +23,10 @@ namespace UI.Desktop.Alum_Inscrip
 
         public void Listar()
         {
-            Alumno_InscripcionLogic mat = new Alumno_InscripcionLogic();
+            Alumno_InscripcionLogic ai = new Alumno_InscripcionLogic();
             try
             {
-                this.dgvAlum_Incrip.DataSource = mat.GetAll();
+                this.dgvAlum_Incrip.DataSource = ai.GetAll();
             }
             catch (Exception ex)
             {
