@@ -60,7 +60,7 @@ namespace UI.Desktop.Alum_Inscrip
                 this.txtID.Text = this.Alum_InscripActual.ID.ToString();
                 this.txtIDAlumno.Text = this.Alum_InscripActual.IDAlumno.ToString();
                 this.txtIDCurso.Text = this.Alum_InscripActual.IDCurso.ToString();
-                this.txtCondicion.Text = this.Alum_InscripActual.Condicion;
+                this.cbCondicion.Text = this.Alum_InscripActual.Condicion;
                 this.txtNota.Text = this.Alum_InscripActual.Nota.ToString();
             }
         }
@@ -82,7 +82,7 @@ namespace UI.Desktop.Alum_Inscrip
                 }
                 this.Alum_InscripActual.IDAlumno = int.Parse(this.txtIDAlumno.Text);
                 this.Alum_InscripActual.IDCurso = int.Parse(this.txtIDCurso.Text);
-                this.Alum_InscripActual.Condicion = this.txtCondicion.Text;
+                this.Alum_InscripActual.Condicion = this.cbCondicion.Text;
                 this.Alum_InscripActual.Nota = this.txtNota.Text;
             }
 
@@ -106,7 +106,7 @@ namespace UI.Desktop.Alum_Inscrip
 
         public override bool Validar()
         {
-            if (txtIDAlumno.Text.Equals(String.Empty) || txtIDCurso.Text.Equals(String.Empty) || txtCondicion.Text.Equals(String.Empty) || txtNota.Text.Equals(String.Empty))
+            if (txtIDAlumno.Text.Equals(String.Empty) || txtIDCurso.Text.Equals(String.Empty) || cbCondicion.Text.Equals(String.Empty))
             {
                 Notificar("Algunos de los campos están vaciós", "Complete todos para continuar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
