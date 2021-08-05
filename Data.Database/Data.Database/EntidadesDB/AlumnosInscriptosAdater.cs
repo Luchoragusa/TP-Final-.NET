@@ -117,14 +117,19 @@ namespace Data.Database.EntidadesDB
             try
             {
                 OpenConnection();
-                SqlCommand cmdSave = new SqlCommand("INSERT INTO alumnos_inscripciones (id_alumno,id_curso,condicion,nota) values(@id_alumno, @id_curso, @condicion, @nota) select @@identity ", sqlConn);
+                SqlCommand cmdSave = null;
+                if (!string.IsNullOrEmpty(Alumnos_Inscripciones.Nota)) // verifico si la nota quq carga el usuario es null
+                {
+                    cmdSave = new SqlCommand("INSERT INTO alumnos_inscripciones (id_alumno,id_curso,condicion,nota) values(@id_alumno, @id_curso, @condicion, @nota) select @@identity ", sqlConn);
+                    cmdSave.Parameters.Add("@nota", SqlDbType.Int).Value = int.Parse(Alumnos_Inscripciones.Nota);
+                }
+                else
+                    cmdSave = new SqlCommand("INSERT INTO alumnos_inscripciones (id_alumno,id_curso,condicion) values(@id_alumno, @id_curso, @condicion) select @@identity ", sqlConn);
 
                 cmdSave.Parameters.Add("@id_alumno", SqlDbType.Int).Value = Alumnos_Inscripciones.IDAlumno;
                 cmdSave.Parameters.Add("@id_curso", SqlDbType.Int).Value = Alumnos_Inscripciones.IDCurso;
                 cmdSave.Parameters.Add("@condicion", SqlDbType.VarChar, 50).Value = Alumnos_Inscripciones.Condicion;
 
-                if (!string.IsNullOrEmpty(Alumnos_Inscripciones.Nota)) // verifico si la nota quq carga el usuario es null
-                    cmdSave.Parameters.Add("@nota", SqlDbType.Int).Value = int.Parse(Alumnos_Inscripciones.Nota);
 
                 Alumnos_Inscripciones.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
             }
@@ -146,8 +151,8 @@ namespace Data.Database.EntidadesDB
                 OpenConnection();
                 SqlCommand cmdUpd = new SqlCommand("UPDATE alumnos_inscripciones SET id_alumno = @id_alumno, id_curso = @id_curso, condicion = @condicion, nota = @nota WHERE id_inscripcion = @id ", sqlConn);
 
-                cmdUpd.Parameters.Add("@id_alumno", SqlDbType.VarChar, 50).Value = Alumnos_Inscripciones.IDAlumno;
-                cmdUpd.Parameters.Add("@id_curso", SqlDbType.VarChar, 50).Value = Alumnos_Inscripciones.IDCurso;
+                cmdUpd.Parameters.Add("@id_alumno", SqlDbType.Int).Value = Alumnos_Inscripciones.IDAlumno;
+                cmdUpd.Parameters.Add("@id_curso", SqlDbType.Int).Value = Alumnos_Inscripciones.IDCurso;
                 cmdUpd.Parameters.Add("@condicion", SqlDbType.VarChar, 50).Value = Alumnos_Inscripciones.Condicion;
 
 
