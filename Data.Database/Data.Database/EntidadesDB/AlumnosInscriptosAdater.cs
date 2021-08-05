@@ -33,15 +33,21 @@ namespace Data.Database.EntidadesDB
                     Alumnos_Inscripciones.IDAlumno = (int)drAlumnos_Inscripcioneses["id_alumno"];
                     Alumnos_Inscripciones.IDCurso = (int)drAlumnos_Inscripcioneses["id_curso"];
                     Alumnos_Inscripciones.Condicion = (string)drAlumnos_Inscripcioneses["condicion"];
-                    Alumnos_Inscripciones.Nota = (int)drAlumnos_Inscripcioneses["nota"];
+
+
+                    if (string.IsNullOrEmpty(drAlumnos_Inscripcioneses["nota"].ToString())) // verifico si la nota es null
+                        Alumnos_Inscripciones.Nota = -1;
+                    else
+                        Alumnos_Inscripciones.Nota = (int)drAlumnos_Inscripcioneses["nota"];
 
                     Alumnos_Inscripcioneses.Add(Alumnos_Inscripciones);
                 }
                 drAlumnos_Inscripcioneses.Close();
             }
+
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al recuperar la lista de alumnos inscriptos", Ex);
+                Exception ExcepcionManejada = new Exception("Error al recuperar la lista de alumnos inscriptos");
                 throw ExcepcionManejada;
             }
             finally
