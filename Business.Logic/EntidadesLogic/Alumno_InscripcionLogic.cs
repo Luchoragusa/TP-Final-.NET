@@ -44,7 +44,7 @@ namespace Business.Logic.EntidadesLogic
             }
             catch (Exception ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al recuperar la lista de alumnos inscripto.");
+                Exception ExcepcionManejada = new Exception("Error al recuperar la lista de alumnos inscripto.", ex);
                 throw ExcepcionManejada;
             }
         }

@@ -150,9 +150,10 @@ namespace Data.Database.EntidadesDB
             {
                 OpenConnection();
                 SqlCommand cmdUpd = null;
+                Nullable<int> nota = null;
+                nota = int.Parse(Alumnos_Inscripciones.Nota);
 
-
-                if (Alumnos_Inscripciones.Nota != " - ") // verifico si la nota quq carga el usuario es null
+                if (nota.HasValue) // verifico si la nota que carga el usuario no es null
                 {
                     cmdUpd = new SqlCommand("UPDATE alumnos_inscripciones SET id_alumno = @id_alumno, id_curso = @id_curso, condicion = @condicion, nota = @nota WHERE id_inscripcion = @id ", sqlConn);
                     cmdUpd.Parameters.Add("@nota", SqlDbType.Int).Value = int.Parse(Alumnos_Inscripciones.Nota);
