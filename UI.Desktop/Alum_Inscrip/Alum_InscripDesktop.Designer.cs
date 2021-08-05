@@ -72,7 +72,7 @@ namespace UI.Desktop.Alum_Inscrip
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(397, 333);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(397, 336);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // lblNota
@@ -104,7 +104,7 @@ namespace UI.Desktop.Alum_Inscrip
             // btnModo
             // 
             this.btnModo.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnModo.Location = new System.Drawing.Point(43, 305);
+            this.btnModo.Location = new System.Drawing.Point(43, 306);
             this.btnModo.Name = "btnModo";
             this.btnModo.Size = new System.Drawing.Size(75, 23);
             this.btnModo.TabIndex = 5;
@@ -115,7 +115,7 @@ namespace UI.Desktop.Alum_Inscrip
             // btnCancelar
             // 
             this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnCancelar.Location = new System.Drawing.Point(319, 305);
+            this.btnCancelar.Location = new System.Drawing.Point(319, 306);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 6;
@@ -191,7 +191,7 @@ namespace UI.Desktop.Alum_Inscrip
             // Alum_InscripDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(397, 333);
+            this.ClientSize = new System.Drawing.Size(397, 336);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Alum_InscripDesktop";
             this.tableLayoutPanel1.ResumeLayout(false);
