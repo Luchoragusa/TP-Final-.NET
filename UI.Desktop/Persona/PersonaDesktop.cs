@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Business.Entities.Entidades;
+using Business.Logic;
 using Business.Logic.EntidadesLogic;
 using Business.Entities;
 
@@ -100,6 +101,100 @@ namespace UI.Desktop
             if (this.Modo == ModoForm.Consulta) PersonaActual.State = BusinessEntity.States.Unmodified;
         }
 
+        public override void GuardarCambios()
+        {
+            MapearADatos();
+            PersonaLogic peLogic = new PersonaLogic();
+            try
+            {
+                peLogic.Save(PersonaActual);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public override bool Validar()
+        {
+            if (txtNombre.Text.Equals(String.Empty) || txtApellido.Text.Equals(String.Empty))
+            {
+                Notificar("Algunos de los campos están vaciós", "Complete todos para continuar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (!Validaciones.validarTexto(txtNombre.Text))
+            {
+                Notificar("Nombre incorrecto.", "Intente nuevamente",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (!Validaciones.validarTexto(txtApellido.Text))    
+            {
+                Notificar("Apellido incorrecto.", "Intente nuevamente",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (!Validaciones.validarAlphaNumerico(txtDireccion.Text))    
+            {
+                Notificar("Direccion Incorrecta.", "Intente nuevamente",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (!Validaciones.validarMail(txtEmail.Text))
+            {
+                Notificar("Direccion de email Incorrecta.", "Intente nuevamente",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (Validaciones.validarTexto(txtTelefono.Text))
+            {
+                Notificar("Telefono Incorrecto.", "Intente nuevamente",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (Validaciones.validarTexto(txtLegajo.Text))
+            {
+                Notificar("Legajo Incorrecto.", "Intente nuevamente",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (!Validaciones.validarAlphaNumerico(txtFechaNacimiento.Text))
+            {
+                Notificar("Fecha de Nacimiento Incorrecta.", "Intente nuevamente",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (!Validaciones.validarAlphaNumerico(txtTipoPersona.Text))
+            {
+                Notificar("Tipo de persona Incorrecta.", "Intente nuevamente",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (Validaciones.validarTexto(txtIdPlan.Text))
+            {
+                Notificar("id Plan incorrecto Incorrecta.", "Intente nuevamente",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
+        }
+
+        private void btnModo_Click(object sender, EventArgs e)
+        {
+            if (Validar())
+            {
+                GuardarCambios();
+                this.Close();
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         //FALTA GUARDARCAMBIOS  VALIDAR  BTN ACEPTAR Y BTNCANCELAR
     }
 }

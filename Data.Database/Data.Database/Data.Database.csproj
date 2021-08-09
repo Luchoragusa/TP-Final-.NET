@@ -50,6 +50,7 @@
     <Compile Include="EntidadesDB\EspecialidadAdapter.cs" />
     <Compile Include="EntidadesDB\ComisionAdapter.cs" />
     <Compile Include="EntidadesDB\MateriaAdapter.cs" />
+    <Compile Include="EntidadesDB\PersonaAdapter.cs" />
     <Compile Include="EntidadesDB\PlanAdapter.cs" />
     <Compile Include="EntidadesDB\UsuarioAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

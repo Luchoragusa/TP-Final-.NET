@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Business.Logic
 {
-    public class Validaciones
+    public static class Validaciones
     {
         public static bool EsMailValido(string unMail)
         {
@@ -85,6 +85,31 @@ namespace Business.Logic
             {
                 e.Handled = true;
                 return true;
+            }
+        }
+        public static bool validarAlphaNumerico(this string str)
+        {
+            if (string.IsNullOrEmpty(str))
+                return false;
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (!(char.IsLetter(str[i])) && (!(char.IsNumber(str[i]))))
+                    return false;
+            }
+
+            return true;
+        }
+        public static bool validarMail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
             }
         }
     }
