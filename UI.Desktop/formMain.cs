@@ -26,7 +26,7 @@ namespace UI.Desktop
             //tipoPersona(tipo);
         }
 
-        internal void tipoPersona(int tipo)
+        private void tipoPersona(int tipo)
         {
             if (tipo == 1)  //alumno
             {
@@ -34,7 +34,7 @@ namespace UI.Desktop
             }
             else if (tipo == 3)     //docente
             {
-                //como hacer para ver si es titular, auxiliar, jefe
+
             }
             else if (tipo == 4)
             {
