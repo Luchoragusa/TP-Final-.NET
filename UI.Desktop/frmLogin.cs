@@ -46,10 +46,10 @@ namespace UI.Desktop
                     MessageBox.Show("Usted ingreso al sistema como ALUMNO.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.DialogResult = DialogResult.OK;
 
-                 //   this.Close();  este me cierra ambos
+                   // this.Close();  //este me cierra ambos
 
                     fm = new formMain(tipo);
-                    fm.ShowDialog();
+                    fm.Show();
                 }
             }                           
             else

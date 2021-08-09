@@ -20,6 +20,9 @@ namespace UI.Desktop
 
         public formMain(int tipo)
         {
+            frmLogin appLogin = new frmLogin();
+            appLogin.Close();
+
             InitializeComponent();
             if (tipo == 1)
             {
@@ -36,7 +39,7 @@ namespace UI.Desktop
         private void formMain_Shown(object sender, EventArgs e)
         {
             frmLogin appLogin = new frmLogin();
-            appLogin.Close(); // esto deberia cerrar la ventana de Login pero nose porque no lo hace
+            appLogin.Dispose(); // esto deberia cerrar la ventana de Login pero nose porque no lo hace
         }
 
 
