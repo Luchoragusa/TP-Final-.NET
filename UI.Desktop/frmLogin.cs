@@ -30,6 +30,8 @@ namespace UI.Desktop
             Usuario usuario = new Usuario();
             int tipo = 0;
 
+            formMain fm = null; 
+
             usuario.NombreUsuario = this.txtUsuario.Text;
             usuario.Clave = this.txtPass.Text;
 
@@ -43,9 +45,12 @@ namespace UI.Desktop
                 {
                     MessageBox.Show("Usted ingreso al sistema como ALUMNO.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.DialogResult = DialogResult.OK;
-                    formMain fm = new formMain(tipo);
+
+                 //   this.Close();  este me cierra ambos
+
+                    fm = new formMain(tipo);
+                    fm.ShowDialog();
                 }
-                //formMain fm = new formMain(tipo);
             }                           
             else
             {

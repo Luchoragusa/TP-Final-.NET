@@ -16,16 +16,15 @@ namespace UI.Desktop
         public formMain()
         {
             InitializeComponent();
-            //btnEspecialidad.Enabled = false;               aca funciona
-            //btnEspecialidad.Hide();                   el que realmente queremos, funciona aca
         }
 
-        public formMain(int tipo) 
-        {           
+        public formMain(int tipo)
+        {
+            InitializeComponent();
             if (tipo == 1)
             {
-                InitializeComponent();
-                btnEspecialidad.Enabled = false;                
+                btnEspecialidad.Hide();
+                btnPlan.Hide();          // aca esconder los botones que queresmo que no se meustren
             }
         }
 
@@ -36,11 +35,8 @@ namespace UI.Desktop
 
         private void formMain_Shown(object sender, EventArgs e)
         {
-           frmLogin appLogin = new frmLogin();
-           if (appLogin.ShowDialog() != DialogResult.OK)
-           {
-                this.Dispose();
-           }
+            frmLogin appLogin = new frmLogin();
+            appLogin.Close(); // esto deberia cerrar la ventana de Login pero nose porque no lo hace
         }
 
 
