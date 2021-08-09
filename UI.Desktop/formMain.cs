@@ -26,6 +26,21 @@ namespace UI.Desktop
             //tipoPersona(tipo);
         }
 
+        internal void tipoPersona(int tipo)
+        {
+            if (tipo == 1)  //alumno
+            {
+                btnEspecialidad.Visible = false;
+            }
+            else if (tipo == 3)     //docente
+            {
+                //como hacer para ver si es titular, auxiliar, jefe
+            }
+            else if (tipo == 4)
+            {
+
+            }
+        }
         private void mnuSalir_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -63,22 +78,6 @@ namespace UI.Desktop
         {
             Plan plan = new Plan();
             plan.ShowDialog();
-        }
-
-        internal void tipoPersona(int tipo)
-        {
-            if (tipo == 1)  //alumno
-            {
-                btnEspecialidad.Visible = false;
-            }
-            else if (tipo == 3)     //docente
-            {
-                //como hacer para ver si es titular, auxiliar, jefe
-            }
-            else if (tipo == 4)
-            {
-
-            }
         }
 
         private void btnEspecialidad_Click(object sender, EventArgs e)

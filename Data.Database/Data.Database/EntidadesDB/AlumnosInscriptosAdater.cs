@@ -161,6 +161,7 @@ namespace Data.Database.EntidadesDB
                 else
                     cmdUpd = new SqlCommand("UPDATE alumnos_inscripciones SET id_alumno = @id_alumno, id_curso = @id_curso, condicion = @condicion WHERE id_inscripcion = @id ", sqlConn);
 
+                cmdUpd.Parameters.Add("@id_inscripcion", SqlDbType.Int).Value = Alumnos_Inscripciones.ID;
                 cmdUpd.Parameters.Add("@id_alumno", SqlDbType.Int).Value = Alumnos_Inscripciones.IDAlumno;
                 cmdUpd.Parameters.Add("@id_curso", SqlDbType.Int).Value = Alumnos_Inscripciones.IDCurso;
                 cmdUpd.Parameters.Add("@condicion", SqlDbType.VarChar, 50).Value = Alumnos_Inscripciones.Condicion;
