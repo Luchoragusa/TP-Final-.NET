@@ -13,34 +13,22 @@ namespace UI.Desktop
 {
     public partial class formMain : Form
     {
-        private int tipo;
-
         public formMain()
         {
             InitializeComponent();
+            //btnEspecialidad.Enabled = false;               aca funciona
+            //btnEspecialidad.Hide();                   el que realmente queremos, funciona aca
         }
 
-        public formMain(int tipo)
-        {
-            this.tipo = tipo;
-            //tipoPersona(tipo);
-        }
-
-        private void tipoPersona(int tipo)
-        {
-            if (tipo == 1)  //alumno
+        public formMain(int tipo) 
+        {           
+            if (tipo == 1)
             {
-                btnEspecialidad.Visible = false;
-            }
-            else if (tipo == 3)     //docente
-            {
-
-            }
-            else if (tipo == 4)
-            {
-
+                InitializeComponent();
+                btnEspecialidad.Enabled = false;                
             }
         }
+
         private void mnuSalir_Click(object sender, EventArgs e)
         {
             this.Dispose();

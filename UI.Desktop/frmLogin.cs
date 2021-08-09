@@ -38,11 +38,14 @@ namespace UI.Desktop
             tipo = loginUsuario.login(usuario);
 
             if (tipo != -1)       
-            {
-                MessageBox.Show("Usted ingreso al sistema.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.DialogResult = DialogResult.OK;
-                
-                _ = new formMain(tipo);
+            {                 
+                if (tipo == 1)
+                {
+                    MessageBox.Show("Usted ingreso al sistema como ALUMNO.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.DialogResult = DialogResult.OK;
+                    formMain fm = new formMain(tipo);
+                }
+                //formMain fm = new formMain(tipo);
             }                           
             else
             {

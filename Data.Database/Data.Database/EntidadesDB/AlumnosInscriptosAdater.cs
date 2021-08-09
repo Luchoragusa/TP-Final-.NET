@@ -47,7 +47,7 @@ namespace Data.Database.EntidadesDB
 
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al recuperar la lista de alumnos inscriptos");
+                Exception ExcepcionManejada = new Exception("Error al recuperar la lista de alumnos inscriptos", Ex);
                 throw ExcepcionManejada;
             }
             finally
