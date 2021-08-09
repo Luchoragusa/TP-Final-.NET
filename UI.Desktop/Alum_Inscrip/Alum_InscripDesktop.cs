@@ -78,7 +78,7 @@ namespace UI.Desktop.Alum_Inscrip
                 if (Modo != ModoForm.Alta)
                 {
                     Alum_InscripActual.State = BusinessEntity.States.Modified;
-                    this.txtID.Text = this.Alum_InscripActual.ID.ToString();
+                   // this.txtID.Text = this.Alum_InscripActual.ID.ToString();  es la id asiganda por la DB no tiene sentido
                 }
                 this.Alum_InscripActual.IDAlumno = int.Parse(this.txtIDAlumno.Text);
                 this.Alum_InscripActual.IDCurso = int.Parse(this.txtIDCurso.Text);

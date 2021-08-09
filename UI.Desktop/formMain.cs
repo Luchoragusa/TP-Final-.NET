@@ -13,8 +13,6 @@ namespace UI.Desktop
 {
     public partial class formMain : Form
     {
-        private int tipo;
-
         public formMain()
         {
             InitializeComponent();
@@ -22,8 +20,15 @@ namespace UI.Desktop
 
         public formMain(int tipo)
         {
-            this.tipo = tipo;
-            //tipoPersona(tipo);
+            frmLogin appLogin = new frmLogin();
+            appLogin.Close();
+
+            InitializeComponent();
+            if (tipo == 1)
+            {
+                btnEspecialidad.Hide();
+                btnPlan.Hide();          // aca esconder los botones que queresmo que no se meustren
+            }
         }
 
         private void mnuSalir_Click(object sender, EventArgs e)
@@ -33,11 +38,8 @@ namespace UI.Desktop
 
         private void formMain_Shown(object sender, EventArgs e)
         {
-           frmLogin appLogin = new frmLogin();
-           if (appLogin.ShowDialog() != DialogResult.OK)
-           {
-                this.Dispose();
-           }
+            frmLogin appLogin = new frmLogin();
+            appLogin.Dispose(); // esto deberia cerrar la ventana de Login pero nose porque no lo hace
         }
 
 
@@ -63,22 +65,6 @@ namespace UI.Desktop
         {
             Plan plan = new Plan();
             plan.ShowDialog();
-        }
-
-        internal void tipoPersona(int tipo)
-        {
-            if (tipo == 1)  //alumno
-            {
-                btnEspecialidad.Visible = false;
-            }
-            else if (tipo == 3)     //docente
-            {
-                //como hacer para ver si es titular, auxiliar, jefe
-            }
-            else if (tipo == 4)
-            {
-
-            }
         }
 
         private void btnEspecialidad_Click(object sender, EventArgs e)

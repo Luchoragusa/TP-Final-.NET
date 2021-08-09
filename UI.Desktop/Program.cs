@@ -16,11 +16,30 @@ namespace UI.Desktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frmLogin());
-            Application.Run(new formMain());
-            //Application.Run(new Usuarios());  
-            //Application.Run(new Comisiones());
-            //Application.Run(new Materia());
+           // Application.Run(new frmLogin());
+
+
+            frmLogin login = new frmLogin();
+            login.FormClosed += loginForm_Closed; // agrega esto aquí
+            login.Show();
+            Application.Run();
+
+
         }
+        public static void loginForm_Closed(object sender, FormClosedEventArgs e)
+            {
+                ((Form)sender).FormClosed -= loginForm_Closed;
+
+                if (Application.OpenForms.Count == 0)
+                {
+                    Application.ExitThread();
+                }
+                else
+                {
+                    Application.OpenForms[0].FormClosed += loginForm_Closed;
+                }
+            }
+
+
     }
 }

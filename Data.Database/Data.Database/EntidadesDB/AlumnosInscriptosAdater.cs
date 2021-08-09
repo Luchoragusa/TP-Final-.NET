@@ -47,7 +47,7 @@ namespace Data.Database.EntidadesDB
 
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al recuperar la lista de alumnos inscriptos");
+                Exception ExcepcionManejada = new Exception("Error al recuperar la lista de alumnos inscriptos", Ex);
                 throw ExcepcionManejada;
             }
             finally
@@ -150,16 +150,15 @@ namespace Data.Database.EntidadesDB
             {
                 OpenConnection();
                 SqlCommand cmdUpd = null;
-                Nullable<int> nota = null;
-                nota = int.Parse(Alumnos_Inscripciones.Nota);
 
-                if (nota.HasValue) // verifico si la nota que carga el usuario no es null
-                {
-                    cmdUpd = new SqlCommand("UPDATE alumnos_inscripciones SET id_alumno = @id_alumno, id_curso = @id_curso, condicion = @condicion, nota = @nota WHERE id_inscripcion = @id ", sqlConn);
-                    cmdUpd.Parameters.Add("@nota", SqlDbType.Int).Value = int.Parse(Alumnos_Inscripciones.Nota);
-                }
-                else
-                    cmdUpd = new SqlCommand("UPDATE alumnos_inscripciones SET id_alumno = @id_alumno, id_curso = @id_curso, condicion = @condicion WHERE id_inscripcion = @id ", sqlConn);
+
+                //if (Alumnos_Inscripciones.Nota != " - ") // verifico si la nota quq carga el usuario es null
+                //{
+                //    cmdUpd = new SqlCommand("UPDATE alumnos_inscripciones SET id_alumno = @id_alumno, id_curso = @id_curso, condicion = @condicion, nota = @nota WHERE id_inscripcion = @id ", sqlConn);
+                //    cmdUpd.Parameters.Add("@nota", SqlDbType.Int).Value = int.Parse(Alumnos_Inscripciones.Nota);
+                //}
+                //else
+                cmdUpd = new SqlCommand("UPDATE alumnos_inscripciones SET id_alumno = @id_alumno, id_curso = @id_curso, condicion = @condicion WHERE id_inscripcion = @id ", sqlConn);
 
                 cmdUpd.Parameters.Add("@id_alumno", SqlDbType.Int).Value = Alumnos_Inscripciones.IDAlumno;
                 cmdUpd.Parameters.Add("@id_curso", SqlDbType.Int).Value = Alumnos_Inscripciones.IDCurso;
