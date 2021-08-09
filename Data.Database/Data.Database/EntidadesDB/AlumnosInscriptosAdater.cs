@@ -152,13 +152,13 @@ namespace Data.Database.EntidadesDB
                 SqlCommand cmdUpd = null;
 
 
-                if (Alumnos_Inscripciones.Nota != " - ") // verifico si la nota quq carga el usuario es null
-                {
-                    cmdUpd = new SqlCommand("UPDATE alumnos_inscripciones SET id_alumno = @id_alumno, id_curso = @id_curso, condicion = @condicion, nota = @nota WHERE id_inscripcion = @id ", sqlConn);
-                    cmdUpd.Parameters.Add("@nota", SqlDbType.Int).Value = int.Parse(Alumnos_Inscripciones.Nota);
-                }
-                else
-                    cmdUpd = new SqlCommand("UPDATE alumnos_inscripciones SET id_alumno = @id_alumno, id_curso = @id_curso, condicion = @condicion WHERE id_inscripcion = @id ", sqlConn);
+                //if (Alumnos_Inscripciones.Nota != " - ") // verifico si la nota quq carga el usuario es null
+                //{
+                //    cmdUpd = new SqlCommand("UPDATE alumnos_inscripciones SET id_alumno = @id_alumno, id_curso = @id_curso, condicion = @condicion, nota = @nota WHERE id_inscripcion = @id ", sqlConn);
+                //    cmdUpd.Parameters.Add("@nota", SqlDbType.Int).Value = int.Parse(Alumnos_Inscripciones.Nota);
+                //}
+                //else
+                cmdUpd = new SqlCommand("UPDATE alumnos_inscripciones SET id_alumno = @id_alumno, id_curso = @id_curso, condicion = @condicion WHERE id_inscripcion = @id ", sqlConn);
 
                 cmdUpd.Parameters.Add("@id_alumno", SqlDbType.Int).Value = Alumnos_Inscripciones.IDAlumno;
                 cmdUpd.Parameters.Add("@id_curso", SqlDbType.Int).Value = Alumnos_Inscripciones.IDCurso;
