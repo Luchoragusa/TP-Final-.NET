@@ -13,7 +13,7 @@ using Business.Entities.Entidades;
 
 namespace UI.Desktop.Persona
 {
-    public partial class Persona : UI.Desktop.ApplicationForm
+    public partial class Persona : ApplicationForm
     {
         public Persona()
         {
@@ -42,7 +42,7 @@ namespace UI.Desktop.Persona
                 MessageBox.Show("Acción invalida", "Seleccione una fila.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            int ID = ((Business.Entities.Entidades.Personas)this.dgvPersonas.SelectedRows[0].DataBoundItem).ID;
+            int ID = ((Personas)this.dgvPersonas.SelectedRows[0].DataBoundItem).ID;
 
             PersonaDesktop formPersona = new PersonaDesktop(ID, ApplicationForm.ModoForm.Baja);
             try
@@ -76,7 +76,7 @@ namespace UI.Desktop.Persona
                 MessageBox.Show("Accion Invalida", "Seleccione una fila", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            int ID = ((Business.Entities.Entidades.Personas)this.dgvPersonas.SelectedRows[0].DataBoundItem).ID;
+            int ID = ((Personas)this.dgvPersonas.SelectedRows[0].DataBoundItem).ID;
 
             UsuarioDesktop formUsuario = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Modificacion);
             try

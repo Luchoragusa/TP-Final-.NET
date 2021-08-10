@@ -249,6 +249,7 @@ namespace UI.Desktop.Persona
             this.ClientSize = new System.Drawing.Size(1052, 450);
             this.Controls.Add(this.tcPersonas);
             this.Name = "Persona";
+            this.Text = "Persona";
             this.Load += new System.EventHandler(this.Persona_Load);
             this.tcPersonas.ContentPanel.ResumeLayout(false);
             this.tcPersonas.TopToolStripPanel.ResumeLayout(false);
