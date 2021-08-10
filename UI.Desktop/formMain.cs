@@ -90,5 +90,11 @@ namespace UI.Desktop
             Alum_Inscrip.Alum_Inscrip a_i = new Alum_Inscrip.Alum_Inscrip();
             a_i.ShowDialog();
         }
+
+        private void btnPersona_Click(object sender, EventArgs e)
+        {
+            Persona.Persona per = new Persona.Persona();
+            per.ShowDialog();
+        }
     }
 }

@@ -41,6 +41,7 @@ namespace UI.Desktop
             this.btnCurso = new System.Windows.Forms.Button();
             this.btnDC = new System.Windows.Forms.Button();
             this.Alum_Inscrip = new System.Windows.Forms.Button();
+            this.btnPersona = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -82,10 +83,11 @@ namespace UI.Desktop
             this.tableLayoutPanel1.Controls.Add(this.btnCurso, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.btnDC, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.Alum_Inscrip, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.btnPersona, 0, 8);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 8;
+            this.tableLayoutPanel1.RowCount = 9;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -94,7 +96,8 @@ namespace UI.Desktop
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(256, 236);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(256, 265);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // btn_Usuario
@@ -178,7 +181,7 @@ namespace UI.Desktop
             // 
             this.Alum_Inscrip.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Alum_Inscrip.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.Alum_Inscrip.Location = new System.Drawing.Point(85, 207);
+            this.Alum_Inscrip.Location = new System.Drawing.Point(85, 206);
             this.Alum_Inscrip.Name = "Alum_Inscrip";
             this.Alum_Inscrip.Size = new System.Drawing.Size(86, 25);
             this.Alum_Inscrip.TabIndex = 7;
@@ -186,12 +189,23 @@ namespace UI.Desktop
             this.Alum_Inscrip.UseVisualStyleBackColor = false;
             this.Alum_Inscrip.Click += new System.EventHandler(this.Alum_Inscrip_Click);
             // 
+            // btnPersona
+            // 
+            this.btnPersona.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPersona.Location = new System.Drawing.Point(85, 238);
+            this.btnPersona.Name = "btnPersona";
+            this.btnPersona.Size = new System.Drawing.Size(85, 23);
+            this.btnPersona.TabIndex = 8;
+            this.btnPersona.Text = "Persona";
+            this.btnPersona.UseVisualStyleBackColor = true;
+            this.btnPersona.Click += new System.EventHandler(this.btnPersona_Click);
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(256, 260);
+            this.ClientSize = new System.Drawing.Size(256, 289);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -222,5 +236,6 @@ namespace UI.Desktop
         private System.Windows.Forms.Button btnCurso;
         private System.Windows.Forms.Button btnDC;
         private System.Windows.Forms.Button Alum_Inscrip;
+        private System.Windows.Forms.Button btnPersona;
     }
 }
