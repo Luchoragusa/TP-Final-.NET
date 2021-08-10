@@ -89,7 +89,6 @@ namespace UI.Desktop.Persona
                 MessageBox.Show(ex.Message + "Error: ", "Ha habido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnActualizar_Click_1(object sender, EventArgs e)
         {
             Listar();
