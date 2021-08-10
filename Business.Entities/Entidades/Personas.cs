@@ -31,10 +31,5 @@ namespace Business.Entities.Entidades
             Docente = 3,
             Administrador = 4,
         }
-
-        public void ShowDialog()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
