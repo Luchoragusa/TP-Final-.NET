@@ -32,5 +32,9 @@ namespace Business.Entities.Entidades
             Administrador = 4,
         }
 
+        public void ShowDialog()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
