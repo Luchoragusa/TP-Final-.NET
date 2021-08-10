@@ -39,15 +39,6 @@ namespace UI.Desktop.Persona
             Listar();
         }
 
-        private void btnActualizar_Click(object sender, EventArgs e)
-        {
-            Listar();
-        }
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void tsbEliminar_Click(object sender, EventArgs e)
         {/*
 
@@ -103,6 +94,16 @@ namespace UI.Desktop.Persona
             {
                 MessageBox.Show(ex.Message + "Error: ", "Ha habido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnActualizar_Click_1(object sender, EventArgs e)
+        {
+            Listar();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
