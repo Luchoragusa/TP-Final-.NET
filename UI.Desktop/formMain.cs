@@ -26,8 +26,8 @@ namespace UI.Desktop
             InitializeComponent();
             if (tipo == 1)
             {
-                btnEspecialidad.Hide();
-                btnPlan.Hide();          // aca esconder los botones que queresmo que no se meustren
+                btnEspecialidad.Enabled = false;
+                btnPlan.Enabled = false;          // aca esconder los botones que queresmo que no se meustren
             }
         }
 
