@@ -22,7 +22,7 @@ namespace UI.Desktop.Persona
             this.dgvPersonas.ReadOnly = true;
         }
         public void Listar()
-        {/*
+        {
             PersonaLogic pl = new PersonaLogic();
             try
             {
@@ -32,15 +32,10 @@ namespace UI.Desktop.Persona
             {
                 MessageBox.Show(ex.Message + "Error: ", "Ha habido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            */
-        }
-        private void Personas_Load(object sender, EventArgs e)
-        {
-            Listar();
         }
 
         private void tsbEliminar_Click(object sender, EventArgs e)
-        {/*
+        {
 
             if (this.dgvPersonas.SelectedRows.Count == 0)
             {
@@ -49,7 +44,7 @@ namespace UI.Desktop.Persona
             }
             int ID = ((Business.Entities.Entidades.Personas)this.dgvPersonas.SelectedRows[0].DataBoundItem).ID;
 
-            PersonaDescktop formPersona = new PersonaDesktop(ID, ApplicationForm.ModoForm.Baja);
+            PersonaDesktop formPersona = new PersonaDesktop(ID, ApplicationForm.ModoForm.Baja);
             try
             {
                 formPersona.ShowDialog();
@@ -59,11 +54,10 @@ namespace UI.Desktop.Persona
             {
                 MessageBox.Show(ex.Message + "Error: ", "Ha habido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            */
         }
 
         private void tsbNuevo_Click(object sender, EventArgs e)
-        {/*
+        {
             PersonaDesktop formPDesktop = new PersonaDesktop(ApplicationForm.ModoForm.Alta);
             try
             {
@@ -73,7 +67,7 @@ namespace UI.Desktop.Persona
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + "Error: ", "Ha habido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }*/
+            }
         }
         private void tsbEditar_Click(object sender, EventArgs e)
         {
@@ -104,6 +98,11 @@ namespace UI.Desktop.Persona
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Persona_Load(object sender, EventArgs e)
+        {
+            Listar();
         }
     }
 }
