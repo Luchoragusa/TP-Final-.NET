@@ -7,26 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Business.Logic;
 using Business.Entities;
+using Business.Logic;
+using Business.Logic.EntidadesLogic;
 
-namespace UI.Desktop
+namespace UI.Desktop.Curso
 {
-    public partial class Cursos : Form
+    public partial class CursosNotas : Form
     {
-        public Cursos()
+        Usuario docente;
+        public CursosNotas(Usuario us)
         {
             InitializeComponent();
-
+            docente = us;
         }
-    
+
 
         public void Listar()
         {
             Business.Logic.EntidadesLogic.CursoLogic cl = new Business.Logic.EntidadesLogic.CursoLogic();
             try
             {
-                this.dgvCursos.DataSource = cl.GetAll();
+                this.dgvCursos.DataSource = cl.GetAllDocente(docente);
             }
             catch (Exception ex)
             {
@@ -43,20 +45,7 @@ namespace UI.Desktop
         {
             this.Close();
         }
-
-        private void tsbNuevo_Click(object sender, EventArgs e)
-        {
-            ComisionesDesktop formCDesktop = new ComisionesDesktop(ApplicationForm.ModoForm.Alta);
-            try
-            {
-                formCDesktop.ShowDialog();
-                this.Listar();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
+             
 
         private void tsbEditar_Click(object sender, EventArgs e)
         {
@@ -78,29 +67,8 @@ namespace UI.Desktop
                 MessageBox.Show(ex.Message + "Error detected ", "Ha habido un error interno: ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void tsbEliminar_Click(object sender, EventArgs e)
-        {
-            if (this.dgvCursos.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Acción invalida", "Seleccione una fila.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            int ID = ((Business.Entities.Comision)this.dgvCursos.SelectedRows[0].DataBoundItem).ID;
-
-            ComisionesDesktop formCDesktop = new ComisionesDesktop(ID, ApplicationForm.ModoForm.Baja);
-            try
-            {
-                formCDesktop.ShowDialog();
-                this.Listar();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + "Error detected: ", "Ha habido un error interno.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void Cursos_Load(object sender, EventArgs e)
+              
+        private void CursosNotas_Load(object sender, EventArgs e)
         {
             Listar();
         }

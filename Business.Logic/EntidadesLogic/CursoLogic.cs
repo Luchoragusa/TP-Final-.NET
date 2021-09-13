@@ -44,17 +44,31 @@ namespace Business.Logic.EntidadesLogic
                 throw ExcepcionManejada;
             }
         }
-        public void Save(Business.Entities.Curso Curso)
+    
+        public List<Curso> GetAllDocente(Usuario docente)
         {
             try
             {
-                CursoData.Save(Curso);
+                return CursoData.GetAllByDocente(docente);
             }
             catch (Exception ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al guardar el Curso.", ex);
+                Exception ExcepcionManejada = new Exception("Error al recuperar la lista logica de Cursos.", ex);
                 throw ExcepcionManejada;
             }
+        }
+
+        public void Save(Business.Entities.Curso Curso)
+        {
+                try
+                {
+                    CursoData.Save(Curso);
+                }
+                catch (Exception ex)
+                {
+                    Exception ExcepcionManejada = new Exception("Error al guardar el Curso.", ex);
+                    throw ExcepcionManejada;
+                }
         }
         public void Delete(int id)
         {
@@ -95,4 +109,5 @@ namespace Business.Logic.EntidadesLogic
             }
         }
     }
-}
+  }
+

@@ -58,7 +58,7 @@ namespace UI.Desktop
                     this.DialogResult = DialogResult.OK;
                 }
 
-                fm = new formMain(tipo);
+                fm = new formMain(tipo, usuario);
                 fm.Show();
             }                           
             else

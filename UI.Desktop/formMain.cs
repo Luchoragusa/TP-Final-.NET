@@ -7,17 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Business.Entities;
 
 namespace UI.Desktop
 {
     public partial class formMain : Form
     {
+        private Usuario us;
         public formMain()
         {
             InitializeComponent();
         }
 
-        public formMain(int tipo)
+        public formMain(int tipo, Usuario u)
         {
             frmLogin appLogin = new frmLogin();
             appLogin.Close();
@@ -41,6 +43,7 @@ namespace UI.Desktop
                 btnPersona.Enabled = false;
                 btnDC.Enabled = false;
             }
+            us = u;
         }
 
         private void mnuSalir_Click(object sender, EventArgs e)
@@ -107,6 +110,14 @@ namespace UI.Desktop
         {
             Persona.Persona per = new Persona.Persona();
             per.ShowDialog();
+        }
+
+        private void btnRegistrarNota_Click(object sender, EventArgs e)
+        {
+            UI.Desktop.Curso.CursosNotas cursoAresgistrarNota = new UI.Desktop.Curso.CursosNotas(us);
+            cursoAresgistrarNota.ShowDialog();
+
+            
         }
     }
 }

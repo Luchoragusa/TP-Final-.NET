@@ -42,6 +42,7 @@ namespace UI.Desktop
             this.btnDC = new System.Windows.Forms.Button();
             this.Alum_Inscrip = new System.Windows.Forms.Button();
             this.btnPersona = new System.Windows.Forms.Button();
+            this.btnRegistrarNota = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -84,10 +85,11 @@ namespace UI.Desktop
             this.tableLayoutPanel1.Controls.Add(this.btnDC, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.Alum_Inscrip, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.btnPersona, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.btnRegistrarNota, 0, 9);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 9;
+            this.tableLayoutPanel1.RowCount = 10;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -96,8 +98,9 @@ namespace UI.Desktop
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(256, 265);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 14F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(256, 298);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // btn_Usuario
@@ -192,20 +195,31 @@ namespace UI.Desktop
             // btnPersona
             // 
             this.btnPersona.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPersona.Location = new System.Drawing.Point(85, 238);
+            this.btnPersona.Location = new System.Drawing.Point(85, 237);
             this.btnPersona.Name = "btnPersona";
-            this.btnPersona.Size = new System.Drawing.Size(85, 23);
+            this.btnPersona.Size = new System.Drawing.Size(85, 20);
             this.btnPersona.TabIndex = 8;
             this.btnPersona.Text = "Persona";
             this.btnPersona.UseVisualStyleBackColor = true;
             this.btnPersona.Click += new System.EventHandler(this.btnPersona_Click);
+            // 
+            // btnRegistrarNota
+            // 
+            this.btnRegistrarNota.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnRegistrarNota.Location = new System.Drawing.Point(87, 267);
+            this.btnRegistrarNota.Name = "btnRegistrarNota";
+            this.btnRegistrarNota.Size = new System.Drawing.Size(82, 23);
+            this.btnRegistrarNota.TabIndex = 9;
+            this.btnRegistrarNota.Text = "RegistrarNota";
+            this.btnRegistrarNota.UseVisualStyleBackColor = true;
+            this.btnRegistrarNota.Click += new System.EventHandler(this.btnRegistrarNota_Click);
             // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(256, 289);
+            this.ClientSize = new System.Drawing.Size(256, 322);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -237,5 +251,6 @@ namespace UI.Desktop
         private System.Windows.Forms.Button btnDC;
         private System.Windows.Forms.Button Alum_Inscrip;
         private System.Windows.Forms.Button btnPersona;
+        private System.Windows.Forms.Button btnRegistrarNota;
     }
 }
