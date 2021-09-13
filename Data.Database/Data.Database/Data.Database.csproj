@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adapter.cs" />
-    <Compile Include="CursoAdapter.cs" />
+    <Compile Include="EntidadesDB\CursoAdapter.cs" />
     <Compile Include="EntidadesDB\AlumnosInscriptosAdater.cs" />
     <Compile Include="EntidadesDB\DocenteCursoAdapter.cs" />
     <Compile Include="EntidadesDB\EspecialidadAdapter.cs" />
