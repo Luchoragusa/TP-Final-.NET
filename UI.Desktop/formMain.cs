@@ -23,10 +23,23 @@ namespace UI.Desktop
             appLogin.Close();
 
             InitializeComponent();
-            if (tipo == 1)
+
+            // debajo se esconden los botones que queremos que no se muestren
+            // acorde a que tipo de persona ingresa
+
+            if (tipo == 1)          //alumno
             {
                 btnEspecialidad.Enabled = false;
-                btnPlan.Enabled = false;          // aca esconder los botones que queresmo que no se meustren
+                btnPlan.Enabled = false;
+                btnPersona.Enabled = false;
+
+            }
+            else if (tipo == 2)     //docente
+            {
+                btn_Usuario.Enabled = false;
+                Alum_Inscrip.Enabled = false;
+                btnPersona.Enabled = false;
+                btnDC.Enabled = false;
             }
         }
 

@@ -41,16 +41,25 @@ namespace UI.Desktop
 
             if (tipo != -1)       
             {                 
-                if (tipo == 1)
+                if (tipo == 1)      //alumno
                 {
-                    MessageBox.Show("Usted ingreso al sistema como ALUMNO.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.DialogResult = DialogResult.OK;
-
-                   // this.Close();  //este me cierra ambos
-
-                    fm = new formMain(tipo);
-                    fm.Show();
+                    MessageBox.Show("Bienvenido al sistema, ALUMNO.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.DialogResult = DialogResult.OK;                   
+                    
                 }
+                else if (tipo == 2) //docente
+                {
+                    MessageBox.Show("Bienvenido al sistema, DOCENTE.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.DialogResult = DialogResult.OK;
+                }
+                else if (tipo == 3) //admin
+                {
+                    MessageBox.Show("Bienvenido al sistema, ADMINISTRADOR.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.DialogResult = DialogResult.OK;
+                }
+
+                fm = new formMain(tipo);
+                fm.Show();
             }                           
             else
             {
