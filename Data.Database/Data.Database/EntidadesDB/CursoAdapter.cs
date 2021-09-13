@@ -53,13 +53,14 @@ namespace Data.Database
 
         public List<Curso> GetAllByDocente(Usuario docente)
         {
-            List<Curso> cursos = new List<Curso>();
+            List<Curso> cursosDelDocente = new List<Curso>();
             try
             {
                 this.OpenConnection();
 
-                SqlCommand cmdcursos = new SqlCommand("SELECT * FROM cursos ", sqlConn);
-
+                SqlCommand cmdcursos = new SqlCommand("select c.id_curso from usuarios us inner join personas per on us.id_persona = per.id_persona inner join docentes_cursos doc on doc.id_docente = per.id_persona inner join cursos c on c.id_curso = doc.id_curso where nombre_usuario = ? and clave = ?", sqlConn);
+                cmdcursos.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = docente.NombreUsuario;
+                cmdcursos.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = docente.Clave;
                 SqlDataReader drcursos = cmdcursos.ExecuteReader();
 
                 while (drcursos.Read())
@@ -72,7 +73,7 @@ namespace Data.Database
                     Curso.AnioCalendario = (int)drcursos["anio_calendario"];
                     Curso.Cupo = (int)drcursos["cupo"];
 
-                    cursos.Add(Curso);
+                    cursosDelDocente.Add(Curso);
                 }
                 drcursos.Close();
             }
@@ -85,7 +86,7 @@ namespace Data.Database
             {
                 this.CloseConnection();
             }
-            return cursos;
+            return cursosDelDocente;
         }
 
         public Curso GetOne(int ID)

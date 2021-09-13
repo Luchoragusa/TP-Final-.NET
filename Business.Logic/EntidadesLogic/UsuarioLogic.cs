@@ -43,11 +43,9 @@ namespace Business.Logic
             catch (Exception ex)
             {
                 Exception ExcepcionManejada = new Exception("Error al recuperar el usuario.", ex);
-               throw ExcepcionManejada;
+                throw ExcepcionManejada;
             }
         }
-
-
 
         public List<Usuario> GetAll()
         {

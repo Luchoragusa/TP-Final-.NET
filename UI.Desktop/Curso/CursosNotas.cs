@@ -46,7 +46,6 @@ namespace UI.Desktop.Curso
             this.Close();
         }
              
-
         private void tsbEditar_Click(object sender, EventArgs e)
         {
             if (this.dgvCursos.SelectedRows.Count == 0)
