@@ -20,5 +20,6 @@ namespace Business.Entities.Entidades
             Auxiliar = 2,
             JefeCatedra = 3
         }
+
     }
 }
