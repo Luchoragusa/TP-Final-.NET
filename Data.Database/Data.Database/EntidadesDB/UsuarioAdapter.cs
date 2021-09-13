@@ -250,7 +250,8 @@ namespace Data.Database
             usuario.State = BusinessEntity.States.Unmodified;
         }
 
-        public int GetOneLogin(Usuario usuario)
+        public int 
+            GetOneLogin(Usuario usuario)
         {
             int tipo_persona = -1;
             try

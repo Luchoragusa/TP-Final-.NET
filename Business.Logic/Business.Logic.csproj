@@ -51,6 +51,7 @@
     <Compile Include="EntidadesLogic\MateriaLogic.cs" />
     <Compile Include="EntidadesLogic\PersonaLogic.cs" />
     <Compile Include="EntidadesLogic\PlanLogic.cs" />
+    <Compile Include="EntidadesLogic\RegistroNotasLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="EntidadesLogic\UsuarioLogic.cs" />
     <Compile Include="Validaciones.cs" />

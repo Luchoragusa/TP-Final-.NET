@@ -52,6 +52,7 @@
     <Compile Include="EntidadesDB\MateriaAdapter.cs" />
     <Compile Include="EntidadesDB\PersonaAdapter.cs" />
     <Compile Include="EntidadesDB\PlanAdapter.cs" />
+    <Compile Include="EntidadesDB\RegistroNotasAdapter.cs" />
     <Compile Include="EntidadesDB\UsuarioAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

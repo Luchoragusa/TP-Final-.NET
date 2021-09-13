@@ -153,6 +153,18 @@
     <Compile Include="Plan\PlanDesktop.Designer.cs">
       <DependentUpon>PlanDesktop.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegistroNotas\RegistroNotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroNotas\RegistroNotas.Designer.cs">
+      <DependentUpon>RegistroNotas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroNotas\RegistroNotasDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroNotas\RegistroNotasDesktop.Designer.cs">
+      <DependentUpon>RegistroNotasDesktop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuario\UsuarioDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
