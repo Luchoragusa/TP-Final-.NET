@@ -42,8 +42,8 @@ namespace UI.Desktop
                 Alum_Inscrip.Enabled = false;
                 btnPersona.Enabled = false;
                 btnDC.Enabled = false;
-            }
-            us = u;
+                us = u;
+            }            
         }
 
         private void mnuSalir_Click(object sender, EventArgs e)
