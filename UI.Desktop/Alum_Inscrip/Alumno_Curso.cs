@@ -19,6 +19,8 @@ namespace UI.Desktop.Alum_Inscrip
         public Alumno_Curso(Business.Entities.Curso c)
         {
             InitializeComponent();
+            this.dgvAlum_Incrip.AutoGenerateColumns = false;
+            this.dgvAlum_Incrip.ReadOnly = true;
             cur = c;
         }
 
@@ -38,7 +40,6 @@ namespace UI.Desktop.Alum_Inscrip
             {
                 MessageBox.Show("Accion Invalida", "Seleccione una fila", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-
             }
            int ID = ((Alumnos_Inscripciones)this.dgvAlum_Incrip.SelectedRows[0].DataBoundItem).ID;
 
@@ -52,7 +53,6 @@ namespace UI.Desktop.Alum_Inscrip
             {
                 MessageBox.Show(ex.Message + "Error al editar ", "Ha habido un error interno.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
         private void Alum_Curso_Load(object sender, EventArgs e)
         {
