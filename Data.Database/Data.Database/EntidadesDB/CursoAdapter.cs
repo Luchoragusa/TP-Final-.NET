@@ -57,24 +57,19 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-
-                SqlCommand cmdcursos = new SqlCommand("select c.* " +
-                                                    "from usuarios us " +
-                                                    "inner join personas per on us.id_persona = per.id_persona " +
-                                                    "inner join docentes_cursos doc on doc.id_docente = per.id_persona " +
-                                                    "inner join cursos c on c.id_curso = doc.id_curso " +
-                                                    "where nombre_usuario = ? and clave = ?", sqlConn);
+                
+                SqlCommand cmdcursos = new SqlCommand("select c.id_curso from usuarios us inner join personas per on us.id_persona = per.id_persona inner join docentes_cursos doc on doc.id_docente = per.id_persona inner join cursos c on c.id_curso = doc.id_curso where nombre_usuario = @nombre_usuario and clave = @clave", sqlConn);
                 
                 cmdcursos.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = docente.NombreUsuario;
                 cmdcursos.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = docente.Clave;
-                SqlDataReader drcursos = cmdcursos.ExecuteReader();
 
+                SqlDataReader drcursos = cmdcursos.ExecuteReader();
 
                 while (drcursos.Read())
                 {
                     Curso Curso = new Curso();
 
-                    Curso.ID = (int)drcursos["id_Curso"];
+                    Curso.ID = (int)drcursos["id_curso"];
                     Curso.IDMateria = (int)drcursos["id_materia"];
                     Curso.IDComision = (int)drcursos["id_comision"];
                     Curso.AnioCalendario = (int)drcursos["anio_calendario"];
@@ -87,7 +82,7 @@ namespace Data.Database
             catch (Exception Ex)
             {
                 Exception ExcepcionManejada = new Exception("Error al recuperar la lista de cursos", Ex);
-                //throw ExcepcionManejada;
+                throw ExcepcionManejada;
             }
             finally
             {
