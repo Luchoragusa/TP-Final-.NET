@@ -66,10 +66,7 @@ namespace Data.Database.EntidadesDB
             {
                 this.OpenConnection();
 
-                SqlCommand cmdAlumnos_Inscripcioneses = new SqlCommand("select ai.id_inscripcion, ai.id_alumno, ai.id_curso, ai.condicion, ai.nota" +
-                    "from cursos" +
-                    "inner join alumnos_inscripciones ai on cursos.id_curso = ai.id_curso" +
-                    "where cursos.id_curso = @id_curso", sqlConn);
+                SqlCommand cmdAlumnos_Inscripcioneses = new SqlCommand("select ai.id_inscripcion, ai.id_alumno, ai.id_curso, ai.condicion, ai.nota from cursos inner join alumnos_inscripciones ai on cursos.id_curso = ai.id_curso where cursos.id_curso = @id_curso", sqlConn);
                 cmdAlumnos_Inscripcioneses.Parameters.Add("@id_curso", SqlDbType.Int).Value = cur.ID;
                 SqlDataReader drAlumnos_Inscripcioneses = cmdAlumnos_Inscripcioneses.ExecuteReader();
 
@@ -96,7 +93,7 @@ namespace Data.Database.EntidadesDB
             catch (Exception Ex)
             {
                 Exception ExcepcionManejada = new Exception("Error al recuperar la lista de alumnos inscriptos", Ex);
-                //throw ExcepcionManejada;
+                throw ExcepcionManejada;
             }
             finally
             {
@@ -200,18 +197,19 @@ namespace Data.Database.EntidadesDB
                 SqlCommand cmdUpd = null;
 
 
-                //if (Alumnos_Inscripciones.Nota != " - ") // verifico si la nota quq carga el usuario es null
-                //{
-                //    cmdUpd = new SqlCommand("UPDATE alumnos_inscripciones SET id_alumno = @id_alumno, id_curso = @id_curso, condicion = @condicion, nota = @nota WHERE id_inscripcion = @id ", sqlConn);
-                //    cmdUpd.Parameters.Add("@nota", SqlDbType.Int).Value = int.Parse(Alumnos_Inscripciones.Nota);
-                //}
-                //else
+                if (Alumnos_Inscripciones.Nota != " - ") // verifico si la nota quq carga el usuario es null
+                {
                     cmdUpd = new SqlCommand("UPDATE alumnos_inscripciones SET id_alumno = @id_alumno, id_curso = @id_curso, condicion = @condicion, nota = @nota WHERE id_inscripcion = @id ", sqlConn);
-
+                   cmdUpd.Parameters.Add("@nota", SqlDbType.Int).Value = int.Parse(Alumnos_Inscripciones.Nota);
+                }
+                else
+                    cmdUpd = new SqlCommand("UPDATE alumnos_inscripciones SET id_alumno = @id_alumno, id_curso = @id_curso, condicion = @condicion, nota = @nota WHERE id_inscripcion = @id ", sqlConn);
+                cmdUpd.Parameters.Add("@id", SqlDbType.Int).Value = Alumnos_Inscripciones.ID;
                 cmdUpd.Parameters.Add("@id_alumno", SqlDbType.Int).Value = Alumnos_Inscripciones.IDAlumno;
                 cmdUpd.Parameters.Add("@id_curso", SqlDbType.Int).Value = Alumnos_Inscripciones.IDCurso;
                 cmdUpd.Parameters.Add("@condicion", SqlDbType.VarChar, 50).Value = Alumnos_Inscripciones.Condicion;
-                cmdUpd.Parameters.Add("@nota", SqlDbType.Int).Value = int.Parse(Alumnos_Inscripciones.Nota);
+                //cmdUpd.Parameters.Add("@nota", SqlDbType.Int).Value = int.Parse(Alumnos_Inscripciones.Nota);
+                
 
                 cmdUpd.ExecuteNonQuery();
             }
