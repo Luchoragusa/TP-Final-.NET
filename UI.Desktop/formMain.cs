@@ -34,7 +34,7 @@ namespace UI.Desktop
                 btnEspecialidad.Enabled = false;
                 btnPlan.Enabled = false;
                 btnPersona.Enabled = false;
-
+                btnRegistrarNota.Enabled = false;
             }
             else if (tipo == 2)     //docente
             {
