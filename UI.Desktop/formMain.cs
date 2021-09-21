@@ -34,7 +34,7 @@ namespace UI.Desktop
                 btnEspecialidad.Enabled = false;
                 btnPlan.Enabled = false;
                 btnPersona.Enabled = false;
-
+                btnRegistrarNota.Enabled = false;
             }
             else if (tipo == 2)     //docente
             {
@@ -43,7 +43,11 @@ namespace UI.Desktop
                 btnPersona.Enabled = false;
                 btnDC.Enabled = false;
                 us = u;
-            }            
+            }
+            else
+            {
+                btnRegistrarNota.Enabled = false;
+            }
         }
 
         private void mnuSalir_Click(object sender, EventArgs e)
