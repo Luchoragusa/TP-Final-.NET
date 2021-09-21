@@ -36,7 +36,7 @@ namespace UI.Desktop
                 btnPersona.Enabled = false;
 
             }
-            else if (tipo == 2)     //docente
+            else if (tipo == 3)     //docente
             {
                 btn_Usuario.Enabled = false;
                 Alum_Inscrip.Enabled = false;
