@@ -86,7 +86,7 @@ namespace Data.Database
             }
             finally
             {
-                this.CloseConnection();
+                CloseConnection();
             }
             return cursosDelDocente;
         }
