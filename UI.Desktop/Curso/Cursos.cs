@@ -17,7 +17,6 @@ namespace UI.Desktop
         public Cursos()
         {
             InitializeComponent();
-
         }
     
 
