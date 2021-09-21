@@ -116,8 +116,6 @@ namespace UI.Desktop
         {
             UI.Desktop.Curso.CursosNotas cursoAresgistrarNota = new UI.Desktop.Curso.CursosNotas(us);
             cursoAresgistrarNota.ShowDialog();
-
-            
         }
     }
 }
