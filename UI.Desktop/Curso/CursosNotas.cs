@@ -19,6 +19,8 @@ namespace UI.Desktop.Curso
         public CursosNotas(Usuario us)
         {
             InitializeComponent();
+            this.dgvCursos.AutoGenerateColumns = false;
+            this.dgvCursos.ReadOnly = true;
             docente = us;
         }
 
