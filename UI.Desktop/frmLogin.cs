@@ -57,6 +57,11 @@ namespace UI.Desktop
                     MessageBox.Show("Bienvenido al sistema, ADMINISTRADOR.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.DialogResult = DialogResult.OK;
                 }
+                else if (tipo == 4) //admin
+                {
+                    MessageBox.Show("Bienvenido al sistema, PERSONA.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.DialogResult = DialogResult.OK;
+                }
 
                 fm = new formMain(tipo, usuario);
                 fm.Show();
