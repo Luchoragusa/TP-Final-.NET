@@ -57,6 +57,54 @@ namespace Data.Database.EntidadesDB
             return Alumnos_Inscripcioneses;
         }
 
+        public List<Alumnos_Inscripciones> GetAllByCurso(Curso cur)
+            
+        {
+            
+            List<Alumnos_Inscripciones> AlumnosDeUnCurso = new List<Alumnos_Inscripciones>();
+            try
+            {
+                this.OpenConnection();
+
+                SqlCommand cmdAlumnos_Inscripcioneses = new SqlCommand("select ai.id_inscripcion, ai.id_alumno, ai.id_curso, ai.condicion, ai.nota" +
+                    "from cursos" +
+                    "inner join alumnos_inscripciones ai on cursos.id_curso = ai.id_curso" +
+                    "where cursos.id_curso = @id_curso", sqlConn);
+                cmdAlumnos_Inscripcioneses.Parameters.Add("@id_curso", SqlDbType.Int).Value = cur.ID;
+                SqlDataReader drAlumnos_Inscripcioneses = cmdAlumnos_Inscripcioneses.ExecuteReader();
+
+                while (drAlumnos_Inscripcioneses.Read())
+                {
+                    Alumnos_Inscripciones Alumnos_Inscripciones = new Alumnos_Inscripciones();
+
+                    Alumnos_Inscripciones.ID = (int)drAlumnos_Inscripcioneses["id_inscripcion"];
+                    Alumnos_Inscripciones.IDAlumno = (int)drAlumnos_Inscripcioneses["id_alumno"];
+                    Alumnos_Inscripciones.IDCurso = (int)drAlumnos_Inscripcioneses["id_curso"];
+                    Alumnos_Inscripciones.Condicion = (string)drAlumnos_Inscripcioneses["condicion"];
+
+
+                    if (string.IsNullOrEmpty(drAlumnos_Inscripcioneses["nota"].ToString())) // verifico si la nota es null
+                        Alumnos_Inscripciones.Nota = " - ";
+                    else
+                        Alumnos_Inscripciones.Nota = (string)drAlumnos_Inscripcioneses["nota"].ToString();
+
+                    AlumnosDeUnCurso.Add(Alumnos_Inscripciones);
+                }
+                drAlumnos_Inscripcioneses.Close();
+            }
+
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar la lista de alumnos inscriptos", Ex);
+                //throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return AlumnosDeUnCurso;
+        }
+
         public Alumnos_Inscripciones GetOne(int ID)
         {
             Alumnos_Inscripciones Alumnos_Inscripciones = new Alumnos_Inscripciones();

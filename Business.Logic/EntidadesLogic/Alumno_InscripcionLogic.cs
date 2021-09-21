@@ -36,6 +36,20 @@ namespace Business.Logic.EntidadesLogic
             }
         }
 
+        public List<Alumnos_Inscripciones> GetAllByCurso(Business.Entities.Curso cur)
+        {
+          
+            try
+            {
+                return Alumno_InscripcionData.GetAllByCurso(cur);
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar la lista logica de Cursos.", ex);
+                throw ExcepcionManejada;
+            }
+        }
+
         public List<Alumnos_Inscripciones> GetAll()
         {
             try

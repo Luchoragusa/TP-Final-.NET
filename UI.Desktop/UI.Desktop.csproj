@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alum_Inscrip\Alumno_Curso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alum_Inscrip\Alumno_Curso.Designer.cs">
+      <DependentUpon>Alumno_Curso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Alum_Inscrip\Alum_Inscrip.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +203,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Alum_Inscrip\Alumno_Curso.resx">
+      <DependentUpon>Alumno_Curso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Alum_Inscrip\Alum_Inscrip.resx">
       <DependentUpon>Alum_Inscrip.cs</DependentUpon>
     </EmbeddedResource>

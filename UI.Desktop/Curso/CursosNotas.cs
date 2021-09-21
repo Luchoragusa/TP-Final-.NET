@@ -53,12 +53,15 @@ namespace UI.Desktop.Curso
                 MessageBox.Show("Accion Invalida", "Seleccione una fila", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            int ID = ((Business.Entities.Comision)this.dgvCursos.SelectedRows[0].DataBoundItem).ID;
 
-            ComisionesDesktop formCDesktop = new ComisionesDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+            Business.Entities.Curso c = null;
+            c= ((Business.Entities.Curso)this.dgvCursos.SelectedRows[0].DataBoundItem);
+            
+            Alum_Inscrip.Alumno_Curso alumno_Curso = new Alum_Inscrip.Alumno_Curso(c);
+            
             try
             {
-                formCDesktop.ShowDialog();
+                alumno_Curso.ShowDialog();
                 this.Listar();
             }
             catch (Exception ex)
