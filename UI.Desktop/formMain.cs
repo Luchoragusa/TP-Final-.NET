@@ -43,7 +43,11 @@ namespace UI.Desktop
                 btnPersona.Enabled = false;
                 btnDC.Enabled = false;
                 us = u;
-            }            
+            }
+            else
+            {
+                btnRegistrarNota.Enabled = false;
+            }
         }
 
         private void mnuSalir_Click(object sender, EventArgs e)
