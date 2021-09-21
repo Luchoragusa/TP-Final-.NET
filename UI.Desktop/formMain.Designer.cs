@@ -53,7 +53,7 @@ namespace UI.Desktop
             this.mnuArchivo});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(256, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(167, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -98,15 +98,15 @@ namespace UI.Desktop
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 14F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(256, 298);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 13F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(167, 297);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // btn_Usuario
             // 
             this.btn_Usuario.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_Usuario.Location = new System.Drawing.Point(87, 3);
+            this.btn_Usuario.Location = new System.Drawing.Point(42, 3);
             this.btn_Usuario.Name = "btn_Usuario";
             this.btn_Usuario.Size = new System.Drawing.Size(82, 23);
             this.btn_Usuario.TabIndex = 0;
@@ -117,7 +117,7 @@ namespace UI.Desktop
             // btnComision
             // 
             this.btnComision.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnComision.Location = new System.Drawing.Point(87, 32);
+            this.btnComision.Location = new System.Drawing.Point(42, 32);
             this.btnComision.Name = "btnComision";
             this.btnComision.Size = new System.Drawing.Size(82, 23);
             this.btnComision.TabIndex = 1;
@@ -128,7 +128,7 @@ namespace UI.Desktop
             // btnPlan
             // 
             this.btnPlan.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPlan.Location = new System.Drawing.Point(87, 61);
+            this.btnPlan.Location = new System.Drawing.Point(42, 61);
             this.btnPlan.Name = "btnPlan";
             this.btnPlan.Size = new System.Drawing.Size(82, 23);
             this.btnPlan.TabIndex = 2;
@@ -139,7 +139,7 @@ namespace UI.Desktop
             // btnMateria
             // 
             this.btnMateria.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnMateria.Location = new System.Drawing.Point(87, 90);
+            this.btnMateria.Location = new System.Drawing.Point(42, 90);
             this.btnMateria.Name = "btnMateria";
             this.btnMateria.Size = new System.Drawing.Size(82, 23);
             this.btnMateria.TabIndex = 3;
@@ -150,7 +150,7 @@ namespace UI.Desktop
             // btnEspecialidad
             // 
             this.btnEspecialidad.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEspecialidad.Location = new System.Drawing.Point(86, 119);
+            this.btnEspecialidad.Location = new System.Drawing.Point(41, 119);
             this.btnEspecialidad.Name = "btnEspecialidad";
             this.btnEspecialidad.Size = new System.Drawing.Size(84, 23);
             this.btnEspecialidad.TabIndex = 4;
@@ -161,7 +161,7 @@ namespace UI.Desktop
             // btnCurso
             // 
             this.btnCurso.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCurso.Location = new System.Drawing.Point(85, 148);
+            this.btnCurso.Location = new System.Drawing.Point(41, 148);
             this.btnCurso.Name = "btnCurso";
             this.btnCurso.Size = new System.Drawing.Size(85, 23);
             this.btnCurso.TabIndex = 5;
@@ -172,7 +172,7 @@ namespace UI.Desktop
             // btnDC
             // 
             this.btnDC.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDC.Location = new System.Drawing.Point(84, 177);
+            this.btnDC.Location = new System.Drawing.Point(39, 177);
             this.btnDC.Name = "btnDC";
             this.btnDC.Size = new System.Drawing.Size(88, 23);
             this.btnDC.TabIndex = 6;
@@ -184,7 +184,7 @@ namespace UI.Desktop
             // 
             this.Alum_Inscrip.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Alum_Inscrip.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.Alum_Inscrip.Location = new System.Drawing.Point(85, 206);
+            this.Alum_Inscrip.Location = new System.Drawing.Point(40, 206);
             this.Alum_Inscrip.Name = "Alum_Inscrip";
             this.Alum_Inscrip.Size = new System.Drawing.Size(86, 25);
             this.Alum_Inscrip.TabIndex = 7;
@@ -195,9 +195,9 @@ namespace UI.Desktop
             // btnPersona
             // 
             this.btnPersona.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPersona.Location = new System.Drawing.Point(85, 237);
+            this.btnPersona.Location = new System.Drawing.Point(41, 237);
             this.btnPersona.Name = "btnPersona";
-            this.btnPersona.Size = new System.Drawing.Size(85, 20);
+            this.btnPersona.Size = new System.Drawing.Size(84, 22);
             this.btnPersona.TabIndex = 8;
             this.btnPersona.Text = "Persona";
             this.btnPersona.UseVisualStyleBackColor = true;
@@ -206,9 +206,9 @@ namespace UI.Desktop
             // btnRegistrarNota
             // 
             this.btnRegistrarNota.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnRegistrarNota.Location = new System.Drawing.Point(87, 267);
+            this.btnRegistrarNota.Location = new System.Drawing.Point(42, 265);
             this.btnRegistrarNota.Name = "btnRegistrarNota";
-            this.btnRegistrarNota.Size = new System.Drawing.Size(82, 23);
+            this.btnRegistrarNota.Size = new System.Drawing.Size(82, 29);
             this.btnRegistrarNota.TabIndex = 9;
             this.btnRegistrarNota.Text = "RegistrarNota";
             this.btnRegistrarNota.UseVisualStyleBackColor = true;
@@ -219,7 +219,7 @@ namespace UI.Desktop
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(256, 322);
+            this.ClientSize = new System.Drawing.Size(167, 321);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
