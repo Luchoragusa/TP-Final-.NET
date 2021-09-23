@@ -14,13 +14,10 @@
             <asp:Menu runat="server" ID="menu" DataSourceID="SiteMapDataSource">
             </asp:Menu>
             <asp:SiteMapDataSource runat="server" ID="SiteMapDataSource"/>
-            
             <div>
                 <asp:ContentPlaceHolder runat="server" ID="bodyContentPlaceHolder">
                 </asp:ContentPlaceHolder>
             </div>
-
-
         </form>
     </body>
 </html>
