@@ -79,6 +79,7 @@ namespace Data.Database
                     Usuario usr = new Usuario();
 
                     usr.ID = (int)drUsuarios["id_usuario"];
+                    usr.Nombre = (string)drUsuarios[""];
                     usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
                     usr.Clave = (string)drUsuarios["clave"];
                     usr.Habilitado = (bool)drUsuarios["habilitado"];
