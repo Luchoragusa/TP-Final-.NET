@@ -103,11 +103,14 @@ namespace UI.Web
 
         protected void aceptarLinkButton_Click(object sender, EventArgs e)
         {
+            Boolean band = false;
             switch (this.FormMode)
             {
                 case FormModes.Alta:
                     this.Entity = new Usuario();
-                    this.LoadEntity(this.Entity);
+                    band = this.LoadEntity(this.Entity);
+                    if (band)
+                        break;
                     this.SaveEntity(this.Entity);
                     this.LoadGrid();
                     break;
@@ -116,18 +119,26 @@ namespace UI.Web
                     this.LoadGrid();
                     break;
                 case FormModes.Modificacion:
-                    this.Entity = new Usuario();
-                    this.Entity.ID = this.SelectedID;
-                    this.Entity.State = BusinessEntity.States.Modified;
-                    this.LoadEntity(this.Entity);
+
+                    if(!band)
+                    {
+                        this.Entity = new Usuario();
+                        this.Entity.ID = this.SelectedID;
+                        this.Entity.State = BusinessEntity.States.Modified;
+                    }
+                   
+                    band = this.LoadEntity(this.Entity);
+                    if (band)
+                        break;
+                    
                     this.SaveEntity(this.Entity);
                     this.LoadGrid();
                     break;
                     default:
                     break;
             }
-            
-            this.formPanel.Visible = false;
+            if(!band)
+                this.formPanel.Visible = false;
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -188,11 +199,9 @@ namespace UI.Web
             this.nombreUsuarioTextBox.Text = this.Entity.NombreUsuario;
         }
 
-        private void LoadEntity(Usuario usuario)
+        private Boolean LoadEntity(Usuario usuario)
         {
-            bool band1 = true;
-            do
-            {
+            bool band = false;
                 if (this.nombreTextBox.Text.Equals(string.Empty) ||
                                     this.apellidoTextBox.Text.Equals(string.Empty) ||
                                     this.emailTextBox.Text.Equals(string.Empty) ||
@@ -201,34 +210,34 @@ namespace UI.Web
                                     this.repetirClaveTextBox.Text.Equals(string.Empty))
                 {
                     MessageBox.Show("Algunos de los campos están vaciós", "Complete todos para continuar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    band = true;
                 }
                 else
                 {
-                    band1 = false;
-
                     usuario.Nombre = this.nombreTextBox.Text;
                     usuario.Apellido = this.apellidoTextBox.Text;
 
                     if (!validarMail(this.emailTextBox.Text))
                     {
                         MessageBox.Show("Direccion de email Incorrecta.", "Intente nuevamente", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                        band = true;
+                }
                     else { usuario.Email = this.emailTextBox.Text; }
 
                     usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
 
-                    if (this.claveTextBox.Equals(this.repetirClaveTextBox))
-                    {
-                        usuario.Clave = this.claveTextBox.Text;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Las claves no coinciden.", "Intente nuevamente", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    usuario.Habilitado = this.habilitadoCheckBox.Checked;
+                if (this.claveTextBox.Text == this.repetirClaveTextBox.Text)
+                {
+                    usuario.Clave = this.claveTextBox.Text;
                 }
-            } while (band1);
-
+                        else
+                {
+                    MessageBox.Show("Las claves no coinciden.", "Intente nuevamente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    band = true;
+                }
+                usuario.Habilitado = this.habilitadoCheckBox.Checked;
+                }
+            return band;
         }
 
         public static bool validarMail(string email)
