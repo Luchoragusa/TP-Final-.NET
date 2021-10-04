@@ -157,7 +157,6 @@ namespace UI.Web
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.SelectedID = (int)this.gridView.SelectedValue;
-            LoadForm(SelectedID);
         }
 
         private void LoadForm(int id)
