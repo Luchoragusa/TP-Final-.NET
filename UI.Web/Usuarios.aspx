@@ -32,7 +32,7 @@
                 </asp:GridView>
             </asp:Panel>
     
-    <asp:Panel ID="formPanel" Visible="false" runat="server">
+    <asp:Panel ID="formPanel" Visible="False" runat="server">
         <asp:Label ID ="nombreLabel" runat="server" Text="Nombre: "></asp:Label>
         <asp:TextBox ID="nombreTextBox" runat="server"></asp:TextBox>
         <br />
