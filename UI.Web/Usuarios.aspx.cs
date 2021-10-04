@@ -119,14 +119,9 @@ namespace UI.Web
                     this.LoadGrid();
                     break;
                 case FormModes.Modificacion:
-
-                    if(!band)
-                    {
                         this.Entity = new Usuario();
                         this.Entity.ID = this.SelectedID;
                         this.Entity.State = BusinessEntity.States.Modified;
-                    }
-                   
                     band = this.LoadEntity(this.Entity);
                     if (band)
                         break;
