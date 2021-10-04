@@ -17,6 +17,8 @@ namespace UI.Web
         {
            //LoadGrid();
 
+            //  esto fue lo q hice, linea 23, ppt 1.Unidad.5.Web.Parte1 diapo 31
+
             //puede ser que sea así: ?
             if (!Page.IsPostBack)
             {

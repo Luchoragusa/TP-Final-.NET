@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Business.Entities;
+using Business.Entities.Entidades;
 
 namespace Business.Entities
 {
-    public class Usuario : BusinessEntity                      //sacar nombre y apellido y mail           
+    public class Usuario : BusinessEntity                             
     {
         private string nombreUsuario, clave;
         private bool habilitado;
