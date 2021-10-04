@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 using Business.Entities;
 using Business.Entities.Entidades;
 using Business.Logic;
@@ -104,6 +105,12 @@ namespace UI.Web
         {
             switch (this.FormMode)
             {
+                case FormModes.Alta:
+                    this.Entity = new Usuario();
+                    this.LoadEntity(this.Entity);
+                    this.SaveEntity(this.Entity);
+                    this.LoadGrid();
+                    break;
                 case FormModes.Baja:
                     this.DeleteEntity(this.SelectedID);
                     this.LoadGrid();
@@ -151,7 +158,19 @@ namespace UI.Web
 
         protected void nuevoLinkButton_Click(object sender, EventArgs e)
         {
+            this.formPanel.Visible = true;
+            this.FormMode = FormModes.Alta;
+            this.ClearForm();
+            this.EnableForm(true);
+        }
 
+        private void ClearForm()
+        {
+            this.nombreTextBox.Text = string.Empty;
+            this.apellidoTextBox.Text = string.Empty;
+            this.emailTextBox.Text = string.Empty;
+            this.habilitadoCheckBox.Checked = false;
+            this.nombreUsuarioTextBox.Text = string.Empty;
         }
 
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)
@@ -171,12 +190,58 @@ namespace UI.Web
 
         private void LoadEntity(Usuario usuario)
         {
-            usuario.Nombre = this.nombreTextBox.Text;
-            usuario.Apellido = this.apellidoTextBox.Text;
-            usuario.Email = this.emailTextBox.Text;
-            usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
-            usuario.Clave = this.claveTextBox.Text;
-            usuario.Habilitado = this.habilitadoCheckBox.Checked;
+            bool band1 = true;
+            do
+            {
+                if (this.nombreTextBox.Text.Equals(string.Empty) ||
+                                    this.apellidoTextBox.Text.Equals(string.Empty) ||
+                                    this.emailTextBox.Text.Equals(string.Empty) ||
+                                    this.nombreUsuarioTextBox.Text.Equals(string.Empty) ||
+                                    this.claveTextBox.Text.Equals(string.Empty) ||
+                                    this.repetirClaveTextBox.Text.Equals(string.Empty))
+                {
+                    MessageBox.Show("Algunos de los campos están vaciós", "Complete todos para continuar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    band1 = false;
+
+                    usuario.Nombre = this.nombreTextBox.Text;
+                    usuario.Apellido = this.apellidoTextBox.Text;
+
+                    if (!validarMail(this.emailTextBox.Text))
+                    {
+                        MessageBox.Show("Direccion de email Incorrecta.", "Intente nuevamente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else { usuario.Email = this.emailTextBox.Text; }
+
+                    usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
+
+                    if (this.claveTextBox.Equals(this.repetirClaveTextBox))
+                    {
+                        usuario.Clave = this.claveTextBox.Text;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Las claves no coinciden.", "Intente nuevamente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    usuario.Habilitado = this.habilitadoCheckBox.Checked;
+                }
+            } while (band1);
+
+        }
+
+        public static bool validarMail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         private void SaveEntity(Usuario usuario)
@@ -194,6 +259,11 @@ namespace UI.Web
             this.claveLabel.Visible = enable;
             this.repetirClaveTextBox.Visible = enable;
             this.repetirClaveLabel.Visible = enable;
+        }
+
+        protected void cancelarLinkButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Usuarios.aspx");
         }
     }
 }
