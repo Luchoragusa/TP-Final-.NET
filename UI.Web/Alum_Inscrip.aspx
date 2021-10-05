@@ -30,6 +30,39 @@
                         <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" />
                     </Columns>
                 </asp:GridView>
+        </asp:Panel>
+
+     <asp:Panel ID="formPanel" Visible="False" runat="server">
+        
+         <asp:Label ID ="idcursoLabel" runat="server" Text="IDCurso: "></asp:Label>
+        <asp:TextBox ID="idcursoTextBox" runat="server"></asp:TextBox>
+        <br />
+        
+         <asp:Label ID="idalumnoLabel" runat="server" Text="IDAlumno: "></asp:Label>
+        <asp:TextBox ID="idalumnoTextBox" runat="server"></asp:TextBox>
+        <br />
+        
+         <asp:Label ID="notaLabel" runat="server" Text="Nota: "></asp:Label>
+        <asp:TextBox ID="notaTextBox" runat="server" Width="40px"></asp:TextBox>
+        <br />
+        
+         <asp:Label ID="condicionLabel" runat="server" Text="Condicion: "></asp:Label>
+        <asp:TextBox ID="condicionTextBox" runat="server"></asp:TextBox>
+        <br />      
+           
+        <asp:Panel ID="formActionsPanel" runat="server">
+            <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
+            <asp:LinkButton ID="cancelarLinkButton" runat="server" OnClick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>
+        </asp:Panel>
+
+     </asp:Panel>
+
+     <asp:Panel ID="gridActionsPanel" runat="server">
+        <asp:LinkButton ID="editarLinkButton" runat="server" OnClick="editarLinkButton_Click">Editar</asp:LinkButton>
+        <asp:LinkButton ID="eliminarLinkButton" runat="server" OnClick="eliminarLinkButton_Click">Eliminar</asp:LinkButton>
+        <asp:LinkButton ID="nuevoLinkButton" runat="server" OnClick="nuevoLinkButton_Click">Nuevo</asp:LinkButton>
+    </asp:Panel>
+
     </form>
 </body>
 </html>
