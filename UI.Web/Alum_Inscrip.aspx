@@ -5,8 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-            <title>Alum_Inscrip
-            </title>
+        <title>Alum_Inscrip</title>
         <style type="text/css">
             .auto-style1 {
                 margin-bottom: 161px;

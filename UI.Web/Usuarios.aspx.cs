@@ -27,7 +27,7 @@ namespace UI.Web
             }
             else
             {
-                // 'UD ya ha realizado otro intento de ingreso anteriormente'
+                // 'UD ya ha repersonazado otro intento de ingreso anteriormente'
             }
         }
 
@@ -212,30 +212,30 @@ namespace UI.Web
                     usuario.Nombre = this.nombreTextBox.Text;
                     usuario.Apellido = this.apellidoTextBox.Text;
 
-                    if (!validarMail(this.emailTextBox.Text))
+                    if (!vpersonadarMail(this.emailTextBox.Text))
                     {
                         MessageBox.Show("Direccion de email Incorrecta.", "Intente nuevamente", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         band = true;
-                }
+                    }
                     else { usuario.Email = this.emailTextBox.Text; }
 
                     usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
 
-                if (this.claveTextBox.Text == this.repetirClaveTextBox.Text)
-                {
-                    usuario.Clave = this.claveTextBox.Text;
-                }
-                        else
-                {
+                    if (this.claveTextBox.Text == this.repetirClaveTextBox.Text)
+                    {
+                        usuario.Clave = this.claveTextBox.Text;
+                    }
+                    else
+                       {
                     MessageBox.Show("Las claves no coinciden.", "Intente nuevamente", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     band = true;
-                }
-                usuario.Habilitado = this.habilitadoCheckBox.Checked;
+                    }
+                    usuario.Habilitado = this.habilitadoCheckBox.Checked;
                 }
             return band;
         }
 
-        public static bool validarMail(string email)
+        public static bool vpersonadarMail(string email)
         {
             try
             {

@@ -16,7 +16,7 @@ namespace UI.Desktop
     {
         public PersonaDesktop()
         {
-            InitializeComponent();
+            InitipersonazeComponent();
         }
         public PersonaDesktop(ModoForm modo) : this()
         {
@@ -115,7 +115,7 @@ namespace UI.Desktop
             }
         }
 
-        public override bool Validar()
+        public override bool Vpersonadar()
         {
             if (txtNombre.Text.Equals(String.Empty) || txtApellido.Text.Equals(String.Empty))
             {
@@ -123,56 +123,56 @@ namespace UI.Desktop
                 return false;
             }
 
-            if (!Validaciones.validarTexto(txtNombre.Text))
+            if (!Vpersonadaciones.vpersonadarTexto(txtNombre.Text))
             {
                 Notificar("Nombre incorrecto.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (!Validaciones.validarTexto(txtApellido.Text))    
+            if (!Vpersonadaciones.vpersonadarTexto(txtApellido.Text))    
             {
                 Notificar("Apellido incorrecto.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (!Validaciones.validarAlphaNumerico(txtDireccion.Text))    
+            if (!Vpersonadaciones.vpersonadarAlphaNumerico(txtDireccion.Text))    
             {
                 Notificar("Direccion Incorrecta.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (!Validaciones.validarMail(txtEmail.Text))
+            if (!Vpersonadaciones.vpersonadarMail(txtEmail.Text))
             {
                 Notificar("Direccion de email Incorrecta.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (Validaciones.validarTexto(txtTelefono.Text))
+            if (Vpersonadaciones.vpersonadarTexto(txtTelefono.Text))
             {
                 Notificar("Telefono Incorrecto.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
-            if (Validaciones.validarTexto(txtLegajo.Text))
+            if (Vpersonadaciones.vpersonadarTexto(txtLegajo.Text))
             {
                 Notificar("Legajo Incorrecto.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (!Validaciones.validarAlphaNumerico(txtFechaNacimiento.Text))
+            if (!Vpersonadaciones.vpersonadarAlphaNumerico(txtFechaNacimiento.Text))
             {
                 Notificar("Fecha de Nacimiento Incorrecta.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (!Validaciones.validarAlphaNumerico(txtTipoPersona.Text))
+            if (!Vpersonadaciones.vpersonadarAlphaNumerico(txtTipoPersona.Text))
             {
                 Notificar("Tipo de persona Incorrecta.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (Validaciones.validarTexto(txtIdPlan.Text))
+            if (Vpersonadaciones.vpersonadarTexto(txtIdPlan.Text))
             {
                 Notificar("id Plan incorrecto Incorrecta.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -184,7 +184,7 @@ namespace UI.Desktop
 
         private void btnModo_Click(object sender, EventArgs e)
         {
-            if (Validar())
+            if (Vpersonadar())
             {
                 GuardarCambios();
                 this.Close();
@@ -195,6 +195,6 @@ namespace UI.Desktop
         {
             this.Close();
         }
-        //FALTA GUARDARCAMBIOS  VALIDAR  BTN ACEPTAR Y BTNCANCELAR
+        //FALTA GUARDARCAMBIOS  VpersonaDAR  BTN ACEPTAR Y BTNCANCELAR
     }
 }
