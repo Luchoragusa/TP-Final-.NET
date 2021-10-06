@@ -295,6 +295,10 @@
       <Project>{dc8d5760-df18-4e50-bb27-7e5575106d60}</Project>
       <Name>Business.Logic</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UI.Consola\UI.Consola.csproj">
+      <Project>{4f92627b-cee4-4500-9708-4289be266e56}</Project>
+      <Name>UI.Consola</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

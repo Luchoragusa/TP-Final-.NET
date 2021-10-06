@@ -91,19 +91,19 @@ namespace UI.Web.Pag_Individuales
         {
             this.Entity = this.Logic.GetOne(id);
 
-            this.descipcionTextBox.Text = this.Entity.Descripcion;
+            this.descripcionTextBox.Text = this.Entity.Descripcion;
             this.IDEspecialidadTextBox.Text = this.Entity.IDEspecialidad.ToString();
         }
 
         public void EnableForm(bool enable)
         {
-            this.descipcionTextBox.Enabled = enable;
+            this.descripcionTextBox.Enabled = enable;
             this.IDEspecialidadTextBox.Enabled = enable;
         }
 
         private void ClearForm()
         {
-            this.descipcionTextBox.Text = string.Empty;
+            this.descripcionTextBox.Text = string.Empty;
             this.IDEspecialidadTextBox.Text = string.Empty; ;
         }
 
@@ -130,14 +130,14 @@ namespace UI.Web.Pag_Individuales
         private Boolean LoadEntity(Business.Entities.Plan plan)
         {
             bool band = false;
-            if (this.descipcionTextBox.Text.Equals(string.Empty) || this.IDEspecialidadTextBox.Text.Equals(string.Empty))
+            if (this.descripcionTextBox.Text.Equals(string.Empty) || this.IDEspecialidadTextBox.Text.Equals(string.Empty))
             {
                 MessageBox.Show("Algunos de los campos están vaciós", "Complete todos para continuar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 band = true;
             }
             else
             {
-                plan.Descripcion = this.descipcionTextBox.Text;
+                plan.Descripcion = this.descripcionTextBox.Text;
                 plan.IDEspecialidad = int.Parse(this.IDEspecialidadTextBox.Text);
             }
             return band;
