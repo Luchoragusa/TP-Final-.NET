@@ -54,7 +54,6 @@ namespace UI.Web.Pag_Individuales
                 this.ViewState["FormMode"] = value;
             }
         }
-
         public Business.Entities.Plan Entity
         {
             get;
