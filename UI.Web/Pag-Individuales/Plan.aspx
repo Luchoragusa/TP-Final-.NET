@@ -37,6 +37,7 @@
                 <br />
                 <asp:Label ID="IDEspecialidadLabel" runat="server" Text="IDEspecialidad: "></asp:Label>
                 <asp:TextBox ID="IDEspecialidadTextBox" runat="server"></asp:TextBox>
+
                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorIdEspecialidad" runat="server" 
                     ControlToValidate="IDEspecialidadTextBox" 
                     ErrorMessage="ID Especialidad es obligatorio" 
@@ -55,6 +56,7 @@
                 <asp:LinkButton ID="eliminarLinkButton" runat="server" OnClick="eliminarLinkButton_Click">Eliminar</asp:LinkButton>
                 <asp:LinkButton ID="nuevoLinkButton" runat="server" OnClick="nuevoLinkButton_Click">Nuevo</asp:LinkButton>
             </asp:Panel>
+
     </form>
 </body>
 </html>

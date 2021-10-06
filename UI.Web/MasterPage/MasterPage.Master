@@ -3,7 +3,8 @@ CodeFile="MasterPage.master.cs"
 Inherits="MasterPage"%> 
  
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
-"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"> 
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head id="Head1" runat="server"> 
     <title>Untitled Page</title> 
@@ -29,6 +30,13 @@ Inherits="MasterPage"%>
         <tr> 
             <td valign="top" align="left">              
                 <asp:contentplaceholder id="ParteDeAbajo" runat="server" /> 
+                    <asp:Panel ID="gridActionsPanel" runat="server">
+                        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="nuevoLinkButton_Click">Nuevo</asp:LinkButton>
+                        <br />
+                        <asp:LinkButton ID="editarLinkButton" runat="server" OnClick="editarLinkButton_Click">Editar</asp:LinkButton>
+                        <br />
+                        <asp:LinkButton ID="eliminarLinkButton" runat="server" OnClick="eliminarLinkButton_Click">Eliminar</asp:LinkButton>
+                    </asp:Panel>
             </td>
         </tr> 
 
