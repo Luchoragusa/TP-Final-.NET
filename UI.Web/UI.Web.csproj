@@ -118,7 +118,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="Pag-Individuales\MasterPage.aspx" />
     <Content Include="Pag-Individuales\Alum_Inscrip.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -180,13 +179,6 @@
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pag-Individuales\MasterPage.aspx.cs">
-      <DependentUpon>MasterPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pag-Individuales\MasterPage.aspx.designer.cs">
-      <DependentUpon>MasterPage.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Pag-Individuales\Alum_Inscrip.aspx.cs">
       <DependentUpon>Alum_Inscrip.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -263,6 +255,13 @@
     <Compile Include="Pag-Individuales\Usuarios.aspx.designer.cs">
       <DependentUpon>Usuarios.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MasterPage\MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage\MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -279,6 +278,7 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
     <Content Include="Site.Masterr" />
+    <Content Include="MasterPage\MasterPage.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

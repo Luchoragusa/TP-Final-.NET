@@ -1,6 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" 
-CodeFile="LabLoginMasterPage.master.cs" 
-Inherits="LabLoginMasterPage" %> 
+CodeFile="MasterPage.master.cs" 
+Inherits="MasterPage"%> 
  
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
 "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"> 
@@ -14,21 +14,21 @@ Inherits="LabLoginMasterPage" %>
         <!-- site header --> 
         <tr> 
             <td valign="top" align="left">              
-                <asp:contentplaceholder id="Contentplaceholder2" runat="server" /> 
+                <asp:contentplaceholder id="ParteDeArriba" runat="server" /> 
             </td>
         </tr> 
          <!-- site mid --> 
         <tr>      
             <td valign="top" align="left">              
                 <!-- this is the placeholder for the page content --> 
-                <asp:contentplaceholder id="PageContent" runat="server" /> 
+                <asp:contentplaceholder id="ParteDelMedio" runat="server" /> 
             </td>
         </tr> 
          
         <!-- site footer --> 
         <tr> 
             <td valign="top" align="left">              
-                <asp:contentplaceholder id="Contentplaceholder1" runat="server" /> 
+                <asp:contentplaceholder id="ParteDeAbajo" runat="server" /> 
             </td>
         </tr> 
 
