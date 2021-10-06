@@ -118,6 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Pag-Individuales\MasterPage.aspx" />
     <Content Include="Pag-Individuales\Alum_Inscrip.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -139,6 +140,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="ClassDiagram1.cd" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Pag-Individuales\Materia.aspx" />
     <Content Include="Pag-Individuales\Persona.aspx" />
     <Content Include="Pag-Individuales\Plan.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -178,6 +180,13 @@
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pag-Individuales\MasterPage.aspx.cs">
+      <DependentUpon>MasterPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pag-Individuales\MasterPage.aspx.designer.cs">
+      <DependentUpon>MasterPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pag-Individuales\Alum_Inscrip.aspx.cs">
       <DependentUpon>Alum_Inscrip.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -210,6 +219,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Pag-Individuales\Materia.aspx.cs">
+      <DependentUpon>Materia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pag-Individuales\Materia.aspx.designer.cs">
+      <DependentUpon>Materia.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pag-Individuales\Persona.aspx.cs">
       <DependentUpon>Persona.aspx</DependentUpon>
