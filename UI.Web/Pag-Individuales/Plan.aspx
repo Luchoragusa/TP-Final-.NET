@@ -23,10 +23,9 @@
                     <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" />
                 </Columns>
             </asp:GridView>
-
          </asp:Panel>
 
-            <asp:Panel ID="formPanel" Visible="False" runat="server" OnLoad="formPanel_Load">
+            <asp:Panel ID="formPanel" Visible="False" runat="server">
                 <asp:Label ID ="descipcionLabel" runat="server" Text="Descripcion: "></asp:Label>
                 <asp:TextBox ID="descipcionTextBox" runat="server"></asp:TextBox>
                 <br />
@@ -44,11 +43,6 @@
                 <asp:LinkButton ID="eliminarLinkButton" runat="server" OnClick="eliminarLinkButton_Click">Eliminar</asp:LinkButton>
                 <asp:LinkButton ID="nuevoLinkButton" runat="server" OnClick="nuevoLinkButton_Click">Nuevo</asp:LinkButton>
             </asp:Panel>
-
-
-
-
-
     </form>
 </body>
 </html>
