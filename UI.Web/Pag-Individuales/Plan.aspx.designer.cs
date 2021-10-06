@@ -51,22 +51,31 @@ namespace UI.Web.Pag_Individuales
         protected global::System.Web.UI.WebControls.Panel formPanel;
 
         /// <summary>
-        /// Control descipcionLabel.
+        /// Control descripcionLabel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label descipcionLabel;
+        protected global::System.Web.UI.WebControls.Label descripcionLabel;
 
         /// <summary>
-        /// Control descipcionTextBox.
+        /// Control descripcionTextBox.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox descipcionTextBox;
+        protected global::System.Web.UI.WebControls.TextBox descripcionTextBox;
+
+        /// <summary>
+        /// Control RequiredFieldValidatorDescripcion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorDescripcion;
 
         /// <summary>
         /// Control IDEspecialidadLabel.
@@ -85,6 +94,15 @@ namespace UI.Web.Pag_Individuales
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox IDEspecialidadTextBox;
+
+        /// <summary>
+        /// Control RequiredFieldValidatorIdEspecialidad.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorIdEspecialidad;
 
         /// <summary>
         /// Control formActionsPanel.

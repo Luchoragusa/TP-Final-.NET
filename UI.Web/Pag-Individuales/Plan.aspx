@@ -26,11 +26,23 @@
          </asp:Panel>
 
             <asp:Panel ID="formPanel" Visible="False" runat="server">
-                <asp:Label ID ="descipcionLabel" runat="server" Text="Descripcion: "></asp:Label>
-                <asp:TextBox ID="descipcionTextBox" runat="server"></asp:TextBox>
+                <asp:Label ID ="descripcionLabel" runat="server" Text="Descripcion: "></asp:Label>
+                <asp:TextBox ID="descripcionTextBox" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidatorDescripcion" runat="server" 
+                    ControlToValidate="descripcionTextBox" 
+                    ErrorMessage="Descripcion es obligatoria" 
+                    ForeColor="Red">
+                    *
+                </asp:RequiredFieldValidator>
                 <br />
                 <asp:Label ID="IDEspecialidadLabel" runat="server" Text="IDEspecialidad: "></asp:Label>
                 <asp:TextBox ID="IDEspecialidadTextBox" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidatorIdEspecialidad" runat="server" 
+                    ControlToValidate="IDEspecialidadTextBox" 
+                    ErrorMessage="ID Especialidad es obligatorio" 
+                    ForeColor="Red">
+                    *
+                </asp:RequiredFieldValidator>
            
                 <asp:Panel ID="formActionsPanel" runat="server">
                     <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
