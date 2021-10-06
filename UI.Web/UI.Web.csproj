@@ -140,6 +140,7 @@
     <Content Include="ClassDiagram1.cd" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Pag-Individuales\Persona.aspx" />
+    <Content Include="Plan.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -216,6 +217,13 @@
     </Compile>
     <Compile Include="Pag-Individuales\Persona.aspx.designer.cs">
       <DependentUpon>Persona.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Plan.aspx.cs">
+      <DependentUpon>Plan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Plan.aspx.designer.cs">
+      <DependentUpon>Plan.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
