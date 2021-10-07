@@ -87,13 +87,13 @@ namespace UI.Web.Pag_Individuales
         protected global::System.Web.UI.WebControls.Label HSSSemanalesLabel;
 
         /// <summary>
-        /// Control IDEspecialidadTextBox.
+        /// Control HSSSemanalesTextBox.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox IDEspecialidadTextBox;
+        protected global::System.Web.UI.WebControls.TextBox HSSSemanalesTextBox;
 
         /// <summary>
         /// Control RequiredFieldValidatorHSSSemanales.

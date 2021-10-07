@@ -39,8 +39,8 @@
                 </asp:RequiredFieldValidator>
                 <br />
 
-                <asp:Label ID="HSSSemanalesLabel" runat="server" Text="HSSSemanales: "></asp:Label>
-                <asp:TextBox ID="IDEspecialidadTextBox" runat="server"></asp:TextBox>
+                <asp:Label ID="HSSSemanalesLabel" runat="server" Text="Horas Semanales: "></asp:Label>
+                <asp:TextBox ID="HSSSemanalesTextBox" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorHSSSemanales" runat="server" 
                     ControlToValidate="HSSSemanalesTextBox" 
                     ErrorMessage="Las Horas Semanales son obligatorias" 
@@ -49,7 +49,7 @@
                 </asp:RequiredFieldValidator>
                 <br />
 
-                <asp:Label ID="HSTotalesLabel" runat="server" Text="HSTotales: "></asp:Label>
+                <asp:Label ID="HSTotalesLabel" runat="server" Text="Horas Totales: "></asp:Label>
                 <asp:TextBox ID="HSTotalesTextBox" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorHSTotales" runat="server" 
                     ControlToValidate="HSTotalesTextBox" 
@@ -59,7 +59,7 @@
                 </asp:RequiredFieldValidator>
                 <br />
 
-                <asp:Label ID="IDPlanLabel" runat="server" Text="IDPlan: "></asp:Label>
+                <asp:Label ID="IDPlanLabel" runat="server" Text="Id del Plan: "></asp:Label>
                 <asp:TextBox ID="IDPlanTextBox" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorIDPlan" runat="server" 
                     ControlToValidate="IDPlanTextBox" 
