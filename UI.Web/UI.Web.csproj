@@ -139,6 +139,8 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="ClassDiagram1.cd" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Pag-Individuales\DocenteCurso.aspx" />
+    <Content Include="Pag-Individuales\Especialidad.aspx" />
     <Content Include="Pag-Individuales\Materia.aspx" />
     <Content Include="Pag-Individuales\Persona.aspx" />
     <Content Include="Pag-Individuales\Plan.aspx" />
@@ -211,6 +213,20 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Pag-Individuales\DocenteCurso.aspx.cs">
+      <DependentUpon>DocenteCurso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pag-Individuales\DocenteCurso.aspx.designer.cs">
+      <DependentUpon>DocenteCurso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pag-Individuales\Especialidad.aspx.cs">
+      <DependentUpon>Especialidad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pag-Individuales\Especialidad.aspx.designer.cs">
+      <DependentUpon>Especialidad.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pag-Individuales\Materia.aspx.cs">
       <DependentUpon>Materia.aspx</DependentUpon>
