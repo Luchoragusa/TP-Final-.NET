@@ -17,10 +17,8 @@
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort>44331</IISExpressSSLPort>
-    <IISExpressAnonymousAuthentication>
-    </IISExpressAnonymousAuthentication>
-    <IISExpressWindowsAuthentication>
-    </IISExpressWindowsAuthentication>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
@@ -139,6 +137,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="ClassDiagram1.cd" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Pag-Individuales\Comision.aspx" />
     <Content Include="Pag-Individuales\DocenteCurso.aspx" />
     <Content Include="Pag-Individuales\Especialidad.aspx" />
     <Content Include="Pag-Individuales\Materia.aspx" />
@@ -213,6 +212,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Pag-Individuales\Comision.aspx.cs">
+      <DependentUpon>Comision.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pag-Individuales\Comision.aspx.designer.cs">
+      <DependentUpon>Comision.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pag-Individuales\DocenteCurso.aspx.cs">
       <DependentUpon>DocenteCurso.aspx</DependentUpon>
@@ -310,6 +316,10 @@
     <ProjectReference Include="..\Business.Logic\Business.Logic.csproj">
       <Project>{dc8d5760-df18-4e50-bb27-7e5575106d60}</Project>
       <Name>Business.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data.Database\Data.Database\Data.Database.csproj">
+      <Project>{18d1c50f-58e0-4d94-b05b-4a95a146e6bb}</Project>
+      <Name>Data.Database</Name>
     </ProjectReference>
     <ProjectReference Include="..\UI.Consola\UI.Consola.csproj">
       <Project>{4f92627b-cee4-4500-9708-4289be266e56}</Project>
