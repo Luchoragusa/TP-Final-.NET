@@ -210,7 +210,7 @@ namespace UI.Web
                     usuario.Nombre = this.nombreTextBox.Text;
                     usuario.Apellido = this.apellidoTextBox.Text;
 
-                    if (!vpersonadarMail(this.emailTextBox.Text))
+                    if (!validarMail(this.emailTextBox.Text))
                     {
                         MessageBox.Show("Direccion de email Incorrecta.", "Intente nuevamente", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         band = true;
@@ -233,7 +233,7 @@ namespace UI.Web
             return band;
         }
 
-        public static bool vpersonadarMail(string email)
+        public static bool validarMail(string email)
         {
             try
             {
