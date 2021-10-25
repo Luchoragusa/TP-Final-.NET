@@ -28,27 +28,42 @@ namespace UI.Desktop
 
             InitializeComponent();
 
+            btn_Usuario.Enabled = false;
+            btnComision.Enabled = false;
+            btnPlan.Enabled = false;
+            btnMateria.Enabled = false;
+            btnEspecialidad.Enabled = false;
+            btnCurso.Enabled = false;
+            btnDC.Enabled = false;
+            btnAlum_Inscrip.Enabled = false;
+            btnPersona.Enabled = false;
+            btnRegistrarNota.Enabled = false;
+
             // debajo se esconden los botones que queremos que no se muestren
             // acorde a que tipo de persona ingresa
 
             if (tipo == 1)          //alumno
             {
-                btnEspecialidad.Enabled = false;
-                btnPlan.Enabled = false;
-                btnPersona.Enabled = false;
-                btnRegistrarNota.Enabled = false;
+                btnAlum_Inscrip.Enabled = true;
             }
             else if (tipo == 2)     //docente
             {
-                btn_Usuario.Enabled = false;
-                Alum_Inscrip.Enabled = false;
-                btnPersona.Enabled = false;
-                btnDC.Enabled = false;
+                btnDC.Enabled = true;
+                btnRegistrarNota.Enabled = true;
                 us = u;
             }
-            else
+            else if (tipo == 3)
             {
-                btnRegistrarNota.Enabled = false;
+                btn_Usuario.Enabled = true;
+                btnComision.Enabled = true;
+                btnPlan.Enabled = true;
+                btnMateria.Enabled = true;
+                btnEspecialidad.Enabled = true;
+                btnCurso.Enabled = true;
+                btnDC.Enabled = true;
+                btnAlum_Inscrip.Enabled = true;
+                btnPersona.Enabled = true;
+                btnRegistrarNota.Enabled = true;
             }
         }
 
@@ -60,7 +75,7 @@ namespace UI.Desktop
         private void formMain_Shown(object sender, EventArgs e)
         {
             frmLogin appLogin = new frmLogin();
-            appLogin.Dispose(); // esto deberia cerrar la ventana de Login pero nose porque no lo hace
+            //appLogin.Dispose(); // esto deberia cerrar la ventana de Login pero nose porque no lo hace
         }
 
 

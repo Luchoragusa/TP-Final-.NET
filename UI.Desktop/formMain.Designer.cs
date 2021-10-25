@@ -40,7 +40,7 @@ namespace UI.Desktop
             this.btnEspecialidad = new System.Windows.Forms.Button();
             this.btnCurso = new System.Windows.Forms.Button();
             this.btnDC = new System.Windows.Forms.Button();
-            this.Alum_Inscrip = new System.Windows.Forms.Button();
+            this.btnAlum_Inscrip = new System.Windows.Forms.Button();
             this.btnPersona = new System.Windows.Forms.Button();
             this.btnRegistrarNota = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
@@ -83,7 +83,7 @@ namespace UI.Desktop
             this.tableLayoutPanel1.Controls.Add(this.btnEspecialidad, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.btnCurso, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.btnDC, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.Alum_Inscrip, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.btnAlum_Inscrip, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.btnPersona, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.btnRegistrarNota, 0, 9);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -180,17 +180,17 @@ namespace UI.Desktop
             this.btnDC.UseVisualStyleBackColor = true;
             this.btnDC.Click += new System.EventHandler(this.btnDC_Click);
             // 
-            // Alum_Inscrip
+            // btnAlum_Inscrip
             // 
-            this.Alum_Inscrip.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Alum_Inscrip.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.Alum_Inscrip.Location = new System.Drawing.Point(40, 206);
-            this.Alum_Inscrip.Name = "Alum_Inscrip";
-            this.Alum_Inscrip.Size = new System.Drawing.Size(86, 25);
-            this.Alum_Inscrip.TabIndex = 7;
-            this.Alum_Inscrip.Text = "Alum_Inscrip";
-            this.Alum_Inscrip.UseVisualStyleBackColor = false;
-            this.Alum_Inscrip.Click += new System.EventHandler(this.Alum_Inscrip_Click);
+            this.btnAlum_Inscrip.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAlum_Inscrip.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnAlum_Inscrip.Location = new System.Drawing.Point(40, 206);
+            this.btnAlum_Inscrip.Name = "btnAlum_Inscrip";
+            this.btnAlum_Inscrip.Size = new System.Drawing.Size(86, 25);
+            this.btnAlum_Inscrip.TabIndex = 7;
+            this.btnAlum_Inscrip.Text = "Alum_Inscrip";
+            this.btnAlum_Inscrip.UseVisualStyleBackColor = false;
+            this.btnAlum_Inscrip.Click += new System.EventHandler(this.Alum_Inscrip_Click);
             // 
             // btnPersona
             // 
@@ -249,7 +249,7 @@ namespace UI.Desktop
         private System.Windows.Forms.Button btnEspecialidad;
         private System.Windows.Forms.Button btnCurso;
         private System.Windows.Forms.Button btnDC;
-        private System.Windows.Forms.Button Alum_Inscrip;
+        private System.Windows.Forms.Button btnAlum_Inscrip;
         private System.Windows.Forms.Button btnPersona;
         private System.Windows.Forms.Button btnRegistrarNota;
     }
