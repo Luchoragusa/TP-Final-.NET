@@ -1,14 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Plan.aspx.cs" Inherits="UI.Web.Pag_Individuales.Plan" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Plan</title>
-</head>
-<body>
-    <form id="form1" runat="server">
+﻿<%@ Page Title="" Language="C#" 
+    MasterPageFile="~/MasterPage/MasterPage.Master" 
+    AutoEventWireup="true" 
+    CodeBehind="Plan.aspx.cs" 
+    Inherits="UI.Web.Pag_Individuales.Plan" 
+%>
+<asp:Content ID="Content1" ContentPlaceHolderID="PageContent" runat="server">
         <div>
         </div>
 
@@ -57,6 +53,4 @@
                 <asp:LinkButton ID="nuevoLinkButton" runat="server" OnClick="nuevoLinkButton_Click">Nuevo</asp:LinkButton>
             </asp:Panel>
 
-    </form>
-</body>
-</html>
+</asp:Content>

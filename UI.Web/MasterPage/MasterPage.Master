@@ -3,43 +3,59 @@ CodeFile="MasterPage.master.cs"
 Inherits="MasterPage"%> 
  
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
-"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"> 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head id="Head1" runat="server"> 
     <title>Untitled Page</title> 
+    <style type="text/css">
+        .auto-style1 {
+            width: 233px;
+        }
+    </style>
 </head> 
 <body> 
     <form id="form1" runat="server"> 
     <table border="1" cellpadding="0" cellspacing="0" width="100%" height="100%"> 
         <!-- site header --> 
         <tr> 
-            <td valign="top" align="left">              
-                <asp:contentplaceholder id="ParteDeArriba" runat="server" /> 
-            </td>
+            <td colspan="2" align="center" class="wrapper">[UTN] Academia</td> 
         </tr> 
-         <!-- site mid --> 
-        <tr>      
+    <tr> 
+            <!-- site navigation --> 
+            <td valign="top" class="auto-style1"> 
+                <table border="0" width="100%" cellpadding="4" cellspacing="0"> 
+                    <tr> 
+                        <td align="center">Menu de la pagina</td> 
+                    </tr> 
+                    <tr> 
+                        <td align="center"><a href="Alum_Inscrip.aspx">Inscripcion de Alumno</a></td> 
+                    </tr>
+                    <tr> 
+                        <td align="center"><a href="Materia.aspx">Materia</a></td> 
+                    </tr>
+                    <tr> 
+                        <td align="center"><a href="Persona.aspx">Persona</a></td> 
+                    </tr>  
+                    <tr> 
+                        <td align="center"><a href="Plan.aspx">Plan</a></td> 
+                    </tr>  
+                    <tr> 
+                        <td align="center"><a href="Usuarios.aspx">Usuario</a></td> 
+                    </tr>  
+                </table> 
+            </td> 
+             
             <td valign="top" align="left">              
                 <!-- this is the placeholder for the page content --> 
-                <asp:contentplaceholder id="ParteDelMedio" runat="server" /> 
+                <asp:contentplaceholder id="PageContent" runat="server" /> 
             </td>
+
         </tr> 
          
         <!-- site footer --> 
         <tr> 
-            <td valign="top" align="left">              
-                <asp:contentplaceholder id="ParteDeAbajo" runat="server" /> 
-                    <asp:Panel ID="gridActionsPanel" runat="server">
-                        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="nuevoLinkButton_Click">Nuevo</asp:LinkButton>
-                        <br />
-                        <asp:LinkButton ID="editarLinkButton" runat="server" OnClick="editarLinkButton_Click">Editar</asp:LinkButton>
-                        <br />
-                        <asp:LinkButton ID="eliminarLinkButton" runat="server" OnClick="eliminarLinkButton_Click">Eliminar</asp:LinkButton>
-                    </asp:Panel>
-            </td>
+            <td colspan="2" align="center">LICATTA, Maite || PEREYRA, Camilo || PUCHETA, Juan Ignacio || RAGUSA, Luciano</td> 
         </tr> 
-
     </table> 
     </form> 
 </body> 

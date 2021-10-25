@@ -251,7 +251,6 @@ namespace Data.Database
             {
                 Delete(usuario.ID);
             }
-
             else if (usuario.State == BusinessEntity.States.New)
             {
                 this.Insert(usuario);
