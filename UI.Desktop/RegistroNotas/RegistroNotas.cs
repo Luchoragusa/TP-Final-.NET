@@ -15,6 +15,7 @@ namespace UI.Desktop.RegistroNotas
         public RegistroNotas()
         {
             InitializeComponent();
+
         }
     }
 }

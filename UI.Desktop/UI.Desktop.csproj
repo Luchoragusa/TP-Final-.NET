@@ -260,6 +260,9 @@
     <EmbeddedResource Include="Plan\PlanDesktop.resx">
       <DependentUpon>PlanDesktop.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RegistroNotas\RegistroNotas.resx">
+      <DependentUpon>RegistroNotas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Usuario\UsuarioDesktop.resx">
       <DependentUpon>UsuarioDesktop.cs</DependentUpon>
     </EmbeddedResource>
