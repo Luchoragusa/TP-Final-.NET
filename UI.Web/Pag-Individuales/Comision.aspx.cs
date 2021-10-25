@@ -10,10 +10,9 @@ using Business.Entities.Entidades;
 using Business.Logic;
 using Business.Logic.EntidadesLogic;
 
-
-namespace UI.Web
+namespace UI.Web.Pag_Individuales
 {
-    public partial class Persona : System.Web.UI.Page
+    public partial class Comision : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,20 +20,22 @@ namespace UI.Web
             {
                 LoadGrid();
             }
+
         }
 
-        PersonaLogic _logic;
-        private PersonaLogic Logic
+        ComisionLogic _logic;
+        private ComisionLogic Logic
         {
             get
             {
                 if (_logic == null)
                 {
-                    _logic = new PersonaLogic();
+                    _logic = new ComisionLogic();
                 }
                 return _logic;
             }
         }
+
 
         private void LoadGrid()
         {
@@ -61,11 +62,14 @@ namespace UI.Web
             }
         }
 
-        public Personas Entity
+
+        public Business.Entities.Comision Entity
         {
             get;
             set;
         }
+
+
         private int SelectedID
         {
             get
@@ -84,6 +88,7 @@ namespace UI.Web
                 this.ViewState["SelectedID"] = value;
             }
         }
+
         private bool IsEntitySelected
         {
             get
@@ -91,7 +96,6 @@ namespace UI.Web
                 return (this.SelectedID != 0);
             }
         }
-
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.SelectedID = (int)this.gridView.SelectedValue;
@@ -100,14 +104,11 @@ namespace UI.Web
         private void LoadForm(int id)
         {
             this.Entity = this.Logic.GetOne(id);
-            this.nombreTextBox.Text = this.Entity.Nombre;
-            this.apellidoTextBox.Text = this.Entity.Apellido;
-            this.direccionTextBox.Text = this.Entity.Direccion;
-            this.emailTextBox.Text = this.Entity.Email;
-            this.telefonoTextBox.Text = this.Entity.Telefono;
-            this.legajoTextBox.Text = this.Entity.Legajo.ToString();
-            this.fechanacTextBox.Text = this.Entity.FechaNacimiento.ToLongDateString();
-            this.idplanTextBox.Text = this.Entity.IDPlan.ToString();
+
+            this.idPlanTextBox.Text = this.Entity.IDPlan.ToString();
+            this.descComisionTextBox.Text = this.Entity.DescComision.ToString();
+            this.anioEspecialidadTextBox.Text = this.Entity.AnioEspecialidad.ToString();
+     
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -119,69 +120,38 @@ namespace UI.Web
                 this.LoadForm(this.SelectedID);
             }
         }
-
-        public static bool vpersonadarMail(string email)
-        {
-            try
-            {
-                var addr = new System.Net.Mail.MailAddress(email);
-                return addr.Address == email;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
-        private Boolean LoadEntity(Personas persona)
+        private Boolean LoadEntity(Business.Entities.Comision comi)
         {
             bool band = false;
-            if (this.nombreTextBox.Text.Equals(string.Empty) ||
-                                this.apellidoTextBox.Text.Equals(string.Empty) ||
-                                this.direccionTextBox.Text.Equals(string.Empty) ||
-                                this.emailTextBox.Text.Equals(string.Empty) ||
-                                this.telefonoTextBox.Text.Equals(string.Empty) ||
-                                this.legajoTextBox.Text.Equals(string.Empty) ||                                
-                                this.fechanacTextBox.Text.Equals(string.Empty) ||
-                                this.idplanTextBox.Text.Equals(string.Empty))
+            if (this.idPlanTextBox.Text.Equals(string.Empty) ||
+                                this.descComisionTextBox.Text.Equals(string.Empty) ||
+                                this.anioEspecialidadTextBox.Text.Equals(string.Empty))
             {
                 MessageBox.Show("Algunos de los campos están vaciós", "Complete todos para continuar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 band = true;
             }
             else
             {
-                persona.Apellido = this.apellidoTextBox.Text;
-                persona.Nombre = this.nombreTextBox.Text;
-                persona.Direccion = this.direccionTextBox.Text;
-                if (!vpersonadarMail(this.emailTextBox.Text))
-                {
-                    MessageBox.Show("Direccion de email Incorrecta.", "Intente nuevamente", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    band = true;
-                }
-                else 
-                { 
-                    persona.Email = this.emailTextBox.Text; 
-                }
-                persona.Telefono = this.telefonoTextBox.Text;
-                persona.Legajo = int.Parse(this.legajoTextBox.Text);
-                persona.FechaNacimiento = DateTime.Parse(this.fechanacTextBox.Text);
-                persona.IDPlan = int.Parse(this.idplanTextBox.Text);
+                comi.IDPlan = int.Parse(this.idPlanTextBox.Text);
+                comi.DescComision = this.descComisionTextBox.Text;
+                comi.AnioEspecialidad = int.Parse(this.anioEspecialidadTextBox.Text);
             }
             return band;
         }
-
-        private void SaveEntity(Personas persona)
+        private void SaveEntity(Business.Entities.Comision comi)
         {
-            this.Logic.Save(persona);
+            this.Logic.Save(comi);
         }
 
         protected void aceptarLinkButton_Click(object sender, EventArgs e)
         {
+
+
             Boolean band = false;
             switch (this.FormMode)
             {
                 case FormModes.Alta:
-                    this.Entity = new Personas();
+                    this.Entity = new Business.Entities.Comision();
                     band = this.LoadEntity(this.Entity);
                     if (band)
                         break;
@@ -193,7 +163,7 @@ namespace UI.Web
                     this.LoadGrid();
                     break;
                 case FormModes.Modificacion:
-                    this.Entity = new Personas();
+                    this.Entity = new Business.Entities.Comision();
                     this.Entity.ID = this.SelectedID;
                     this.Entity.State = BusinessEntity.States.Modified;
                     band = this.LoadEntity(this.Entity);
@@ -210,16 +180,13 @@ namespace UI.Web
                 this.formPanel.Visible = false;
         }
 
+
         private void EnableForm(bool enable)
         {
-            this.nombreTextBox.Enabled = enable;
-            this.apellidoTextBox.Enabled = enable;
-            this.emailTextBox.Enabled = enable;
-            this.direccionTextBox.Enabled = enable;
-            this.telefonoTextBox.Enabled = enable;
-            this.legajoTextBox.Enabled = enable;
-            this.fechanacTextBox.Enabled = enable;
-            this.idplanTextBox.Enabled = enable;
+            this.idPlanTextBox.Enabled = enable;
+            this.descComisionTextBox.Enabled = enable;
+            this.anioEspecialidadTextBox.Enabled = enable;
+           
         }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
@@ -246,21 +213,19 @@ namespace UI.Web
             this.EnableForm(true);
         }
 
+
         private void ClearForm()
         {
-            this.nombreTextBox.Text = string.Empty;
-            this.apellidoTextBox.Text = string.Empty;
-            this.direccionTextBox.Text = string.Empty;
-            this.emailTextBox.Text = string.Empty;
-            this.telefonoTextBox.Text = string.Empty;
-            this.legajoTextBox.Text = string.Empty;
-            this.fechanacTextBox.Text = string.Empty;
-            this.idplanTextBox.Text = string.Empty;
+            this.idPlanTextBox.Text = string.Empty;
+            this.descComisionTextBox.Text = string.Empty;
+            this.anioEspecialidadTextBox.Text = string.Empty;
+            
         }
+
 
         protected void cancelarLinkButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Persona.aspx");
+            Response.Redirect("Comision.aspx");
         }
-    }
+    }   
 }

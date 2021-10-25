@@ -16,7 +16,7 @@ namespace UI.Desktop
     {
         public PersonaDesktop()
         {
-            InitipersonazeComponent();
+            InitializeComponent();
         }
         public PersonaDesktop(ModoForm modo) : this()
         {
@@ -115,7 +115,7 @@ namespace UI.Desktop
             }
         }
 
-        public override bool Vpersonadar()
+        public override bool Validar()
         {
             if (txtNombre.Text.Equals(String.Empty) || txtApellido.Text.Equals(String.Empty))
             {
@@ -123,56 +123,56 @@ namespace UI.Desktop
                 return false;
             }
 
-            if (!Vpersonadaciones.vpersonadarTexto(txtNombre.Text))
+            if (!Validaciones.validarTexto(txtNombre.Text))
             {
                 Notificar("Nombre incorrecto.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (!Vpersonadaciones.vpersonadarTexto(txtApellido.Text))    
+            if (!Validaciones.validarTexto(txtApellido.Text))    
             {
                 Notificar("Apellido incorrecto.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (!Vpersonadaciones.vpersonadarAlphaNumerico(txtDireccion.Text))    
+            if (!Validaciones.validarAlphaNumerico(txtDireccion.Text))    
             {
                 Notificar("Direccion Incorrecta.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (!Vpersonadaciones.vpersonadarMail(txtEmail.Text))
+            if (!Validaciones.validarMail(txtEmail.Text))
             {
                 Notificar("Direccion de email Incorrecta.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (Vpersonadaciones.vpersonadarTexto(txtTelefono.Text))
+            if (Validaciones.validarTexto(txtTelefono.Text))
             {
                 Notificar("Telefono Incorrecto.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
-            if (Vpersonadaciones.vpersonadarTexto(txtLegajo.Text))
+            if (Validaciones.validarTexto(txtLegajo.Text))
             {
                 Notificar("Legajo Incorrecto.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (!Vpersonadaciones.vpersonadarAlphaNumerico(txtFechaNacimiento.Text))
+            if (!Validaciones.validarAlphaNumerico(txtFechaNacimiento.Text))
             {
                 Notificar("Fecha de Nacimiento Incorrecta.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (!Vpersonadaciones.vpersonadarAlphaNumerico(txtTipoPersona.Text))
+            if (!Validaciones.validarAlphaNumerico(txtTipoPersona.Text))
             {
                 Notificar("Tipo de persona Incorrecta.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (Vpersonadaciones.vpersonadarTexto(txtIdPlan.Text))
+            if (Validaciones.validarTexto(txtIdPlan.Text))
             {
                 Notificar("id Plan incorrecto Incorrecta.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -184,7 +184,7 @@ namespace UI.Desktop
 
         private void btnModo_Click(object sender, EventArgs e)
         {
-            if (Vpersonadar())
+            if (Validar())
             {
                 GuardarCambios();
                 this.Close();
