@@ -24,6 +24,8 @@ namespace UI.Desktop
             frmLogin appLogin = new frmLogin();
             appLogin.Close();
 
+            us = u;
+
             InitializeComponent();
 
             // debajo se esconden los botones que queremos que no se muestren
