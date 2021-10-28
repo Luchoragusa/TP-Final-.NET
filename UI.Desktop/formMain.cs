@@ -144,5 +144,11 @@ namespace UI.Desktop
             UI.Desktop.ReporteAlumno reporteAlu = new UI.Desktop.ReporteAlumno();
             reporteAlu.ShowDialog();
         }
+
+        private void btnReporteCom_Click(object sender, EventArgs e)
+        {
+            UI.Desktop.ReporteComi reporteC = new UI.Desktop.ReporteComi();
+            reporteC.ShowDialog();
+        }
     }
 }

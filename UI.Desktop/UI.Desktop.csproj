@@ -64,6 +64,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Alum_Inscrip\Alumno_Curso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +211,12 @@
     <Compile Include="ReporteAlumno.Designer.cs">
       <DependentUpon>ReporteAlumno.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReporteComi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteComi.Designer.cs">
+      <DependentUpon>ReporteComi.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Usuario\UsuarioDesktop.cs">
       <SubType>Form</SubType>
@@ -297,6 +308,10 @@
     <EmbeddedResource Include="ReporteAlumno.resx">
       <DependentUpon>ReporteAlumno.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReporteComi.resx">
+      <DependentUpon>ReporteComi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteComisiones.rdlc" />
     <EmbeddedResource Include="Usuario\UsuarioDesktop.resx">
       <DependentUpon>UsuarioDesktop.cs</DependentUpon>
     </EmbeddedResource>
@@ -321,6 +336,17 @@
     <None Include="App.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>App.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
     </None>
     <None Include="DataSetAlumno.xsc">
       <DependentUpon>DataSetAlumno.xsd</DependentUpon>
