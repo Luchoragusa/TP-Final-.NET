@@ -43,6 +43,7 @@ namespace UI.Desktop
             this.btnAlum_Inscrip = new System.Windows.Forms.Button();
             this.btnPersona = new System.Windows.Forms.Button();
             this.btnRegistrarNota = new System.Windows.Forms.Button();
+            this.btnReporteAlumno = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -53,7 +54,7 @@ namespace UI.Desktop
             this.mnuArchivo});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(167, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(170, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -86,10 +87,11 @@ namespace UI.Desktop
             this.tableLayoutPanel1.Controls.Add(this.btnAlum_Inscrip, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.btnPersona, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.btnRegistrarNota, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.btnReporteAlumno, 0, 10);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 10;
+            this.tableLayoutPanel1.RowCount = 11;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -99,14 +101,15 @@ namespace UI.Desktop
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 13F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(167, 297);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(170, 337);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // btn_Usuario
             // 
             this.btn_Usuario.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_Usuario.Location = new System.Drawing.Point(42, 3);
+            this.btn_Usuario.Location = new System.Drawing.Point(44, 3);
             this.btn_Usuario.Name = "btn_Usuario";
             this.btn_Usuario.Size = new System.Drawing.Size(82, 23);
             this.btn_Usuario.TabIndex = 0;
@@ -117,7 +120,7 @@ namespace UI.Desktop
             // btnComision
             // 
             this.btnComision.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnComision.Location = new System.Drawing.Point(42, 32);
+            this.btnComision.Location = new System.Drawing.Point(44, 32);
             this.btnComision.Name = "btnComision";
             this.btnComision.Size = new System.Drawing.Size(82, 23);
             this.btnComision.TabIndex = 1;
@@ -128,7 +131,7 @@ namespace UI.Desktop
             // btnPlan
             // 
             this.btnPlan.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPlan.Location = new System.Drawing.Point(42, 61);
+            this.btnPlan.Location = new System.Drawing.Point(44, 61);
             this.btnPlan.Name = "btnPlan";
             this.btnPlan.Size = new System.Drawing.Size(82, 23);
             this.btnPlan.TabIndex = 2;
@@ -139,7 +142,7 @@ namespace UI.Desktop
             // btnMateria
             // 
             this.btnMateria.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnMateria.Location = new System.Drawing.Point(42, 90);
+            this.btnMateria.Location = new System.Drawing.Point(44, 90);
             this.btnMateria.Name = "btnMateria";
             this.btnMateria.Size = new System.Drawing.Size(82, 23);
             this.btnMateria.TabIndex = 3;
@@ -150,7 +153,7 @@ namespace UI.Desktop
             // btnEspecialidad
             // 
             this.btnEspecialidad.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEspecialidad.Location = new System.Drawing.Point(41, 119);
+            this.btnEspecialidad.Location = new System.Drawing.Point(43, 119);
             this.btnEspecialidad.Name = "btnEspecialidad";
             this.btnEspecialidad.Size = new System.Drawing.Size(84, 23);
             this.btnEspecialidad.TabIndex = 4;
@@ -161,7 +164,7 @@ namespace UI.Desktop
             // btnCurso
             // 
             this.btnCurso.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCurso.Location = new System.Drawing.Point(41, 148);
+            this.btnCurso.Location = new System.Drawing.Point(42, 148);
             this.btnCurso.Name = "btnCurso";
             this.btnCurso.Size = new System.Drawing.Size(85, 23);
             this.btnCurso.TabIndex = 5;
@@ -172,7 +175,7 @@ namespace UI.Desktop
             // btnDC
             // 
             this.btnDC.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDC.Location = new System.Drawing.Point(39, 177);
+            this.btnDC.Location = new System.Drawing.Point(41, 177);
             this.btnDC.Name = "btnDC";
             this.btnDC.Size = new System.Drawing.Size(88, 23);
             this.btnDC.TabIndex = 6;
@@ -184,7 +187,7 @@ namespace UI.Desktop
             // 
             this.btnAlum_Inscrip.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAlum_Inscrip.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnAlum_Inscrip.Location = new System.Drawing.Point(40, 206);
+            this.btnAlum_Inscrip.Location = new System.Drawing.Point(42, 206);
             this.btnAlum_Inscrip.Name = "btnAlum_Inscrip";
             this.btnAlum_Inscrip.Size = new System.Drawing.Size(86, 25);
             this.btnAlum_Inscrip.TabIndex = 7;
@@ -195,7 +198,7 @@ namespace UI.Desktop
             // btnPersona
             // 
             this.btnPersona.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPersona.Location = new System.Drawing.Point(41, 237);
+            this.btnPersona.Location = new System.Drawing.Point(43, 237);
             this.btnPersona.Name = "btnPersona";
             this.btnPersona.Size = new System.Drawing.Size(84, 22);
             this.btnPersona.TabIndex = 8;
@@ -206,20 +209,31 @@ namespace UI.Desktop
             // btnRegistrarNota
             // 
             this.btnRegistrarNota.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnRegistrarNota.Location = new System.Drawing.Point(42, 265);
+            this.btnRegistrarNota.Location = new System.Drawing.Point(44, 265);
             this.btnRegistrarNota.Name = "btnRegistrarNota";
-            this.btnRegistrarNota.Size = new System.Drawing.Size(82, 29);
+            this.btnRegistrarNota.Size = new System.Drawing.Size(82, 26);
             this.btnRegistrarNota.TabIndex = 9;
             this.btnRegistrarNota.Text = "RegistrarNota";
             this.btnRegistrarNota.UseVisualStyleBackColor = true;
             this.btnRegistrarNota.Click += new System.EventHandler(this.btnRegistrarNota_Click);
+            // 
+            // btnReporteAlumno
+            // 
+            this.btnReporteAlumno.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnReporteAlumno.Location = new System.Drawing.Point(47, 304);
+            this.btnReporteAlumno.Name = "btnReporteAlumno";
+            this.btnReporteAlumno.Size = new System.Drawing.Size(75, 23);
+            this.btnReporteAlumno.TabIndex = 10;
+            this.btnReporteAlumno.Text = "ReporteAlumno";
+            this.btnReporteAlumno.UseVisualStyleBackColor = true;
+            this.btnReporteAlumno.Click += new System.EventHandler(this.btnReporteAlumno_Click);
             // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(167, 321);
+            this.ClientSize = new System.Drawing.Size(170, 361);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -252,5 +266,6 @@ namespace UI.Desktop
         private System.Windows.Forms.Button btnAlum_Inscrip;
         private System.Windows.Forms.Button btnPersona;
         private System.Windows.Forms.Button btnRegistrarNota;
+        private System.Windows.Forms.Button btnReporteAlumno;
     }
 }

@@ -138,5 +138,11 @@ namespace UI.Desktop
             UI.Desktop.Curso.CursosNotas cursoAresgistrarNota = new UI.Desktop.Curso.CursosNotas(us);
             cursoAresgistrarNota.ShowDialog();
         }
+
+        private void btnReporteAlumno_Click(object sender, EventArgs e)
+        {
+            UI.Desktop.ReporteAlumno reporteAlu = new UI.Desktop.ReporteAlumno();
+            reporteAlu.ShowDialog();
+        }
     }
 }
