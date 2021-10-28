@@ -66,7 +66,14 @@ namespace Data.Database.EntidadesDB
             {
                 this.OpenConnection();
 
-                SqlCommand cmdAlumnos_Inscripcioneses = new SqlCommand("select ai.id_inscripcion, ai.id_alumno, ai.id_curso, ai.condicion, ai.nota from cursos inner join alumnos_inscripciones ai on cursos.id_curso = ai.id_curso where cursos.id_curso = @id_curso", sqlConn);
+                SqlCommand cmdAlumnos_Inscripcioneses = new SqlCommand("select ai.id_inscripcion, ai.id_alumno, ai.id_curso, ai.condicion, ai.nota " +
+                    " , p.nombre, p.apellido" +
+                    "from cursos" +
+                    "inner join alumnos_inscripciones ai" +
+                    "on cursos.id_curso = ai.id_curso " +
+                    "inner join personas p" +
+                    "on ai.id_alumno = p.id_persona" +
+                    "where cursos.id_curso = @id_curso", sqlConn);
                 cmdAlumnos_Inscripcioneses.Parameters.Add("@id_curso", SqlDbType.Int).Value = cur.ID;
                 SqlDataReader drAlumnos_Inscripcioneses = cmdAlumnos_Inscripcioneses.ExecuteReader();
 
