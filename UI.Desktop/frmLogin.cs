@@ -30,7 +30,7 @@ namespace UI.Desktop
             Usuario usuario = new Usuario();
             int tipo = 0;
 
-            formMain fm = null; 
+            nuevoMaincs nm = null; 
 
             usuario.NombreUsuario = this.txtUsuario.Text;
             usuario.Clave = this.txtPass.Text;
@@ -63,8 +63,8 @@ namespace UI.Desktop
                     this.DialogResult = DialogResult.OK;
                 }  
 
-                fm = new formMain(tipo, usuario);
-                fm.ShowDialog();
+                nm = new nuevoMaincs(tipo, usuario);
+                nm.ShowDialog();
                 //this.Dispose();
             }                           
             else
