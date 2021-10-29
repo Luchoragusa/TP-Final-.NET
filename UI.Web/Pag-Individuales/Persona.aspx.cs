@@ -175,41 +175,6 @@ namespace UI.Web
             this.Logic.Save(persona);
         }
 
-        protected void aceptarLinkButton_Click(object sender, EventArgs e)
-        {
-            Boolean band = false;
-            switch (this.FormMode)
-            {
-                case FormModes.Alta:
-                    this.Entity = new Personas();
-                    band = this.LoadEntity(this.Entity);
-                    if (band)
-                        break;
-                    this.SaveEntity(this.Entity);
-                    this.LoadGrid();
-                    break;
-                case FormModes.Baja:
-                    this.DeleteEntity(this.SelectedID);
-                    this.LoadGrid();
-                    break;
-                case FormModes.Modificacion:
-                    this.Entity = new Personas();
-                    this.Entity.ID = this.SelectedID;
-                    this.Entity.State = BusinessEntity.States.Modified;
-                    band = this.LoadEntity(this.Entity);
-                    if (band)
-                        break;
-
-                    this.SaveEntity(this.Entity);
-                    this.LoadGrid();
-                    break;
-                default:
-                    break;
-            }
-            if (!band)
-                this.formPanel.Visible = false;
-        }
-
         private void EnableForm(bool enable)
         {
             this.nombreTextBox.Enabled = enable;
@@ -258,7 +223,42 @@ namespace UI.Web
             this.idplanTextBox.Text = string.Empty;
         }
 
-        protected void cancelarLinkButton_Click(object sender, EventArgs e)
+        protected void acceptaButton_Click(object sender, EventArgs e)
+        {
+            Boolean band = false;
+            switch (this.FormMode)
+            {
+                case FormModes.Alta:
+                    this.Entity = new Personas();
+                    band = this.LoadEntity(this.Entity);
+                    if (band)
+                        break;
+                    this.SaveEntity(this.Entity);
+                    this.LoadGrid();
+                    break;
+                case FormModes.Baja:
+                    this.DeleteEntity(this.SelectedID);
+                    this.LoadGrid();
+                    break;
+                case FormModes.Modificacion:
+                    this.Entity = new Personas();
+                    this.Entity.ID = this.SelectedID;
+                    this.Entity.State = BusinessEntity.States.Modified;
+                    band = this.LoadEntity(this.Entity);
+                    if (band)
+                        break;
+
+                    this.SaveEntity(this.Entity);
+                    this.LoadGrid();
+                    break;
+                default:
+                    break;
+            }
+            if (!band)
+                this.formPanel.Visible = false;
+        }
+
+        protected void cancelarButton_Click(object sender, EventArgs e)
         {
             Response.Redirect("Persona.aspx");
         }
