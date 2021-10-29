@@ -20,10 +20,10 @@ namespace Data.Database
 
         protected void OpenConnection()
         {
-                string ConnString = ConfigurationManager.ConnectionStrings[consKeyDefaultCnnString].ConnectionString;
-                sqlConn = new SqlConnection();
-                sqlConn.ConnectionString = ConnString;
-                sqlConn.Open();
+            string ConnString = ConfigurationManager.ConnectionStrings[consKeyDefaultCnnString].ConnectionString;
+            sqlConn = new SqlConnection();
+            sqlConn.ConnectionString = ConnString;
+            sqlConn.Open();
         }
 
         protected void CloseConnection()
@@ -36,5 +36,6 @@ namespace Data.Database
         {
             throw new Exception("Metodo no implementado");
         }
+        
     }
 }

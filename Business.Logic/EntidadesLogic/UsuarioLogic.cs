@@ -86,6 +86,19 @@ namespace Business.Logic
             }
         }
 
+        //public void EliminarUno(int id)               EntityFramework
+        //{
+        //    try
+        //    {
+        //        UsuarioData.EliminarUno(id);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Exception ExcepcionManejada = new Exception("Error al eliminar el usuario.", ex);
+        //        throw ExcepcionManejada;
+        //    }
+        //}
+
         public void Insert(Usuario usuario)
         {
             try

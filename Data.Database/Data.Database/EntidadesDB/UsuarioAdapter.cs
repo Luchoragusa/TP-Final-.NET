@@ -7,9 +7,9 @@ using System.Data;
 using System.Data.SqlClient;
 
 
-namespace Data.Database                            
+namespace Data.Database
 {
-    public class UsuarioAdapter:Adapter
+    public class UsuarioAdapter : Adapter
     {
         #region DatosEnMemoria
         // Esta región solo se usa en esta etapa donde los datos se mantienen en memoria.
@@ -67,7 +67,7 @@ namespace Data.Database
         {
             List<Usuario> usuarios = new List<Usuario>();
             try
-            {                
+            {
                 this.OpenConnection();
 
                 SqlCommand cmdUsuarios = new SqlCommand("SELECT * FROM usuarios", sqlConn);
@@ -88,20 +88,33 @@ namespace Data.Database
 
                     usuarios.Add(usr);
                 }
-                drUsuarios.Close();                
+                drUsuarios.Close();
             }
-           catch (Exception Ex)
+            catch (Exception Ex)
             {
                 Exception ExcepcionManejada = new Exception("Error al recuperar la lista de usuarios", Ex);
                 throw ExcepcionManejada;
             }
             finally
-            {                
+            {
                 this.CloseConnection();
             }
             return usuarios;
         }
 
+        #region EntityFramework Delete
+        public void EliminarUno(int id)
+        {
+            using (tp2_netEntities db = new tp2_netEntities()) 
+            {
+                usuarios us = db.usuarios.Find(id);
+
+                db.usuarios.Remove(us);
+                db.SaveChanges();
+            }
+        }
+        #endregion
+        
         public Business.Entities.Usuario GetOne(int ID)         
         {
             Usuario usr = new Usuario();
@@ -250,6 +263,7 @@ namespace Data.Database
             if (usuario.State == BusinessEntity.States.Deleted)
             {
                 Delete(usuario.ID);
+                //EliminarUno(usuario.ID);
             }
             else if (usuario.State == BusinessEntity.States.New)
             {
