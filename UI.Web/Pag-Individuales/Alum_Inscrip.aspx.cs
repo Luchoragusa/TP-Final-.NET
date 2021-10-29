@@ -230,10 +230,5 @@ namespace UI.Web
         {
             Response.Redirect("Alum_Inscrip.aspx");
         }
-
-        protected void editarButton_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
