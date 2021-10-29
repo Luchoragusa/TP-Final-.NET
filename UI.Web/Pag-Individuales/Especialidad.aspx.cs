@@ -116,39 +116,6 @@ namespace UI.Web.Pag_Individuales
             Especialidad.DescEspecialidad = this.descripcionTextBox.Text;
         }
 
-        protected void aceptarLinkButton_Click(object sender, EventArgs e)
-        {
-            switch (this.FormMode)
-            {
-                case FormModes.Alta:
-                    this.Entity = new Business.Entities.Especialidad();
-                    this.LoadEntity(this.Entity);
-                    this.SaveEntity(this.Entity);
-                    this.LoadGrid();
-                    break;
-                case FormModes.Baja:
-                    this.DeleteEntity(this.SelectedID);
-                    this.LoadGrid();
-                    break;
-                case FormModes.Modificacion:
-                    this.Entity = new Business.Entities.Especialidad();
-                    this.Entity.ID = this.SelectedID;
-                    this.Entity.State = BusinessEntity.States.Modified;
-                    this.LoadEntity(this.Entity);
-                    this.SaveEntity(this.Entity);
-                    this.LoadGrid();
-                    break;
-                default:
-                    break;
-            }
-            this.formPanel.Visible = false;
-        }
-
-        protected void cancelarLinkButton_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Especialidad.aspx");
-        }
-
         protected void nuevoLinkButton_Click(object sender, EventArgs e)
         {
             this.formPanel.Visible = true;
@@ -181,6 +148,39 @@ namespace UI.Web.Pag_Individuales
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.SelectedID = (int)this.gridView.SelectedValue;
+        }
+
+        protected void acceptaButton_Click(object sender, EventArgs e)
+        {
+            switch (this.FormMode)
+            {
+                case FormModes.Alta:
+                    this.Entity = new Business.Entities.Especialidad();
+                    this.LoadEntity(this.Entity);
+                    this.SaveEntity(this.Entity);
+                    this.LoadGrid();
+                    break;
+                case FormModes.Baja:
+                    this.DeleteEntity(this.SelectedID);
+                    this.LoadGrid();
+                    break;
+                case FormModes.Modificacion:
+                    this.Entity = new Business.Entities.Especialidad();
+                    this.Entity.ID = this.SelectedID;
+                    this.Entity.State = BusinessEntity.States.Modified;
+                    this.LoadEntity(this.Entity);
+                    this.SaveEntity(this.Entity);
+                    this.LoadGrid();
+                    break;
+                default:
+                    break;
+            }
+            this.formPanel.Visible = false;
+        }
+
+        protected void cancelarButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Especialidad.aspx");
         }
     }
 }
