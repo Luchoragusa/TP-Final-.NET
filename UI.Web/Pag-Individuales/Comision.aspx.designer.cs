@@ -105,31 +105,31 @@ namespace UI.Web.Pag_Individuales
         protected global::System.Web.UI.WebControls.TextBox anioEspecialidadTextBox;
 
         /// <summary>
-        /// Control formActionsPanel.
+        /// Control Panel1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel formActionsPanel;
+        protected global::System.Web.UI.WebControls.Panel Panel1;
 
         /// <summary>
-        /// Control aceptarLinkButton.
+        /// Control aceptarButton.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton aceptarLinkButton;
+        protected global::System.Web.UI.WebControls.Button aceptarButton;
 
         /// <summary>
-        /// Control cancelarLinkButton.
+        /// Control cancelarButton.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton cancelarLinkButton;
+        protected global::System.Web.UI.WebControls.Button cancelarButton;
 
         /// <summary>
         /// Control gridActionsPanel.

@@ -68,13 +68,13 @@
         <br />      
            
         <asp:Panel ID="Panel1" runat="server" HorizontalAlign="Center" Visible="false">
-            <asp:Button ID="aceptarButton" runat="server" class="btn btn-outline-primary" Text="Aceptar" OnClick="acceptaButton_Click" />
+            <asp:Button ID="aceptarButton" runat="server" class="btn btn-outline-primary" Text="Aceptar" OnClick="acceptaButton_Click" Width="72px" />
+            &nbsp;
             <asp:Button ID="cancelarButton" runat="server" class="btn btn-outline-primary" Text="Cancelar" OnClick="cancelarButton_Click" />
         </asp:Panel>
         
      </asp:Panel>
 
-        <!-- Parte de los botones del GridView -->
         <asp:Panel ID="gridActionsPanel" runat="server" HorizontalAlign="Center">
             <div class="container" style="background-color: darkgray">
                 <div class="jumbotron text-center">
@@ -88,7 +88,6 @@
                 </div>
             </div>
         </asp:Panel>
-        <!-- Parte de los botones del GridView -->
 
     </form>
 </body>
