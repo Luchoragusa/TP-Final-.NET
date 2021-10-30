@@ -1,26 +1,17 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Usuarios.aspx.cs" Inherits="UI.Web.Usuarios" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <title>Usuarios</title>
-        <style type="text/css">
-            .auto-style1 {
-                margin-bottom: 161px;
-            }
-        </style>
-    </head>
-    <body>
-        <form id="form1" runat="server">
+﻿<%@ Page Title="Usuarios" Language="C#" 
+    MasterPageFile="~/MasterPage/MasterPage.Master" 
+    AutoEventWireup="true" 
+    CodeBehind="Usuarios.aspx.cs" 
+    Inherits="UI.Web.Pag_Individuales.Usuarios" 
+%>
+<asp:Content ID="Content1" ContentPlaceHolderID="PageContent" runat="server">
             <div>
             </div>
-            <asp:Panel ID="gridPanel" runat="server" CssClass="auto-style1" Height="225px" Width="545px">
-                <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False"
+            <asp:Panel ID="gridPanel" runat="server" Height="225px" Width="1266px">
+                <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False" HorizontalAlign="Center"
                     SelectedRowStyle-BackColor="Black"
                     SelectedRowStyle-ForeColor="White"
-                    DataKeysNames="ID" DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged">
+                    DataKeysNames="ID" DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
                     <Columns>
                         <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
                         <asp:BoundField HeaderText="Apellido" DataField="Apellido" />
@@ -29,6 +20,15 @@
                         <asp:BoundField HeaderText="Habilitado" DataField="Habilitado" />
                         <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" />
                     </Columns>
+                    <FooterStyle BackColor="White" ForeColor="#333333" />
+                    <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#336666" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="White" ForeColor="#333333" />
+                    <SelectedRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                    <SortedAscendingHeaderStyle BackColor="#487575" />
+                    <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                    <SortedDescendingHeaderStyle BackColor="#275353" />
                 </asp:GridView>
             </asp:Panel>
     
@@ -67,7 +67,5 @@
         <asp:LinkButton ID="eliminarLinkButton" runat="server" OnClick="eliminarLinkButton_Click">Eliminar</asp:LinkButton>
         <asp:LinkButton ID="nuevoLinkButton" runat="server" OnClick="nuevoLinkButton_Click">Nuevo</asp:LinkButton>
     </asp:Panel>
-        </form>
-    
-    </body>
-</html>
+
+</asp:Content>

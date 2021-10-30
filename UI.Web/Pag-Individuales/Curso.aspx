@@ -1,14 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Curso.aspx.cs" Inherits="UI.Web.Pag_Individuales.Curso" %>
+﻿<%@ Page Title="Curso" Language="C#" 
+    MasterPageFile="~/MasterPage/MasterPage.Master" 
+    AutoEventWireup="true" 
+    CodeBehind="Curso.aspx.cs" 
+    Inherits="UI.Web.Pag_Individuales.Curso" 
+%>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="PageContent" runat="server">
         <div>
         </div>
         <asp:Panel ID="gridPanel" runat="server" Height="196px">
@@ -81,6 +78,4 @@
             </div>
         </asp:Panel>
 
-    </form>
-</body>
-</html>
+</asp:Content>

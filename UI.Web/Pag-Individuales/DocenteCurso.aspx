@@ -1,19 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DocenteCurso.aspx.cs" Inherits="UI.Web.Pag_Individuales.DocenteCurso" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <title>Persona</title>
-        <style type="text/css">
-            .auto-style1 {
-                margin-bottom: 161px;
-            }
-        </style>
-</head>
-<body>
-    <form id="form1" runat="server">
+﻿<%@ Page Title="" Language="C#" 
+    MasterPageFile="~/MasterPage/MasterPage.Master" 
+    AutoEventWireup="true" 
+    CodeBehind="DocenteCurso.aspx.cs" 
+    Inherits="UI.Web.Pag_Individuales.DocenteCurso" 
+%>
+<asp:Content ID="Content1" ContentPlaceHolderID="PageContent" runat="server">
         <div>
         </div>
 

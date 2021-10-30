@@ -10,7 +10,7 @@ using Business.Entities.Entidades;
 using Business.Logic;
 using Business.Logic.EntidadesLogic;
 
-namespace UI.Web
+namespace UI.Web.Pag_Individuales
 {
     public partial class Alum_Inscrip : System.Web.UI.Page
     {

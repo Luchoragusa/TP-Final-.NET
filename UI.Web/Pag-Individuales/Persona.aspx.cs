@@ -11,7 +11,7 @@ using Business.Logic;
 using Business.Logic.EntidadesLogic;
 
 
-namespace UI.Web
+namespace UI.Web.Pag_Individuales
 {
     public partial class Persona : System.Web.UI.Page
     {

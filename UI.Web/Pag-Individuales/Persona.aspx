@@ -1,20 +1,16 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Persona.aspx.cs" Inherits="UI.Web.Persona" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <title>Persona</title>
-        </head>
-<body>
-    <form id="form1" runat="server">
+﻿<%@ Page Title="Persona" Language="C#" 
+    MasterPageFile="~/MasterPage/MasterPage.Master" 
+    AutoEventWireup="true" 
+    CodeBehind="Persona.aspx.cs" 
+    Inherits="UI.Web.Pag_Individuales.Persona" 
+%>
+<asp:Content ID="Content1" ContentPlaceHolderID="PageContent" runat="server">
         <div>
         </div>
 
-        <asp:Panel ID="gridPanel" runat="server" Height="225px" Width="1512px">
-                <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False"  HorizontalAlign="Center"
-                    SelectedRowStyle-BackColor="Blue"
+        <asp:Panel ID="gridPanel" runat="server"  Height="225px" Width="1512px">
+                <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False" HorizontalAlign="Center"
+                    SelectedRowStyle-BackColor="Black"
                     SelectedRowStyle-ForeColor="White"
                     DataKeysNames="ID" DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
                     <Columns>
@@ -96,6 +92,4 @@
             </div>
         </asp:Panel>
 
-    </form>
-</body>
-</html>
+</asp:Content>

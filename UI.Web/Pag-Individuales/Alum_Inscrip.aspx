@@ -1,35 +1,18 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Alum_Inscrip.aspx.cs" Inherits="UI.Web.Alum_Inscrip" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <title>Alum_Inscrip</title>
-        <style type="text/css">
-            .auto-style1 {
-                margin-bottom: 161px;
-                margin-left: 0px;
-                margin-top: 111px;
-            }
-            .auto-style2 {
-                margin-left: 486px;
-                margin-top: 0px;
-                margin-bottom: 0px;
-            }
-        </style>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
+﻿<%@ Page Title="AlumnoInscripcion" Language="C#" 
+    MasterPageFile="~/MasterPage/MasterPage.Master" 
+    AutoEventWireup="true" 
+    CodeBehind="Alum_Inscrip.aspx.cs" 
+    Inherits="UI.Web.Pag_Individuales.Alum_Inscrip" 
+%>
+<asp:Content ID="Content1" ContentPlaceHolderID="PageContent" runat="server">
+        <div dir="ltr">
         </div>
-        <asp:Panel ID="gridPanel" runat="server" CssClass="auto-style1" Height="216px" Width="1498px">
-                &nbsp;
-                <br />
-                <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False"
+        <asp:Panel ID="gridPanel" runat="server" Height="216px" Width="1498px">
+                <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False" HorizontalAlign="Center"
                     SelectedRowStyle-BackColor="Blue"
                     SelectedRowStyle-ForeColor="White"
-                    DataKeysNames="ID" DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" CssClass="auto-style2" GridLines="Horizontal" Width="485px">
+                    DataKeysNames="ID" DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
+                    
                     <Columns>
                         <asp:BoundField HeaderText="ID-Curso" DataField="IDCurso" />
                         <asp:BoundField HeaderText="ID-Alumno" DataField="IDAlumno" />
@@ -37,6 +20,7 @@
                         <asp:BoundField HeaderText="Condicion" DataField="Condicion" />
                         <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" />
                     </Columns>
+
                     <FooterStyle BackColor="White" ForeColor="#333333" />
                     <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
                     <PagerStyle BackColor="#336666" ForeColor="White" HorizontalAlign="Center" />
@@ -47,7 +31,8 @@
                     <SortedDescendingCellStyle BackColor="#E5E5E5" />
                     <SortedDescendingHeaderStyle BackColor="#275353" />
                 </asp:GridView>
-                &nbsp;</asp:Panel>
+                <br />
+        </asp:Panel>
 
      <asp:Panel ID="formPanel" Visible="False" runat="server">
         
@@ -89,6 +74,4 @@
             </div>
         </asp:Panel>
 
-    </form>
-</body>
-</html>
+</asp:Content>

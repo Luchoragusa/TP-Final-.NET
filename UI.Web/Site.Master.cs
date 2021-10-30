@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace UI.Web
 {
-    public partial class SiteMaster : MasterPage
+    public partial class SiteMaster : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
