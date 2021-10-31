@@ -11,13 +11,10 @@ namespace UI.Web
 {
     public partial class MenuPrincipal : System.Web.UI.Page
     {
-        private Usuario usuario;
         protected void Page_Load(object sender, EventArgs e)
         {
             
         }
-
-        
 
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {
@@ -26,42 +23,42 @@ namespace UI.Web
 
         protected void btnReporteAlumno_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Pag-Individuales/ReporteAlumno.aspx");
+            Response.Redirect("ReporteAlumno.aspx");
         }
 
         protected void btnReporteComision_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Pag-Individuales/ReporteComi.aspx");
+            Response.Redirect("ReporteComi.aspx");
         }
 
         protected void btnPersona_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Pag-Individuales/Persona.aspx");
+            Response.Redirect("Persona.aspx");
         }
 
         protected void btnComision_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Pag-Individuales/Comision.aspx");
+            Response.Redirect("Comision.aspx");
         }
 
         protected void btnEspecialidad_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Pag-Individuales/Especialidad.aspx");
+            Response.Redirect("Especialidad.aspx");
         }
 
         protected void btnCursoAlumno_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Pag-Individuales/Curso.aspx");
+            Response.Redirect("Curso.aspx");
         }
 
         protected void btnProfesor_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Pag-Individuales/DocenteCurso.aspx");
+            Response.Redirect("DocenteCurso.aspx");
         }
 
         protected void btnRegistrarNota_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Pag-Individuales/RegistrarNota.aspx");
+            Response.Redirect("RegistrarNota.aspx");
         }       
     }
 }

@@ -49,7 +49,6 @@ namespace UI.Web
                 // tipo == 4     administrador
 
                 Response.Redirect("MenuPrincipal.aspx");
-                //MenuPrincipal m = new MenuPrincipal(tipo, usuario);
                 
             }
             else

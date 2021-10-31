@@ -198,7 +198,7 @@
     <Content Include="ApplicationFormWeb.aspx" />
     <Content Include="LoginWeb.aspx" />
     <Content Include="MenuPrincipal.aspx" />
-    <Content Include="Pag-Individuales\Alum_Inscrip.aspx" />
+    <Content Include="Alum_Inscrip.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -219,15 +219,15 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="ClassDiagram1.cd" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="Pag-Individuales\Comision.aspx" />
-    <Content Include="Pag-Individuales\Curso.aspx" />
-    <Content Include="Pag-Individuales\DocenteCurso.aspx" />
-    <Content Include="Pag-Individuales\Especialidad.aspx" />
-    <Content Include="Pag-Individuales\Materia.aspx" />
-    <Content Include="Pag-Individuales\Persona.aspx" />
-    <Content Include="Pag-Individuales\Plan.aspx" />
-    <Content Include="Pag-Individuales\ReporteAlumno.aspx" />
-    <Content Include="Pag-Individuales\ReporteComi.aspx" />
+    <Content Include="Comision.aspx" />
+    <Content Include="Curso.aspx" />
+    <Content Include="DocenteCurso.aspx" />
+    <Content Include="Especialidad.aspx" />
+    <Content Include="Materia.aspx" />
+    <Content Include="Persona.aspx" />
+    <Content Include="Plan.aspx" />
+    <Content Include="ReporteAlumno.aspx" />
+    <Content Include="ReporteComi.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -257,7 +257,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
-    <Content Include="Pag-Individuales\Usuarios.aspx" />
+    <Content Include="Usuarios.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -286,11 +286,11 @@
     <Compile Include="MenuPrincipal.aspx.designer.cs">
       <DependentUpon>MenuPrincipal.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pag-Individuales\Alum_Inscrip.aspx.cs">
+    <Compile Include="Alum_Inscrip.aspx.cs">
       <DependentUpon>Alum_Inscrip.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pag-Individuales\Alum_Inscrip.aspx.designer.cs">
+    <Compile Include="Alum_Inscrip.aspx.designer.cs">
       <DependentUpon>Alum_Inscrip.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -319,67 +319,67 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Pag-Individuales\Comision.aspx.cs">
+    <Compile Include="Comision.aspx.cs">
       <DependentUpon>Comision.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pag-Individuales\Comision.aspx.designer.cs">
+    <Compile Include="Comision.aspx.designer.cs">
       <DependentUpon>Comision.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pag-Individuales\Curso.aspx.cs">
+    <Compile Include="Curso.aspx.cs">
       <DependentUpon>Curso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pag-Individuales\Curso.aspx.designer.cs">
+    <Compile Include="Curso.aspx.designer.cs">
       <DependentUpon>Curso.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pag-Individuales\DocenteCurso.aspx.cs">
+    <Compile Include="DocenteCurso.aspx.cs">
       <DependentUpon>DocenteCurso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pag-Individuales\DocenteCurso.aspx.designer.cs">
+    <Compile Include="DocenteCurso.aspx.designer.cs">
       <DependentUpon>DocenteCurso.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pag-Individuales\Especialidad.aspx.cs">
+    <Compile Include="Especialidad.aspx.cs">
       <DependentUpon>Especialidad.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pag-Individuales\Especialidad.aspx.designer.cs">
+    <Compile Include="Especialidad.aspx.designer.cs">
       <DependentUpon>Especialidad.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pag-Individuales\Materia.aspx.cs">
+    <Compile Include="Materia.aspx.cs">
       <DependentUpon>Materia.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pag-Individuales\Materia.aspx.designer.cs">
+    <Compile Include="Materia.aspx.designer.cs">
       <DependentUpon>Materia.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pag-Individuales\Persona.aspx.cs">
+    <Compile Include="Persona.aspx.cs">
       <DependentUpon>Persona.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pag-Individuales\Persona.aspx.designer.cs">
+    <Compile Include="Persona.aspx.designer.cs">
       <DependentUpon>Persona.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pag-Individuales\Plan.aspx.cs">
+    <Compile Include="Plan.aspx.cs">
       <DependentUpon>Plan.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pag-Individuales\Plan.aspx.designer.cs">
+    <Compile Include="Plan.aspx.designer.cs">
       <DependentUpon>Plan.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pag-Individuales\ReporteAlumno.aspx.cs">
+    <Compile Include="ReporteAlumno.aspx.cs">
       <DependentUpon>ReporteAlumno.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pag-Individuales\ReporteAlumno.aspx.designer.cs">
+    <Compile Include="ReporteAlumno.aspx.designer.cs">
       <DependentUpon>ReporteAlumno.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pag-Individuales\ReporteComi.aspx.cs">
+    <Compile Include="ReporteComi.aspx.cs">
       <DependentUpon>ReporteComi.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pag-Individuales\ReporteComi.aspx.designer.cs">
+    <Compile Include="ReporteComi.aspx.designer.cs">
       <DependentUpon>ReporteComi.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -397,11 +397,11 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
-    <Compile Include="Pag-Individuales\Usuarios.aspx.cs">
+    <Compile Include="Usuarios.aspx.cs">
       <DependentUpon>Usuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pag-Individuales\Usuarios.aspx.designer.cs">
+    <Compile Include="Usuarios.aspx.designer.cs">
       <DependentUpon>Usuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage\MasterPage.Master.cs">
