@@ -48,8 +48,8 @@ namespace UI.Web
                 // tipo == 2     docente
                 // tipo == 4     administrador
 
-                Response.Redirect("~/Principal.aspx");
-                MenuPrincipal m = new MenuPrincipal(tipo, usuario);
+                Response.Redirect("MenuPrincipal.aspx");
+                //MenuPrincipal m = new MenuPrincipal(tipo, usuario);
                 
             }
             else

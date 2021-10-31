@@ -48,31 +48,32 @@ namespace UI.Web.Pag_Individuales
 
             var parrafo = new Paragraph("Cursos de la Academia");
             documento.Add(parrafo);
-
-            PdfFont fontColumnas = PdfFontFactory.CreateFont(StandardFonts.TIMES_BOLD);
-            PdfFont fontContenido = PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN);
-
-            string[] columnas = { "ID de Curso", "ID de Comision", "Año Calendario", "Cupo" };
-
-            float[] tamanios = { 3, 3, 3, 3 };
-            Table tabla = new Table(UnitValue.CreatePercentArray(tamanios));
-            tabla.SetWidth(UnitValue.CreatePercentValue(100));
-
-            foreach (string columna in columnas)
-            {
-                tabla.AddHeaderCell(new Cell().Add(new Paragraph(columna).SetFont(fontColumnas)));
-            }
-
-            foreach (Business.Entities.Curso cur in cursos)
-            {
-                tabla.AddCell(new Cell().Add(new Paragraph(cur.ID.ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(cur.IDComision.ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(cur.AnioCalendario.ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(cur.Cupo.ToString()).SetFont(fontContenido)));
-            }
-
-            documento.Add(tabla);
             documento.Close();
+
+            //PdfFont fontColumnas = PdfFontFactory.CreateFont(StandardFonts.TIMES_BOLD);
+            //PdfFont fontContenido = PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN);
+
+            //string[] columnas = { "ID de Curso", "ID de Comision", "Año Calendario", "Cupo" };
+
+            //float[] tamanios = { 3, 3, 3, 3 };
+            //Table tabla = new Table(UnitValue.CreatePercentArray(tamanios));
+            //tabla.SetWidth(UnitValue.CreatePercentValue(100));
+
+            //foreach (string columna in columnas)
+            //{
+            //    tabla.AddHeaderCell(new Cell().Add(new Paragraph(columna).SetFont(fontColumnas)));
+            //}
+
+            //foreach (Business.Entities.Curso cur in cursos)
+            //{
+            //    tabla.AddCell(new Cell().Add(new Paragraph(cur.ID.ToString()).SetFont(fontContenido)));
+            //    tabla.AddCell(new Cell().Add(new Paragraph(cur.IDComision.ToString()).SetFont(fontContenido)));
+            //    tabla.AddCell(new Cell().Add(new Paragraph(cur.AnioCalendario.ToString()).SetFont(fontContenido)));
+            //    tabla.AddCell(new Cell().Add(new Paragraph(cur.Cupo.ToString()).SetFont(fontContenido)));
+            //}
+
+            //documento.Add(tabla);
+            //documento.Close();
         }
     }
 }

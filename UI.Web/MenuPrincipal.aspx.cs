@@ -17,34 +17,7 @@ namespace UI.Web
             
         }
 
-        public MenuPrincipal(int tipo, Usuario u)
-        {
-            usuario = u;
-
-            //if (tipo == 1)          //alumno
-            //{
-            //    lblDocente.Enabled = false;
-            //    btnDocenteCurso.Enabled = false;
-            //    btnRegistrarNota.Enabled = false;
-                
-            //    lblReportes.Enabled = false;
-            //    btnReporteAlumno.Enabled = false;
-            //    btnReporteComision.Enabled = false;
-
-            //}
-            //else if (tipo == 2)     //docente
-            //{
-            //    //lblAlumno.Visible = false;
-            //    btnComision.Enabled = false;
-            //    btnEspecialidad.Enabled = false;
-            //    btnCursoAlumno.Enabled = false;
-            //    usuario = u;
-            //}
-            //else if (tipo == 4)
-            //{
-            //    //puede ver todo y acceder a todo
-            //}
-        }
+        
 
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {
