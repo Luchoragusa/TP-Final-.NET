@@ -305,5 +305,39 @@ namespace Data.Database
             }
             return tipo_persona;
         }
+
+        public Usuario GetUsuario(string usuario, string pw)
+        {
+            Usuario usu = new Usuario();
+            try
+            {
+                OpenConnection();
+                SqlCommand cmdUsuarios = new SqlCommand("SELECT us.id_usuario, us.nombre, us.apellido, us.email, us.nombre_usuario, us.clave, us.habilitado FROM usuarios us inner join personas on personas.id_persona = us.id_persona WHERE nombre_usuario = @nombre_usuario and clave = @clave", sqlConn);
+                cmdUsuarios.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario;
+                cmdUsuarios.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = pw;
+                SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
+
+                while (drUsuarios.Read())
+                {
+                    usu.ID = (int)drUsuarios["id_usuario"];
+                    usu.Nombre = (string)drUsuarios["nombre"];
+                    usu.Apellido = (string)drUsuarios["apellido"];
+                    usu.Email = (string)drUsuarios["email"];
+                    usu.NombreUsuario = (string)drUsuarios["nombre_usuario"];
+                    usu.Clave = (string)drUsuarios["clave"];
+                    usu.Habilitado = (bool)drUsuarios["habilitado"];
+                }
+                drUsuarios.Close();
+            }
+            catch (Exception)
+            {
+                
+            }
+            finally
+            {
+                CloseConnection();
+            }
+            return usu;
+        }
     }
 }

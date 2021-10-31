@@ -17,13 +17,9 @@ namespace UI.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {            
-            US = new UsuarioLogic();
+            
         }
 
-        public UsuarioLogic US
-        {
-            get; set;
-        }
 
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
@@ -33,21 +29,15 @@ namespace UI.Web
 
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
-            Usuario usuario = new Usuario();
-
-            usuario.NombreUsuario = this.txtUsuario.Text;
-            usuario.Clave = this.txtPass.Text;
-
             UsuarioLogic loginUsuario = new UsuarioLogic();
 
-            int tipo = loginUsuario.login(usuario);
+            Usuario usuario = loginUsuario.GetUsuario(this.txtUsuario.Text, this.txtPass.Text);
+            int id_persona = loginUsuario.login(usuario);
 
-            if (tipo != -1)
+            if (usuario != null)
             {
-                // tipo == 1     alumno
-                // tipo == 2     docente
-                // tipo == 4     administrador
-
+                Session["usuario"] = usuario;
+                Session["id_persona"] = id_persona;
                 Response.Redirect("MenuPrincipal.aspx");
                 
             }

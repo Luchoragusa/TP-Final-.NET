@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using Business.Entities;
+using Business.Logic;
 
 namespace UI.Web
 {
@@ -13,7 +14,27 @@ namespace UI.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            Usuario us = (Usuario)Session["usuario"];
+            Business.Entities.Entidades.Personas per = new Business.Entities.Entidades.Personas();
+            per.ID = (int)Session["id_persona"];
+            lblNombre.Text = us.Nombre;
+            lblApellido.Text = us.Apellido;
+            switch (per.ID)
+            {
+                case 1:     //alumno
+                    lblDocente.Visible = false;
+                    btnDocenteCurso.Visible = false;
+                    btnRegistrarNota.Visible = false;
+                    break;
+                case 2:     //docente
+                    lblAlumno.Visible = false;
+                    btnComision.Visible = false;
+                    btnEspecialidad.Visible = false;
+                    btnCursoAlumno.Visible = false;
+                    break;
+                default:
+                    break;
+            }
         }
 
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
