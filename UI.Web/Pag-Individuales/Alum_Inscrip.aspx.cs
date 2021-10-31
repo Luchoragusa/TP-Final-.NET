@@ -12,7 +12,7 @@ using Business.Logic.EntidadesLogic;
 
 namespace UI.Web.Pag_Individuales
 {
-    public partial class Alum_Inscrip : System.Web.UI.Page
+    public partial class Alum_Inscrip : ApplicationFormWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -41,13 +41,6 @@ namespace UI.Web.Pag_Individuales
             this.gridView.DataBind();
         }
 
-        public enum FormModes
-        {
-            Alta,
-            Baja,
-            Modificacion
-        }
-
         public FormModes FormMode
         {
             get
@@ -65,38 +58,13 @@ namespace UI.Web.Pag_Individuales
             get;
             set;
         }
-        private int SelectedID
-        {
-            get
-            {
-                if (this.ViewState["SelectedID"] != null)
-                {
-                    return (int)this.ViewState["SelectedID"];
-                }
-                else
-                {
-                    return 0;
-                }
-            }
-            set
-            {
-                this.ViewState["SelectedID"] = value;
-            }
-        }
-        private bool IsEntitySelected
-        {
-            get
-            {
-                return (this.SelectedID != 0);
-            }
-        }
 
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.SelectedID = (int)this.gridView.SelectedValue;
         }
 
-        private void LoadForm(int id)
+        protected override void LoadForm(int id)
         {
             this.Entity = this.Logic.GetOne(id);
             this.idcursoTextBox.Text = this.Entity.IDCurso.ToString();
@@ -141,12 +109,7 @@ namespace UI.Web.Pag_Individuales
             this.Logic.Save(ali);
         }
 
-        protected void aceptarLinkButton_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void EnableForm(bool enable)
+        protected override void EnableForm(bool enable)
         {
             this.idcursoTextBox.Enabled = enable;
             this.idalumnoTextBox.Enabled = enable;
@@ -165,7 +128,7 @@ namespace UI.Web.Pag_Individuales
             }
         }
 
-        private void DeleteEntity(int id)
+        protected override void DeleteEntity(int id)
         {
             this.Logic.Delete(id);
         }
@@ -178,17 +141,12 @@ namespace UI.Web.Pag_Individuales
             this.EnableForm(true);
         }
 
-        private void ClearForm()
+        protected override void ClearForm()
         {
             this.idcursoTextBox.Text = string.Empty;
             this.idalumnoTextBox.Text = string.Empty;
             this.notaTextBox.Text = string.Empty;
             this.condicionTextBox.Text = string.Empty;
-        }
-
-        protected void cancelarLinkButton_Click(object sender, EventArgs e)
-        {
-           
         }
 
         protected void acceptaButton_Click(object sender, EventArgs e)

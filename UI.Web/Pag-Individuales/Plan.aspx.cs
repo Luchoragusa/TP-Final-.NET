@@ -12,7 +12,7 @@ using Business.Logic.EntidadesLogic;
 
 namespace UI.Web.Pag_Individuales
 {
-    public partial class Plan : System.Web.UI.Page
+    public partial class Plan : ApplicationFormWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -39,12 +39,6 @@ namespace UI.Web.Pag_Individuales
             this.gridView.DataBind();
         }
 
-        public enum FormModes
-        {
-            Alta,
-            Baja,
-            Modificacion
-        }
         public FormModes FormMode
         {
             get
@@ -61,34 +55,8 @@ namespace UI.Web.Pag_Individuales
             get;
             set;
         }
-        private int SelectedID
-        {
-            get
-            {
-                if (this.ViewState["SelectedID"] != null)
-                {
-                    return (int)this.ViewState["SelectedID"];
-                }
-                else
-                {
-                    return 0;
-                }
-            }
-            set
-            {
-                this.ViewState["SelectedID"] = value;
-            }
-        }
 
-        private bool IsEntitySelected
-        {
-            get
-            {
-                return (this.SelectedID != 0);
-            }
-        }
-
-        private void LoadForm(int id)
+        protected override void LoadForm(int id)
         {
             this.Entity = this.Logic.GetOne(id);
 
@@ -96,13 +64,13 @@ namespace UI.Web.Pag_Individuales
             this.IDEspecialidadTextBox.Text = this.Entity.IDEspecialidad.ToString();
         }
 
-        public void EnableForm(bool enable)
+        protected override void EnableForm(bool enable)
         {
             this.descripcionTextBox.Enabled = enable;
             this.IDEspecialidadTextBox.Enabled = enable;
         }
 
-        private void ClearForm()
+        protected override void ClearForm()
         {
             this.descripcionTextBox.Text = string.Empty;
             this.IDEspecialidadTextBox.Text = string.Empty; ;
@@ -183,10 +151,11 @@ namespace UI.Web.Pag_Individuales
                 this.formPanel.Visible = false;
         }
 
-        private void DeleteEntity(int id)
+        protected override void DeleteEntity(int id)
         {
             this.Logic.Delete(id);
         }
+
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
         {
             if (this.IsEntitySelected)

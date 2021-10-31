@@ -9,7 +9,7 @@ using Business.Logic;
 
 namespace UI.Web.Pag_Individuales
 {
-    public partial class Especialidad : System.Web.UI.Page
+    public partial class Especialidad : ApplicationFormWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -36,12 +36,6 @@ namespace UI.Web.Pag_Individuales
             this.gridView.DataBind();
         }
 
-        public enum FormModes
-        {
-            Alta,
-            Baja,
-            Modificacion
-        }
         public FormModes FormMode
         {
             get
@@ -58,47 +52,20 @@ namespace UI.Web.Pag_Individuales
             get;
             set;
         }
-        private int SelectedID
-        {
-            get
-            {
-                if (this.ViewState["SelectedID"] != null)
-                {
-                    return (int)this.ViewState["SelectedID"];
-                }
-                else
-                {
-                    return 0;
-                }
-            }
-            set
-            {
-                this.ViewState["SelectedID"] = value;
-            }
-        }
-
-        private bool IsEntitySelected
-        {
-            get
-            {
-                return (this.SelectedID != 0);
-            }
-        }
-
-        private void LoadForm(int id)
+        protected override void LoadForm(int id)
         {
             this.Entity = this.Logic.GetOne(id);
 
             this.descripcionTextBox.Text = this.Entity.DescEspecialidad;
         }
 
-        public void EnableForm(bool enable)
+        protected override void EnableForm(bool enable)
         {
             this.descripcionTextBox.Enabled = enable;
             
         }
 
-        private void ClearForm()
+        protected override void ClearForm()
         {
             this.descripcionTextBox.Text = string.Empty;
         }
@@ -106,7 +73,7 @@ namespace UI.Web.Pag_Individuales
         {
             this.Logic.Save(Especialidad);
         }
-        private void DeleteEntity(int id)
+        protected override void DeleteEntity(int id)
         {
             this.Logic.Delete(id);
         }

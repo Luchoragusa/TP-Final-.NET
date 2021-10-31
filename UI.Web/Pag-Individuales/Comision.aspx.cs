@@ -12,7 +12,7 @@ using Business.Logic.EntidadesLogic;
 
 namespace UI.Web.Pag_Individuales
 {
-    public partial class Comision : System.Web.UI.Page
+    public partial class Comision : ApplicationFormWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -36,19 +36,12 @@ namespace UI.Web.Pag_Individuales
             }
         }
 
-
         private void LoadGrid()
         {
             this.gridView.DataSource = this.Logic.GetAll();
             this.gridView.DataBind();
         }
 
-        public enum FormModes
-        {
-            Alta,
-            Baja,
-            Modificacion
-        }
 
         public FormModes FormMode
         {
@@ -70,38 +63,12 @@ namespace UI.Web.Pag_Individuales
         }
 
 
-        private int SelectedID
-        {
-            get
-            {
-                if (this.ViewState["SelectedID"] != null)
-                {
-                    return (int)this.ViewState["SelectedID"];
-                }
-                else
-                {
-                    return 0;
-                }
-            }
-            set
-            {
-                this.ViewState["SelectedID"] = value;
-            }
-        }
-
-        private bool IsEntitySelected
-        {
-            get
-            {
-                return (this.SelectedID != 0);
-            }
-        }
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.SelectedID = (int)this.gridView.SelectedValue;
         }
 
-        private void LoadForm(int id)
+        protected override void LoadForm(int id)
         {
             this.Entity = this.Logic.GetOne(id);
 
@@ -138,12 +105,13 @@ namespace UI.Web.Pag_Individuales
             }
             return band;
         }
+
         private void SaveEntity(Business.Entities.Comision comi)
         {
             this.Logic.Save(comi);
         }
 
-        private void EnableForm(bool enable)
+        protected override void EnableForm(bool enable)
         {
             this.idPlanTextBox.Enabled = enable;
             this.descComisionTextBox.Enabled = enable;
@@ -162,7 +130,7 @@ namespace UI.Web.Pag_Individuales
             }
         }
 
-        private void DeleteEntity(int id)
+        protected override void DeleteEntity(int id)
         {
             this.Logic.Delete(id);
         }
@@ -176,7 +144,7 @@ namespace UI.Web.Pag_Individuales
         }
 
 
-        private void ClearForm()
+        protected override void ClearForm()
         {
             this.idPlanTextBox.Text = string.Empty;
             this.descComisionTextBox.Text = string.Empty;

@@ -16,17 +16,17 @@ namespace UI.Web.Pag_Individuales
 {
     public partial class ReporteComi : System.Web.UI.Page
     {
-        public CursoLogic cl { get; set; }
+        public CursoLogic clogic { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            cl = new CursoLogic();
+            clogic = new CursoLogic();
             this.LoadGrid();
         }
 
         private void LoadGrid()
         {
-            this.gridView.DataSource = this.cl.GetAll();
+            this.gridView.DataSource = this.clogic.GetAll();
             this.gridView.DataBind();
         }
 
@@ -37,12 +37,12 @@ namespace UI.Web.Pag_Individuales
 
         public void crearPDF()
         {
-            PdfWriter pdfWriter = new PdfWriter(@"C:\Program Files (x86)\IIS Express\Escritorio\ReportePlanes.pdf");
-            PdfDocument pdf = new PdfDocument(pdfWriter);
-            Document documento = new Document(pdf, PageSize.LETTER);
-
             CursoLogic cl = new CursoLogic();
             List<Business.Entities.Curso> cursos = cl.GetAll();
+
+            PdfWriter pdfWriter = new PdfWriter("ReportePlanes.pdf");
+            PdfDocument pdf = new PdfDocument(pdfWriter);
+            Document documento = new Document(pdf, PageSize.LETTER);
 
             documento.SetMargins(60, 20, 55, 20);
 

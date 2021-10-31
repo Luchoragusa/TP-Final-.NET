@@ -7,10 +7,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="PageContent" runat="server">
 
      <div class="d-grid gap-2 col-2 mx-auto" align="center">
-            <br />
-            <br />
-            <br />
-            <br />
             <asp:Label ID="lblAlumno" runat="server" Text="Alumno"></asp:Label>
             <br />
             <asp:Button ID="btnComision" runat="server" Text="Comision" BackColor="#33CCCC" OnClick="btnComision_Click" />

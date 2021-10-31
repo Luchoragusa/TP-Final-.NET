@@ -195,6 +195,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="ApplicationFormWeb.aspx" />
     <Content Include="LoginWeb.aspx" />
     <Content Include="MenuPrincipal.aspx" />
     <Content Include="Pag-Individuales\Alum_Inscrip.aspx" />
@@ -217,7 +218,6 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="ClassDiagram1.cd" />
-    <Content Include="MP.Master" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Pag-Individuales\Comision.aspx" />
     <Content Include="Pag-Individuales\Curso.aspx" />
@@ -265,6 +265,13 @@
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationFormWeb.aspx.cs">
+      <DependentUpon>ApplicationFormWeb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApplicationFormWeb.aspx.designer.cs">
+      <DependentUpon>ApplicationFormWeb.aspx</DependentUpon>
+    </Compile>
     <Compile Include="LoginWeb.aspx.cs">
       <DependentUpon>LoginWeb.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -278,13 +285,6 @@
     </Compile>
     <Compile Include="MenuPrincipal.aspx.designer.cs">
       <DependentUpon>MenuPrincipal.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="MP.Master.cs">
-      <DependentUpon>MP.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MP.Master.designer.cs">
-      <DependentUpon>MP.Master</DependentUpon>
     </Compile>
     <Compile Include="Pag-Individuales\Alum_Inscrip.aspx.cs">
       <DependentUpon>Alum_Inscrip.aspx</DependentUpon>
