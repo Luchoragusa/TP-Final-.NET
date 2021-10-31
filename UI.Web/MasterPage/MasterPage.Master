@@ -28,19 +28,19 @@ Inherits="UI.Web.MasterPage.MasterPage" %>
                         <td align="center">Menu de la pagina</td> 
                     </tr> 
                     <tr> 
-                        <td align="center"><a href="Alum_Inscrip.aspx">Inscripcion de Alumno</a></td> 
+                        <td align="center"><a href="~/Pag_Individuales/Alum_Inscrip.aspx">Inscripcion de Alumno</a></td> 
                     </tr>
                     <tr> 
-                        <td align="center"><a href="Materia.aspx">Materia</a></td> 
+                        <td align="center"><a href="~/Pag_Individuales/Materia.aspx">Materia</a></td> 
                     </tr>
                     <tr> 
-                        <td align="center"><a href="Persona.aspx">Persona</a></td> 
+                        <td align="center"><a href="~/Pag_Individuales/Persona.aspx">Persona</a></td> 
                     </tr>  
                     <tr> 
-                        <td align="center"><a href="Plan.aspx">Plan</a></td> 
+                        <td align="center"><a href="~/Pag_Individuales/Plan.aspx">Plan</a></td> 
                     </tr>  
                     <tr> 
-                        <td align="center"><a href="Usuarios.aspx">Usuario</a></td> 
+                        <td align="center"><a href="~/Pag_Individuales/Usuarios.aspx">Usuario</a></td> 
                     </tr>  
                 </table> 
             </td> 

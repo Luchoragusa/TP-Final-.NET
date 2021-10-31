@@ -16,56 +16,41 @@ namespace UI.Web
     public partial class LoginWeb : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {            
+            US = new UsuarioLogic();
+        }
 
+        public UsuarioLogic US
+        {
+            get; set;
         }
 
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Es Ud. un usuario muy descuidado, haga memoria", "Olvidé mi contraseña",
+            MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
             Usuario usuario = new Usuario();
-            int tipo = 0;
-
-            //nuevoMaincs nm = null;
 
             usuario.NombreUsuario = this.txtUsuario.Text;
             usuario.Clave = this.txtPass.Text;
 
             UsuarioLogic loginUsuario = new UsuarioLogic();
 
-            tipo = loginUsuario.login(usuario);
+            int tipo = loginUsuario.login(usuario);
 
             if (tipo != -1)
             {
-                if (tipo == 1)      //alumno
-                {
-                    MessageBox.Show("Bienvenido al sistema, ALUMNO.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //this.DialogResult = DialogResult.OK;
+                // tipo == 1     alumno
+                // tipo == 2     docente
+                // tipo == 4     administrador
 
-                }
-                else if (tipo == 2) //docente
-                {
-                    MessageBox.Show("Bienvenido al sistema, DOCENTE.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //this.DialogResult = DialogResult.OK;
-                }
-                else if (tipo == 3) //admin
-                {
-                    MessageBox.Show("Bienvenido al sistema, ADMINISTRADOR.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //this.DialogResult = DialogResult.OK;
-                }
-                else if (tipo == 4) //admin
-                {
-                    MessageBox.Show("Bienvenido al sistema, PERSONA.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //this.DialogResult = DialogResult.OK;
-                }
-
-                //nm = new nuevoMaincs(tipo, usuario);
-                //nm.ShowDialog();
-                //this.Dispose();
+                Response.Redirect("~/Principal.aspx");
+                MenuPrincipal m = new MenuPrincipal(tipo, usuario);
+                
             }
             else
             {

@@ -78,7 +78,7 @@ namespace UI.Desktop
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMain.Location = new System.Drawing.Point(10, 0);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(224, 461);
+            this.panelMain.Size = new System.Drawing.Size(224, 626);
             this.panelMain.TabIndex = 0;
             // 
             // panelAdminSubMenu
@@ -506,7 +506,7 @@ namespace UI.Desktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 461);
+            this.ClientSize = new System.Drawing.Size(484, 626);
             this.Controls.Add(this.panelMain);
             this.Name = "nuevoMaincs";
             this.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);

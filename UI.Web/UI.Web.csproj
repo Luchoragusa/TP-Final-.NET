@@ -196,6 +196,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="LoginWeb.aspx" />
+    <Content Include="MenuPrincipal.aspx" />
     <Content Include="Pag-Individuales\Alum_Inscrip.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -270,6 +271,13 @@
     </Compile>
     <Compile Include="LoginWeb.aspx.designer.cs">
       <DependentUpon>LoginWeb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuPrincipal.aspx.cs">
+      <DependentUpon>MenuPrincipal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuPrincipal.aspx.designer.cs">
+      <DependentUpon>MenuPrincipal.aspx</DependentUpon>
     </Compile>
     <Compile Include="MP.Master.cs">
       <DependentUpon>MP.Master</DependentUpon>
