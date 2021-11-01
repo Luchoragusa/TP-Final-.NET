@@ -60,8 +60,43 @@
 
                 </asp:GridView>
                             <br />
+                            <asp:Label ID="lblNota" runat="server" Text="Nota: "></asp:Label>
+                            <asp:DropDownList ID="DropDownListNotas" runat="server">
+                                <asp:ListItem>1</asp:ListItem>
+                                <asp:ListItem>2</asp:ListItem>
+                                <asp:ListItem>3</asp:ListItem>
+                                <asp:ListItem>4</asp:ListItem>
+                                <asp:ListItem>5</asp:ListItem>
+                                <asp:ListItem>6</asp:ListItem>
+                                <asp:ListItem>7</asp:ListItem>
+                                <asp:ListItem>8</asp:ListItem>
+                                <asp:ListItem>9</asp:ListItem>
+                                <asp:ListItem>10</asp:ListItem>
+                            </asp:DropDownList>
+                            <br />
+            <asp:Label ID="lblCondicion" runat="server" Text="Condicion del alumno: "></asp:Label>
+
+                            <asp:DropDownList ID="DropDownListCondicion" runat="server">
+                                <asp:ListItem>Aprobado</asp:ListItem>
+                                <asp:ListItem>Cursando</asp:ListItem>
+                                <asp:ListItem>Libre</asp:ListItem>
+                                <asp:ListItem>Regular</asp:ListItem>
+                            </asp:DropDownList>
+
+            <br />
                             <br />
                             <br />
+
+            <asp:Panel ID="Panel5" runat="server" HorizontalAlign="Center" Visible="true">
+            <asp:Button ID="aceptarButton" runat="server" class="btn btn-outline-primary" Text="Aceptar" OnClick="acceptaButton_Click" Width="72px" />
+            &nbsp;
+            <asp:Button ID="cancelarButton" runat="server" class="btn btn-outline-primary" Text="Cancelar" OnClick="cancelarButton_Click" />
+
+         <asp:Panel ID="Panel4" runat="server" HorizontalAlign="Center">
+        <asp:Button ID="btnVolver" runat="server" BackColor="#006666" Font-Bold="True" ForeColor="White" Text="Volver al menu" Width="121px" OnClick="btnVolver_Click" />
+             </asp:Panel>
+        </asp:Panel>
+
         </asp:Panel>
     </asp:Panel>              
 
