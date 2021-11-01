@@ -49,7 +49,7 @@ namespace Business.Logic
 
         public Usuario GetUsuario(Usuario u)
         {
-            return UsuarioData.GetUsuario(Usuario u);
+            return UsuarioData.GetUsuario(u);
         }
 
         public List<Usuario> GetAll()
