@@ -296,7 +296,7 @@ namespace Data.Database
             }
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al recuperar datos de usuario", Ex);
+                Exception ExcepcionManejada = new Exception("Error al recuperar el tipo de usuario al logearse", Ex);
                 throw ExcepcionManejada;
             }
             finally
@@ -329,9 +329,10 @@ namespace Data.Database
                 }
                 drUsuarios.Close();
             }
-            catch (Exception)
+            catch (Exception Ex)
             {
-                
+                Exception ExcepcionManejada = new Exception("Error al recuperar los datos del usuario al logearse", Ex);
+                throw ExcepcionManejada;
             }
             finally
             {

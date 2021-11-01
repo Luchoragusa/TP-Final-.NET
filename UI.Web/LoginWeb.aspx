@@ -5,11 +5,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <title>[ACADEMIA] Login</title>
+    <style type="text/css">
+        .auto-style1 {
+            height: 377px;
+            background-color: #63bf65;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="jumbotron text-center" align="center">
+        <div class="auto-style1" align="center">
         <h2 class="form-signin-heading">&nbsp;</h2>
         <h2 class="form-signin-heading">&nbsp;</h2>
         <h2 class="form-signin-heading" style="font-family: 'Century Gothic'">¡Bienvenido al Sistema!</h2>
@@ -33,10 +39,11 @@
                     ForeColor="Red">
                     *
                 </asp:RequiredFieldValidator>
+
+            <br />
         <br />
-        <br />
-            <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">¿Olvidó su contraseña?</asp:LinkButton>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="lblIncorrecto" Visible="false" runat="server" ForeColor="#FF3300" Text="Usuario y/o clave incorrectos"></asp:Label>
+            <br />
         <asp:Button runat="server" class="btn btn-lg btn-primary btn-block" Text="Ingresar" ID="btnIngresar" OnClick="btnIngresar_Click" />
         <br />
     </div>

@@ -16,15 +16,8 @@ namespace UI.Web
     public partial class LoginWeb : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {            
-            
-        }
-
-
-        protected void LinkButton1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Es Ud. un usuario muy descuidado, haga memoria", "Olvidé mi contraseña",
-            MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
         }
 
         protected void btnIngresar_Click(object sender, EventArgs e)
@@ -43,8 +36,10 @@ namespace UI.Web
             }
             else
             {
-                MessageBox.Show("Usuario y/o contraseña incorrectos", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblIncorrecto.Visible = true;
+                Response.Redirect("LoginWeb.aspx");
             }
+           
         }
     }
 }
