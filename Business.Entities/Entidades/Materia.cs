@@ -9,7 +9,7 @@ namespace Business.Entities
     public class Materia : BusinessEntity
     {
         private string _Descripcion;
-        private int _HSSemanales, _HSTotales, _IDPlan;
+        private int _HSSemanales, _HSTotales, _IDPlan; 
 
         public string Descripcion { get => _Descripcion; set => _Descripcion = value; }
         public int HSSSemanales { get => _HSSemanales; set => _HSSemanales = value; }

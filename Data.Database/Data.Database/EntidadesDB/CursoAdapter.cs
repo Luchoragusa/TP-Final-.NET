@@ -13,6 +13,62 @@ namespace Data.Database
     {
         public CursoAdapter() { }
 
+        public List<Curso> getCursosDelDocente(int idDoc)
+        {
+            List<Curso> cursosDelDocente = new List<Curso>();
+            try
+            {
+                OpenConnection();
+                SqlCommand cmdCursosDelDocente = new SqlCommand("select * from docentes_cursos d inner join cursos c on d.id_curso = c.id_curso  inner join materias m on c.id_materia = m.id_materia inner join comisiones com on com.id_comision = c.id_comision inner join planes p on p.id_plan = m.id_plan and p.id_plan = com.id_plan where d.id_docente = @id;", sqlConn);
+                cmdCursosDelDocente.Parameters.Add("@id", SqlDbType.Int).Value = idDoc;
+                SqlDataReader drCursosDelDocente = cmdCursosDelDocente.ExecuteReader();
+
+                if (drCursosDelDocente != null)
+                {
+                    while (drCursosDelDocente.Read())
+                    {
+                        Plan plan = new Plan();
+                        plan.ID = (int)drCursosDelDocente["id_plan"];
+                        plan.Descripcion = (string)drCursosDelDocente["desc_plan"];
+
+                        Materia materia = new Materia();
+                        materia.ID = (int)drCursosDelDocente["id_materia"];
+                        materia.Descripcion = (string)drCursosDelDocente["desc_materia"];
+                        materia.HSSSemanales = (int)drCursosDelDocente["hs_semanales"];
+                        materia.HSTotales = (int)drCursosDelDocente["hs_totales"];
+                        materia.IDPlan = plan.ID;
+
+                        Comision comision = new Comision();
+                        comision.ID = (int)drCursosDelDocente["id_comision"];
+                        comision.DescComision = (string)drCursosDelDocente["desc_comision"];
+                        comision.AnioEspecialidad = (int)drCursosDelDocente["anio_especialidad"];
+                        comision.IDPlan = plan.ID;
+                        
+                        //=========================================================================
+
+                        Curso cursoIndividualDocente = new Curso();
+                        cursoIndividualDocente.ID = (int)drCursosDelDocente["id_curso"];
+                        cursoIndividualDocente.IDMateria = materia.ID;
+                        cursoIndividualDocente.IDComision = comision.ID;
+                        cursoIndividualDocente.AnioCalendario = (int)drCursosDelDocente["anio_calendario"];
+                        cursoIndividualDocente.Cupo = (int)drCursosDelDocente["cupo"];
+
+                        cursosDelDocente.Add(cursoIndividualDocente);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Exception exception = new Exception("Error al recuperar los cursos del docente.", ex);
+                throw exception;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+            return cursosDelDocente;
+        }
+
         public List<Curso> GetAll()
         {
             List<Curso> cursos = new List<Curso>();

@@ -20,6 +20,21 @@ namespace Business.Logic.EntidadesLogic
             get { return cursoData; }
             set { cursoData = value; }
         }
+
+        public List<Curso> getCursosDelDocente(int idDoc)
+        {
+            List<Curso> cursosDelDocente = new List<Curso>();
+            try
+            {
+                return CursoData.getCursosDelDocente(idDoc);
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar el Curso.", ex);
+                throw ExcepcionManejada;
+            }
+        }
+
         public Business.Entities.Curso GetOne(int id)
         {
             try

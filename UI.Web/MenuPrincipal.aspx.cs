@@ -31,6 +31,8 @@ namespace UI.Web
                     btnComision.Visible = false;
                     btnEspecialidad.Visible = false;
                     btnCursoAlumno.Visible = false;
+                    Business.Entities.Entidades.DocenteCurso docente = new Business.Entities.Entidades.DocenteCurso();
+
                     break;
                 default:
                     break;

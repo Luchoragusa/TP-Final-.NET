@@ -226,6 +226,7 @@
     <Content Include="Materia.aspx" />
     <Content Include="Persona.aspx" />
     <Content Include="Plan.aspx" />
+    <Content Include="RegistrarNota.aspx" />
     <Content Include="ReporteAlumno.aspx" />
     <Content Include="ReporteComi.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -367,6 +368,13 @@
     </Compile>
     <Compile Include="Plan.aspx.designer.cs">
       <DependentUpon>Plan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarNota.aspx.cs">
+      <DependentUpon>RegistrarNota.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarNota.aspx.designer.cs">
+      <DependentUpon>RegistrarNota.aspx</DependentUpon>
     </Compile>
     <Compile Include="ReporteAlumno.aspx.cs">
       <DependentUpon>ReporteAlumno.aspx</DependentUpon>
