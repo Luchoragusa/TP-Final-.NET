@@ -37,13 +37,11 @@ namespace UI.Desktop.Alum_Inscrip
             this.btnActualizar = new System.Windows.Forms.Button();
             this.tsMaterias = new System.Windows.Forms.ToolStrip();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
-            this.IDInscripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDAlumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Condicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tscMaterias.ContentPanel.SuspendLayout();
             this.tscMaterias.TopToolStripPanel.SuspendLayout();
             this.tscMaterias.SuspendLayout();
@@ -91,13 +89,11 @@ namespace UI.Desktop.Alum_Inscrip
             // 
             this.dgvAlum_Incrip.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAlum_Incrip.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IDInscripcion,
             this.nombre,
             this.apellido,
-            this.IDCurso,
-            this.IDAlumno,
             this.Nota,
-            this.Condicion});
+            this.Condicion,
+            this.legajo});
             this.tlMaterias.SetColumnSpan(this.dgvAlum_Incrip, 2);
             this.dgvAlum_Incrip.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAlum_Incrip.Location = new System.Drawing.Point(3, 3);
@@ -146,12 +142,6 @@ namespace UI.Desktop.Alum_Inscrip
             this.tsbEditar.Text = "Editar";
             this.tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
             // 
-            // IDInscripcion
-            // 
-            this.IDInscripcion.DataPropertyName = "ID";
-            this.IDInscripcion.HeaderText = "ID_Inscripcion";
-            this.IDInscripcion.Name = "IDInscripcion";
-            // 
             // nombre
             // 
             this.nombre.DataPropertyName = "NombrePersona";
@@ -166,18 +156,6 @@ namespace UI.Desktop.Alum_Inscrip
             this.apellido.Name = "apellido";
             this.apellido.ReadOnly = true;
             // 
-            // IDCurso
-            // 
-            this.IDCurso.DataPropertyName = "IDCurso";
-            this.IDCurso.HeaderText = "ID_Curso";
-            this.IDCurso.Name = "IDCurso";
-            // 
-            // IDAlumno
-            // 
-            this.IDAlumno.DataPropertyName = "IDAlumno";
-            this.IDAlumno.HeaderText = "ID_Alumno";
-            this.IDAlumno.Name = "IDAlumno";
-            // 
             // Nota
             // 
             this.Nota.DataPropertyName = "Nota";
@@ -190,6 +168,13 @@ namespace UI.Desktop.Alum_Inscrip
             this.Condicion.DataPropertyName = "Condicion";
             this.Condicion.HeaderText = "Condicion";
             this.Condicion.Name = "Condicion";
+            // 
+            // legajo
+            // 
+            this.legajo.DataPropertyName = "legajoPersona";
+            this.legajo.HeaderText = "Legajo";
+            this.legajo.Name = "legajo";
+            this.legajo.ReadOnly = true;
             // 
             // Alumno_Curso
             // 
@@ -222,12 +207,10 @@ namespace UI.Desktop.Alum_Inscrip
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.ToolStrip tsMaterias;
         private System.Windows.Forms.ToolStripButton tsbEditar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDInscripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDCurso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDAlumno;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nota;
         private System.Windows.Forms.DataGridViewTextBoxColumn Condicion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn legajo;
     }
 }

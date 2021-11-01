@@ -21,6 +21,11 @@ namespace Business.Entities.Entidades
         {
             get => personas.Apellido;
         }
+        public int legajoPersona
+        {
+            get => personas.Legajo;
+        }
+
 
         public Alumnos_Inscripciones()
         {
