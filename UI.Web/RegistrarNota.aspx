@@ -13,7 +13,7 @@
                <asp:GridView ID="gridViewCursosDelDocente" runat="server" AutoGenerateColumns="False"
                  SelectedRowStyle-BackColor="Black"
                  SelectedRowStyle-ForeColor="White"
-                 DataKeysNames="ID" DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
+                 DataKeysNames="ID" DataKeyNames="ID" OnSelectedIndexChanged="gridViewCursos_SelectedIndexChanged" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
                <Columns>
                    <asp:BoundField HeaderText="ID del Curso" DataField="ID" />
                         <asp:BoundField HeaderText="AnioCalendario" DataField="AnioCalendario" />
@@ -34,15 +34,18 @@
 
                 </asp:GridView>
 
+
+
         <asp:Panel ID="Panel2" runat="server">
             <asp:Label ID="lblAlumnosAsignados" runat="server" Text="Alumnos asignados al curso:"></asp:Label>
                  <asp:GridView ID="gridViewAlumnosDelCursoDelDocente" runat="server" AutoGenerateColumns="False"
                  SelectedRowStyle-BackColor="Black"
                  SelectedRowStyle-ForeColor="White"
-                 DataKeysNames="ID" DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
+                 DataKeysNames="ID" DataKeyNames="ID" OnSelectedIndexChanged="gridViewAlumnos_SelectedIndexChanged" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
                <Columns>
                         <asp:BoundField HeaderText="Nombre" DataField="NombrePersona" />
                         <asp:BoundField HeaderText="Apellido" DataField="ApellidoPersona" />
+                        <asp:BoundField HeaderText="Legajo" DataField="legajoPersona" />
                         <asp:BoundField HeaderText="Nota" DataField="Nota" />
                         <asp:BoundField HeaderText="Condicion" DataField="Condicion" />
                         <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" />
@@ -92,12 +95,12 @@
             &nbsp;
             <asp:Button ID="cancelarButton" runat="server" class="btn btn-outline-primary" Text="Cancelar" OnClick="cancelarButton_Click" />
 
-         <asp:Panel ID="Panel4" runat="server" HorizontalAlign="Center">
-        <asp:Button ID="btnVolver" runat="server" BackColor="#006666" Font-Bold="True" ForeColor="White" Text="Volver al menu" Width="121px" OnClick="btnVolver_Click" />
-             </asp:Panel>
         </asp:Panel>
 
         </asp:Panel>
-    </asp:Panel>              
+    </asp:Panel>    
+            <asp:Panel ID="Panel4" runat="server" HorizontalAlign="Center" Visible ="true">
+        <asp:Button ID="btnVolver" runat="server" BackColor="#006666" Font-Bold="True" ForeColor="White" Text="Volver al menu" Width="121px" OnClick="btnVolver_Click" />
+             </asp:Panel>
 
 </asp:Content>
