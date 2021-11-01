@@ -47,9 +47,9 @@ namespace Business.Logic
             }
         }
 
-        public Usuario GetUsuario(string usuario, string pw)
+        public Usuario GetUsuario(Usuario u)
         {
-            return UsuarioData.GetUsuario(usuario, pw);
+            return UsuarioData.GetUsuario(Usuario u);
         }
 
         public List<Usuario> GetAll()

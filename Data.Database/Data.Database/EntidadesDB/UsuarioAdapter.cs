@@ -306,29 +306,30 @@ namespace Data.Database
             return tipo_persona;
         }
 
-        public Usuario GetUsuario(string usuario, string pw)
+        public Usuario GetUsuario(Usuario u)
         {
-            Usuario usu = null;
             try
             {
                 OpenConnection();
                 SqlCommand cmdUsuarios = new SqlCommand("SELECT us.id_usuario, us.nombre, us.apellido, us.email, us.nombre_usuario, us.clave, us.habilitado FROM usuarios us inner join personas on personas.id_persona = us.id_persona WHERE nombre_usuario = @nombre_usuario and clave = @clave", sqlConn);
-                cmdUsuarios.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario;
-                cmdUsuarios.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = pw;
+                cmdUsuarios.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = u.NombreUsuario;
+                cmdUsuarios.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = u.Clave;
                 SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
+
+                u = null;
 
                 if (drUsuarios != null)
                 {
                     while (drUsuarios.Read())
                     {
-                        usu = new Usuario();
-                        usu.ID = (int)drUsuarios["id_usuario"];
-                        usu.Nombre = (string)drUsuarios["nombre"];
-                        usu.Apellido = (string)drUsuarios["apellido"];
-                        usu.Email = (string)drUsuarios["email"];
-                        usu.NombreUsuario = (string)drUsuarios["nombre_usuario"];
-                        usu.Clave = (string)drUsuarios["clave"];
-                        usu.Habilitado = (bool)drUsuarios["habilitado"];
+                        u = new Usuario();
+                        u.ID = (int)drUsuarios["id_usuario"];
+                        u.Nombre = (string)drUsuarios["nombre"];
+                        u.Apellido = (string)drUsuarios["apellido"];
+                        u.Email = (string)drUsuarios["email"];
+                        u.NombreUsuario = (string)drUsuarios["nombre_usuario"];
+                        u.Clave = (string)drUsuarios["clave"];
+                        u.Habilitado = (bool)drUsuarios["habilitado"];
                     }
                 }
                 

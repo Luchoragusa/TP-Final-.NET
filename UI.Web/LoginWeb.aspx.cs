@@ -24,7 +24,11 @@ namespace UI.Web
         {
             UsuarioLogic loginUsuario = new UsuarioLogic();
 
-            Usuario usuario = loginUsuario.GetUsuario(this.txtUsuario.Text, this.txtPass.Text);            
+            Usuario usuario = new Usuario();
+            usuario.NombreUsuario = this.txtUsuario.Text;
+            usuario.Clave = this.txtPass.Text;
+
+            usuario = loginUsuario.GetUsuario(usuario);            
 
             if (usuario != null)
             {
