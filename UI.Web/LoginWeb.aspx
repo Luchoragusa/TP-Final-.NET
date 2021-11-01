@@ -8,8 +8,8 @@
     <title>[ACADEMIA] Login</title>
     <style type="text/css">
         .auto-style1 {
-            height: 377px;
-            background-color: #63bf65;
+            height: 472px;
+            background-color: #ade2fc;
         }
     </style>
 </head>
@@ -21,8 +21,8 @@
         <h2 class="form-signin-heading" style="font-family: 'Century Gothic'">¡Bienvenido al Sistema!</h2>
             <p class="form-signin-heading" style="font-family: 'Century Gothic'">Por favor digite su información de Ingreso</p>
         <p class="form-signin-heading">&nbsp;</p>
-        <asp:Label ID="usuarioLabel" runat="server" Text="Usuario" Font-Bold="True" Font-Italic="False" Font-Strikeout="False"></asp:Label>
-        &nbsp;<asp:TextBox ID="txtUsuario" runat="server"></asp:TextBox>
+        <asp:Label ID="usuarioLabel" runat="server" Text="Usuario" Font-Bold="True" Font-Italic="False" Font-Strikeout="False" Font-Names="Century Gothic"></asp:Label>
+        &nbsp;<asp:TextBox ID="txtUsuario" runat="server" Font-Names="Century Gothic"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidatorNombreUsuario" runat="server" 
                     ControlToValidate="txtUsuario" 
                     ErrorMessage="El nombre de usuario es obligatorio" 
@@ -31,8 +31,8 @@
                 </asp:RequiredFieldValidator>
         <br />
         <br />
-        <asp:Label ID="claveLabel" runat="server" Text="Clave" Font-Bold="True"></asp:Label>
-        &nbsp;<asp:TextBox ID="txtPass" type="password" runat="server"></asp:TextBox>
+        <asp:Label ID="claveLabel" runat="server" Text="Clave" Font-Bold="True" Font-Names="Century Gothic"></asp:Label>
+        &nbsp;<asp:TextBox ID="txtPass" type="password" runat="server" Font-Names="Century Gothic"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidatorClaveUsuario" runat="server" 
                     ControlToValidate="txtPass" 
                     ErrorMessage="La clave de usuario es obligatoria" 
@@ -42,10 +42,10 @@
 
             <br />
         <br />
-            <asp:Label ID="lblIncorrecto" Visible="false" runat="server" ForeColor="#FF3300" Text="Usuario y/o clave incorrectos"></asp:Label>
+            <asp:Label ID="lblIncorrecto" Visible="False" runat="server" ForeColor="#FF3300" Text="Usuario y/o clave incorrectos" Font-Bold="True" Font-Italic="True" Font-Names="Century Gothic"></asp:Label>
             <br />
-        <asp:Button runat="server" class="btn btn-lg btn-primary btn-block" Text="Ingresar" ID="btnIngresar" OnClick="btnIngresar_Click" />
         <br />
+        <asp:Button runat="server" class="btn btn-lg btn-primary btn-block" Text="Ingresar" ID="btnIngresar" OnClick="btnIngresar_Click" Font-Bold="True" Font-Names="Century Gothic" />
     </div>
     </form>
 </body>
