@@ -10,11 +10,12 @@ namespace Business.Entities.Entidades
     {
         private string _Condicion, _Nota;
         private int _IDAlumno, _IDCurso;
-
+        private Personas personas;
         public string Condicion { get => _Condicion; set => _Condicion = value; } // Regular, Libre, Aprobado, Cursando
         public int IDAlumno { get => _IDAlumno; set => _IDAlumno = value; }
         public int IDCurso { get => _IDCurso; set => _IDCurso = value; }
         public string Nota { get => _Nota; set => _Nota = value; }
+        public Personas Personas { get => personas; set => personas = value; }
     }
 
 

@@ -58,9 +58,7 @@ namespace Data.Database.EntidadesDB
         }
 
         public List<Alumnos_Inscripciones> GetAllByCurso(Curso cur)
-            
         {
-            
             List<Alumnos_Inscripciones> AlumnosDeUnCurso = new List<Alumnos_Inscripciones>();
             try
             {
