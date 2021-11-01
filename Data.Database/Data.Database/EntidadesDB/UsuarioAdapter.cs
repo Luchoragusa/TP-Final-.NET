@@ -344,7 +344,7 @@ namespace Data.Database
             {
                 CloseConnection();
             }
-            return usu;
+            return u;
         }
     }
 }
