@@ -24,11 +24,11 @@ namespace UI.Web
         {
             UsuarioLogic loginUsuario = new UsuarioLogic();
 
-            Usuario usuario = loginUsuario.GetUsuario(this.txtUsuario.Text, this.txtPass.Text);
-            int id_persona = loginUsuario.login(usuario);
+            Usuario usuario = loginUsuario.GetUsuario(this.txtUsuario.Text, this.txtPass.Text);            
 
             if (usuario != null)
             {
+                int id_persona = loginUsuario.login(usuario);
                 Session["usuario"] = usuario;
                 Session["id_persona"] = id_persona;
                 Response.Redirect("MenuPrincipal.aspx");
@@ -37,7 +37,6 @@ namespace UI.Web
             else
             {
                 lblIncorrecto.Visible = true;
-                Response.Redirect("LoginWeb.aspx");
             }
            
         }

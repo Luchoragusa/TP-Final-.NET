@@ -308,7 +308,7 @@ namespace Data.Database
 
         public Usuario GetUsuario(string usuario, string pw)
         {
-            Usuario usu = new Usuario();
+            Usuario usu = null;
             try
             {
                 OpenConnection();
@@ -317,16 +317,21 @@ namespace Data.Database
                 cmdUsuarios.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = pw;
                 SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
 
-                while (drUsuarios.Read())
+                if (drUsuarios != null)
                 {
-                    usu.ID = (int)drUsuarios["id_usuario"];
-                    usu.Nombre = (string)drUsuarios["nombre"];
-                    usu.Apellido = (string)drUsuarios["apellido"];
-                    usu.Email = (string)drUsuarios["email"];
-                    usu.NombreUsuario = (string)drUsuarios["nombre_usuario"];
-                    usu.Clave = (string)drUsuarios["clave"];
-                    usu.Habilitado = (bool)drUsuarios["habilitado"];
+                    while (drUsuarios.Read())
+                    {
+                        usu = new Usuario();
+                        usu.ID = (int)drUsuarios["id_usuario"];
+                        usu.Nombre = (string)drUsuarios["nombre"];
+                        usu.Apellido = (string)drUsuarios["apellido"];
+                        usu.Email = (string)drUsuarios["email"];
+                        usu.NombreUsuario = (string)drUsuarios["nombre_usuario"];
+                        usu.Clave = (string)drUsuarios["clave"];
+                        usu.Habilitado = (bool)drUsuarios["habilitado"];
+                    }
                 }
+                
                 drUsuarios.Close();
             }
             catch (Exception Ex)
