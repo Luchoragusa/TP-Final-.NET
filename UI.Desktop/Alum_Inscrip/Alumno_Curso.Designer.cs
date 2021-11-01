@@ -39,6 +39,7 @@ namespace UI.Desktop.Alum_Inscrip
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.IDInscripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDAlumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -92,6 +93,7 @@ namespace UI.Desktop.Alum_Inscrip
             this.dgvAlum_Incrip.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDInscripcion,
             this.nombre,
+            this.apellido,
             this.IDCurso,
             this.IDAlumno,
             this.Nota,
@@ -152,10 +154,17 @@ namespace UI.Desktop.Alum_Inscrip
             // 
             // nombre
             // 
-            this.nombre.DataPropertyName = "Nombre";
+            this.nombre.DataPropertyName = "NombrePersona";
             this.nombre.HeaderText = "Nombre";
             this.nombre.Name = "nombre";
             this.nombre.ReadOnly = true;
+            // 
+            // apellido
+            // 
+            this.apellido.DataPropertyName = "ApellidoPersona";
+            this.apellido.HeaderText = "Apellido";
+            this.apellido.Name = "apellido";
+            this.apellido.ReadOnly = true;
             // 
             // IDCurso
             // 
@@ -215,6 +224,7 @@ namespace UI.Desktop.Alum_Inscrip
         private System.Windows.Forms.ToolStripButton tsbEditar;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDInscripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDCurso;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDAlumno;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nota;
