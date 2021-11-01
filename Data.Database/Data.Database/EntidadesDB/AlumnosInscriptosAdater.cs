@@ -64,19 +64,23 @@ namespace Data.Database.EntidadesDB
             {
                 this.OpenConnection();
 
-                SqlCommand cmdAlumnos_Inscripcioneses = new SqlCommand("select ai.id_inscripcion, ai.id_alumno, ai.id_curso, ai.condicion, ai.nota, p.nombre, p.apellido from cursos inner join alumnos_inscripciones ai on cursos.id_curso = ai.id_curso inner join personas p on ai.id_alumno = p.id_persona where cursos.id_curso = @idCurso", sqlConn);
+                SqlCommand cmdAlumnos_Inscripcioneses = new SqlCommand("select ai.id_inscripcion, ai.id_alumno, ai.id_curso, ai.condicion, ai.nota, p.nombre, p.apellido, p.legajo from cursos inner join alumnos_inscripciones ai on cursos.id_curso = ai.id_curso inner join personas p on ai.id_alumno = p.id_persona where cursos.id_curso = @idCurso", sqlConn);
                 cmdAlumnos_Inscripcioneses.Parameters.Add("@idCurso", SqlDbType.Int).Value = cur.ID;
                 SqlDataReader drAlumnos_Inscripcioneses = cmdAlumnos_Inscripcioneses.ExecuteReader();
 
                 while (drAlumnos_Inscripcioneses.Read())
                 {
                     Alumnos_Inscripciones Alumnos_Inscripciones = new Alumnos_Inscripciones();
+                    Personas p = new Personas();
+                    p.Nombre = (string)drAlumnos_Inscripcioneses["nombre"];
+                    p.Apellido = (string)drAlumnos_Inscripcioneses["apellido"];
+                    p.Legajo = (int)drAlumnos_Inscripcioneses["id_inscripcion"];
 
+                    Alumnos_Inscripciones.Personas = p;
                     Alumnos_Inscripciones.ID = (int)drAlumnos_Inscripcioneses["id_inscripcion"];
                     Alumnos_Inscripciones.IDAlumno = (int)drAlumnos_Inscripcioneses["id_alumno"];
                     Alumnos_Inscripciones.IDCurso = (int)drAlumnos_Inscripcioneses["id_curso"];
                     Alumnos_Inscripciones.Condicion = (string)drAlumnos_Inscripcioneses["condicion"];
-
 
                     if (string.IsNullOrEmpty(drAlumnos_Inscripcioneses["nota"].ToString())) // verifico si la nota es null
                         Alumnos_Inscripciones.Nota = " - ";

@@ -17,6 +17,4 @@ namespace Business.Entities.Entidades
         public string Nota { get => _Nota; set => _Nota = value; }
         public Personas Personas { get => personas; set => personas = value; }
     }
-
-
 }
