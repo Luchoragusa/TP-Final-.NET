@@ -37,7 +37,7 @@ namespace UI.Web
 
         public void crearPDF()
         {
-            PdfWriter pdfWriter = new PdfWriter(@"C:\Program Files (x86)\IIS Express\Escritorio\ReportePlanes.pdf");
+            PdfWriter pdfWriter = new PdfWriter("ReportePlanes.pdf");
             PdfDocument pdf = new PdfDocument(pdfWriter);
             Document documento = new Document(pdf, PageSize.LETTER);
 
