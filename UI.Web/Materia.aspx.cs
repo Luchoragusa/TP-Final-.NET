@@ -161,5 +161,10 @@ namespace UI.Web
         {
             Response.Redirect("Materia.aspx");
         }
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MenuPrincipal.aspx");
+        }
     }
 }

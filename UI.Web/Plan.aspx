@@ -8,7 +8,7 @@
         <div>
         </div>
 
-        <asp:Panel ID="gridPanel" runat="server" Height="225px" Width="545px">
+        <asp:Panel ID="gridPanel" runat="server" Height="182px" Width="1278px">
             <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False"  HorizontalAlign="Center"
                 SelectedRowStyle-BackColor="Black"
                 SelectedRowStyle-ForeColor="White"
@@ -29,6 +29,10 @@
                 <SortedDescendingHeaderStyle BackColor="#275353" />
             </asp:GridView>
          </asp:Panel>
+
+        <asp:Panel ID="Panel4" runat="server" HorizontalAlign="Center">
+        <asp:Button ID="btnVolver" runat="server" BackColor="#006666" Font-Bold="True" ForeColor="White" Text="Volver al menu" Width="121px" OnClick="btnVolver_Click" />
+             </asp:Panel>
 
             <asp:Panel ID="formPanel" Visible="False" runat="server">
                 <asp:Label ID ="descripcionLabel" runat="server" Text="Descripcion: "></asp:Label>

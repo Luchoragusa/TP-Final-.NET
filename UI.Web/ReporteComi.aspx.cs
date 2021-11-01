@@ -75,5 +75,10 @@ namespace UI.Web
             //documento.Add(tabla);
             //documento.Close();
         }
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MenuPrincipal.aspx");
+        }
     }
 }

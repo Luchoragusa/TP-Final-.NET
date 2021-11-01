@@ -235,5 +235,10 @@ namespace UI.Web
         {
             Response.Redirect("Usuarios.aspx");
         }
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MenuPrincipal.aspx");
+        }
     }
 }

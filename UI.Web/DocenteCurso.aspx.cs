@@ -93,39 +93,6 @@ namespace UI.Web
             DocenteCurso.IDCurso = int.Parse(this.idcursoTextBox.Text); 
         }
 
-        protected void aceptarLinkButton_Click(object sender, EventArgs e)
-        {
-            switch (this.FormMode)
-            {
-                case FormModes.Alta:
-                    this.Entity = new Business.Entities.Entidades.DocenteCurso();
-                    this.LoadEntity(this.Entity);
-                    this.SaveEntity(this.Entity);
-                    this.LoadGrid();
-                    break;
-                case FormModes.Baja:
-                    this.DeleteEntity(this.SelectedID);
-                    this.LoadGrid();
-                    break;
-                case FormModes.Modificacion:
-                    this.Entity = new Business.Entities.Entidades.DocenteCurso();
-                    this.Entity.ID = this.SelectedID;
-                    this.Entity.State = BusinessEntity.States.Modified;
-                    this.LoadEntity(this.Entity);
-                    this.SaveEntity(this.Entity);
-                    this.LoadGrid();
-                    break;
-                default:
-                    break;
-            }
-            this.formPanel.Visible = false;
-        }
-
-        protected void cancelarLinkButton_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("DocenteCurso.aspx");
-        }
-
         protected void nuevoLinkButton_Click(object sender, EventArgs e)
         {
             this.formPanel.Visible = true;
@@ -158,6 +125,44 @@ namespace UI.Web
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.SelectedID = (int)this.gridView.SelectedValue;
+        }
+
+        protected void acceptaButton_Click(object sender, EventArgs e)
+        {
+            switch (this.FormMode)
+            {
+                case FormModes.Alta:
+                    this.Entity = new Business.Entities.Entidades.DocenteCurso();
+                    this.LoadEntity(this.Entity);
+                    this.SaveEntity(this.Entity);
+                    this.LoadGrid();
+                    break;
+                case FormModes.Baja:
+                    this.DeleteEntity(this.SelectedID);
+                    this.LoadGrid();
+                    break;
+                case FormModes.Modificacion:
+                    this.Entity = new Business.Entities.Entidades.DocenteCurso();
+                    this.Entity.ID = this.SelectedID;
+                    this.Entity.State = BusinessEntity.States.Modified;
+                    this.LoadEntity(this.Entity);
+                    this.SaveEntity(this.Entity);
+                    this.LoadGrid();
+                    break;
+                default:
+                    break;
+            }
+            this.formPanel.Visible = false;
+        }
+
+        protected void cancelarButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("DocenteCurso.aspx");
+        }
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MenuPrincipal.aspx");
         }
     }
 }

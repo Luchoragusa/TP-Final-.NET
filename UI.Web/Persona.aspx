@@ -36,6 +36,10 @@
                 </asp:GridView>
             </asp:Panel>
 
+        <asp:Panel ID="Panel4" runat="server" HorizontalAlign="Center">
+        <asp:Button ID="btnVolver" runat="server" BackColor="#006666" Font-Bold="True" ForeColor="White" Text="Volver al menu" Width="121px" OnClick="btnVolver_Click" />
+             </asp:Panel>
+
         <asp:Panel ID="formPanel" Visible="False" runat="server">
         
          <asp:Label ID ="nombreLabel" runat="server" Text="Nombre: "></asp:Label>

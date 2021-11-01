@@ -30,6 +30,13 @@
         </asp:GridView>
     </asp:Panel>
 
-    <asp:Button ID="btnDescargarPDF" runat="server" OnClick="btnDescargarPDF_Click" Text="Descargar PDF" />
+        <asp:Panel ID="Panel4" runat="server" HorizontalAlign="Center">
+        <asp:Button ID="btnVolver" runat="server" BackColor="#006666" Font-Bold="True" ForeColor="White" Text="Volver al menu" Width="121px" OnClick="btnVolver_Click" />
+             </asp:Panel>
+
+        <asp:Panel ID="Panel1" runat="server" HorizontalAlign="Center"> 
+            <asp:Button ID="btnDescargarPDF" runat="server" OnClick="btnDescargarPDF_Click" Text="Descargar PDF" />
+             </asp:Panel>
+   
 
 </asp:Content>

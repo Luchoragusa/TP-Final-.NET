@@ -7,7 +7,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="PageContent" runat="server">
         <div dir="ltr">
         </div>
-        <asp:Panel ID="gridPanel" runat="server" Height="216px" Width="1498px">
+        <asp:Panel ID="gridPanel" runat="server" Height="174px" Width="1498px">
                 <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False" HorizontalAlign="Center"
                     SelectedRowStyle-BackColor="Blue"
                     SelectedRowStyle-ForeColor="White"
@@ -34,7 +34,12 @@
                 <br />
         </asp:Panel>
 
+    <asp:Panel ID="Panel4" runat="server" HorizontalAlign="Center">
+        <asp:Button ID="btnVolver" runat="server" BackColor="#006666" Font-Bold="True" ForeColor="White" Text="Volver al menu" Width="121px" OnClick="btnVolver_Click" />
+             </asp:Panel>
+
      <asp:Panel ID="formPanel" Visible="False" runat="server">
+        
         
          <asp:Label ID ="idcursoLabel" runat="server" Text="IDCurso: "></asp:Label>
         <asp:TextBox ID="idcursoTextBox" runat="server"></asp:TextBox>
@@ -52,7 +57,7 @@
         <asp:TextBox ID="condicionTextBox" runat="server"></asp:TextBox>
         <br />      
            
-        <asp:Panel ID="Panel1" runat="server" HorizontalAlign="Center" Visible="false">
+        <asp:Panel ID="Panel1" runat="server" HorizontalAlign="Center" Visible="true">
             <asp:Button ID="aceptarButton" runat="server" class="btn btn-outline-primary" Text="Aceptar" OnClick="acceptaButton_Click" Width="72px" />
             &nbsp;
             <asp:Button ID="cancelarButton" runat="server" class="btn btn-outline-primary" Text="Cancelar" OnClick="cancelarButton_Click" />

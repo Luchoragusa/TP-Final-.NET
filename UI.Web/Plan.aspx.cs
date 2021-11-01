@@ -81,11 +81,6 @@ namespace UI.Web
             this.SelectedID = (int)this.gridView.SelectedValue;
         }
 
-        protected void cancelarLinkButton_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Plan.aspx");
-        }
-
         protected void editarLinkButton_Click(object sender, EventArgs e)
         {
             if (this.IsEntitySelected)
@@ -117,7 +112,36 @@ namespace UI.Web
             this.Logic.Save(plan);
         }
 
-        protected void aceptarLinkButton_Click(object sender, EventArgs e)
+        protected override void DeleteEntity(int id)
+        {
+            this.Logic.Delete(id);
+        }
+
+        protected void eliminarLinkButton_Click(object sender, EventArgs e)
+        {
+            if (this.IsEntitySelected)
+            {
+                this.formPanel.Visible = true;
+                this.FormMode = FormModes.Baja;
+                this.EnableForm(false);
+                this.LoadForm(this.SelectedID);
+            }
+        }
+
+        protected void nuevoLinkButton_Click(object sender, EventArgs e)
+        {
+            this.formPanel.Visible = true;
+            this.FormMode = FormModes.Alta;
+            this.ClearForm();
+            this.EnableForm(true);
+        }
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MenuPrincipal.aspx");
+        }
+
+        protected void acceptaButton_Click(object sender, EventArgs e)
         {
             Boolean band = false;
             switch (this.FormMode)
@@ -151,28 +175,9 @@ namespace UI.Web
                 this.formPanel.Visible = false;
         }
 
-        protected override void DeleteEntity(int id)
+        protected void cancelarButton_Click(object sender, EventArgs e)
         {
-            this.Logic.Delete(id);
-        }
-
-        protected void eliminarLinkButton_Click(object sender, EventArgs e)
-        {
-            if (this.IsEntitySelected)
-            {
-                this.formPanel.Visible = true;
-                this.FormMode = FormModes.Baja;
-                this.EnableForm(false);
-                this.LoadForm(this.SelectedID);
-            }
-        }
-
-        protected void nuevoLinkButton_Click(object sender, EventArgs e)
-        {
-            this.formPanel.Visible = true;
-            this.FormMode = FormModes.Alta;
-            this.ClearForm();
-            this.EnableForm(true);
+            Response.Redirect("Plan.aspx");
         }
     }
 }
