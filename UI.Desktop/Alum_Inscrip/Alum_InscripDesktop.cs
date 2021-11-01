@@ -17,13 +17,11 @@ namespace UI.Desktop.Alum_Inscrip
         {
             InitializeComponent();
         }
-
         public Alum_InscripDesktop(ModoForm modo) : this()
         {
             this.Modo = modo;
             MapearDeDatos();
         }
-
         private Alumnos_Inscripciones _Alumn_Incrip;
         public Alumnos_Inscripciones Alum_InscripActual
         {
@@ -39,7 +37,9 @@ namespace UI.Desktop.Alum_Inscrip
             Alumno_InscripcionLogic alu_ins = new Alumno_InscripcionLogic();
             try
             {
-                Alum_InscripActual = alu_ins.GetOne(ID);
+                Alumnos_Inscripciones ai = new Alumnos_Inscripciones();
+                ai.ID = ID;
+                Alum_InscripActual = alu_ins.GetOne(ai);
                 MapearDeDatos();
             }
             catch (Exception ex)
@@ -57,9 +57,9 @@ namespace UI.Desktop.Alum_Inscrip
                 if (Modo == ModoForm.Modificacion) this.btnModo.Text = "Guardar";
                 else if (Modo == ModoForm.Baja) this.btnModo.Text = "Eliminar";
 
-                this.txtID.Text = this.Alum_InscripActual.ID.ToString();
-                this.txtIDAlumno.Text = this.Alum_InscripActual.IDAlumno.ToString();
-                this.txtIDCurso.Text = this.Alum_InscripActual.IDCurso.ToString();
+                this.txtNombre.Text = this.Alum_InscripActual.NombrePersona.ToString();
+                this.txtApellido.Text = this.Alum_InscripActual.ApellidoPersona.ToString();
+                this.txtLegajo.Text = this.Alum_InscripActual.legajoPersona.ToString();
                 this.cbCondicion.Text = this.Alum_InscripActual.Condicion;
                 this.txtNota.Text = this.Alum_InscripActual.Nota.ToString();
             }
@@ -78,10 +78,7 @@ namespace UI.Desktop.Alum_Inscrip
                 if (Modo != ModoForm.Alta)
                 {
                     Alum_InscripActual.State = BusinessEntity.States.Modified;
-                   // this.txtID.Text = this.Alum_InscripActual.ID.ToString();  es la id asiganda por la DB no tiene sentido
                 }
-                this.Alum_InscripActual.IDAlumno = int.Parse(this.txtIDAlumno.Text);
-                this.Alum_InscripActual.IDCurso = int.Parse(this.txtIDCurso.Text);
                 this.Alum_InscripActual.Condicion = this.cbCondicion.Text;
                 this.Alum_InscripActual.Nota = this.txtNota.Text;
             }
@@ -106,7 +103,7 @@ namespace UI.Desktop.Alum_Inscrip
 
         public override bool Validar()
         {
-            if (txtIDAlumno.Text.Equals(String.Empty) || txtIDCurso.Text.Equals(String.Empty) || cbCondicion.Text.Equals(String.Empty))
+            if (txtApellido.Text.Equals(String.Empty) || txtLegajo.Text.Equals(String.Empty) || cbCondicion.Text.Equals(String.Empty))
             {
                 Notificar("Algunos de los campos están vaciós", "Complete todos para continuar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;

@@ -35,12 +35,12 @@ namespace UI.Desktop.Alum_Inscrip
             this.btnModo = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblCondicion = new System.Windows.Forms.Label();
-            this.lblCurso = new System.Windows.Forms.Label();
-            this.txtIDCurso = new System.Windows.Forms.TextBox();
-            this.lblIDAlumno = new System.Windows.Forms.Label();
-            this.lblInscripcion = new System.Windows.Forms.Label();
-            this.txtIDAlumno = new System.Windows.Forms.TextBox();
-            this.txtID = new System.Windows.Forms.TextBox();
+            this.lblLegajo = new System.Windows.Forms.Label();
+            this.txtLegajo = new System.Windows.Forms.TextBox();
+            this.lblApellido = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.cbCondicion = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -55,12 +55,12 @@ namespace UI.Desktop.Alum_Inscrip
             this.tableLayoutPanel1.Controls.Add(this.btnModo, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.lblCondicion, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.lblCurso, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txtIDCurso, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lblIDAlumno, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblInscripcion, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtIDAlumno, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtID, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblLegajo, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txtLegajo, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lblApellido, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblNombre, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtApellido, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtNombre, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.cbCondicion, 1, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -125,60 +125,62 @@ namespace UI.Desktop.Alum_Inscrip
             this.lblCondicion.TabIndex = 13;
             this.lblCondicion.Text = "Condicion";
             // 
-            // lblCurso
+            // lblLegajo
             // 
-            this.lblCurso.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblCurso.AutoSize = true;
-            this.lblCurso.Location = new System.Drawing.Point(3, 143);
-            this.lblCurso.Name = "lblCurso";
-            this.lblCurso.Size = new System.Drawing.Size(65, 13);
-            this.lblCurso.TabIndex = 11;
-            this.lblCurso.Text = "ID del Curso";
+            this.lblLegajo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblLegajo.AutoSize = true;
+            this.lblLegajo.Location = new System.Drawing.Point(3, 143);
+            this.lblLegajo.Name = "lblLegajo";
+            this.lblLegajo.Size = new System.Drawing.Size(39, 13);
+            this.lblLegajo.TabIndex = 11;
+            this.lblLegajo.Text = "Legajo";
             // 
-            // txtIDCurso
+            // txtLegajo
             // 
-            this.txtIDCurso.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtIDCurso.Location = new System.Drawing.Point(124, 140);
-            this.txtIDCurso.Name = "txtIDCurso";
-            this.txtIDCurso.Size = new System.Drawing.Size(256, 20);
-            this.txtIDCurso.TabIndex = 2;
+            this.txtLegajo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtLegajo.Location = new System.Drawing.Point(124, 140);
+            this.txtLegajo.Name = "txtLegajo";
+            this.txtLegajo.ReadOnly = true;
+            this.txtLegajo.Size = new System.Drawing.Size(256, 20);
+            this.txtLegajo.TabIndex = 2;
             // 
-            // lblIDAlumno
+            // lblApellido
             // 
-            this.lblIDAlumno.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblIDAlumno.AutoSize = true;
-            this.lblIDAlumno.Location = new System.Drawing.Point(3, 83);
-            this.lblIDAlumno.Name = "lblIDAlumno";
-            this.lblIDAlumno.Size = new System.Drawing.Size(73, 13);
-            this.lblIDAlumno.TabIndex = 10;
-            this.lblIDAlumno.Text = "ID del Alumno";
+            this.lblApellido.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblApellido.AutoSize = true;
+            this.lblApellido.Location = new System.Drawing.Point(3, 83);
+            this.lblApellido.Name = "lblApellido";
+            this.lblApellido.Size = new System.Drawing.Size(44, 13);
+            this.lblApellido.TabIndex = 10;
+            this.lblApellido.Text = "Apellido";
             // 
-            // lblInscripcion
+            // lblNombre
             // 
-            this.lblInscripcion.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblInscripcion.AutoSize = true;
-            this.lblInscripcion.Location = new System.Drawing.Point(3, 23);
-            this.lblInscripcion.Name = "lblInscripcion";
-            this.lblInscripcion.Size = new System.Drawing.Size(87, 13);
-            this.lblInscripcion.TabIndex = 12;
-            this.lblInscripcion.Text = "ID de Inscripcion";
+            this.lblNombre.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(3, 23);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.TabIndex = 12;
+            this.lblNombre.Text = "Nombre";
             // 
-            // txtIDAlumno
+            // txtApellido
             // 
-            this.txtIDAlumno.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtIDAlumno.Location = new System.Drawing.Point(124, 80);
-            this.txtIDAlumno.Name = "txtIDAlumno";
-            this.txtIDAlumno.Size = new System.Drawing.Size(256, 20);
-            this.txtIDAlumno.TabIndex = 0;
+            this.txtApellido.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtApellido.Location = new System.Drawing.Point(124, 80);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.ReadOnly = true;
+            this.txtApellido.Size = new System.Drawing.Size(256, 20);
+            this.txtApellido.TabIndex = 0;
             // 
-            // txtID
+            // txtNombre
             // 
-            this.txtID.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtID.Location = new System.Drawing.Point(124, 20);
-            this.txtID.Name = "txtID";
-            this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(256, 20);
-            this.txtID.TabIndex = 1;
+            this.txtNombre.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtNombre.Location = new System.Drawing.Point(124, 20);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.ReadOnly = true;
+            this.txtNombre.Size = new System.Drawing.Size(256, 20);
+            this.txtNombre.TabIndex = 1;
             // 
             // cbCondicion
             // 
@@ -215,12 +217,12 @@ namespace UI.Desktop.Alum_Inscrip
         private System.Windows.Forms.Button btnModo;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lblCondicion;
-        private System.Windows.Forms.Label lblCurso;
-        private System.Windows.Forms.TextBox txtIDCurso;
-        private System.Windows.Forms.Label lblIDAlumno;
-        private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.Label lblInscripcion;
-        private System.Windows.Forms.TextBox txtIDAlumno;
+        private System.Windows.Forms.Label lblLegajo;
+        private System.Windows.Forms.TextBox txtLegajo;
+        private System.Windows.Forms.Label lblApellido;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.ComboBox cbCondicion;
     }
 }

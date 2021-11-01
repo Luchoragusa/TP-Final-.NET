@@ -104,27 +104,32 @@ namespace Data.Database.EntidadesDB
             return AlumnosDeUnCurso;
         }
 
-        public Alumnos_Inscripciones GetOne(int ID)
+        public Alumnos_Inscripciones GetOne(Alumnos_Inscripciones alu)
         {
-            Alumnos_Inscripciones Alumnos_Inscripciones = new Alumnos_Inscripciones();
             try
             {
                 OpenConnection();
-                SqlCommand cmdAlumnos_Inscripcioneses = new SqlCommand("SELECT * FROM alumnos_inscripciones WHERE id_inscripcion = @id", sqlConn);
-                cmdAlumnos_Inscripcioneses.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+                SqlCommand cmdAlumnos_Inscripcioneses = new SqlCommand("SELECT p.nombre, p.apellido, p.legajo, ai.condicion, ai.nota FROM alumnos_inscripciones ai inner join personas p on ai.id_alumno = p.id_persona WHERE id_inscripcion = @id; ", sqlConn);
+                cmdAlumnos_Inscripcioneses.Parameters.Add("@id", SqlDbType.Int).Value = alu.ID;
+
                 SqlDataReader drAlumnos_Inscripcioneses = cmdAlumnos_Inscripcioneses.ExecuteReader();
                 while (drAlumnos_Inscripcioneses.Read())
                 {
-                    Alumnos_Inscripciones.ID = (int)drAlumnos_Inscripcioneses["id_inscripcion"];
-                    Alumnos_Inscripciones.IDAlumno = (int)drAlumnos_Inscripcioneses["id_alumno"];
-                    Alumnos_Inscripciones.IDCurso = (int)drAlumnos_Inscripcioneses["id_curso"];
-                    Alumnos_Inscripciones.Condicion = (string)drAlumnos_Inscripcioneses["condicion"];
+                    alu.Condicion = (string)drAlumnos_Inscripcioneses["condicion"];
 
                     if (string.IsNullOrEmpty(drAlumnos_Inscripcioneses["nota"].ToString())) // verifico si la nota es null
-                        Alumnos_Inscripciones.Nota = " - ";
+                        alu.Nota = " - ";
                     else
-                        Alumnos_Inscripciones.Nota = (string)drAlumnos_Inscripcioneses["nota"].ToString();
+                        alu.Nota = (string)drAlumnos_Inscripcioneses["nota"].ToString();
+
+                    Personas p = new Personas();
+                    p.Nombre = (string)drAlumnos_Inscripcioneses["nombre"];
+                    p.Apellido = (string)drAlumnos_Inscripcioneses["apellido"];
+                    p.Legajo = (int)drAlumnos_Inscripcioneses["legajo"];
+
+                    alu.Personas = p;
                 }
+
                 drAlumnos_Inscripcioneses.Close();
             }
             catch (Exception Ex)
@@ -136,7 +141,7 @@ namespace Data.Database.EntidadesDB
             {
                 CloseConnection();
             }
-            return Alumnos_Inscripciones;
+            return alu;
         }
 
         public void Delete(int ID)
@@ -201,17 +206,13 @@ namespace Data.Database.EntidadesDB
 
                 if (Alumnos_Inscripciones.Nota != " - ") // verifico si la nota quq carga el usuario es null
                 {
-                    cmdUpd = new SqlCommand("UPDATE alumnos_inscripciones SET id_alumno = @id_alumno, id_curso = @id_curso, condicion = @condicion, nota = @nota WHERE id_inscripcion = @id ", sqlConn);
+                    cmdUpd = new SqlCommand("UPDATE alumnos_inscripciones SET condicion = @condicion, nota = @nota WHERE id_inscripcion = @id ", sqlConn);
                    cmdUpd.Parameters.Add("@nota", SqlDbType.Int).Value = int.Parse(Alumnos_Inscripciones.Nota);
                 }
                 else
                     cmdUpd = new SqlCommand("UPDATE alumnos_inscripciones SET id_alumno = @id_alumno, id_curso = @id_curso, condicion = @condicion, nota = @nota WHERE id_inscripcion = @id ", sqlConn);
                 cmdUpd.Parameters.Add("@id", SqlDbType.Int).Value = Alumnos_Inscripciones.ID;
-                cmdUpd.Parameters.Add("@id_alumno", SqlDbType.Int).Value = Alumnos_Inscripciones.IDAlumno;
-                cmdUpd.Parameters.Add("@id_curso", SqlDbType.Int).Value = Alumnos_Inscripciones.IDCurso;
                 cmdUpd.Parameters.Add("@condicion", SqlDbType.VarChar, 50).Value = Alumnos_Inscripciones.Condicion;
-                //cmdUpd.Parameters.Add("@nota", SqlDbType.Int).Value = int.Parse(Alumnos_Inscripciones.Nota);
-                
 
                 cmdUpd.ExecuteNonQuery();
             }

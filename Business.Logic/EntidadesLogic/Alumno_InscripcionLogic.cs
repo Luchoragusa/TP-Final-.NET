@@ -23,11 +23,11 @@ namespace Business.Logic.EntidadesLogic
             get { return aiData; }
             set { aiData = value; }
         }
-        public Alumnos_Inscripciones GetOne(int id)
+        public Alumnos_Inscripciones GetOne(Alumnos_Inscripciones alu)
         {
             try
             {
-                return Alumno_InscripcionData.GetOne(id);
+                return Alumno_InscripcionData.GetOne(alu);
             }
             catch (Exception ex)
             {
