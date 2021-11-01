@@ -43,9 +43,8 @@ namespace UI.Web
         {
             Business.Logic.EntidadesLogic.Alumno_InscripcionLogic al = new Business.Logic.EntidadesLogic.Alumno_InscripcionLogic();
 
-            Business.Entities.Curso curso = null;
-            int id = (int)this.gridViewCursosDelDocente.SelectedValue;
-            curso.ID = id;
+            Business.Entities.Curso curso = new Business.Entities.Curso();
+            curso.ID = (int)this.gridViewCursosDelDocente.SelectedValue;
 
             this.gridViewAlumnosDelCursoDelDocente.DataSource = al.GetAllByCurso(curso);
             this.gridViewAlumnosDelCursoDelDocente.DataBind();
