@@ -41,8 +41,8 @@
                  SelectedRowStyle-ForeColor="White"
                  DataKeysNames="ID" DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
                <Columns>
-                        <asp:BoundField HeaderText="Nombre" DataField="AnioCalendario" />
-                        <asp:BoundField HeaderText="Apellido" DataField="Cupo" />
+                        <asp:BoundField HeaderText="Nombre" DataField="NombrePersona" />
+                        <asp:BoundField HeaderText="Apellido" DataField="ApellidoPersona" />
                         <asp:BoundField HeaderText="Nota" DataField="Nota" />
                         <asp:BoundField HeaderText="Condicion" DataField="Condicion" />
                         <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" />

@@ -11,6 +11,17 @@ namespace Business.Entities.Entidades
         private string _Condicion, _Nota;
         private int _IDAlumno, _IDCurso;
         private Personas personas;
+
+        public string NombrePersona()
+        {
+            return personas.Nombre;
+        }
+
+        public string ApellidoPersona()
+        {
+            return personas.Apellido;
+        }
+
         public Alumnos_Inscripciones()
         {
             this.personas = new Personas();
