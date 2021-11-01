@@ -43,20 +43,50 @@
         
          <asp:Label ID ="anioCalendarioLabel" runat="server" Text="Año Calendario: "></asp:Label>
         <asp:TextBox ID="anioCalendarioTextBox" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidatorAnioCalendario" runat="server" 
+                    ControlToValidate="anioCalendarioTextBox" 
+                    ErrorMessage="El anio del calendario es obligatorio" 
+                    ForeColor="Red">
+                    *
+                </asp:RequiredFieldValidator>
         <br />
         
          <asp:Label ID="cupoLabel" runat="server" Text="Cupo: "></asp:Label>
         <asp:TextBox ID="cupoTextBox" runat="server" Width="37px"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidatorCupo" runat="server" 
+                    ControlToValidate="cupoTextBox" 
+                    ErrorMessage="El cupo es obligatorio" 
+                    ForeColor="Red">
+                    *
+                </asp:RequiredFieldValidator>
         <br />
         
          <asp:Label ID="idComisionLabel" runat="server" Text="ID de la Comision: "></asp:Label>
         <asp:TextBox ID="idComisionTextBox" runat="server" Width="40px"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidatorIDComision" runat="server" 
+                    ControlToValidate="idComisionTextBox" 
+                    ErrorMessage="La ID de la Comision es obligatoria" 
+                    ForeColor="Red">
+                    *
+                </asp:RequiredFieldValidator>
         <br />
                 <asp:Label ID="idMateriaLabel" runat="server" Text="ID de la Materia: "></asp:Label>
         <asp:TextBox ID="idMateriaTextBox" runat="server" Width="40px"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidatorIDMateria" runat="server" 
+                    ControlToValidate="idMateriaTextBox" 
+                    ErrorMessage="La ID de la Materia es obligatoria" 
+                    ForeColor="Red">
+                    *
+                </asp:RequiredFieldValidator>
         <br />
                 <asp:Label ID="descripcionLabel" runat="server" Text="Descripcion: "></asp:Label>
         <asp:TextBox ID="descripcionTextBox" runat="server" Width="119px"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidatorDescripcion" runat="server" 
+                    ControlToValidate="descripcionTextBox" 
+                    ErrorMessage="La descripcion es obligatoria" 
+                    ForeColor="Red">
+                    *
+                </asp:RequiredFieldValidator>
         <br />
              
            

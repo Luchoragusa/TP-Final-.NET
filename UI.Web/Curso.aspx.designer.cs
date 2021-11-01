@@ -78,6 +78,15 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.TextBox anioCalendarioTextBox;
 
         /// <summary>
+        /// Control RequiredFieldValidatorAnioCalendario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorAnioCalendario;
+
+        /// <summary>
         /// Control cupoLabel.
         /// </summary>
         /// <remarks>
@@ -94,6 +103,15 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox cupoTextBox;
+
+        /// <summary>
+        /// Control RequiredFieldValidatorCupo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorCupo;
 
         /// <summary>
         /// Control idComisionLabel.
@@ -114,6 +132,15 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.TextBox idComisionTextBox;
 
         /// <summary>
+        /// Control RequiredFieldValidatorIDComision.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorIDComision;
+
+        /// <summary>
         /// Control idMateriaLabel.
         /// </summary>
         /// <remarks>
@@ -132,6 +159,15 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.TextBox idMateriaTextBox;
 
         /// <summary>
+        /// Control RequiredFieldValidatorIDMateria.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorIDMateria;
+
+        /// <summary>
         /// Control descripcionLabel.
         /// </summary>
         /// <remarks>
@@ -148,6 +184,15 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox descripcionTextBox;
+
+        /// <summary>
+        /// Control RequiredFieldValidatorDescripcion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorDescripcion;
 
         /// <summary>
         /// Control Panel1.

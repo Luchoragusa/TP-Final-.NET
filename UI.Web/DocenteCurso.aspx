@@ -37,12 +37,24 @@
 
         <asp:Panel ID="formPanel" Visible="False" runat="server">
         
-         <asp:Label ID ="iddocenteLabel" runat="server" Text="IdDocente: "></asp:Label>
-        <asp:TextBox ID="iddocenteTextBox" runat="server"></asp:TextBox>
+         <asp:Label ID ="iddocenteLabel" runat="server" Text="ID del Docente: "></asp:Label>
+        <asp:TextBox ID="iddocenteTextBox" runat="server" Width="37px"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidatorIDDocente" runat="server" 
+                    ControlToValidate="iddocenteTextBox" 
+                    ErrorMessage="La ID del Docente es obligatoria" 
+                    ForeColor="Red">
+                    *
+                </asp:RequiredFieldValidator>
         <br />
         
-         <asp:Label ID="idcursoLabel" runat="server" Text="IdCurso: "></asp:Label>
-        <asp:TextBox ID="idcursoTextBox" runat="server"></asp:TextBox>
+         <asp:Label ID="idcursoLabel" runat="server" Text="ID del Curso: "></asp:Label>
+        <asp:TextBox ID="idcursoTextBox" runat="server" Width="37px"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidatorIDCurso" runat="server" 
+                    ControlToValidate="idcursoTextBox" 
+                    ErrorMessage="La ID del Curso es obligatoria" 
+                    ForeColor="Red">
+                    *
+                </asp:RequiredFieldValidator>
         <br />
         
 

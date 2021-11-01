@@ -36,6 +36,12 @@
         
          <asp:Label ID ="descripcionLabel" runat="server" Text="Descripcion: "></asp:Label>
         <asp:TextBox ID="descripcionTextBox" runat="server"></asp:TextBox>
+         <asp:RequiredFieldValidator ID="RequiredFieldValidatorEspecialidad" runat="server" 
+                    ControlToValidate="descripcionTextBox" 
+                    ErrorMessage="La descripcion de la Especialidad es obligatoria" 
+                    ForeColor="Red">
+                    *
+                </asp:RequiredFieldValidator>
         <br />
         
            

@@ -39,37 +39,84 @@
     <asp:Panel ID="formPanel" Visible="False" runat="server">
         <asp:Label ID ="nombreLabel" runat="server" Text="Nombre: "></asp:Label>
         <asp:TextBox ID="nombreTextBox" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidatorNombre" runat="server" 
+                    ControlToValidate="nombreTextBox" 
+                    ErrorMessage="El nombre es obligatorio" 
+                    ForeColor="Red">
+                    *
+                </asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="apellidoLabel" runat="server" Text="Apellido: "></asp:Label>
         <asp:TextBox ID="apellidoTextBox" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidatorApellido" runat="server" 
+                    ControlToValidate="apellidoTextBox" 
+                    ErrorMessage="El apellido es obligatorio" 
+                    ForeColor="Red">
+                    *
+                </asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="emailLabel" runat="server" Text="Email: "></asp:Label>
         <asp:TextBox ID="emailTextBox" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidatorEmail" runat="server" 
+                    ControlToValidate="emailTextBox" 
+                    ErrorMessage="El email es obligatorio" 
+                    ForeColor="Red">
+                    *
+                </asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="habilitadoLabel" runat="server" Text="Habilitado: "></asp:Label>
         <asp:CheckBox ID="habilitadoCheckBox" runat="server" />
+
         <br />
         <asp:Label ID="nombreUsuarioLabel" runat="server" Text="Usuario: "></asp:Label>
         <asp:TextBox ID="nombreUsuarioTextBox" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidatorNombreUsuario" runat="server" 
+                    ControlToValidate="nombreUsuarioTextBox" 
+                    ErrorMessage="El nombre de usuario es obligatorio" 
+                    ForeColor="Red">
+                    *
+                </asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="claveLabel" runat="server" Text="Clave: "></asp:Label>
         <asp:TextBox ID="claveTextBox" TextMode="Password" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidatorClave" runat="server" 
+                    ControlToValidate="claveTextBox" 
+                    ErrorMessage="La clave es obligatoria" 
+                    ForeColor="Red">
+                    *
+                </asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="repetirClaveLabel" runat="server" Text="Repetir clave: ">
         </asp:Label>
         <asp:TextBox ID="repetirClaveTextBox" TextMode="Password" runat="server">
         </asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidatorRepetirClave" runat="server" 
+                    ControlToValidate="repetirClaveTextBox" 
+                    ErrorMessage="La repeticion de clave es obligatoria" 
+                    ForeColor="Red">
+                    *
+                </asp:RequiredFieldValidator>
            
-        <asp:Panel ID="formActionsPanel" runat="server">
-            <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
-            <asp:LinkButton ID="cancelarLinkButton" runat="server" OnClick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>
+        <asp:Panel ID="Panel1" runat="server" HorizontalAlign="Center" Visible="false">
+            <asp:Button ID="aceptarButton" runat="server" class="btn btn-outline-primary" Text="Aceptar" OnClick="acceptaButton_Click" />
+            &nbsp;
+            <asp:Button ID="cancelarButton" runat="server" class="btn btn-outline-primary" Text="Cancelar" OnClick="cancelarButton_Click" style="height: 26px" />
         </asp:Panel>
-</asp:Panel>
+        
+     </asp:Panel>
 
-    <asp:Panel ID="gridActionsPanel" runat="server">
-        <asp:LinkButton ID="editarLinkButton" runat="server" OnClick="editarLinkButton_Click">Editar</asp:LinkButton>
-        <asp:LinkButton ID="eliminarLinkButton" runat="server" OnClick="eliminarLinkButton_Click">Eliminar</asp:LinkButton>
-        <asp:LinkButton ID="nuevoLinkButton" runat="server" OnClick="nuevoLinkButton_Click">Nuevo</asp:LinkButton>
-    </asp:Panel>
+<asp:Panel ID="gridActionsPanel" runat="server" HorizontalAlign="Center">
+            <div class="container" style="background-color: darkgray">
+                <div class="jumbotron text-center">
+                <p class="fs-5">
+                    <asp:LinkButton ID="editarLinkButton" runat="server" OnClick="editarLinkButton_Click">Editar</asp:LinkButton>
+                    &nbsp;
+                    <asp:LinkButton ID="eliminarLinkButton" runat="server" OnClick="eliminarLinkButton_Click">Eliminar</asp:LinkButton>
+                    &nbsp;
+                    <asp:LinkButton ID="nuevoLinkButton" runat="server" OnClick="nuevoLinkButton_Click">Nuevo</asp:LinkButton>
+                </p>
+                </div>
+            </div>
+        </asp:Panel>
 
 </asp:Content>

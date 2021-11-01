@@ -78,6 +78,15 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.TextBox idcursoTextBox;
 
         /// <summary>
+        /// Control RequiredFieldValidatorIDCurso.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorIDCurso;
+
+        /// <summary>
         /// Control idalumnoLabel.
         /// </summary>
         /// <remarks>
@@ -94,6 +103,15 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox idalumnoTextBox;
+
+        /// <summary>
+        /// Control RequiredFieldValidatorIDAlumno.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorIDAlumno;
 
         /// <summary>
         /// Control notaLabel.
@@ -114,6 +132,15 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.TextBox notaTextBox;
 
         /// <summary>
+        /// Control RequiredFieldValidatorNota.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorNota;
+
+        /// <summary>
         /// Control condicionLabel.
         /// </summary>
         /// <remarks>
@@ -130,6 +157,15 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox condicionTextBox;
+
+        /// <summary>
+        /// Control RequiredFieldValidatorCondicion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorCondicion;
 
         /// <summary>
         /// Control Panel1.

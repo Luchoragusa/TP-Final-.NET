@@ -78,6 +78,15 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.TextBox nombreTextBox;
 
         /// <summary>
+        /// Control RequiredFieldValidatorNombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorNombre;
+
+        /// <summary>
         /// Control apellidoLabel.
         /// </summary>
         /// <remarks>
@@ -94,6 +103,15 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox apellidoTextBox;
+
+        /// <summary>
+        /// Control RequiredFieldValidatorApellido.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorApellido;
 
         /// <summary>
         /// Control emailLabel.
@@ -114,6 +132,15 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.TextBox emailTextBox;
 
         /// <summary>
+        /// Control RequiredFieldValidatorEmail.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorEmail;
+
+        /// <summary>
         /// Control direccionLabel.
         /// </summary>
         /// <remarks>
@@ -130,6 +157,15 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox direccionTextBox;
+
+        /// <summary>
+        /// Control RequiredFieldValidatorDireccion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorDireccion;
 
         /// <summary>
         /// Control telefonoLabel.
@@ -150,6 +186,15 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.TextBox telefonoTextBox;
 
         /// <summary>
+        /// Control RequiredFieldValidatorTelefono.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorTelefono;
+
+        /// <summary>
         /// Control idplanLabel.
         /// </summary>
         /// <remarks>
@@ -166,6 +211,15 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox idplanTextBox;
+
+        /// <summary>
+        /// Control RequiredFieldValidatorIDPlan.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorIDPlan;
 
         /// <summary>
         /// Control legajoLabel.
@@ -186,6 +240,15 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.TextBox legajoTextBox;
 
         /// <summary>
+        /// Control RequiredFieldValidatorLegajo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorLegajo;
+
+        /// <summary>
         /// Control fechanacLabel.
         /// </summary>
         /// <remarks>
@@ -202,6 +265,15 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox fechanacTextBox;
+
+        /// <summary>
+        /// Control RequiredFieldValidatorFechaNac.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorFechaNac;
 
         /// <summary>
         /// Control Panel1.

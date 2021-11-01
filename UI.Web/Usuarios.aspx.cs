@@ -67,41 +67,6 @@ namespace UI.Web
             set;
         }
 
-        protected void aceptarLinkButton_Click(object sender, EventArgs e)
-        {
-            Boolean band = false;
-            switch (this.FormMode)
-            {
-                case FormModes.Alta:
-                    this.Entity = new Usuario();
-                    band = this.LoadEntity(this.Entity);
-                    if (band)
-                        break;
-                    this.SaveEntity(this.Entity);
-                    this.LoadGrid();
-                    break;
-                case FormModes.Baja:
-                    this.DeleteEntity(this.SelectedID);
-                    this.LoadGrid();
-                    break;
-                case FormModes.Modificacion:
-                        this.Entity = new Usuario();
-                        this.Entity.ID = this.SelectedID;
-                        this.Entity.State = BusinessEntity.States.Modified;
-                    band = this.LoadEntity(this.Entity);
-                    if (band)
-                        break;
-                    
-                    this.SaveEntity(this.Entity);
-                    this.LoadGrid();
-                    break;
-                    default:
-                    break;
-            }
-            if(!band)
-                this.formPanel.Visible = false;
-        }
-
         protected void editarLinkButton_Click(object sender, EventArgs e)
         {
             if (this.IsEntitySelected)
@@ -231,14 +196,49 @@ namespace UI.Web
             this.repetirClaveLabel.Visible = enable;
         }
 
-        protected void cancelarLinkButton_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Usuarios.aspx");
-        }
-
         protected void btnVolver_Click(object sender, EventArgs e)
         {
             Response.Redirect("MenuPrincipal.aspx");
+        }
+
+        protected void acceptaButton_Click(object sender, EventArgs e)
+        {
+            Boolean band = false;
+            switch (this.FormMode)
+            {
+                case FormModes.Alta:
+                    this.Entity = new Usuario();
+                    band = this.LoadEntity(this.Entity);
+                    if (band)
+                        break;
+                    this.SaveEntity(this.Entity);
+                    this.LoadGrid();
+                    break;
+                case FormModes.Baja:
+                    this.DeleteEntity(this.SelectedID);
+                    this.LoadGrid();
+                    break;
+                case FormModes.Modificacion:
+                    this.Entity = new Usuario();
+                    this.Entity.ID = this.SelectedID;
+                    this.Entity.State = BusinessEntity.States.Modified;
+                    band = this.LoadEntity(this.Entity);
+                    if (band)
+                        break;
+
+                    this.SaveEntity(this.Entity);
+                    this.LoadGrid();
+                    break;
+                default:
+                    break;
+            }
+            if (!band)
+                this.formPanel.Visible = false;
+        }
+
+        protected void cancelarButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Usuarios.aspx");
         }
     }
 }

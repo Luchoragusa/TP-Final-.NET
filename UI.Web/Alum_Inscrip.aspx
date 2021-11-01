@@ -43,18 +43,42 @@
         
          <asp:Label ID ="idcursoLabel" runat="server" Text="IDCurso: "></asp:Label>
         <asp:TextBox ID="idcursoTextBox" runat="server"></asp:TextBox>
-        <br />
+         <asp:RequiredFieldValidator ID="RequiredFieldValidatorIDCurso" runat="server" 
+                    ControlToValidate="idcursoTextBox" 
+                    ErrorMessage="El ID del Curso es obligatorio" 
+                    ForeColor="Red">
+                    *
+                </asp:RequiredFieldValidator>
+         &nbsp;<br />
         
          <asp:Label ID="idalumnoLabel" runat="server" Text="IDAlumno: "></asp:Label>
         <asp:TextBox ID="idalumnoTextBox" runat="server"></asp:TextBox>
+         <asp:RequiredFieldValidator ID="RequiredFieldValidatorIDAlumno" runat="server" 
+                    ControlToValidate="idalumnotextBox" 
+                    ErrorMessage="La ID del alumno es obligatoria" 
+                    ForeColor="Red">
+                    *
+                </asp:RequiredFieldValidator>
         <br />
         
          <asp:Label ID="notaLabel" runat="server" Text="Nota: "></asp:Label>
         <asp:TextBox ID="notaTextBox" runat="server" Width="40px"></asp:TextBox>
+         <asp:RequiredFieldValidator ID="RequiredFieldValidatorNota" runat="server" 
+                    ControlToValidate="notaTextBox" 
+                    ErrorMessage="La nota es obligatoria" 
+                    ForeColor="Red">
+                    *
+                </asp:RequiredFieldValidator>
         <br />
         
          <asp:Label ID="condicionLabel" runat="server" Text="Condicion: "></asp:Label>
         <asp:TextBox ID="condicionTextBox" runat="server"></asp:TextBox>
+         <asp:RequiredFieldValidator ID="RequiredFieldValidatorCondicion" runat="server" 
+                    ControlToValidate="condicionTextBox" 
+                    ErrorMessage="La condicion es obligatoria" 
+                    ForeColor="Red">
+                    *
+                </asp:RequiredFieldValidator>
         <br />      
            
         <asp:Panel ID="Panel1" runat="server" HorizontalAlign="Center" Visible="true">

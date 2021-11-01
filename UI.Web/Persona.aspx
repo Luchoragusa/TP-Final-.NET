@@ -44,34 +44,82 @@
         
          <asp:Label ID ="nombreLabel" runat="server" Text="Nombre: "></asp:Label>
         <asp:TextBox ID="nombreTextBox" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidatorNombre" runat="server" 
+                    ControlToValidate="nombreTextBox" 
+                    ErrorMessage="El nombre es obligatorio" 
+                    ForeColor="Red">
+                    *
+                </asp:RequiredFieldValidator>
         <br />
         
          <asp:Label ID="apellidoLabel" runat="server" Text="Apellido: "></asp:Label>
         <asp:TextBox ID="apellidoTextBox" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidatorApellido" runat="server" 
+                    ControlToValidate="apellidoTextBox" 
+                    ErrorMessage="El apellido es obligatorio" 
+                    ForeColor="Red">
+                    *
+                </asp:RequiredFieldValidator>
         <br />
         
          <asp:Label ID="emailLabel" runat="server" Text="Email: "></asp:Label>
         <asp:TextBox ID="emailTextBox" runat="server" Width="124px"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidatorEmail" runat="server" 
+                    ControlToValidate="emailTextBox" 
+                    ErrorMessage="El email es obligatorio" 
+                    ForeColor="Red">
+                    *
+                </asp:RequiredFieldValidator>
         <br />
         
          <asp:Label ID="direccionLabel" runat="server" Text="Direccion: "></asp:Label>
         <asp:TextBox ID="direccionTextBox" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidatorDireccion" runat="server" 
+                    ControlToValidate="direccionTextBox" 
+                    ErrorMessage="La direccion es obligatoria" 
+                    ForeColor="Red">
+                    *
+                </asp:RequiredFieldValidator>
         <br />      
 
         <asp:Label ID="telefonoLabel" runat="server" Text="Telefono: "></asp:Label>
         <asp:TextBox ID="telefonoTextBox" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidatorTelefono" runat="server" 
+                    ControlToValidate="telefonoTextBox" 
+                    ErrorMessage="El telefono es obligatorio" 
+                    ForeColor="Red">
+                    *
+                </asp:RequiredFieldValidator>
         <br />    
             
-        <asp:Label ID="idplanLabel" runat="server" Text="IDPlan: "></asp:Label>
+        <asp:Label ID="idplanLabel" runat="server" Text="ID del Plan: "></asp:Label>
         <asp:TextBox ID="idplanTextBox" runat="server" Width="37px"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidatorIDPlan" runat="server" 
+                    ControlToValidate="idplanTextBox" 
+                    ErrorMessage="La ID del Plan es obligatoria" 
+                    ForeColor="Red">
+                    *
+                </asp:RequiredFieldValidator>
         <br />   
             
         <asp:Label ID="legajoLabel" runat="server" Text="Legajo: "></asp:Label>
         <asp:TextBox ID="legajoTextBox" runat="server" Width="72px"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidatorLegajo" runat="server" 
+                    ControlToValidate="legajoTextBox" 
+                    ErrorMessage="El legajo es obligatorio" 
+                    ForeColor="Red">
+                    *
+                </asp:RequiredFieldValidator>
         <br />     
 
-        <asp:Label ID="fechanacLabel" runat="server" Text="FechaNac: "></asp:Label>
+        <asp:Label ID="fechanacLabel" runat="server" Text="Fecha de nacimiento: "></asp:Label>
         <asp:TextBox ID="fechanacTextBox" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidatorFechaNac" runat="server" 
+                    ControlToValidate="fechanacTextBox" 
+                    ErrorMessage="La fecha de nacimiento es obligatoria" 
+                    ForeColor="Red">
+                    *
+                </asp:RequiredFieldValidator>
         <br />     
            
     <asp:Panel ID="Panel1" runat="server" HorizontalAlign="Center" Visible="false">

@@ -42,7 +42,7 @@
                 <asp:TextBox ID="descripcionTextBox" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorDescripcion" runat="server" 
                     ControlToValidate="descripcionTextBox" 
-                    ErrorMessage="Descripcion es obligatoria" 
+                    ErrorMessage="La descripcion es obligatoria" 
                     ForeColor="Red">
                     *
                 </asp:RequiredFieldValidator>

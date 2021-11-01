@@ -17,10 +17,22 @@
         <p class="form-signin-heading">&nbsp;</p>
         <asp:Label ID="usuarioLabel" runat="server" Text="Usuario" Font-Bold="True" Font-Italic="False" Font-Strikeout="False"></asp:Label>
         &nbsp;<asp:TextBox ID="txtUsuario" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidatorNombreUsuario" runat="server" 
+                    ControlToValidate="txtUsuario" 
+                    ErrorMessage="El nombre de usuario es obligatorio" 
+                    ForeColor="Red">
+                    *
+                </asp:RequiredFieldValidator>
         <br />
         <br />
         <asp:Label ID="claveLabel" runat="server" Text="Clave" Font-Bold="True"></asp:Label>
         &nbsp;<asp:TextBox ID="txtPass" type="password" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidatorClaveUsuario" runat="server" 
+                    ControlToValidate="txtPass" 
+                    ErrorMessage="La clave de usuario es obligatoria" 
+                    ForeColor="Red">
+                    *
+                </asp:RequiredFieldValidator>
         <br />
         <br />
             <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">¿Olvidó su contraseña?</asp:LinkButton>
