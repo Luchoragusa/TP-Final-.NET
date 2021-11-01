@@ -12,14 +12,14 @@ namespace Business.Entities.Entidades
         private int _IDAlumno, _IDCurso;
         private Personas personas;
 
-        public string NombrePersona()
+        public string NombrePersona
         {
-            return personas.Nombre;
+            get => personas.Nombre;
         }
 
-        public string ApellidoPersona()
+        public string ApellidoPersona
         {
-            return personas.Apellido;
+            get => personas.Apellido;
         }
 
         public Alumnos_Inscripciones()
