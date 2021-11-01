@@ -58,7 +58,6 @@ namespace UI.Desktop.Curso
 
             Business.Entities.Curso c = null;
             c= ((Business.Entities.Curso)this.dgvCursos.SelectedRows[0].DataBoundItem);
-            
             Alum_Inscrip.Alumno_Curso alumno_Curso = new Alum_Inscrip.Alumno_Curso(c);
             
             try

@@ -24,8 +24,6 @@ namespace UI.Web
                 }
             }
         }
-
-
         private void LoadGridCursos()
         {
             Usuario docente = (Usuario)Session["usuario"];

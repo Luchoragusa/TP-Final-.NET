@@ -152,7 +152,7 @@ namespace UI.Desktop.Alum_Inscrip
             // 
             // nombre
             // 
-            this.nombre.DataPropertyName = "Personas.Nombre";
+            this.nombre.DataPropertyName = "Nombre";
             this.nombre.HeaderText = "Nombre";
             this.nombre.Name = "nombre";
             this.nombre.ReadOnly = true;
