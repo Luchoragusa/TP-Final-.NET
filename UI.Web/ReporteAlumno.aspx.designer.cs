@@ -33,6 +33,24 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.GridView gridView;
 
         /// <summary>
+        /// Control ScriptManager.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager;
+
+        /// <summary>
+        /// Control rvwrAlumnos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::Microsoft.Reporting.WebForms.ReportViewer rvwrAlumnos;
+
+        /// <summary>
         /// Control Panel4.
         /// </summary>
         /// <remarks>

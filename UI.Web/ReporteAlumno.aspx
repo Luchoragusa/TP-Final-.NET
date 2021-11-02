@@ -5,6 +5,8 @@
     Inherits="UI.Web.ReporteAlumno" 
 %>
 
+<%@ Register assembly="Microsoft.ReportViewer.WebForms" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="PageContent" runat="server">
     <asp:Panel ID="gridPanel" runat="server">
         <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False" HorizontalAlign="Center"
@@ -28,6 +30,14 @@
             <SortedDescendingCellStyle BackColor="#E5E5E5" />
             <SortedDescendingHeaderStyle BackColor="#275353" />
         </asp:GridView>
+
+        <asp:ScriptManager ID="ScriptManager" runat="server">
+        </asp:ScriptManager> 
+        <div class="reporte">
+            <rsweb:ReportViewer ID="rvwrAlumnos" runat="server"></rsweb:ReportViewer>
+        </div>
+        
+
     </asp:Panel>
 
         <asp:Panel ID="Panel4" runat="server" HorizontalAlign="Center">
