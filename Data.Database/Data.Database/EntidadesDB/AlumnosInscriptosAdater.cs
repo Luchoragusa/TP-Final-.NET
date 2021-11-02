@@ -74,7 +74,7 @@ namespace Data.Database.EntidadesDB
                     Personas p = new Personas();
                     p.Nombre = (string)drAlumnos_Inscripcioneses["nombre"];
                     p.Apellido = (string)drAlumnos_Inscripcioneses["apellido"];
-                    p.Legajo = (int)drAlumnos_Inscripcioneses["id_inscripcion"];
+                    p.Legajo = (int)drAlumnos_Inscripcioneses["legajo"];
 
                     Alumnos_Inscripciones.Personas = p;
                     Alumnos_Inscripciones.ID = (int)drAlumnos_Inscripcioneses["id_inscripcion"];

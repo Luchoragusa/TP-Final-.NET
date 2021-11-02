@@ -15,19 +15,13 @@ namespace UI.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            btnVolver.Visible = true;
             if (!Page.IsPostBack)
             {
-                btnVolver.Visible = true;
                 LoadGridCursos();
                 if (this.gridViewCursosDelDocente.SelectedIndex == -1)
                 {
                     this.Panel2.Visible = false;
                 }
-            }
-            else
-            {
-                btnVolver.Visible = true;
             }
         }
         private void LoadGridCursos()
@@ -73,7 +67,8 @@ namespace UI.Web
         protected void acceptaButton_Click(object sender, EventArgs e)
         {
             Alumno_InscripcionLogic alumnoLogic = new Alumno_InscripcionLogic();
-            this.Entity = alumnoLogic.GetOne(SelectedIDAlumno);
+            this.Entity.ID = SelectedIDAlumno;
+            this.Entity = alumnoLogic.GetOne(Entity);
             this.Entity.State = BusinessEntity.States.Modified;
             this.LoadEntity(this.Entity);
             this.SaveEntity(this.Entity);

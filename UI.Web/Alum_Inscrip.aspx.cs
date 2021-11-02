@@ -66,7 +66,8 @@ namespace UI.Web
 
         protected override void LoadForm(int id)
         {
-            this.Entity = this.Logic.GetOne(id);
+            this.Entity.ID = id;
+            this.Entity = this.Logic.GetOne(Entity);
             this.idcursoTextBox.Text = this.Entity.IDCurso.ToString();
             this.idalumnoTextBox.Text = this.Entity.IDAlumno.ToString();
             this.notaTextBox.Text = this.Entity.Nota.ToString();

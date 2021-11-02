@@ -41,7 +41,7 @@
                  <asp:GridView ID="gridViewAlumnosDelCursoDelDocente" runat="server" AutoGenerateColumns="False"
                  SelectedRowStyle-BackColor="Black"
                  SelectedRowStyle-ForeColor="White"
-                 DataKeysNames="ID" DataKeyNames="ID" OnSelectedIndexChanged="gridViewAlumnos_SelectedIndexChanged" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
+                 DataKeysNames="ID" DataKeyNames="Legajo" OnSelectedIndexChanged="gridViewAlumnos_SelectedIndexChanged" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
                <Columns>
                         <asp:BoundField HeaderText="Nombre" DataField="NombrePersona" />
                         <asp:BoundField HeaderText="Apellido" DataField="ApellidoPersona" />
