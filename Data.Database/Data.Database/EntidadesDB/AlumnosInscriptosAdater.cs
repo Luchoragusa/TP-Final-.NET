@@ -206,12 +206,12 @@ namespace Data.Database.EntidadesDB
 
                 if (Alumnos_Inscripciones.Nota != " - ") // verifico si la nota quq carga el usuario es null
                 {
-                    cmdUpd = new SqlCommand("UPDATE alumnos_inscripciones SET condicion = @condicion, nota = @nota WHERE id_inscripcion = @id ", sqlConn);
+                    cmdUpd = new SqlCommand("UPDATE ai SET condicion = @condicion, nota = @nota from alumnos_inscripciones ai inner join personas p on ai.id_alumno = p.id_persona WHERE p.legajo = @legajo", sqlConn);
                    cmdUpd.Parameters.Add("@nota", SqlDbType.Int).Value = int.Parse(Alumnos_Inscripciones.Nota);
                 }
                 else
-                    cmdUpd = new SqlCommand("UPDATE alumnos_inscripciones SET id_alumno = @id_alumno, id_curso = @id_curso, condicion = @condicion, nota = @nota WHERE id_inscripcion = @id ", sqlConn);
-                cmdUpd.Parameters.Add("@id", SqlDbType.Int).Value = Alumnos_Inscripciones.ID;
+                    cmdUpd = new SqlCommand("UPDATE ai SET condicion = @condicion from alumnos_inscripciones ai inner join personas p on ai.id_alumno = p.id_persona WHERE p.legajo = @legajo ", sqlConn);
+                cmdUpd.Parameters.Add("@legajo", SqlDbType.Int).Value = Alumnos_Inscripciones.legajoPersona;
                 cmdUpd.Parameters.Add("@condicion", SqlDbType.VarChar, 50).Value = Alumnos_Inscripciones.Condicion;
 
                 cmdUpd.ExecuteNonQuery();

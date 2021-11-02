@@ -49,29 +49,30 @@ namespace UI.Web
             get;set;
         }
 
-        private int SelectedIDAlumno
+        private int SelectedlegajoPersona
         {
             get
             {
-                if (this.ViewState["SelectedIDAlumno"] != null)
-                    return (int)this.ViewState["SelectedIDAlumno"];
+                if (this.ViewState["SelectedlegajoPersona"] != null)
+                    return (int)this.ViewState["SelectedlegajoPersona"];
                 else
                     return 0;
             }
             set
             {
-                this.ViewState["SelectedIDAlumno"] = value;
+                this.ViewState["SelectedlegajoPersona"] = value;
             }
         }
 
         protected void acceptaButton_Click(object sender, EventArgs e)
         {
             Alumno_InscripcionLogic alumnoLogic = new Alumno_InscripcionLogic();
-            this.Entity.ID = SelectedIDAlumno;
+            Entity = new Alumnos_Inscripciones();
+            this.Entity.legajoPersona = SelectedlegajoPersona;
             this.Entity = alumnoLogic.GetOne(Entity);
             this.Entity.State = BusinessEntity.States.Modified;
             this.LoadEntity(this.Entity);
-            this.SaveEntity(this.Entity);
+            this.SaveEntity();
             this.LoadGridAlumnos();
         }
 
@@ -80,12 +81,12 @@ namespace UI.Web
             Response.Redirect("RegistrarNota.aspx");
         }
 
-        private void SaveEntity(Alumnos_Inscripciones alumno)
+        private void SaveEntity()
         {
             try
             {
                 Alumno_InscripcionLogic alumnoLogic = new Alumno_InscripcionLogic();
-                alumnoLogic.Save(alumno);
+                alumnoLogic.Save(Entity);
 
             }
             catch (Exception ex)
@@ -109,7 +110,7 @@ namespace UI.Web
 
         protected void gridViewAlumnos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.SelectedIDAlumno = (int)this.gridViewAlumnosDelCursoDelDocente.SelectedValue;
+            this.SelectedlegajoPersona = (int)this.gridViewAlumnosDelCursoDelDocente.SelectedValue;
         }
 
         protected void btnVolver_Click(object sender, EventArgs e)

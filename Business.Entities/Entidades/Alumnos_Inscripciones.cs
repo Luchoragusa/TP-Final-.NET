@@ -23,6 +23,7 @@ namespace Business.Entities.Entidades
         }
         public int legajoPersona
         {
+            set => personas.Legajo = value;
             get => personas.Legajo;
         }
 
