@@ -21,8 +21,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
-        <Top>0.01708cm</Top>
-        <Left>4.20243cm</Left>
+        <Top>0.3875cm</Top>
+        <Left>0.6841cm</Left>
         <Height>1.48194cm</Height>
         <Width>6.01833cm</Width>
         <Style>
@@ -54,8 +54,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>1.67541cm</Top>
-        <Left>4.20243cm</Left>
+        <Top>2.04583cm</Top>
+        <Left>0.6841cm</Left>
         <Height>1.5966cm</Height>
         <Width>6.01833cm</Width>
         <ZIndex>1</ZIndex>
@@ -73,8 +73,8 @@
         <Source>Embedded</Source>
         <Value>student</Value>
         <Sizing>FitProportional</Sizing>
-        <Top>0.01708cm</Top>
-        <Left>10.49007cm</Left>
+        <Top>0.3875cm</Top>
+        <Left>6.97174cm</Left>
         <Height>3.36972cm</Height>
         <Width>1.8175cm</Width>
         <ZIndex>2</ZIndex>
@@ -308,8 +308,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>dsReporteAlumnoss</DataSetName>
-        <Top>4.15078cm</Top>
-        <Left>4.20243cm</Left>
+        <Top>4.5212cm</Top>
+        <Left>0.6841cm</Left>
         <Height>1.2cm</Height>
         <Width>7.5cm</Width>
         <ZIndex>3</ZIndex>
@@ -320,10 +320,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>3.38542in</Height>
+    <Height>2.82292in</Height>
     <Style />
   </Body>
-  <Width>6.07292in</Width>
+  <Width>3.69792in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
