@@ -33,16 +33,16 @@ namespace UI.Desktop.DocenteCurso
             this.tcPlanes = new System.Windows.Forms.ToolStripContainer();
             this.tlPlanes = new System.Windows.Forms.TableLayoutPanel();
             this.dgvDocenteCurso = new System.Windows.Forms.DataGridView();
+            this.IDPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.tsPlanes = new System.Windows.Forms.ToolStrip();
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
-            this.IDPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tcPlanes.ContentPanel.SuspendLayout();
             this.tcPlanes.TopToolStripPanel.SuspendLayout();
             this.tcPlanes.SuspendLayout();
@@ -88,6 +88,7 @@ namespace UI.Desktop.DocenteCurso
             // 
             // dgvDocenteCurso
             // 
+            this.dgvDocenteCurso.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dgvDocenteCurso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDocenteCurso.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDPlan,
@@ -101,6 +102,31 @@ namespace UI.Desktop.DocenteCurso
             this.dgvDocenteCurso.Name = "dgvDocenteCurso";
             this.dgvDocenteCurso.Size = new System.Drawing.Size(794, 390);
             this.dgvDocenteCurso.TabIndex = 0;
+            // 
+            // IDPlan
+            // 
+            this.IDPlan.DataPropertyName = "ID";
+            this.IDPlan.HeaderText = "ID_Dictado";
+            this.IDPlan.Name = "IDPlan";
+            this.IDPlan.ReadOnly = true;
+            // 
+            // IDEspecialidad
+            // 
+            this.IDEspecialidad.DataPropertyName = "IDCurso";
+            this.IDEspecialidad.HeaderText = "ID_Curso";
+            this.IDEspecialidad.Name = "IDEspecialidad";
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "IDDocente";
+            this.Descripcion.HeaderText = "ID_Docente";
+            this.Descripcion.Name = "Descripcion";
+            // 
+            // Cargo
+            // 
+            this.Cargo.DataPropertyName = "Cargo";
+            this.Cargo.HeaderText = "Cargo";
+            this.Cargo.Name = "Cargo";
             // 
             // btnSalir
             // 
@@ -164,31 +190,6 @@ namespace UI.Desktop.DocenteCurso
             this.tsbEliminar.Size = new System.Drawing.Size(23, 22);
             this.tsbEliminar.Text = "Eliminar";
             this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
-            // 
-            // IDPlan
-            // 
-            this.IDPlan.DataPropertyName = "ID";
-            this.IDPlan.HeaderText = "ID_Dictado";
-            this.IDPlan.Name = "IDPlan";
-            this.IDPlan.ReadOnly = true;
-            // 
-            // IDEspecialidad
-            // 
-            this.IDEspecialidad.DataPropertyName = "IDCurso";
-            this.IDEspecialidad.HeaderText = "ID_Curso";
-            this.IDEspecialidad.Name = "IDEspecialidad";
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.DataPropertyName = "IDDocente";
-            this.Descripcion.HeaderText = "ID_Docente";
-            this.Descripcion.Name = "Descripcion";
-            // 
-            // Cargo
-            // 
-            this.Cargo.DataPropertyName = "Cargo";
-            this.Cargo.HeaderText = "Cargo";
-            this.Cargo.Name = "Cargo";
             // 
             // DocenteCurso
             // 

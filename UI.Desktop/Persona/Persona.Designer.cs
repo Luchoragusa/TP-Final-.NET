@@ -94,6 +94,7 @@ namespace UI.Desktop.Persona
             // 
             // dgvPersonas
             // 
+            this.dgvPersonas.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dgvPersonas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPersonas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,

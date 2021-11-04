@@ -87,6 +87,7 @@ namespace UI.Desktop
             // 
             // dgvPlanes
             // 
+            this.dgvPlanes.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dgvPlanes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPlanes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDPlan,

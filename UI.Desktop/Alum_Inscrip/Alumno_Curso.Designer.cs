@@ -56,11 +56,11 @@ namespace UI.Desktop.Alum_Inscrip
             // tscMaterias.ContentPanel
             // 
             this.tscMaterias.ContentPanel.Controls.Add(this.tlMaterias);
-            this.tscMaterias.ContentPanel.Size = new System.Drawing.Size(800, 425);
+            this.tscMaterias.ContentPanel.Size = new System.Drawing.Size(770, 425);
             this.tscMaterias.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tscMaterias.Location = new System.Drawing.Point(0, 0);
             this.tscMaterias.Name = "tscMaterias";
-            this.tscMaterias.Size = new System.Drawing.Size(800, 450);
+            this.tscMaterias.Size = new System.Drawing.Size(770, 450);
             this.tscMaterias.TabIndex = 3;
             this.tscMaterias.Text = "toolStripContainer1";
             // 
@@ -82,11 +82,12 @@ namespace UI.Desktop.Alum_Inscrip
             this.tlMaterias.RowCount = 2;
             this.tlMaterias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlMaterias.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlMaterias.Size = new System.Drawing.Size(800, 425);
+            this.tlMaterias.Size = new System.Drawing.Size(770, 425);
             this.tlMaterias.TabIndex = 0;
             // 
             // dgvAlum_Incrip
             // 
+            this.dgvAlum_Incrip.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dgvAlum_Incrip.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAlum_Incrip.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombre,
@@ -98,12 +99,12 @@ namespace UI.Desktop.Alum_Inscrip
             this.dgvAlum_Incrip.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAlum_Incrip.Location = new System.Drawing.Point(3, 3);
             this.dgvAlum_Incrip.Name = "dgvAlum_Incrip";
-            this.dgvAlum_Incrip.Size = new System.Drawing.Size(794, 390);
+            this.dgvAlum_Incrip.Size = new System.Drawing.Size(764, 390);
             this.dgvAlum_Incrip.TabIndex = 0;
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(722, 399);
+            this.btnSalir.Location = new System.Drawing.Point(692, 399);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 2;
@@ -114,7 +115,7 @@ namespace UI.Desktop.Alum_Inscrip
             // btnActualizar
             // 
             this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.Location = new System.Drawing.Point(641, 399);
+            this.btnActualizar.Location = new System.Drawing.Point(611, 399);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 1;
@@ -148,6 +149,7 @@ namespace UI.Desktop.Alum_Inscrip
             this.nombre.HeaderText = "Nombre";
             this.nombre.Name = "nombre";
             this.nombre.ReadOnly = true;
+            this.nombre.Width = 170;
             // 
             // apellido
             // 
@@ -155,19 +157,21 @@ namespace UI.Desktop.Alum_Inscrip
             this.apellido.HeaderText = "Apellido";
             this.apellido.Name = "apellido";
             this.apellido.ReadOnly = true;
+            this.apellido.Width = 170;
             // 
             // Nota
             // 
             this.Nota.DataPropertyName = "Nota";
             this.Nota.HeaderText = "Nota";
             this.Nota.Name = "Nota";
-            this.Nota.Width = 150;
+            this.Nota.Width = 120;
             // 
             // Condicion
             // 
             this.Condicion.DataPropertyName = "Condicion";
             this.Condicion.HeaderText = "Condicion";
             this.Condicion.Name = "Condicion";
+            this.Condicion.Width = 130;
             // 
             // legajo
             // 
@@ -175,12 +179,13 @@ namespace UI.Desktop.Alum_Inscrip
             this.legajo.HeaderText = "Legajo";
             this.legajo.Name = "legajo";
             this.legajo.ReadOnly = true;
+            this.legajo.Width = 130;
             // 
             // Alumno_Curso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(770, 450);
             this.Controls.Add(this.tscMaterias);
             this.Name = "Alumno_Curso";
             this.Text = "Alumno_Curso";
