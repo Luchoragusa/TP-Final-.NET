@@ -65,7 +65,15 @@ namespace UI.Desktop
             {
                 this.btnModo.Text = "Eliminar";
                 this.txtID.Enabled = false;
-
+                this.txtNombre.Enabled = false;
+                this.txtApellido.Enabled = false;
+                this.txtDireccion.Enabled = false;
+                this.txtEmail.Enabled = false;
+                this.txtTelefono.Enabled = false;
+                this.txtLegajo.Enabled = false;
+                this.txtFechaNacimiento.Enabled = false;
+                this.txtTipoPersona.Enabled = false;
+                this.txtIdPlan.Enabled = false;
             }
             else if (Modo == ModoForm.Consulta)
             {
