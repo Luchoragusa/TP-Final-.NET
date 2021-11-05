@@ -154,7 +154,7 @@ namespace Data.Database
                 {
                     while (drcursos.Read())
                     {
-                        curso.ID = (int)drcursos["id_Curso"];
+                        curso.ID = (int)drcursos["id_curso"];
                         curso.IDMateria = (int)drcursos["id_materia"];
                         curso.IDComision = (int)drcursos["id_comision"];
                         curso.AnioCalendario = (int)drcursos["anio_calendario"];
