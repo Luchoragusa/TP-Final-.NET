@@ -12,16 +12,13 @@ namespace Data.Database
     public class EspecialidadAdapter : Adapter
     {
         public EspecialidadAdapter() { }
-
         public List<Especialidad> GetAll()
         {
             List<Especialidad> especialidades = new List<Especialidad>();
             try
             {
                 this.OpenConnection();
-
                 SqlCommand cmdEspecialidades = new SqlCommand("SELECT * FROM especialidades", sqlConn);
-
                 SqlDataReader drEspecialidades = cmdEspecialidades.ExecuteReader();
                 if (drEspecialidades != null)
                 {
@@ -48,7 +45,6 @@ namespace Data.Database
             }
             return especialidades;
         }
-
         public Especialidad GetOne(Especialidad esp)
         {
             try
@@ -75,7 +71,6 @@ namespace Data.Database
             }
             return esp;
         }
-
         public void Delete(int ID)
         {
             try
@@ -95,7 +90,6 @@ namespace Data.Database
                 CloseConnection();
             }
         }
-
         public void Insert(Especialidad especialidad)
         {
             try
@@ -104,10 +98,7 @@ namespace Data.Database
                 SqlCommand cmdSave = new SqlCommand("INSERT INTO especialidades (desc_especialidad)" +
                     "values(@desc_especialidad)" +
                     "select @@identity ", sqlConn);
-
                 cmdSave.Parameters.Add("@desc_especialidad", SqlDbType.VarChar, 50).Value = especialidad.DescEspecialidad;
-
-
                 especialidad.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
             }
             catch (Exception Ex)
@@ -120,17 +111,14 @@ namespace Data.Database
                 CloseConnection();
             }
         }
-
         public void Update(Especialidad especialidad)
         {
             try
             {
                 OpenConnection();
                 SqlCommand cmdUpd = new SqlCommand("UPDATE especialidades SET desc_especialidad = @desc_especialidad WHERE id_especialidad = @id ", sqlConn);
-
                 cmdUpd.Parameters.Add("@id", SqlDbType.Int).Value = especialidad.ID;
                 cmdUpd.Parameters.Add("@desc_especialidad", SqlDbType.VarChar, 50).Value = especialidad.DescEspecialidad;
-                
                 cmdUpd.ExecuteNonQuery();
             }
             catch (Exception Ex)
@@ -143,7 +131,6 @@ namespace Data.Database
                 CloseConnection();
             }
         }
-
         public void Save(Especialidad especialidad)
         {
             if (especialidad.State == BusinessEntity.States.Deleted)
