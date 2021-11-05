@@ -58,10 +58,10 @@ namespace UI.Desktop
             this.tableLayoutPanel1.Controls.Add(this.lblHSSemanales, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.lblDesc, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtDesc, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lblIDMateria, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtID, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblPlan, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtIDPlan, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblIDMateria, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblPlan, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtID, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtIDPlan, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -155,7 +155,7 @@ namespace UI.Desktop
             // 
             this.lblIDMateria.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblIDMateria.AutoSize = true;
-            this.lblIDMateria.Location = new System.Drawing.Point(3, 83);
+            this.lblIDMateria.Location = new System.Drawing.Point(3, 23);
             this.lblIDMateria.Name = "lblIDMateria";
             this.lblIDMateria.Size = new System.Drawing.Size(71, 13);
             this.lblIDMateria.TabIndex = 10;
@@ -164,7 +164,7 @@ namespace UI.Desktop
             // txtID
             // 
             this.txtID.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtID.Location = new System.Drawing.Point(131, 80);
+            this.txtID.Location = new System.Drawing.Point(131, 20);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(256, 20);
@@ -174,7 +174,7 @@ namespace UI.Desktop
             // 
             this.lblPlan.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblPlan.AutoSize = true;
-            this.lblPlan.Location = new System.Drawing.Point(3, 23);
+            this.lblPlan.Location = new System.Drawing.Point(3, 83);
             this.lblPlan.Name = "lblPlan";
             this.lblPlan.Size = new System.Drawing.Size(57, 13);
             this.lblPlan.TabIndex = 12;
@@ -183,7 +183,7 @@ namespace UI.Desktop
             // txtIDPlan
             // 
             this.txtIDPlan.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtIDPlan.Location = new System.Drawing.Point(131, 20);
+            this.txtIDPlan.Location = new System.Drawing.Point(131, 80);
             this.txtIDPlan.Name = "txtIDPlan";
             this.txtIDPlan.Size = new System.Drawing.Size(256, 20);
             this.txtIDPlan.TabIndex = 0;
