@@ -76,7 +76,6 @@ namespace Data.Database
             }
             return plan;
         }
-
         public void Delete(int ID)
         {
             try
@@ -96,20 +95,16 @@ namespace Data.Database
                 CloseConnection();
             }
         }
-
         public void Insert(Plan plan)
         {
             try
             {
                 OpenConnection();
                 SqlCommand cmdSave = new SqlCommand("INSERT INTO planes (desc_plan,id_especialidad)" +
-                    "values(@desc_plan,@id_especialidad)" +
-                    "select @@identity ", sqlConn);
+                    "values(@desc_plan,@id_especialidad)", sqlConn);
 
                 cmdSave.Parameters.Add("@desc_plan", SqlDbType.VarChar, 50).Value = plan.Descripcion;
                 cmdSave.Parameters.Add("@id_especialidad", SqlDbType.VarChar, 50).Value = plan.IDEspecialidad;
-
-                plan.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
             }
             catch (Exception Ex)
             {
@@ -121,7 +116,6 @@ namespace Data.Database
                 CloseConnection();
             }
         }
-
         public void Update(Plan plan)
         {
             try
