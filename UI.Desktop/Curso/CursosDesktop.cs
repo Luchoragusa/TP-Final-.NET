@@ -59,8 +59,8 @@ namespace UI.Desktop
                 this.txtIDCom.Text = this.CursoActual.IDComision.ToString();
                 this.txtAnioEsp_Cur.Text = this.CursoActual.AnioCalendario.ToString();
                 this.txtCupo.Text = this.CursoActual.Cupo.ToString();
-                if (Modo == ModoForm.Consulta) this.btnModo.Text = "Aceptar";
-                else if (Modo == ModoForm.Modificacion) this.btnModo.Text = "Guardar";
+
+                if (Modo == ModoForm.Modificacion) this.btnModo.Text = "Guardar";
                 else if (Modo == ModoForm.Baja)
                 {
                     this.btnModo.Text = "Eliminar";
@@ -93,7 +93,6 @@ namespace UI.Desktop
                 this.CursoActual.Cupo = Convert.ToInt32(this.txtCupo.Text);
             }
             if (this.Modo == ModoForm.Baja) CursoActual.State = BusinessEntity.States.Deleted;
-            if (this.Modo == ModoForm.Consulta) CursoActual.State = BusinessEntity.States.Unmodified;
         }
         public override void GuardarCambios()
         {
@@ -116,25 +115,25 @@ namespace UI.Desktop
                 return false;
             }
 
-            if (!(Validaciones.validarTexto(txtIDMat.Text)))
+            if (!Validaciones.validarTexto(txtIDMat.Text))
             {
                 Notificar("ID Materia incorrecta.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (!(Validaciones.validarTexto(txtIDCom.Text)))    //quitamos el "!", siguiendo logica de UsuarioDesktop 
+            if (!Validaciones.validarTexto(txtIDCom.Text))
             {
                 Notificar("ID Comision incorrecto.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (!(Validaciones.validarTexto(txtAnioEsp_Cur.Text)))
+            if (!Validaciones.validarTexto(txtAnioEsp_Cur.Text))
             {
-                Notificar("Anio calendario incorrecto.", "Intente nuevamente",
+                Notificar("Anio incorrecto.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (!(Validaciones.validarTexto(txtCupo.Text)))
+            if (!Validaciones.validarTexto(txtCupo.Text))
             {
                 Notificar("Cupo incorrecto.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
