@@ -98,10 +98,8 @@ namespace UI.Desktop
             this.panelCont.Controls.Add(fh);
             this.panelCont.Tag = fh;
             fh.Show();
-
-
- 
         }
+
         private void btnAlu_Click(object sender, EventArgs e)
         {
             mostrarSubMenu(panelAluSubMenu); //falta conceder permisos para que solo se vea el menu de alumno si inicio secion alumno, lo mismo con los otros dos
@@ -120,145 +118,91 @@ namespace UI.Desktop
         private void btnAluAlumnoInscripcion_Click(object sender, EventArgs e)
         {
             abrirFormHijo(new Alum_Inscrip.Alum_Inscrip());
-            
-            /*Alum_Inscrip.Alum_Inscrip a_i = new Alum_Inscrip.Alum_Inscrip();
-            a_i.ShowDialog();*/
         }
 
         private void btnAluComision_Click(object sender, EventArgs e)
         {
             abrirFormHijo(new Comisiones());
-
-            /*Comisiones com = new Comisiones();
-            com.ShowDialog();*/
         }
 
         private void btnAluMateria_Click(object sender, EventArgs e)
         {
             abrirFormHijo(new Materia());
-
-            /*Materia mat = new Materia();
-            mat.ShowDialog();*/
         }
 
         private void btnAluPlan_Click(object sender, EventArgs e)
         {
             abrirFormHijo(new Plan());
-
-            /*Plan plan = new Plan();
-            plan.ShowDialog();*/
         }
 
         private void btnAluEspecialidad_Click(object sender, EventArgs e)
         {
             abrirFormHijo(new Especialidad());
-
-            /*Especialidad esp = new Especialidad();
-            esp.ShowDialog();*/
         }
 
         private void btnDocDocenteCurso_Click(object sender, EventArgs e)
         {
-            abrirFormHijo(new DocenteCurso.DocenteCurso());
-
-            /*DocenteCurso.DocenteCurso dc = new DocenteCurso.DocenteCurso();
-            dc.ShowDialog();*/
+            abrirFormHijo(new DocenteCurso.DocenteCurso(us));
         }
 
         private void btnDocRegistrarNota_Click(object sender, EventArgs e)
         {
             abrirFormHijo(new UI.Desktop.Curso.CursosNotas(us));
-
-            /* UI.Desktop.Curso.CursosNotas cursoAresgistrarNota = new UI.Desktop.Curso.CursosNotas(us);
-            cursoAresgistrarNota.ShowDialog();*/
         }
 
         private void btnAdminUsuario_Click(object sender, EventArgs e)
         {
             abrirFormHijo(new Usuarios());
-
-            /* Usuarios us = new Usuarios();
-            us.ShowDialog();*/
         }
 
         private void btnAdminPersona_Click(object sender, EventArgs e)
         {
             abrirFormHijo(new Persona.Persona());
-
-            /*Persona.Persona per = new Persona.Persona();
-            per.ShowDialog();*/
         }
 
         private void btnAdminRegistrarNota_Click(object sender, EventArgs e)
         {
             abrirFormHijo(new UI.Desktop.Curso.CursosNotas(us));
-
-            /*UI.Desktop.Curso.CursosNotas cursoAresgistrarNota = new UI.Desktop.Curso.CursosNotas(us);
-            cursoAresgistrarNota.ShowDialog();*/
         }
 
         private void btnAdminComision_Click(object sender, EventArgs e)
         {
             abrirFormHijo(new Comisiones());
-
-            /*Comisiones com = new Comisiones();
-            com.ShowDialog();*/
         }
 
         private void btnAdminPlan_Click(object sender, EventArgs e)
         {
             abrirFormHijo(new Plan());
-
-            /* Plan plan = new Plan();
-            plan.ShowDialog();*/
         }
 
         private void btnAdminMateria_Click(object sender, EventArgs e)
         {
             abrirFormHijo(new Materia());
-
-            /*Materia mat = new Materia();
-            mat.ShowDialog();*/
         }
 
         private void btnAdminEspecialidad_Click(object sender, EventArgs e)
         {
             abrirFormHijo(new Especialidad());
-
-            /* Especialidad esp = new Especialidad();
-            esp.ShowDialog();*/
         }
 
         private void btnAdminCurso_Click(object sender, EventArgs e)
         {
             abrirFormHijo(new UI.Desktop.Cursos());
-
-            /* Cursos curso = new UI.Desktop.Cursos();
-            curso.ShowDialog();*/
         }
 
         private void btnAdminDocenteCurso_Click(object sender, EventArgs e)
         {
-            abrirFormHijo(new DocenteCurso.DocenteCurso());
-
-            /*DocenteCurso.DocenteCurso dc = new DocenteCurso.DocenteCurso();
-            dc.ShowDialog();*/
+            abrirFormHijo(new DocenteCurso.DocenteCurso(us));
         }
 
         private void btnAdminAlum_Insc_Click(object sender, EventArgs e)
         {
             abrirFormHijo(new Alum_Inscrip.Alum_Inscrip());
-
-            /* Alum_Inscrip.Alum_Inscrip a_i = new Alum_Inscrip.Alum_Inscrip();
-            a_i.ShowDialog();*/
         }
 
         private void btnAdminReporteCom_Click(object sender, EventArgs e)
         {
             abrirFormHijo(new UI.Desktop.ReporteComi());
-
-            /* UI.Desktop.ReporteComi reporteC = new UI.Desktop.ReporteComi();
-            reporteC.ShowDialog();*/
         }
 
         private void btnAdminReportePer_Click(object sender, EventArgs e)

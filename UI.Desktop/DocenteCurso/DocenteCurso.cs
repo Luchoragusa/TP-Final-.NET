@@ -16,11 +16,13 @@ namespace UI.Desktop.DocenteCurso
 {
     public partial class DocenteCurso : Form
     {
-        public DocenteCurso()
+        Usuario docente;
+        public DocenteCurso(Usuario us)
         {
             InitializeComponent();
             this.dgvDocenteCurso.AutoGenerateColumns = false;
             this.dgvDocenteCurso.ReadOnly = true;
+            docente = us;
         }
 
         private void DocenteCurso_Load(object sender, EventArgs e)
@@ -33,7 +35,7 @@ namespace UI.Desktop.DocenteCurso
             DocenteCursoLogic dcl = new DocenteCursoLogic();
             try
             {
-                this.dgvDocenteCurso.DataSource = dcl.GetAll();
+                this.dgvDocenteCurso.DataSource = dcl.GetAllMateriasDelDocente(docente);
             }
             catch (Exception ex)
             {

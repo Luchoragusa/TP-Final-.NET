@@ -43,6 +43,7 @@ namespace UI.Desktop.DocenteCurso
             this.IDCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdDocente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tcPlanes.ContentPanel.SuspendLayout();
             this.tcPlanes.TopToolStripPanel.SuspendLayout();
             this.tcPlanes.SuspendLayout();
@@ -94,7 +95,8 @@ namespace UI.Desktop.DocenteCurso
             this.ID,
             this.IDCurso,
             this.IdDocente,
-            this.Cargo});
+            this.Cargo,
+            this.IDPlan});
             this.tlPlanes.SetColumnSpan(this.dgvDocenteCurso, 2);
             this.dgvDocenteCurso.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDocenteCurso.Location = new System.Drawing.Point(3, 3);
@@ -169,27 +171,33 @@ namespace UI.Desktop.DocenteCurso
             // ID
             // 
             this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID_Dictado";
+            this.ID.HeaderText = "ID Materias";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
             // 
             // IDCurso
             // 
-            this.IDCurso.DataPropertyName = "IDCurso";
-            this.IDCurso.HeaderText = "ID_Curso";
+            this.IDCurso.DataPropertyName = "Descripcion";
+            this.IDCurso.HeaderText = "Descripcion";
             this.IDCurso.Name = "IDCurso";
             // 
             // IdDocente
             // 
-            this.IdDocente.DataPropertyName = "IDDocente";
-            this.IdDocente.HeaderText = "ID_Docente";
+            this.IdDocente.DataPropertyName = "HSSemanales";
+            this.IdDocente.HeaderText = "Horas semanales";
             this.IdDocente.Name = "IdDocente";
             // 
             // Cargo
             // 
-            this.Cargo.DataPropertyName = "Cargo";
-            this.Cargo.HeaderText = "Cargo";
+            this.Cargo.DataPropertyName = "HSTotales";
+            this.Cargo.HeaderText = "Horas Totales";
             this.Cargo.Name = "Cargo";
+            // 
+            // IDPlan
+            // 
+            this.IDPlan.DataPropertyName = "IDPlan";
+            this.IDPlan.HeaderText = "ID Plan";
+            this.IDPlan.Name = "IDPlan";
             // 
             // DocenteCurso
             // 
@@ -229,5 +237,6 @@ namespace UI.Desktop.DocenteCurso
         private System.Windows.Forms.DataGridViewTextBoxColumn IDCurso;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdDocente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cargo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDPlan;
     }
 }
