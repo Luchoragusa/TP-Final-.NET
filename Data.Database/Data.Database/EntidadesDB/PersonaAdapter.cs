@@ -47,6 +47,7 @@ namespace Data.Database.EntidadesDB
                         persona.TipoPersona = Personas.TipoPersonas.Docente;
                     else
                         persona.TipoPersona = Personas.TipoPersonas.Administrador;
+
                     personas.Add(persona);
                 }
                 drPersonas.Close();
