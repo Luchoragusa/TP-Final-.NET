@@ -130,10 +130,10 @@
     <Compile Include="Curso\CursosNotas.Designer.cs">
       <DependentUpon>CursosNotas.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataSetAlumno.Designer.cs">
+    <Compile Include="DataSetPersonas.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetAlumno.xsd</DependentUpon>
+      <DependentUpon>DataSetPersonas.xsd</DependentUpon>
     </Compile>
     <Compile Include="DocenteCurso\DCDesktop.cs">
       <SubType>Form</SubType>
@@ -219,17 +219,17 @@
     <Compile Include="RegistroNotas\RegistroNotasDesktop.Designer.cs">
       <DependentUpon>RegistroNotasDesktop.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReporteAlumno.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReporteAlumno.Designer.cs">
-      <DependentUpon>ReporteAlumno.cs</DependentUpon>
-    </Compile>
     <Compile Include="ReporteComi.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReporteComi.Designer.cs">
       <DependentUpon>ReporteComi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteDePersonas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteDePersonas.Designer.cs">
+      <DependentUpon>ReporteDePersonas.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Usuario\UsuarioDesktop.cs">
@@ -312,14 +312,14 @@
     <EmbeddedResource Include="RegistroNotas\RegistroNotas.resx">
       <DependentUpon>RegistroNotas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report1.rdlc" />
-    <EmbeddedResource Include="ReporteAlumno.resx">
-      <DependentUpon>ReporteAlumno.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ReporteComi.resx">
       <DependentUpon>ReporteComi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteComisiones.rdlc" />
+    <EmbeddedResource Include="ReporteDePersonas.resx">
+      <DependentUpon>ReporteDePersonas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportPersonas.rdlc" />
     <EmbeddedResource Include="Usuario\UsuarioDesktop.resx">
       <DependentUpon>UsuarioDesktop.cs</DependentUpon>
     </EmbeddedResource>
@@ -350,16 +350,16 @@
     <None Include="DataSet2.xss">
       <DependentUpon>DataSet2.xsd</DependentUpon>
     </None>
-    <None Include="DataSetAlumno.xsc">
-      <DependentUpon>DataSetAlumno.xsd</DependentUpon>
+    <None Include="DataSetPersonas.xsc">
+      <DependentUpon>DataSetPersonas.xsd</DependentUpon>
     </None>
-    <None Include="DataSetAlumno.xsd">
+    <None Include="DataSetPersonas.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetAlumno.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSetPersonas.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DataSetAlumno.xss">
-      <DependentUpon>DataSetAlumno.xsd</DependentUpon>
+    <None Include="DataSetPersonas.xss">
+      <DependentUpon>DataSetPersonas.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

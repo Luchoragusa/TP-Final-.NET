@@ -253,20 +253,17 @@ namespace UI.Desktop
             a_i.ShowDialog();*/
         }
 
-        private void btnAdminReporteAlu_Click(object sender, EventArgs e)
-        {
-            abrirFormHijo(new UI.Desktop.ReporteAlumno());
-
-            /*UI.Desktop.ReporteAlumno reporteAlu = new UI.Desktop.ReporteAlumno();
-            reporteAlu.ShowDialog();*/
-        }
-
         private void btnAdminReporteCom_Click(object sender, EventArgs e)
         {
             abrirFormHijo(new UI.Desktop.ReporteComi());
 
             /* UI.Desktop.ReporteComi reporteC = new UI.Desktop.ReporteComi();
             reporteC.ShowDialog();*/
+        }
+
+        private void btnAdminReportePer_Click(object sender, EventArgs e)
+        {
+            abrirFormHijo(new UI.Desktop.ReporteDePersonas());
         }
     }
 }
