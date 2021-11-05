@@ -32,14 +32,14 @@ namespace UI.Desktop
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblID_Curso = new System.Windows.Forms.Label();
             this.txtIDCurso = new System.Windows.Forms.TextBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnModo = new System.Windows.Forms.Button();
             this.txtAnioEsp_Cur = new System.Windows.Forms.TextBox();
             this.lblAnioEsp = new System.Windows.Forms.Label();
             this.lblIDCom = new System.Windows.Forms.Label();
             this.txtIDCom = new System.Windows.Forms.TextBox();
             this.lblIDMateria = new System.Windows.Forms.Label();
             this.txtIDMat = new System.Windows.Forms.TextBox();
+            this.btnModo = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.lblCupo = new System.Windows.Forms.Label();
             this.txtCupo = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
@@ -66,21 +66,21 @@ namespace UI.Desktop
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 168F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(412, 225);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // lblID_Curso
             // 
             this.lblID_Curso.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblID_Curso.AutoSize = true;
-            this.lblID_Curso.Location = new System.Drawing.Point(3, 23);
+            this.lblID_Curso.Location = new System.Drawing.Point(3, 10);
             this.lblID_Curso.Name = "lblID_Curso";
             this.lblID_Curso.Size = new System.Drawing.Size(64, 13);
             this.lblID_Curso.TabIndex = 12;
@@ -89,38 +89,16 @@ namespace UI.Desktop
             // txtIDCurso
             // 
             this.txtIDCurso.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtIDCurso.Location = new System.Drawing.Point(215, 20);
+            this.txtIDCurso.Location = new System.Drawing.Point(112, 7);
             this.txtIDCurso.Name = "txtIDCurso";
             this.txtIDCurso.ReadOnly = true;
             this.txtIDCurso.Size = new System.Drawing.Size(256, 20);
             this.txtIDCurso.TabIndex = 0;
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.Location = new System.Drawing.Point(722, 424);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 5;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnModo
-            // 
-            this.btnModo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnModo.Location = new System.Drawing.Point(3, 424);
-            this.btnModo.Name = "btnModo";
-            this.btnModo.Size = new System.Drawing.Size(75, 23);
-            this.btnModo.TabIndex = 4;
-            this.btnModo.Text = "Aceptar";
-            this.btnModo.UseVisualStyleBackColor = true;
-            this.btnModo.Click += new System.EventHandler(this.btnModo_Click);
-            // 
             // txtAnioEsp_Cur
             // 
             this.txtAnioEsp_Cur.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtAnioEsp_Cur.Location = new System.Drawing.Point(215, 197);
+            this.txtAnioEsp_Cur.Location = new System.Drawing.Point(112, 123);
             this.txtAnioEsp_Cur.Name = "txtAnioEsp_Cur";
             this.txtAnioEsp_Cur.Size = new System.Drawing.Size(256, 20);
             this.txtAnioEsp_Cur.TabIndex = 3;
@@ -129,7 +107,7 @@ namespace UI.Desktop
             // 
             this.lblAnioEsp.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblAnioEsp.AutoSize = true;
-            this.lblAnioEsp.Location = new System.Drawing.Point(3, 201);
+            this.lblAnioEsp.Location = new System.Drawing.Point(3, 127);
             this.lblAnioEsp.Name = "lblAnioEsp";
             this.lblAnioEsp.Size = new System.Drawing.Size(89, 13);
             this.lblAnioEsp.TabIndex = 10;
@@ -139,7 +117,7 @@ namespace UI.Desktop
             // 
             this.lblIDCom.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblIDCom.AutoSize = true;
-            this.lblIDCom.Location = new System.Drawing.Point(3, 143);
+            this.lblIDCom.Location = new System.Drawing.Point(3, 89);
             this.lblIDCom.Name = "lblIDCom";
             this.lblIDCom.Size = new System.Drawing.Size(63, 13);
             this.lblIDCom.TabIndex = 11;
@@ -148,7 +126,7 @@ namespace UI.Desktop
             // txtIDCom
             // 
             this.txtIDCom.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtIDCom.Location = new System.Drawing.Point(215, 140);
+            this.txtIDCom.Location = new System.Drawing.Point(112, 85);
             this.txtIDCom.Name = "txtIDCom";
             this.txtIDCom.Size = new System.Drawing.Size(256, 20);
             this.txtIDCom.TabIndex = 2;
@@ -157,7 +135,7 @@ namespace UI.Desktop
             // 
             this.lblIDMateria.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblIDMateria.AutoSize = true;
-            this.lblIDMateria.Location = new System.Drawing.Point(3, 83);
+            this.lblIDMateria.Location = new System.Drawing.Point(3, 48);
             this.lblIDMateria.Name = "lblIDMateria";
             this.lblIDMateria.Size = new System.Drawing.Size(56, 13);
             this.lblIDMateria.TabIndex = 13;
@@ -166,16 +144,38 @@ namespace UI.Desktop
             // txtIDMat
             // 
             this.txtIDMat.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtIDMat.Location = new System.Drawing.Point(215, 80);
+            this.txtIDMat.Location = new System.Drawing.Point(112, 45);
             this.txtIDMat.Name = "txtIDMat";
             this.txtIDMat.Size = new System.Drawing.Size(256, 20);
             this.txtIDMat.TabIndex = 1;
+            // 
+            // btnModo
+            // 
+            this.btnModo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnModo.Location = new System.Drawing.Point(3, 199);
+            this.btnModo.Name = "btnModo";
+            this.btnModo.Size = new System.Drawing.Size(75, 23);
+            this.btnModo.TabIndex = 4;
+            this.btnModo.Text = "Aceptar";
+            this.btnModo.UseVisualStyleBackColor = true;
+            this.btnModo.Click += new System.EventHandler(this.btnModo_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.Location = new System.Drawing.Point(334, 199);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 5;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lblCupo
             // 
             this.lblCupo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblCupo.AutoSize = true;
-            this.lblCupo.Location = new System.Drawing.Point(3, 252);
+            this.lblCupo.Location = new System.Drawing.Point(3, 163);
             this.lblCupo.Name = "lblCupo";
             this.lblCupo.Size = new System.Drawing.Size(32, 13);
             this.lblCupo.TabIndex = 14;
@@ -184,7 +184,7 @@ namespace UI.Desktop
             // txtCupo
             // 
             this.txtCupo.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtCupo.Location = new System.Drawing.Point(215, 248);
+            this.txtCupo.Location = new System.Drawing.Point(112, 159);
             this.txtCupo.Name = "txtCupo";
             this.txtCupo.Size = new System.Drawing.Size(256, 20);
             this.txtCupo.TabIndex = 15;
@@ -192,7 +192,7 @@ namespace UI.Desktop
             // CursosDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(412, 225);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "CursosDesktop";
             this.Text = "Curso";
