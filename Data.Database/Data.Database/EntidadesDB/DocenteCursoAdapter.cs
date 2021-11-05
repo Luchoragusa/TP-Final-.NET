@@ -61,6 +61,7 @@ namespace Data.Database.EntidadesDB
                 SqlDataReader drDocenteCursos = cmdDocenteCursos.ExecuteReader();
                 if (drDocenteCursos != null)
                 {
+<<<<<<< HEAD
                     while (drDocenteCursos.Read())
                     {
                         DocenteCurso.ID = (int)drDocenteCursos["id_dictado"];
@@ -78,6 +79,12 @@ namespace Data.Database.EntidadesDB
                             DocenteCurso.Cargo = Business.Entities.Entidades.DocenteCurso.TipoCargos.JefeCatedra;
                     }
                     
+=======
+                    drDocenteCursos.Read();
+                    DocenteCurso.IDCurso = (int)drDocenteCursos["id_curso"];
+                    DocenteCurso.IDDocente = (int)drDocenteCursos["id_docente"];
+                    DocenteCurso.Cargo = (DocenteCurso.TipoCargos)drDocenteCursos["cargo"];
+>>>>>>> c789b98d5c18d8c4909f6e33f8696203597e7926
                 }
                 drDocenteCursos.Close();
             }

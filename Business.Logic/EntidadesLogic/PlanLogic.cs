@@ -23,11 +23,11 @@ namespace Business.Logic
         }
         
         
-        public Business.Entities.Plan GetOne(int id)
+        public Business.Entities.Plan GetOne(Business.Entities.Plan plan)
         {
             try
             {
-                return PlanData.GetOne(id);
+                return PlanData.GetOne(plan);
             }
             catch (Exception ex)
             {

@@ -52,15 +52,23 @@ namespace UI.Desktop
                 this.btnModo.Text = "Aceptar";
             else
             {
-                if (Modo == ModoForm.Consulta) this.btnModo.Text = "Aceptar";
-                else if (Modo == ModoForm.Modificacion) this.btnModo.Text = "Guardar";
-                else if (Modo == ModoForm.Baja) this.btnModo.Text = "Eliminar";
-
                 this.txtID.Text = this.MateriaActual.ID.ToString();
                 this.txtIDPlan.Text = this.MateriaActual.IDPlan.ToString();
                 this.txtDesc.Text = this.MateriaActual.Descripcion;
                 this.txtHSSemanales.Text = this.MateriaActual.HSSSemanales.ToString();
                 this.txtHSTotales.Text = this.MateriaActual.HSTotales.ToString();
+
+                if (Modo == ModoForm.Modificacion) this.btnModo.Text = "Guardar";
+                else if (Modo == ModoForm.Baja)
+                {
+                    this.btnModo.Text = "Eliminar";
+
+                    this.txtID.Enabled = false;
+                    this.txtIDPlan.Enabled = false;
+                    this.txtDesc.Enabled = false;
+                    this.txtHSSemanales.Enabled = false;
+                    this.txtHSTotales.Enabled = false;
+                }
             }
         }
 
@@ -110,14 +118,20 @@ namespace UI.Desktop
                 Notificar("Algunos de los campos están vaciós", "Complete todos para continuar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-
-            if (!Validaciones.validarTexto(txtDesc.Text))
+            if (!Validaciones.validarTexto(txtIDPlan.Text))
             {
-                Notificar("Descripcion incorrecta.", "Intente nuevamente",
+                Notificar("ID incorrecta.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (Validaciones.validarTexto(txtIDPlan.Text)) // validar lo de abajo con que sea correspondiente a un plan ya creado
+            // No valido la descripcion ya que es un string
+            if (!Validaciones.validarTexto(txtHSSemanales.Text))
+            {
+                Notificar("ID incorrecta.", "Intente nuevamente",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (!Validaciones.validarTexto(txtHSTotales.Text))
             {
                 Notificar("ID incorrecta.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
