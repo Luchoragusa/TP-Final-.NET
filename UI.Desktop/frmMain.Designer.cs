@@ -130,10 +130,10 @@ namespace UI.Desktop
             this.btnAdminReporteAlu.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAdminReporteAlu.Size = new System.Drawing.Size(242, 40);
             this.btnAdminReporteAlu.TabIndex = 14;
-            this.btnAdminReporteAlu.Text = "Reporte Alumno";
+            this.btnAdminReporteAlu.Text = "Reporte de Personas";
             this.btnAdminReporteAlu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdminReporteAlu.UseVisualStyleBackColor = true;
-            this.btnAdminReporteAlu.Click += new System.EventHandler(this.btnAdminReporteAlu_Click);
+            this.btnAdminReporteAlu.Click += new System.EventHandler(this.btnAdminReportePer_Click);
             // 
             // btnAdminRegistrarNota
             // 
