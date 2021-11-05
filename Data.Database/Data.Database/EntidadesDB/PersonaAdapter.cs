@@ -64,20 +64,18 @@ namespace Data.Database.EntidadesDB
             return personas;
         }
 
-        public Personas GetOne(int ID)
+        public Personas GetOne(Personas persona)
         {
-            Personas persona = new Personas();
             try
             {
                 OpenConnection();
                 SqlCommand cmdPersonas = new SqlCommand("SELECT * FROM personas WHERE id_persona = @id", sqlConn);
-                cmdPersonas.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+                cmdPersonas.Parameters.Add("@id", SqlDbType.Int).Value = persona.ID;
                 SqlDataReader drPersonas = cmdPersonas.ExecuteReader();
 
                 if (drPersonas != null)
                 { 
                     drPersonas.Read();
-                    persona.ID = (int)drPersonas["id_persona"];
                     persona.Nombre = (String)drPersonas["nombre"];
                     persona.Apellido = (String)drPersonas["apellido"];
                     persona.Direccion = (String)drPersonas["direccion"];

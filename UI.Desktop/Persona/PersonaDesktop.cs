@@ -28,7 +28,9 @@ namespace UI.Desktop
             PersonaLogic peLogic = new PersonaLogic();
             try
             {
-                PersonaActual = peLogic.GetOne(ID);
+                PersonaActual = new Personas();
+                _peActual.ID = ID;
+                PersonaActual = peLogic.GetOne(PersonaActual);
                 MapearDeDatos();
             }
             catch (Exception ex)

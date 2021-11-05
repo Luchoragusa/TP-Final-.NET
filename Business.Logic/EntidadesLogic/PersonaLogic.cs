@@ -22,11 +22,11 @@ namespace Business.Logic.EntidadesLogic
             set { personaData = value; }
         }
 
-        public Personas GetOne(int id)
+        public Personas GetOne(Personas p)
         {
             try
             {
-                return PersonaData.GetOne(id);
+                return PersonaData.GetOne(p);
             }
             catch (Exception ex)
             {
