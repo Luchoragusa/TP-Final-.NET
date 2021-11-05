@@ -203,14 +203,13 @@ namespace Data.Database
             try
             {
                 OpenConnection();
-                SqlCommand cmdSave = new SqlCommand("INSERT INTO cursos (id_materia, id_comision, anio_calendario, cupo values(@desc_Curso,@id_especialidad) select @@identity ", sqlConn);
-
+                SqlCommand cmdSave = new SqlCommand("INSERT INTO cursos (id_materia, id_comision, anio_calendario, cupo) values(@id_materia, @id_comision, @anio_calendario, @cupo)", sqlConn);
                 cmdSave.Parameters.Add("@id_materia", SqlDbType.Int).Value = Curso.IDMateria;
                 cmdSave.Parameters.Add("@id_comision", SqlDbType.Int).Value = Curso.IDComision;
                 cmdSave.Parameters.Add("@anio_calendario", SqlDbType.Int).Value = Curso.AnioCalendario;
                 cmdSave.Parameters.Add("@cupo", SqlDbType.Int).Value = Curso.Cupo;
 
-                Curso.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
+                cmdSave.ExecuteNonQuery();
             }
             catch (Exception Ex)
             {
