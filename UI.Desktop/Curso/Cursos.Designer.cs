@@ -33,16 +33,16 @@ namespace UI.Desktop
             this.tcPlanes = new System.Windows.Forms.ToolStripContainer();
             this.tlPlanes = new System.Windows.Forms.TableLayoutPanel();
             this.dgvCursos = new System.Windows.Forms.DataGridView();
+            this.idCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.anioCalendario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.tsPlanes = new System.Windows.Forms.ToolStrip();
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
-            this.idCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.anioCalendario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tcPlanes.ContentPanel.SuspendLayout();
             this.tcPlanes.TopToolStripPanel.SuspendLayout();
             this.tcPlanes.SuspendLayout();
@@ -88,6 +88,7 @@ namespace UI.Desktop
             // 
             // dgvCursos
             // 
+            this.dgvCursos.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dgvCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCursos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idCurso,
@@ -101,6 +102,32 @@ namespace UI.Desktop
             this.dgvCursos.Name = "dgvCursos";
             this.dgvCursos.Size = new System.Drawing.Size(794, 390);
             this.dgvCursos.TabIndex = 0;
+            // 
+            // idCurso
+            // 
+            this.idCurso.DataPropertyName = "ID";
+            this.idCurso.HeaderText = "Id Curso";
+            this.idCurso.Name = "idCurso";
+            // 
+            // idComision
+            // 
+            this.idComision.DataPropertyName = "IDComision";
+            this.idComision.HeaderText = "Id Comision";
+            this.idComision.Name = "idComision";
+            // 
+            // anioCalendario
+            // 
+            this.anioCalendario.DataPropertyName = "AnioCalendario";
+            this.anioCalendario.HeaderText = "Anio Calendario";
+            this.anioCalendario.Name = "anioCalendario";
+            this.anioCalendario.Width = 120;
+            // 
+            // Cupo
+            // 
+            this.Cupo.DataPropertyName = "Cupo";
+            this.Cupo.HeaderText = "Cupo";
+            this.Cupo.Name = "Cupo";
+            this.Cupo.ReadOnly = true;
             // 
             // btnSalir
             // 
@@ -164,32 +191,6 @@ namespace UI.Desktop
             this.tsbEliminar.Size = new System.Drawing.Size(23, 22);
             this.tsbEliminar.Text = "Eliminar";
             this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
-            // 
-            // idCurso
-            // 
-            this.idCurso.DataPropertyName = "ID";
-            this.idCurso.HeaderText = "Id Curso";
-            this.idCurso.Name = "idCurso";
-            // 
-            // idComision
-            // 
-            this.idComision.DataPropertyName = "IDComision";
-            this.idComision.HeaderText = "Id Comision";
-            this.idComision.Name = "idComision";
-            // 
-            // anioCalendario
-            // 
-            this.anioCalendario.DataPropertyName = "AnioCalendario";
-            this.anioCalendario.HeaderText = "Anio Calendario";
-            this.anioCalendario.Name = "anioCalendario";
-            this.anioCalendario.Width = 120;
-            // 
-            // Cupo
-            // 
-            this.Cupo.DataPropertyName = "Cupo";
-            this.Cupo.HeaderText = "Cupo";
-            this.Cupo.Name = "Cupo";
-            this.Cupo.ReadOnly = true;
             // 
             // Cursos
             // 
