@@ -53,7 +53,7 @@ namespace UI.Desktop
             this.txtEmail.Text = this.PersonaActual.Email;
             this.txtTelefono.Text = this.PersonaActual.Telefono;
             this.txtLegajo.Text = this.PersonaActual.Legajo.ToString();
-            this.txtFechaNacimiento.Text = this.PersonaActual.FechaNacimiento.ToLongDateString();
+            this.txtFechaNacimiento.Text = this.PersonaActual.FechaNacimiento.ToString();
             this.txtTipoPersona.Text = this.PersonaActual.TipoPersona.ToString();
             this.txtIdPlan.Text = this.PersonaActual.IDPlan.ToString();
 
@@ -164,12 +164,6 @@ namespace UI.Desktop
             if (Validaciones.validarTexto(txtLegajo.Text))
             {
                 Notificar("Legajo Incorrecto.", "Intente nuevamente",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            if (!Validaciones.validarAlphaNumerico(txtFechaNacimiento.Text))
-            {
-                Notificar("Fecha de Nacimiento Incorrecta.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
