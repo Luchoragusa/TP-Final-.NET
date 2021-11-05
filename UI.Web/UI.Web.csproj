@@ -248,8 +248,8 @@
     <Content Include="Persona.aspx" />
     <Content Include="Plan.aspx" />
     <Content Include="RegistrarNota.aspx" />
-    <Content Include="ReporteAlumno.aspx" />
     <Content Include="ReporteComi.aspx" />
+    <Content Include="ReportePersonas.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -278,7 +278,6 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
-    <Content Include="Site.Master" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -296,7 +295,6 @@
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
-    <Content Include="Site.Mobile.Master" />
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
@@ -410,13 +408,6 @@
     <Compile Include="RegistrarNota.aspx.designer.cs">
       <DependentUpon>RegistrarNota.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ReporteAlumno.aspx.cs">
-      <DependentUpon>ReporteAlumno.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ReporteAlumno.aspx.designer.cs">
-      <DependentUpon>ReporteAlumno.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ReporteComi.aspx.cs">
       <DependentUpon>ReporteComi.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -425,19 +416,12 @@
       <DependentUpon>ReporteComi.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Site.Master.cs">
-      <DependentUpon>Site.Master</DependentUpon>
+    <Compile Include="ReportePersonas.aspx.cs">
+      <DependentUpon>ReportePersonas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Site.Master.designer.cs">
-      <DependentUpon>Site.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Site.Mobile.Master.cs">
-      <DependentUpon>Site.Mobile.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Site.Mobile.Master.designer.cs">
-      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    <Compile Include="ReportePersonas.aspx.designer.cs">
+      <DependentUpon>ReportePersonas.aspx</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Usuarios.aspx.cs">
@@ -497,8 +481,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ReportAlumno.rdlc" />
     <EmbeddedResource Include="ReportComi.rdlc" />
+    <EmbeddedResource Include="ReportPersonasWeb.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

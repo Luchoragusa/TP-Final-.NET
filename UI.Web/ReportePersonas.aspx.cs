@@ -18,28 +18,28 @@ using Table = iText.Layout.Element.Table;
 
 namespace UI.Web
 {
-    public partial class ReporteAlumno : System.Web.UI.Page
+    public partial class ReportePersonas : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                Alumno_InscripcionLogic alumnoLogic = new Alumno_InscripcionLogic();
+                PersonaLogic pl = new PersonaLogic();
                 try
-                {                    
-                    ReportDataSource rds = new ReportDataSource("dsReporteAlumnoss", alumnoLogic.GetAll());
-                    this.rvwrAlumnos.LocalReport.ReportEmbeddedResource = "UI.Web.ReportAlumno.rdlc";
-                    this.rvwrAlumnos.LocalReport.DataSources.Clear();
-                    this.rvwrAlumnos.LocalReport.DataSources.Add(rds);
-                    this.rvwrAlumnos.DataBind();
+                {
+                    ReportDataSource rds = new ReportDataSource("DataSet1", pl.GetAll());
+                    this.rvwrPersonass.LocalReport.ReportEmbeddedResource = "UI.Web.ReportPersonasWeb.rdlc";
+                    this.rvwrPersonass.LocalReport.DataSources.Clear();
+                    this.rvwrPersonass.LocalReport.DataSources.Add(rds);
+                    this.rvwrPersonass.DataBind();
                 }
                 catch (Exception ex)
                 {
-                    Response.Write("Error al recuperar lista de curso " + ex);
+                    Response.Write("Error al recuperar lista de personas." + ex);
                 }
             }
         }
-        
+
         protected void btnVolver_Click(object sender, EventArgs e)
         {
             Response.Redirect("MenuPrincipal.aspx");
