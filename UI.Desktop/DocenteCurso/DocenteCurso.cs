@@ -96,7 +96,7 @@ namespace UI.Desktop.DocenteCurso
                 MessageBox.Show("Acción invalida", "Seleccione una fila.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            int ID = ((Business.Entities.Plan)this.dgvDocenteCurso.SelectedRows[0].DataBoundItem).ID;
+            int ID = ((Business.Entities.Entidades.DocenteCurso)this.dgvDocenteCurso.SelectedRows[0].DataBoundItem).ID;
 
             DCDesktop formDC = new DCDesktop(ID, ApplicationForm.ModoForm.Baja);
             try
