@@ -152,6 +152,7 @@ namespace UI.Desktop
             this.btnModo.TabIndex = 7;
             this.btnModo.Text = "Aceptar";
             this.btnModo.UseVisualStyleBackColor = true;
+            this.btnModo.Click += new System.EventHandler(this.btnModo_Click);
             // 
             // btnCancelar
             // 
@@ -162,6 +163,7 @@ namespace UI.Desktop
             this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // DCDesktop
             // 

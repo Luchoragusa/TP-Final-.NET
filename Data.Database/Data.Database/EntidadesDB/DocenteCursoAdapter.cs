@@ -57,7 +57,6 @@ namespace Data.Database.EntidadesDB
                 SqlCommand cmdDocenteCursos = new SqlCommand("SELECT * FROM docentes_cursos WHERE id_dictado = @id", sqlConn);
                 cmdDocenteCursos.Parameters.Add("@id", SqlDbType.Int).Value = DocenteCurso.ID;
                 SqlDataReader drDocenteCursos = cmdDocenteCursos.ExecuteReader();
-
                 if (drDocenteCursos != null)
                 {
                     drDocenteCursos.Read();
