@@ -49,23 +49,22 @@ namespace Data.Database.EntidadesDB
             return DocenteCursoes;
         }
 
-        public DocenteCurso GetOne(int ID)
+        public DocenteCurso GetOne(DocenteCurso DocenteCurso)
         {
-            DocenteCurso DocenteCurso = new DocenteCurso();
             try
             {
                 OpenConnection();
                 SqlCommand cmdDocenteCursos = new SqlCommand("SELECT * FROM docentes_cursos WHERE id_dictado = @id", sqlConn);
-                cmdDocenteCursos.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+                cmdDocenteCursos.Parameters.Add("@id", SqlDbType.Int).Value = DocenteCurso.ID;
                 SqlDataReader drDocenteCursos = cmdDocenteCursos.ExecuteReader();
 
-            //    if (drDocenteCursos != null)
-               // {
+                if (drDocenteCursos != null)
+                {
                     drDocenteCursos.Read();
                     DocenteCurso.IDCurso = (int)drDocenteCursos["id_curso"];
                     DocenteCurso.IDDocente = (int)drDocenteCursos["id_docente"];
                     DocenteCurso.Cargo = (DocenteCurso.TipoCargos)drDocenteCursos["cargo"];
-           //     }
+                }
                 drDocenteCursos.Close();
             }
             catch (Exception Ex)

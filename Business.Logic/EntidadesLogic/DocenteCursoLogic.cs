@@ -22,11 +22,11 @@ namespace Business.Logic.EntidadesLogic
             get { return usData; }
             set { usData = value; }
         }
-        public Business.Entities.Entidades.DocenteCurso GetOne(int id)
+        public DocenteCurso GetOne(DocenteCurso dc)
         {
             try
             {
-                return DocenteCursoData.GetOne(id);
+                return DocenteCursoData.GetOne(dc);
             }
             catch (Exception ex)
             {

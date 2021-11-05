@@ -31,10 +31,12 @@ namespace UI.Desktop
         public DCDesktop(int ID, ModoForm modo) : this()
         {
             this.Modo = modo;
-            Business.Logic.EntidadesLogic.DocenteCursoLogic dcl = new Business.Logic.EntidadesLogic.DocenteCursoLogic();
+            DocenteCursoLogic dcl = new DocenteCursoLogic();
             try
             {
-                DCActual = dcl.GetOne(ID);
+                DCActual = new Business.Entities.Entidades.DocenteCurso();
+                _dc.ID = ID;
+                DCActual = dcl.GetOne(DCActual);
                 MapearDeDatos();
             }
             catch (Exception ex)
