@@ -57,8 +57,10 @@ namespace Data.Database.EntidadesDB
                 SqlCommand cmdDocenteCursoes = new SqlCommand("SELECT * FROM docentes_cursos WHERE id_dictado = @id", sqlConn);
                 cmdDocenteCursoes.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 SqlDataReader drDocenteCursoes = cmdDocenteCursoes.ExecuteReader();
-                while (drDocenteCursoes.Read())
+
+                if (drDocenteCursoes != null)
                 {
+                    drDocenteCursoes.Read();
                     DocenteCurso.IDCurso = (int)drDocenteCursoes["id_curso"];
                     DocenteCurso.IDDocente = (int)drDocenteCursoes["id_docente"];
                     DocenteCurso.Cargo = (Business.Entities.Entidades.DocenteCurso.TipoCargos)drDocenteCursoes["cargo"];
