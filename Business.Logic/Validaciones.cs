@@ -56,34 +56,10 @@ namespace Business.Logic
 
             if (Val.IsMatch(texto))
             {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        public static bool validarNumero(object sender, KeyPressEventArgs e)
-        {
-            if (Char.IsDigit(e.KeyChar))
-            {
-                e.Handled = false;
-                return false;
-            }
-            else if (Char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-                return false;
-            }
-            else if (Char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = false;
                 return false;
             }
             else
             {
-                e.Handled = true;
                 return true;
             }
         }
