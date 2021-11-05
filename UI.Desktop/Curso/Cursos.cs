@@ -42,7 +42,7 @@ namespace UI.Desktop
         }
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
-            ComisionesDesktop formCDesktop = new ComisionesDesktop(ApplicationForm.ModoForm.Alta);
+            CursosDesktop formCDesktop = new CursosDesktop(ApplicationForm.ModoForm.Alta);
             try
             {
                 formCDesktop.ShowDialog();
