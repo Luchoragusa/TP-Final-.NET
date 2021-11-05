@@ -26,29 +26,32 @@ namespace Data.Database.EntidadesDB
 
                 SqlDataReader drPersonas = cmdPersonas.ExecuteReader();
 
-                while (drPersonas.Read())
+                if (drPersonas != null)
                 {
-                    Personas persona = new Personas();
+                    while (drPersonas.Read())
+                    {
+                        Personas persona = new Personas();
 
-                    persona.ID = (int)drPersonas["id_persona"];
-                    persona.Nombre = (String)drPersonas["nombre"];
-                    persona.Apellido = (String)drPersonas["apellido"];
-                    persona.Direccion = (String)drPersonas["direccion"];
-                    persona.Email = (String)drPersonas["email"];
-                    persona.Telefono = (String)drPersonas["telefono"];
-                    persona.FechaNacimiento = (DateTime)drPersonas["fecha_nac"];
-                    persona.Legajo = (int)drPersonas["legajo"];
-                    persona.IDPlan = (int)drPersonas["id_plan"];
-                    int tipoPersona = (int)drPersonas["tipo_persona"];
-                    
-                    if(tipoPersona == (int)Personas.TipoPersonas.Alumno)
-                        persona.TipoPersona = Personas.TipoPersonas.Alumno;
-                    else if (tipoPersona == (int)Personas.TipoPersonas.Docente)
-                        persona.TipoPersona = Personas.TipoPersonas.Docente;
-                    else
-                        persona.TipoPersona = Personas.TipoPersonas.Administrador;
+                        persona.ID = (int)drPersonas["id_persona"];
+                        persona.Nombre = (String)drPersonas["nombre"];
+                        persona.Apellido = (String)drPersonas["apellido"];
+                        persona.Direccion = (String)drPersonas["direccion"];
+                        persona.Email = (String)drPersonas["email"];
+                        persona.Telefono = (String)drPersonas["telefono"];
+                        persona.FechaNacimiento = (DateTime)drPersonas["fecha_nac"];
+                        persona.Legajo = (int)drPersonas["legajo"];
+                        persona.IDPlan = (int)drPersonas["id_plan"];
+                        int tipoPersona = (int)drPersonas["tipo_persona"];
 
-                    personas.Add(persona);
+                        if (tipoPersona == (int)Personas.TipoPersonas.Alumno)
+                            persona.TipoPersona = Personas.TipoPersonas.Alumno;
+                        else if (tipoPersona == (int)Personas.TipoPersonas.Docente)
+                            persona.TipoPersona = Personas.TipoPersonas.Docente;
+                        else
+                            persona.TipoPersona = Personas.TipoPersonas.Administrador;
+
+                        personas.Add(persona);
+                    }
                 }
                 drPersonas.Close();
             }

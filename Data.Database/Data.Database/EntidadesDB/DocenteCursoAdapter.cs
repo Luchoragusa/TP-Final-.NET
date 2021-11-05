@@ -40,7 +40,7 @@ namespace Data.Database.EntidadesDB
             }
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al recuperar la lista de docentes_cursos", Ex);
+                Exception ExcepcionManejada = new Exception("Error al recuperar la lista de Docente cursos", Ex);
                 throw ExcepcionManejada;
             }
             finally
