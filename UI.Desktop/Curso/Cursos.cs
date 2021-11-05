@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business.Logic;
-using Business.Entities;
+using Business.Entities.Entidades;
 
 namespace UI.Desktop
 {
@@ -58,9 +58,9 @@ namespace UI.Desktop
                 MessageBox.Show("Accion Invalida", "Seleccione una fila", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            int ID = ((Comision)this.dgvCursos.SelectedRows[0].DataBoundItem).ID;
+            int ID = ((Business.Entities.Curso)this.dgvCursos.SelectedRows[0].DataBoundItem).ID;
 
-            ComisionesDesktop formCDesktop = new ComisionesDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+            CursosDesktop formCDesktop = new CursosDesktop(ID, ApplicationForm.ModoForm.Modificacion);
             try
             {
                 formCDesktop.ShowDialog();
@@ -78,9 +78,9 @@ namespace UI.Desktop
                 MessageBox.Show("Acción invalida", "Seleccione una fila.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            int ID = ((Comision)this.dgvCursos.SelectedRows[0].DataBoundItem).ID;
+            int ID = ((Business.Entities.Curso)this.dgvCursos.SelectedRows[0].DataBoundItem).ID;
 
-            ComisionesDesktop formCDesktop = new ComisionesDesktop(ID, ApplicationForm.ModoForm.Baja);
+            CursosDesktop formCDesktop = new CursosDesktop(ID, ApplicationForm.ModoForm.Baja);
             try
             {
                 formCDesktop.ShowDialog();

@@ -54,15 +54,24 @@ namespace UI.Desktop
                 this.btnModo.Text = "Aceptar";
             else
             {
-                if (Modo == ModoForm.Consulta) this.btnModo.Text = "Aceptar";
-                else if (Modo == ModoForm.Modificacion) this.btnModo.Text = "Guardar";
-                else if (Modo == ModoForm.Baja) this.btnModo.Text = "Eliminar";
-
                 this.txtIDCurso.Text = this.CursoActual.ID.ToString();
                 this.txtIDMat.Text = this.CursoActual.IDMateria.ToString();
                 this.txtIDCom.Text = this.CursoActual.IDComision.ToString();
                 this.txtAnioEsp_Cur.Text = this.CursoActual.AnioCalendario.ToString();
                 this.txtCupo.Text = this.CursoActual.Cupo.ToString();
+                if (Modo == ModoForm.Consulta) this.btnModo.Text = "Aceptar";
+                else if (Modo == ModoForm.Modificacion) this.btnModo.Text = "Guardar";
+                else if (Modo == ModoForm.Baja)
+                {
+                    this.btnModo.Text = "Eliminar";
+
+                    this.txtIDCurso.Enabled = false;
+                    this.txtIDMat.Enabled = false;
+                    this.txtIDCom.Enabled = false;
+                    this.txtAnioEsp_Cur.Enabled = false;
+                    this.txtCupo.Enabled = false;
+                }
+
             }
         }
 
