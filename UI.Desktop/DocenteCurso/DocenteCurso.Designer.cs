@@ -33,16 +33,16 @@ namespace UI.Desktop.DocenteCurso
             this.tcPlanes = new System.Windows.Forms.ToolStripContainer();
             this.tlPlanes = new System.Windows.Forms.TableLayoutPanel();
             this.dgvDocenteCurso = new System.Windows.Forms.DataGridView();
-            this.IDPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.tsPlanes = new System.Windows.Forms.ToolStrip();
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdDocente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tcPlanes.ContentPanel.SuspendLayout();
             this.tcPlanes.TopToolStripPanel.SuspendLayout();
             this.tcPlanes.SuspendLayout();
@@ -91,9 +91,9 @@ namespace UI.Desktop.DocenteCurso
             this.dgvDocenteCurso.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dgvDocenteCurso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDocenteCurso.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IDPlan,
-            this.IDEspecialidad,
-            this.Descripcion,
+            this.ID,
+            this.IDCurso,
+            this.IdDocente,
             this.Cargo});
             this.tlPlanes.SetColumnSpan(this.dgvDocenteCurso, 2);
             this.dgvDocenteCurso.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -102,31 +102,6 @@ namespace UI.Desktop.DocenteCurso
             this.dgvDocenteCurso.Name = "dgvDocenteCurso";
             this.dgvDocenteCurso.Size = new System.Drawing.Size(794, 390);
             this.dgvDocenteCurso.TabIndex = 0;
-            // 
-            // IDPlan
-            // 
-            this.IDPlan.DataPropertyName = "ID";
-            this.IDPlan.HeaderText = "ID_Dictado";
-            this.IDPlan.Name = "IDPlan";
-            this.IDPlan.ReadOnly = true;
-            // 
-            // IDEspecialidad
-            // 
-            this.IDEspecialidad.DataPropertyName = "IDCurso";
-            this.IDEspecialidad.HeaderText = "ID_Curso";
-            this.IDEspecialidad.Name = "IDEspecialidad";
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.DataPropertyName = "IDDocente";
-            this.Descripcion.HeaderText = "ID_Docente";
-            this.Descripcion.Name = "Descripcion";
-            // 
-            // Cargo
-            // 
-            this.Cargo.DataPropertyName = "Cargo";
-            this.Cargo.HeaderText = "Cargo";
-            this.Cargo.Name = "Cargo";
             // 
             // btnSalir
             // 
@@ -191,6 +166,31 @@ namespace UI.Desktop.DocenteCurso
             this.tsbEliminar.Text = "Eliminar";
             this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID_Dictado";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // IDCurso
+            // 
+            this.IDCurso.DataPropertyName = "IDCurso";
+            this.IDCurso.HeaderText = "ID_Curso";
+            this.IDCurso.Name = "IDCurso";
+            // 
+            // IdDocente
+            // 
+            this.IdDocente.DataPropertyName = "IDDocente";
+            this.IdDocente.HeaderText = "ID_Docente";
+            this.IdDocente.Name = "IdDocente";
+            // 
+            // Cargo
+            // 
+            this.Cargo.DataPropertyName = "Cargo";
+            this.Cargo.HeaderText = "Cargo";
+            this.Cargo.Name = "Cargo";
+            // 
             // DocenteCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -225,9 +225,9 @@ namespace UI.Desktop.DocenteCurso
         private System.Windows.Forms.ToolStripButton tsbNuevo;
         private System.Windows.Forms.ToolStripButton tsbEditar;
         private System.Windows.Forms.ToolStripButton tsbEliminar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDPlan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDEspecialidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDCurso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdDocente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cargo;
     }
 }

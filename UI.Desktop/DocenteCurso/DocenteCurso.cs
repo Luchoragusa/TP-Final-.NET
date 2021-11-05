@@ -75,7 +75,7 @@ namespace UI.Desktop.DocenteCurso
                 return;
 
             }
-            int ID = ((Business.Entities.Plan)this.dgvDocenteCurso.SelectedRows[0].DataBoundItem).ID;
+            int ID = ((Business.Entities.Entidades.DocenteCurso)this.dgvDocenteCurso.SelectedRows[0].DataBoundItem).ID;
 
             DCDesktop formDC = new DCDesktop(ID, ApplicationForm.ModoForm.Modificacion);
             try
