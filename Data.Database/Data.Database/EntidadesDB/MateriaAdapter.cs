@@ -12,29 +12,28 @@ namespace Data.Database
     public class MateriaAdapter : Adapter
     {
         public MateriaAdapter() { }
-
         public List<Materia> GetAll()
         {
             List<Materia> materias = new List<Materia>();
             try
             {
                 this.OpenConnection();
-
                 SqlCommand cmdMaterias = new SqlCommand("SELECT * FROM materias", sqlConn);
-
                 SqlDataReader drMaterias = cmdMaterias.ExecuteReader();
-
-                while (drMaterias.Read())
+                if (drMaterias != null)
                 {
-                    Materia mat = new Materia();
+                    while (drMaterias.Read())
+                    {
+                        Materia mat = new Materia();
 
-                    mat.ID = (int)drMaterias["id_materia"];
-                    mat.Descripcion = (string)drMaterias["desc_materia"];
-                    mat.HSSSemanales = (int)drMaterias["hs_semanales"];
-                    mat.HSTotales = (int)drMaterias["hs_totales"];
-                    mat.IDPlan = (int)drMaterias["id_plan"];
+                        mat.ID = (int)drMaterias["id_materia"];
+                        mat.Descripcion = (string)drMaterias["desc_materia"];
+                        mat.HSSSemanales = (int)drMaterias["hs_semanales"];
+                        mat.HSTotales = (int)drMaterias["hs_totales"];
+                        mat.IDPlan = (int)drMaterias["id_plan"];
 
-                    materias.Add(mat);
+                        materias.Add(mat);
+                    }
                 }
                 drMaterias.Close();
             }
@@ -50,17 +49,17 @@ namespace Data.Database
             return materias;
         }
 
-        public Materia GetOne(int ID)
+        public Materia GetOne(Materia mat)
         {
-            Materia mat = new Materia();
             try
             {
                 OpenConnection();
                 SqlCommand cmdMaterias = new SqlCommand("SELECT * FROM materias WHERE id_materia = @id", sqlConn);
-                cmdMaterias.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+                cmdMaterias.Parameters.Add("@id", SqlDbType.Int).Value = mat.ID;
                 SqlDataReader drMaterias = cmdMaterias.ExecuteReader();
-                while (drMaterias.Read())
+                if (drMaterias != null)
                 {
+                    drMaterias.Read();
                     mat.ID = (int)drMaterias["id_materia"];
                     mat.Descripcion = (string)drMaterias["desc_materia"];
                     mat.HSSSemanales = (int)drMaterias["hs_semanales"];

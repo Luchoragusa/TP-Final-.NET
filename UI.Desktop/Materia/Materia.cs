@@ -20,7 +20,6 @@ namespace UI.Desktop
             this.dgvMaterias.AutoGenerateColumns = false;
             this.dgvMaterias.ReadOnly = true;
         }
-
         public void Listar()
         {
             MateriaLogic mat = new MateriaLogic();
@@ -64,7 +63,6 @@ namespace UI.Desktop
             {
                 MessageBox.Show("Accion Invalida", "Seleccione una fila", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-
             }
             int ID = ((Business.Entities.Materia)this.dgvMaterias.SelectedRows[0].DataBoundItem).ID;
             MateriaDesktop formMateria = new MateriaDesktop(ID, ApplicationForm.ModoForm.Modificacion);

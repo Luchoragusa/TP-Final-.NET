@@ -21,11 +21,11 @@ namespace Business.Logic
             get { return materiaData; }
             set { materiaData = value; }
         }
-        public Materia GetOne(int id)
+        public Materia GetOne(Materia materia)
         {
             try
             {
-                return MateriaData.GetOne(id);
+                return MateriaData.GetOne(materia);
             }
             catch (Exception ex)
             {

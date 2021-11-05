@@ -10,7 +10,7 @@ using Business.Logic;
 
 namespace UI.Desktop
 {
-    public partial class MateriaDesktop : UI.Desktop.ApplicationForm
+    public partial class MateriaDesktop : ApplicationForm
     {
         public MateriaDesktop()
         {
@@ -22,7 +22,22 @@ namespace UI.Desktop
             this.Modo = modo;
             MapearDeDatos();
         }
-
+        public MateriaDesktop(int ID, ModoForm modo) : this()
+        {
+            this.Modo = modo;
+            MateriaLogic mat = new MateriaLogic();
+            try
+            {
+                MateriaActual = new Business.Entities.Materia();
+                _materia.ID = ID;
+                MateriaActual = mat.GetOne(MateriaActual);
+                MapearDeDatos();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         private Business.Entities.Materia _materia;
         public Business.Entities.Materia MateriaActual
         {
@@ -30,23 +45,7 @@ namespace UI.Desktop
             { return _materia; }
             set
             { _materia = value; }
-        }
-
-        public MateriaDesktop(int ID, ModoForm modo) : this()
-        {
-            this.Modo = modo;
-            MateriaLogic mat = new MateriaLogic();
-            try
-            {
-                MateriaActual = mat.GetOne(ID);
-                MapearDeDatos();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }            
-        }
-  
+        }  
         public override void MapearDeDatos()
         {
             if(Modo == ModoForm.Alta)
