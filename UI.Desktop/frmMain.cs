@@ -11,9 +11,9 @@ using Business.Entities;
 
 namespace UI.Desktop
 {
-    public partial class nuevoMaincs : Form
+    public partial class frmMain : Form
     {
-        public nuevoMaincs()
+        public frmMain()
         {
             InitializeComponent();
             customizeDesign();
@@ -21,7 +21,7 @@ namespace UI.Desktop
 
         private Usuario us;
 
-        public nuevoMaincs(int tipo, Usuario u)
+        public frmMain(int tipo, Usuario u)
         {
             frmLogin appLogin = new frmLogin();
             appLogin.Close();

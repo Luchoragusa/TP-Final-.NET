@@ -12,9 +12,9 @@ using Business.Logic;
 
 namespace UI.Desktop
 {
-    public partial class nuevoLogin : Form
+    public partial class frmLogin : Form
     {
-        public nuevoLogin()
+        public frmLogin()
         {
             InitializeComponent();
             US = new UsuarioLogic();
@@ -31,7 +31,7 @@ namespace UI.Desktop
             Usuario usuario = new Usuario();
             int tipo = 0;
 
-            nuevoMaincs nm = null;
+            frmMain nm = null;
 
             usuario.NombreUsuario = this.txtUsuario.Text;
             usuario.Clave = this.txtPass.Text;
@@ -64,7 +64,7 @@ namespace UI.Desktop
                     this.DialogResult = DialogResult.OK;
                 }
 
-                nm = new nuevoMaincs(tipo, usuario);
+                nm = new frmMain(tipo, usuario);
                 nm.ShowDialog();
                 //this.Dispose();
             }

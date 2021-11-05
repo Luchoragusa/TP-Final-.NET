@@ -1,7 +1,7 @@
 ﻿
 namespace UI.Desktop
 {
-    partial class nuevoLogin
+    partial class frmLogin
     {
         /// <summary>
         /// Required designer variable.

@@ -171,17 +171,17 @@
     <Compile Include="Materia\Materia.Designer.cs">
       <DependentUpon>Materia.cs</DependentUpon>
     </Compile>
-    <Compile Include="nuevoLogin.cs">
+    <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="nuevoLogin.Designer.cs">
-      <DependentUpon>nuevoLogin.cs</DependentUpon>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="nuevoMaincs.cs">
+    <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="nuevoMaincs.Designer.cs">
-      <DependentUpon>nuevoMaincs.cs</DependentUpon>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Persona\PersonaDesktop.cs">
       <SubType>Form</SubType>
@@ -291,11 +291,11 @@
     <EmbeddedResource Include="Materia\MateriaDesktop.resx">
       <DependentUpon>MateriaDesktop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="nuevoLogin.resx">
-      <DependentUpon>nuevoLogin.cs</DependentUpon>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="nuevoMaincs.resx">
-      <DependentUpon>nuevoMaincs.cs</DependentUpon>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Persona\PersonaDesktop.resx">
       <DependentUpon>PersonaDesktop.cs</DependentUpon>

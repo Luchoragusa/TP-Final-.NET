@@ -1,7 +1,7 @@
 ﻿
 namespace UI.Desktop
 {
-    partial class nuevoMaincs
+    partial class frmMain
     {
         /// <summary>
         /// Required designer variable.
@@ -510,16 +510,16 @@ namespace UI.Desktop
             this.panelCont.Size = new System.Drawing.Size(770, 626);
             this.panelCont.TabIndex = 1;
             // 
-            // nuevoMaincs
+            // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1048, 626);
             this.Controls.Add(this.panelCont);
             this.Controls.Add(this.panelMain);
-            this.Name = "nuevoMaincs";
+            this.Name = "frmMain";
             this.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.Text = "nuevoMaincs";
+            this.Text = "Menu";
             this.panelMain.ResumeLayout(false);
             this.panelAdminSubMenu.ResumeLayout(false);
             this.panelDocSubMenu.ResumeLayout(false);
