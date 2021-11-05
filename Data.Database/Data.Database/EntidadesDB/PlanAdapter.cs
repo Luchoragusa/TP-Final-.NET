@@ -102,7 +102,6 @@ namespace Data.Database
                 OpenConnection();
                 SqlCommand cmdSave = new SqlCommand("INSERT INTO planes (desc_plan,id_especialidad)" +
                     "values(@desc_plan,@id_especialidad)", sqlConn);
-
                 cmdSave.Parameters.Add("@desc_plan", SqlDbType.VarChar, 50).Value = plan.Descripcion;
                 cmdSave.Parameters.Add("@id_especialidad", SqlDbType.VarChar, 50).Value = plan.IDEspecialidad;
             }
