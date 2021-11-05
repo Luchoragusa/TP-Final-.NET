@@ -199,7 +199,7 @@ namespace UI.Desktop.DocenteCurso
             this.Controls.Add(this.tcPlanes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "DocenteCurso";
-            this.Text = "DocenteCurso";
+            this.Text = "Docente Curso";
             this.Load += new System.EventHandler(this.DocenteCurso_Load);
             this.tcPlanes.ContentPanel.ResumeLayout(false);
             this.tcPlanes.TopToolStripPanel.ResumeLayout(false);
