@@ -17,6 +17,8 @@ namespace UI.Desktop
         public Cursos()
         {
             InitializeComponent();
+            this.dgvCursos.AutoGenerateColumns = false;
+            this.dgvCursos.ReadOnly = true;
         }
         public void Listar()
         {
