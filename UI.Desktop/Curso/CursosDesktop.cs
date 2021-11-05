@@ -71,10 +71,8 @@ namespace UI.Desktop
                     this.txtAnioEsp_Cur.Enabled = false;
                     this.txtCupo.Enabled = false;
                 }
-
             }
         }
-
         public override void MapearADatos()
         {
             if (Modo == ModoForm.Alta)
@@ -82,7 +80,6 @@ namespace UI.Desktop
                 CursoActual = new Business.Entities.Curso();
                 CursoActual.State = BusinessEntity.States.New;
             }
-
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
                 if (Modo != ModoForm.Alta)
@@ -95,11 +92,9 @@ namespace UI.Desktop
                 this.CursoActual.AnioCalendario = Convert.ToInt32(this.txtAnioEsp_Cur.Text);
                 this.CursoActual.Cupo = Convert.ToInt32(this.txtCupo.Text);
             }
-
             if (this.Modo == ModoForm.Baja) CursoActual.State = BusinessEntity.States.Deleted;
             if (this.Modo == ModoForm.Consulta) CursoActual.State = BusinessEntity.States.Unmodified;
         }
-
         public override void GuardarCambios()
         {
             MapearADatos();
@@ -113,7 +108,6 @@ namespace UI.Desktop
                 throw ex;
             }
         }
-
         public override bool Validar()
         {
             if (txtIDMat.Text.Equals(String.Empty) || txtIDCom.Text.Equals(String.Empty) || txtAnioEsp_Cur.Text.Equals(String.Empty) || txtCupo.Text.Equals(String.Empty))
@@ -148,7 +142,6 @@ namespace UI.Desktop
             }
             return true;
         }
-
         private void btnModo_Click(object sender, EventArgs e)
         {
             if (Validar())
@@ -157,7 +150,6 @@ namespace UI.Desktop
                 this.Close();
             }
         }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
