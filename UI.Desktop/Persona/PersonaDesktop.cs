@@ -54,7 +54,7 @@ namespace UI.Desktop
             this.txtTelefono.Text = this.PersonaActual.Telefono;
             this.txtLegajo.Text = this.PersonaActual.Legajo.ToString();
             this.txtFechaNacimiento.Text = this.PersonaActual.FechaNacimiento.ToString();
-            this.tlpTipoPersona.Text = this.PersonaActual.TipoPersona.ToString();
+            this.cbTipoPersona.Text = this.PersonaActual.TipoPersona.ToString();
             this.txtIdPlan.Text = this.PersonaActual.IDPlan.ToString();
 
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
@@ -74,7 +74,7 @@ namespace UI.Desktop
                 this.txtTelefono.Enabled = false;
                 this.txtLegajo.Enabled = false;
                 this.txtFechaNacimiento.Enabled = false;
-                this.tlpTipoPersona.Enabled = false;
+                this.cbTipoPersona.Enabled = false;
                 this.txtIdPlan.Enabled = false;
             }
         }
@@ -101,9 +101,9 @@ namespace UI.Desktop
                 this.PersonaActual.Legajo = int.Parse(this.txtLegajo.Text);
                 this.PersonaActual.FechaNacimiento = DateTime.Parse(this.txtFechaNacimiento.Text);
 
-                if (tlpTipoPersona.Text == "Alumno")
+                if (cbTipoPersona.Text == "Alumno")
                     this.PersonaActual.TipoPersona = Personas.TipoPersonas.Alumno;
-                else if (tlpTipoPersona.Text == "Docente")
+                else if (cbTipoPersona.Text == "Docente")
                     this.PersonaActual.TipoPersona = Personas.TipoPersonas.Docente;
                 else
                     this.PersonaActual.TipoPersona = Personas.TipoPersonas.Administrador;

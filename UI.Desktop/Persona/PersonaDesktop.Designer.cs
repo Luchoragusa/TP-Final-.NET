@@ -29,7 +29,7 @@ namespace UI.Desktop
         /// </summary>
         private void InitializeComponent()
         {
-            this.tlpTipoPersona = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.txtID = new System.Windows.Forms.TextBox();
             this.lblID = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -51,55 +51,55 @@ namespace UI.Desktop
             this.txtLegajo = new System.Windows.Forms.TextBox();
             this.txtFechaNacimiento = new System.Windows.Forms.TextBox();
             this.txtIdPlan = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.tlpTipoPersona.SuspendLayout();
+            this.cbTipoPersona = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tlpTipoPersona
+            // tableLayoutPanel
             // 
-            this.tlpTipoPersona.ColumnCount = 3;
-            this.tlpTipoPersona.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.68919F));
-            this.tlpTipoPersona.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.31081F));
-            this.tlpTipoPersona.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
-            this.tlpTipoPersona.Controls.Add(this.txtID, 1, 0);
-            this.tlpTipoPersona.Controls.Add(this.lblID, 0, 0);
-            this.tlpTipoPersona.Controls.Add(this.lblNombre, 0, 1);
-            this.tlpTipoPersona.Controls.Add(this.txtNombre, 1, 1);
-            this.tlpTipoPersona.Controls.Add(this.lblApellido, 0, 2);
-            this.tlpTipoPersona.Controls.Add(this.txtApellido, 1, 2);
-            this.tlpTipoPersona.Controls.Add(this.lblDireccion, 0, 3);
-            this.tlpTipoPersona.Controls.Add(this.txtDireccion, 1, 3);
-            this.tlpTipoPersona.Controls.Add(this.lblEmail, 0, 4);
-            this.tlpTipoPersona.Controls.Add(this.lblTelefono, 0, 5);
-            this.tlpTipoPersona.Controls.Add(this.lblLegajo, 0, 6);
-            this.tlpTipoPersona.Controls.Add(this.lblFechaNacimiento, 0, 7);
-            this.tlpTipoPersona.Controls.Add(this.lblTipoPersona, 0, 8);
-            this.tlpTipoPersona.Controls.Add(this.btnCancelar, 1, 10);
-            this.tlpTipoPersona.Controls.Add(this.btnModo, 2, 10);
-            this.tlpTipoPersona.Controls.Add(this.lblIdPlan, 0, 9);
-            this.tlpTipoPersona.Controls.Add(this.txtEmail, 1, 4);
-            this.tlpTipoPersona.Controls.Add(this.txtTelefono, 1, 5);
-            this.tlpTipoPersona.Controls.Add(this.txtLegajo, 1, 6);
-            this.tlpTipoPersona.Controls.Add(this.txtFechaNacimiento, 1, 7);
-            this.tlpTipoPersona.Controls.Add(this.txtIdPlan, 1, 9);
-            this.tlpTipoPersona.Controls.Add(this.comboBox1, 1, 8);
-            this.tlpTipoPersona.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTipoPersona.Location = new System.Drawing.Point(0, 0);
-            this.tlpTipoPersona.Name = "tlpTipoPersona";
-            this.tlpTipoPersona.RowCount = 11;
-            this.tlpTipoPersona.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tlpTipoPersona.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.tlpTipoPersona.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
-            this.tlpTipoPersona.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tlpTipoPersona.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tlpTipoPersona.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tlpTipoPersona.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tlpTipoPersona.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tlpTipoPersona.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.tlpTipoPersona.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.tlpTipoPersona.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
-            this.tlpTipoPersona.Size = new System.Drawing.Size(465, 441);
-            this.tlpTipoPersona.TabIndex = 1;
+            this.tableLayoutPanel.ColumnCount = 3;
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.68919F));
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.31081F));
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
+            this.tableLayoutPanel.Controls.Add(this.txtID, 1, 0);
+            this.tableLayoutPanel.Controls.Add(this.lblID, 0, 0);
+            this.tableLayoutPanel.Controls.Add(this.lblNombre, 0, 1);
+            this.tableLayoutPanel.Controls.Add(this.txtNombre, 1, 1);
+            this.tableLayoutPanel.Controls.Add(this.lblApellido, 0, 2);
+            this.tableLayoutPanel.Controls.Add(this.txtApellido, 1, 2);
+            this.tableLayoutPanel.Controls.Add(this.lblDireccion, 0, 3);
+            this.tableLayoutPanel.Controls.Add(this.txtDireccion, 1, 3);
+            this.tableLayoutPanel.Controls.Add(this.lblEmail, 0, 4);
+            this.tableLayoutPanel.Controls.Add(this.lblTelefono, 0, 5);
+            this.tableLayoutPanel.Controls.Add(this.lblLegajo, 0, 6);
+            this.tableLayoutPanel.Controls.Add(this.lblFechaNacimiento, 0, 7);
+            this.tableLayoutPanel.Controls.Add(this.lblTipoPersona, 0, 8);
+            this.tableLayoutPanel.Controls.Add(this.btnCancelar, 1, 10);
+            this.tableLayoutPanel.Controls.Add(this.btnModo, 2, 10);
+            this.tableLayoutPanel.Controls.Add(this.lblIdPlan, 0, 9);
+            this.tableLayoutPanel.Controls.Add(this.txtEmail, 1, 4);
+            this.tableLayoutPanel.Controls.Add(this.txtTelefono, 1, 5);
+            this.tableLayoutPanel.Controls.Add(this.txtLegajo, 1, 6);
+            this.tableLayoutPanel.Controls.Add(this.txtFechaNacimiento, 1, 7);
+            this.tableLayoutPanel.Controls.Add(this.txtIdPlan, 1, 9);
+            this.tableLayoutPanel.Controls.Add(this.cbTipoPersona, 1, 8);
+            this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel.Name = "tableLayoutPanel";
+            this.tableLayoutPanel.RowCount = 11;
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanel.Size = new System.Drawing.Size(465, 441);
+            this.tableLayoutPanel.TabIndex = 1;
             // 
             // txtID
             // 
@@ -296,34 +296,34 @@ namespace UI.Desktop
             this.txtIdPlan.Size = new System.Drawing.Size(256, 20);
             this.txtIdPlan.TabIndex = 28;
             // 
-            // comboBox1
+            // cbTipoPersona
             // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbTipoPersona.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbTipoPersona.FormattingEnabled = true;
+            this.cbTipoPersona.Items.AddRange(new object[] {
             "Alumno",
             "Docente",
             "Admin"});
-            this.comboBox1.Location = new System.Drawing.Point(104, 331);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(256, 21);
-            this.comboBox1.TabIndex = 29;
+            this.cbTipoPersona.Location = new System.Drawing.Point(104, 331);
+            this.cbTipoPersona.Name = "cbTipoPersona";
+            this.cbTipoPersona.Size = new System.Drawing.Size(256, 21);
+            this.cbTipoPersona.TabIndex = 29;
             // 
             // PersonaDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(465, 441);
-            this.Controls.Add(this.tlpTipoPersona);
+            this.Controls.Add(this.tableLayoutPanel);
             this.Name = "PersonaDesktop";
-            this.tlpTipoPersona.ResumeLayout(false);
-            this.tlpTipoPersona.PerformLayout();
+            this.tableLayoutPanel.ResumeLayout(false);
+            this.tableLayoutPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tlpTipoPersona;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label lblNombre;
@@ -345,6 +345,6 @@ namespace UI.Desktop
         private System.Windows.Forms.TextBox txtLegajo;
         private System.Windows.Forms.TextBox txtFechaNacimiento;
         private System.Windows.Forms.TextBox txtIdPlan;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbTipoPersona;
     }
 }

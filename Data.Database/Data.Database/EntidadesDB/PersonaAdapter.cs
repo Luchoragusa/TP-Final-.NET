@@ -170,9 +170,9 @@ namespace Data.Database.EntidadesDB
                     "direccion = @direccion" +
                     "email = @email" +
                     "telefono = @telefono" +
-                    "fecha_nac = @fecha_nac" +
+               //     "fecha_nac = @fecha_nac" +
                     "legajo = @legajo" +
-                    "tipo_persona = @tipo_persona" +
+               //     "tipo_persona = @tipo_persona" +
                     "id_plan = @id_plan" +
                     "WHERE id_persona = @id ", sqlConn);
 
@@ -181,10 +181,10 @@ namespace Data.Database.EntidadesDB
                 cmdUpd.Parameters.Add("@direccion", SqlDbType.VarChar, 50).Value = persona.Direccion;
                 cmdUpd.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = persona.Email;
                 cmdUpd.Parameters.Add("@telefono", SqlDbType.VarChar, 50).Value = persona.Telefono;
-                cmdUpd.Parameters.Add("@fecha_nac", SqlDbType.DateTime).Value = persona.FechaNacimiento;
-                cmdUpd.Parameters.Add("@legajo", SqlDbType.Int, 50).Value = persona.Legajo;
-                cmdUpd.Parameters.Add("@tipo_persona", SqlDbType.Int, 50).Value = persona.TipoPersona;
-                cmdUpd.Parameters.Add("@id_plan", SqlDbType.Int, 50).Value = persona.IDPlan;
+               // cmdUpd.Parameters.Add("@fecha_nac", SqlDbType.DateTime).Value = persona.FechaNacimiento;
+                cmdUpd.Parameters.Add("@legajo", SqlDbType.Int).Value = persona.Legajo;
+                //cmdUpd.Parameters.Add("@tipo_persona", SqlDbType.Int).Value = persona.TipoPersona;
+                cmdUpd.Parameters.Add("@id_plan", SqlDbType.Int).Value = persona.IDPlan;
 
 
                 cmdUpd.ExecuteNonQuery();
