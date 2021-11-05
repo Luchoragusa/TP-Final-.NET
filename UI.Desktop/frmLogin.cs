@@ -20,6 +20,7 @@ namespace UI.Desktop
             US = new UsuarioLogic();
         }
 
+       
         public UsuarioLogic US
         {
             get; set;
@@ -30,7 +31,7 @@ namespace UI.Desktop
             Usuario usuario = new Usuario();
             int tipo = 0;
 
-            nuevoMaincs nm = null; 
+            frmMain nm = null;
 
             usuario.NombreUsuario = this.txtUsuario.Text;
             usuario.Clave = this.txtPass.Text;
@@ -39,13 +40,12 @@ namespace UI.Desktop
 
             tipo = loginUsuario.login(usuario);
 
-            if (tipo != -1)       
-            {                 
+            if (tipo != -1)
+            {
                 if (tipo == 1)      //alumno
                 {
                     MessageBox.Show("Bienvenido al sistema, ALUMNO.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.DialogResult = DialogResult.OK;                   
-                    
+                    this.DialogResult = DialogResult.OK;
                 }
                 else if (tipo == 2) //docente
                 {
@@ -57,16 +57,10 @@ namespace UI.Desktop
                     MessageBox.Show("Bienvenido al sistema, ADMINISTRADOR.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.DialogResult = DialogResult.OK;
                 }
-                else if (tipo == 4) //admin
-                {
-                    MessageBox.Show("Bienvenido al sistema, PERSONA.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.DialogResult = DialogResult.OK;
-                }  
-
-                nm = new nuevoMaincs(tipo, usuario);
+                nm = new frmMain(tipo, usuario);
                 nm.ShowDialog();
                 //this.Dispose();
-            }                           
+            }
             else
             {
                 MessageBox.Show("Usuario y/o contraseña incorrectos", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);

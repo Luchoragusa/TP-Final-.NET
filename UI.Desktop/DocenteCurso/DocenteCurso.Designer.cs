@@ -39,9 +39,9 @@ namespace UI.Desktop.DocenteCurso
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
-            this.IDPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdDocente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tcPlanes.ContentPanel.SuspendLayout();
             this.tcPlanes.TopToolStripPanel.SuspendLayout();
@@ -88,11 +88,12 @@ namespace UI.Desktop.DocenteCurso
             // 
             // dgvDocenteCurso
             // 
+            this.dgvDocenteCurso.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dgvDocenteCurso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDocenteCurso.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IDPlan,
-            this.IDEspecialidad,
-            this.Descripcion,
+            this.ID,
+            this.IDCurso,
+            this.IdDocente,
             this.Cargo});
             this.tlPlanes.SetColumnSpan(this.dgvDocenteCurso, 2);
             this.dgvDocenteCurso.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -165,24 +166,24 @@ namespace UI.Desktop.DocenteCurso
             this.tsbEliminar.Text = "Eliminar";
             this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
             // 
-            // IDPlan
+            // ID
             // 
-            this.IDPlan.DataPropertyName = "ID";
-            this.IDPlan.HeaderText = "ID_Dictado";
-            this.IDPlan.Name = "IDPlan";
-            this.IDPlan.ReadOnly = true;
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID_Dictado";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             // 
-            // IDEspecialidad
+            // IDCurso
             // 
-            this.IDEspecialidad.DataPropertyName = "IDCurso";
-            this.IDEspecialidad.HeaderText = "ID_Curso";
-            this.IDEspecialidad.Name = "IDEspecialidad";
+            this.IDCurso.DataPropertyName = "IDCurso";
+            this.IDCurso.HeaderText = "ID_Curso";
+            this.IDCurso.Name = "IDCurso";
             // 
-            // Descripcion
+            // IdDocente
             // 
-            this.Descripcion.DataPropertyName = "IDDocente";
-            this.Descripcion.HeaderText = "ID_Docente";
-            this.Descripcion.Name = "Descripcion";
+            this.IdDocente.DataPropertyName = "IDDocente";
+            this.IdDocente.HeaderText = "ID_Docente";
+            this.IdDocente.Name = "IdDocente";
             // 
             // Cargo
             // 
@@ -198,7 +199,7 @@ namespace UI.Desktop.DocenteCurso
             this.Controls.Add(this.tcPlanes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "DocenteCurso";
-            this.Text = "DocenteCurso";
+            this.Text = "Docente Curso";
             this.Load += new System.EventHandler(this.DocenteCurso_Load);
             this.tcPlanes.ContentPanel.ResumeLayout(false);
             this.tcPlanes.TopToolStripPanel.ResumeLayout(false);
@@ -224,9 +225,9 @@ namespace UI.Desktop.DocenteCurso
         private System.Windows.Forms.ToolStripButton tsbNuevo;
         private System.Windows.Forms.ToolStripButton tsbEditar;
         private System.Windows.Forms.ToolStripButton tsbEliminar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDPlan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDEspecialidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDCurso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdDocente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cargo;
     }
 }

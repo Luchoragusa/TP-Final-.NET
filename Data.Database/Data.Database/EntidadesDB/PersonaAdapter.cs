@@ -30,17 +30,23 @@ namespace Data.Database.EntidadesDB
                 {
                     Personas persona = new Personas();
 
-                    persona.ID = (int)drPersonas["id_personas"];
+                    persona.ID = (int)drPersonas["id_persona"];
                     persona.Nombre = (String)drPersonas["nombre"];
                     persona.Apellido = (String)drPersonas["apellido"];
                     persona.Direccion = (String)drPersonas["direccion"];
                     persona.Email = (String)drPersonas["email"];
                     persona.Telefono = (String)drPersonas["telefono"];
-                    persona.FechaNacimiento = (DateTime)drPersonas["fehca_nac"];
+                    persona.FechaNacimiento = (DateTime)drPersonas["fecha_nac"];
                     persona.Legajo = (int)drPersonas["legajo"];
-                    Enum @enum = (Enum)drPersonas["tipo_personas"];
-                    persona.TipoPersona = (Personas.TipoPersonas)@enum;
                     persona.IDPlan = (int)drPersonas["id_plan"];
+                    int tipoPersona = (int)drPersonas["tipo_persona"];
+                    
+                    if(tipoPersona == (int)Personas.TipoPersonas.Alumno)
+                        persona.TipoPersona = Personas.TipoPersonas.Alumno;
+                    else if (tipoPersona == (int)Personas.TipoPersonas.Docente)
+                        persona.TipoPersona = Personas.TipoPersonas.Docente;
+                    else
+                        persona.TipoPersona = Personas.TipoPersonas.Administrador;
 
                     personas.Add(persona);
                 }
@@ -67,20 +73,27 @@ namespace Data.Database.EntidadesDB
                 SqlCommand cmdPersonas = new SqlCommand("SELECT * FROM personas WHERE id_persona = @id", sqlConn);
                 cmdPersonas.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 SqlDataReader drPersonas = cmdPersonas.ExecuteReader();
-                while (drPersonas.Read())
-                {
-                    persona.ID = (int)drPersonas["id_personas"];
+
+                if (drPersonas != null)
+                { 
+                    drPersonas.Read();
+                    persona.ID = (int)drPersonas["id_persona"];
                     persona.Nombre = (String)drPersonas["nombre"];
                     persona.Apellido = (String)drPersonas["apellido"];
                     persona.Direccion = (String)drPersonas["direccion"];
                     persona.Email = (String)drPersonas["email"];
                     persona.Telefono = (String)drPersonas["telefono"];
-                    persona.FechaNacimiento = (DateTime)drPersonas["fehca_nac"];
+                    persona.FechaNacimiento = (DateTime)drPersonas["fecha_nac"];
                     persona.Legajo = (int)drPersonas["legajo"];
-                    Enum @enum = (Enum)drPersonas["tipo_personas"];
-                    persona.TipoPersona = (Personas.TipoPersonas)@enum;
                     persona.IDPlan = (int)drPersonas["id_plan"];
+                    int tipoPersona = (int)drPersonas["tipo_persona"];
 
+                    if (tipoPersona == (int)Personas.TipoPersonas.Alumno)
+                        persona.TipoPersona = Personas.TipoPersonas.Alumno;
+                    else if (tipoPersona == (int)Personas.TipoPersonas.Docente)
+                        persona.TipoPersona = Personas.TipoPersonas.Docente;
+                    else
+                        persona.TipoPersona = Personas.TipoPersonas.Administrador;
                 }
                 drPersonas.Close();
             }
@@ -159,9 +172,9 @@ namespace Data.Database.EntidadesDB
                     "direccion = @direccion" +
                     "email = @email" +
                     "telefono = @telefono" +
-                    "fecha_nac = @fecha_nac" +
+               //     "fecha_nac = @fecha_nac" +
                     "legajo = @legajo" +
-                    "tipo_persona = @tipo_persona" +
+               //     "tipo_persona = @tipo_persona" +
                     "id_plan = @id_plan" +
                     "WHERE id_persona = @id ", sqlConn);
 
@@ -170,10 +183,10 @@ namespace Data.Database.EntidadesDB
                 cmdUpd.Parameters.Add("@direccion", SqlDbType.VarChar, 50).Value = persona.Direccion;
                 cmdUpd.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = persona.Email;
                 cmdUpd.Parameters.Add("@telefono", SqlDbType.VarChar, 50).Value = persona.Telefono;
-                cmdUpd.Parameters.Add("@fecha_nac", SqlDbType.DateTime).Value = persona.FechaNacimiento;
-                cmdUpd.Parameters.Add("@legajo", SqlDbType.Int, 50).Value = persona.Legajo;
-                cmdUpd.Parameters.Add("@tipo_persona", SqlDbType.Int, 50).Value = persona.TipoPersona;
-                cmdUpd.Parameters.Add("@id_plan", SqlDbType.Int, 50).Value = persona.IDPlan;
+               // cmdUpd.Parameters.Add("@fecha_nac", SqlDbType.DateTime).Value = persona.FechaNacimiento;
+                cmdUpd.Parameters.Add("@legajo", SqlDbType.Int).Value = persona.Legajo;
+                //cmdUpd.Parameters.Add("@tipo_persona", SqlDbType.Int).Value = persona.TipoPersona;
+                cmdUpd.Parameters.Add("@id_plan", SqlDbType.Int).Value = persona.IDPlan;
 
 
                 cmdUpd.ExecuteNonQuery();

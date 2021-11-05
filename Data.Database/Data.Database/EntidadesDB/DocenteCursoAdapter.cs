@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Business.Entities;
+using Business.Entities.Entidades;
 using System.Data;
 using System.Data.SqlClient;
+using Business.Entities;
 
 namespace Data.Database.EntidadesDB
 {
@@ -13,9 +14,9 @@ namespace Data.Database.EntidadesDB
     {
         public DocenteCursoAdapter() { }
 
-        public List<Business.Entities.Entidades.DocenteCurso> GetAll()
+        public List<DocenteCurso> GetAll()
         {
-            List<Business.Entities.Entidades.DocenteCurso> DocenteCursoes = new List<Business.Entities.Entidades.DocenteCurso>();
+            List<DocenteCurso> DocenteCursoes = new List<DocenteCurso>();
             try
             {
                 this.OpenConnection();
@@ -26,11 +27,11 @@ namespace Data.Database.EntidadesDB
 
                 while (drDocenteCursoes.Read())
                 {
-                    Business.Entities.Entidades.DocenteCurso DocenteCurso = new Business.Entities.Entidades.DocenteCurso();
+                    Business.Entities.Entidades.DocenteCurso DocenteCurso = new DocenteCurso();
 
                     DocenteCurso.IDCurso = (int)drDocenteCursoes["id_curso"];
                     DocenteCurso.IDDocente = (int)drDocenteCursoes["id_docente"];
-                    DocenteCurso.Cargo = (Business.Entities.Entidades.DocenteCurso.TipoCargos)drDocenteCursoes["cargo"];
+                    DocenteCurso.Cargo = (DocenteCurso.TipoCargos)drDocenteCursoes["cargo"];
 
                     DocenteCursoes.Add(DocenteCurso);
                 }
@@ -48,22 +49,24 @@ namespace Data.Database.EntidadesDB
             return DocenteCursoes;
         }
 
-        public Business.Entities.Entidades.DocenteCurso GetOne(int ID)
+        public DocenteCurso GetOne(int ID)
         {
-            Business.Entities.Entidades.DocenteCurso DocenteCurso = new Business.Entities.Entidades.DocenteCurso();
+            DocenteCurso DocenteCurso = new DocenteCurso();
             try
             {
                 OpenConnection();
-                SqlCommand cmdDocenteCursoes = new SqlCommand("SELECT * FROM docentes_cursos WHERE id_dictado = @id", sqlConn);
-                cmdDocenteCursoes.Parameters.Add("@id", SqlDbType.Int).Value = ID;
-                SqlDataReader drDocenteCursoes = cmdDocenteCursoes.ExecuteReader();
-                while (drDocenteCursoes.Read())
-                {
-                    DocenteCurso.IDCurso = (int)drDocenteCursoes["id_curso"];
-                    DocenteCurso.IDDocente = (int)drDocenteCursoes["id_docente"];
-                    DocenteCurso.Cargo = (Business.Entities.Entidades.DocenteCurso.TipoCargos)drDocenteCursoes["cargo"];
-                }
-                drDocenteCursoes.Close();
+                SqlCommand cmdDocenteCursos = new SqlCommand("SELECT * FROM docentes_cursos WHERE id_dictado = @id", sqlConn);
+                cmdDocenteCursos.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+                SqlDataReader drDocenteCursos = cmdDocenteCursos.ExecuteReader();
+
+            //    if (drDocenteCursos != null)
+               // {
+                    drDocenteCursos.Read();
+                    DocenteCurso.IDCurso = (int)drDocenteCursos["id_curso"];
+                    DocenteCurso.IDDocente = (int)drDocenteCursos["id_docente"];
+                    DocenteCurso.Cargo = (DocenteCurso.TipoCargos)drDocenteCursos["cargo"];
+           //     }
+                drDocenteCursos.Close();
             }
             catch (Exception Ex)
             {

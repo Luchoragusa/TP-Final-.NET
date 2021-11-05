@@ -86,6 +86,7 @@ namespace UI.Desktop.Curso
             // 
             // dgvCursos
             // 
+            this.dgvCursos.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dgvCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCursos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDPlan,

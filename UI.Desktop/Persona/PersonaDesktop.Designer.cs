@@ -29,7 +29,7 @@ namespace UI.Desktop
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.txtID = new System.Windows.Forms.TextBox();
             this.lblID = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -38,73 +38,73 @@ namespace UI.Desktop
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.lblDireccion = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnModo = new System.Windows.Forms.Button();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblTelefono = new System.Windows.Forms.Label();
             this.lblLegajo = new System.Windows.Forms.Label();
             this.lblFechaNacimiento = new System.Windows.Forms.Label();
             this.lblTipoPersona = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnModo = new System.Windows.Forms.Button();
             this.lblIdPlan = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtLegajo = new System.Windows.Forms.TextBox();
             this.txtFechaNacimiento = new System.Windows.Forms.TextBox();
-            this.txtTipoPersona = new System.Windows.Forms.TextBox();
             this.txtIdPlan = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.cbTipoPersona = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // tableLayoutPanel
             // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.68919F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.31081F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 83F));
-            this.tableLayoutPanel1.Controls.Add(this.txtID, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lblID, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lblNombre, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtNombre, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblApellido, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txtApellido, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lblDireccion, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.txtDireccion, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.lblEmail, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.lblTelefono, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.lblLegajo, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.lblFechaNacimiento, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.lblTipoPersona, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 1, 10);
-            this.tableLayoutPanel1.Controls.Add(this.btnModo, 2, 10);
-            this.tableLayoutPanel1.Controls.Add(this.lblIdPlan, 0, 9);
-            this.tableLayoutPanel1.Controls.Add(this.txtEmail, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.txtTelefono, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.txtLegajo, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.txtFechaNacimiento, 1, 7);
-            this.tableLayoutPanel1.Controls.Add(this.txtTipoPersona, 1, 8);
-            this.tableLayoutPanel1.Controls.Add(this.txtIdPlan, 1, 9);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 11;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(810, 469);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.tableLayoutPanel.ColumnCount = 3;
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.68919F));
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.31081F));
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
+            this.tableLayoutPanel.Controls.Add(this.txtID, 1, 0);
+            this.tableLayoutPanel.Controls.Add(this.lblID, 0, 0);
+            this.tableLayoutPanel.Controls.Add(this.lblNombre, 0, 1);
+            this.tableLayoutPanel.Controls.Add(this.txtNombre, 1, 1);
+            this.tableLayoutPanel.Controls.Add(this.lblApellido, 0, 2);
+            this.tableLayoutPanel.Controls.Add(this.txtApellido, 1, 2);
+            this.tableLayoutPanel.Controls.Add(this.lblDireccion, 0, 3);
+            this.tableLayoutPanel.Controls.Add(this.txtDireccion, 1, 3);
+            this.tableLayoutPanel.Controls.Add(this.lblEmail, 0, 4);
+            this.tableLayoutPanel.Controls.Add(this.lblTelefono, 0, 5);
+            this.tableLayoutPanel.Controls.Add(this.lblLegajo, 0, 6);
+            this.tableLayoutPanel.Controls.Add(this.lblFechaNacimiento, 0, 7);
+            this.tableLayoutPanel.Controls.Add(this.lblTipoPersona, 0, 8);
+            this.tableLayoutPanel.Controls.Add(this.btnCancelar, 1, 10);
+            this.tableLayoutPanel.Controls.Add(this.btnModo, 2, 10);
+            this.tableLayoutPanel.Controls.Add(this.lblIdPlan, 0, 9);
+            this.tableLayoutPanel.Controls.Add(this.txtEmail, 1, 4);
+            this.tableLayoutPanel.Controls.Add(this.txtTelefono, 1, 5);
+            this.tableLayoutPanel.Controls.Add(this.txtLegajo, 1, 6);
+            this.tableLayoutPanel.Controls.Add(this.txtFechaNacimiento, 1, 7);
+            this.tableLayoutPanel.Controls.Add(this.txtIdPlan, 1, 9);
+            this.tableLayoutPanel.Controls.Add(this.cbTipoPersona, 1, 8);
+            this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel.Name = "tableLayoutPanel";
+            this.tableLayoutPanel.RowCount = 11;
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanel.Size = new System.Drawing.Size(465, 441);
+            this.tableLayoutPanel.TabIndex = 1;
             // 
             // txtID
             // 
             this.txtID.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtID.Location = new System.Drawing.Point(197, 10);
+            this.txtID.Location = new System.Drawing.Point(104, 10);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(256, 20);
@@ -133,7 +133,7 @@ namespace UI.Desktop
             // txtNombre
             // 
             this.txtNombre.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtNombre.Location = new System.Drawing.Point(197, 49);
+            this.txtNombre.Location = new System.Drawing.Point(104, 49);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(256, 20);
             this.txtNombre.TabIndex = 5;
@@ -151,7 +151,7 @@ namespace UI.Desktop
             // txtApellido
             // 
             this.txtApellido.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtApellido.Location = new System.Drawing.Point(197, 93);
+            this.txtApellido.Location = new System.Drawing.Point(104, 93);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(256, 20);
             this.txtApellido.TabIndex = 3;
@@ -169,30 +169,10 @@ namespace UI.Desktop
             // txtDireccion
             // 
             this.txtDireccion.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtDireccion.Location = new System.Drawing.Point(197, 137);
+            this.txtDireccion.Location = new System.Drawing.Point(104, 137);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(256, 20);
             this.txtDireccion.TabIndex = 6;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnCancelar.Location = new System.Drawing.Point(648, 422);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 8;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnModo
-            // 
-            this.btnModo.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnModo.Location = new System.Drawing.Point(732, 422);
-            this.btnModo.Name = "btnModo";
-            this.btnModo.Size = new System.Drawing.Size(75, 23);
-            this.btnModo.TabIndex = 7;
-            this.btnModo.Text = "Aceptar";
-            this.btnModo.UseVisualStyleBackColor = true;
             // 
             // lblEmail
             // 
@@ -244,6 +224,28 @@ namespace UI.Desktop
             this.lblTipoPersona.TabIndex = 21;
             this.lblTipoPersona.Text = "TipoPersona";
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnCancelar.Location = new System.Drawing.Point(301, 411);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 8;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnModo
+            // 
+            this.btnModo.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnModo.Location = new System.Drawing.Point(387, 411);
+            this.btnModo.Name = "btnModo";
+            this.btnModo.Size = new System.Drawing.Size(75, 23);
+            this.btnModo.TabIndex = 7;
+            this.btnModo.Text = "Aceptar";
+            this.btnModo.UseVisualStyleBackColor = true;
+            this.btnModo.Click += new System.EventHandler(this.btnModo_Click);
+            // 
             // lblIdPlan
             // 
             this.lblIdPlan.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -257,7 +259,7 @@ namespace UI.Desktop
             // txtEmail
             // 
             this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtEmail.Location = new System.Drawing.Point(197, 179);
+            this.txtEmail.Location = new System.Drawing.Point(104, 179);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(256, 20);
             this.txtEmail.TabIndex = 23;
@@ -265,7 +267,7 @@ namespace UI.Desktop
             // txtTelefono
             // 
             this.txtTelefono.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtTelefono.Location = new System.Drawing.Point(197, 221);
+            this.txtTelefono.Location = new System.Drawing.Point(104, 221);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(256, 20);
             this.txtTelefono.TabIndex = 24;
@@ -273,7 +275,7 @@ namespace UI.Desktop
             // txtLegajo
             // 
             this.txtLegajo.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtLegajo.Location = new System.Drawing.Point(197, 258);
+            this.txtLegajo.Location = new System.Drawing.Point(104, 258);
             this.txtLegajo.Name = "txtLegajo";
             this.txtLegajo.Size = new System.Drawing.Size(256, 20);
             this.txtLegajo.TabIndex = 25;
@@ -281,42 +283,47 @@ namespace UI.Desktop
             // txtFechaNacimiento
             // 
             this.txtFechaNacimiento.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtFechaNacimiento.Location = new System.Drawing.Point(197, 294);
+            this.txtFechaNacimiento.Location = new System.Drawing.Point(104, 294);
             this.txtFechaNacimiento.Name = "txtFechaNacimiento";
             this.txtFechaNacimiento.Size = new System.Drawing.Size(256, 20);
             this.txtFechaNacimiento.TabIndex = 26;
             // 
-            // txtTipoPersona
-            // 
-            this.txtTipoPersona.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtTipoPersona.Location = new System.Drawing.Point(197, 332);
-            this.txtTipoPersona.Name = "txtTipoPersona";
-            this.txtTipoPersona.Size = new System.Drawing.Size(256, 20);
-            this.txtTipoPersona.TabIndex = 27;
-            // 
             // txtIdPlan
             // 
             this.txtIdPlan.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtIdPlan.Location = new System.Drawing.Point(197, 370);
+            this.txtIdPlan.Location = new System.Drawing.Point(104, 370);
             this.txtIdPlan.Name = "txtIdPlan";
             this.txtIdPlan.Size = new System.Drawing.Size(256, 20);
             this.txtIdPlan.TabIndex = 28;
             // 
+            // cbTipoPersona
+            // 
+            this.cbTipoPersona.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbTipoPersona.FormattingEnabled = true;
+            this.cbTipoPersona.Items.AddRange(new object[] {
+            "Alumno",
+            "Docente",
+            "Admin"});
+            this.cbTipoPersona.Location = new System.Drawing.Point(104, 331);
+            this.cbTipoPersona.Name = "cbTipoPersona";
+            this.cbTipoPersona.Size = new System.Drawing.Size(256, 21);
+            this.cbTipoPersona.TabIndex = 29;
+            // 
             // PersonaDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(810, 469);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.ClientSize = new System.Drawing.Size(465, 441);
+            this.Controls.Add(this.tableLayoutPanel);
             this.Name = "PersonaDesktop";
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel.ResumeLayout(false);
+            this.tableLayoutPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label lblNombre;
@@ -337,7 +344,7 @@ namespace UI.Desktop
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.TextBox txtLegajo;
         private System.Windows.Forms.TextBox txtFechaNacimiento;
-        private System.Windows.Forms.TextBox txtTipoPersona;
         private System.Windows.Forms.TextBox txtIdPlan;
+        private System.Windows.Forms.ComboBox cbTipoPersona;
     }
 }

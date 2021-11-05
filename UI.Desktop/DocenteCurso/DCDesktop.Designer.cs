@@ -36,10 +36,10 @@ namespace UI.Desktop
             this.lblIDDictado = new System.Windows.Forms.Label();
             this.lblDCurso = new System.Windows.Forms.Label();
             this.lblIDDocente = new System.Windows.Forms.Label();
-            this.btnModo = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.lblCargo = new System.Windows.Forms.Label();
             this.txtCargo = new System.Windows.Forms.TextBox();
+            this.btnModo = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -125,6 +125,24 @@ namespace UI.Desktop
             this.lblIDDocente.TabIndex = 12;
             this.lblIDDocente.Text = "ID del docente";
             // 
+            // lblCargo
+            // 
+            this.lblCargo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblCargo.AutoSize = true;
+            this.lblCargo.Location = new System.Drawing.Point(3, 203);
+            this.lblCargo.Name = "lblCargo";
+            this.lblCargo.Size = new System.Drawing.Size(35, 13);
+            this.lblCargo.TabIndex = 13;
+            this.lblCargo.Text = "Cargo";
+            // 
+            // txtCargo
+            // 
+            this.txtCargo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtCargo.Location = new System.Drawing.Point(106, 200);
+            this.txtCargo.Name = "txtCargo";
+            this.txtCargo.Size = new System.Drawing.Size(229, 20);
+            this.txtCargo.TabIndex = 14;
+            // 
             // btnModo
             // 
             this.btnModo.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -145,30 +163,13 @@ namespace UI.Desktop
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // lblCargo
-            // 
-            this.lblCargo.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblCargo.AutoSize = true;
-            this.lblCargo.Location = new System.Drawing.Point(3, 203);
-            this.lblCargo.Name = "lblCargo";
-            this.lblCargo.Size = new System.Drawing.Size(35, 13);
-            this.lblCargo.TabIndex = 13;
-            this.lblCargo.Text = "Cargo";
-            // 
-            // txtCargo
-            // 
-            this.txtCargo.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtCargo.Location = new System.Drawing.Point(106, 200);
-            this.txtCargo.Name = "txtCargo";
-            this.txtCargo.Size = new System.Drawing.Size(229, 20);
-            this.txtCargo.TabIndex = 14;
-            // 
             // DCDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(338, 286);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "DCDesktop";
+            this.Text = "Docente Curso";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

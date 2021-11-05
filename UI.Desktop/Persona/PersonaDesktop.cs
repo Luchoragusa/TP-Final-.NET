@@ -28,7 +28,7 @@ namespace UI.Desktop
             PersonaLogic peLogic = new PersonaLogic();
             try
             {
-                //PersonaActual = peLogic.GetOne(ID);
+                PersonaActual = peLogic.GetOne(ID);
                 MapearDeDatos();
             }
             catch (Exception ex)
@@ -53,21 +53,29 @@ namespace UI.Desktop
             this.txtEmail.Text = this.PersonaActual.Email;
             this.txtTelefono.Text = this.PersonaActual.Telefono;
             this.txtLegajo.Text = this.PersonaActual.Legajo.ToString();
-            this.txtFechaNacimiento.Text = this.PersonaActual.FechaNacimiento.ToLongDateString();
-            this.txtTipoPersona.Text = this.PersonaActual.TipoPersona.ToString();
+            this.txtFechaNacimiento.Text = this.PersonaActual.FechaNacimiento.ToString();
+            this.cbTipoPersona.Text = this.PersonaActual.TipoPersona.ToString();
             this.txtIdPlan.Text = this.PersonaActual.IDPlan.ToString();
 
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
                 this.btnModo.Text = "Guardar";
+                if (Modo == ModoForm.Modificacion)
+                    this.txtID.Enabled = false;
             }
             else if (Modo == ModoForm.Baja)
             {
                 this.btnModo.Text = "Eliminar";
-            }
-            else if (Modo == ModoForm.Consulta)
-            {
-                this.btnModo.Text = "Aceptar";
+                this.txtID.Enabled = false;
+                this.txtNombre.Enabled = false;
+                this.txtApellido.Enabled = false;
+                this.txtDireccion.Enabled = false;
+                this.txtEmail.Enabled = false;
+                this.txtTelefono.Enabled = false;
+                this.txtLegajo.Enabled = false;
+                this.txtFechaNacimiento.Enabled = false;
+                this.cbTipoPersona.Enabled = false;
+                this.txtIdPlan.Enabled = false;
             }
         }
         public override void MapearADatos()
@@ -92,7 +100,14 @@ namespace UI.Desktop
                 this.PersonaActual.Telefono = this.txtTelefono.Text;
                 this.PersonaActual.Legajo = int.Parse(this.txtLegajo.Text);
                 this.PersonaActual.FechaNacimiento = DateTime.Parse(this.txtFechaNacimiento.Text);
-                this.PersonaActual.TipoPersona = (Business.Entities.Entidades.Personas.TipoPersonas)int.Parse(this.txtTipoPersona.Text);
+
+                if (cbTipoPersona.Text == "Alumno")
+                    this.PersonaActual.TipoPersona = Personas.TipoPersonas.Alumno;
+                else if (cbTipoPersona.Text == "Docente")
+                    this.PersonaActual.TipoPersona = Personas.TipoPersonas.Docente;
+                else
+                    this.PersonaActual.TipoPersona = Personas.TipoPersonas.Administrador;
+
                 this.PersonaActual.IDPlan = int.Parse(this.txtIdPlan.Text);
 
             }
@@ -153,22 +168,9 @@ namespace UI.Desktop
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-
             if (Validaciones.validarTexto(txtLegajo.Text))
             {
                 Notificar("Legajo Incorrecto.", "Intente nuevamente",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            if (!Validaciones.validarAlphaNumerico(txtFechaNacimiento.Text))
-            {
-                Notificar("Fecha de Nacimiento Incorrecta.", "Intente nuevamente",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            if (!Validaciones.validarAlphaNumerico(txtTipoPersona.Text))
-            {
-                Notificar("Tipo de persona Incorrecta.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
@@ -178,10 +180,8 @@ namespace UI.Desktop
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-
             return true;
         }
-
         private void btnModo_Click(object sender, EventArgs e)
         {
             if (Validar())
@@ -190,11 +190,9 @@ namespace UI.Desktop
                 this.Close();
             }
         }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        //FALTA GUARDARCAMBIOS  VpersonaDAR  BTN ACEPTAR Y BTNCANCELAR
     }
 }
