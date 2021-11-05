@@ -60,6 +60,8 @@ namespace UI.Desktop
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
                 this.btnModo.Text = "Guardar";
+                if (Modo == ModoForm.Modificacion)
+                    this.txtID.Enabled = false;
             }
             else if (Modo == ModoForm.Baja)
             {
@@ -74,10 +76,6 @@ namespace UI.Desktop
                 this.txtFechaNacimiento.Enabled = false;
                 this.txtTipoPersona.Enabled = false;
                 this.txtIdPlan.Enabled = false;
-            }
-            else if (Modo == ModoForm.Consulta)
-            {
-                this.btnModo.Text = "Aceptar";
             }
         }
         public override void MapearADatos()
