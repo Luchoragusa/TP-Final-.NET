@@ -30,7 +30,7 @@ namespace Business.Entities.Entidades
             Alumno = 1,     
             Docente = 3,
             Administrador = 4,
-            Persona = 6,
+            //Persona = 6,
         }
     }
 }
