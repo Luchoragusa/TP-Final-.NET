@@ -43,7 +43,6 @@ namespace UI.Desktop
                 throw ex;
             }            
         }
-  
         public override void MapearDeDatos()
         {
             this.txtID.Text = this.PlanActual.ID.ToString();
@@ -51,9 +50,15 @@ namespace UI.Desktop
             this.txtIDEspecialidad.Text = this.PlanActual.IDEspecialidad.ToString();
 
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion) this.btnModo.Text = "Guardar";
-            else if (Modo == ModoForm.Baja) this.btnModo.Text = "Eliminar";
-        }
+            else if (Modo == ModoForm.Baja)
+            {
+                this.btnModo.Text = "Eliminar";
 
+                this.txtID.Enabled = false;
+                this.txtDesc.Enabled = false;
+                this.txtIDEspecialidad.Enabled = false;
+            }
+        }
         public override void MapearADatos()
         {
             try
