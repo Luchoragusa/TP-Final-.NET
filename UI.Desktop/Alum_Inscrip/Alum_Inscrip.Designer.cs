@@ -205,7 +205,7 @@ namespace UI.Desktop.Alum_Inscrip
             this.ClientSize = new System.Drawing.Size(602, 450);
             this.Controls.Add(this.tscMaterias);
             this.Name = "Alum_Inscrip";
-            this.Text = "Alum_Inscrip";
+            this.Text = "Inscripciones";
             this.Load += new System.EventHandler(this.Alum_Inscrip_Load);
             this.tscMaterias.ContentPanel.ResumeLayout(false);
             this.tscMaterias.TopToolStripPanel.ResumeLayout(false);

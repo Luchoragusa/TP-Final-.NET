@@ -203,6 +203,7 @@ namespace UI.Desktop.Alum_Inscrip
             this.ClientSize = new System.Drawing.Size(397, 335);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Alum_InscripDesktop";
+            this.Text = "Inscripciones";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

@@ -33,15 +33,15 @@ namespace UI.Desktop.Alum_Inscrip
             this.tscMaterias = new System.Windows.Forms.ToolStripContainer();
             this.tlMaterias = new System.Windows.Forms.TableLayoutPanel();
             this.dgvAlum_Incrip = new System.Windows.Forms.DataGridView();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.tsMaterias = new System.Windows.Forms.ToolStrip();
-            this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Condicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.tsMaterias = new System.Windows.Forms.ToolStrip();
+            this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tscMaterias.ContentPanel.SuspendLayout();
             this.tscMaterias.TopToolStripPanel.SuspendLayout();
             this.tscMaterias.SuspendLayout();
@@ -102,6 +102,44 @@ namespace UI.Desktop.Alum_Inscrip
             this.dgvAlum_Incrip.Size = new System.Drawing.Size(764, 390);
             this.dgvAlum_Incrip.TabIndex = 0;
             // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "NombrePersona";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 170;
+            // 
+            // apellido
+            // 
+            this.apellido.DataPropertyName = "ApellidoPersona";
+            this.apellido.HeaderText = "Apellido";
+            this.apellido.Name = "apellido";
+            this.apellido.ReadOnly = true;
+            this.apellido.Width = 170;
+            // 
+            // Nota
+            // 
+            this.Nota.DataPropertyName = "Nota";
+            this.Nota.HeaderText = "Nota";
+            this.Nota.Name = "Nota";
+            this.Nota.Width = 120;
+            // 
+            // Condicion
+            // 
+            this.Condicion.DataPropertyName = "Condicion";
+            this.Condicion.HeaderText = "Condicion";
+            this.Condicion.Name = "Condicion";
+            this.Condicion.Width = 130;
+            // 
+            // legajo
+            // 
+            this.legajo.DataPropertyName = "legajoPersona";
+            this.legajo.HeaderText = "Legajo";
+            this.legajo.Name = "legajo";
+            this.legajo.ReadOnly = true;
+            this.legajo.Width = 130;
+            // 
             // btnSalir
             // 
             this.btnSalir.Location = new System.Drawing.Point(692, 399);
@@ -143,44 +181,6 @@ namespace UI.Desktop.Alum_Inscrip
             this.tsbEditar.Text = "Editar";
             this.tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
             // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "NombrePersona";
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 170;
-            // 
-            // apellido
-            // 
-            this.apellido.DataPropertyName = "ApellidoPersona";
-            this.apellido.HeaderText = "Apellido";
-            this.apellido.Name = "apellido";
-            this.apellido.ReadOnly = true;
-            this.apellido.Width = 170;
-            // 
-            // Nota
-            // 
-            this.Nota.DataPropertyName = "Nota";
-            this.Nota.HeaderText = "Nota";
-            this.Nota.Name = "Nota";
-            this.Nota.Width = 120;
-            // 
-            // Condicion
-            // 
-            this.Condicion.DataPropertyName = "Condicion";
-            this.Condicion.HeaderText = "Condicion";
-            this.Condicion.Name = "Condicion";
-            this.Condicion.Width = 130;
-            // 
-            // legajo
-            // 
-            this.legajo.DataPropertyName = "legajoPersona";
-            this.legajo.HeaderText = "Legajo";
-            this.legajo.Name = "legajo";
-            this.legajo.ReadOnly = true;
-            this.legajo.Width = 130;
-            // 
             // Alumno_Curso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,7 +188,7 @@ namespace UI.Desktop.Alum_Inscrip
             this.ClientSize = new System.Drawing.Size(770, 450);
             this.Controls.Add(this.tscMaterias);
             this.Name = "Alumno_Curso";
-            this.Text = "Alumno_Curso";
+            this.Text = "Curso Alumno";
             this.Load += new System.EventHandler(this.Alum_Curso_Load);
             this.tscMaterias.ContentPanel.ResumeLayout(false);
             this.tscMaterias.TopToolStripPanel.ResumeLayout(false);
