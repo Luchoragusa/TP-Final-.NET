@@ -39,10 +39,10 @@ namespace UI.Desktop
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
-            this.IDPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Anio_Especialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.anioCalendario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tcPlanes.ContentPanel.SuspendLayout();
             this.tcPlanes.TopToolStripPanel.SuspendLayout();
             this.tcPlanes.SuspendLayout();
@@ -90,10 +90,10 @@ namespace UI.Desktop
             // 
             this.dgvCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCursos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IDPlan,
-            this.Anio_Especialidad,
-            this.Descripcion,
-            this.IDComision});
+            this.idCurso,
+            this.idComision,
+            this.anioCalendario,
+            this.Cupo});
             this.tlPlanes.SetColumnSpan(this.dgvCursos, 2);
             this.dgvCursos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCursos.Location = new System.Drawing.Point(3, 3);
@@ -165,30 +165,31 @@ namespace UI.Desktop
             this.tsbEliminar.Text = "Eliminar";
             this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
             // 
-            // IDPlan
+            // idCurso
             // 
-            this.IDPlan.DataPropertyName = "ID";
-            this.IDPlan.HeaderText = "ID_Curso";
-            this.IDPlan.Name = "IDPlan";
+            this.idCurso.DataPropertyName = "ID";
+            this.idCurso.HeaderText = "Id Curso";
+            this.idCurso.Name = "idCurso";
             // 
-            // Anio_Especialidad
+            // idComision
             // 
-            this.Anio_Especialidad.DataPropertyName = "IDComision";
-            this.Anio_Especialidad.HeaderText = "ID_Comision";
-            this.Anio_Especialidad.Name = "Anio_Especialidad";
+            this.idComision.DataPropertyName = "IDComision";
+            this.idComision.HeaderText = "Id Comision";
+            this.idComision.Name = "idComision";
             // 
-            // Descripcion
+            // anioCalendario
             // 
-            this.Descripcion.DataPropertyName = "AnioCalendario";
-            this.Descripcion.HeaderText = "Anio_Calendario";
-            this.Descripcion.Name = "Descripcion";
+            this.anioCalendario.DataPropertyName = "AnioCalendario";
+            this.anioCalendario.HeaderText = "Anio Calendario";
+            this.anioCalendario.Name = "anioCalendario";
+            this.anioCalendario.Width = 120;
             // 
-            // IDComision
+            // Cupo
             // 
-            this.IDComision.DataPropertyName = "Cupo";
-            this.IDComision.HeaderText = "Cupo";
-            this.IDComision.Name = "IDComision";
-            this.IDComision.ReadOnly = true;
+            this.Cupo.DataPropertyName = "Cupo";
+            this.Cupo.HeaderText = "Cupo";
+            this.Cupo.Name = "Cupo";
+            this.Cupo.ReadOnly = true;
             // 
             // Cursos
             // 
@@ -223,9 +224,9 @@ namespace UI.Desktop
         private System.Windows.Forms.ToolStripButton tsbNuevo;
         private System.Windows.Forms.ToolStripButton tsbEditar;
         private System.Windows.Forms.ToolStripButton tsbEliminar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDPlan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Anio_Especialidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDComision;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCurso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idComision;
+        private System.Windows.Forms.DataGridViewTextBoxColumn anioCalendario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cupo;
     }
 }

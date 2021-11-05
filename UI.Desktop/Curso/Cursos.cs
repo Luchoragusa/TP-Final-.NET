@@ -18,8 +18,6 @@ namespace UI.Desktop
         {
             InitializeComponent();
         }
-    
-
         public void Listar()
         {
             Business.Logic.EntidadesLogic.CursoLogic cl = new Business.Logic.EntidadesLogic.CursoLogic();
@@ -32,17 +30,14 @@ namespace UI.Desktop
                 MessageBox.Show(ex.Message + "Error detected ", "Ha habido un error interno:", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             Listar();
         }
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
             ComisionesDesktop formCDesktop = new ComisionesDesktop(ApplicationForm.ModoForm.Alta);
@@ -56,7 +51,6 @@ namespace UI.Desktop
                 throw ex;
             }
         }
-
         private void tsbEditar_Click(object sender, EventArgs e)
         {
             if (this.dgvCursos.SelectedRows.Count == 0)
@@ -64,7 +58,7 @@ namespace UI.Desktop
                 MessageBox.Show("Accion Invalida", "Seleccione una fila", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            int ID = ((Business.Entities.Comision)this.dgvCursos.SelectedRows[0].DataBoundItem).ID;
+            int ID = ((Comision)this.dgvCursos.SelectedRows[0].DataBoundItem).ID;
 
             ComisionesDesktop formCDesktop = new ComisionesDesktop(ID, ApplicationForm.ModoForm.Modificacion);
             try
@@ -77,7 +71,6 @@ namespace UI.Desktop
                 MessageBox.Show(ex.Message + "Error detected ", "Ha habido un error interno: ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
             if (this.dgvCursos.SelectedRows.Count == 0)
@@ -85,7 +78,7 @@ namespace UI.Desktop
                 MessageBox.Show("Acción invalida", "Seleccione una fila.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            int ID = ((Business.Entities.Comision)this.dgvCursos.SelectedRows[0].DataBoundItem).ID;
+            int ID = ((Comision)this.dgvCursos.SelectedRows[0].DataBoundItem).ID;
 
             ComisionesDesktop formCDesktop = new ComisionesDesktop(ID, ApplicationForm.ModoForm.Baja);
             try
@@ -98,7 +91,6 @@ namespace UI.Desktop
                 MessageBox.Show(ex.Message + "Error detected: ", "Ha habido un error interno.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void Cursos_Load(object sender, EventArgs e)
         {
             Listar();

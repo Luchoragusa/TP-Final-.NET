@@ -77,20 +77,22 @@ namespace Data.Database
                 this.OpenConnection();
 
                 SqlCommand cmdcursos = new SqlCommand("SELECT * FROM cursos", sqlConn);
-
                 SqlDataReader drcursos = cmdcursos.ExecuteReader();
 
-                while (drcursos.Read())
+                if (drcursos != null)
                 {
-                    Curso Curso = new Curso();
+                    while (drcursos.Read())
+                    {
+                        Curso Curso = new Curso();
 
-                    Curso.ID = (int)drcursos["id_Curso"];
-                    Curso.IDMateria = (int)drcursos["id_materia"];
-                    Curso.IDComision = (int)drcursos["id_comision"];
-                    Curso.AnioCalendario = (int)drcursos["anio_calendario"];
-                    Curso.Cupo = (int)drcursos["cupo"];
+                        Curso.ID = (int)drcursos["id_Curso"];
+                        Curso.IDMateria = (int)drcursos["id_materia"];
+                        Curso.IDComision = (int)drcursos["id_comision"];
+                        Curso.AnioCalendario = (int)drcursos["anio_calendario"];
+                        Curso.Cupo = (int)drcursos["cupo"];
 
-                    cursos.Add(Curso);
+                        cursos.Add(Curso);
+                    }
                 }
                 drcursos.Close();
             }
@@ -105,8 +107,6 @@ namespace Data.Database
             }
             return cursos;
         }
-
-
         public List<Curso> GetAllByDocente(Usuario docente)
         {
             List<Curso> cursosDelDocente = new List<Curso>();
