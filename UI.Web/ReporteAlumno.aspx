@@ -10,24 +10,22 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="PageContent" runat="server">
     
 
-        <asp:ScriptManager ID="ScriptManager" runat="server">
-        </asp:ScriptManager> 
         <div class="reporte" Align="Center">
-            <rsweb:ReportViewer ID="rvwrAlumnos" runat="server" Height="276px" Width="535px"></rsweb:ReportViewer>
+            <asp:ScriptManager ID="ScriptManager" runat="server">
+            </asp:ScriptManager>
+            <rsweb:ReportViewer ID="rvwrAlumnos" runat="server" Height="295px" Width="535px"></rsweb:ReportViewer>
             <br />
             <br />
             <br />
-            <asp:Panel ID="Panel5" runat="server" Height="45px">
-            </asp:Panel>
+             <asp:Button ID="btnVolver" runat="server" BackColor="#006666" Font-Bold="True" ForeColor="White" OnClick="btnVolver_Click" Text="Volver al menu" Width="121px" />
+            <br />
+            <br />
+            <br />
+            <br />
+    
+
+            <br />
         </div>
         
 
-        <asp:Panel ID="Panel4" runat="server" HorizontalAlign="Center" Height="30px" style="margin-bottom: 62px">
-        <asp:Button ID="btnVolver" runat="server" BackColor="#006666" Font-Bold="True" ForeColor="White" Text="Volver al menu" Width="121px" OnClick="btnVolver_Click" />
-             <br />
-            <br />
-            <br />
-             </asp:Panel>
-   
-
-</asp:Content>
+        </asp:Content>

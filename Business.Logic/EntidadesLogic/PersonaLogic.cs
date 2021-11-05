@@ -97,10 +97,5 @@ namespace Business.Logic.EntidadesLogic
                 throw ExcepcionManejada;
             }
         }
-
-
-
-
-
     }
 }

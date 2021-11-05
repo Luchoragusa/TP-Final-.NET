@@ -28,8 +28,14 @@ namespace Business.Entities.Entidades
         public enum TipoPersonas 
         {
             Alumno = 1,     
+<<<<<<< HEAD
+            Docente = 3,
+            Administrador = 4,
+            //Persona = 6,
+=======
             Docente = 2,
             Administrador = 3
+>>>>>>> 4be5b0b3feb1d23a2d939c928e79113cd41530f4
         }
     }
 }
