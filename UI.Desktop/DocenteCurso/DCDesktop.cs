@@ -26,7 +26,13 @@ namespace UI.Desktop
         }
 
         private Business.Entities.Entidades.DocenteCurso _dc;
-        public Business.Entities.Entidades.DocenteCurso DCActual  { get; set; }
+        public Business.Entities.Entidades.DocenteCurso DCActual
+        {
+            get
+            { return _dc; }
+            set
+            { _dc = value; }
+        }
 
         public DCDesktop(int ID, ModoForm modo) : this()
         {
