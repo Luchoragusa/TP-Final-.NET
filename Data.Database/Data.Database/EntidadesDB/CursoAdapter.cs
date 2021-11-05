@@ -233,6 +233,7 @@ namespace Data.Database
                 cmdUpd.Parameters.Add("@id_materia", SqlDbType.Int).Value = Curso.IDMateria;
                 cmdUpd.Parameters.Add("@anio_calendario", SqlDbType.Int).Value = Curso.AnioCalendario;
                 cmdUpd.Parameters.Add("@cupo", SqlDbType.Int).Value = Curso.Cupo;
+                cmdUpd.Parameters.Add("@id", SqlDbType.Int).Value = Curso.ID;
 
                 cmdUpd.ExecuteNonQuery();
             }
