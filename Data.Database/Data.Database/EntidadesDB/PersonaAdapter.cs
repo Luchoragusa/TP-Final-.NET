@@ -73,8 +73,10 @@ namespace Data.Database.EntidadesDB
                 SqlCommand cmdPersonas = new SqlCommand("SELECT * FROM personas WHERE id_persona = @id", sqlConn);
                 cmdPersonas.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 SqlDataReader drPersonas = cmdPersonas.ExecuteReader();
-                while (drPersonas.Read())
-                {
+
+                if (drPersonas != null)
+                { 
+                    drPersonas.Read();
                     persona.ID = (int)drPersonas["id_persona"];
                     persona.Nombre = (String)drPersonas["nombre"];
                     persona.Apellido = (String)drPersonas["apellido"];
