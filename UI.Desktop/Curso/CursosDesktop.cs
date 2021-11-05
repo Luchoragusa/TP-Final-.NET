@@ -24,7 +24,6 @@ namespace UI.Desktop
         }
 
         private Business.Entities.Curso _Curso;
-
         public Business.Entities.Curso CursoActual
         {
             get
@@ -38,7 +37,9 @@ namespace UI.Desktop
             Business.Logic.EntidadesLogic.CursoLogic curl = new Business.Logic.EntidadesLogic.CursoLogic();
             try
             {
-                CursoActual = curl.GetOne(ID);
+                CursoActual = new Business.Entities.Curso();
+                _Curso.ID = ID;
+                CursoActual = curl.GetOne(CursoActual);
                 MapearDeDatos();
             }
             catch (Exception ex)

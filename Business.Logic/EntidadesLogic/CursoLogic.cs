@@ -35,11 +35,11 @@ namespace Business.Logic.EntidadesLogic
             }
         }
 
-        public Business.Entities.Curso GetOne(int id)
+        public Curso GetOne(Curso curso)
         {
             try
             {
-                return CursoData.GetOne(id);
+                return CursoData.GetOne(curso);
             }
             catch (Exception ex)
             {

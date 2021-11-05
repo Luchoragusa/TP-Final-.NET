@@ -147,22 +147,24 @@ namespace Data.Database
             return cursosDelDocente;
         }
 
-        public Curso GetOne(int ID)
+        public Curso GetOne(Curso curso)
         {
-            Curso Curso = new Curso();
             try
             {
                 OpenConnection();
                 SqlCommand cmdcursos = new SqlCommand("SELECT * FROM cursos WHERE id_curso = @id", sqlConn);
-                cmdcursos.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+                cmdcursos.Parameters.Add("@id", SqlDbType.Int).Value = curso.ID;
                 SqlDataReader drcursos = cmdcursos.ExecuteReader();
-                while (drcursos.Read())
+                if (drcursos != null)
                 {
-                    Curso.ID = (int)drcursos["id_Curso"];
-                    Curso.IDMateria = (int)drcursos["id_materia"];
-                    Curso.IDComision = (int)drcursos["id_comision"];
-                    Curso.AnioCalendario = (int)drcursos["anio_calendario"];
-                    Curso.Cupo = (int)drcursos["cupo"];
+                    while (drcursos.Read())
+                    {
+                        curso.ID = (int)drcursos["id_Curso"];
+                        curso.IDMateria = (int)drcursos["id_materia"];
+                        curso.IDComision = (int)drcursos["id_comision"];
+                        curso.AnioCalendario = (int)drcursos["anio_calendario"];
+                        curso.Cupo = (int)drcursos["cupo"];
+                    }
                 }
                 drcursos.Close();
             }
