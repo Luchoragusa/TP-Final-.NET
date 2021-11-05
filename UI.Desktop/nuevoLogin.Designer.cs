@@ -140,7 +140,7 @@ namespace UI.Desktop
             this.ClientSize = new System.Drawing.Size(428, 297);
             this.Controls.Add(this.panelExt);
             this.Name = "nuevoLogin";
-            this.Text = "nuevoLogin";
+            this.Text = "Login";
             this.panelExt.ResumeLayout(false);
             this.panelExt.PerformLayout();
             this.ResumeLayout(false);
