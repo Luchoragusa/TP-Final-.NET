@@ -23,16 +23,18 @@ namespace Data.Database
                 SqlCommand cmdPlanes = new SqlCommand("SELECT * FROM planes", sqlConn);
 
                 SqlDataReader drPlanes = cmdPlanes.ExecuteReader();
-
-                while (drPlanes.Read())
+                if (drPlanes != null)
                 {
-                    Plan plan = new Plan();
+                    while (drPlanes.Read())
+                    {
+                        Plan plan = new Plan();
 
-                    plan.ID = (int)drPlanes["id_plan"];
-                    plan.Descripcion = (string)drPlanes["desc_plan"];
-                    plan.IDEspecialidad = (int)drPlanes["id_especialidad"];
+                        plan.ID = (int)drPlanes["id_plan"];
+                        plan.Descripcion = (string)drPlanes["desc_plan"];
+                        plan.IDEspecialidad = (int)drPlanes["id_especialidad"];
 
-                    planes.Add(plan);
+                        planes.Add(plan);
+                    }
                 }
                 drPlanes.Close();
             }
@@ -48,18 +50,16 @@ namespace Data.Database
             return planes;
         }
 
-        public Plan GetOne(int ID)
+        public Plan GetOne(Plan plan)
         {
-            Plan plan = new Plan();
             try
             {
                 OpenConnection();
                 SqlCommand cmdPlanes = new SqlCommand("SELECT * FROM planes WHERE id_plan = @id", sqlConn);
-                cmdPlanes.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+                cmdPlanes.Parameters.Add("@id", SqlDbType.Int).Value = plan.ID;
                 SqlDataReader drPlanes = cmdPlanes.ExecuteReader();
-                while (drPlanes.Read())
+                if (drPlanes != null)
                 {
-                    plan.ID = (int)drPlanes["id_plan"];
                     plan.Descripcion = (string)drPlanes["desc_plan"];
                     plan.IDEspecialidad = (int)drPlanes["id_especialidad"];
                 }

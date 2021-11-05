@@ -7,7 +7,6 @@ using System.Text;
 using System.Windows.Forms;
 using Business.Entities;
 using Business.Logic;
-using Business.Logic;
 using Business.Logic.EntidadesLogic;
 
 namespace UI.Desktop
@@ -31,10 +30,12 @@ namespace UI.Desktop
         public PlanDesktop(int ID, ModoForm modo) : this()
         {
             this.Modo = modo;
-            Business.Logic.PlanLogic pl = new Business.Logic.PlanLogic();
+            PlanLogic pl = new PlanLogic();
             try
             {
-                PlanActual = pl.GetOne(ID);
+                PlanActual = new Business.Entities.Plan();
+                _plan.ID = ID;
+                PlanActual = pl.GetOne(PlanActual);
                 MapearDeDatos();
             }
             catch (Exception ex)
