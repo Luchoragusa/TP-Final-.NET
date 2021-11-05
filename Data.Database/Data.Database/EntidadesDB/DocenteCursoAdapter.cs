@@ -60,13 +60,10 @@ namespace Data.Database.EntidadesDB
                 SqlDataReader drDocenteCursos = cmdDocenteCursos.ExecuteReader();
                 if (drDocenteCursos != null)
                 {
-                    while (drDocenteCursos.Read())
-                    {                        
-                        DocenteCurso.IDCurso = (int)drDocenteCursos["id_curso"];
-                        DocenteCurso.IDDocente = (int)drDocenteCursos["id_docente"];
-                        DocenteCurso.Cargo = (DocenteCurso.TipoCargos)drDocenteCursos["cargo"];
-                    }
-                    
+                    drDocenteCursos.Read();
+                    DocenteCurso.IDCurso = (int)drDocenteCursos["id_curso"];
+                    DocenteCurso.IDDocente = (int)drDocenteCursos["id_docente"];
+                    DocenteCurso.Cargo = (DocenteCurso.TipoCargos)drDocenteCursos["cargo"];
                 }
                 drDocenteCursos.Close();
             }
