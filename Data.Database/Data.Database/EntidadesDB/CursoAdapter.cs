@@ -177,9 +177,8 @@ namespace Data.Database
             {
                 CloseConnection();
             }
-            return Curso;
+            return curso;
         }
-
         public void Delete(int ID)
         {
             try
@@ -199,7 +198,6 @@ namespace Data.Database
                 CloseConnection();
             }
         }
-
         public void Insert(Curso Curso)
         {
             try
@@ -224,7 +222,6 @@ namespace Data.Database
                 CloseConnection();
             }
         }
-
         public void Update(Curso Curso)
         {
             try
@@ -249,7 +246,6 @@ namespace Data.Database
                 CloseConnection();
             }
         }
-
         public void Save(Curso Curso)
         {
             if (Curso.State == BusinessEntity.States.Deleted)
