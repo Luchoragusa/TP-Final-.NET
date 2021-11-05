@@ -174,12 +174,6 @@ namespace UI.Desktop
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (!Validaciones.validarAlphaNumerico(txtTipoPersona.Text))
-            {
-                Notificar("Tipo de persona Incorrecta.", "Intente nuevamente",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
             if (Validaciones.validarTexto(txtIdPlan.Text))
             {
                 Notificar("id Plan incorrecto Incorrecta.", "Intente nuevamente",
