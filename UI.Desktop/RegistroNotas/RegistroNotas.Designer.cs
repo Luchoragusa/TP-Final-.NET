@@ -82,6 +82,7 @@ namespace UI.Desktop.RegistroNotas
             // 
             // dgvRN
             // 
+            this.dgvRN.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dgvRN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tlPlanes.SetColumnSpan(this.dgvRN, 2);
             this.dgvRN.Dock = System.Windows.Forms.DockStyle.Fill;
