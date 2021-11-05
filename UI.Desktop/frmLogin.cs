@@ -46,7 +46,6 @@ namespace UI.Desktop
                 {
                     MessageBox.Show("Bienvenido al sistema, ALUMNO.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.DialogResult = DialogResult.OK;
-
                 }
                 else if (tipo == 2) //docente
                 {
@@ -58,12 +57,6 @@ namespace UI.Desktop
                     MessageBox.Show("Bienvenido al sistema, ADMINISTRADOR.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.DialogResult = DialogResult.OK;
                 }
-                else if (tipo == 4) //admin
-                {
-                    MessageBox.Show("Bienvenido al sistema, PERSONA.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.DialogResult = DialogResult.OK;
-                }
-
                 nm = new frmMain(tipo, usuario);
                 nm.ShowDialog();
                 //this.Dispose();

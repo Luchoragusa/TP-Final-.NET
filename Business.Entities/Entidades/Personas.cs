@@ -28,9 +28,8 @@ namespace Business.Entities.Entidades
         public enum TipoPersonas 
         {
             Alumno = 1,     
-            Docente = 3,
-            Administrador = 4,
-            Persona = 6,
+            Docente = 2,
+            Administrador = 3
         }
     }
 }
