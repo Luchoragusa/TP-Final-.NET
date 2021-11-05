@@ -12,7 +12,7 @@ using Business.Logic.EntidadesLogic;
 
 namespace UI.Desktop
 {
-    public partial class DCDesktop : UI.Desktop.ApplicationForm
+    public partial class DCDesktop : ApplicationForm
     {
         public DCDesktop()
         {
@@ -59,7 +59,14 @@ namespace UI.Desktop
             this.txtCargo.Text = this.DCActual.Cargo.ToString();
 
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion) this.btnModo.Text = "Guardar";
-            else if (Modo == ModoForm.Baja) this.btnModo.Text = "Eliminar";
+            else if (Modo == ModoForm.Baja)
+            {
+                this.btnModo.Text = "Eliminar";
+                this.txtIDDictado.Enabled = false;
+                this.txtIDCurso.Enabled = false;
+                this.txtIDDocente.Enabled = false;
+                this.txtCargo.Enabled = false;
+            }
         }
 
         public override void MapearADatos()

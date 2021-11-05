@@ -23,19 +23,20 @@ namespace Data.Database.EntidadesDB
 
                 SqlCommand cmdDocenteCursoes = new SqlCommand("SELECT * FROM docentes_cursos", sqlConn);
 
-                SqlDataReader drDocenteCursoes = cmdDocenteCursoes.ExecuteReader();
-
-                while (drDocenteCursoes.Read())
+                SqlDataReader drDocenteCursos = cmdDocenteCursoes.ExecuteReader();
+                if (drDocenteCursos != null)
                 {
-                    Business.Entities.Entidades.DocenteCurso DocenteCurso = new DocenteCurso();
+                    while (drDocenteCursos.Read())
+                    {
+                        DocenteCurso DocenteCurso = new DocenteCurso();
+                        DocenteCurso.IDCurso = (int)drDocenteCursos["id_curso"];
+                        DocenteCurso.IDDocente = (int)drDocenteCursos["id_docente"];
+                        DocenteCurso.Cargo = (DocenteCurso.TipoCargos)drDocenteCursos["cargo"];
 
-                    DocenteCurso.IDCurso = (int)drDocenteCursoes["id_curso"];
-                    DocenteCurso.IDDocente = (int)drDocenteCursoes["id_docente"];
-                    DocenteCurso.Cargo = (DocenteCurso.TipoCargos)drDocenteCursoes["cargo"];
-
-                    DocenteCursoes.Add(DocenteCurso);
+                        DocenteCursoes.Add(DocenteCurso);
+                    }
                 }
-                drDocenteCursoes.Close();
+                drDocenteCursos.Close();
             }
             catch (Exception Ex)
             {
