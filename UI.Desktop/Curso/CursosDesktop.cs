@@ -16,13 +16,11 @@ namespace UI.Desktop
         {
             InitializeComponent();
         }
-
         public CursosDesktop(ModoForm modo) : this()
         {
             this.Modo = modo;
             MapearDeDatos();
         }
-
         private Business.Entities.Curso _Curso;
         public Business.Entities.Curso CursoActual
         {
@@ -47,7 +45,6 @@ namespace UI.Desktop
                 throw ex;
             }
         }
-
         public override void MapearDeDatos()
         {
             if (Modo == ModoForm.Alta)
@@ -114,7 +111,6 @@ namespace UI.Desktop
                 Notificar("Algunos de los campos están vaciós", "Complete todos para continuar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-
             if (!Validaciones.validarTexto(txtIDMat.Text))
             {
                 Notificar("ID Materia incorrecta.", "Intente nuevamente",
