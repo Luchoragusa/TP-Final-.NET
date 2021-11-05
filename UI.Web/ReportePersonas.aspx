@@ -1,8 +1,8 @@
-﻿<%@ Page Title="Reporte Alumno" Language="C#" 
+﻿<%@ Page Title="Reporte Personas" Language="C#" 
     MasterPageFile="~/MasterPage/MasterPage.Master" 
     AutoEventWireup="true" 
-    CodeBehind="ReporteAlumno.aspx.cs" 
-    Inherits="UI.Web.ReporteAlumno" 
+    CodeBehind="ReportePersonas.aspx.cs" 
+    Inherits="UI.Web.ReportePersonas" 
 %>
 
 <%@ Register assembly="Microsoft.ReportViewer.WebForms" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
@@ -13,7 +13,7 @@
         <div class="reporte" Align="Center">
             <asp:ScriptManager ID="ScriptManager" runat="server">
             </asp:ScriptManager>
-            <rsweb:ReportViewer ID="rvwrAlumnos" runat="server" Height="295px" Width="535px"></rsweb:ReportViewer>
+            <rsweb:ReportViewer ID="rvwrPersonass" runat="server" Height="295px" Width="535px"></rsweb:ReportViewer>
             <br />
             <br />
             <br />
