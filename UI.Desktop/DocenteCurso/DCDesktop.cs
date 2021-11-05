@@ -22,7 +22,8 @@ namespace UI.Desktop
         public DCDesktop(ModoForm modo) : this()
         {
             this.Modo = modo;
-            DCActual = new Business.Entities.Entidades.DocenteCurso();
+            //DCActual = new Business.Entities.Entidades.DocenteCurso();
+            MapearDeDatos();
         }
 
         private Business.Entities.Entidades.DocenteCurso _dc;
@@ -66,6 +67,7 @@ namespace UI.Desktop
                 else if (Modo == ModoForm.Baja)
                 {
                     this.btnModo.Text = "Eliminar";
+
                     this.txtIDDictado.Enabled = false;
                     this.txtIDCurso.Enabled = false;
                     this.txtIDDocente.Enabled = false;

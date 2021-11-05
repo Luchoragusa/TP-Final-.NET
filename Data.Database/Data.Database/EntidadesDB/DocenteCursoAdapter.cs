@@ -29,6 +29,7 @@ namespace Data.Database.EntidadesDB
                     while (drDocenteCursos.Read())
                     {
                         DocenteCurso DocenteCurso = new DocenteCurso();
+                        DocenteCurso.ID = (int)drDocenteCursos["id_dictado"];
                         DocenteCurso.IDCurso = (int)drDocenteCursos["id_curso"];
                         DocenteCurso.IDDocente = (int)drDocenteCursos["id_docente"];
                         DocenteCurso.Cargo = (DocenteCurso.TipoCargos)drDocenteCursos["cargo"];
@@ -60,10 +61,29 @@ namespace Data.Database.EntidadesDB
                 SqlDataReader drDocenteCursos = cmdDocenteCursos.ExecuteReader();
                 if (drDocenteCursos != null)
                 {
+
+                    while (drDocenteCursos.Read())
+                    {
+                        DocenteCurso.ID = (int)drDocenteCursos["id_dictado"];
+                        DocenteCurso.IDCurso = (int)drDocenteCursos["id_curso"];
+                        DocenteCurso.IDDocente = (int)drDocenteCursos["id_docente"];
+                        int cargo = (int)drDocenteCursos["cargo"];
+
+                        if (cargo == (int)Business.Entities.Entidades.DocenteCurso.TipoCargos.Titular)
+                            DocenteCurso.Cargo = Business.Entities.Entidades.DocenteCurso.TipoCargos.Titular;
+
+                        else if (cargo == (int)Business.Entities.Entidades.DocenteCurso.TipoCargos.Auxiliar)
+                            DocenteCurso.Cargo = Business.Entities.Entidades.DocenteCurso.TipoCargos.Auxiliar;
+
+                        else if (cargo == (int)Business.Entities.Entidades.DocenteCurso.TipoCargos.JefeCatedra)
+                            DocenteCurso.Cargo = Business.Entities.Entidades.DocenteCurso.TipoCargos.JefeCatedra;
+                    }
+                    
                     drDocenteCursos.Read();
                     DocenteCurso.IDCurso = (int)drDocenteCursos["id_curso"];
                     DocenteCurso.IDDocente = (int)drDocenteCursos["id_docente"];
                     DocenteCurso.Cargo = (DocenteCurso.TipoCargos)drDocenteCursos["cargo"];
+
                 }
                 drDocenteCursos.Close();
             }

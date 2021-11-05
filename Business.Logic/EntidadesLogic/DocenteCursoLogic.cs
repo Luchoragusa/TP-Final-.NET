@@ -11,16 +11,16 @@ namespace Business.Logic.EntidadesLogic
 {
     public class DocenteCursoLogic : BusinessLogic
     {
-        private Data.Database.EntidadesDB.DocenteCursoAdapter usData;
+        private Data.Database.EntidadesDB.DocenteCursoAdapter docData;
 
         public DocenteCursoLogic()
         {
-            usData = new Data.Database.EntidadesDB.DocenteCursoAdapter();
+            docData = new Data.Database.EntidadesDB.DocenteCursoAdapter();
         }
         public Data.Database.EntidadesDB.DocenteCursoAdapter DocenteCursoData
         {
-            get { return usData; }
-            set { usData = value; }
+            get { return docData; }
+            set { docData = value; }
         }
         public DocenteCurso GetOne(DocenteCurso dc)
         {
