@@ -102,12 +102,12 @@ namespace UI.Desktop
             this.dgvMaterias.Location = new System.Drawing.Point(3, 3);
             this.dgvMaterias.MultiSelect = false;
             this.dgvMaterias.Name = "dgvMaterias";
-            this.dgvMaterias.Size = new System.Drawing.Size(794, 390);
+            this.dgvMaterias.Size = new System.Drawing.Size(795, 390);
             this.dgvMaterias.TabIndex = 0;
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(722, 399);
+            this.btnSalir.Location = new System.Drawing.Point(723, 399);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 2;
@@ -118,7 +118,7 @@ namespace UI.Desktop
             // btnActualizar
             // 
             this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.Location = new System.Drawing.Point(641, 399);
+            this.btnActualizar.Location = new System.Drawing.Point(642, 399);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 1;
@@ -171,13 +171,13 @@ namespace UI.Desktop
             // IDPlan
             // 
             this.IDPlan.DataPropertyName = "IDPlan";
-            this.IDPlan.HeaderText = "ID_Plan";
+            this.IDPlan.HeaderText = "Id Plan";
             this.IDPlan.Name = "IDPlan";
             // 
             // IDMateria
             // 
             this.IDMateria.DataPropertyName = "ID";
-            this.IDMateria.HeaderText = "ID_Materia";
+            this.IDMateria.HeaderText = "Id Materia";
             this.IDMateria.Name = "IDMateria";
             // 
             // Descripcion
@@ -185,7 +185,7 @@ namespace UI.Desktop
             this.Descripcion.DataPropertyName = "Descripcion";
             this.Descripcion.HeaderText = "Descripcion";
             this.Descripcion.Name = "Descripcion";
-            this.Descripcion.Width = 300;
+            this.Descripcion.Width = 120;
             // 
             // HSSemanales
             // 
@@ -197,7 +197,7 @@ namespace UI.Desktop
             // HSTotales
             // 
             this.HSTotales.DataPropertyName = "HSTotales";
-            this.HSTotales.HeaderText = "Horas Totales";
+            this.HSTotales.HeaderText = "Total de Horas";
             this.HSTotales.Name = "HSTotales";
             // 
             // Materia
