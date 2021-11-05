@@ -23,15 +23,17 @@ namespace Data.Database
                 SqlCommand cmdEspecialidades = new SqlCommand("SELECT * FROM especialidades", sqlConn);
 
                 SqlDataReader drEspecialidades = cmdEspecialidades.ExecuteReader();
-
-                while (drEspecialidades.Read())
+                if (drEspecialidades != null)
                 {
-                    Especialidad esp = new Especialidad();
+                    while (drEspecialidades.Read())
+                    {
+                        Especialidad esp = new Especialidad();
 
-                    esp.ID = (int)drEspecialidades["id_especialidad"];
-                    esp.DescEspecialidad = (string)drEspecialidades["desc_especialidad"];
+                        esp.ID = (int)drEspecialidades["id_especialidad"];
+                        esp.DescEspecialidad = (string)drEspecialidades["desc_especialidad"];
 
-                    especialidades.Add(esp);
+                        especialidades.Add(esp);
+                    }
                 }
                 drEspecialidades.Close();
             }
@@ -47,21 +49,20 @@ namespace Data.Database
             return especialidades;
         }
 
-        public Especialidad GetOne(int ID)
+        public Especialidad GetOne(Especialidad esp)
         {
-            Especialidad esp = new Especialidad();
             try
             {
                 OpenConnection();
                 SqlCommand cmdEspecialidades = new SqlCommand("SELECT * FROM especialidades WHERE id_especialidad = @id", sqlConn);
-                cmdEspecialidades.Parameters.Add("@id", SqlDbType.Int).Value = ID;
-                SqlDataReader drespecialidads = cmdEspecialidades.ExecuteReader();
-                while (drespecialidads.Read())
+                cmdEspecialidades.Parameters.Add("@id", SqlDbType.Int).Value = esp.ID;
+                SqlDataReader drespecialidad = cmdEspecialidades.ExecuteReader();
+                if(drespecialidad != null)
                 {
-                    esp.ID = (int)drespecialidads["id_especialidad"];
-                    esp.DescEspecialidad = (string)drespecialidads["desc_especialidad"];
+                    drespecialidad.Read();
+                    esp.DescEspecialidad = (string)drespecialidad["desc_especialidad"];
                 }
-                drespecialidads.Close();
+                drespecialidad.Close();
             }
             catch (Exception Ex)
             {

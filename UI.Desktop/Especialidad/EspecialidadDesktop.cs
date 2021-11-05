@@ -22,7 +22,6 @@ namespace UI.Desktop
             this.Modo = modo;
             EspecialidadActual = new Business.Entities.Especialidad();
         }
-
         private Business.Entities.Especialidad _especialidad;
         public Business.Entities.Especialidad EspecialidadActual
         {
@@ -31,14 +30,15 @@ namespace UI.Desktop
             set
             { _especialidad = value; }
         }
-
         public EspecialidadDesktop(int ID, ModoForm modo) : this()
         {
             this.Modo = modo;
-            Business.Logic.EspecialidadLogic espl = new Business.Logic.EspecialidadLogic();
+            EspecialidadLogic espl = new EspecialidadLogic();
             try
             {
-                EspecialidadActual = espl.GetOne(ID);
+                EspecialidadActual = new Business.Entities.Especialidad();
+                _especialidad.ID = ID;
+                EspecialidadActual = espl.GetOne(EspecialidadActual);
                 MapearDeDatos();
             }
             catch (Exception ex)
@@ -52,9 +52,14 @@ namespace UI.Desktop
             this.txtIDEsp.Text = this.EspecialidadActual.ID.ToString();
             this.txtDescEsp.Text = this.EspecialidadActual.DescEspecialidad;
 
-            if (Modo == ModoForm.Consulta) this.btnModo.Text = "Aceptar";
-            else if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion) this.btnModo.Text = "Guardar";
-            else if (Modo == ModoForm.Baja) this.btnModo.Text = "Eliminar";
+            if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion) this.btnModo.Text = "Guardar";
+            else if (Modo == ModoForm.Baja)
+            {
+                this.btnModo.Text = "Eliminar";
+
+                this.txtIDEsp.Enabled = false;
+                this.txtDescEsp.Enabled = false;
+            }
         }
 
         public override void MapearADatos()
@@ -77,7 +82,6 @@ namespace UI.Desktop
             }
 
             if (this.Modo == ModoForm.Baja) EspecialidadActual.State = BusinessEntity.States.Deleted;
-            if (this.Modo == ModoForm.Consulta) EspecialidadActual.State = BusinessEntity.States.Unmodified;
         }
 
         public override void GuardarCambios()
@@ -93,7 +97,6 @@ namespace UI.Desktop
                 throw ex;
             }
         }
-
         public override bool Validar()
         {
             if (txtDescEsp.Text.Equals(String.Empty))

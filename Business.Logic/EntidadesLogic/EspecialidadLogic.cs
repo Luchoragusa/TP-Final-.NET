@@ -21,11 +21,11 @@ namespace Business.Logic
             get { return especialidadData; }
             set { especialidadData = value; }
         }
-        public Especialidad GetOne(int id)
+        public Especialidad GetOne(Especialidad esp)
         {
             try
             {
-                return EspecialidadData.GetOne(id);
+                return EspecialidadData.GetOne(esp);
             }
             catch (Exception ex)
             {
