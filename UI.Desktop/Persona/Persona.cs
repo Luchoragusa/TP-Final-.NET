@@ -78,10 +78,10 @@ namespace UI.Desktop.Persona
             }
             int ID = ((Personas)this.dgvPersonas.SelectedRows[0].DataBoundItem).ID;
 
-            UsuarioDesktop formUsuario = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+            PersonaDesktop formPDesktop = new PersonaDesktop(ID, ApplicationForm.ModoForm.Modificacion);
             try
             {
-                formUsuario.ShowDialog();
+                formPDesktop.ShowDialog();
                 this.Listar();
             }
             catch (Exception ex)

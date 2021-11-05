@@ -28,7 +28,7 @@ namespace UI.Desktop
             PersonaLogic peLogic = new PersonaLogic();
             try
             {
-                //PersonaActual = peLogic.GetOne(ID);
+                PersonaActual = peLogic.GetOne(ID);
                 MapearDeDatos();
             }
             catch (Exception ex)
@@ -64,6 +64,8 @@ namespace UI.Desktop
             else if (Modo == ModoForm.Baja)
             {
                 this.btnModo.Text = "Eliminar";
+                this.txtID.Enabled = false;
+
             }
             else if (Modo == ModoForm.Consulta)
             {
@@ -153,7 +155,6 @@ namespace UI.Desktop
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-
             if (Validaciones.validarTexto(txtLegajo.Text))
             {
                 Notificar("Legajo Incorrecto.", "Intente nuevamente",
@@ -178,7 +179,6 @@ namespace UI.Desktop
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-
             return true;
         }
 

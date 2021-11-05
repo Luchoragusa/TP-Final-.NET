@@ -75,18 +75,23 @@ namespace Data.Database.EntidadesDB
                 SqlDataReader drPersonas = cmdPersonas.ExecuteReader();
                 while (drPersonas.Read())
                 {
-                    persona.ID = (int)drPersonas["id_personas"];
+                    persona.ID = (int)drPersonas["id_persona"];
                     persona.Nombre = (String)drPersonas["nombre"];
                     persona.Apellido = (String)drPersonas["apellido"];
                     persona.Direccion = (String)drPersonas["direccion"];
                     persona.Email = (String)drPersonas["email"];
                     persona.Telefono = (String)drPersonas["telefono"];
-                    persona.FechaNacimiento = (DateTime)drPersonas["fehca_nac"];
+                    persona.FechaNacimiento = (DateTime)drPersonas["fecha_nac"];
                     persona.Legajo = (int)drPersonas["legajo"];
-                    Enum @enum = (Enum)drPersonas["tipo_personas"];
-                    persona.TipoPersona = (Personas.TipoPersonas)@enum;
                     persona.IDPlan = (int)drPersonas["id_plan"];
+                    int tipoPersona = (int)drPersonas["tipo_persona"];
 
+                    if (tipoPersona == (int)Personas.TipoPersonas.Alumno)
+                        persona.TipoPersona = Personas.TipoPersonas.Alumno;
+                    else if (tipoPersona == (int)Personas.TipoPersonas.Docente)
+                        persona.TipoPersona = Personas.TipoPersonas.Docente;
+                    else
+                        persona.TipoPersona = Personas.TipoPersonas.Administrador;
                 }
                 drPersonas.Close();
             }
