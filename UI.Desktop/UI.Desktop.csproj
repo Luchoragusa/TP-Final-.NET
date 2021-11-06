@@ -135,11 +135,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetPersonas.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DocenteCurso\Docente-Curso_Inscripcion.cs">
+    <Compile Include="DocenteCurso\Docente-Inscripcion-Curso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DocenteCurso\Docente-Curso_Inscripcion.Designer.cs">
-      <DependentUpon>Docente-Curso_Inscripcion.cs</DependentUpon>
+    <Compile Include="DocenteCurso\Docente-Inscripcion-Curso.Designer.cs">
+      <DependentUpon>Docente-Inscripcion-Curso.cs</DependentUpon>
     </Compile>
     <Compile Include="DocenteCurso\Docente-Materias.cs">
       <SubType>Form</SubType>
@@ -285,8 +285,8 @@
     <EmbeddedResource Include="Curso\CursosNotas.resx">
       <DependentUpon>CursosNotas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DocenteCurso\Docente-Curso_Inscripcion.resx">
-      <DependentUpon>Docente-Curso_Inscripcion.cs</DependentUpon>
+    <EmbeddedResource Include="DocenteCurso\Docente-Inscripcion-Curso.resx">
+      <DependentUpon>Docente-Inscripcion-Curso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DocenteCurso\Docente-Materias.resx">
       <DependentUpon>Docente-Materias.cs</DependentUpon>

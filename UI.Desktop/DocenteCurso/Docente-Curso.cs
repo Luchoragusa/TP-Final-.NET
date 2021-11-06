@@ -14,13 +14,13 @@ using Business.Logic.EntidadesLogic;
 
 namespace UI.Desktop.DocenteCurso
 {
-    public partial class DocenteMatComCursos : Form
+    public partial class DcoenteCursos : Form
     {
         Usuario docente = new Usuario();
         Business.Entities.Materia materia = new Business.Entities.Materia();
         Comision comision = new Comision();
 
-        public DocenteMatComCursos(int idComision, Usuario doc, Business.Entities.Materia mat)
+        public DcoenteCursos(int idComision, Usuario doc, Business.Entities.Materia mat)
         {
             InitializeComponent();
             docente = doc;

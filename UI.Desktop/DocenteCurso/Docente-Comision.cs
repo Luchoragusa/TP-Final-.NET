@@ -14,13 +14,13 @@ using Business.Logic.EntidadesLogic;
 
 namespace UI.Desktop.DocenteCurso
 {
-    public partial class DocenteMaterias_Comision : Form
+    public partial class DocenteComision : Form
     {
         Usuario docente = new Usuario();
         Business.Entities.Materia materia = new Business.Entities.Materia();
 
 
-        public DocenteMaterias_Comision(int idMateria, Usuario docent)
+        public DocenteComision(int idMateria, Usuario docent)
         {
             InitializeComponent();
             docente = docent;
@@ -67,7 +67,7 @@ namespace UI.Desktop.DocenteCurso
             }
             int ID = ((Business.Entities.Comision)this.dgvDocenteMateriasCom.SelectedRows[0].DataBoundItem).ID;
 
-            DocenteMatComCursos comision_cursos = new DocenteMatComCursos(ID, docente, materia);
+            DcoenteCursos comision_cursos = new DcoenteCursos(ID, docente, materia);
 
             try
             {

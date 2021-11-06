@@ -1,7 +1,7 @@
 ﻿
 namespace UI.Desktop
 {
-    partial class DCDesktop
+    partial class DICDesktop
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -165,13 +165,13 @@ namespace UI.Desktop
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // DCDesktop
+            // DICDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(338, 286);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "DCDesktop";
-            this.Text = "Docente Curso";
+            this.Name = "DICDesktop";
+            this.Text = "Insrcipcion a curso";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

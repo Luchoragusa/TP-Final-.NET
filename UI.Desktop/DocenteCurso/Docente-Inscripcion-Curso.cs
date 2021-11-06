@@ -12,14 +12,14 @@ using Business.Logic.EntidadesLogic;
 
 namespace UI.Desktop
 {
-    public partial class DCDesktop : ApplicationForm
+    public partial class DICDesktop : ApplicationForm
     {
-        public DCDesktop()
+        public DICDesktop()
         {
             InitializeComponent();
         }
 
-        public DCDesktop(ModoForm modo) : this()
+        public DICDesktop(ModoForm modo) : this()
         {
             this.Modo = modo;
             //DCActual = new Business.Entities.Entidades.DocenteCurso();
@@ -35,7 +35,7 @@ namespace UI.Desktop
             { _dc = value; }
         }
 
-        public DCDesktop(int ID, ModoForm modo) : this()
+        public DICDesktop(int ID, ModoForm modo) : this()
         {
             this.Modo = modo;
             DocenteCursoLogic dcl = new DocenteCursoLogic();

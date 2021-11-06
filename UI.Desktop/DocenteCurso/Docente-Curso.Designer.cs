@@ -1,7 +1,7 @@
 ﻿
 namespace UI.Desktop.DocenteCurso
 {
-    partial class DocenteMatComCursos
+    partial class DcoenteCursos
     {
         /// <summary>
         /// Required designer variable.
@@ -31,19 +31,19 @@ namespace UI.Desktop.DocenteCurso
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DocenteMatComCursos));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DcoenteCursos));
             this.tcPlanes = new System.Windows.Forms.ToolStripContainer();
             this.tlPlanes = new System.Windows.Forms.TableLayoutPanel();
             this.dgvDocenteMatComCur = new System.Windows.Forms.DataGridView();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.tsPlanes = new System.Windows.Forms.ToolStrip();
-            this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AnioCalendario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.tsPlanes = new System.Windows.Forms.ToolStrip();
+            this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tcPlanes.ContentPanel.SuspendLayout();
             this.tcPlanes.TopToolStripPanel.SuspendLayout();
             this.tcPlanes.SuspendLayout();
@@ -121,6 +121,39 @@ namespace UI.Desktop.DocenteCurso
             this.dgvDocenteMatComCur.Size = new System.Drawing.Size(794, 390);
             this.dgvDocenteMatComCur.TabIndex = 0;
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID Curso";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // IDMateria
+            // 
+            this.IDMateria.DataPropertyName = "IDMateria";
+            this.IDMateria.HeaderText = "ID Materia";
+            this.IDMateria.Name = "IDMateria";
+            // 
+            // IDComision
+            // 
+            this.IDComision.DataPropertyName = "IDComision";
+            this.IDComision.HeaderText = "ID Comision";
+            this.IDComision.Name = "IDComision";
+            this.IDComision.Width = 150;
+            // 
+            // AnioCalendario
+            // 
+            this.AnioCalendario.DataPropertyName = "AnioCalendario";
+            this.AnioCalendario.HeaderText = "Año Calendario";
+            this.AnioCalendario.Name = "AnioCalendario";
+            this.AnioCalendario.Width = 150;
+            // 
+            // Cupo
+            // 
+            this.Cupo.DataPropertyName = "Cupo";
+            this.Cupo.HeaderText = "Cupo";
+            this.Cupo.Name = "Cupo";
+            // 
             // btnSalir
             // 
             this.btnSalir.Location = new System.Drawing.Point(722, 399);
@@ -162,47 +195,14 @@ namespace UI.Desktop.DocenteCurso
             this.tsbEditar.Text = "Editar";
             this.tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
             // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID Curso";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // IDMateria
-            // 
-            this.IDMateria.DataPropertyName = "IDMateria";
-            this.IDMateria.HeaderText = "ID Materia";
-            this.IDMateria.Name = "IDMateria";
-            // 
-            // IDComision
-            // 
-            this.IDComision.DataPropertyName = "IDComision";
-            this.IDComision.HeaderText = "ID Comision";
-            this.IDComision.Name = "IDComision";
-            this.IDComision.Width = 150;
-            // 
-            // AnioCalendario
-            // 
-            this.AnioCalendario.DataPropertyName = "AnioCalendario";
-            this.AnioCalendario.HeaderText = "Año Calendario";
-            this.AnioCalendario.Name = "AnioCalendario";
-            this.AnioCalendario.Width = 150;
-            // 
-            // Cupo
-            // 
-            this.Cupo.DataPropertyName = "Cupo";
-            this.Cupo.HeaderText = "Cupo";
-            this.Cupo.Name = "Cupo";
-            // 
-            // DocenteMatComCursos
+            // DcoenteCursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tcPlanes);
-            this.Name = "DocenteMatComCursos";
-            this.Text = "DocenteMatComCursos";
+            this.Name = "DcoenteCursos";
+            this.Text = "Cursos del docente";
             this.Load += new System.EventHandler(this.DocenteMatComCursos_Load);
             this.tcPlanes.ContentPanel.ResumeLayout(false);
             this.tcPlanes.TopToolStripPanel.ResumeLayout(false);
