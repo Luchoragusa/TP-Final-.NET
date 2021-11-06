@@ -12,7 +12,7 @@ using Business.Entities;
 
 namespace UI.Desktop
 {
-    public partial class PersonaDesktop : UI.Desktop.ApplicationForm
+    public partial class PersonaDesktop : ApplicationForm
     {
         public PersonaDesktop()
         {

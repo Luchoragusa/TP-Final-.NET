@@ -58,10 +58,12 @@ namespace Data.Database
                 SqlCommand cmdPlanes = new SqlCommand("SELECT * FROM planes WHERE id_plan = @id", sqlConn);
                 cmdPlanes.Parameters.Add("@id", SqlDbType.Int).Value = plan.ID;
                 SqlDataReader drPlanes = cmdPlanes.ExecuteReader();
+
                 if (drPlanes != null)
                 {
-                    plan.Descripcion = (string)drPlanes["desc_plan"];
+                    drPlanes.Read();
                     plan.IDEspecialidad = (int)drPlanes["id_especialidad"];
+                    plan.Descripcion = (string)drPlanes["desc_plan"];
                 }
                 drPlanes.Close();
             }
@@ -100,10 +102,10 @@ namespace Data.Database
             try
             {
                 OpenConnection();
-                SqlCommand cmdSave = new SqlCommand("INSERT INTO planes (desc_plan,id_especialidad)" +
-                    "values(@desc_plan,@id_especialidad)", sqlConn);
+                SqlCommand cmdSave = new SqlCommand("INSERT INTO planes (desc_plan,id_especialidad) values(@desc_plan,@id_especialidad)", sqlConn);
                 cmdSave.Parameters.Add("@desc_plan", SqlDbType.VarChar, 50).Value = plan.Descripcion;
-                cmdSave.Parameters.Add("@id_especialidad", SqlDbType.VarChar, 50).Value = plan.IDEspecialidad;
+                cmdSave.Parameters.Add("@id_especialidad", SqlDbType.Int).Value = plan.IDEspecialidad;
+                cmdSave.ExecuteNonQuery();
             }
             catch (Exception Ex)
             {
@@ -120,12 +122,10 @@ namespace Data.Database
             try
             {
                 OpenConnection();
-                SqlCommand cmdUpd = new SqlCommand("UPDATE planes SET desc_plan = @desc_plan, id_especialidad = @id_especialidad, " +
-                    "WHERE id_plan = @id ", sqlConn);
-
+                SqlCommand cmdUpd = new SqlCommand("UPDATE planes SET desc_plan = @desc_plan, id_especialidad = @id_especialidad WHERE id_plan = @id ", sqlConn);
+                cmdUpd.Parameters.Add("@id", SqlDbType.Int).Value = plan.ID;
                 cmdUpd.Parameters.Add("@id_especialidad", SqlDbType.Int).Value = plan.IDEspecialidad;
                 cmdUpd.Parameters.Add("@desc_plan", SqlDbType.VarChar, 50).Value = plan.Descripcion;
-
                 cmdUpd.ExecuteNonQuery();
             }
             catch (Exception Ex)

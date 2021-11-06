@@ -106,15 +106,14 @@ namespace Data.Database
             {
                 OpenConnection();
                 SqlCommand cmdSave = new SqlCommand("INSERT INTO materias (desc_materia,hs_semanales,hs_totales,id_plan)" +
-                    "values(@desc_materia,@hs_semanales,@hs_totales,@id_plan)" +
-                    "select @@identity ", sqlConn);
+                    "values(@desc_materia,@hs_semanales,@hs_totales,@id_plan)", sqlConn);
 
                 cmdSave.Parameters.Add("@desc_materia", SqlDbType.VarChar, 50).Value = materia.Descripcion;
                 cmdSave.Parameters.Add("@hs_semanales", SqlDbType.Int).Value = materia.HSSSemanales;
                 cmdSave.Parameters.Add("@hs_totales", SqlDbType.Int).Value = materia.HSTotales;
                 cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = materia.IDPlan;
 
-                materia.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
+                cmdSave.ExecuteNonQuery();
             }
             catch (Exception Ex)
             {
