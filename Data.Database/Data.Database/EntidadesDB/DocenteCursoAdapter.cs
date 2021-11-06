@@ -91,31 +91,35 @@ namespace Data.Database.EntidadesDB
             return materiasDelDocente;
         }
 
-        public List<Comision> GetAllComisionesDeLasMateriaslDelDocente(Usuario docente)
+        public List<Comision> GetAllComisionesDeLasMateriaslDelDocente(Usuario docente, Materia materia)
         {
             List<Comision> materiasDelDocente = new List<Comision>();
             try
             {
                 this.OpenConnection();
 
-                SqlCommand cmdComisionesDeLasMaterias = new SqlCommand("select com.id_comision, com.desc_comision, com.anio_especialidad, com.id_plan from materias mat inner join cursos c on c.id_materia = mat.id_materia inner join docentes_cursos doc on doc.id_curso = c.id_curso inner join comisiones com on com.id_comision = c.id_comision inner join personas p on p.id_persona = doc.id_docente inner join usuarios u on u.id_persona = p.id_persona where u.nombre_usuario = @nombre_usuario and u.clave = @clave", sqlConn);
+                SqlCommand cmdComisionesDeLasMaterias = new SqlCommand("select com.id_comision, com.desc_comision, com.anio_especialidad, com.id_plan from materias mat inner join cursos c on c.id_materia = mat.id_materia inner join docentes_cursos doc on doc.id_curso = c.id_curso inner join comisiones com on com.id_comision = c.id_comision inner join personas p on p.id_persona = doc.id_docente inner join usuarios u on u.id_persona = p.id_persona where u.nombre_usuario = @nombre_usuario and u.clave = @clave and mat.id_materia = @idmat", sqlConn);
 
                 cmdComisionesDeLasMaterias.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = docente.NombreUsuario;
                 cmdComisionesDeLasMaterias.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = docente.Clave;
+                cmdComisionesDeLasMaterias.Parameters.Add("@idmat", SqlDbType.Int).Value = materia.ID;
 
                 SqlDataReader drComisionesDeLasMaterias = cmdComisionesDeLasMaterias.ExecuteReader();
 
-                while (drComisionesDeLasMaterias.Read())
+                if (drComisionesDeLasMaterias != null)
                 {
-                    Comision com = new Comision();
+                    while (drComisionesDeLasMaterias.Read())
+                    {
+                        Comision com = new Comision();
 
-                    com.ID = (int)drComisionesDeLasMaterias["id_comision"];
-                    com.DescComision = (string)drComisionesDeLasMaterias["desc_comision"];
-                    com.AnioEspecialidad = (int)drComisionesDeLasMaterias["anio_especialidad"];
-                    com.IDPlan = (int)drComisionesDeLasMaterias["id_plan"];
+                        com.ID = (int)drComisionesDeLasMaterias["id_comision"];
+                        com.DescComision = (string)drComisionesDeLasMaterias["desc_comision"];
+                        com.AnioEspecialidad = (int)drComisionesDeLasMaterias["anio_especialidad"];
+                        com.IDPlan = (int)drComisionesDeLasMaterias["id_plan"];
 
-                    materiasDelDocente.Add(com);
-                }
+                        materiasDelDocente.Add(com);
+                    }
+                }                    
                 drComisionesDeLasMaterias.Close();
             }
             catch (Exception Ex)

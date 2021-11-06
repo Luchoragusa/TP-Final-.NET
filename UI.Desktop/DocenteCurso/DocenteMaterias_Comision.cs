@@ -16,13 +16,15 @@ namespace UI.Desktop.DocenteCurso
 {
     public partial class DocenteMaterias_Comision : Form
     {
-        Usuario docente;
-        private int IDDocente;
+        Usuario docente = new Usuario();
+        Business.Entities.Materia materia = new Business.Entities.Materia();
 
-        public DocenteMaterias_Comision(int id)
+
+        public DocenteMaterias_Comision(int idMateria, Usuario docent)
         {
             InitializeComponent();
-            this.IDDocente = id;
+            docente = docent;
+            materia.ID = idMateria;
             this.dgvDocenteMateriasCom.AutoGenerateColumns = false;
             this.dgvDocenteMateriasCom.ReadOnly = true;
         }
@@ -32,21 +34,12 @@ namespace UI.Desktop.DocenteCurso
             this.Listar();
         }
 
-        //public DocenteMaterias_Comision(Usuario us)
-        //{
-        //    us.ID = IDDocente;
-        //    InitializeComponent();
-        //    this.dgvDocenteMateriasCom.AutoGenerateColumns = false;
-        //    this.dgvDocenteMateriasCom.ReadOnly = true;
-        //    docente = us;
-        //}
-
         public void Listar()
         {
             DocenteCursoLogic dcl = new DocenteCursoLogic();
             try
             {
-                this.dgvDocenteMateriasCom.DataSource = dcl.GetAllComisionesDeLasMateriasDelDocente(docente);
+                this.dgvDocenteMateriasCom.DataSource = dcl.GetAllComisionesDeLasMateriasDelDocente(docente, materia);
             }
             catch (Exception ex)
             {
@@ -72,13 +65,13 @@ namespace UI.Desktop.DocenteCurso
                 return;
 
             }
-            int ID = ((Business.Entities.Entidades.DocenteCurso)this.dgvDocenteMateriasCom.SelectedRows[0].DataBoundItem).ID;
+            int ID = ((Business.Entities.Comision)this.dgvDocenteMateriasCom.SelectedRows[0].DataBoundItem).ID;
 
-            //DCDesktop formDC = new DCDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+            //DocenteMatComCursos comision_cursos = new DocenteMatComCursos(ID, _docente.ID, _materia.ID);
 
             try
             {
-                //formDC.ShowDialog();
+                //comision_cursos.ShowDialog();
                 this.Listar();
             }
             catch (Exception ex)

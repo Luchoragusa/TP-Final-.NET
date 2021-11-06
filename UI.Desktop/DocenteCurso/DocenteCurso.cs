@@ -79,14 +79,14 @@ namespace UI.Desktop.DocenteCurso
             }
             int ID = ((Business.Entities.Materia)this.dgvDocenteCurso.SelectedRows[0].DataBoundItem).ID;
 
-            DocenteMaterias_Comision comisiones_materias = new DocenteMaterias_Comision(ID);
+            DocenteMaterias_Comision materias_comision = new DocenteMaterias_Comision(ID, docente);
 
             //DCDesktop formDC = new DCDesktop(ID, ApplicationForm.ModoForm.Modificacion);
 
             try
             {
                 //formDC.ShowDialog();
-                comisiones_materias.ShowDialog();
+                materias_comision.ShowDialog();
                 this.Listar();
             }
             catch (Exception ex)

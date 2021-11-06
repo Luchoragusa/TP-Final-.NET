@@ -147,6 +147,12 @@
     <Compile Include="DocenteCurso\DocenteCurso.Designer.cs">
       <DependentUpon>DocenteCurso.cs</DependentUpon>
     </Compile>
+    <Compile Include="DocenteCurso\DocenteMatComCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocenteCurso\DocenteMatComCursos.Designer.cs">
+      <DependentUpon>DocenteMatComCursos.cs</DependentUpon>
+    </Compile>
     <Compile Include="DocenteCurso\DocenteMaterias_Comision.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -284,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DocenteCurso\DocenteCurso.resx">
       <DependentUpon>DocenteCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocenteCurso\DocenteMatComCursos.resx">
+      <DependentUpon>DocenteMatComCursos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DocenteCurso\DocenteMaterias_Comision.resx">
       <DependentUpon>DocenteMaterias_Comision.cs</DependentUpon>
