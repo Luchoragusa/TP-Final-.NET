@@ -58,9 +58,10 @@ namespace UI.Web
             set;
         }
 
-        protected override void LoadForm(int id)
+        protected void LoadForm(int id)
         {
-            this.Entity = this.Logic.GetOne(id);
+            this.Entity.ID = id;
+            this.Entity = this.Logic.GetOne(Entity);
 
             this.iddocenteTextBox.Text = this.Entity.IDDocente.ToString();
             this.idcursoTextBox.Text = this.Entity.IDCurso.ToString();

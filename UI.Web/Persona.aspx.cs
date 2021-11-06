@@ -65,9 +65,10 @@ namespace UI.Web
             this.SelectedID = (int)this.gridView.SelectedValue;
         }
 
-        protected override void LoadForm(int id)
+        protected void LoadForm(int id)
         {
-            this.Entity = this.Logic.GetOne(id);
+            this.Entity.ID = id;
+            this.Entity = this.Logic.GetOne(Entity);
             this.nombreTextBox.Text = this.Entity.Nombre;
             this.apellidoTextBox.Text = this.Entity.Apellido;
             this.direccionTextBox.Text = this.Entity.Direccion;

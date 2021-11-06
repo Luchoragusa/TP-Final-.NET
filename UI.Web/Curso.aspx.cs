@@ -65,10 +65,10 @@ namespace UI.Web
             this.SelectedID = (int)this.gridView.SelectedValue;
         }
 
-        protected override void LoadForm(int id)
+        protected void LoadForm(int id)
         {
-            this.Entity = this.Logic.GetOne(id);
-
+            this.Entity.ID = id;
+            this.Entity = this.Logic.GetOne(Entity);
             this.anioCalendarioTextBox.Text = this.Entity.AnioCalendario.ToString();
             this.cupoTextBox.Text = this.Entity.Cupo.ToString();
             this.idComisionTextBox.Text = this.Entity.IDComision.ToString();

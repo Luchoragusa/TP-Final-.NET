@@ -44,11 +44,6 @@ namespace UI.Web
             }
         }
 
-        protected virtual void LoadForm(int id)
-        {
-
-        }
-
         protected virtual void EnableForm(bool enable)
         {
 
