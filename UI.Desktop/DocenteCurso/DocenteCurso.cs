@@ -16,11 +16,13 @@ namespace UI.Desktop.DocenteCurso
 {
     public partial class DocenteCurso : Form
     {
-        public DocenteCurso()
+        Usuario docente;
+        public DocenteCurso(Usuario us)
         {
             InitializeComponent();
             this.dgvDocenteCurso.AutoGenerateColumns = false;
             this.dgvDocenteCurso.ReadOnly = true;
+            docente = us;
         }
 
         private void DocenteCurso_Load(object sender, EventArgs e)
@@ -33,7 +35,7 @@ namespace UI.Desktop.DocenteCurso
             DocenteCursoLogic dcl = new DocenteCursoLogic();
             try
             {
-                this.dgvDocenteCurso.DataSource = dcl.GetAll();
+                this.dgvDocenteCurso.DataSource = dcl.GetAllMateriasDelDocente(docente);
             }
             catch (Exception ex)
             {
@@ -75,12 +77,16 @@ namespace UI.Desktop.DocenteCurso
                 return;
 
             }
-            int ID = ((Business.Entities.Entidades.DocenteCurso)this.dgvDocenteCurso.SelectedRows[0].DataBoundItem).ID;
+            int ID = ((Business.Entities.Materia)this.dgvDocenteCurso.SelectedRows[0].DataBoundItem).ID;
 
-            DCDesktop formDC = new DCDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+            DocenteMaterias_Comision comisiones_materias = new DocenteMaterias_Comision(ID);
+
+            //DCDesktop formDC = new DCDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+
             try
             {
-                formDC.ShowDialog();
+                //formDC.ShowDialog();
+                comisiones_materias.ShowDialog();
                 this.Listar();
             }
             catch (Exception ex)

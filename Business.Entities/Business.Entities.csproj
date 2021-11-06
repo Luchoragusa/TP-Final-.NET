@@ -48,8 +48,6 @@
     <Compile Include="Entidades\Especialidad.cs" />
     <Compile Include="Entidades\Comision.cs" />
     <Compile Include="Entidades\Materia.cs" />
-    <Compile Include="Entidades\Modulo.cs" />
-    <Compile Include="Entidades\ModuloUsuario.cs" />
     <Compile Include="Entidades\Personas.cs" />
     <Compile Include="Entidades\Plan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
