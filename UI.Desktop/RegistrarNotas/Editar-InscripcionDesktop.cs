@@ -1,4 +1,5 @@
-﻿using Business.Entities.Entidades;
+﻿using Business.Entities;
+using Business.Entities.Entidades;
 using Business.Logic.EntidadesLogic;
 using System;
 using System.Collections.Generic;

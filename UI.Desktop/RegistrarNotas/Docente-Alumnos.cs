@@ -62,7 +62,7 @@ namespace UI.Desktop.RegistrarNotas
             }
             int ID = ((Alumnos_Inscripciones)this.dgvDocente_Alumnos.SelectedRows[0].DataBoundItem).ID;
 
-            Alum_InscripDesktop formAlum_Inscrip = new Alum_InscripDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+            Editar_InscripcionDesktop formAlum_Inscrip = new Editar_InscripcionDesktop(ID, ApplicationForm.ModoForm.Modificacion);
             try
             {
                 formAlum_Inscrip.ShowDialog();
