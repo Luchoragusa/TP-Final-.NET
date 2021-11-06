@@ -36,7 +36,6 @@ namespace Business.Logic.EntidadesLogic
         }
         public List<Alumnos_Inscripciones> GetAllByCurso(Curso cur)
         {
-          
             try
             {
                 return Alumno_InscripcionData.GetAllByCurso(cur);
