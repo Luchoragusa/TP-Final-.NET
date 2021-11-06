@@ -147,6 +147,12 @@
     <Compile Include="RegistrarNotas\Editar-InscripcionDesktop.Designer.cs">
       <DependentUpon>Editar-InscripcionDesktop.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegitrarDocenteCurso\Cursos-Docente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegitrarDocenteCurso\Cursos-Docente.Designer.cs">
+      <DependentUpon>Cursos-Docente.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegitrarDocenteCurso\Docente-Inscripcion-Curso-Desktop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -302,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegistrarNotas\Editar-InscripcionDesktop.resx">
       <DependentUpon>Editar-InscripcionDesktop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegitrarDocenteCurso\Cursos-Docente.resx">
+      <DependentUpon>Cursos-Docente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegitrarDocenteCurso\Docente-Inscripcion-Curso-Desktop.resx">
       <DependentUpon>Docente-Inscripcion-Curso-Desktop.cs</DependentUpon>
