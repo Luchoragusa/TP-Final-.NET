@@ -36,6 +36,19 @@ namespace Business.Logic.EntidadesLogic
             }
         }
 
+        public List<Comision> GetAllComisionesDeLasMateriasDelDocente(Usuario docente)
+        {
+            try
+            {
+                return DocenteCursoData.GetAllComisionesDeLasMateriaslDelDocente(docente);
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar la lista logica de Cursos.", ex);
+                throw ExcepcionManejada;
+            }
+        }
+
         public DocenteCurso GetOne(DocenteCurso dc)
         {
             try

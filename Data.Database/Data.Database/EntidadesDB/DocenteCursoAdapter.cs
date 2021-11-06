@@ -91,6 +91,46 @@ namespace Data.Database.EntidadesDB
             return materiasDelDocente;
         }
 
+        public List<Comision> GetAllComisionesDeLasMateriaslDelDocente(Usuario docente)
+        {
+            List<Comision> materiasDelDocente = new List<Comision>();
+            try
+            {
+                this.OpenConnection();
+
+                SqlCommand cmdComisionesDeLasMaterias = new SqlCommand("select com.id_comision, com.desc_comision, com.anio_especialidad, com.id_plan from materias mat inner join cursos c on c.id_materia = mat.id_materia inner join docentes_cursos doc on doc.id_curso = c.id_curso inner join comisiones com on com.id_comision = c.id_comision inner join personas p on p.id_persona = doc.id_docente inner join usuarios u on u.id_persona = p.id_persona where u.nombre_usuario = @nombre_usuario and u.clave = @clave", sqlConn);
+
+                cmdComisionesDeLasMaterias.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = docente.NombreUsuario;
+                cmdComisionesDeLasMaterias.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = docente.Clave;
+
+                SqlDataReader drComisionesDeLasMaterias = cmdComisionesDeLasMaterias.ExecuteReader();
+
+                while (drComisionesDeLasMaterias.Read())
+                {
+                    Comision com = new Comision();
+
+                    com.ID = (int)drComisionesDeLasMaterias["id_comision"];
+                    com.DescComision = (string)drComisionesDeLasMaterias["desc_comision"];
+                    com.AnioEspecialidad = (int)drComisionesDeLasMaterias["anio_especialidad"];
+                    com.IDPlan = (int)drComisionesDeLasMaterias["id_plan"];
+
+                    materiasDelDocente.Add(com);
+                }
+                drComisionesDeLasMaterias.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar la lista de cursos", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+            return materiasDelDocente;
+        }
+
+
         public DocenteCurso GetOne(DocenteCurso DocenteCurso)
         {
             try

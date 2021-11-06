@@ -14,14 +14,22 @@ using Business.Logic.EntidadesLogic;
 
 namespace UI.Desktop.DocenteCurso
 {
-    public partial class DocenteCurso : Form
+    public partial class DocenteMaterias_Comision : Form
     {
         Usuario docente;
-        public DocenteCurso(Usuario us)
+        private int IDDocente;
+
+        public DocenteMaterias_Comision(int id)
         {
+            this.IDDocente = id;
+        }
+
+        public DocenteMaterias_Comision(Usuario us)
+        {
+            us.ID = IDDocente;
             InitializeComponent();
-            this.dgvDocenteCurso.AutoGenerateColumns = false;
-            this.dgvDocenteCurso.ReadOnly = true;
+            this.dgvDocenteMateriasCom.AutoGenerateColumns = false;
+            this.dgvDocenteMateriasCom.ReadOnly = true;
             docente = us;
         }
 
@@ -35,7 +43,7 @@ namespace UI.Desktop.DocenteCurso
             DocenteCursoLogic dcl = new DocenteCursoLogic();
             try
             {
-                this.dgvDocenteCurso.DataSource = dcl.GetAllMateriasDelDocente(docente);
+                this.dgvDocenteMateriasCom.DataSource = dcl.GetAllComisionesDeLasMateriasDelDocente(docente);
             }
             catch (Exception ex)
             {
@@ -71,22 +79,19 @@ namespace UI.Desktop.DocenteCurso
         private void tsbEditar_Click(object sender, EventArgs e)
         {
 
-            if (this.dgvDocenteCurso.SelectedRows.Count == 0)
+            if (this.dgvDocenteMateriasCom.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Accion Invalida", "Seleccione una fila", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
 
             }
-            int ID = ((Business.Entities.Materia)this.dgvDocenteCurso.SelectedRows[0].DataBoundItem).ID;
+            int ID = ((Business.Entities.Entidades.DocenteCurso)this.dgvDocenteMateriasCom.SelectedRows[0].DataBoundItem).ID;
 
-            DocenteMaterias_Comision comisiones_materias = new DocenteMaterias_Comision(ID);
-
-            //DCDesktop formDC = new DCDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+            DCDesktop formDC = new DCDesktop(ID, ApplicationForm.ModoForm.Modificacion);
 
             try
             {
-                //formDC.ShowDialog();
-                comisiones_materias.ShowDialog();
+                formDC.ShowDialog();
                 this.Listar();
             }
             catch (Exception ex)
@@ -97,12 +102,12 @@ namespace UI.Desktop.DocenteCurso
 
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
-            if (this.dgvDocenteCurso.SelectedRows.Count == 0)
+            if (this.dgvDocenteMateriasCom.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Acción invalida", "Seleccione una fila.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            int ID = ((Business.Entities.Entidades.DocenteCurso)this.dgvDocenteCurso.SelectedRows[0].DataBoundItem).ID;
+            int ID = ((Business.Entities.Entidades.DocenteCurso)this.dgvDocenteMateriasCom.SelectedRows[0].DataBoundItem).ID;
 
             DCDesktop formDC = new DCDesktop(ID, ApplicationForm.ModoForm.Baja);
             try
@@ -116,4 +121,5 @@ namespace UI.Desktop.DocenteCurso
             }
         }
     }
+
 }
