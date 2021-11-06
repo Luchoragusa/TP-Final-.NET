@@ -13,9 +13,6 @@
                     SelectedRowStyle-ForeColor="White"
                     DataKeysNames="ID" DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
                     <Columns>
-                        <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
-                        <asp:BoundField HeaderText="Apellido" DataField="Apellido" />
-                        <asp:BoundField HeaderText="EMail" DataField="Email" />
                         <asp:BoundField HeaderText="Usuario" DataField="NombreUsuario" />
                         <asp:BoundField HeaderText="Habilitado" DataField="Habilitado" />
                         <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" />
@@ -37,33 +34,6 @@
              </asp:Panel>
     
     <asp:Panel ID="formPanel" Visible="False" runat="server">
-        <asp:Label ID ="nombreLabel" runat="server" Text="Nombre: "></asp:Label>
-        <asp:TextBox ID="nombreTextBox" runat="server"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidatorNombre" runat="server" 
-                    ControlToValidate="nombreTextBox" 
-                    ErrorMessage="El nombre es obligatorio" 
-                    ForeColor="Red">
-                    *
-                </asp:RequiredFieldValidator>
-        <br />
-        <asp:Label ID="apellidoLabel" runat="server" Text="Apellido: "></asp:Label>
-        <asp:TextBox ID="apellidoTextBox" runat="server"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidatorApellido" runat="server" 
-                    ControlToValidate="apellidoTextBox" 
-                    ErrorMessage="El apellido es obligatorio" 
-                    ForeColor="Red">
-                    *
-                </asp:RequiredFieldValidator>
-        <br />
-        <asp:Label ID="emailLabel" runat="server" Text="Email: "></asp:Label>
-        <asp:TextBox ID="emailTextBox" runat="server"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidatorEmail" runat="server" 
-                    ControlToValidate="emailTextBox" 
-                    ErrorMessage="El email es obligatorio" 
-                    ForeColor="Red">
-                    *
-                </asp:RequiredFieldValidator>
-        <br />
         <asp:Label ID="habilitadoLabel" runat="server" Text="Habilitado: "></asp:Label>
         <asp:CheckBox ID="habilitadoCheckBox" runat="server" />
 

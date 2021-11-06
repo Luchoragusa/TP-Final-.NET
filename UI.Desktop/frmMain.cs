@@ -209,5 +209,10 @@ namespace UI.Desktop
         {
             abrirFormHijo(new UI.Desktop.ReporteDePersonas());
         }
+
+        private void btnPersonaAlumno_Click(object sender, EventArgs e)
+        {
+            abrirFormHijo(new PersonaDesktop(us));
+        }
     }
 }

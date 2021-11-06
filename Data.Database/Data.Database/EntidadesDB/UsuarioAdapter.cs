@@ -233,17 +233,24 @@ namespace Data.Database
             try
             {
                 OpenConnection();
-                SqlCommand cmdUsuarios = new SqlCommand("SELECT personas.tipo_persona FROM usuarios inner join personas on personas.id_persona = usuarios.id_persona WHERE nombre_usuario = @nombre_usuario and clave = @clave", sqlConn);
+                SqlCommand cmdUsuarios = new SqlCommand("select per.tipo_persona from personas per left join usuarios u on u.id_usuario = per.id_usuario where u.nombre_usuario = @nombre_usuario and u.clave = @clave;", sqlConn);
                 cmdUsuarios.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
                 cmdUsuarios.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;
                 SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
 
-                    while (drUsuarios.Read())
+                if (drUsuarios != null)
+                {
+                    drUsuarios.Read();
+                    if (drUsuarios["tipo_persona"] != null)
                     {
                         tipo_persona = (int)(Personas.TipoPersonas)drUsuarios["tipo_persona"];
                     }
-
-                    drUsuarios.Close();
+                    else
+                    {
+                        tipo_persona = 4;
+                    }                    
+                }
+             drUsuarios.Close();
             }
             catch (Exception Ex)
             {

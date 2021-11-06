@@ -57,12 +57,19 @@ namespace UI.Desktop
                     MessageBox.Show("Bienvenido al sistema, ADMINISTRADOR.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.DialogResult = DialogResult.OK;
                 }
+                else if (tipo == 4) //nuevo
+                {
+                    MessageBox.Show("Bienvenido por primera vez al sistema.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.DialogResult = DialogResult.OK;
+                    PersonaDesktop appPersona = new PersonaDesktop();
+                }
                 nm = new frmMain(tipo, usuario);
                 nm.ShowDialog();
                 //this.Dispose();
             }
             else
             {
+
                 MessageBox.Show("Usuario y/o contraseña incorrectos", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

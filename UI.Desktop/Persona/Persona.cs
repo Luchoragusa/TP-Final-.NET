@@ -15,12 +15,15 @@ namespace UI.Desktop.Persona
 {
     public partial class Persona : ApplicationForm
     {
+        private Usuario us;
+
         public Persona()
         {
             InitializeComponent();
             this.dgvPersonas.AutoGenerateColumns = false;
             this.dgvPersonas.ReadOnly = true;
         }
+
         public void Listar()
         {
             PersonaLogic pl = new PersonaLogic();

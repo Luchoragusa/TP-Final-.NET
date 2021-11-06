@@ -16,18 +16,9 @@ namespace UI.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           //LoadGrid();
-
-            //  esto fue lo q hice, linea 23, ppt 1.Unidad.5.Web.Parte1 diapo 31
-
-            //puede ser que sea así: ?
             if (!Page.IsPostBack)
             {
                 LoadGrid();
-            }
-            else
-            {
-                // 'UD ya ha repersonazado otro intento de ingreso anteriormente'
             }
         }
 
@@ -103,9 +94,6 @@ namespace UI.Web
 
         protected override void ClearForm()
         {
-            this.nombreTextBox.Text = string.Empty;
-            this.apellidoTextBox.Text = string.Empty;
-            this.emailTextBox.Text = string.Empty;
             this.habilitadoCheckBox.Checked = false;
             this.nombreUsuarioTextBox.Text = string.Empty;
         }
@@ -115,12 +103,9 @@ namespace UI.Web
             this.SelectedID = (int)this.gridView.SelectedValue;
         }
 
-        protected override void LoadForm(int id)
+        protected void LoadForm(int id)
         {
             this.Entity = this.Logic.GetOne(id);
-            this.nombreTextBox.Text = this.Entity.Nombre;
-            this.apellidoTextBox.Text = this.Entity.Apellido;
-            this.emailTextBox.Text = this.Entity.Email;
             this.habilitadoCheckBox.Checked = this.Entity.Habilitado;
             this.nombreUsuarioTextBox.Text = this.Entity.NombreUsuario;
         }
@@ -128,28 +113,15 @@ namespace UI.Web
         private Boolean LoadEntity(Usuario usuario)
         {
             bool band = false;
-                if (this.nombreTextBox.Text.Equals(string.Empty) ||
-                                    this.apellidoTextBox.Text.Equals(string.Empty) ||
-                                    this.emailTextBox.Text.Equals(string.Empty) ||
-                                    this.nombreUsuarioTextBox.Text.Equals(string.Empty) ||
-                                    this.claveTextBox.Text.Equals(string.Empty) ||
-                                    this.repetirClaveTextBox.Text.Equals(string.Empty))
+                if ( this.nombreUsuarioTextBox.Text.Equals(string.Empty) ||
+                     this.claveTextBox.Text.Equals(string.Empty) ||
+                     this.repetirClaveTextBox.Text.Equals(string.Empty))
                 {
                     MessageBox.Show("Algunos de los campos están vaciós", "Complete todos para continuar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     band = true;
                 }
                 else
                 {
-                    usuario.Nombre = this.nombreTextBox.Text;
-                    usuario.Apellido = this.apellidoTextBox.Text;
-
-                    if (!validarMail(this.emailTextBox.Text))
-                    {
-                        MessageBox.Show("Direccion de email Incorrecta.", "Intente nuevamente", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        band = true;
-                    }
-                    else { usuario.Email = this.emailTextBox.Text; }
-
                     usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
 
                     if (this.claveTextBox.Text == this.repetirClaveTextBox.Text)
@@ -186,9 +158,6 @@ namespace UI.Web
 
         protected override void EnableForm(bool enable)
         {
-            this.nombreTextBox.Enabled = enable;
-            this.apellidoTextBox.Enabled = enable;
-            this.emailTextBox.Enabled = enable;
             this.nombreUsuarioTextBox.Enabled = enable;
             this.claveTextBox.Visible = enable;
             this.claveLabel.Visible = enable;

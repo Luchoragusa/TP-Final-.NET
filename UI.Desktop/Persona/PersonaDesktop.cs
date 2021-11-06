@@ -18,6 +18,21 @@ namespace UI.Desktop
         {
             InitializeComponent();
         }
+
+        public PersonaDesktop(Usuario us)
+        {
+            try
+            {
+                this.Modo = ModoForm.Alta;
+                PersonaActual = new Personas();
+                MapearDeDatos();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public PersonaDesktop(ModoForm modo) : this()
         {
             this.Modo = modo;

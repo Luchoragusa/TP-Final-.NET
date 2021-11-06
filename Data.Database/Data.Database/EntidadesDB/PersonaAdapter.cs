@@ -74,11 +74,16 @@ namespace Data.Database.EntidadesDB
                 OpenConnection();
                 SqlCommand cmdPersonas = new SqlCommand("SELECT * FROM personas WHERE id_persona = @id", sqlConn);
                 cmdPersonas.Parameters.Add("@id", SqlDbType.Int).Value = persona.ID;
+
                 SqlDataReader drPersonas = cmdPersonas.ExecuteReader();
 
+                persona = null;
+
                 if (drPersonas != null)
-                { 
+                {
+                    persona = new Personas();
                     drPersonas.Read();
+                    persona.ID = (int)drPersonas["id_persona"];
                     persona.Nombre = (String)drPersonas["nombre"];
                     persona.Apellido = (String)drPersonas["apellido"];
                     persona.Direccion = (String)drPersonas["direccion"];
@@ -109,6 +114,56 @@ namespace Data.Database.EntidadesDB
             }
             return persona;
         }
+
+        public Personas GetOneIDUsuario(Personas persona)
+        {
+            try
+            {
+                OpenConnection();
+                SqlCommand cmdPersonas = new SqlCommand("SELECT * FROM personas WHERE id_usuario = @id", sqlConn);
+                cmdPersonas.Parameters.Add("@id", SqlDbType.Int).Value = persona.IdUsuario;
+
+                SqlDataReader drPersonas = cmdPersonas.ExecuteReader();
+
+                persona = null;
+
+                if (drPersonas != null)
+                {
+                    persona = new Personas();
+                    drPersonas.Read();
+                    persona.ID = (int)drPersonas["id_persona"];
+                    persona.Nombre = (String)drPersonas["nombre"];
+                    persona.Apellido = (String)drPersonas["apellido"];
+                    persona.Direccion = (String)drPersonas["direccion"];
+                    persona.Email = (String)drPersonas["email"];
+                    persona.Telefono = (String)drPersonas["telefono"];
+                    persona.FechaNacimiento = (DateTime)drPersonas["fecha_nac"];
+                    persona.Legajo = (int)drPersonas["legajo"];
+                    persona.IDPlan = (int)drPersonas["id_plan"];
+                    persona.IdUsuario = (int)drPersonas["id_usuario"];
+                    int tipoPersona = (int)drPersonas["tipo_persona"];
+
+                    if (tipoPersona == (int)Personas.TipoPersonas.Alumno)
+                        persona.TipoPersona = Personas.TipoPersonas.Alumno;
+                    else if (tipoPersona == (int)Personas.TipoPersonas.Docente)
+                        persona.TipoPersona = Personas.TipoPersonas.Docente;
+                    else
+                        persona.TipoPersona = Personas.TipoPersonas.Administrador;
+                }
+                drPersonas.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar datos de la persona", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+            return persona;
+        }
+
         public void Delete(int ID)
         {
             try
@@ -136,9 +191,8 @@ namespace Data.Database.EntidadesDB
             try
             {
                 OpenConnection();
-                SqlCommand cmdSave = new SqlCommand("INSERT INTO personas (nombre,apellido, direccion, email, telefono, fecha_nac, legajo,tipo_persona,id_plan)" +
-                    "values(@nombre,@apellido,@direccion,@email,@telefono,@fecha_nac,@legajo,@tipo_persona,@id_plan)" +
-                    "select @@identity ", sqlConn);
+                SqlCommand cmdSave = new SqlCommand("INSERT INTO personas (nombre,apellido, direccion, email, telefono, fecha_nac, legajo,tipo_persona,id_plan, id_usuario)" +
+                    "values(@nombre,@apellido,@direccion,@email,@telefono,@fecha_nac,@legajo,@tipo_persona,@id_plan, @id_usuario)" , sqlConn);
 
                 cmdSave.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = persona.Nombre;
                 cmdSave.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = persona.Apellido;
@@ -149,8 +203,9 @@ namespace Data.Database.EntidadesDB
                 cmdSave.Parameters.Add("@legajo", SqlDbType.Int).Value = persona.Legajo;
                 cmdSave.Parameters.Add("@tipo_persona", SqlDbType.Int, 50).Value = persona.TipoPersona;
                 cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = persona.IDPlan;
+                cmdSave.Parameters.Add("@id_usuario", SqlDbType.Int).Value = persona.IdUsuario;
 
-                persona.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
+                cmdSave.ExecuteNonQuery();
             }
             catch (Exception Ex)
             {
@@ -169,7 +224,7 @@ namespace Data.Database.EntidadesDB
             try
             {
                 OpenConnection();
-                SqlCommand cmdUpd = new SqlCommand("UPDATE personas SET nombre = @nombre, apellido = @apellido, " +
+                SqlCommand cmdUpd = new SqlCommand("UPDATE personas SET nombre = @nombre, apellido = @apellido," +
                     "direccion = @direccion" +
                     "email = @email" +
                     "telefono = @telefono" +

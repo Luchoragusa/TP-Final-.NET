@@ -9,7 +9,7 @@ namespace Business.Entities.Entidades
     public class Personas : BusinessEntity
     {
         private string _Apellido, _Direccion, _Email, _Nombre, _Telefono;
-        private int _IDPlan, _Legajo;
+        private int _IDPlan, _Legajo, _idUsuario;
         private DateTime _FechaNacimiento;
        
 
@@ -23,7 +23,8 @@ namespace Business.Entities.Entidades
         public DateTime FechaNacimiento { get => _FechaNacimiento; set => _FechaNacimiento = value; }
         
         public TipoPersonas TipoPersona { get => _TipoPersona; set => _TipoPersona = value; }
-        
+        public int IdUsuario { get => _idUsuario; set => _idUsuario = value; }
+
         private TipoPersonas _TipoPersona;
 
         public enum TipoPersonas 
