@@ -67,11 +67,11 @@ namespace UI.Desktop.DocenteCurso
             }
             int ID = ((Business.Entities.Comision)this.dgvDocenteMateriasCom.SelectedRows[0].DataBoundItem).ID;
 
-            //DocenteMatComCursos comision_cursos = new DocenteMatComCursos(ID, _docente.ID, _materia.ID);
+            DocenteMatComCursos comision_cursos = new DocenteMatComCursos(ID, docente, materia);
 
             try
             {
-                //comision_cursos.ShowDialog();
+                comision_cursos.ShowDialog();
                 this.Listar();
             }
             catch (Exception ex)

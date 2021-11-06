@@ -134,6 +134,50 @@ namespace Data.Database.EntidadesDB
             return materiasDelDocente;
         }
 
+        public List<Curso> GetAllCursosDeLaComision(Usuario docente, Materia materia, Comision comision)
+        {
+            List<Curso> cursosDelDocente = new List<Curso>();
+            try
+            {
+                this.OpenConnection();
+
+                SqlCommand cmdCursosDeLaComision = new SqlCommand("select c.id_curso, c.id_comision, c.id_materia, c.anio_calendario, c.cupo from materias mat inner join cursos c on c.id_materia = mat.id_materia inner join docentes_cursos doc on doc.id_curso = c.id_curso inner join comisiones com on com.id_comision = c.id_comision inner join personas p on p.id_persona = doc.id_docente inner join usuarios u on u.id_persona = p.id_persona where u.nombre_usuario = @nombre_usuario and u.clave = @clave and mat.id_materia = @idmat and com.id_comision = @idcom", sqlConn);
+
+                cmdCursosDeLaComision.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = docente.NombreUsuario;
+                cmdCursosDeLaComision.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = docente.Clave;
+                cmdCursosDeLaComision.Parameters.Add("@idmat", SqlDbType.Int).Value = materia.ID;
+                cmdCursosDeLaComision.Parameters.Add("@idcom", SqlDbType.Int).Value = comision.ID;
+
+                SqlDataReader drCursosDeLaComision = cmdCursosDeLaComision.ExecuteReader();
+
+                if (drCursosDeLaComision != null)
+                {
+                    while (drCursosDeLaComision.Read())
+                    {
+                        Curso curso = new Curso();
+
+                        curso.ID = (int)drCursosDeLaComision["id_curso"];
+                        curso.IDComision = (int)drCursosDeLaComision["id_comision"];
+                        curso.IDMateria = (int)drCursosDeLaComision["id_materia"];
+                        curso.AnioCalendario = (int)drCursosDeLaComision["anio_calendario"];
+                        curso.Cupo = (int)drCursosDeLaComision["cupo"];
+
+                        cursosDelDocente.Add(curso);
+                    }
+                }
+                drCursosDeLaComision.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar la lista de cursos", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+            return cursosDelDocente;
+        }
 
         public DocenteCurso GetOne(DocenteCurso DocenteCurso)
         {
