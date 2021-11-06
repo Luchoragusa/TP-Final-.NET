@@ -18,10 +18,11 @@ namespace UI.Desktop.Inscribirse
     {
 
         Business.Entities.Materia mate = new Business.Entities.Materia();
+        public Business.Entities.Materia Mate { get => mate; set => mate = value; }
         public ComisionesInscribirse(Business.Entities.Materia mat)
         {
             InitializeComponent();
-            mate = mat;
+            Mate = mat;
             this.dgvComInscribirse.AutoGenerateColumns = true;
             this.dgvComInscribirse.ReadOnly = true;
         }
@@ -31,7 +32,7 @@ namespace UI.Desktop.Inscribirse
             ComisionLogic cl = new ComisionLogic();
             try
             {
-                this.dgvComInscribirse.DataSource = cl.GetAllMateriasCom(mate);
+                this.dgvComInscribirse.DataSource = cl.GetAllMateriasCom(Mate);
             }
             catch (Exception ex)
             {
