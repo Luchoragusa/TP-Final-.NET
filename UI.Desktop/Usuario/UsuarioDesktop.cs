@@ -50,9 +50,6 @@ namespace UI.Desktop
         public override void MapearDeDatos()
         {
             this.txtID.Text = this.UsuarioActual.ID.ToString();
-            this.txtNombre.Text = this.UsuarioActual.Nombre;
-            this.txtApellido.Text = this.UsuarioActual.Apellido;
-            this.txtEmail.Text = this.UsuarioActual.Email;
             this.chkHabilitado.Checked = this.UsuarioActual.Habilitado;
             this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;              
 
@@ -88,14 +85,10 @@ namespace UI.Desktop
                 this.UsuarioActual.Habilitado = this.chkHabilitado.Checked;
                 this.UsuarioActual.Clave = this.txtClave.Text;
                 this.UsuarioActual.NombreUsuario = this.txtUsuario.Text;
-                this.UsuarioActual.Clave = this.txtApellido.Text;
-                this.UsuarioActual.Nombre = this.txtNombre.Text;
-                this.UsuarioActual.Apellido = this.txtApellido.Text;
-                this.UsuarioActual.Email = this.txtEmail.Text;
+                this.UsuarioActual.Clave = this.txtClave.Text;
             }
 
             if (this.Modo == ModoForm.Baja) UsuarioActual.State = BusinessEntity.States.Deleted;
-            if (this.Modo == ModoForm.Consulta) UsuarioActual.State = BusinessEntity.States.Unmodified;
         }
 
         public override void GuardarCambios()
@@ -115,15 +108,14 @@ namespace UI.Desktop
         {
             if (
                 txtUsuario.Text.Equals(String.Empty) ||
-                txtClave.Text.Equals(String.Empty) ||
-                txtApellido.Text.Equals(String.Empty)
+                txtClave.Text.Equals(String.Empty)
                 )
             {
                 Notificar("Alguno de los campos esta incompleto", "Intente nuevamente", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
-            if (!Validaciones.validarTexto(txtUsuario.Text))
+            if (Validaciones.validarTexto(txtUsuario.Text))
             {
                 Notificar("Nombre de Usuario incorrecto.", "Intente nuevamente. Recuerde que no puede llevar numeros.",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -135,16 +127,7 @@ namespace UI.Desktop
                 Notificar("Contraseña invalida.", "Intente nuevamente",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
-            }
-            else
-            {
-                if (!Validaciones.Clave_Conf(txtClave.Text, txtApellido.Text))
-                {
-                    Notificar("Contraseñas no coinciden.", "Intente nuevamente",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return false;
-                }
-            }
+            }            
             return true;
         }
         private void botonAceptarClick(object sender, EventArgs e)
