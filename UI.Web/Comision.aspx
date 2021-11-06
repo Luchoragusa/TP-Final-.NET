@@ -45,7 +45,7 @@
          <asp:Label ID ="idPlanLabel" runat="server" Text="IDPlan: "></asp:Label>
         <asp:TextBox ID="idPlanTextBox" runat="server" Width="47px"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorPlan" runat="server" 
-                    ControlToValidate="planTextBox" 
+                    ControlToValidate="idPlanTextBox" 
                     ErrorMessage="La ID del plan es obligatoria" 
                     ForeColor="Red">
                     *
@@ -70,15 +70,18 @@
                     ForeColor="Red">
                     *
                 </asp:RequiredFieldValidator>
+                <br />
         <br />
+                        
+                <asp:Button ID="aceptarButton" runat="server" class="btn btn-outline-primary" OnClick="acceptaButton_Click" Text="Aceptar" />
+                &nbsp;
+                <asp:Button ID="cancelarButton" runat="server" class="btn btn-outline-primary" OnClick="cancelarButton_Click" style="height: 26px" Text="Cancelar" />
                         
         <br />    
                 
         <asp:Panel ID="Panel1" runat="server" HorizontalAlign="Center" Visible="false">
-            <asp:Button ID="aceptarButton" runat="server" class="btn btn-outline-primary" Text="Aceptar" OnClick="acceptaButton_Click" />
             &nbsp;
-            <asp:Button ID="cancelarButton" runat="server" class="btn btn-outline-primary" Text="Cancelar" OnClick="cancelarButton_Click" style="height: 26px" />
-        </asp:Panel>
+            </asp:Panel>
         
      </asp:Panel>
 

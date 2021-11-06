@@ -13,7 +13,7 @@
                     SelectedRowStyle-ForeColor="White"
                     DataKeysNames="ID" DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
                     <Columns>
-                        <asp:BoundField HeaderText="Descripcion" DataField="Descripcion" />
+                        <asp:BoundField HeaderText="Descripcion" DataField="DescEspecialidad" />
                         <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" />
                     </Columns>
                     <FooterStyle BackColor="White" ForeColor="#333333" />
@@ -42,14 +42,17 @@
                     ForeColor="Red">
                     *
                 </asp:RequiredFieldValidator>
+         <br />
+         <br />
+         <asp:Button ID="aceptarButton" runat="server" class="btn btn-outline-primary" OnClick="acceptaButton_Click" Text="Aceptar" />
+         &nbsp;
+         <asp:Button ID="cancelarButton" runat="server" class="btn btn-outline-primary" OnClick="cancelarButton_Click" style="height: 26px" Text="Cancelar" />
         <br />
         
            
         <asp:Panel ID="Panel1" runat="server" HorizontalAlign="Center" Visible="false">
-            <asp:Button ID="aceptarButton" runat="server" class="btn btn-outline-primary" Text="Aceptar" OnClick="acceptaButton_Click" />
             &nbsp;
-            <asp:Button ID="cancelarButton" runat="server" class="btn btn-outline-primary" Text="Cancelar" OnClick="cancelarButton_Click" style="height: 26px" />
-        </asp:Panel>
+            </asp:Panel>
         
      </asp:Panel>
 
