@@ -45,6 +45,43 @@ namespace Data.Database
             }
             return comisiones;
         }
+
+        public List<Comision> GetAllMateriasCom(Materia mat)
+        {
+            List<Comision> comisiones = new List<Comision>();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdComision = new SqlCommand("select com.* from materias m inner join cursos c on m.id_materia= c.id_materia inner join comisiones com on c.id_comision = com.id_comision where m.id_materia = @id_materia and c.cupo<>0 and c.anio_calendario ='2021'", sqlConn);
+                cmdComision.Parameters.Add("@id_materia", SqlDbType.Int).Value = mat.ID;
+                SqlDataReader drComision = cmdComision.ExecuteReader();
+                if (drComision != null)
+                {
+                    while (drComision.Read())
+                    {
+                        Comision comi = new Comision();
+                        comi.ID = (int)drComision["id_comision"];
+                        comi.DescComision = (string)drComision["desc_comision"];
+                        comi.AnioEspecialidad = (int)drComision["anio_especialidad"];
+                        comi.IDPlan = (int)drComision["id_plan"];
+
+                        comisiones.Add(comi);
+                    }
+                }
+                drComision.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar la lista de Comisiones", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return comisiones;
+        }
+
         public Comision GetOne(Comision com)
         {
             try

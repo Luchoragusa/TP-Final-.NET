@@ -214,5 +214,10 @@ namespace UI.Desktop
         {
             abrirFormHijo(new PersonaDesktop(us));
         }
+
+        private void btnInscribirse_Click(object sender, EventArgs e)
+        {
+            abrirFormHijo(new InscribirseACursado(us));
+        }
     }
 }

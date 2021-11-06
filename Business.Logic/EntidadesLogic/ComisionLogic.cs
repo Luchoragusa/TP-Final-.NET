@@ -44,6 +44,19 @@ namespace Business.Logic
                 throw ExcepcionManejada;
             }       
         }
+
+        public List<Comision> GetAllMateriasCom(Materia mat)
+        {
+            try
+            {
+                return ComisionData.GetAllMateriasCom(mat);
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar la lista logica de Comisiones.", ex);
+                throw ExcepcionManejada;
+            }
+        }
         public void Save(Comision comision)
         {
             try

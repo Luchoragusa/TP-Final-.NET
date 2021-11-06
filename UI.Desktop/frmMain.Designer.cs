@@ -61,6 +61,7 @@ namespace UI.Desktop
             this.pboxAcademia = new System.Windows.Forms.PictureBox();
             this.panelCont = new System.Windows.Forms.Panel();
             this.pboxUTN = new System.Windows.Forms.PictureBox();
+            this.btnInscribirse = new System.Windows.Forms.Button();
             this.panelMain.SuspendLayout();
             this.panelAdminSubMenu.SuspendLayout();
             this.panelDocSubMenu.SuspendLayout();
@@ -104,7 +105,7 @@ namespace UI.Desktop
             this.panelAdminSubMenu.Controls.Add(this.btnAdminComision);
             this.panelAdminSubMenu.Controls.Add(this.btnAdminUsuario);
             this.panelAdminSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAdminSubMenu.Location = new System.Drawing.Point(0, 529);
+            this.panelAdminSubMenu.Location = new System.Drawing.Point(0, 577);
             this.panelAdminSubMenu.Name = "panelAdminSubMenu";
             this.panelAdminSubMenu.Size = new System.Drawing.Size(242, 519);
             this.panelAdminSubMenu.TabIndex = 6;
@@ -308,7 +309,7 @@ namespace UI.Desktop
             this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdmin.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAdmin.Location = new System.Drawing.Point(0, 489);
+            this.btnAdmin.Location = new System.Drawing.Point(0, 537);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnAdmin.Size = new System.Drawing.Size(242, 40);
@@ -324,7 +325,7 @@ namespace UI.Desktop
             this.panelDocSubMenu.Controls.Add(this.btnDocRegistrarNota);
             this.panelDocSubMenu.Controls.Add(this.btnDocDocenteCurso);
             this.panelDocSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelDocSubMenu.Location = new System.Drawing.Point(0, 410);
+            this.panelDocSubMenu.Location = new System.Drawing.Point(0, 458);
             this.panelDocSubMenu.Name = "panelDocSubMenu";
             this.panelDocSubMenu.Size = new System.Drawing.Size(242, 79);
             this.panelDocSubMenu.TabIndex = 4;
@@ -368,7 +369,7 @@ namespace UI.Desktop
             this.btnDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDoc.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDoc.Location = new System.Drawing.Point(0, 370);
+            this.btnDoc.Location = new System.Drawing.Point(0, 418);
             this.btnDoc.Name = "btnDoc";
             this.btnDoc.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnDoc.Size = new System.Drawing.Size(242, 40);
@@ -381,6 +382,7 @@ namespace UI.Desktop
             // panelAluSubMenu
             // 
             this.panelAluSubMenu.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panelAluSubMenu.Controls.Add(this.btnInscribirse);
             this.panelAluSubMenu.Controls.Add(this.btnPersonaAlumno);
             this.panelAluSubMenu.Controls.Add(this.btnAluEspecialidad);
             this.panelAluSubMenu.Controls.Add(this.btnAluPlan);
@@ -390,7 +392,7 @@ namespace UI.Desktop
             this.panelAluSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelAluSubMenu.Location = new System.Drawing.Point(0, 130);
             this.panelAluSubMenu.Name = "panelAluSubMenu";
-            this.panelAluSubMenu.Size = new System.Drawing.Size(242, 240);
+            this.panelAluSubMenu.Size = new System.Drawing.Size(242, 288);
             this.panelAluSubMenu.TabIndex = 2;
             // 
             // btnPersonaAlumno
@@ -543,6 +545,22 @@ namespace UI.Desktop
             this.pboxUTN.TabIndex = 0;
             this.pboxUTN.TabStop = false;
             // 
+            // btnInscribirse
+            // 
+            this.btnInscribirse.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnInscribirse.FlatAppearance.BorderSize = 0;
+            this.btnInscribirse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInscribirse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInscribirse.Location = new System.Drawing.Point(0, 240);
+            this.btnInscribirse.Name = "btnInscribirse";
+            this.btnInscribirse.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnInscribirse.Size = new System.Drawing.Size(242, 44);
+            this.btnInscribirse.TabIndex = 8;
+            this.btnInscribirse.Text = "Inscribirse a Cursado";
+            this.btnInscribirse.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInscribirse.UseVisualStyleBackColor = true;
+            this.btnInscribirse.Click += new System.EventHandler(this.btnInscribirse_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -598,5 +616,6 @@ namespace UI.Desktop
         private System.Windows.Forms.Button btnPersonaAlumno;
         private System.Windows.Forms.PictureBox pboxAcademia;
         private System.Windows.Forms.PictureBox pboxUTN;
+        private System.Windows.Forms.Button btnInscribirse;
     }
 }
