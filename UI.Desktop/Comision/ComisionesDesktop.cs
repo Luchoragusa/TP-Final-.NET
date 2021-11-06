@@ -45,21 +45,26 @@ namespace UI.Desktop
                 throw ex;
             }            
         }
-
         public override void MapearDeDatos()
         {
             if (Modo == ModoForm.Alta)
                 this.btnModo.Text = "Aceptar";
             else
             {
-                if (Modo == ModoForm.Consulta) this.btnModo.Text = "Aceptar";
-                else if (Modo == ModoForm.Modificacion) this.btnModo.Text = "Guardar";
-                else if (Modo == ModoForm.Baja) this.btnModo.Text = "Eliminar";
-
                 this.txtIDCom.Text = this.ComisionActual.ID.ToString();
                 this.txtAnioEsp_Com.Text = this.ComisionActual.AnioEspecialidad.ToString();
                 this.txtDesc_Com.Text = this.ComisionActual.DescComision;
                 this.txtIDPlan_Com.Text = this.ComisionActual.IDPlan.ToString();
+
+                if (Modo == ModoForm.Modificacion) this.btnModo.Text = "Guardar";
+                else if (Modo == ModoForm.Baja)
+                {
+                    this.btnModo.Text = "Eliminar";
+                    this.txtIDCom.Enabled = false;
+                    this.txtAnioEsp_Com.Enabled = false;
+                    this.txtDesc_Com.Enabled = false;
+                    this.txtIDPlan_Com.Enabled = false;
+                }
             }
         }
 
@@ -67,7 +72,7 @@ namespace UI.Desktop
         {
             if (Modo == ModoForm.Alta)
             {
-                ComisionActual = new Business.Entities.Comision();
+                ComisionActual = new Comision();
                 ComisionActual.State = BusinessEntity.States.New;
             }
 
