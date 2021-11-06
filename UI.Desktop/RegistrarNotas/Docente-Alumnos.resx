@@ -117,40 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="ID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="nombre.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="IDMateria.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="apellido.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="IDComision.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Nota.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="AnioCalendario.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Condicion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Cupo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="legajo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="tsPlanes.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="tsMaterias.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="tsbEditar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKESURBVDhPjZJdSFNhHMZPFgWTElbrCLsxneFHUIMopQuj
-        EjSSXUQEkiBIN1JeRGDhlfOmizD7oIuCWFjYFBXHTC2agqigSK3QbaV5ERsz28c5Ozv7cnv6v+csMZrQ
-        Aw+8F+/vef7v/xwuqzytVnvgf2w6zhd9vnzRs1BdbbNWVGizPMeHBQGBYBChUAjsLIgiRHIkEkFEkiCR
-        RWEDwdlaPGoqwTudDmMajS3LczyDf25s4FcgkDNIFKlgvhFPO0qh1+vRWZOXbtfttmZ5jg+FwwocZCCd
-        FZDaWbMUjSL4pQO2JydRXHwELZf2or8zb06j4QqzPMczQIGpVRmdwCiBsixDWH2B+YF6VFaWwVSTj5Xh
-        oyjI584St0/FKYC1KXC2lYGxWAyS7z1WHE2oOmXEudMH4bIWYnF2GMSUk3cpNIlXlkTNf+B4PA454IR/
-        oQ11tWdQZdTj08sCTI89hsvlYgF6FVXFs3G3wzFhDeGlDjReOY8Tx4ow92w/JofuYGZmBgJNyhgVVcUz
-        kIXECI5L65A8XWi7Xo/ysmJM9BRg6s012Gw2+Hw+pNPpfwPYe2VyTKatu+7CfLsOpYYS9HVpMdt3ARaL
-        BcvLy0ilUrkD2NjMwfU12C0tMBgM6Ll1GB/7jejuvg+HwwG/3w+v14sfXm+SGJ2KqtoK+O4cwfRAM56b
-        jVgdKcPDB/dgt9vhdDrxwTGJ0dG3GZPJdJOYrS/AxCcSCWUH5varmLI2Y3H6NVa/eZSFsdbx8Qn6rUW0
-        trZ20v2/YCYlwO124VVvL2QKYu/MZDJIJpNwezwYHBzK7AQz8ewi8+bmpuLtAUvur8mGhoYbdC8nzLSH
-        zLa6kw+Rc8Ac9xsBkCXFLS6wvgAAAABJRU5ErkJggg==
-</value>
-  </data>
 </root>

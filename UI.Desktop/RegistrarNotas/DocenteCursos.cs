@@ -11,6 +11,7 @@ using Business.Entities;
 using Business.Entities.Entidades;
 using Business.Logic;
 using Business.Logic.EntidadesLogic;
+using UI.Desktop.RegistrarNotas;
 
 namespace UI.Desktop.DocenteCurso
 {
@@ -26,8 +27,8 @@ namespace UI.Desktop.DocenteCurso
             docente = doc;
             materia = mat;
             comision.ID = idComision;
-            this.dgvDocenteMatComCur.AutoGenerateColumns = false;
-            this.dgvDocenteMatComCur.ReadOnly = true;
+            this.dgvCursosDocente.AutoGenerateColumns = false;
+            this.dgvCursosDocente.ReadOnly = true;
         }
 
         private void DocenteMatComCursos_Load(object sender, EventArgs e)
@@ -40,19 +41,13 @@ namespace UI.Desktop.DocenteCurso
             DocenteCursoLogic dcl = new DocenteCursoLogic();
             try
             {
-                this.dgvDocenteMatComCur.DataSource = dcl.GetAllCursosDeLaComision(docente, materia, comision);
+                this.dgvCursosDocente.DataSource = dcl.GetAllCursosDeLaComision(docente, materia, comision);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + "Error detected: ", "Ha habido un error interno.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void tsbEditar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             this.Listar();
@@ -61,6 +56,29 @@ namespace UI.Desktop.DocenteCurso
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void tsbIngresar_Click(object sender, EventArgs e)
+        {
+            if (this.dgvCursosDocente.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Accion Invalida", "Seleccione una fila", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
+            int ID = ((Business.Entities.Curso)this.dgvCursosDocente.SelectedRows[0].DataBoundItem).ID;
+
+            Docente_Alumnos docente_alumnos = new Docente_Alumnos(ID);
+
+            try
+            {
+                docente_alumnos.ShowDialog();
+                this.Listar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "Error detected: ", "Ha habido un error interno.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

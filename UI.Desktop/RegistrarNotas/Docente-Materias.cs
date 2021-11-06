@@ -80,12 +80,8 @@ namespace UI.Desktop.DocenteCurso
             int ID = ((Business.Entities.Materia)this.dgvDocenteCurso.SelectedRows[0].DataBoundItem).ID;
 
             DocenteComision materias_comision = new DocenteComision(ID, docente);
-
-            //DCDesktop formDC = new DCDesktop(ID, ApplicationForm.ModoForm.Modificacion);
-
             try
             {
-                //formDC.ShowDialog();
                 materias_comision.ShowDialog();
                 this.Listar();
             }

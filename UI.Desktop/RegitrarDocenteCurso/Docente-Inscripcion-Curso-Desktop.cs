@@ -22,7 +22,6 @@ namespace UI.Desktop
         public DICDesktop(ModoForm modo) : this()
         {
             this.Modo = modo;
-            //DCActual = new Business.Entities.Entidades.DocenteCurso();
             MapearDeDatos();
         }
 
