@@ -42,7 +42,7 @@
                 <br />
         
          <asp:Label ID ="idPlanLabel" runat="server" Text="IDPlan: "></asp:Label>
-        <asp:TextBox ID="idPlanTextBox" runat="server"></asp:TextBox>
+        <asp:TextBox ID="idPlanTextBox" runat="server" Width="47px"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorPlan" runat="server" 
                     ControlToValidate="planTextBox" 
                     ErrorMessage="La ID del plan es obligatoria" 
@@ -51,7 +51,7 @@
                 </asp:RequiredFieldValidator>
         <br />
         
-         <asp:Label ID="descComisionLabel" runat="server" Text="descComision: "></asp:Label>
+         <asp:Label ID="descComisionLabel" runat="server" Text="Descripcion Comision"></asp:Label>
         <asp:TextBox ID="descComisionTextBox" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorComision" runat="server" 
                     ControlToValidate="descComisionTextBox" 
@@ -61,8 +61,8 @@
                 </asp:RequiredFieldValidator>
         <br />
         
-         <asp:Label ID="anioEspecialidadLabel" runat="server" Text="anioEspecialidad: "></asp:Label>
-        <asp:TextBox ID="anioEspecialidadTextBox" runat="server" Width="40px"></asp:TextBox>
+         <asp:Label ID="anioEspecialidadLabel" runat="server" Text="Año especialidad: "></asp:Label>
+        <asp:TextBox ID="anioEspecialidadTextBox" runat="server" Width="51px"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorAnioEspecialidad" runat="server" 
                     ControlToValidate="anioEspecialidadTextBox" 
                     ErrorMessage="El anio de la especialidad es obligatoria" 

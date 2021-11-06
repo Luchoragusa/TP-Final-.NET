@@ -20,6 +20,8 @@
 &nbsp;&nbsp;<asp:Button ID="btnEspecialidad" runat="server" Text="Especialidad" Width="98px" BackColor="#33CCCC" OnClick="btnEspecialidad_Click" />
             &nbsp;
             <asp:Button ID="btnCursoAlumno" runat="server" Text="Curso" Width="62px" BackColor="#33CCCC" OnClick="btnCursoAlumno_Click" />
+            &nbsp;
+            <asp:Button ID="btnPersonaAlumno" runat="server" BackColor="#33CCCC" OnClick="btnPersonaAlumno_Click" Text="Persona" />
             <br />
             <br />
             <asp:Label ID="lblDocente" runat="server" Text="Docente"></asp:Label>

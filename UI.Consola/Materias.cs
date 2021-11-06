@@ -88,7 +88,7 @@ namespace UI.Consola
                 Console.Clear();
                 Console.Write("Ingrese el ID de la materia a consultar: ");
                 int ID = int.Parse(Console.ReadLine());
-                this.MostrarDatos(MateriaNegocio.GetOne(ID));
+                //this.MostrarDatos(MateriaNegocio.GetOne(ID));
             }
             catch (FormatException)
             {
@@ -131,20 +131,20 @@ namespace UI.Consola
                 Console.Write("Ingrese el ID de la especialidad a modificar: ");
                 int ID = int.Parse(Console.ReadLine());
                 //Plan plan = PlanNegocio.GetOne(ID);                                   mepa que esto esta mal, directamente tendriamos que pedir el id de la materia
-                Materia materia = MateriaNegocio.GetOne(ID);
+                //Materia materia = MateriaNegocio.GetOne(ID);
 
                 Console.Write("Ingrese la nueva descripcion: ");
-                materia.Descripcion = Console.ReadLine();
+                //materia.Descripcion = Console.ReadLine();
 
                 Console.Write("Ingrese el nuevo total de horas semanales: ");
-                materia.HSSSemanales = int.Parse(Console.ReadLine());
+                //materia.HSSSemanales = int.Parse(Console.ReadLine());
 
                 Console.Write("Ingrese el nuevo total de horas: ");
-                materia.HSTotales = int.Parse(Console.ReadLine());
+                //materia.HSTotales = int.Parse(Console.ReadLine());
 
-                materia.State = BusinessEntity.States.Modified;
+                //materia.State = BusinessEntity.States.Modified;
 
-                MateriaNegocio.Save(materia);
+                //MateriaNegocio.Save(materia);
             }
             catch (FormatException) 
             {

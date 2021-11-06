@@ -16,6 +16,9 @@
                     <Columns>
                         <asp:BoundField HeaderText="ID-Curso" DataField="IDCurso" />
                         <asp:BoundField HeaderText="ID-Alumno" DataField="IDAlumno" />
+                        <asp:BoundField HeaderText="Nombre" DataField="NombrePersona" />
+                        <asp:BoundField HeaderText="Apellido" DataField="ApellidoPersona" />
+                        <asp:BoundField HeaderText="Legajo" DataField="legajoPersona" />
                         <asp:BoundField HeaderText="Nota" DataField="Nota" />
                         <asp:BoundField HeaderText="Condicion" DataField="Condicion" />
                         <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" />
@@ -59,18 +62,22 @@
                     ForeColor="Red">
                     *
                 </asp:RequiredFieldValidator>
-        <br />
-        
+         <br />
+         Nombre:
+         <asp:TextBox ID="txtNombrePersona" runat="server"></asp:TextBox>
+         <br />
+         Apellido
+         <asp:TextBox ID="txtApellidoPersona" runat="server"></asp:TextBox>
+         <br />
+         Legajo
+         <asp:TextBox ID="txtLegajoPersona" runat="server"></asp:TextBox>
+         <br />
          <asp:Label ID="notaLabel" runat="server" Text="Nota: "></asp:Label>
-        <asp:TextBox ID="notaTextBox" runat="server" Width="40px"></asp:TextBox>
-         <asp:RequiredFieldValidator ID="RequiredFieldValidatorNota" runat="server" 
-                    ControlToValidate="notaTextBox" 
-                    ErrorMessage="La nota es obligatoria" 
-                    ForeColor="Red">
+         <asp:TextBox ID="notaTextBox" runat="server" Width="40px"></asp:TextBox>
+         <asp:RequiredFieldValidator ID="RequiredFieldValidatorNota" runat="server" ControlToValidate="notaTextBox" ErrorMessage="La nota es obligatoria" ForeColor="Red">
                     *
                 </asp:RequiredFieldValidator>
-        <br />
-        
+         <br />
          <asp:Label ID="condicionLabel" runat="server" Text="Condicion: "></asp:Label>
         <asp:TextBox ID="condicionTextBox" runat="server"></asp:TextBox>
          <asp:RequiredFieldValidator ID="RequiredFieldValidatorCondicion" runat="server" 

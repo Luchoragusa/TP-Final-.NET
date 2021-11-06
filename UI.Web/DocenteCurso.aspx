@@ -55,6 +55,9 @@
                     ForeColor="Red">
                     *
                 </asp:RequiredFieldValidator>
+            <br />
+            <asp:Label ID="lblCargo" runat="server" Text="Cargo"></asp:Label>
+            &nbsp;<asp:TextBox ID="txtCargo" runat="server" Width="34px"></asp:TextBox>
         <br />
         
 

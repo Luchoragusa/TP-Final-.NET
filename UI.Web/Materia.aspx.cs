@@ -53,9 +53,10 @@ namespace UI.Web
             set;
         }
 
-        protected override void LoadForm(int id)
+        protected void LoadForm(int id)
         {
-            this.Entity = this.Logic.GetOne(id);
+            this.Entity.ID = id;
+            this.Entity = this.Logic.GetOne(Entity);
 
             this.descripcionTextBox.Text = this.Entity.Descripcion;
             this.HSTotalesTextBox.Text = this.Entity.HSTotales.ToString();

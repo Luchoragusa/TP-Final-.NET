@@ -68,6 +68,9 @@ namespace UI.Web
         {
             this.Entity.ID = id;
             this.Entity = this.Logic.GetOne(Entity);
+            this.txtNombrePersona.Text = this.Entity.NombrePersona.ToString();
+            this.txtApellidoPersona.Text = this.Entity.ApellidoPersona.ToString();
+            this.txtLegajoPersona.Text = this.Entity.legajoPersona.ToString();
             this.idcursoTextBox.Text = this.Entity.IDCurso.ToString();
             this.idalumnoTextBox.Text = this.Entity.IDAlumno.ToString();
             this.notaTextBox.Text = this.Entity.Nota.ToString();
@@ -90,7 +93,10 @@ namespace UI.Web
             if (this.idcursoTextBox.Text.Equals(string.Empty) ||
                                 this.idalumnoTextBox.Text.Equals(string.Empty) ||
                                 this.notaTextBox.Text.Equals(string.Empty) ||
-                                this.condicionTextBox.Text.Equals(string.Empty))
+                                this.condicionTextBox.Text.Equals(string.Empty) ||
+                                this.txtNombrePersona.Text.Equals(string.Empty) ||
+                                this.txtApellidoPersona.Text.Equals(string.Empty) ||
+                                this.txtLegajoPersona.Text.Equals(string.Empty))
             {
                 MessageBox.Show("Algunos de los campos están vaciós", "Complete todos para continuar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 band = true;
@@ -101,6 +107,9 @@ namespace UI.Web
                 ali.IDAlumno = int.Parse(this.idalumnoTextBox.Text);
                 ali.Nota = this.notaTextBox.Text;
                 ali.Condicion = this.condicionTextBox.Text;
+
+                //cargamos ali.NombrePersona/ApellidoPersona/legajoPersona ??? el tema es que es solo lectura (no tiene set)
+
             }
             return band;
         }
@@ -115,7 +124,10 @@ namespace UI.Web
             this.idcursoTextBox.Enabled = enable;
             this.idalumnoTextBox.Enabled = enable;
             this.notaTextBox.Enabled = enable;
-            this.notaTextBox.Enabled = enable;
+            this.condicionTextBox.Enabled = enable;
+            this.txtNombrePersona.Enabled = enable;
+            this.txtApellidoPersona.Enabled = enable;
+            this.txtLegajoPersona.Enabled = enable;
         }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
@@ -148,6 +160,9 @@ namespace UI.Web
             this.idalumnoTextBox.Text = string.Empty;
             this.notaTextBox.Text = string.Empty;
             this.condicionTextBox.Text = string.Empty;
+            this.txtNombrePersona.Text = string.Empty;
+            this.txtApellidoPersona.Text = string.Empty;
+            this.txtLegajoPersona.Text = string.Empty;
         }
 
         protected void acceptaButton_Click(object sender, EventArgs e)

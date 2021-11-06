@@ -114,6 +114,33 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorIDAlumno;
 
         /// <summary>
+        /// Control txtNombrePersona.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNombrePersona;
+
+        /// <summary>
+        /// Control txtApellidoPersona.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoPersona;
+
+        /// <summary>
+        /// Control txtLegajoPersona.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtLegajoPersona;
+
+        /// <summary>
         /// Control notaLabel.
         /// </summary>
         /// <remarks>

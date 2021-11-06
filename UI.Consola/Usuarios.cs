@@ -91,7 +91,7 @@ namespace UI.Consola
                 Console.Clear();
                 Console.Write("Ingrese el ID del usuario a consultar: ");
                 int ID = int.Parse(Console.ReadLine());
-                this.MostrarDatos(UsuarioNegocio.GetOne(ID));
+                //this.MostrarDatos(UsuarioNegocio.GetOne(ID));
             }
             catch (FormatException)
             {
@@ -135,19 +135,19 @@ namespace UI.Consola
                 Console.Write("Ingrese el ID del usuario a modificar: ");
                 int ID = int.Parse(Console.ReadLine());
 
-                Usuario usuario = UsuarioNegocio.GetOne(ID);
+                //Usuario usuario = UsuarioNegocio.GetOne(ID);
 
                 Console.Write("Ingrese Nombre de Usuario: ");
-                usuario.NombreUsuario = Console.ReadLine();
+                //usuario.NombreUsuario = Console.ReadLine();
 
                 Console.Write("Ingrese Clave: ");
-                usuario.Clave = Console.ReadLine();
+                //usuario.Clave = Console.ReadLine();
 
                 Console.Write("Ingrese Habilitación de Usuario (1-Si/otro-No): ");
-                usuario.Habilitado = (Console.ReadLine() == "1");
-                usuario.State = BusinessEntity.States.Modified;
+                //usuario.Habilitado = (Console.ReadLine() == "1");
+                //usuario.State = BusinessEntity.States.Modified;
 
-                UsuarioNegocio.Save(usuario);
+                //UsuarioNegocio.Save(usuario);
             }
             catch (FormatException)
             {
