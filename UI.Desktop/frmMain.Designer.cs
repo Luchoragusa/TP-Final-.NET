@@ -70,7 +70,6 @@ namespace UI.Desktop
             // 
             this.panelMain.AutoScroll = true;
             this.panelMain.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panelMain.Controls.Add(this.btnPersonaAlumno);
             this.panelMain.Controls.Add(this.panelAdminSubMenu);
             this.panelMain.Controls.Add(this.btnAdmin);
             this.panelMain.Controls.Add(this.panelDocSubMenu);
@@ -100,7 +99,7 @@ namespace UI.Desktop
             this.panelAdminSubMenu.Controls.Add(this.btnAdminComision);
             this.panelAdminSubMenu.Controls.Add(this.btnAdminUsuario);
             this.panelAdminSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAdminSubMenu.Location = new System.Drawing.Point(0, 477);
+            this.panelAdminSubMenu.Location = new System.Drawing.Point(0, 521);
             this.panelAdminSubMenu.Name = "panelAdminSubMenu";
             this.panelAdminSubMenu.Size = new System.Drawing.Size(242, 483);
             this.panelAdminSubMenu.TabIndex = 6;
@@ -304,7 +303,7 @@ namespace UI.Desktop
             this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdmin.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAdmin.Location = new System.Drawing.Point(0, 437);
+            this.btnAdmin.Location = new System.Drawing.Point(0, 481);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnAdmin.Size = new System.Drawing.Size(242, 40);
@@ -320,7 +319,7 @@ namespace UI.Desktop
             this.panelDocSubMenu.Controls.Add(this.btnDocRegistrarNota);
             this.panelDocSubMenu.Controls.Add(this.btnDocDocenteCurso);
             this.panelDocSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelDocSubMenu.Location = new System.Drawing.Point(0, 358);
+            this.panelDocSubMenu.Location = new System.Drawing.Point(0, 402);
             this.panelDocSubMenu.Name = "panelDocSubMenu";
             this.panelDocSubMenu.Size = new System.Drawing.Size(242, 79);
             this.panelDocSubMenu.TabIndex = 4;
@@ -364,7 +363,7 @@ namespace UI.Desktop
             this.btnDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDoc.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDoc.Location = new System.Drawing.Point(0, 318);
+            this.btnDoc.Location = new System.Drawing.Point(0, 362);
             this.btnDoc.Name = "btnDoc";
             this.btnDoc.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnDoc.Size = new System.Drawing.Size(242, 40);
@@ -377,6 +376,7 @@ namespace UI.Desktop
             // panelAluSubMenu
             // 
             this.panelAluSubMenu.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panelAluSubMenu.Controls.Add(this.btnPersonaAlumno);
             this.panelAluSubMenu.Controls.Add(this.btnAluEspecialidad);
             this.panelAluSubMenu.Controls.Add(this.btnAluPlan);
             this.panelAluSubMenu.Controls.Add(this.btnAluMateria);
@@ -385,7 +385,7 @@ namespace UI.Desktop
             this.panelAluSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelAluSubMenu.Location = new System.Drawing.Point(0, 122);
             this.panelAluSubMenu.Name = "panelAluSubMenu";
-            this.panelAluSubMenu.Size = new System.Drawing.Size(242, 196);
+            this.panelAluSubMenu.Size = new System.Drawing.Size(242, 240);
             this.panelAluSubMenu.TabIndex = 2;
             // 
             // btnAluEspecialidad
@@ -514,11 +514,17 @@ namespace UI.Desktop
             // 
             // btnPersonaAlumno
             // 
-            this.btnPersonaAlumno.Location = new System.Drawing.Point(126, 93);
+            this.btnPersonaAlumno.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPersonaAlumno.FlatAppearance.BorderSize = 0;
+            this.btnPersonaAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPersonaAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPersonaAlumno.Location = new System.Drawing.Point(0, 196);
             this.btnPersonaAlumno.Name = "btnPersonaAlumno";
-            this.btnPersonaAlumno.Size = new System.Drawing.Size(90, 23);
+            this.btnPersonaAlumno.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnPersonaAlumno.Size = new System.Drawing.Size(242, 44);
             this.btnPersonaAlumno.TabIndex = 7;
             this.btnPersonaAlumno.Text = "PersonaAlumno";
+            this.btnPersonaAlumno.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPersonaAlumno.UseVisualStyleBackColor = true;
             this.btnPersonaAlumno.Click += new System.EventHandler(this.btnPersonaAlumno_Click);
             // 
