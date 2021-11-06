@@ -50,6 +50,7 @@ namespace UI.Desktop
             this.btnDocDocenteCurso = new System.Windows.Forms.Button();
             this.btnDoc = new System.Windows.Forms.Button();
             this.panelAluSubMenu = new System.Windows.Forms.Panel();
+            this.btnPersonaAlumno = new System.Windows.Forms.Button();
             this.btnAluEspecialidad = new System.Windows.Forms.Button();
             this.btnAluPlan = new System.Windows.Forms.Button();
             this.btnAluMateria = new System.Windows.Forms.Button();
@@ -57,18 +58,17 @@ namespace UI.Desktop
             this.btnAluAlumnoInscripcion = new System.Windows.Forms.Button();
             this.btnAlu = new System.Windows.Forms.Button();
             this.panelImg = new System.Windows.Forms.Panel();
-            this.panelCont = new System.Windows.Forms.Panel();
-            this.btnPersonaAlumno = new System.Windows.Forms.Button();
-            this.pboxUTN = new System.Windows.Forms.PictureBox();
             this.pboxAcademia = new System.Windows.Forms.PictureBox();
+            this.panelCont = new System.Windows.Forms.Panel();
+            this.pboxUTN = new System.Windows.Forms.PictureBox();
             this.panelMain.SuspendLayout();
             this.panelAdminSubMenu.SuspendLayout();
             this.panelDocSubMenu.SuspendLayout();
             this.panelAluSubMenu.SuspendLayout();
             this.panelImg.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxAcademia)).BeginInit();
             this.panelCont.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxUTN)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxAcademia)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMain
@@ -106,7 +106,7 @@ namespace UI.Desktop
             this.panelAdminSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelAdminSubMenu.Location = new System.Drawing.Point(0, 529);
             this.panelAdminSubMenu.Name = "panelAdminSubMenu";
-            this.panelAdminSubMenu.Size = new System.Drawing.Size(242, 483);
+            this.panelAdminSubMenu.Size = new System.Drawing.Size(242, 519);
             this.panelAdminSubMenu.TabIndex = 6;
             // 
             // btnAdminReporteCom
@@ -393,6 +393,22 @@ namespace UI.Desktop
             this.panelAluSubMenu.Size = new System.Drawing.Size(242, 240);
             this.panelAluSubMenu.TabIndex = 2;
             // 
+            // btnPersonaAlumno
+            // 
+            this.btnPersonaAlumno.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPersonaAlumno.FlatAppearance.BorderSize = 0;
+            this.btnPersonaAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPersonaAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPersonaAlumno.Location = new System.Drawing.Point(0, 196);
+            this.btnPersonaAlumno.Name = "btnPersonaAlumno";
+            this.btnPersonaAlumno.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnPersonaAlumno.Size = new System.Drawing.Size(242, 44);
+            this.btnPersonaAlumno.TabIndex = 7;
+            this.btnPersonaAlumno.Text = "PersonaAlumno";
+            this.btnPersonaAlumno.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPersonaAlumno.UseVisualStyleBackColor = true;
+            this.btnPersonaAlumno.Click += new System.EventHandler(this.btnPersonaAlumno_Click);
+            // 
             // btnAluEspecialidad
             // 
             this.btnAluEspecialidad.Dock = System.Windows.Forms.DockStyle.Top;
@@ -500,39 +516,6 @@ namespace UI.Desktop
             this.panelImg.Size = new System.Drawing.Size(242, 88);
             this.panelImg.TabIndex = 0;
             // 
-            // panelCont
-            // 
-            this.panelCont.Controls.Add(this.pboxUTN);
-            this.panelCont.Location = new System.Drawing.Point(275, 0);
-            this.panelCont.Name = "panelCont";
-            this.panelCont.Size = new System.Drawing.Size(847, 626);
-            this.panelCont.TabIndex = 1;
-            // 
-            // btnPersonaAlumno
-            // 
-            this.btnPersonaAlumno.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPersonaAlumno.FlatAppearance.BorderSize = 0;
-            this.btnPersonaAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPersonaAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPersonaAlumno.Location = new System.Drawing.Point(0, 196);
-            this.btnPersonaAlumno.Name = "btnPersonaAlumno";
-            this.btnPersonaAlumno.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnPersonaAlumno.Size = new System.Drawing.Size(242, 44);
-            this.btnPersonaAlumno.TabIndex = 7;
-            this.btnPersonaAlumno.Text = "PersonaAlumno";
-            this.btnPersonaAlumno.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPersonaAlumno.UseVisualStyleBackColor = true;
-            this.btnPersonaAlumno.Click += new System.EventHandler(this.btnPersonaAlumno_Click);
-            // 
-            // pboxUTN
-            // 
-            this.pboxUTN.Image = ((System.Drawing.Image)(resources.GetObject("pboxUTN.Image")));
-            this.pboxUTN.Location = new System.Drawing.Point(139, 210);
-            this.pboxUTN.Name = "pboxUTN";
-            this.pboxUTN.Size = new System.Drawing.Size(556, 204);
-            this.pboxUTN.TabIndex = 0;
-            this.pboxUTN.TabStop = false;
-            // 
             // pboxAcademia
             // 
             this.pboxAcademia.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -542,6 +525,23 @@ namespace UI.Desktop
             this.pboxAcademia.Size = new System.Drawing.Size(211, 55);
             this.pboxAcademia.TabIndex = 0;
             this.pboxAcademia.TabStop = false;
+            // 
+            // panelCont
+            // 
+            this.panelCont.Controls.Add(this.pboxUTN);
+            this.panelCont.Location = new System.Drawing.Point(275, 0);
+            this.panelCont.Name = "panelCont";
+            this.panelCont.Size = new System.Drawing.Size(847, 626);
+            this.panelCont.TabIndex = 1;
+            // 
+            // pboxUTN
+            // 
+            this.pboxUTN.Image = ((System.Drawing.Image)(resources.GetObject("pboxUTN.Image")));
+            this.pboxUTN.Location = new System.Drawing.Point(139, 210);
+            this.pboxUTN.Name = "pboxUTN";
+            this.pboxUTN.Size = new System.Drawing.Size(556, 204);
+            this.pboxUTN.TabIndex = 0;
+            this.pboxUTN.TabStop = false;
             // 
             // frmMain
             // 
@@ -558,9 +558,9 @@ namespace UI.Desktop
             this.panelDocSubMenu.ResumeLayout(false);
             this.panelAluSubMenu.ResumeLayout(false);
             this.panelImg.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pboxAcademia)).EndInit();
             this.panelCont.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pboxUTN)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxAcademia)).EndInit();
             this.ResumeLayout(false);
 
         }
