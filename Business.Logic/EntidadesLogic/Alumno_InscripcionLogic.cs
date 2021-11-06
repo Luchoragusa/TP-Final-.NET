@@ -12,13 +12,12 @@ namespace Business.Logic.EntidadesLogic
 {
     public class Alumno_InscripcionLogic : BusinessLogic
     {
-        private Data.Database.EntidadesDB.AlumnosIncriptosAdapter aiData;
-
+        private AlumnosIncriptosAdapter aiData;
         public Alumno_InscripcionLogic()
         {
-            aiData = new Data.Database.EntidadesDB.AlumnosIncriptosAdapter();
+            aiData = new AlumnosIncriptosAdapter();
         }
-        public Data.Database.EntidadesDB.AlumnosIncriptosAdapter Alumno_InscripcionData
+        public AlumnosIncriptosAdapter Alumno_InscripcionData
         {
             get { return aiData; }
             set { aiData = value; }
@@ -35,8 +34,7 @@ namespace Business.Logic.EntidadesLogic
                 throw ExcepcionManejada;
             }
         }
-
-        public List<Alumnos_Inscripciones> GetAllByCurso(Business.Entities.Curso cur)
+        public List<Alumnos_Inscripciones> GetAllByCurso(Curso cur)
         {
           
             try
@@ -49,7 +47,6 @@ namespace Business.Logic.EntidadesLogic
                 throw ExcepcionManejada;
             }
         }
-
         public List<Alumnos_Inscripciones> GetAll()
         {
             try
@@ -62,7 +59,6 @@ namespace Business.Logic.EntidadesLogic
                 throw ExcepcionManejada;
             }
         }
-
         public void Save(Alumnos_Inscripciones Alumno_Inscripcion)
         {
             try
@@ -75,7 +71,6 @@ namespace Business.Logic.EntidadesLogic
                 throw ExcepcionManejada;
             }
         }
-
         public void Delete(int id)
         {
             try
@@ -88,7 +83,6 @@ namespace Business.Logic.EntidadesLogic
                 throw ExcepcionManejada;
             }
         }
-
         public void Insert(Alumnos_Inscripciones Alumno_Inscripcion)
         {
             try
@@ -101,7 +95,6 @@ namespace Business.Logic.EntidadesLogic
                 throw ExcepcionManejada;
             }
         }
-
         public void Update(Alumnos_Inscripciones Alumno_Inscripcion)
         {
             try
