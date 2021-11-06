@@ -11,58 +11,6 @@ namespace Data.Database
 {
     public class UsuarioAdapter : Adapter
     {
-        #region DatosEnMemoria
-        // Esta región solo se usa en esta etapa donde los datos se mantienen en memoria.
-        // Al modificar este proyecto para que acceda a la base de datos esta será eliminada
-        //private static List<Usuario> _Usuarios;
-
-        //private static List<Usuario> Usuarios
-        //{
-        //    get
-        //    {
-        //        if (_Usuarios == null)
-        //        {
-        //            _Usuarios = new List<Business.Entities.Usuario>();
-        //            Business.Entities.Usuario usr;
-        //            usr = new Business.Entities.Usuario();
-        //            usr.ID = 1;
-        //            usr.State = Business.Entities.BusinessEntity.States.Unmodified;
-        //            usr.Nombre = "Casimiro";
-        //            usr.Apellido = "Cegado";
-        //            usr.NombreUsuario = "casicegado";
-        //            usr.Clave = "miro";
-        //            usr.Email = "casimirocegado@gmail.com";
-        //            usr.Habilitado = true;
-        //            _Usuarios.Add(usr);
-
-        //            usr = new Business.Entities.Usuario();
-        //            usr.ID = 2;
-        //            usr.State = Business.Entities.BusinessEntity.States.Unmodified;
-        //            usr.Nombre = "Armando Esteban";
-        //            usr.Apellido = "Quito";
-        //            usr.NombreUsuario = "aequito";
-        //            usr.Clave = "carpintero";
-        //            usr.Email = "armandoquito@gmail.com";
-        //            usr.Habilitado = true;
-        //            _Usuarios.Add(usr);
-
-        //            usr = new Business.Entities.Usuario();
-        //            usr.ID = 3;
-        //            usr.State = Business.Entities.BusinessEntity.States.Unmodified;
-        //            usr.Nombre = "Alan";
-        //            usr.Apellido = "Brado";
-        //            usr.NombreUsuario = "alanbrado";
-        //            usr.Clave = "abrete sesamo";
-        //            usr.Email = "alanbrado@gmail.com";
-        //            usr.Habilitado = true;
-        //            _Usuarios.Add(usr);
-
-        //        }
-        //        return _Usuarios;
-        //    }
-        //}
-        #endregion
-
         public List<Usuario> GetAll()
         {
             List<Usuario> usuarios = new List<Usuario>();
@@ -73,17 +21,19 @@ namespace Data.Database
                 SqlCommand cmdUsuarios = new SqlCommand("SELECT * FROM usuarios", sqlConn);
 
                 SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
-
-                while (drUsuarios.Read())
+                if (drUsuarios != null)
                 {
-                    Usuario usr = new Usuario();
+                    while (drUsuarios.Read())
+                    {
+                        Usuario usr = new Usuario();
 
-                    usr.ID = (int)drUsuarios["id_usuario"];
-                    usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
-                    usr.Clave = (string)drUsuarios["clave"];
-                    usr.Habilitado = (bool)drUsuarios["habilitado"];
+                        usr.ID = (int)drUsuarios["id_usuario"];
+                        usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
+                        usr.Clave = (string)drUsuarios["clave"];
+                        usr.Habilitado = (bool)drUsuarios["habilitado"];
 
-                    usuarios.Add(usr);
+                        usuarios.Add(usr);
+                    }
                 }
                 drUsuarios.Close();
             }
@@ -98,7 +48,6 @@ namespace Data.Database
             }
             return usuarios;
         }
-
         #region EntityFramework Delete
         public void EliminarUno(int id)
         {
@@ -111,19 +60,17 @@ namespace Data.Database
             }
         }
         #endregion
-        
-        public Business.Entities.Usuario GetOne(int ID)         
+        public Usuario GetOne(Usuario usr)         
         {
-            Usuario usr = new Usuario();
             try
             {
                 OpenConnection();
                 SqlCommand cmdUsuarios = new SqlCommand("SELECT * FROM usuarios WHERE id_usuario = @id", sqlConn);  
-                cmdUsuarios.Parameters.Add("@id", SqlDbType.Int).Value = ID;   
+                cmdUsuarios.Parameters.Add("@id", SqlDbType.Int).Value = usr.ID;   
                 SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
-                while (drUsuarios.Read())
+                if (drUsuarios != null)
                 {
-                    usr.ID = (int)drUsuarios["id_usuario"];
+                    drUsuarios.Read();
                     usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
                     usr.Clave = (string)drUsuarios["clave"];
                     usr.Habilitado = (bool)drUsuarios["habilitado"];
@@ -141,7 +88,6 @@ namespace Data.Database
             }
             return usr;
         }
-
         public void Delete(int ID)
         {
             try
@@ -183,7 +129,6 @@ namespace Data.Database
                 CloseConnection();
             }
         }
-
         public void Update(Usuario usuario)
         {
             try
@@ -226,7 +171,6 @@ namespace Data.Database
             }
             usuario.State = BusinessEntity.States.Unmodified;
         }
-
         public int GetOneLogin(Usuario usuario)
         {
             int tipo_persona = -1;
@@ -263,7 +207,6 @@ namespace Data.Database
             }
             return tipo_persona;
         }
-
         public Usuario GetUsuario(Usuario u)
         {
             try
@@ -273,9 +216,7 @@ namespace Data.Database
                 cmdUsuarios.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = u.NombreUsuario;
                 cmdUsuarios.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = u.Clave;
                 SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
-
                 u = null;
-
                 if (drUsuarios != null)
                 {
                     while (drUsuarios.Read())
