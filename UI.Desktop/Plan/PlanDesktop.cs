@@ -113,13 +113,6 @@ namespace UI.Desktop
                 Notificar("Algunos de los campos están vaciós", "Complete todos para continuar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-
-            if (Validaciones.validarTexto(txtDesc.Text))
-            {
-                Notificar("Descripcion incorrecta.", "Intente nuevamente",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
             if (!Validaciones.validarTexto(txtIDEspecialidad.Text))
             {
                 Notificar("ID incorrecta.", "Intente nuevamente",
