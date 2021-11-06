@@ -23,10 +23,14 @@ namespace UI.Desktop
             this.Modo = modo;
             PlanActual = new Business.Entities.Plan();
         }
-
         private Business.Entities.Plan _plan;
-        public Business.Entities.Plan PlanActual { get; set; }
-
+        public Business.Entities.Plan PlanActual
+    {
+            get
+            { return _plan; }
+            set
+            { _plan = value; }
+        }
         public PlanDesktop(int ID, ModoForm modo) : this()
         {
             this.Modo = modo;
@@ -89,7 +93,6 @@ namespace UI.Desktop
             }
 
         }
-
         public override void GuardarCambios()
         {
             MapearADatos();
@@ -103,7 +106,6 @@ namespace UI.Desktop
                 throw ex;
             }            
         }
-
         public override bool Validar()
         {
             if (txtDesc.Text.Equals(String.Empty) || txtIDEspecialidad.Text.Equals(String.Empty))
@@ -112,13 +114,13 @@ namespace UI.Desktop
                 return false;
             }
 
-            if (!Validaciones.validarTexto(txtDesc.Text))
+            if (Validaciones.validarTexto(txtDesc.Text))
             {
                 Notificar("Descripcion incorrecta.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (Validaciones.validarTexto(txtIDEspecialidad.Text))    //quitamos el "!", siguiendo logica de UsuarioDesktop 
+            if (!Validaciones.validarTexto(txtIDEspecialidad.Text))
             {
                 Notificar("ID incorrecta.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
