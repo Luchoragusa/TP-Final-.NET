@@ -29,6 +29,8 @@ namespace UI.Desktop.DocenteCurso
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DocenteMatComCursos));
             this.tcPlanes = new System.Windows.Forms.ToolStripContainer();
             this.tlPlanes = new System.Windows.Forms.TableLayoutPanel();
@@ -88,6 +90,14 @@ namespace UI.Desktop.DocenteCurso
             // dgvDocenteMatComCur
             // 
             this.dgvDocenteMatComCur.BackgroundColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDocenteMatComCur.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDocenteMatComCur.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDocenteMatComCur.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -96,6 +106,14 @@ namespace UI.Desktop.DocenteCurso
             this.AnioCalendario,
             this.Cupo});
             this.tlPlanes.SetColumnSpan(this.dgvDocenteMatComCur, 2);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDocenteMatComCur.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDocenteMatComCur.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDocenteMatComCur.Location = new System.Drawing.Point(3, 3);
             this.dgvDocenteMatComCur.MultiSelect = false;
@@ -162,12 +180,14 @@ namespace UI.Desktop.DocenteCurso
             this.IDComision.DataPropertyName = "IDComision";
             this.IDComision.HeaderText = "ID Comision";
             this.IDComision.Name = "IDComision";
+            this.IDComision.Width = 150;
             // 
             // AnioCalendario
             // 
             this.AnioCalendario.DataPropertyName = "AnioCalendario";
-            this.AnioCalendario.HeaderText = "Anio Calendario";
+            this.AnioCalendario.HeaderText = "Año Calendario";
             this.AnioCalendario.Name = "AnioCalendario";
+            this.AnioCalendario.Width = 150;
             // 
             // Cupo
             // 

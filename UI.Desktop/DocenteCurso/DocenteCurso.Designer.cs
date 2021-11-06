@@ -29,6 +29,8 @@ namespace UI.Desktop.DocenteCurso
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DocenteCurso));
             this.tcPlanes = new System.Windows.Forms.ToolStripContainer();
             this.tlPlanes = new System.Windows.Forms.TableLayoutPanel();
@@ -58,11 +60,11 @@ namespace UI.Desktop.DocenteCurso
             // tcPlanes.ContentPanel
             // 
             this.tcPlanes.ContentPanel.Controls.Add(this.tlPlanes);
-            this.tcPlanes.ContentPanel.Size = new System.Drawing.Size(800, 425);
+            this.tcPlanes.ContentPanel.Size = new System.Drawing.Size(620, 425);
             this.tcPlanes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcPlanes.Location = new System.Drawing.Point(0, 0);
             this.tcPlanes.Name = "tcPlanes";
-            this.tcPlanes.Size = new System.Drawing.Size(800, 450);
+            this.tcPlanes.Size = new System.Drawing.Size(620, 450);
             this.tcPlanes.TabIndex = 1;
             this.tcPlanes.Text = "toolStripContainer1";
             // 
@@ -84,12 +86,20 @@ namespace UI.Desktop.DocenteCurso
             this.tlPlanes.RowCount = 2;
             this.tlPlanes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlPlanes.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlPlanes.Size = new System.Drawing.Size(800, 425);
+            this.tlPlanes.Size = new System.Drawing.Size(620, 425);
             this.tlPlanes.TabIndex = 0;
             // 
             // dgvDocenteCurso
             // 
             this.dgvDocenteCurso.BackgroundColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDocenteCurso.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDocenteCurso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDocenteCurso.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -98,16 +108,24 @@ namespace UI.Desktop.DocenteCurso
             this.Cargo,
             this.IDPlan});
             this.tlPlanes.SetColumnSpan(this.dgvDocenteCurso, 2);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDocenteCurso.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDocenteCurso.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDocenteCurso.Location = new System.Drawing.Point(3, 3);
             this.dgvDocenteCurso.MultiSelect = false;
             this.dgvDocenteCurso.Name = "dgvDocenteCurso";
-            this.dgvDocenteCurso.Size = new System.Drawing.Size(794, 390);
+            this.dgvDocenteCurso.Size = new System.Drawing.Size(614, 390);
             this.dgvDocenteCurso.TabIndex = 0;
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(722, 399);
+            this.btnSalir.Location = new System.Drawing.Point(542, 399);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 2;
@@ -118,7 +136,7 @@ namespace UI.Desktop.DocenteCurso
             // btnActualizar
             // 
             this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.Location = new System.Drawing.Point(641, 399);
+            this.btnActualizar.Location = new System.Drawing.Point(461, 399);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 1;
@@ -186,12 +204,14 @@ namespace UI.Desktop.DocenteCurso
             this.IdDocente.DataPropertyName = "HSSSemanales";
             this.IdDocente.HeaderText = "Horas semanales";
             this.IdDocente.Name = "IdDocente";
+            this.IdDocente.Width = 150;
             // 
             // Cargo
             // 
             this.Cargo.DataPropertyName = "HSTotales";
             this.Cargo.HeaderText = "Horas Totales";
             this.Cargo.Name = "Cargo";
+            this.Cargo.Width = 120;
             // 
             // IDPlan
             // 
@@ -203,7 +223,7 @@ namespace UI.Desktop.DocenteCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(620, 450);
             this.Controls.Add(this.tcPlanes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "DocenteCurso";

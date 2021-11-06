@@ -29,6 +29,7 @@ namespace UI.Desktop
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Materia));
             this.tscMaterias = new System.Windows.Forms.ToolStripContainer();
             this.tlMaterias = new System.Windows.Forms.TableLayoutPanel();
@@ -58,11 +59,11 @@ namespace UI.Desktop
             // tscMaterias.ContentPanel
             // 
             this.tscMaterias.ContentPanel.Controls.Add(this.tlMaterias);
-            this.tscMaterias.ContentPanel.Size = new System.Drawing.Size(801, 425);
+            this.tscMaterias.ContentPanel.Size = new System.Drawing.Size(719, 425);
             this.tscMaterias.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tscMaterias.Location = new System.Drawing.Point(0, 0);
             this.tscMaterias.Name = "tscMaterias";
-            this.tscMaterias.Size = new System.Drawing.Size(801, 450);
+            this.tscMaterias.Size = new System.Drawing.Size(719, 450);
             this.tscMaterias.TabIndex = 1;
             this.tscMaterias.Text = "toolStripContainer1";
             // 
@@ -84,12 +85,20 @@ namespace UI.Desktop
             this.tlMaterias.RowCount = 2;
             this.tlMaterias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlMaterias.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlMaterias.Size = new System.Drawing.Size(801, 425);
+            this.tlMaterias.Size = new System.Drawing.Size(719, 425);
             this.tlMaterias.TabIndex = 0;
             // 
             // dgvMaterias
             // 
             this.dgvMaterias.BackgroundColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMaterias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMaterias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMaterias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDPlan,
@@ -102,12 +111,12 @@ namespace UI.Desktop
             this.dgvMaterias.Location = new System.Drawing.Point(3, 3);
             this.dgvMaterias.MultiSelect = false;
             this.dgvMaterias.Name = "dgvMaterias";
-            this.dgvMaterias.Size = new System.Drawing.Size(795, 390);
+            this.dgvMaterias.Size = new System.Drawing.Size(713, 390);
             this.dgvMaterias.TabIndex = 0;
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(723, 399);
+            this.btnSalir.Location = new System.Drawing.Point(641, 399);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 2;
@@ -118,7 +127,7 @@ namespace UI.Desktop
             // btnActualizar
             // 
             this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.Location = new System.Drawing.Point(642, 399);
+            this.btnActualizar.Location = new System.Drawing.Point(560, 399);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 1;
@@ -185,7 +194,7 @@ namespace UI.Desktop
             this.Descripcion.DataPropertyName = "Descripcion";
             this.Descripcion.HeaderText = "Descripcion";
             this.Descripcion.Name = "Descripcion";
-            this.Descripcion.Width = 120;
+            this.Descripcion.Width = 200;
             // 
             // HSSemanales
             // 
@@ -199,12 +208,13 @@ namespace UI.Desktop
             this.HSTotales.DataPropertyName = "HSTotales";
             this.HSTotales.HeaderText = "Total de Horas";
             this.HSTotales.Name = "HSTotales";
+            this.HSTotales.Width = 120;
             // 
             // Materia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(801, 450);
+            this.ClientSize = new System.Drawing.Size(719, 450);
             this.Controls.Add(this.tscMaterias);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Materia";

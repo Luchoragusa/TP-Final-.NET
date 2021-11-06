@@ -29,6 +29,8 @@ namespace UI.Desktop
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Comisiones));
             this.tcPlanes = new System.Windows.Forms.ToolStripContainer();
             this.tlPlanes = new System.Windows.Forms.TableLayoutPanel();
@@ -57,11 +59,11 @@ namespace UI.Desktop
             // tcPlanes.ContentPanel
             // 
             this.tcPlanes.ContentPanel.Controls.Add(this.tlPlanes);
-            this.tcPlanes.ContentPanel.Size = new System.Drawing.Size(651, 425);
+            this.tcPlanes.ContentPanel.Size = new System.Drawing.Size(559, 425);
             this.tcPlanes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcPlanes.Location = new System.Drawing.Point(0, 0);
             this.tcPlanes.Name = "tcPlanes";
-            this.tcPlanes.Size = new System.Drawing.Size(651, 450);
+            this.tcPlanes.Size = new System.Drawing.Size(559, 450);
             this.tcPlanes.TabIndex = 1;
             this.tcPlanes.Text = "toolStripContainer1";
             // 
@@ -83,12 +85,20 @@ namespace UI.Desktop
             this.tlPlanes.RowCount = 2;
             this.tlPlanes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlPlanes.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlPlanes.Size = new System.Drawing.Size(651, 425);
+            this.tlPlanes.Size = new System.Drawing.Size(559, 425);
             this.tlPlanes.TabIndex = 0;
             // 
             // dgvComisiones
             // 
             this.dgvComisiones.BackgroundColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvComisiones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvComisiones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvComisiones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDComision,
@@ -96,16 +106,24 @@ namespace UI.Desktop
             this.IDPlan,
             this.Anio_Especialidad});
             this.tlPlanes.SetColumnSpan(this.dgvComisiones, 2);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvComisiones.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvComisiones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvComisiones.Location = new System.Drawing.Point(3, 3);
             this.dgvComisiones.MultiSelect = false;
             this.dgvComisiones.Name = "dgvComisiones";
-            this.dgvComisiones.Size = new System.Drawing.Size(645, 390);
+            this.dgvComisiones.Size = new System.Drawing.Size(553, 390);
             this.dgvComisiones.TabIndex = 0;
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(573, 399);
+            this.btnSalir.Location = new System.Drawing.Point(481, 399);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 2;
@@ -116,7 +134,7 @@ namespace UI.Desktop
             // btnActualizar
             // 
             this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.Location = new System.Drawing.Point(492, 399);
+            this.btnActualizar.Location = new System.Drawing.Point(400, 399);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 1;
@@ -172,6 +190,7 @@ namespace UI.Desktop
             this.IDComision.HeaderText = "Id Comision";
             this.IDComision.Name = "IDComision";
             this.IDComision.ReadOnly = true;
+            this.IDComision.Width = 150;
             // 
             // Descripcion
             // 
@@ -188,15 +207,15 @@ namespace UI.Desktop
             // Anio_Especialidad
             // 
             this.Anio_Especialidad.DataPropertyName = "AnioEspecialidad";
-            this.Anio_Especialidad.HeaderText = "Anio Especialidad";
+            this.Anio_Especialidad.HeaderText = "Año Especialidad";
             this.Anio_Especialidad.Name = "Anio_Especialidad";
-            this.Anio_Especialidad.Width = 120;
+            this.Anio_Especialidad.Width = 160;
             // 
             // Comisiones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(651, 450);
+            this.ClientSize = new System.Drawing.Size(559, 450);
             this.Controls.Add(this.tcPlanes);
             this.Name = "Comisiones";
             this.Text = "Comisiones";
