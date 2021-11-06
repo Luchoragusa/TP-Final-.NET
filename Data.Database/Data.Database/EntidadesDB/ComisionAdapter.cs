@@ -47,9 +47,8 @@ namespace Data.Database
             return comisiones;
         }
 
-        public Business.Entities.Comision GetOne(int ID)
+        public Comision GetOne(Comision com)
         {
-            Comision com = new Comision();
             try
             {
                 OpenConnection();

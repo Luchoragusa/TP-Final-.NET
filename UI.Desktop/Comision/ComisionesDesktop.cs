@@ -16,16 +16,13 @@ namespace UI.Desktop
         {
             InitializeComponent();
         }
-
         public ComisionesDesktop(ModoForm modo) : this()
         {
             this.Modo = modo;
             MapearDeDatos();
         }
-
-        private Business.Entities.Comision _Comision;
-
-        public Business.Entities.Comision ComisionActual
+        private Comision _Comision;
+        public Comision ComisionActual
         {
             get
             { return _Comision; }
@@ -35,10 +32,12 @@ namespace UI.Desktop
         public ComisionesDesktop(int ID, ModoForm modo) : this()
         {
             this.Modo = modo;
-            Business.Logic.ComisionLogic coml = new Business.Logic.ComisionLogic();
+            ComisionLogic coml = new ComisionLogic();
             try
             {
-                ComisionActual = coml.GetOne(ID);
+                ComisionActual = new Comision();
+                _Comision.ID = ID;
+                ComisionActual = coml.GetOne(ComisionActual);
                 MapearDeDatos();
             }
             catch (Exception ex)

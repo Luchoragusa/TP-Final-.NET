@@ -10,21 +10,21 @@ namespace Business.Logic
 {
     public class ComisionLogic : BusinessLogic
     {
-        private Data.Database.ComisionAdapter comData;
+        private ComisionAdapter comData;
         public ComisionLogic()
         {
-            comData = new Data.Database.ComisionAdapter();
+            comData = new ComisionAdapter();
         }
-        public Data.Database.ComisionAdapter ComisionData
+        public ComisionAdapter ComisionData
         {
             get{ return comData;}
             set{ comData = value;}
         }
-        public Business.Entities.Comision GetOne(int id)
+        public Comision GetOne(Comision com)
         {
             try
             {
-                return ComisionData.GetOne(id);
+                return ComisionData.GetOne(com);
             }
             catch (Exception ex)
             {
@@ -44,7 +44,7 @@ namespace Business.Logic
                 throw ExcepcionManejada;
             }       
         }
-        public void Save(Business.Entities.Comision comision)
+        public void Save(Comision comision)
         {
             try
             {
@@ -68,7 +68,6 @@ namespace Business.Logic
                 throw ExcepcionManejada;
             }  
         }
-
         public void Insert(Comision comision)
         {
             try
