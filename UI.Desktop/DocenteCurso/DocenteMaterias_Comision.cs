@@ -21,7 +21,11 @@ namespace UI.Desktop.DocenteCurso
 
         public DocenteMaterias_Comision(int id)
         {
+            InitializeComponent();
             this.IDDocente = id;
+            InitializeComponent();
+            this.dgvDocenteMateriasCom.AutoGenerateColumns = false;
+            this.dgvDocenteMateriasCom.ReadOnly = true;
         }
 
         private void DocenteMaterias_Comision_Load(object sender, EventArgs e)
@@ -29,14 +33,14 @@ namespace UI.Desktop.DocenteCurso
             this.Listar();
         }
 
-        public DocenteMaterias_Comision(Usuario us)
-        {
-            us.ID = IDDocente;
-            InitializeComponent();
-            this.dgvDocenteMateriasCom.AutoGenerateColumns = false;
-            this.dgvDocenteMateriasCom.ReadOnly = true;
-            docente = us;
-        }
+        //public DocenteMaterias_Comision(Usuario us)
+        //{
+        //    us.ID = IDDocente;
+        //    InitializeComponent();
+        //    this.dgvDocenteMateriasCom.AutoGenerateColumns = false;
+        //    this.dgvDocenteMateriasCom.ReadOnly = true;
+        //    docente = us;
+        //}
 
         public void Listar()
         {
