@@ -113,20 +113,13 @@ namespace UI.Desktop
                 Notificar("Algunos de los campos están vaciós", "Complete todos para continuar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-
-            if (!Validaciones.validarTexto(txtDesc_Com.Text))
-            {
-                Notificar("Descripcion incorrecta.", "Intente nuevamente",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            if (Validaciones.validarTexto(txtAnioEsp_Com.Text))    //quitamos el "!", siguiendo logica de UsuarioDesktop 
+            if (!Validaciones.validarTexto(txtAnioEsp_Com.Text)) 
             {
                 Notificar("Año especialidad incorrecto.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (Validaciones.validarTexto(txtIDPlan_Com.Text))
+            if (!Validaciones.validarTexto(txtIDPlan_Com.Text))
             {
                 Notificar("ID de plan incorrecto.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
