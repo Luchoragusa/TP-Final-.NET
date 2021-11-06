@@ -169,7 +169,7 @@ namespace UI.Desktop
             // IDComision
             // 
             this.IDComision.DataPropertyName = "ID";
-            this.IDComision.HeaderText = "ID_Comision";
+            this.IDComision.HeaderText = "Id Comision";
             this.IDComision.Name = "IDComision";
             this.IDComision.ReadOnly = true;
             // 
@@ -178,19 +178,19 @@ namespace UI.Desktop
             this.Descripcion.DataPropertyName = "DescComision";
             this.Descripcion.HeaderText = "Descripcion";
             this.Descripcion.Name = "Descripcion";
-            this.Descripcion.Width = 300;
             // 
             // IDPlan
             // 
             this.IDPlan.DataPropertyName = "IDPlan";
-            this.IDPlan.HeaderText = "ID_Plan";
+            this.IDPlan.HeaderText = "Id Plan";
             this.IDPlan.Name = "IDPlan";
             // 
             // Anio_Especialidad
             // 
             this.Anio_Especialidad.DataPropertyName = "AnioEspecialidad";
-            this.Anio_Especialidad.HeaderText = "AnioEspecialidad";
+            this.Anio_Especialidad.HeaderText = "Anio Especialidad";
             this.Anio_Especialidad.Name = "Anio_Especialidad";
+            this.Anio_Especialidad.Width = 120;
             // 
             // Comisiones
             // 
