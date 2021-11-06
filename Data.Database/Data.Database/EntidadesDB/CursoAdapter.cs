@@ -110,7 +110,7 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 
-                SqlCommand cmdcursos = new SqlCommand("select c.id_curso, c.id_materia, c.id_comision, c.anio_calendario, c.cupo from usuarios us inner join personas per on us.id_persona = per.id_persona inner join docentes_cursos doc on doc.id_docente = per.id_persona inner join cursos c on c.id_curso = doc.id_curso where nombre_usuario = @nombre_usuario and clave = @clave", sqlConn);
+                SqlCommand cmdcursos = new SqlCommand("select c.id_curso, c.id_materia, c.id_comision, c.anio_calendario, c.cupo from usuarios us inner join personas per on us.id_usuario = per.id_usuario inner join docentes_cursos doc on doc.id_docente = per.id_persona inner join cursos c on c.id_curso = doc.id_curso where nombre_usuario = @nombre_usuario and clave = @clave", sqlConn);
                 
                 cmdcursos.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = docente.NombreUsuario;
                 cmdcursos.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = docente.Clave;

@@ -98,7 +98,7 @@ namespace Data.Database.EntidadesDB
             {
                 this.OpenConnection();
 
-                SqlCommand cmdComisionesDeLasMaterias = new SqlCommand("select com.id_comision, com.desc_comision, com.anio_especialidad, com.id_plan from materias mat inner join cursos c on c.id_materia = mat.id_materia inner join docentes_cursos doc on doc.id_curso = c.id_curso inner join comisiones com on com.id_comision = c.id_comision inner join personas p on p.id_persona = doc.id_docente inner join usuarios u on u.id_persona = p.id_persona where u.nombre_usuario = @nombre_usuario and u.clave = @clave and mat.id_materia = @idmat", sqlConn);
+                SqlCommand cmdComisionesDeLasMaterias = new SqlCommand("select com.id_comision, com.desc_comision, com.anio_especialidad, com.id_plan from materias mat  inner join cursos c on c.id_materia = mat.id_materia  inner join docentes_cursos doc on doc.id_curso = c.id_curso inner join comisiones com on com.id_comision = c.id_comision  inner join personas p on p.id_persona = doc.id_docente  inner join usuarios u on u.id_usuario = p.id_usuario  where u.nombre_usuario = @nombre_usuario and u.clave = @clave and mat.id_materia = @idmat", sqlConn);
 
                 cmdComisionesDeLasMaterias.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = docente.NombreUsuario;
                 cmdComisionesDeLasMaterias.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = docente.Clave;
@@ -141,7 +141,7 @@ namespace Data.Database.EntidadesDB
             {
                 this.OpenConnection();
 
-                SqlCommand cmdCursosDeLaComision = new SqlCommand("select c.id_curso, c.id_comision, c.id_materia, c.anio_calendario, c.cupo from materias mat inner join cursos c on c.id_materia = mat.id_materia inner join docentes_cursos doc on doc.id_curso = c.id_curso inner join comisiones com on com.id_comision = c.id_comision inner join personas p on p.id_persona = doc.id_docente inner join usuarios u on u.id_persona = p.id_persona where u.nombre_usuario = @nombre_usuario and u.clave = @clave and mat.id_materia = @idmat and com.id_comision = @idcom", sqlConn);
+                SqlCommand cmdCursosDeLaComision = new SqlCommand("select c.id_curso, c.id_comision, c.id_materia, c.anio_calendario, c.cupo from materias mat inner join cursos c on c.id_materia = mat.id_materia inner join docentes_cursos doc on doc.id_curso = c.id_curso inner join comisiones com on com.id_comision = c.id_comision inner join personas p on p.id_persona = doc.id_docente inner join usuarios u on u.id_usuario = p.id_usuario where u.nombre_usuario = @nombre_usuario and u.clave = @clave and mat.id_materia = @idmat and com.id_comision = @idcom", sqlConn);
 
                 cmdCursosDeLaComision.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = docente.NombreUsuario;
                 cmdCursosDeLaComision.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = docente.Clave;
