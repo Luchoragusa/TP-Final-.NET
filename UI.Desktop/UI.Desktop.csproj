@@ -183,6 +183,18 @@
     <Compile Include="Especialidad\EspecialidadDesktop.Designer.cs">
       <DependentUpon>EspecialidadDesktop.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inscribirse\ComisionesInscribirse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inscribirse\ComisionesInscribirse.Designer.cs">
+      <DependentUpon>ComisionesInscribirse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inscribirse\InscribirseACursado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inscribirse\InscribirseACursado.Designer.cs">
+      <DependentUpon>InscribirseACursado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Materia\MateriaDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -308,6 +320,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Especialidad\EspecialidadDesktop.resx">
       <DependentUpon>EspecialidadDesktop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inscribirse\ComisionesInscribirse.resx">
+      <DependentUpon>ComisionesInscribirse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inscribirse\InscribirseACursado.resx">
+      <DependentUpon>InscribirseACursado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Materia\Materia.resx">
       <DependentUpon>Materia.cs</DependentUpon>
