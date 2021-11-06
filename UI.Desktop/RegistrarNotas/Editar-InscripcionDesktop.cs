@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Business.Entities.Entidades;
+using Business.Logic.EntidadesLogic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -61,7 +63,6 @@ namespace UI.Desktop.RegistrarNotas
                 this.txtNota.Text = this.Alum_InscripActual.Nota.ToString();
             }
         }
-
         public override void MapearADatos()
         {
             if (Modo == ModoForm.Alta)

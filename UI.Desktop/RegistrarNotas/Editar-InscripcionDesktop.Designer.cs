@@ -102,6 +102,7 @@ namespace UI.Desktop.RegistrarNotas
             this.btnModo.TabIndex = 5;
             this.btnModo.Text = "Aceptar";
             this.btnModo.UseVisualStyleBackColor = true;
+            this.btnModo.Click += new System.EventHandler(this.btnModo_Click);
             // 
             // btnCancelar
             // 
@@ -112,6 +113,7 @@ namespace UI.Desktop.RegistrarNotas
             this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lblCondicion
             // 
