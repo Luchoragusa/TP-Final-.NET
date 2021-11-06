@@ -23,7 +23,6 @@ namespace UI.Desktop.DocenteCurso
         {
             InitializeComponent();
             this.IDDocente = id;
-            InitializeComponent();
             this.dgvDocenteMateriasCom.AutoGenerateColumns = false;
             this.dgvDocenteMateriasCom.ReadOnly = true;
         }
