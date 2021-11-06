@@ -45,7 +45,6 @@ namespace Data.Database
             }
             return comisiones;
         }
-
         public Comision GetOne(Comision com)
         {
             try
@@ -93,7 +92,6 @@ namespace Data.Database
                 CloseConnection();
             }
         }
-
         public void Insert(Comision comision)
         {
             try
@@ -138,7 +136,6 @@ namespace Data.Database
                 CloseConnection();
             }
         }
-
         public void Save(Comision comision)
         {
             if (comision.State == BusinessEntity.States.Deleted)
