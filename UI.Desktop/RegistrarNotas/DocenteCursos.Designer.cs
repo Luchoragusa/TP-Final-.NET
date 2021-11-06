@@ -1,7 +1,7 @@
 ﻿
 namespace UI.Desktop.DocenteCurso
 {
-    partial class DocenteMatComCursos
+    partial class DcoenteCursos
     {
         /// <summary>
         /// Required designer variable.
@@ -31,24 +31,24 @@ namespace UI.Desktop.DocenteCurso
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DocenteMatComCursos));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DcoenteCursos));
             this.tcPlanes = new System.Windows.Forms.ToolStripContainer();
             this.tlPlanes = new System.Windows.Forms.TableLayoutPanel();
-            this.dgvDocenteMatComCur = new System.Windows.Forms.DataGridView();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.tsPlanes = new System.Windows.Forms.ToolStrip();
-            this.tsbEditar = new System.Windows.Forms.ToolStripButton();
+            this.dgvCursosDocente = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AnioCalendario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.tsPlanes = new System.Windows.Forms.ToolStrip();
+            this.tsbIngresar = new System.Windows.Forms.ToolStripButton();
             this.tcPlanes.ContentPanel.SuspendLayout();
             this.tcPlanes.TopToolStripPanel.SuspendLayout();
             this.tcPlanes.SuspendLayout();
             this.tlPlanes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDocenteMatComCur)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCursosDocente)).BeginInit();
             this.tsPlanes.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,7 +75,7 @@ namespace UI.Desktop.DocenteCurso
             this.tlPlanes.ColumnCount = 2;
             this.tlPlanes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlPlanes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tlPlanes.Controls.Add(this.dgvDocenteMatComCur, 0, 0);
+            this.tlPlanes.Controls.Add(this.dgvCursosDocente, 0, 0);
             this.tlPlanes.Controls.Add(this.btnSalir, 1, 1);
             this.tlPlanes.Controls.Add(this.btnActualizar, 0, 1);
             this.tlPlanes.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -87,9 +87,9 @@ namespace UI.Desktop.DocenteCurso
             this.tlPlanes.Size = new System.Drawing.Size(800, 425);
             this.tlPlanes.TabIndex = 0;
             // 
-            // dgvDocenteMatComCur
+            // dgvCursosDocente
             // 
-            this.dgvDocenteMatComCur.BackgroundColor = System.Drawing.Color.LightSteelBlue;
+            this.dgvCursosDocente.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -97,15 +97,15 @@ namespace UI.Desktop.DocenteCurso
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDocenteMatComCur.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvDocenteMatComCur.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDocenteMatComCur.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvCursosDocente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCursosDocente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCursosDocente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.IDMateria,
             this.IDComision,
             this.AnioCalendario,
             this.Cupo});
-            this.tlPlanes.SetColumnSpan(this.dgvDocenteMatComCur, 2);
+            this.tlPlanes.SetColumnSpan(this.dgvCursosDocente, 2);
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -113,54 +113,13 @@ namespace UI.Desktop.DocenteCurso
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDocenteMatComCur.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDocenteMatComCur.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDocenteMatComCur.Location = new System.Drawing.Point(3, 3);
-            this.dgvDocenteMatComCur.MultiSelect = false;
-            this.dgvDocenteMatComCur.Name = "dgvDocenteMatComCur";
-            this.dgvDocenteMatComCur.Size = new System.Drawing.Size(794, 390);
-            this.dgvDocenteMatComCur.TabIndex = 0;
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Location = new System.Drawing.Point(722, 399);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 2;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.Location = new System.Drawing.Point(641, 399);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
-            this.btnActualizar.TabIndex = 1;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
-            // 
-            // tsPlanes
-            // 
-            this.tsPlanes.Dock = System.Windows.Forms.DockStyle.None;
-            this.tsPlanes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbEditar});
-            this.tsPlanes.Location = new System.Drawing.Point(3, 0);
-            this.tsPlanes.Name = "tsPlanes";
-            this.tsPlanes.Size = new System.Drawing.Size(35, 25);
-            this.tsPlanes.TabIndex = 0;
-            // 
-            // tsbEditar
-            // 
-            this.tsbEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEditar.Image")));
-            this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbEditar.Name = "tsbEditar";
-            this.tsbEditar.Size = new System.Drawing.Size(23, 22);
-            this.tsbEditar.Text = "Editar";
-            this.tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
+            this.dgvCursosDocente.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvCursosDocente.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCursosDocente.Location = new System.Drawing.Point(3, 3);
+            this.dgvCursosDocente.MultiSelect = false;
+            this.dgvCursosDocente.Name = "dgvCursosDocente";
+            this.dgvCursosDocente.Size = new System.Drawing.Size(794, 390);
+            this.dgvCursosDocente.TabIndex = 0;
             // 
             // ID
             // 
@@ -195,14 +154,55 @@ namespace UI.Desktop.DocenteCurso
             this.Cupo.HeaderText = "Cupo";
             this.Cupo.Name = "Cupo";
             // 
-            // DocenteMatComCursos
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(722, 399);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 2;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActualizar.Location = new System.Drawing.Point(641, 399);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.TabIndex = 1;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // tsPlanes
+            // 
+            this.tsPlanes.Dock = System.Windows.Forms.DockStyle.None;
+            this.tsPlanes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbIngresar});
+            this.tsPlanes.Location = new System.Drawing.Point(3, 0);
+            this.tsPlanes.Name = "tsPlanes";
+            this.tsPlanes.Size = new System.Drawing.Size(83, 25);
+            this.tsPlanes.TabIndex = 0;
+            // 
+            // tsbIngresar
+            // 
+            this.tsbIngresar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbIngresar.Image = ((System.Drawing.Image)(resources.GetObject("tsbIngresar.Image")));
+            this.tsbIngresar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbIngresar.Name = "tsbIngresar";
+            this.tsbIngresar.Size = new System.Drawing.Size(71, 22);
+            this.tsbIngresar.Text = "Seleccionar";
+            this.tsbIngresar.Click += new System.EventHandler(this.tsbIngresar_Click);
+            // 
+            // DcoenteCursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tcPlanes);
-            this.Name = "DocenteMatComCursos";
-            this.Text = "DocenteMatComCursos";
+            this.Name = "DcoenteCursos";
+            this.Text = "Cursos del docente";
             this.Load += new System.EventHandler(this.DocenteMatComCursos_Load);
             this.tcPlanes.ContentPanel.ResumeLayout(false);
             this.tcPlanes.TopToolStripPanel.ResumeLayout(false);
@@ -210,7 +210,7 @@ namespace UI.Desktop.DocenteCurso
             this.tcPlanes.ResumeLayout(false);
             this.tcPlanes.PerformLayout();
             this.tlPlanes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDocenteMatComCur)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCursosDocente)).EndInit();
             this.tsPlanes.ResumeLayout(false);
             this.tsPlanes.PerformLayout();
             this.ResumeLayout(false);
@@ -221,15 +221,15 @@ namespace UI.Desktop.DocenteCurso
 
         private System.Windows.Forms.ToolStripContainer tcPlanes;
         private System.Windows.Forms.TableLayoutPanel tlPlanes;
-        private System.Windows.Forms.DataGridView dgvDocenteMatComCur;
+        private System.Windows.Forms.DataGridView dgvCursosDocente;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.ToolStrip tsPlanes;
-        private System.Windows.Forms.ToolStripButton tsbEditar;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDMateria;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDComision;
         private System.Windows.Forms.DataGridViewTextBoxColumn AnioCalendario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cupo;
+        private System.Windows.Forms.ToolStripButton tsbIngresar;
     }
 }

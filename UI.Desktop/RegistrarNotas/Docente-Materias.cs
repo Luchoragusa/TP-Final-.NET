@@ -14,10 +14,10 @@ using Business.Logic.EntidadesLogic;
 
 namespace UI.Desktop.DocenteCurso
 {
-    public partial class DocenteCurso : Form
+    public partial class DocenteMateria : Form
     {
         Usuario docente;
-        public DocenteCurso(Usuario us)
+        public DocenteMateria(Usuario us)
         {
             InitializeComponent();
             this.dgvDocenteCurso.AutoGenerateColumns = false;
@@ -55,7 +55,7 @@ namespace UI.Desktop.DocenteCurso
 
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
-            DCDesktop formDCDesktop = new DCDesktop(ApplicationForm.ModoForm.Alta);
+            DICDesktop formDCDesktop = new DICDesktop(ApplicationForm.ModoForm.Alta);
             try
             {
                 formDCDesktop.ShowDialog();
@@ -79,13 +79,9 @@ namespace UI.Desktop.DocenteCurso
             }
             int ID = ((Business.Entities.Materia)this.dgvDocenteCurso.SelectedRows[0].DataBoundItem).ID;
 
-            DocenteMaterias_Comision materias_comision = new DocenteMaterias_Comision(ID, docente);
-
-            //DCDesktop formDC = new DCDesktop(ID, ApplicationForm.ModoForm.Modificacion);
-
+            DocenteComision materias_comision = new DocenteComision(ID, docente);
             try
             {
-                //formDC.ShowDialog();
                 materias_comision.ShowDialog();
                 this.Listar();
             }
@@ -104,7 +100,7 @@ namespace UI.Desktop.DocenteCurso
             }
             int ID = ((Business.Entities.Entidades.DocenteCurso)this.dgvDocenteCurso.SelectedRows[0].DataBoundItem).ID;
 
-            DCDesktop formDC = new DCDesktop(ID, ApplicationForm.ModoForm.Baja);
+            DICDesktop formDC = new DICDesktop(ID, ApplicationForm.ModoForm.Baja);
             try
             {
                 formDC.ShowDialog();

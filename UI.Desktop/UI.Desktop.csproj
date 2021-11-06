@@ -135,29 +135,41 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetPersonas.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DocenteCurso\DCDesktop.cs">
+    <Compile Include="RegistrarNotas\Docente-Alumnos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DocenteCurso\DCDesktop.Designer.cs">
-      <DependentUpon>DCDesktop.cs</DependentUpon>
+    <Compile Include="RegistrarNotas\Docente-Alumnos.Designer.cs">
+      <DependentUpon>Docente-Alumnos.cs</DependentUpon>
     </Compile>
-    <Compile Include="DocenteCurso\DocenteCurso.cs">
+    <Compile Include="RegistrarNotas\Editar-InscripcionDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DocenteCurso\DocenteCurso.Designer.cs">
-      <DependentUpon>DocenteCurso.cs</DependentUpon>
+    <Compile Include="RegistrarNotas\Editar-InscripcionDesktop.Designer.cs">
+      <DependentUpon>Editar-InscripcionDesktop.cs</DependentUpon>
     </Compile>
-    <Compile Include="DocenteCurso\DocenteMatComCursos.cs">
+    <Compile Include="RegitrarDocenteCurso\Docente-Inscripcion-Curso-Desktop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DocenteCurso\DocenteMatComCursos.Designer.cs">
-      <DependentUpon>DocenteMatComCursos.cs</DependentUpon>
+    <Compile Include="RegitrarDocenteCurso\Docente-Inscripcion-Curso-Desktop.Designer.cs">
+      <DependentUpon>Docente-Inscripcion-Curso-Desktop.cs</DependentUpon>
     </Compile>
-    <Compile Include="DocenteCurso\DocenteMaterias_Comision.cs">
+    <Compile Include="RegistrarNotas\Docente-Materias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DocenteCurso\DocenteMaterias_Comision.Designer.cs">
-      <DependentUpon>DocenteMaterias_Comision.cs</DependentUpon>
+    <Compile Include="RegistrarNotas\Docente-Materias.Designer.cs">
+      <DependentUpon>Docente-Materias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarNotas\DocenteCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrarNotas\DocenteCursos.Designer.cs">
+      <DependentUpon>DocenteCursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarNotas\Docente-Comision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrarNotas\Docente-Comision.Designer.cs">
+      <DependentUpon>Docente-Comision.cs</DependentUpon>
     </Compile>
     <Compile Include="Especialidad\Especialidad.cs">
       <SubType>Form</SubType>
@@ -231,18 +243,6 @@
     <Compile Include="Plan\PlanDesktop.Designer.cs">
       <DependentUpon>PlanDesktop.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegistroNotas\RegistroNotas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RegistroNotas\RegistroNotas.Designer.cs">
-      <DependentUpon>RegistroNotas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RegistroNotas\RegistroNotasDesktop.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RegistroNotas\RegistroNotasDesktop.Designer.cs">
-      <DependentUpon>RegistroNotasDesktop.cs</DependentUpon>
-    </Compile>
     <Compile Include="ReporteComi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,17 +297,23 @@
     <EmbeddedResource Include="Curso\CursosNotas.resx">
       <DependentUpon>CursosNotas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DocenteCurso\DCDesktop.resx">
-      <DependentUpon>DCDesktop.cs</DependentUpon>
+    <EmbeddedResource Include="RegistrarNotas\Docente-Alumnos.resx">
+      <DependentUpon>Docente-Alumnos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DocenteCurso\DocenteCurso.resx">
-      <DependentUpon>DocenteCurso.cs</DependentUpon>
+    <EmbeddedResource Include="RegistrarNotas\Editar-InscripcionDesktop.resx">
+      <DependentUpon>Editar-InscripcionDesktop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DocenteCurso\DocenteMatComCursos.resx">
-      <DependentUpon>DocenteMatComCursos.cs</DependentUpon>
+    <EmbeddedResource Include="RegitrarDocenteCurso\Docente-Inscripcion-Curso-Desktop.resx">
+      <DependentUpon>Docente-Inscripcion-Curso-Desktop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DocenteCurso\DocenteMaterias_Comision.resx">
-      <DependentUpon>DocenteMaterias_Comision.cs</DependentUpon>
+    <EmbeddedResource Include="RegistrarNotas\Docente-Materias.resx">
+      <DependentUpon>Docente-Materias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistrarNotas\DocenteCursos.resx">
+      <DependentUpon>DocenteCursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistrarNotas\Docente-Comision.resx">
+      <DependentUpon>Docente-Comision.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Especialidad\Especialidad.resx">
       <DependentUpon>Especialidad.cs</DependentUpon>
@@ -344,9 +350,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Plan\PlanDesktop.resx">
       <DependentUpon>PlanDesktop.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RegistroNotas\RegistroNotas.resx">
-      <DependentUpon>RegistroNotas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteComi.resx">
       <DependentUpon>ReporteComi.cs</DependentUpon>
