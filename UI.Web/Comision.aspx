@@ -13,6 +13,7 @@
                  SelectedRowStyle-ForeColor="White"
                  DataKeysNames="ID" DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
                <Columns>
+                        <asp:BoundField HeaderText="ID Comision" DataField="ID" />
                         <asp:BoundField HeaderText="ID-Plan" DataField="IDPlan" />
                         <asp:BoundField HeaderText="DescComision" DataField="DescComision" />
                         <asp:BoundField HeaderText="AnioEspecialidad" DataField="AnioEspecialidad" />
