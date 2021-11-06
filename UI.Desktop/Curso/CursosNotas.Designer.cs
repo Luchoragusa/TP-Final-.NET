@@ -35,14 +35,14 @@ namespace UI.Desktop.Curso
             this.tcPlanes = new System.Windows.Forms.ToolStripContainer();
             this.tlPlanes = new System.Windows.Forms.TableLayoutPanel();
             this.dgvCursos = new System.Windows.Forms.DataGridView();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.tsPlanes = new System.Windows.Forms.ToolStrip();
-            this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.IDPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Anio_Especialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.tsPlanes = new System.Windows.Forms.ToolStrip();
+            this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tcPlanes.ContentPanel.SuspendLayout();
             this.tcPlanes.TopToolStripPanel.SuspendLayout();
             this.tcPlanes.SuspendLayout();
@@ -119,6 +119,32 @@ namespace UI.Desktop.Curso
             this.dgvCursos.Size = new System.Drawing.Size(495, 390);
             this.dgvCursos.TabIndex = 0;
             // 
+            // IDPlan
+            // 
+            this.IDPlan.DataPropertyName = "ID";
+            this.IDPlan.HeaderText = "ID Curso";
+            this.IDPlan.Name = "IDPlan";
+            // 
+            // Anio_Especialidad
+            // 
+            this.Anio_Especialidad.DataPropertyName = "IDComision";
+            this.Anio_Especialidad.HeaderText = "ID Comision";
+            this.Anio_Especialidad.Name = "Anio_Especialidad";
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "AnioCalendario";
+            this.Descripcion.HeaderText = "Año Calendario";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.Width = 150;
+            // 
+            // IDComision
+            // 
+            this.IDComision.DataPropertyName = "Cupo";
+            this.IDComision.HeaderText = "Cupo";
+            this.IDComision.Name = "IDComision";
+            this.IDComision.ReadOnly = true;
+            // 
             // btnSalir
             // 
             this.btnSalir.Location = new System.Drawing.Point(423, 399);
@@ -159,32 +185,6 @@ namespace UI.Desktop.Curso
             this.tsbEditar.Text = "Editar";
             this.tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
             // 
-            // IDPlan
-            // 
-            this.IDPlan.DataPropertyName = "ID";
-            this.IDPlan.HeaderText = "ID Curso";
-            this.IDPlan.Name = "IDPlan";
-            // 
-            // Anio_Especialidad
-            // 
-            this.Anio_Especialidad.DataPropertyName = "IDComision";
-            this.Anio_Especialidad.HeaderText = "ID Comision";
-            this.Anio_Especialidad.Name = "Anio_Especialidad";
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.DataPropertyName = "AnioCalendario";
-            this.Descripcion.HeaderText = "Año Calendario";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.Width = 150;
-            // 
-            // IDComision
-            // 
-            this.IDComision.DataPropertyName = "Cupo";
-            this.IDComision.HeaderText = "Cupo";
-            this.IDComision.Name = "IDComision";
-            this.IDComision.ReadOnly = true;
-            // 
             // CursosNotas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,7 +192,7 @@ namespace UI.Desktop.Curso
             this.ClientSize = new System.Drawing.Size(501, 450);
             this.Controls.Add(this.tcPlanes);
             this.Name = "CursosNotas";
-            this.Text = "CursosNotas";
+            this.Text = "DocenteCurso";
             this.Load += new System.EventHandler(this.CursosNotas_Load);
             this.tcPlanes.ContentPanel.ResumeLayout(false);
             this.tcPlanes.TopToolStripPanel.ResumeLayout(false);

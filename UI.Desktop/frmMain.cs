@@ -48,11 +48,11 @@ namespace UI.Desktop
             }
             else if (tipo == 3)     //admin
             {
-                btnAlu.Visible = true;
-                btnDoc.Visible = true;
+                btnAlu.Visible = false;
+                btnDoc.Visible = false;
                 btnAdmin.Visible = true;
-                panelAluSubMenu.Visible = true;
-                panelDocSubMenu.Visible = true;
+                panelAluSubMenu.Visible = false;
+                panelDocSubMenu.Visible = false;
                 panelAdminSubMenu.Visible = true;
             }
         }
@@ -102,7 +102,7 @@ namespace UI.Desktop
 
         private void btnAlu_Click(object sender, EventArgs e)
         {
-            mostrarSubMenu(panelAluSubMenu); //falta conceder permisos para que solo se vea el menu de alumno si inicio secion alumno, lo mismo con los otros dos
+            mostrarSubMenu(panelAluSubMenu); 
         }
 
         private void btnDoc_Click(object sender, EventArgs e)
