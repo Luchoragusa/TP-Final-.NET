@@ -356,7 +356,7 @@ namespace UI.Desktop
             this.btnDocDocenteCurso.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnDocDocenteCurso.Size = new System.Drawing.Size(242, 40);
             this.btnDocDocenteCurso.TabIndex = 3;
-            this.btnDocDocenteCurso.Text = "Docente Curso";
+            this.btnDocDocenteCurso.Text = "Inscripcion a curso";
             this.btnDocDocenteCurso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDocDocenteCurso.UseVisualStyleBackColor = true;
             this.btnDocDocenteCurso.Click += new System.EventHandler(this.btnDocDocenteCurso_Click);
