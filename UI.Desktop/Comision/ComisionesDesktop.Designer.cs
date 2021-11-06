@@ -48,16 +48,16 @@ namespace UI.Desktop
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.5625F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.4375F));
-            this.tableLayoutPanel1.Controls.Add(this.lblID_Plan, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtIDPlan_Com, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.btnModo, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.txtAnioEsp_Com, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.lblAnioEsp, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.lblDescCom, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtDesc_Com, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lblIDComision, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtIDCom, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtIDPlan_Com, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtIDCom, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblID_Plan, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblIDComision, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -74,7 +74,7 @@ namespace UI.Desktop
             // 
             this.lblID_Plan.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblID_Plan.AutoSize = true;
-            this.lblID_Plan.Location = new System.Drawing.Point(3, 23);
+            this.lblID_Plan.Location = new System.Drawing.Point(3, 83);
             this.lblID_Plan.Name = "lblID_Plan";
             this.lblID_Plan.Size = new System.Drawing.Size(58, 13);
             this.lblID_Plan.TabIndex = 12;
@@ -83,7 +83,7 @@ namespace UI.Desktop
             // txtIDPlan_Com
             // 
             this.txtIDPlan_Com.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtIDPlan_Com.Location = new System.Drawing.Point(105, 20);
+            this.txtIDPlan_Com.Location = new System.Drawing.Point(105, 80);
             this.txtIDPlan_Com.Name = "txtIDPlan_Com";
             this.txtIDPlan_Com.Size = new System.Drawing.Size(256, 20);
             this.txtIDPlan_Com.TabIndex = 0;
@@ -150,7 +150,7 @@ namespace UI.Desktop
             // 
             this.lblIDComision.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblIDComision.AutoSize = true;
-            this.lblIDComision.Location = new System.Drawing.Point(3, 83);
+            this.lblIDComision.Location = new System.Drawing.Point(3, 23);
             this.lblIDComision.Name = "lblIDComision";
             this.lblIDComision.Size = new System.Drawing.Size(63, 13);
             this.lblIDComision.TabIndex = 13;
@@ -159,7 +159,7 @@ namespace UI.Desktop
             // txtIDCom
             // 
             this.txtIDCom.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtIDCom.Location = new System.Drawing.Point(105, 80);
+            this.txtIDCom.Location = new System.Drawing.Point(105, 20);
             this.txtIDCom.Name = "txtIDCom";
             this.txtIDCom.ReadOnly = true;
             this.txtIDCom.Size = new System.Drawing.Size(256, 20);
