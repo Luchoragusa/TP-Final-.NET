@@ -56,16 +56,23 @@ namespace UI.Desktop
                 {
                     MessageBox.Show("Bienvenido al sistema, ADMINISTRADOR.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.DialogResult = DialogResult.OK;
+                    
                 }
+
                 else if (tipo == 4) //nuevo
                 {
                     MessageBox.Show("Bienvenido por primera vez al sistema.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.DialogResult = DialogResult.OK;
-                    PersonaDesktop appPersona = new PersonaDesktop();
+                    usuario = loginUsuario.GetUsuario(usuario);
+                    PersonaDesktop pd = new PersonaDesktop(usuario);
+                    pd.ShowDialog();
                 }
-                nm = new frmMain(tipo, usuario);
-                nm.ShowDialog();
-                //this.Dispose();
+
+                if (tipo == 1 || tipo == 2 || tipo == 3)
+                {
+                    nm = new frmMain(tipo, usuario); 
+                    nm.ShowDialog();
+                }               
             }
             else
             {

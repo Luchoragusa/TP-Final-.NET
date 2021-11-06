@@ -177,22 +177,24 @@ namespace Data.Database
             try
             {
                 OpenConnection();
-                SqlCommand cmdUsuarios = new SqlCommand("select per.tipo_persona from personas per left join usuarios u on u.id_usuario = per.id_usuario where u.nombre_usuario = @nombre_usuario and u.clave = @clave;", sqlConn);
+                SqlCommand cmdUsuarios = new SqlCommand("select p.tipo_persona from usuarios u left join personas p on p.id_usuario = u.id_usuario where u.nombre_usuario = @nombre_usuario and u.clave = @clave", sqlConn);
                 cmdUsuarios.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
                 cmdUsuarios.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;
                 SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
+                
 
                 if (drUsuarios != null)
                 {
                     drUsuarios.Read();
-                    if (drUsuarios["tipo_persona"] != null)
+
+                    if (!string.IsNullOrEmpty(drUsuarios["tipo_persona"].ToString()))
                     {
                         tipo_persona = (int)(Personas.TipoPersonas)drUsuarios["tipo_persona"];
                     }
                     else
                     {
                         tipo_persona = 4;
-                    }                    
+                    }
                 }
              drUsuarios.Close();
             }
@@ -212,21 +214,19 @@ namespace Data.Database
             try
             {
                 OpenConnection();
-                SqlCommand cmdUsuarios = new SqlCommand("SELECT us.id_usuario, us.nombre_usuario, us.clave, us.habilitado FROM usuarios us inner join personas on personas.id_persona = us.id_persona WHERE nombre_usuario = @nombre_usuario and clave = @clave", sqlConn);
+                SqlCommand cmdUsuarios = new SqlCommand("SELECT * FROM usuarios WHERE nombre_usuario = @nombre_usuario and clave = @clave", sqlConn);
                 cmdUsuarios.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = u.NombreUsuario;
                 cmdUsuarios.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = u.Clave;
                 SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
                 u = null;
                 if (drUsuarios != null)
                 {
-                    while (drUsuarios.Read())
-                    {
-                        u = new Usuario();
-                        u.ID = (int)drUsuarios["id_usuario"];
-                        u.NombreUsuario = (string)drUsuarios["nombre_usuario"];
-                        u.Clave = (string)drUsuarios["clave"];
-                        u.Habilitado = (bool)drUsuarios["habilitado"];
-                    }
+                    drUsuarios.Read();
+                    u = new Usuario();
+                    u.ID = (int)drUsuarios["id_usuario"];
+                    u.NombreUsuario = (string)drUsuarios["nombre_usuario"];
+                    u.Clave = (string)drUsuarios["clave"];
+                    u.Habilitado = (bool)drUsuarios["habilitado"];
                 }
                 
                 drUsuarios.Close();

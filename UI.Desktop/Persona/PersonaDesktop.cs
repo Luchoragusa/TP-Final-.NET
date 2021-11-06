@@ -21,17 +21,19 @@ namespace UI.Desktop
 
         public PersonaDesktop(Usuario us)
         {
+            InitializeComponent();
             try
             {
                 this.Modo = ModoForm.Alta;
-                PersonaActual = new Personas();
-                MapearDeDatos();
+                usuarioNuevo.ID = us.ID;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
+
+        private Usuario usuarioNuevo = new Usuario();
 
         public PersonaDesktop(ModoForm modo) : this()
         {
@@ -101,6 +103,7 @@ namespace UI.Desktop
             {
                 PersonaActual = new Personas();
                 PersonaActual.State = BusinessEntity.States.New;
+                PersonaActual.IdUsuario = usuarioNuevo.ID;
             }
 
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
@@ -155,13 +158,13 @@ namespace UI.Desktop
                 return false;
             }
 
-            if (!Validaciones.validarTexto(txtNombre.Text))
+            if (Validaciones.validarTexto(txtNombre.Text))
             {
                 Notificar("Nombre incorrecto.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (!Validaciones.validarTexto(txtApellido.Text))    
+            if (Validaciones.validarTexto(txtApellido.Text))    
             {
                 Notificar("Apellido incorrecto.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -185,13 +188,13 @@ namespace UI.Desktop
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (Validaciones.validarTexto(txtLegajo.Text))
+            if (!Validaciones.validarTexto(txtLegajo.Text))
             {
                 Notificar("Legajo Incorrecto.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (Validaciones.validarTexto(txtIdPlan.Text))
+            if (!Validaciones.validarTexto(txtIdPlan.Text))
             {
                 Notificar("id Plan incorrecto Incorrecta.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
