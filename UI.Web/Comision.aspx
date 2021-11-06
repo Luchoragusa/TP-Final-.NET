@@ -13,6 +13,7 @@
                  SelectedRowStyle-ForeColor="White"
                  DataKeysNames="ID" DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
                <Columns>
+                        <asp:BoundField HeaderText="ID Comision" DataField="ID" />
                         <asp:BoundField HeaderText="ID-Plan" DataField="IDPlan" />
                         <asp:BoundField HeaderText="DescComision" DataField="DescComision" />
                         <asp:BoundField HeaderText="AnioEspecialidad" DataField="AnioEspecialidad" />
@@ -42,16 +43,16 @@
                 <br />
         
          <asp:Label ID ="idPlanLabel" runat="server" Text="IDPlan: "></asp:Label>
-        <asp:TextBox ID="idPlanTextBox" runat="server"></asp:TextBox>
+        <asp:TextBox ID="idPlanTextBox" runat="server" Width="47px"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorPlan" runat="server" 
-                    ControlToValidate="planTextBox" 
+                    ControlToValidate="idPlanTextBox" 
                     ErrorMessage="La ID del plan es obligatoria" 
                     ForeColor="Red">
                     *
                 </asp:RequiredFieldValidator>
         <br />
         
-         <asp:Label ID="descComisionLabel" runat="server" Text="descComision: "></asp:Label>
+         <asp:Label ID="descComisionLabel" runat="server" Text="Descripcion Comision"></asp:Label>
         <asp:TextBox ID="descComisionTextBox" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorComision" runat="server" 
                     ControlToValidate="descComisionTextBox" 
@@ -61,23 +62,26 @@
                 </asp:RequiredFieldValidator>
         <br />
         
-         <asp:Label ID="anioEspecialidadLabel" runat="server" Text="anioEspecialidad: "></asp:Label>
-        <asp:TextBox ID="anioEspecialidadTextBox" runat="server" Width="40px"></asp:TextBox>
+         <asp:Label ID="anioEspecialidadLabel" runat="server" Text="Año especialidad: "></asp:Label>
+        <asp:TextBox ID="anioEspecialidadTextBox" runat="server" Width="51px"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorAnioEspecialidad" runat="server" 
                     ControlToValidate="anioEspecialidadTextBox" 
                     ErrorMessage="El anio de la especialidad es obligatoria" 
                     ForeColor="Red">
                     *
                 </asp:RequiredFieldValidator>
+                <br />
         <br />
+                        
+                <asp:Button ID="aceptarButton" runat="server" class="btn btn-outline-primary" OnClick="acceptaButton_Click" Text="Aceptar" />
+                &nbsp;
+                <asp:Button ID="cancelarButton" runat="server" class="btn btn-outline-primary" OnClick="cancelarButton_Click" style="height: 26px" Text="Cancelar" />
                         
         <br />    
                 
         <asp:Panel ID="Panel1" runat="server" HorizontalAlign="Center" Visible="false">
-            <asp:Button ID="aceptarButton" runat="server" class="btn btn-outline-primary" Text="Aceptar" OnClick="acceptaButton_Click" />
             &nbsp;
-            <asp:Button ID="cancelarButton" runat="server" class="btn btn-outline-primary" Text="Cancelar" OnClick="cancelarButton_Click" style="height: 26px" />
-        </asp:Panel>
+            </asp:Panel>
         
      </asp:Panel>
 

@@ -91,7 +91,7 @@ namespace UI.Consola
                 Console.Clear();
                 Console.Write("Ingrese el ID del curso a consultar: ");
                 int ID = int.Parse(Console.ReadLine());
-                this.MostrarDatos(CursoNegocio.GetOne(ID));
+                //this.MostrarDatos(CursoNegocio.GetOne(ID));
             }
             catch (FormatException)
             {
@@ -136,21 +136,21 @@ namespace UI.Consola
                 Console.Write("Ingrese el ID del usuario a modificar: ");
                 int ID = int.Parse(Console.ReadLine());
 
-                Business.Entities.Curso curso = CursoNegocio.GetOne(ID);
+                //Business.Entities.Curso curso = CursoNegocio.GetOne(ID);
 
                 Console.Write("Ingrese ID de la materia: ");
-                curso.IDMateria = int.Parse(Console.ReadLine());
+                //curso.IDMateria = int.Parse(Console.ReadLine());
 
                 Console.Write("Ingrese ID de la comision: ");
-                curso.IDComision = int.Parse(Console.ReadLine());
+                //curso.IDComision = int.Parse(Console.ReadLine());
 
                 Console.Write("Ingrese el año calendario: ");
-                curso.AnioCalendario = int.Parse(Console.ReadLine());
+                //curso.AnioCalendario = int.Parse(Console.ReadLine());
 
                 Console.Write("Ingrese el cupo: ");
-                curso.Cupo = int.Parse(Console.ReadLine());
+                //curso.Cupo = int.Parse(Console.ReadLine());
 
-                CursoNegocio.Save(curso);
+                //CursoNegocio.Save(curso);
             }
             catch (FormatException)
             {

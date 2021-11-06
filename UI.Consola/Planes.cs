@@ -88,7 +88,7 @@ namespace UI.Consola
                 Console.Clear();
                 Console.Write("Ingrese el ID del plan a consultar: ");
                 int ID = int.Parse(Console.ReadLine());
-                this.MostrarDatos(PlanNegocio.GetOne(ID));
+                //this.MostrarDatos(PlanNegocio.GetOne(ID));
             }
             catch (FormatException)
             {
@@ -129,14 +129,14 @@ namespace UI.Consola
                 Console.Clear();
                 Console.Write("Ingrese el ID de la especialidad del plan a modificar: ");
                 int ID = int.Parse(Console.ReadLine());
-                Plan plan = PlanNegocio.GetOne(ID);
+                //Plan plan = PlanNegocio.GetOne(ID);
 
                 Console.Write("Ingrese la descripcion del plan a modificar: ");
-                plan.Descripcion = Console.ReadLine();
+                //plan.Descripcion = Console.ReadLine();
 
-                plan.State = BusinessEntity.States.Modified;
+                //plan.State = BusinessEntity.States.Modified;
 
-                PlanNegocio.Save(plan);
+                //PlanNegocio.Save(plan);
             }
             catch (FormatException) 
             {

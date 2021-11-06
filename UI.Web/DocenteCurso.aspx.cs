@@ -65,6 +65,7 @@ namespace UI.Web
 
             this.iddocenteTextBox.Text = this.Entity.IDDocente.ToString();
             this.idcursoTextBox.Text = this.Entity.IDCurso.ToString();
+            this.txtCargo.Text = this.Entity.Cargo.ToString();
            
         }
 
@@ -72,12 +73,14 @@ namespace UI.Web
         {
             this.iddocenteTextBox.Enabled = enable;
             this.idcursoTextBox.Enabled = enable;
+            this.txtCargo.Enabled = enable;
         }
 
         protected override void ClearForm()
         {
             this.iddocenteTextBox.Text = string.Empty;
             this.idcursoTextBox.Text = string.Empty;
+            this.txtCargo.Text = string.Empty;
         }
         private void SaveEntity(Business.Entities.Entidades.DocenteCurso DocenteCurso)
         {
@@ -91,7 +94,8 @@ namespace UI.Web
         private void LoadEntity(Business.Entities.Entidades.DocenteCurso DocenteCurso)
         {
             DocenteCurso.IDDocente = int.Parse(this.iddocenteTextBox.Text);
-            DocenteCurso.IDCurso = int.Parse(this.idcursoTextBox.Text); 
+            DocenteCurso.IDCurso = int.Parse(this.idcursoTextBox.Text);
+            DocenteCurso.Cargo = (Business.Entities.Entidades.DocenteCurso.TipoCargos)int.Parse(this.txtCargo.Text);
         }
 
         protected void nuevoLinkButton_Click(object sender, EventArgs e)

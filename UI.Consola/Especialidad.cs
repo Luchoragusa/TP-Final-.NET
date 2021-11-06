@@ -89,7 +89,7 @@ namespace UI.Consola
                     Console.Clear();
                     Console.Write("Ingrese el ID de la especialidad a consultar: ");
                     int ID = int.Parse(Console.ReadLine());
-                    this.MostrarDatos(EspecialidadNegocio.GetOne(ID));
+                    //this.MostrarDatos(EspecialidadNegocio.GetOne(ID));
                 }
                 catch (FormatException)
                 {
@@ -115,9 +115,9 @@ namespace UI.Consola
                 especialidad.IDEspecialidad = int.Parse(Console.ReadLine()); */
 
                 Console.Write("Ingrese la descripcion de la especialidad: ");
-                especialidad.DescEspecialidad = Console.ReadLine();
+                //especialidad.DescEspecialidad = Console.ReadLine();
 
-                EspecialidadNegocio.Save(especialidad);
+                //EspecialidadNegocio.Save(especialidad);
                 Console.WriteLine();
                // Console.WriteLine("ID: {0}", especialidad.IDEspecialidad);
             }
@@ -129,14 +129,14 @@ namespace UI.Consola
                     Console.Write("Ingrese el ID de la especialidad a modificar: ");
                     int ID = int.Parse(Console.ReadLine());
                     //Plan plan = PlanNegocio.GetOne(ID);                                  
-                    Especialidad especialidad = EspecialidadNegocio.GetOne(ID);
+                    //Especialidad especialidad = EspecialidadNegocio.GetOne(ID);
 
                     Console.Write("Ingrese la nueva descripcion: ");
-                    especialidad.DescEspecialidad = Console.ReadLine();
+                    //especialidad.DescEspecialidad = Console.ReadLine();
 
-                    especialidad.State = BusinessEntity.States.Modified;
+                    //especialidad.State = BusinessEntity.States.Modified;
 
-                    EspecialidadNegocio.Save(especialidad);
+                    //EspecialidadNegocio.Save(especialidad);
                 }
                 catch (FormatException)
                 {

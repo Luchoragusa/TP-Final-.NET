@@ -88,7 +88,7 @@ namespace UI.Consola
                 Console.Clear();
                 Console.Write("Ingrese el ID del Comision a consultar: ");
                 int ID = int.Parse(Console.ReadLine());
-                this.MostrarDatos(ComisionNegocio.GetOne(ID));
+                //this.MostrarDatos(ComisionNegocio.GetOne(ID));
             }
             catch (FormatException)
             {
@@ -132,14 +132,14 @@ namespace UI.Consola
                 Console.Clear();
                 Console.Write("Ingrese el ID de la Comision a modificar: ");
                 int ID = int.Parse(Console.ReadLine());
-                Comision Comision = ComisionNegocio.GetOne(ID);
+                //Comision Comision = ComisionNegocio.GetOne(ID);
 
                 Console.Write("Ingrese la descripcion de la Comision a modificar: ");
-                Comision.DescComision = Console.ReadLine();
+                //Comision.DescComision = Console.ReadLine();
 
-                Comision.State = BusinessEntity.States.Modified;
+                //Comision.State = BusinessEntity.States.Modified;
 
-                ComisionNegocio.Save(Comision);
+                //ComisionNegocio.Save(Comision);
             }
             catch (FormatException)
             {

@@ -17,8 +17,6 @@ namespace UI.Web
             Usuario us = (Usuario)Session["usuario"];
             Business.Entities.Entidades.Personas per = new Business.Entities.Entidades.Personas();
             per.ID = (int)Session["id_persona"];
-            lblNombre.Text = us.Nombre;
-            lblApellido.Text = us.Apellido;
             switch (per.ID)
             {
                 case 1:     //alumno
@@ -31,7 +29,10 @@ namespace UI.Web
                     btnComision.Visible = false;
                     btnEspecialidad.Visible = false;
                     btnCursoAlumno.Visible = false;
+                    btnPersonaAlumno.Visible = false;
                     Business.Entities.Entidades.DocenteCurso docente = new Business.Entities.Entidades.DocenteCurso();
+
+                //HACER UN CASE 4 ??? SERIA LA PERSONA QUE ENTRA POR PRIMERA VEZ
 
                     break;
                 default:
@@ -82,6 +83,11 @@ namespace UI.Web
         protected void btnRegistrarNota_Click(object sender, EventArgs e)
         {
             Response.Redirect("RegistrarNota.aspx");
-        }       
+        }
+
+        protected void btnPersonaAlumno_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Persona.aspx");
+        }
     }
 }

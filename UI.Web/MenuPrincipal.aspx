@@ -7,11 +7,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="PageContent" runat="server">
 
      <div class="d-grid gap-2 col-2 mx-auto" align="center">
-            <asp:Label ID="lblBienvenido" runat="server" Text="Bienvenido al Sistema"></asp:Label>
-&nbsp;
-            <asp:Label ID="lblNombre" runat="server" Text="Label"></asp:Label>
-&nbsp;
-            <asp:Label ID="lblApellido" runat="server" Text="Label"></asp:Label>
+            ¡<asp:Label ID="lblBienvenido" runat="server" Text="Bienvenido al Sistema"></asp:Label>
+            !&nbsp;
+            &nbsp;
             <br />
             <br />
             <asp:Label ID="lblAlumno" runat="server" Text="Alumno"></asp:Label>
@@ -20,6 +18,8 @@
 &nbsp;&nbsp;<asp:Button ID="btnEspecialidad" runat="server" Text="Especialidad" Width="98px" BackColor="#33CCCC" OnClick="btnEspecialidad_Click" />
             &nbsp;
             <asp:Button ID="btnCursoAlumno" runat="server" Text="Curso" Width="62px" BackColor="#33CCCC" OnClick="btnCursoAlumno_Click" />
+            &nbsp;
+            <asp:Button ID="btnPersonaAlumno" runat="server" BackColor="#33CCCC" OnClick="btnPersonaAlumno_Click" Text="Persona" />
             <br />
             <br />
             <asp:Label ID="lblDocente" runat="server" Text="Docente"></asp:Label>

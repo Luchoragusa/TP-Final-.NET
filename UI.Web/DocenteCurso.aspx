@@ -55,14 +55,20 @@
                     ForeColor="Red">
                     *
                 </asp:RequiredFieldValidator>
+            <br />
+            <asp:Label ID="lblCargo" runat="server" Text="Cargo"></asp:Label>
+            &nbsp;<asp:TextBox ID="txtCargo" runat="server" Width="34px"></asp:TextBox>
+            <br />
+            <br />
+            <asp:Button ID="aceptarButton" runat="server" class="btn btn-outline-primary" OnClick="acceptaButton_Click" Text="Aceptar" Width="72px" />
+            &nbsp;
+            <asp:Button ID="cancelarButton" runat="server" class="btn btn-outline-primary" OnClick="cancelarButton_Click" Text="Cancelar" />
         <br />
         
 
         <asp:Panel ID="Panel1" runat="server" HorizontalAlign="Center" Visible="true">
-            <asp:Button ID="aceptarButton" runat="server" class="btn btn-outline-primary" Text="Aceptar" OnClick="acceptaButton_Click" Width="72px" />
             &nbsp;
-            <asp:Button ID="cancelarButton" runat="server" class="btn btn-outline-primary" Text="Cancelar" OnClick="cancelarButton_Click" />
-        </asp:Panel>
+            </asp:Panel>
 
      </asp:Panel>
 
