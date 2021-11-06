@@ -10,22 +10,22 @@ namespace Business.Logic
 {
     public class UsuarioLogic : BusinessLogic
     {
-        private Data.Database.UsuarioAdapter usData;
+        private UsuarioAdapter usData;
 
         public UsuarioLogic()
         {
-            usData = new Data.Database.UsuarioAdapter();
+            usData = new UsuarioAdapter();
         }
-        public Data.Database.UsuarioAdapter UsuarioData
+        public UsuarioAdapter UsuarioData
         {
             get { return usData;}
             set { usData = value;}
         }
-        public Business.Entities.Usuario GetOne(int id)
+        public Usuario GetOne(Usuario u)
         {
             try
             {
-                return UsuarioData.GetOne(id);
+                return UsuarioData.GetOne(u);
             }
             catch (Exception ex)
             {
@@ -65,7 +65,7 @@ namespace Business.Logic
             }
         }                                               
 
-        public void Save(Business.Entities.Usuario usuario)
+        public void Save(Usuario usuario)
         {
             try
             {
@@ -103,7 +103,6 @@ namespace Business.Logic
         //        throw ExcepcionManejada;
         //    }
         //}
-
         public void Insert(Usuario usuario)
         {
             try
@@ -116,7 +115,6 @@ namespace Business.Logic
                 throw ExcepcionManejada;
             }
         }
-
         public void Update(Usuario usuario)
         {
             try

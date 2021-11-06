@@ -10,25 +10,25 @@ using Business.Logic;
 
 namespace UI.Desktop
 {
-    public partial class UsuarioDesktop : UI.Desktop.ApplicationForm
+    public partial class UsuarioDesktop : ApplicationForm
     {
         public UsuarioDesktop()
         {
             InitializeComponent();
         }
-
         public UsuarioDesktop(ModoForm modo) : this()
         {
             this.Modo = modo;
         }
-
         public UsuarioDesktop(int ID, ModoForm modo) : this()
         {
             this.Modo = modo;
             UsuarioLogic usLogic = new UsuarioLogic();
             try
             {
-                UsuarioActual = usLogic.GetOne(ID);
+                UsuarioActual = new Usuario();
+                _usActual.ID = ID;
+                UsuarioActual = usLogic.GetOne(UsuarioActual);
                 MapearDeDatos();
             }
             catch (Exception ex)
@@ -36,7 +36,6 @@ namespace UI.Desktop
                 throw ex;
             }  
         }
-
         private Usuario _usActual;
         public Usuario UsuarioActual
         {
@@ -45,14 +44,11 @@ namespace UI.Desktop
             set
             { _usActual = value; }
         }
-
-
         public override void MapearDeDatos()
         {
             this.txtID.Text = this.UsuarioActual.ID.ToString();
             this.chkHabilitado.Checked = this.UsuarioActual.Habilitado;
             this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;              
-
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
                 this.btnModo.Text = "Guardar";
@@ -60,6 +56,12 @@ namespace UI.Desktop
             else if (Modo == ModoForm.Baja)
             {
                 this.btnModo.Text = "Eliminar";
+                this.txtID.Enabled = false;
+                this.chkHabilitado.Enabled = false;
+                this.txtUsuario.Enabled = false;
+                this.txtConfClave.Enabled = false;
+                this.txtClave.Enabled = false;
+
             }
             else if (Modo == ModoForm.Consulta)
             {
@@ -85,7 +87,6 @@ namespace UI.Desktop
                 this.UsuarioActual.Habilitado = this.chkHabilitado.Checked;
                 this.UsuarioActual.Clave = this.txtClave.Text;
                 this.UsuarioActual.NombreUsuario = this.txtUsuario.Text;
-                this.UsuarioActual.Clave = this.txtClave.Text;
             }
 
             if (this.Modo == ModoForm.Baja) UsuarioActual.State = BusinessEntity.States.Deleted;
@@ -127,7 +128,19 @@ namespace UI.Desktop
                 Notificar("Contraseña invalida.", "Intente nuevamente",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
-            }            
+            }
+            if (!Validaciones.validarClave(txtConfClave.Text))
+            {
+                Notificar("Contraseña invalida.", "Intente nuevamente",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (!(txtClave.Text == txtConfClave.Text))
+            {
+                Notificar("Contraseña invalida.", "Son distintas",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
             return true;
         }
         private void botonAceptarClick(object sender, EventArgs e)
