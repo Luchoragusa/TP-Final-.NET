@@ -182,16 +182,16 @@ namespace UI.Desktop.DocenteCurso
             this.tsbIngresar});
             this.tsPlanes.Location = new System.Drawing.Point(3, 0);
             this.tsPlanes.Name = "tsPlanes";
-            this.tsPlanes.Size = new System.Drawing.Size(66, 25);
+            this.tsPlanes.Size = new System.Drawing.Size(83, 25);
             this.tsPlanes.TabIndex = 0;
             // 
             // tsbIngresar
             // 
-            this.tsbIngresar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbIngresar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.tsbIngresar.Image = ((System.Drawing.Image)(resources.GetObject("tsbIngresar.Image")));
             this.tsbIngresar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbIngresar.Name = "tsbIngresar";
-            this.tsbIngresar.Size = new System.Drawing.Size(23, 22);
+            this.tsbIngresar.Size = new System.Drawing.Size(71, 22);
             this.tsbIngresar.Text = "Seleccionar";
             this.tsbIngresar.Click += new System.EventHandler(this.tsbIngresar_Click);
             // 

@@ -29,11 +29,11 @@ namespace UI.Desktop.RegistrarNotas
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tscMaterias = new System.Windows.Forms.ToolStripContainer();
             this.tlMaterias = new System.Windows.Forms.TableLayoutPanel();
-            this.dgvAlum_Incrip = new System.Windows.Forms.DataGridView();
+            this.dgvDocente_Alumnos = new System.Windows.Forms.DataGridView();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,7 +47,7 @@ namespace UI.Desktop.RegistrarNotas
             this.tscMaterias.TopToolStripPanel.SuspendLayout();
             this.tscMaterias.SuspendLayout();
             this.tlMaterias.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAlum_Incrip)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDocente_Alumnos)).BeginInit();
             this.tsMaterias.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,7 +74,7 @@ namespace UI.Desktop.RegistrarNotas
             this.tlMaterias.ColumnCount = 2;
             this.tlMaterias.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlMaterias.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tlMaterias.Controls.Add(this.dgvAlum_Incrip, 0, 0);
+            this.tlMaterias.Controls.Add(this.dgvDocente_Alumnos, 0, 0);
             this.tlMaterias.Controls.Add(this.btnSalir, 1, 1);
             this.tlMaterias.Controls.Add(this.btnActualizar, 0, 1);
             this.tlMaterias.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -86,38 +86,38 @@ namespace UI.Desktop.RegistrarNotas
             this.tlMaterias.Size = new System.Drawing.Size(800, 425);
             this.tlMaterias.TabIndex = 0;
             // 
-            // dgvAlum_Incrip
+            // dgvDocente_Alumnos
             // 
-            this.dgvAlum_Incrip.BackgroundColor = System.Drawing.Color.LightSteelBlue;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAlum_Incrip.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvAlum_Incrip.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAlum_Incrip.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvDocente_Alumnos.BackgroundColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDocente_Alumnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvDocente_Alumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDocente_Alumnos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombre,
             this.apellido,
             this.Nota,
             this.Condicion,
             this.legajo});
-            this.tlMaterias.SetColumnSpan(this.dgvAlum_Incrip, 2);
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAlum_Incrip.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvAlum_Incrip.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvAlum_Incrip.Location = new System.Drawing.Point(3, 3);
-            this.dgvAlum_Incrip.Name = "dgvAlum_Incrip";
-            this.dgvAlum_Incrip.Size = new System.Drawing.Size(794, 390);
-            this.dgvAlum_Incrip.TabIndex = 0;
+            this.tlMaterias.SetColumnSpan(this.dgvDocente_Alumnos, 2);
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDocente_Alumnos.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvDocente_Alumnos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDocente_Alumnos.Location = new System.Drawing.Point(3, 3);
+            this.dgvDocente_Alumnos.Name = "dgvDocente_Alumnos";
+            this.dgvDocente_Alumnos.Size = new System.Drawing.Size(794, 390);
+            this.dgvDocente_Alumnos.TabIndex = 0;
             // 
             // nombre
             // 
@@ -185,14 +185,15 @@ namespace UI.Desktop.RegistrarNotas
             this.tsbEditar});
             this.tsMaterias.Location = new System.Drawing.Point(3, 0);
             this.tsMaterias.Name = "tsMaterias";
-            this.tsMaterias.Size = new System.Drawing.Size(53, 25);
+            this.tsMaterias.Size = new System.Drawing.Size(111, 25);
             this.tsMaterias.TabIndex = 0;
             // 
             // tsbEditar
             // 
             this.tsbEditar.Name = "tsbEditar";
-            this.tsbEditar.Size = new System.Drawing.Size(41, 22);
-            this.tsbEditar.Text = "Editar";
+            this.tsbEditar.Size = new System.Drawing.Size(68, 22);
+            this.tsbEditar.Text = "Editar nota";
+            this.tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
             // 
             // Docente_Alumnos
             // 
@@ -202,13 +203,14 @@ namespace UI.Desktop.RegistrarNotas
             this.Controls.Add(this.tscMaterias);
             this.Name = "Docente_Alumnos";
             this.Text = "Alumnos del docente";
+            this.Load += new System.EventHandler(this.Alum_Curso_Load);
             this.tscMaterias.ContentPanel.ResumeLayout(false);
             this.tscMaterias.TopToolStripPanel.ResumeLayout(false);
             this.tscMaterias.TopToolStripPanel.PerformLayout();
             this.tscMaterias.ResumeLayout(false);
             this.tscMaterias.PerformLayout();
             this.tlMaterias.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAlum_Incrip)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDocente_Alumnos)).EndInit();
             this.tsMaterias.ResumeLayout(false);
             this.tsMaterias.PerformLayout();
             this.ResumeLayout(false);
@@ -219,7 +221,7 @@ namespace UI.Desktop.RegistrarNotas
 
         private System.Windows.Forms.ToolStripContainer tscMaterias;
         private System.Windows.Forms.TableLayoutPanel tlMaterias;
-        private System.Windows.Forms.DataGridView dgvAlum_Incrip;
+        private System.Windows.Forms.DataGridView dgvDocente_Alumnos;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nota;

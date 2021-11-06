@@ -182,16 +182,16 @@ namespace UI.Desktop.DocenteCurso
             this.tsbEditar});
             this.tsPlanes.Location = new System.Drawing.Point(3, 0);
             this.tsPlanes.Name = "tsPlanes";
-            this.tsPlanes.Size = new System.Drawing.Size(66, 25);
+            this.tsPlanes.Size = new System.Drawing.Size(83, 25);
             this.tsPlanes.TabIndex = 0;
             // 
             // tsbEditar
             // 
-            this.tsbEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.tsbEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEditar.Image")));
             this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEditar.Name = "tsbEditar";
-            this.tsbEditar.Size = new System.Drawing.Size(23, 22);
+            this.tsbEditar.Size = new System.Drawing.Size(71, 22);
             this.tsbEditar.Text = "Seleccionar";
             this.tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
             // 
