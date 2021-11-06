@@ -17,21 +17,20 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-
                 SqlCommand cmdComision = new SqlCommand("SELECT * FROM comisiones", sqlConn);
-
                 SqlDataReader drComision = cmdComision.ExecuteReader();
-
-                while (drComision.Read())
+                if (drComision != null)
                 {
-                    Comision com = new Comision();
+                    while (drComision.Read())
+                    {
+                        Comision com = new Comision();
+                        com.ID = (int)drComision["id_comision"];
+                        com.DescComision = (string)drComision["desc_comision"];
+                        com.AnioEspecialidad = (int)drComision["anio_especialidad"];
+                        com.IDPlan = (int)drComision["id_plan"];
 
-                    com.ID = (int)drComision["id_comision"];
-                    com.DescComision = (string)drComision["desc_comision"];
-                    com.AnioEspecialidad = (int)drComision["anio_especialidad"];
-                    com.IDPlan = (int)drComision["id_plan"];
-
-                    comisiones.Add(com);
+                        comisiones.Add(com);
+                    }
                 }
                 drComision.Close();
             }
@@ -53,11 +52,11 @@ namespace Data.Database
             {
                 OpenConnection();
                 SqlCommand cmdComisiones = new SqlCommand("SELECT * FROM comisiones WHERE id_comision = @id", sqlConn);
-                cmdComisiones.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+                cmdComisiones.Parameters.Add("@id", SqlDbType.Int).Value = com.ID;
                 SqlDataReader drComision = cmdComisiones.ExecuteReader();
-                while (drComision.Read())
+                if (drComision != null)
                 {
-                    com.ID = (int)drComision["id_comision"];
+                    drComision.Read();
                     com.DescComision = (string)drComision["desc_comision"];
                     com.AnioEspecialidad = (int)drComision["anio_especialidad"];
                     com.IDPlan = (int)drComision["id_plan"];
@@ -75,7 +74,6 @@ namespace Data.Database
             }
             return com;
         }
-
         public void Delete(int ID)
         {
             try
@@ -101,13 +99,11 @@ namespace Data.Database
             try
             {
                 OpenConnection();
-                SqlCommand cmdSave = new SqlCommand("INSERT INTO comisiones (desc_comision,anio_especialidad,id_plan) values(@desc_comision,@anio_especialidad,@id_plan) select @@identity", sqlConn);
-
+                SqlCommand cmdSave = new SqlCommand("INSERT INTO comisiones (desc_comision,anio_especialidad,id_plan) values(@desc_comision,@anio_especialidad,@id_plan)", sqlConn);
                 cmdSave.Parameters.Add("@desc_comision", SqlDbType.VarChar, 50).Value = comision.DescComision;
                 cmdSave.Parameters.Add("@anio_especialidad", SqlDbType.Int).Value = comision.AnioEspecialidad;
                 cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = comision.IDPlan;
-
-                comision.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
+                cmdSave.ExecuteNonQuery();
             }
             catch (Exception Ex)
             {
@@ -119,14 +115,12 @@ namespace Data.Database
                 CloseConnection();
             }
         }
-
         public void Update(Comision comision)
         {
             try
             {
                 OpenConnection();
                 SqlCommand cmdUpd = new SqlCommand("UPDATE comisiones SET desc_comision = @desc_comision, anio_especialidad = @anio_especialdiad, id_plan = @id_plan WHERE id_comision = @id ", sqlConn);
-
                 cmdUpd.Parameters.Add("@id_comision", SqlDbType.Int).Value = comision.ID;
                 cmdUpd.Parameters.Add("@desc_comision", SqlDbType.VarChar, 50).Value = comision.DescComision;
                 cmdUpd.Parameters.Add("@anio_especialidad", SqlDbType.Int).Value = comision.AnioEspecialidad;
