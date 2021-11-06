@@ -109,7 +109,10 @@ namespace UI.Desktop
         {
             mostrarSubMenu(panelDocSubMenu);
         }
-
+        private void btnDocDocenteCurso_Click(object sender, EventArgs e)
+        {
+            abrirFormHijo(new DocenteCurso.DocenteCurso(us));
+        }
         private void btnAdmin_Click(object sender, EventArgs e)
         {
             mostrarSubMenu(panelAdminSubMenu);
@@ -138,11 +141,6 @@ namespace UI.Desktop
         private void btnAluEspecialidad_Click(object sender, EventArgs e)
         {
             abrirFormHijo(new Especialidad());
-        }
-
-        private void btnDocDocenteCurso_Click(object sender, EventArgs e)
-        {
-            abrirFormHijo(new DocenteCurso.DocenteCurso(us));
         }
 
         private void btnDocRegistrarNota_Click(object sender, EventArgs e)
