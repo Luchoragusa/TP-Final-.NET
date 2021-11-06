@@ -17,8 +17,6 @@ namespace UI.Web
             Usuario us = (Usuario)Session["usuario"];
             Business.Entities.Entidades.Personas per = new Business.Entities.Entidades.Personas();
             per.ID = (int)Session["id_persona"];
-            lblNombre.Text = us.Persona.Nombre;
-            lblApellido.Text = us.Persona.Apellido;
             switch (per.ID)
             {
                 case 1:     //alumno

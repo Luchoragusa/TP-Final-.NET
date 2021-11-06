@@ -7,11 +7,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="PageContent" runat="server">
 
      <div class="d-grid gap-2 col-2 mx-auto" align="center">
-            <asp:Label ID="lblBienvenido" runat="server" Text="Bienvenido al Sistema"></asp:Label>
-&nbsp;
-            <asp:Label ID="lblNombre" runat="server" Text="Label"></asp:Label>
-&nbsp;
-            <asp:Label ID="lblApellido" runat="server" Text="Label"></asp:Label>
+            ¡<asp:Label ID="lblBienvenido" runat="server" Text="Bienvenido al Sistema"></asp:Label>
+            !&nbsp;
+            &nbsp;
             <br />
             <br />
             <asp:Label ID="lblAlumno" runat="server" Text="Alumno"></asp:Label>
