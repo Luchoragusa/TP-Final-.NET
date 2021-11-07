@@ -148,7 +148,7 @@ namespace Data.Database
             try
             {
                 OpenConnection();
-                SqlCommand cmdcursos = new SqlCommand("select c.* from cursos c inner join materias m on m.id_materia = c.id_materia where m.id_materia = @id_materia;", sqlConn);
+                SqlCommand cmdcursos = new SqlCommand("select c.* from cursos c inner join materias m on m.id_materia = c.id_materia where m.id_materia = @id_materia", sqlConn);
                 cmdcursos.Parameters.Add("@id_materia", SqlDbType.Int).Value = materia.ID;
                 SqlDataReader drcursos = cmdcursos.ExecuteReader();
                 if (drcursos != null)

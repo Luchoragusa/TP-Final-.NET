@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Business.Entities.Entidades;
+using Business.Entities;
 using Data.Database.EntidadesDB;
 
 namespace Business.Logic.EntidadesLogic
@@ -27,6 +28,19 @@ namespace Business.Logic.EntidadesLogic
             try
             {
                 return PersonaData.GetOne(p);
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar la Persona.", ex);
+                throw ExcepcionManejada;
+            }
+        }
+
+        public Personas GetIDPersona(Usuario usuario)
+        {
+            try
+            {
+                return PersonaData.GetIDPersona(usuario);
             }
             catch (Exception ex)
             {
