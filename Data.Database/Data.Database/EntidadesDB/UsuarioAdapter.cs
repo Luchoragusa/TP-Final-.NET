@@ -48,6 +48,7 @@ namespace Data.Database
             }
             return usuarios;
         }
+        
         #region EntityFramework Delete
         public void EliminarUno(int id)
         {
@@ -60,6 +61,7 @@ namespace Data.Database
             }
         }
         #endregion
+        
         public Usuario GetOne(Usuario usr)         
         {
             try
@@ -88,6 +90,7 @@ namespace Data.Database
             }
             return usr;
         }
+        
         public void Delete(int ID)
         {
             try
@@ -107,6 +110,7 @@ namespace Data.Database
                 CloseConnection();
             }
         }
+        
         public void Insert(Usuario usuario)
         {
             try
@@ -129,6 +133,7 @@ namespace Data.Database
                 CloseConnection();
             }
         }
+        
         public void Update(Usuario usuario)
         {
             try
@@ -171,6 +176,7 @@ namespace Data.Database
             }
             usuario.State = BusinessEntity.States.Unmodified;
         }
+        
         public int GetOneLogin(Usuario usuario)
         {
             int tipo_persona = -1;
@@ -185,18 +191,19 @@ namespace Data.Database
 
                 if (drUsuarios != null)
                 {
-                    drUsuarios.Read();
-
-                    if (!string.IsNullOrEmpty(drUsuarios["tipo_persona"].ToString()))
+                    if (drUsuarios.Read())
                     {
-                        tipo_persona = (int)(Personas.TipoPersonas)drUsuarios["tipo_persona"];
+                        if (!string.IsNullOrEmpty(drUsuarios["tipo_persona"].ToString()))
+                        {
+                            tipo_persona = (int)(Personas.TipoPersonas)drUsuarios["tipo_persona"];
+                        }
+                        else
+                        {
+                            tipo_persona = 4;
+                        }
                     }
-                    else
-                    {
-                        tipo_persona = 4;
-                    }
-                }
-             drUsuarios.Close();
+                }             
+                drUsuarios.Close();
             }
             catch (Exception Ex)
             {
@@ -209,7 +216,7 @@ namespace Data.Database
             }
             return tipo_persona;
         }
-        public Usuario GetUsuario(Usuario u)
+        public Usuario GetUsuario(Usuario u)        //parametros nombre_usuario y clave
         {
             try
             {

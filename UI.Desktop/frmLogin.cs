@@ -67,14 +67,13 @@ namespace UI.Desktop
                     PersonaDesktop pd = new PersonaDesktop(usuario);
                     pd.ShowDialog();
                 }
-
                 if (tipo == 1 || tipo == 2 || tipo == 3)
                 {
                     usuario = loginUsuario.GetUsuario(usuario);
 
                     nm = new frmMain(tipo, usuario); 
                     nm.ShowDialog();
-                }               
+                }
             }
             else
             {
