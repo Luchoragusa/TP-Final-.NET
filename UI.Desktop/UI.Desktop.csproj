@@ -118,12 +118,6 @@
     <Compile Include="Curso\CursosDesktop.Designer.cs">
       <DependentUpon>CursosDesktop.cs</DependentUpon>
     </Compile>
-    <Compile Include="Curso\CursosNotas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Curso\CursosNotas.Designer.cs">
-      <DependentUpon>CursosNotas.cs</DependentUpon>
-    </Compile>
     <Compile Include="DataSetPersonas.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -290,9 +284,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Curso\CursosDesktop.resx">
       <DependentUpon>CursosDesktop.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Curso\CursosNotas.resx">
-      <DependentUpon>CursosNotas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegistrarNotas\Docente-Alumnos.resx">
       <DependentUpon>Docente-Alumnos.cs</DependentUpon>
