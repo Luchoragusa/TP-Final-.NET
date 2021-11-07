@@ -46,12 +46,10 @@ namespace Business.Logic
                 throw ExcepcionManejada;
             }
         }
-
         public Usuario GetUsuario(Usuario u)
         {
             return UsuarioData.GetUsuario(u);
         }
-
         public List<Usuario> GetAll()
         {
             try
@@ -64,7 +62,6 @@ namespace Business.Logic
                 throw ExcepcionManejada;
             }
         }                                               
-
         public void Save(Usuario usuario)
         {
             try

@@ -67,9 +67,7 @@ namespace UI.Desktop.DocenteCurso
 
             }
             int ID = ((Business.Entities.Curso)this.dgvCursosDocente.SelectedRows[0].DataBoundItem).ID;
-
             Docente_Alumnos docente_alumnos = new Docente_Alumnos(ID);
-
             try
             {
                 docente_alumnos.ShowDialog();
