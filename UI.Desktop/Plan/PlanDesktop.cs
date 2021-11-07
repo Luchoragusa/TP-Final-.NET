@@ -100,6 +100,8 @@ namespace UI.Desktop
             try
             {
                 planLogic.Save(PlanActual);
+                MessageBox.Show("La operacion se realizo correctamente", "Informacion", MessageBoxButtons.OK);
+                this.Dispose();
             }
             catch (Exception ex)
             {
