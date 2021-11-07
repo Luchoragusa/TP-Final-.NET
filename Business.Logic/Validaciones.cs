@@ -10,20 +10,6 @@ namespace Business.Logic
 {
     public static class Validaciones
     {
-        public static bool EsMailValido(string unMail)
-        {
-          bool rta = false;
-          String expresion = @"\A(\w+.?\w*@\w+.)(com)\Z";
-          if (Regex.IsMatch(unMail, expresion))
-          {
-                if (Regex.Replace(unMail, expresion, String.Empty).Length == 0)
-                {
-                    rta = true;
-                }
-            }
-          return rta;
-        }
-
         public static bool validarClave(string clave)
         {
             string formato = "^([a-zA-Z0-9]{4,16})$";
@@ -35,18 +21,6 @@ namespace Business.Logic
             else 
             {
                 return false; 
-            }
-        }
-
-        public static bool Clave_Conf(string clave, string conf)
-        {
-            if (clave.Equals(conf))
-            {
-                return true;
-            }     
-            else
-            {
-                return false;
             }
         }
 
@@ -63,6 +37,7 @@ namespace Business.Logic
                 return true;
             }
         }
+       
         public static bool validarAlphaNumerico(this string str)
         {
             if (string.IsNullOrEmpty(str))
@@ -76,6 +51,7 @@ namespace Business.Logic
 
             return true;
         }
+        
         public static bool validarMail(string email)
         {
             try
