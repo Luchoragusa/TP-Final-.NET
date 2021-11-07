@@ -35,6 +35,18 @@ namespace Business.Logic.EntidadesLogic
             }
         }
 
+        public Curso getByMateria(Materia mat)
+        {
+            try
+            {
+                return CursoData.getByMateria(mat);
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar el Curso.", ex);
+                throw ExcepcionManejada;
+            }
+        }
         public Curso GetOne(Curso curso)
         {
             try

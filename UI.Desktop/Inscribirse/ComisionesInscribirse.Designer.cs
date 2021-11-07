@@ -29,29 +29,29 @@ namespace UI.Desktop.Inscribirse
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ComisionesInscribirse));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tcPlanes = new System.Windows.Forms.ToolStripContainer();
             this.tlPlanes = new System.Windows.Forms.TableLayoutPanel();
+            this.dgvComInscribirse = new System.Windows.Forms.DataGridView();
+            this.IDComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Anio_Especialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnInscribirse = new System.Windows.Forms.Button();
             this.tsPlanes = new System.Windows.Forms.ToolStrip();
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.Anio_Especialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvComInscribirse = new System.Windows.Forms.DataGridView();
-            this.btnInscribirse = new System.Windows.Forms.Button();
             this.tcPlanes.ContentPanel.SuspendLayout();
             this.tcPlanes.TopToolStripPanel.SuspendLayout();
             this.tcPlanes.SuspendLayout();
             this.tlPlanes.SuspendLayout();
-            this.tsPlanes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComInscribirse)).BeginInit();
+            this.tsPlanes.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcPlanes
@@ -91,6 +91,66 @@ namespace UI.Desktop.Inscribirse
             this.tlPlanes.Size = new System.Drawing.Size(800, 453);
             this.tlPlanes.TabIndex = 0;
             // 
+            // dgvComInscribirse
+            // 
+            this.dgvComInscribirse.BackgroundColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvComInscribirse.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvComInscribirse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvComInscribirse.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDComision,
+            this.Descripcion,
+            this.IDPlan,
+            this.Anio_Especialidad});
+            this.tlPlanes.SetColumnSpan(this.dgvComInscribirse, 2);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvComInscribirse.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvComInscribirse.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvComInscribirse.Location = new System.Drawing.Point(3, 3);
+            this.dgvComInscribirse.MultiSelect = false;
+            this.dgvComInscribirse.Name = "dgvComInscribirse";
+            this.dgvComInscribirse.Size = new System.Drawing.Size(794, 387);
+            this.dgvComInscribirse.TabIndex = 0;
+            // 
+            // IDComision
+            // 
+            this.IDComision.DataPropertyName = "ID";
+            this.IDComision.HeaderText = "Id Comision";
+            this.IDComision.Name = "IDComision";
+            this.IDComision.ReadOnly = true;
+            this.IDComision.Width = 150;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "DescComision";
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            // 
+            // IDPlan
+            // 
+            this.IDPlan.DataPropertyName = "IDPlan";
+            this.IDPlan.HeaderText = "Id Plan";
+            this.IDPlan.Name = "IDPlan";
+            // 
+            // Anio_Especialidad
+            // 
+            this.Anio_Especialidad.DataPropertyName = "AnioEspecialidad";
+            this.Anio_Especialidad.HeaderText = "Año Especialidad";
+            this.Anio_Especialidad.Name = "Anio_Especialidad";
+            this.Anio_Especialidad.Width = 160;
+            // 
             // btnSalir
             // 
             this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -100,6 +160,29 @@ namespace UI.Desktop.Inscribirse
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActualizar.Location = new System.Drawing.Point(617, 427);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.TabIndex = 1;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            // 
+            // btnInscribirse
+            // 
+            this.btnInscribirse.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnInscribirse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInscribirse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInscribirse.Location = new System.Drawing.Point(698, 396);
+            this.btnInscribirse.Name = "btnInscribirse";
+            this.btnInscribirse.Size = new System.Drawing.Size(99, 23);
+            this.btnInscribirse.TabIndex = 3;
+            this.btnInscribirse.Text = "Inscribirse";
+            this.btnInscribirse.UseVisualStyleBackColor = false;
+            this.btnInscribirse.Click += new System.EventHandler(this.btnInscribirse_Click);
             // 
             // tsPlanes
             // 
@@ -140,88 +223,6 @@ namespace UI.Desktop.Inscribirse
             this.tsbEliminar.Size = new System.Drawing.Size(23, 22);
             this.tsbEliminar.Text = "Eliminar";
             // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.Location = new System.Drawing.Point(617, 427);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
-            this.btnActualizar.TabIndex = 1;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            // 
-            // Anio_Especialidad
-            // 
-            this.Anio_Especialidad.DataPropertyName = "AnioEspecialidad";
-            this.Anio_Especialidad.HeaderText = "Año Especialidad";
-            this.Anio_Especialidad.Name = "Anio_Especialidad";
-            this.Anio_Especialidad.Width = 160;
-            // 
-            // IDPlan
-            // 
-            this.IDPlan.DataPropertyName = "IDPlan";
-            this.IDPlan.HeaderText = "Id Plan";
-            this.IDPlan.Name = "IDPlan";
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.DataPropertyName = "DescComision";
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            // 
-            // IDComision
-            // 
-            this.IDComision.DataPropertyName = "ID";
-            this.IDComision.HeaderText = "Id Comision";
-            this.IDComision.Name = "IDComision";
-            this.IDComision.ReadOnly = true;
-            this.IDComision.Width = 150;
-            // 
-            // dgvComInscribirse
-            // 
-            this.dgvComInscribirse.BackgroundColor = System.Drawing.Color.LightSteelBlue;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvComInscribirse.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvComInscribirse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvComInscribirse.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IDComision,
-            this.Descripcion,
-            this.IDPlan,
-            this.Anio_Especialidad});
-            this.tlPlanes.SetColumnSpan(this.dgvComInscribirse, 2);
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvComInscribirse.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvComInscribirse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvComInscribirse.Location = new System.Drawing.Point(3, 3);
-            this.dgvComInscribirse.MultiSelect = false;
-            this.dgvComInscribirse.Name = "dgvComInscribirse";
-            this.dgvComInscribirse.Size = new System.Drawing.Size(794, 387);
-            this.dgvComInscribirse.TabIndex = 0;
-            // 
-            // btnInscribirse
-            // 
-            this.btnInscribirse.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnInscribirse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInscribirse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInscribirse.Location = new System.Drawing.Point(698, 396);
-            this.btnInscribirse.Name = "btnInscribirse";
-            this.btnInscribirse.Size = new System.Drawing.Size(99, 23);
-            this.btnInscribirse.TabIndex = 3;
-            this.btnInscribirse.Text = "Inscribirse";
-            this.btnInscribirse.UseVisualStyleBackColor = false;
-            // 
             // ComisionesInscribirse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -237,9 +238,9 @@ namespace UI.Desktop.Inscribirse
             this.tcPlanes.ResumeLayout(false);
             this.tcPlanes.PerformLayout();
             this.tlPlanes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvComInscribirse)).EndInit();
             this.tsPlanes.ResumeLayout(false);
             this.tsPlanes.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvComInscribirse)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -17,13 +17,13 @@ namespace UI.Desktop
     public partial class InscribirseACursado : Form
     {
         Business.Entities.Materia materia = new Business.Entities.Materia();
-    
+        Business.Entities.Usuario alumno = new Business.Entities.Usuario();
         public InscribirseACursado(Usuario us)
         {
             InitializeComponent(); 
             this.dgvInscribirse.AutoGenerateColumns = true;
             this.dgvInscribirse.ReadOnly = true;
-            //alumno = us;
+            alumno = us;
         }
 
         public void Listar()
@@ -60,8 +60,8 @@ namespace UI.Desktop
            // int ID = ((Business.Entities.Materia)this.dgvInscribirse.SelectedRows[0].DataBoundItem).ID;
 
             materia = (Business.Entities.Materia)this.dgvInscribirse.SelectedRows[0].DataBoundItem;
-
-            UI.Desktop.Inscribirse.ComisionesInscribirse comisiones_insc = new UI.Desktop.Inscribirse.ComisionesInscribirse(materia);
+           
+            UI.Desktop.Inscribirse.ComisionesInscribirse comisiones_insc = new UI.Desktop.Inscribirse.ComisionesInscribirse(materia,alumno);
 
             try
             {
