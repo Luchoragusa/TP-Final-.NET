@@ -10,12 +10,12 @@ namespace Business.Logic.EntidadesLogic
 {
     public class CursoLogic : BusinessLogic
     {
-        private Data.Database.CursoAdapter cursoData;
+        private CursoAdapter cursoData;
         public CursoLogic()
         {
-            cursoData = new Data.Database.CursoAdapter();
+            cursoData = new CursoAdapter();
         }
-        public Data.Database.CursoAdapter CursoData
+        public CursoAdapter CursoData
         {
             get { return cursoData; }
             set { cursoData = value; }
@@ -31,19 +31,6 @@ namespace Business.Logic.EntidadesLogic
             catch (Exception ex)
             {
                 Exception ExcepcionManejada = new Exception("Error al recuperar el Curso.", ex);
-                throw ExcepcionManejada;
-            }
-        }
-
-        public Curso getByMateria(Materia mat)
-        {
-            try
-            {
-                return CursoData.getByMateria(mat);
-            }
-            catch (Exception ex)
-            {
-                Exception ExcepcionManejada = new Exception("Error al recuperar la Materia.", ex);
                 throw ExcepcionManejada;
             }
         }
@@ -85,7 +72,20 @@ namespace Business.Logic.EntidadesLogic
                 throw ExcepcionManejada;
             }
         }
-    
+
+        public Curso getByComision(Comision com)
+        {
+            try
+            {
+                return CursoData.getByComision(com);
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar la Materia.", ex);
+                throw ExcepcionManejada;
+            }
+        }
+
         public List<Curso> GetAllDocente(Usuario docente)
         {
             try
@@ -99,7 +99,7 @@ namespace Business.Logic.EntidadesLogic
             }
         }
 
-        public void Save(Business.Entities.Curso Curso)
+        public void Save(Curso Curso)
         {
                 try
                 {

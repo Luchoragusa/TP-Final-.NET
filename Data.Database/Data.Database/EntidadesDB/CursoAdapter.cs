@@ -65,6 +65,36 @@ namespace Data.Database
             }
             return cursosDelDocente;
         }
+
+        public Curso getByComision(Comision com)
+        {
+            Curso curso = null;
+            try
+            {
+                OpenConnection();
+                SqlCommand cmdcursos = new SqlCommand("select c.id_curso from cursos c where c.id_comision = @id", sqlConn);
+                cmdcursos.Parameters.Add("@id", SqlDbType.Int).Value = com.ID;
+                SqlDataReader drcursos = cmdcursos.ExecuteReader();
+                if (drcursos != null)
+                {
+                    curso = new Curso();
+                    drcursos.Read();
+                    curso.ID = (int)drcursos["id_curso"];
+                }
+                drcursos.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar datos del Curso", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+            return curso;
+        }
+
         public List<Curso> GetAll()
         {
             List<Curso> cursos = new List<Curso>();
@@ -142,40 +172,7 @@ namespace Data.Database
             }
             return cursosDelDocente;
         }
-        public Curso getByMateria(Materia materia)
-        {
-            Curso curso = null;
-            try
-            {
-                OpenConnection();
-                SqlCommand cmdcursos = new SqlCommand("select c.* from cursos c inner join materias m on m.id_materia = c.id_materia where m.id_materia = @id_materia", sqlConn);
-                cmdcursos.Parameters.Add("@id_materia", SqlDbType.Int).Value = materia.ID;
-                SqlDataReader drcursos = cmdcursos.ExecuteReader();
-                if (drcursos != null)
-                {
-                    while (drcursos.Read())
-                    {
-                        curso = new Curso();
-                        curso.ID = (int)drcursos["id_curso"];
-                        curso.IDMateria = materia.ID;
-                        curso.IDComision = (int)drcursos["id_comision"];
-                        curso.AnioCalendario = (int)drcursos["anio_calendario"];
-                        curso.Cupo = (int)drcursos["cupo"];
-                    }
-                }
-                drcursos.Close();
-            }
-            catch (Exception Ex)
-            {
-                Exception ExcepcionManejada = new Exception("Error al recuperar datos del Curso", Ex);
-                throw ExcepcionManejada;
-            }
-            finally
-            {
-                CloseConnection();
-            }
-            return curso;
-        }
+
         public Curso GetOne(Curso curso)
         {
             try
