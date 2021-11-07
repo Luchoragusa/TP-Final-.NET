@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Business.Entities;
 using Business.Logic;
+using Business.Entities.Entidades;
 
 namespace UI.Web
 {
@@ -55,6 +56,7 @@ namespace UI.Web
 
         protected void LoadForm(int id)
         {
+            Entity = new Business.Entities.Materia();
             this.Entity.ID = id;
             this.Entity = this.Logic.GetOne(Entity);
 

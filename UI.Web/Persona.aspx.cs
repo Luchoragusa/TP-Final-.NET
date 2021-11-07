@@ -67,6 +67,7 @@ namespace UI.Web
 
         protected void LoadForm(int id)
         {
+            Entity = new Personas();
             this.Entity.ID = id;
             this.Entity = this.Logic.GetOne(Entity);
             this.nombreTextBox.Text = this.Entity.Nombre;

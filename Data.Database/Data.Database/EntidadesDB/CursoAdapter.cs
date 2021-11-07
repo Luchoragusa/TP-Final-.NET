@@ -208,6 +208,39 @@ namespace Data.Database
             }
             return curso;
         }
+       
+        public Curso GetCursoComision(int idComision)
+        {
+            Curso curso = null;
+            try
+            {
+                OpenConnection();
+                SqlCommand cmdcursos = new SqlCommand("select c.id_curso from cursos c inner join comisiones comi on c.id_comision = comi.id_comision where comi.id_comision = @id_comision", sqlConn);
+                cmdcursos.Parameters.Add("@id_comision", SqlDbType.Int).Value = idComision;
+                SqlDataReader drcursos = cmdcursos.ExecuteReader();
+                if (drcursos != null)
+                {
+                    while (drcursos.Read())
+                    {
+                        curso = new Curso();
+                        curso.ID = (int)drcursos["id_curso"];
+                    }
+                }
+                drcursos.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar datos del Curso", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+            return curso;
+        }
+
+
         public void Delete(int ID)
         {
             try

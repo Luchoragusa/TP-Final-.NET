@@ -230,12 +230,14 @@ namespace Data.Database
                 u = null;
                 if (drUsuarios != null)
                 {
-                    drUsuarios.Read();
-                    u = new Usuario();
-                    u.ID = (int)drUsuarios["id_usuario"];
-                    u.NombreUsuario = (string)drUsuarios["nombre_usuario"];
-                    u.Clave = (string)drUsuarios["clave"];
-                    u.Habilitado = (bool)drUsuarios["habilitado"];
+                    if (drUsuarios.Read())
+                    {   
+                        u = new Usuario();
+                        u.ID = (int)drUsuarios["id_usuario"];
+                        u.NombreUsuario = (string)drUsuarios["nombre_usuario"];
+                        u.Clave = (string)drUsuarios["clave"];
+                        u.Habilitado = (bool)drUsuarios["habilitado"];
+                    }                 
                 }
                 
                 drUsuarios.Close();

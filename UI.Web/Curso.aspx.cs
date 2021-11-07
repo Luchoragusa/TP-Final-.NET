@@ -67,6 +67,7 @@ namespace UI.Web
 
         protected void LoadForm(int id)
         {
+            Entity = new Business.Entities.Curso();
             this.Entity.ID = id;
             this.Entity = this.Logic.GetOne(Entity);
             this.anioCalendarioTextBox.Text = this.Entity.AnioCalendario.ToString();
