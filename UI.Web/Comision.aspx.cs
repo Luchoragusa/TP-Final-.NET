@@ -73,7 +73,6 @@ namespace UI.Web
             this.idPlanTextBox.Text = this.Entity.IDPlan.ToString();
             this.descComisionTextBox.Text = this.Entity.DescComision.ToString();
             this.anioEspecialidadTextBox.Text = this.Entity.AnioEspecialidad.ToString();
-     
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -127,12 +126,10 @@ namespace UI.Web
                 this.LoadForm(this.SelectedID);
             }
         }
-
         protected override void DeleteEntity(int id)
         {
             this.Logic.Delete(id);
         }
-
         protected void nuevoLinkButton_Click(object sender, EventArgs e)
         {
             this.formPanel.Visible = true;
@@ -141,7 +138,6 @@ namespace UI.Web
             this.EnableForm(true);
         }
 
-
         protected override void ClearForm()
         {
             this.idPlanTextBox.Text = string.Empty;
@@ -149,7 +145,6 @@ namespace UI.Web
             this.anioEspecialidadTextBox.Text = string.Empty;
             
         }
-
         protected void acceptaButton_Click(object sender, EventArgs e)
         {
             Boolean band = false;
@@ -184,7 +179,6 @@ namespace UI.Web
             if (!band)
                 this.formPanel.Visible = false;
         }
-
         protected void cancelarButton_Click(object sender, EventArgs e)
         {
             Response.Redirect("Comision.aspx");
