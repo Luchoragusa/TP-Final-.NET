@@ -15,9 +15,15 @@ namespace UI.Desktop.RegistrarNotas
     public partial class Docente_Alumnos : Form
     {
         Business.Entities.Curso cur;
-
+        Boolean esDocente = true;
         public Business.Entities.Curso Curso { get => cur; set => cur = value; }
-
+        public Docente_Alumnos()
+        {
+            InitializeComponent();
+            this.dgvDocente_Alumnos.AutoGenerateColumns = false;
+            this.dgvDocente_Alumnos.ReadOnly = true;
+            esDocente = false;
+        }
         public Docente_Alumnos(int id)
         {
             InitializeComponent();
@@ -46,7 +52,10 @@ namespace UI.Desktop.RegistrarNotas
             Alumno_InscripcionLogic ai = new Alumno_InscripcionLogic();
             try
             {
-                this.dgvDocente_Alumnos.DataSource = ai.GetAllByCurso(cur);
+                if (esDocente)
+                    this.dgvDocente_Alumnos.DataSource = ai.GetAllByCurso(cur);
+                else
+                    this.dgvDocente_Alumnos.DataSource = ai.GetAll();
             }
             catch (Exception ex)
             {
