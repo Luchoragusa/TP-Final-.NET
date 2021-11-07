@@ -39,7 +39,7 @@ namespace Data.Database.EntidadesDB
                         Alumnos_I.IDCurso = (int)drAlumnos_Inscripcioneses["id_curso"];
                         Alumnos_I.Condicion = (string)drAlumnos_Inscripcioneses["condicion"];
 
-                        if (string.IsNullOrEmpty(drAlumnos_Inscripcioneses["nota"].ToString())) // verifico si la nota es null
+                        if (string.IsNullOrEmpty(drAlumnos_Inscripcioneses["nota"].ToString()))
                             Alumnos_I.Nota = " - ";
                         else
                             Alumnos_I.Nota = (string)drAlumnos_Inscripcioneses["nota"].ToString();
@@ -177,7 +177,7 @@ namespace Data.Database.EntidadesDB
             {
                 OpenConnection();
                 SqlCommand cmdSave = null;
-                if (!string.IsNullOrEmpty(Alumnos_Inscripciones.Nota)) // verifico si la nota quq carga el usuario es null
+                if (!string.IsNullOrEmpty(Alumnos_Inscripciones.Nota))
                 {
                     cmdSave = new SqlCommand("INSERT INTO alumnos_inscripciones (id_alumno,id_curso,condicion,nota) values(@id_alumno, @id_curso, @condicion, @nota) select @@identity ", sqlConn);
                     cmdSave.Parameters.Add("@nota", SqlDbType.Int).Value = int.Parse(Alumnos_Inscripciones.Nota);
@@ -188,7 +188,6 @@ namespace Data.Database.EntidadesDB
                 cmdSave.Parameters.Add("@id_alumno", SqlDbType.Int).Value = Alumnos_Inscripciones.IDAlumno;
                 cmdSave.Parameters.Add("@id_curso", SqlDbType.Int).Value = Alumnos_Inscripciones.IDCurso;
                 cmdSave.Parameters.Add("@condicion", SqlDbType.VarChar, 50).Value = Alumnos_Inscripciones.Condicion;
-
 
                 Alumnos_Inscripciones.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
             }
@@ -209,7 +208,6 @@ namespace Data.Database.EntidadesDB
             {
                 OpenConnection();
                 SqlCommand cmdUpd = null;
-
 
                 if (Alumnos_Inscripciones.Nota != " - ") // verifico si la nota quq carga el usuario es null
                 {
