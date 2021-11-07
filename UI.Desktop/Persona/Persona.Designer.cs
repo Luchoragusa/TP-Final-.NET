@@ -42,6 +42,7 @@ namespace UI.Desktop.Persona
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -108,6 +109,7 @@ namespace UI.Desktop.Persona
             this.dgvPersonas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPersonas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
+            this.idUsuario,
             this.nombre,
             this.Apellido,
             this.Direccion,
@@ -208,6 +210,12 @@ namespace UI.Desktop.Persona
             this.id.ReadOnly = true;
             this.id.Width = 50;
             // 
+            // idUsuario
+            // 
+            this.idUsuario.DataPropertyName = "IdUsuario";
+            this.idUsuario.HeaderText = "Id Usuario";
+            this.idUsuario.Name = "idUsuario";
+            // 
             // nombre
             // 
             this.nombre.DataPropertyName = "Nombre";
@@ -255,7 +263,7 @@ namespace UI.Desktop.Persona
             // 
             // TipoPersona
             // 
-            this.TipoPersona.DataPropertyName = "TipoPersonas";
+            this.TipoPersona.DataPropertyName = "TipoPersona";
             this.TipoPersona.HeaderText = "TipoPersona";
             this.TipoPersona.Name = "TipoPersona";
             // 
@@ -298,6 +306,7 @@ namespace UI.Desktop.Persona
         private System.Windows.Forms.ToolStripButton tsbEditar;
         private System.Windows.Forms.ToolStripButton tsbEliminar;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;

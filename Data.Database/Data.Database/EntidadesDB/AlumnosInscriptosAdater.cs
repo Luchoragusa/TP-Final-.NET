@@ -13,7 +13,6 @@ namespace Data.Database.EntidadesDB
     public class AlumnosIncriptosAdapter : Adapter
     {
         public AlumnosIncriptosAdapter() { }
-
         public List<Alumnos_Inscripciones> GetAll()
         {
             List<Alumnos_Inscripciones> Alumnos_Inscripciones = null;
@@ -249,6 +248,5 @@ namespace Data.Database.EntidadesDB
             }
             Alumnos_Inscripciones.State = BusinessEntity.States.Unmodified;
         }
-
     }
 }
