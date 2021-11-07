@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business.Entities;
+using UI.Desktop.RegitrarDocenteCurso;
 
 namespace UI.Desktop
 {
@@ -145,7 +146,7 @@ namespace UI.Desktop
 
         private void btnInscripcionCurso_Click(object sender, EventArgs e)
         {
-            abrirFormHijo(new Curso.CursosNotas(us));
+            abrirFormHijo(new Cursos_Docente(us)); // este es e; de registrar un curso al docente
         }
 
         private void btnAdminUsuario_Click(object sender, EventArgs e)

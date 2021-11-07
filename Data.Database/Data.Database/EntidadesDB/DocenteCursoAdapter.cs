@@ -197,14 +197,14 @@ namespace Data.Database.EntidadesDB
                         DocenteCurso.IDDocente = (int)drDocenteCursos["id_docente"];
                         int cargo = (int)drDocenteCursos["cargo"];
 
-                        if (cargo == (int)Business.Entities.Entidades.DocenteCurso.TipoCargos.Titular)
-                            DocenteCurso.Cargo = Business.Entities.Entidades.DocenteCurso.TipoCargos.Titular;
+                        if (cargo == (int)DocenteCurso.TipoCargos.Titular)
+                            DocenteCurso.Cargo = DocenteCurso.TipoCargos.Titular;
 
-                        else if (cargo == (int)Business.Entities.Entidades.DocenteCurso.TipoCargos.Auxiliar)
-                            DocenteCurso.Cargo = Business.Entities.Entidades.DocenteCurso.TipoCargos.Auxiliar;
+                        else if (cargo == (int)DocenteCurso.TipoCargos.Auxiliar)
+                            DocenteCurso.Cargo = DocenteCurso.TipoCargos.Auxiliar;
 
-                        else if (cargo == (int)Business.Entities.Entidades.DocenteCurso.TipoCargos.JefeCatedra)
-                            DocenteCurso.Cargo = Business.Entities.Entidades.DocenteCurso.TipoCargos.JefeCatedra;
+                        else if (cargo == (int)DocenteCurso.TipoCargos.JefeCatedra)
+                            DocenteCurso.Cargo = DocenteCurso.TipoCargos.JefeCatedra;
                     }
                     
                     drDocenteCursos.Read();
@@ -247,7 +247,7 @@ namespace Data.Database.EntidadesDB
             }
         }
 
-        public void Insert(Business.Entities.Entidades.DocenteCurso DocenteCurso)
+        public void Insert(DocenteCurso DocenteCurso)
         {
             try
             {
@@ -271,7 +271,7 @@ namespace Data.Database.EntidadesDB
             }
         }
 
-        public void Update(Business.Entities.Entidades.DocenteCurso DocenteCurso)
+        public void Update(DocenteCurso DocenteCurso)
         {
             try
             {
@@ -295,7 +295,7 @@ namespace Data.Database.EntidadesDB
             }
         }
 
-        public void Save(Business.Entities.Entidades.DocenteCurso DocenteCurso)
+        public void Save(DocenteCurso DocenteCurso)
         {
             if (DocenteCurso.State == BusinessEntity.States.Deleted)
             {

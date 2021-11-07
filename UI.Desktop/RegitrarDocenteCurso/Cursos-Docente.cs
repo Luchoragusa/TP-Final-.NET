@@ -16,15 +16,12 @@ namespace UI.Desktop.RegitrarDocenteCurso
     public partial class Cursos_Docente : Form
     {
         Usuario docente = new Usuario();
-        Business.Entities.Materia materia = new Business.Entities.Materia();
-        Comision comision = new Comision();
+        public Usuario Docente { get => docente; set => docente = value; }
 
-        public Cursos_Docente(int idComision, Usuario doc, Business.Entities.Materia mat)
+        public Cursos_Docente(Usuario doc)
         {
             InitializeComponent();
-            docente = doc;
-            materia = mat;
-            comision.ID = idComision;
+            Docente = doc;
             this.dgvCursosDocente.AutoGenerateColumns = false;
             this.dgvCursosDocente.ReadOnly = true;
         }
@@ -39,7 +36,7 @@ namespace UI.Desktop.RegitrarDocenteCurso
             DocenteCursoLogic dcl = new DocenteCursoLogic();
             try
             {
-                this.dgvCursosDocente.DataSource = dcl.GetAllCursosDeLaComision(docente, materia, comision);
+               // this.dgvCursosDocente.DataSource = dcl.GetAllCursosDeLaComision(docente, materia, comision);
             }
             catch (Exception ex)
             {
