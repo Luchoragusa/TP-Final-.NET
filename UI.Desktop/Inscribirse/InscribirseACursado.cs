@@ -57,7 +57,9 @@ namespace UI.Desktop
                 return;
 
             }
-            int ID = ((Business.Entities.Materia)this.dgvInscribirse.SelectedRows[0].DataBoundItem).ID;
+           // int ID = ((Business.Entities.Materia)this.dgvInscribirse.SelectedRows[0].DataBoundItem).ID;
+
+            materia = (Business.Entities.Materia)this.dgvInscribirse.SelectedRows[0].DataBoundItem;
 
             UI.Desktop.Inscribirse.ComisionesInscribirse comisiones_insc = new UI.Desktop.Inscribirse.ComisionesInscribirse(materia);
 
