@@ -52,23 +52,7 @@ namespace UI.Desktop.DocenteCurso
         {
             this.Close();
         }
-
-        private void tsbNuevo_Click(object sender, EventArgs e)
-        {
-            DICDesktop formDCDesktop = new DICDesktop(ApplicationForm.ModoForm.Alta);
-            try
-            {
-                formDCDesktop.ShowDialog();
-                this.Listar();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
-        }
-
-        private void tsbEditar_Click(object sender, EventArgs e)
+        private void tsbSeleccionar_Click(object sender, EventArgs e)
         {
 
             if (this.dgvDocenteCurso.SelectedRows.Count == 0)
@@ -78,27 +62,6 @@ namespace UI.Desktop.DocenteCurso
 
             }
             int ID = ((Business.Entities.Materia)this.dgvDocenteCurso.SelectedRows[0].DataBoundItem).ID;
-            DocenteComision materias_comision = new DocenteComision(ID, docente);
-            try
-            {
-                materias_comision.ShowDialog();
-                this.Listar();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + "Error detected: ", "Ha habido un error interno.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void tsbEliminar_Click(object sender, EventArgs e)
-        {
-            if (this.dgvDocenteCurso.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Acción invalida", "Seleccione una fila.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            int ID = ((Business.Entities.Entidades.DocenteCurso)this.dgvDocenteCurso.SelectedRows[0].DataBoundItem).ID;
-
             DocenteComision materias_comision = new DocenteComision(ID, docente);
             try
             {

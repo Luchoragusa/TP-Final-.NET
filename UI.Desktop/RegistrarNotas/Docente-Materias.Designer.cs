@@ -43,7 +43,7 @@ namespace UI.Desktop.DocenteCurso
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.tsPlanes = new System.Windows.Forms.ToolStrip();
-            this.tsbEditar = new System.Windows.Forms.ToolStripButton();
+            this.tsbSeleccionar = new System.Windows.Forms.ToolStripButton();
             this.tcPlanes.ContentPanel.SuspendLayout();
             this.tcPlanes.TopToolStripPanel.SuspendLayout();
             this.tcPlanes.SuspendLayout();
@@ -179,21 +179,21 @@ namespace UI.Desktop.DocenteCurso
             // 
             this.tsPlanes.Dock = System.Windows.Forms.DockStyle.None;
             this.tsPlanes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbEditar});
+            this.tsbSeleccionar});
             this.tsPlanes.Location = new System.Drawing.Point(3, 0);
             this.tsPlanes.Name = "tsPlanes";
-            this.tsPlanes.Size = new System.Drawing.Size(83, 25);
+            this.tsPlanes.Size = new System.Drawing.Size(114, 25);
             this.tsPlanes.TabIndex = 0;
             // 
-            // tsbEditar
+            // tsbSeleccionar
             // 
-            this.tsbEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsbEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEditar.Image")));
-            this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbEditar.Name = "tsbEditar";
-            this.tsbEditar.Size = new System.Drawing.Size(71, 22);
-            this.tsbEditar.Text = "Seleccionar";
-            this.tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
+            this.tsbSeleccionar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbSeleccionar.Image = ((System.Drawing.Image)(resources.GetObject("tsbSeleccionar.Image")));
+            this.tsbSeleccionar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSeleccionar.Name = "tsbSeleccionar";
+            this.tsbSeleccionar.Size = new System.Drawing.Size(71, 22);
+            this.tsbSeleccionar.Text = "Seleccionar";
+            this.tsbSeleccionar.Click += new System.EventHandler(this.tsbSeleccionar_Click);
             // 
             // DocenteMateria
             // 
@@ -226,7 +226,7 @@ namespace UI.Desktop.DocenteCurso
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.ToolStrip tsPlanes;
-        private System.Windows.Forms.ToolStripButton tsbEditar;
+        private System.Windows.Forms.ToolStripButton tsbSeleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDCurso;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdDocente;
