@@ -21,6 +21,7 @@ namespace UI.Desktop.Inscribirse
         Business.Entities.Curso curso = new Business.Entities.Curso();
         Alumnos_Inscripciones aluInsc = new Alumnos_Inscripciones();
         Business.Entities.Usuario alumno = new Business.Entities.Usuario();
+        Personas persona = new Personas();
 
         public Business.Entities.Materia Mate { get => mate; set => mate = value; }
         public ComisionesInscribirse(Business.Entities.Materia mat, Business.Entities.Usuario alu)
@@ -37,7 +38,7 @@ namespace UI.Desktop.Inscribirse
             ComisionLogic cl = new ComisionLogic();
             try
             {
-                this.dgvComInscribirse.DataSource = cl.GetAllMateriasCom(Mate);
+                this.dgvComInscribirse.DataSource = cl.GetAllMateriasCom(Mate);     //trae comisiones de la materia, donde cupo != 0 y año 2021
             }
             catch (Exception ex)
             {
@@ -54,11 +55,16 @@ namespace UI.Desktop.Inscribirse
         {
             Alumno_InscripcionLogic aluIL = new Alumno_InscripcionLogic();
             CursoLogic cursoL = new CursoLogic();
+            PersonaLogic perL = new PersonaLogic();
             try
             {
-                curso = cursoL.getByMateria(Mate);
-                aluInsc.IDCurso = curso.ID;
-                aluInsc.IDAlumno = alumno.ID;
+                curso = cursoL.getByMateria(Mate);      //trae los cursos de la materia
+                persona = perL.GetIDPersona(alumno);    //recuperar "id_persona" que es es igual a "id_alumno" 
+
+                aluInsc.IDCurso = curso.ID;                
+                aluInsc.IDAlumno = persona.ID;
+                aluInsc.Condicion = "Cursando";
+
                 aluIL.Insert(aluInsc);
             }
             catch (Exception ex)
@@ -66,6 +72,16 @@ namespace UI.Desktop.Inscribirse
                 MessageBox.Show(ex.Message + "Error detected: ", "Ha habido un error interno.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            this.Listar();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

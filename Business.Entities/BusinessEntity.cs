@@ -20,7 +20,6 @@ namespace Business.Entities
             set { _ID = value; }
         }
 
-        public States State1 { get => _State; set => _State = value; }
         private States _State;
         public States State;
         public enum States

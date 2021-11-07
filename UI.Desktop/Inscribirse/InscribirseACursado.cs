@@ -51,17 +51,27 @@ namespace UI.Desktop
 
         private void tsbEditar_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void InscribirseACursado_Load(object sender, EventArgs e)
+        {
+            this.Listar();
+        }
+
+        private void tsbSeleccionar_Click(object sender, EventArgs e)
+        {
             if (this.dgvInscribirse.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Accion Invalida", "Seleccione una fila", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
 
             }
-           // int ID = ((Business.Entities.Materia)this.dgvInscribirse.SelectedRows[0].DataBoundItem).ID;
+            // int ID = ((Business.Entities.Materia)this.dgvInscribirse.SelectedRows[0].DataBoundItem).ID;
 
             materia = (Business.Entities.Materia)this.dgvInscribirse.SelectedRows[0].DataBoundItem;
-           
-            UI.Desktop.Inscribirse.ComisionesInscribirse comisiones_insc = new UI.Desktop.Inscribirse.ComisionesInscribirse(materia,alumno);
+
+            UI.Desktop.Inscribirse.ComisionesInscribirse comisiones_insc = new UI.Desktop.Inscribirse.ComisionesInscribirse(materia, alumno);
 
             try
             {
@@ -72,11 +82,6 @@ namespace UI.Desktop
             {
                 MessageBox.Show(ex.Message + "Error detected: ", "Ha habido un error interno.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void InscribirseACursado_Load(object sender, EventArgs e)
-        {
-            this.Listar();
         }
     }
 }

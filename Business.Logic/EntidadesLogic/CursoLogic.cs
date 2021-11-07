@@ -43,7 +43,7 @@ namespace Business.Logic.EntidadesLogic
             }
             catch (Exception ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al recuperar el Curso.", ex);
+                Exception ExcepcionManejada = new Exception("Error al recuperar la Materia.", ex);
                 throw ExcepcionManejada;
             }
         }

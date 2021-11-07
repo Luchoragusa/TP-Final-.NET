@@ -68,6 +68,41 @@ namespace Data.Database.EntidadesDB
             return personas;
         }
 
+        public Personas GetIDPersona(Usuario usuario)
+        {
+            Personas persona = null;
+            try
+            {
+                OpenConnection();
+                SqlCommand cmdPersonas = new SqlCommand("SELECT p.id_persona FROM personas p inner join usuarios u on u.id_usuario = p.id_usuario WHERE u.id_usuario = @id", sqlConn);
+                cmdPersonas.Parameters.Add("@id", SqlDbType.Int).Value = usuario.ID;
+
+                SqlDataReader drPersonas = cmdPersonas.ExecuteReader();
+
+                usuario = null;
+
+                if (drPersonas != null)
+                {
+                    persona = new Personas();
+
+                    drPersonas.Read();
+                    persona.ID = (int)drPersonas["id_persona"];
+
+                }
+                drPersonas.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar la id de la persona", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+            return persona;
+        }
+
         public Personas GetOne(Personas persona)
         {
             try
