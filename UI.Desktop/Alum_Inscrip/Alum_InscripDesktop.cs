@@ -101,6 +101,8 @@ namespace UI.Desktop.Alum_Inscrip
             try
             {
                 alumno_InscripcionLogic.Save(Alum_InscripActual);
+                MessageBox.Show("Informacion", "La operacion se realizo correctamente", MessageBoxButtons.OK);
+                this.Dispose();
             }
             catch (Exception ex)
             {
