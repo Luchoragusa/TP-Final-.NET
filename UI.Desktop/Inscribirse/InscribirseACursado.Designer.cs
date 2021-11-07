@@ -181,7 +181,7 @@ namespace UI.Desktop
             this.tsbSeleccionar});
             this.tsPlanes.Location = new System.Drawing.Point(3, 0);
             this.tsPlanes.Name = "tsPlanes";
-            this.tsPlanes.Size = new System.Drawing.Size(114, 25);
+            this.tsPlanes.Size = new System.Drawing.Size(83, 25);
             this.tsPlanes.TabIndex = 0;
             // 
             // tsbSeleccionar
@@ -199,7 +199,7 @@ namespace UI.Desktop
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tcInscribirse);
             this.Name = "InscribirseACursado";
-            this.Text = "Inscribirse A Cursado";
+            this.Text = "Inscribirse a Cursado";
             this.Load += new System.EventHandler(this.InscribirseACursado_Load);
             this.tcInscribirse.ContentPanel.ResumeLayout(false);
             this.tcInscribirse.TopToolStripPanel.ResumeLayout(false);

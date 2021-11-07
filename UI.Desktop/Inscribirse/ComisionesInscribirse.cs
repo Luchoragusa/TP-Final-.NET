@@ -66,6 +66,8 @@ namespace UI.Desktop.Inscribirse
                 aluInsc.Condicion = "Cursando";
 
                 aluIL.Insert(aluInsc);
+                MessageBox.Show("Se inscribio correctamente", "Inscripcion a cursado", MessageBoxButtons.OK);
+                this.Dispose();
             }
             catch (Exception ex)
             {
