@@ -82,7 +82,6 @@ namespace UI.Desktop.Inscribirse
             {
                 MessageBox.Show(ex.Message + "Error detected: ", "Ha habido un error interno.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
         private void btnActualizar_Click(object sender, EventArgs e)
         {
