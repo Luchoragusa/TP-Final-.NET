@@ -38,7 +38,21 @@ namespace UI.Web
 
         private void LoadGrid()
         {
-            this.gridView.DataSource = this.Logic.GetAll();
+            Usuario usuario = (Usuario)Session["usuario"];
+            Business.Entities.Entidades.Personas per = new Business.Entities.Entidades.Personas();
+            per.ID = (int)Session["id_persona"];
+            switch (per.ID)
+            {
+                case 1:     //alumno
+                    editarLinkButton.Enabled = false;
+                    nuevoLinkButton.Enabled = false;
+                    eliminarLinkButton.Enabled = false;
+                    break;
+
+                default:
+                    break;
+            }
+            this.gridView.DataSource = this.Logic.GetAllByAlumno(usuario);
             this.gridView.DataBind();
         }
 
