@@ -339,7 +339,7 @@ namespace UI.Desktop
             this.btnInscripcionCurso.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnInscripcionCurso.Size = new System.Drawing.Size(242, 40);
             this.btnInscripcionCurso.TabIndex = 4;
-            this.btnInscripcionCurso.Text = "Incribirse a un curso";
+            this.btnInscripcionCurso.Text = "Cursos del docente";
             this.btnInscripcionCurso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInscripcionCurso.UseVisualStyleBackColor = true;
             this.btnInscripcionCurso.Click += new System.EventHandler(this.btnInscripcionCurso_Click);
