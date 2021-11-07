@@ -34,13 +34,13 @@ namespace UI.Desktop
             this.lblID = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.txtClave = new System.Windows.Forms.TextBox();
+            this.lblClave = new System.Windows.Forms.Label();
+            this.lblConfirmarClave = new System.Windows.Forms.Label();
+            this.txtConfClave = new System.Windows.Forms.TextBox();
             this.chkHabilitado = new System.Windows.Forms.CheckBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnModo = new System.Windows.Forms.Button();
-            this.lblClave = new System.Windows.Forms.Label();
-            this.lblConfirmarClave = new System.Windows.Forms.Label();
-            this.txtClave = new System.Windows.Forms.TextBox();
-            this.txtConfClave = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +49,7 @@ namespace UI.Desktop
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.68919F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.31081F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 82F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 83F));
             this.tableLayoutPanel1.Controls.Add(this.txtID, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblID, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblUsuario, 0, 1);
@@ -79,7 +79,7 @@ namespace UI.Desktop
             this.txtID.Location = new System.Drawing.Point(98, 20);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(256, 20);
+            this.txtID.Size = new System.Drawing.Size(255, 20);
             this.txtID.TabIndex = 0;
             // 
             // lblID
@@ -107,41 +107,17 @@ namespace UI.Desktop
             this.txtUsuario.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtUsuario.Location = new System.Drawing.Point(98, 80);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(256, 20);
+            this.txtUsuario.Size = new System.Drawing.Size(255, 20);
             this.txtUsuario.TabIndex = 5;
             // 
-            // chkHabilitado
+            // txtClave
             // 
-            this.chkHabilitado.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.chkHabilitado.AutoSize = true;
-            this.chkHabilitado.Location = new System.Drawing.Point(19, 261);
-            this.chkHabilitado.Name = "chkHabilitado";
-            this.chkHabilitado.Size = new System.Drawing.Size(73, 17);
-            this.chkHabilitado.TabIndex = 9;
-            this.chkHabilitado.Text = "Habilitado";
-            this.chkHabilitado.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnCancelar.Location = new System.Drawing.Point(279, 258);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 8;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.botonCancelarClick);
-            // 
-            // btnModo
-            // 
-            this.btnModo.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnModo.Location = new System.Drawing.Point(362, 258);
-            this.btnModo.Name = "btnModo";
-            this.btnModo.Size = new System.Drawing.Size(75, 23);
-            this.btnModo.TabIndex = 7;
-            this.btnModo.Text = "Aceptar";
-            this.btnModo.UseVisualStyleBackColor = true;
-            this.btnModo.Click += new System.EventHandler(this.botonAceptarClick);
+            this.txtClave.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtClave.Location = new System.Drawing.Point(98, 140);
+            this.txtClave.Name = "txtClave";
+            this.txtClave.PasswordChar = '*';
+            this.txtClave.Size = new System.Drawing.Size(255, 20);
+            this.txtClave.TabIndex = 3;
             // 
             // lblClave
             // 
@@ -163,21 +139,46 @@ namespace UI.Desktop
             this.lblConfirmarClave.TabIndex = 18;
             this.lblConfirmarClave.Text = "Confirmar Clave";
             // 
-            // txtClave
-            // 
-            this.txtClave.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtClave.Location = new System.Drawing.Point(98, 140);
-            this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(256, 20);
-            this.txtClave.TabIndex = 3;
-            // 
             // txtConfClave
             // 
             this.txtConfClave.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtConfClave.Location = new System.Drawing.Point(98, 200);
             this.txtConfClave.Name = "txtConfClave";
-            this.txtConfClave.Size = new System.Drawing.Size(256, 20);
+            this.txtConfClave.Size = new System.Drawing.Size(255, 20);
             this.txtConfClave.TabIndex = 17;
+            // 
+            // chkHabilitado
+            // 
+            this.chkHabilitado.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.chkHabilitado.AutoSize = true;
+            this.chkHabilitado.Location = new System.Drawing.Point(19, 261);
+            this.chkHabilitado.Name = "chkHabilitado";
+            this.chkHabilitado.Size = new System.Drawing.Size(73, 17);
+            this.chkHabilitado.TabIndex = 9;
+            this.chkHabilitado.Text = "Habilitado";
+            this.chkHabilitado.UseVisualStyleBackColor = true;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnCancelar.Location = new System.Drawing.Point(278, 258);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 8;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.botonCancelarClick);
+            // 
+            // btnModo
+            // 
+            this.btnModo.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnModo.Location = new System.Drawing.Point(362, 258);
+            this.btnModo.Name = "btnModo";
+            this.btnModo.Size = new System.Drawing.Size(75, 23);
+            this.btnModo.TabIndex = 7;
+            this.btnModo.Text = "Aceptar";
+            this.btnModo.UseVisualStyleBackColor = true;
+            this.btnModo.Click += new System.EventHandler(this.botonAceptarClick);
             // 
             // UsuarioDesktop
             // 
