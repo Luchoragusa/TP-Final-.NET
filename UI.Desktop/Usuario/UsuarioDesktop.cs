@@ -101,6 +101,8 @@ namespace UI.Desktop
             try
             {
                 usuarioLogic.Save(UsuarioActual);
+                MessageBox.Show("La operacion se realizo correctamente", "Informacion", MessageBoxButtons.OK);
+                //this.Dispose();
             }
             catch (Exception ex)
             {
