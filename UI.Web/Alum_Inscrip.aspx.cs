@@ -37,6 +37,8 @@ namespace UI.Web
 
         private void LoadGrid()
         {
+            editarLinkButton.Enabled = false;                   //para alumno
+            nuevoLinkButton.Enabled = false;
             this.gridView.DataSource = this.Logic.GetAll();
             this.gridView.DataBind();
         }
@@ -72,8 +74,6 @@ namespace UI.Web
             this.txtNombrePersona.Text = this.Entity.NombrePersona.ToString();
             this.txtApellidoPersona.Text = this.Entity.ApellidoPersona.ToString();
             this.txtLegajoPersona.Text = this.Entity.legajoPersona.ToString();
-            this.idcursoTextBox.Text = this.Entity.IDCurso.ToString();
-            this.idalumnoTextBox.Text = this.Entity.IDAlumno.ToString();
             this.notaTextBox.Text = this.Entity.Nota.ToString();
             this.condicionTextBox.Text = this.Entity.Condicion;
         }
@@ -91,9 +91,7 @@ namespace UI.Web
         private Boolean LoadEntity(Alumnos_Inscripciones ali)
         {
             bool band = false;
-            if (this.idcursoTextBox.Text.Equals(string.Empty) ||
-                                this.idalumnoTextBox.Text.Equals(string.Empty) ||
-                                this.notaTextBox.Text.Equals(string.Empty) ||
+            if (this.notaTextBox.Text.Equals(string.Empty) ||
                                 this.condicionTextBox.Text.Equals(string.Empty) ||
                                 this.txtNombrePersona.Text.Equals(string.Empty) ||
                                 this.txtApellidoPersona.Text.Equals(string.Empty) ||
@@ -104,8 +102,6 @@ namespace UI.Web
             }
             else
             {
-                ali.IDCurso = int.Parse(this.idcursoTextBox.Text);
-                ali.IDAlumno = int.Parse(this.idalumnoTextBox.Text);
                 ali.Nota = this.notaTextBox.Text;
                 ali.Condicion = this.condicionTextBox.Text;
 
@@ -122,8 +118,6 @@ namespace UI.Web
 
         protected override void EnableForm(bool enable)
         {
-            this.idcursoTextBox.Enabled = enable;
-            this.idalumnoTextBox.Enabled = enable;
             this.notaTextBox.Enabled = enable;
             this.condicionTextBox.Enabled = enable;
             this.txtNombrePersona.Enabled = enable;
@@ -157,8 +151,6 @@ namespace UI.Web
 
         protected override void ClearForm()
         {
-            this.idcursoTextBox.Text = string.Empty;
-            this.idalumnoTextBox.Text = string.Empty;
             this.notaTextBox.Text = string.Empty;
             this.condicionTextBox.Text = string.Empty;
             this.txtNombrePersona.Text = string.Empty;

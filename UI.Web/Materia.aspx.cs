@@ -14,6 +14,10 @@ namespace UI.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            editarLinkButton.Enabled = false;
+            nuevoLinkButton.Enabled = false;
+            eliminarLinkButton.Enabled = false;
+
             if (!Page.IsPostBack)
             {
                 LoadGrid();
@@ -33,7 +37,8 @@ namespace UI.Web
         }
         private void LoadGrid()
         {
-            this.gridView.DataSource = this.Logic.GetAll();
+            Usuario usuario = (Usuario)Session["usuario"];
+            this.gridView.DataSource = this.Logic.GetAllByAlumno(usuario);
             this.gridView.DataBind();
         }
 
@@ -56,6 +61,7 @@ namespace UI.Web
 
         protected void LoadForm(int id)
         {
+            
             Entity = new Business.Entities.Materia();
             this.Entity.ID = id;
             this.Entity = this.Logic.GetOne(Entity);

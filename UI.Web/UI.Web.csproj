@@ -218,7 +218,6 @@
     <Content Include="About.aspx" />
     <Content Include="ApplicationFormWeb.aspx" />
     <Content Include="InscribirseACursado.aspx" />
-    <Content Include="Inscripciones.aspx" />
     <Content Include="LoginWeb.aspx" />
     <Content Include="MenuPrincipal.aspx" />
     <Content Include="Alum_Inscrip.aspx" />
@@ -313,13 +312,6 @@
     </Compile>
     <Compile Include="InscribirseACursado.aspx.designer.cs">
       <DependentUpon>InscribirseACursado.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Inscripciones.aspx.cs">
-      <DependentUpon>Inscripciones.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Inscripciones.aspx.designer.cs">
-      <DependentUpon>Inscripciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="LoginWeb.aspx.cs">
       <DependentUpon>LoginWeb.aspx</DependentUpon>
