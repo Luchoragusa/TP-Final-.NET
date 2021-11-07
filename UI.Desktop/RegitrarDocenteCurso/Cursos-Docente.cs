@@ -26,11 +26,6 @@ namespace UI.Desktop.RegitrarDocenteCurso
             this.dgvCursosDocente.ReadOnly = true;
         }
 
-        private void DocenteMatComCursos_Load(object sender, EventArgs e)
-        {
-            this.Listar();
-        }
-
         public void Listar()
         {
             DocenteCursoLogic dcl = new DocenteCursoLogic();
@@ -88,7 +83,12 @@ namespace UI.Desktop.RegitrarDocenteCurso
 
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
+            this.Dispose();
+        }
 
+        private void Cursos_Docente_Load(object sender, EventArgs e)
+        {
+            this.Listar();
         }
     }
 }

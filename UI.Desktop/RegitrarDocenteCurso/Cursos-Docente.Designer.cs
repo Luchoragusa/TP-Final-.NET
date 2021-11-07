@@ -206,7 +206,7 @@ namespace UI.Desktop.RegitrarDocenteCurso
             // 
             // tipoCargo
             // 
-            this.tipoCargo.DataPropertyName = "TipoCargos";
+            this.tipoCargo.DataPropertyName = "Cargo";
             this.tipoCargo.HeaderText = "Cargo asigndado";
             this.tipoCargo.Name = "tipoCargo";
             this.tipoCargo.Width = 150;
@@ -219,6 +219,7 @@ namespace UI.Desktop.RegitrarDocenteCurso
             this.Controls.Add(this.tcPlanes);
             this.Name = "Cursos_Docente";
             this.Text = "Cursos del docente";
+            this.Load += new System.EventHandler(this.Cursos_Docente_Load);
             this.tcPlanes.ContentPanel.ResumeLayout(false);
             this.tcPlanes.TopToolStripPanel.ResumeLayout(false);
             this.tcPlanes.TopToolStripPanel.PerformLayout();
