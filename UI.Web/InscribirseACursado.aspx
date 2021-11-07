@@ -37,9 +37,9 @@
                  <asp:GridView ID="gridViewComisionesMateria" runat="server" AutoGenerateColumns="False"
                  SelectedRowStyle-BackColor="Black"
                  SelectedRowStyle-ForeColor="White"
-                 DataKeysNames="ID" DataKeyNames="legajoPersona" OnSelectedIndexChanged="gridViewAlumnos_SelectedIndexChanged" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
+                 DataKeysNames="ID" DataKeyNames="ID" OnSelectedIndexChanged="gridViewAlumnos_SelectedIndexChanged" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
                <Columns>
-                        <asp:BoundField HeaderText="ID Comision" DataField="IDComision" />
+                        <asp:BoundField HeaderText="ID Comision" DataField="ID" />
                         <asp:BoundField HeaderText="Descripcion" DataField="DescComision" />
                         <asp:BoundField HeaderText="Año Especialidad" DataField="AnioEspecialidad" />
                         <asp:BoundField HeaderText="ID Plan" DataField="IDPlan" />
@@ -61,9 +61,8 @@
 
             <br />
                             <br />
-                            <asp:Button ID="aceptarButton" runat="server" class="btn btn-outline-primary" OnClick="acceptaButton_Click" Text="Aceptar" Width="72px" />
+                            <asp:Button ID="btnInscribirse" runat="server" class="btn btn-outline-primary" OnClick="acceptaButton_Click" Text="Inscribirse" Width="72px" />
             &nbsp;
-            <asp:Button ID="cancelarButton" runat="server" class="btn btn-outline-primary" OnClick="cancelarButton_Click" Text="Cancelar" />
                             <br />
             <br />
             <asp:Button ID="btnVolver" runat="server" BackColor="#006666" Font-Bold="True" ForeColor="White" OnClick="btnVolver_Click" Text="Volver al menu" Width="121px" />
