@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="PageContent" runat="server">
 
-    <asp:GridView ID="gridViewInscripciones" runat="server" AutoGenerateColumns="False"
+    <asp:GridView ID="gridViewInscripciones" runat="server" AutoGenerateColumns="False" HorizontalAlign="Center"
                  SelectedRowStyle-BackColor="Black"
                  SelectedRowStyle-ForeColor="White"
                  DataKeysNames="ID" DataKeyNames="ID" OnSelectedIndexChanged="gridViewMaterias_SelectedIndexChanged" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
@@ -24,5 +24,9 @@
         <SortedDescendingCellStyle BackColor="#E5E5E5" />
         <SortedDescendingHeaderStyle BackColor="#275353" />
     </asp:GridView>
+
+    <asp:Panel ID="Panel1" runat="server" HorizontalAlign="Center">
+        <asp:Button ID="btnVolver" runat="server" Text="Volver al menu" OnClick="btnVolver_Click" />
+    </asp:Panel>
 
 </asp:Content>

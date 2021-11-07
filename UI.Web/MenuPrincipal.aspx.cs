@@ -32,8 +32,6 @@ namespace UI.Web
                     lblAlumno.Visible = false;
                     btnComision.Visible = false;
                     btnEspecialidad.Visible = false;
-                    btnCursoAlumno.Visible = false;
-                    btnPersonaAlumno.Visible = false;
                     Business.Entities.Entidades.DocenteCurso docente = new Business.Entities.Entidades.DocenteCurso();
 
 
@@ -75,11 +73,6 @@ namespace UI.Web
             Response.Redirect("Especialidad.aspx");
         }
 
-        protected void btnCursoAlumno_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Curso.aspx");
-        }
-
         protected void btnProfesor_Click(object sender, EventArgs e)
         {
             Response.Redirect("DocenteCurso.aspx");
@@ -90,11 +83,6 @@ namespace UI.Web
             Response.Redirect("RegistrarNota.aspx");
         }
 
-        protected void btnPersonaAlumno_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Persona.aspx");
-        }
-
         protected void btnInscribirseACursado_Click(object sender, EventArgs e)
         {
             Response.Redirect("InscribirseACursado.aspx");
@@ -102,7 +90,12 @@ namespace UI.Web
 
         protected void btnInscripciones_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Inscripciones.aspx");
+            Response.Redirect("Alum_Inscrip.aspx");
+        }
+
+        protected void btnMateria_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Materia.aspx");
         }
     }
 }

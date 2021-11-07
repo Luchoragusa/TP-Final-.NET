@@ -15,10 +15,9 @@
             <asp:Label ID="lblAlumno" runat="server" Text="Alumno"></asp:Label>
             <br />
             <asp:Button ID="btnComision" runat="server" Text="Comision" BackColor="#33CCCC" OnClick="btnComision_Click" />
-&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btnCursoAlumno" runat="server" Text="Curso" Width="62px" BackColor="#33CCCC" OnClick="btnCursoAlumno_Click" />
+&nbsp;
             &nbsp;
-            <asp:Button ID="btnPersonaAlumno" runat="server" BackColor="#33CCCC" OnClick="btnPersonaAlumno_Click" Text="Persona Alumno" Width="121px" />
+            <asp:Button ID="btnMateria" runat="server" OnClick="btnMateria_Click" Text="Materia" />
             <br />
             <asp:Button ID="btnInscripciones" runat="server" BackColor="#33CCCC" OnClick="btnInscripciones_Click" Text="Inscripciones" Width="96px" />
 &nbsp;
