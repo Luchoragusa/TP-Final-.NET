@@ -104,6 +104,8 @@ namespace UI.Desktop
             try
             {
                 materiaLogic.Save(MateriaActual);
+                MessageBox.Show("La operacion se realizo correctamente", "Informacion", MessageBoxButtons.OK);
+                this.Dispose();
             }
             catch (Exception ex)
             {
@@ -124,7 +126,6 @@ namespace UI.Desktop
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            // No valido la descripcion ya que es un string
             if (!Validaciones.validarTexto(txtHSSemanales.Text))
             {
                 Notificar("ID incorrecta.", "Intente nuevamente",

@@ -146,6 +146,8 @@ namespace UI.Desktop
             try
             {
                 peLogic.Save(PersonaActual);
+                MessageBox.Show("La operacion se realizo correctamente", "Informacion", MessageBoxButtons.OK);
+                this.Dispose();
             }
             catch (Exception ex)
             {

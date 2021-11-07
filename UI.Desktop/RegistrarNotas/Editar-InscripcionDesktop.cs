@@ -93,6 +93,8 @@ namespace UI.Desktop.RegistrarNotas
             try
             {
                 alumno_InscripcionLogic.Save(Alum_InscripActual);
+                MessageBox.Show("La operacion se realizo correctamente", "Informacion", MessageBoxButtons.OK);
+                this.Dispose();
             }
             catch (Exception ex)
             {

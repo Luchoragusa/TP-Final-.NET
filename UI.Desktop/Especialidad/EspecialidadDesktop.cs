@@ -91,6 +91,8 @@ namespace UI.Desktop
             try
             {
                 EspecialidadLogic.Save(EspecialidadActual);
+                MessageBox.Show("La operacion se realizo correctamente", "Informacion", MessageBoxButtons.OK);
+                this.Dispose();
             }
             catch (Exception ex)
             {

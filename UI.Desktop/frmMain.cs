@@ -191,12 +191,6 @@ namespace UI.Desktop
         {
             abrirFormHijo(new ReporteDePersonas());
         }
-
-        private void btnPersonaAlumno_Click(object sender, EventArgs e)
-        {
-            abrirFormHijo(new PersonaDesktop(us));
-        }
-
         private void btnInscribirse_Click(object sender, EventArgs e)
         {
             abrirFormHijo(new InscribirseACursado(us));
