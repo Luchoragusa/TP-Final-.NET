@@ -14,6 +14,16 @@ namespace UI.Desktop
 {
     public partial class DICDesktop : ApplicationForm
     {
+                private Business.Entities.Entidades.DocenteCurso _dc;
+        private Boolean _esDocente;
+        public Business.Entities.Entidades.DocenteCurso DCActual
+        {
+            get
+            { return _dc; }
+            set
+            { _dc = value; }
+        }
+
         public DICDesktop()
         {
             InitializeComponent();
@@ -24,19 +34,10 @@ namespace UI.Desktop
             this.Modo = modo;
             MapearDeDatos();
         }
-
-        private Business.Entities.Entidades.DocenteCurso _dc;
-        public Business.Entities.Entidades.DocenteCurso DCActual
-        {
-            get
-            { return _dc; }
-            set
-            { _dc = value; }
-        }
-
-        public DICDesktop(int ID, ModoForm modo) : this()
+        public DICDesktop(int ID, ModoForm modo, Boolean esDocente) : this()
         {
             this.Modo = modo;
+            _esDocente = esDocente;
             DocenteCursoLogic dcl = new DocenteCursoLogic();
             try
             {
@@ -53,16 +54,20 @@ namespace UI.Desktop
 
         public override void MapearDeDatos()
         {
+            if (_esDocente)
+                this.txtIDDocente.ReadOnly = true;
             if (Modo == ModoForm.Alta)
                 this.btnModo.Text = "Aceptar";
             else
             {
+                this.txtIDDocente.Text = this.DCActual.IDDocente.ToString();
                 this.txtIDDictado.Text = this.DCActual.ID.ToString();
                 this.txtIDCurso.Text = this.DCActual.IDCurso.ToString();
-                this.txtIDDocente.Text = this.DCActual.IDDocente.ToString();
                 this.cbTipoCargo.Text = this.DCActual.Cargo.ToString();
-
-                if (Modo == ModoForm.Modificacion) this.btnModo.Text = "Guardar";
+                if (Modo == ModoForm.Modificacion)
+                {
+                    this.btnModo.Text = "Guardar";
+                }
                 else if (Modo == ModoForm.Baja)
                 {
                     this.btnModo.Text = "Eliminar";

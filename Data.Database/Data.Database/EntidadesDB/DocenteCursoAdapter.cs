@@ -16,7 +16,7 @@ namespace Data.Database.EntidadesDB
 
         public List<DocenteCurso> GetAll()
         {
-            List<DocenteCurso> DocenteCursoes = new List<DocenteCurso>();
+            List<DocenteCurso> DocenteCursos = null;
             try
             {
                 this.OpenConnection();
@@ -26,6 +26,7 @@ namespace Data.Database.EntidadesDB
                 SqlDataReader drDocenteCursos = cmdDocenteCursoes.ExecuteReader();
                 if (drDocenteCursos != null)
                 {
+                    DocenteCursos = new List<DocenteCurso>();
                     while (drDocenteCursos.Read())
                     {
                         DocenteCurso DocenteCurso = new DocenteCurso();
@@ -33,8 +34,7 @@ namespace Data.Database.EntidadesDB
                         DocenteCurso.IDCurso = (int)drDocenteCursos["id_curso"];
                         DocenteCurso.IDDocente = (int)drDocenteCursos["id_docente"];
                         DocenteCurso.Cargo = (DocenteCurso.TipoCargos)drDocenteCursos["cargo"];
-
-                        DocenteCursoes.Add(DocenteCurso);
+                        DocenteCursos.Add(DocenteCurso);
                     }
                 }
                 drDocenteCursos.Close();
@@ -48,7 +48,7 @@ namespace Data.Database.EntidadesDB
             {
                 this.CloseConnection();
             }
-            return DocenteCursoes;
+            return DocenteCursos;
         }
 
         public List<DocenteCurso> getCursosDocente(Usuario docente)

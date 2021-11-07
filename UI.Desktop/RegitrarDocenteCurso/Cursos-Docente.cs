@@ -17,11 +17,18 @@ namespace UI.Desktop.RegitrarDocenteCurso
     {
         Usuario docente = new Usuario();
         public Usuario Docente { get => docente; set => docente = value; }
-
+        Boolean _esDocente = false;
         public Cursos_Docente(Usuario doc)
         {
             InitializeComponent();
             Docente = doc;
+            this.dgvCursosDocente.AutoGenerateColumns = false;
+            this.dgvCursosDocente.ReadOnly = true;
+            _esDocente = true;
+        }
+        public Cursos_Docente()
+        {
+            InitializeComponent();
             this.dgvCursosDocente.AutoGenerateColumns = false;
             this.dgvCursosDocente.ReadOnly = true;
         }
@@ -31,7 +38,10 @@ namespace UI.Desktop.RegitrarDocenteCurso
             DocenteCursoLogic dcl = new DocenteCursoLogic();
             try
             {
-                this.dgvCursosDocente.DataSource = dcl.getCursosDocente(docente);
+                if (_esDocente)
+                    this.dgvCursosDocente.DataSource = dcl.getCursosDocente(docente);
+                else
+                    this.dgvCursosDocente.DataSource = dcl.GetAll();
             }
             catch (Exception ex)
             {
@@ -70,7 +80,7 @@ namespace UI.Desktop.RegitrarDocenteCurso
                 return;
             }
             int ID = ((Business.Entities.Entidades.DocenteCurso)this.dgvCursosDocente.SelectedRows[0].DataBoundItem).ID;
-            DICDesktop docente_alumnos = new DICDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+            DICDesktop docente_alumnos = new DICDesktop(ID, ApplicationForm.ModoForm.Modificacion, _esDocente);
             try
             {
                 docente_alumnos.ShowDialog();
@@ -90,7 +100,7 @@ namespace UI.Desktop.RegitrarDocenteCurso
                 return;
             }
             int ID = ((Business.Entities.Entidades.DocenteCurso)this.dgvCursosDocente.SelectedRows[0].DataBoundItem).ID;
-            DICDesktop docente_alumnos = new DICDesktop(ID, ApplicationForm.ModoForm.Baja);
+            DICDesktop docente_alumnos = new DICDesktop(ID, ApplicationForm.ModoForm.Baja, _esDocente);
             try
             {
                 docente_alumnos.ShowDialog();

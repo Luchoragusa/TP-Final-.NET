@@ -186,12 +186,12 @@ namespace UI.Desktop
 
         private void btnAdminCurso_Click(object sender, EventArgs e)
         {
-            abrirFormHijo(new UI.Desktop.Cursos());
+            abrirFormHijo(new Cursos());
         }
 
         private void btnAdminDocenteCurso_Click(object sender, EventArgs e)
         {
-            abrirFormHijo(new DocenteCurso.DocenteMateria(us));
+            abrirFormHijo(new Cursos_Docente());
         }
 
         private void btnAdminAlum_Insc_Click(object sender, EventArgs e)
@@ -201,7 +201,7 @@ namespace UI.Desktop
 
         private void btnAdminReporteCom_Click(object sender, EventArgs e)
         {
-            abrirFormHijo(new UI.Desktop.ReporteComi());
+            abrirFormHijo(new ReporteComi());
         }
 
         private void btnAdminReportePer_Click(object sender, EventArgs e)

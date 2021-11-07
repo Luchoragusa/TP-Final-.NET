@@ -78,7 +78,6 @@ namespace UI.Desktop.DocenteCurso
 
             }
             int ID = ((Business.Entities.Materia)this.dgvDocenteCurso.SelectedRows[0].DataBoundItem).ID;
-
             DocenteComision materias_comision = new DocenteComision(ID, docente);
             try
             {
@@ -100,10 +99,10 @@ namespace UI.Desktop.DocenteCurso
             }
             int ID = ((Business.Entities.Entidades.DocenteCurso)this.dgvDocenteCurso.SelectedRows[0].DataBoundItem).ID;
 
-            DICDesktop formDC = new DICDesktop(ID, ApplicationForm.ModoForm.Baja);
+            DocenteComision materias_comision = new DocenteComision(ID, docente);
             try
             {
-                formDC.ShowDialog();
+                materias_comision.ShowDialog();
                 this.Listar();
             }
             catch (Exception ex)
