@@ -127,17 +127,6 @@ namespace UI.Desktop
         {
             abrirFormHijo(new Materia(us));
         }
-
-        private void btnAluPlan_Click(object sender, EventArgs e)
-        {
-            abrirFormHijo(new Plan());
-        }
-
-        private void btnAluEspecialidad_Click(object sender, EventArgs e)
-        {
-            abrirFormHijo(new Especialidad());
-        }
-
         private void btnInscripcionCurso_Click(object sender, EventArgs e)
         {
             abrirFormHijo(new Cursos_Docente(us));

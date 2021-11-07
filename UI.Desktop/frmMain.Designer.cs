@@ -52,8 +52,6 @@ namespace UI.Desktop
             this.panelAluSubMenu = new System.Windows.Forms.Panel();
             this.btnInscribirse = new System.Windows.Forms.Button();
             this.btnPersonaAlumno = new System.Windows.Forms.Button();
-            this.btnAluEspecialidad = new System.Windows.Forms.Button();
-            this.btnAluPlan = new System.Windows.Forms.Button();
             this.btnAluMateria = new System.Windows.Forms.Button();
             this.btnAluComision = new System.Windows.Forms.Button();
             this.btnInscripciones = new System.Windows.Forms.Button();
@@ -105,7 +103,7 @@ namespace UI.Desktop
             this.panelAdminSubMenu.Controls.Add(this.btnAdminComision);
             this.panelAdminSubMenu.Controls.Add(this.btnAdminUsuario);
             this.panelAdminSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAdminSubMenu.Location = new System.Drawing.Point(0, 577);
+            this.panelAdminSubMenu.Location = new System.Drawing.Point(0, 501);
             this.panelAdminSubMenu.Name = "panelAdminSubMenu";
             this.panelAdminSubMenu.Size = new System.Drawing.Size(242, 519);
             this.panelAdminSubMenu.TabIndex = 6;
@@ -309,7 +307,7 @@ namespace UI.Desktop
             this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdmin.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAdmin.Location = new System.Drawing.Point(0, 537);
+            this.btnAdmin.Location = new System.Drawing.Point(0, 461);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnAdmin.Size = new System.Drawing.Size(242, 40);
@@ -325,7 +323,7 @@ namespace UI.Desktop
             this.panelDocSubMenu.Controls.Add(this.btnInscripcionCurso);
             this.panelDocSubMenu.Controls.Add(this.btnRegistroNotas);
             this.panelDocSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelDocSubMenu.Location = new System.Drawing.Point(0, 458);
+            this.panelDocSubMenu.Location = new System.Drawing.Point(0, 382);
             this.panelDocSubMenu.Name = "panelDocSubMenu";
             this.panelDocSubMenu.Size = new System.Drawing.Size(242, 79);
             this.panelDocSubMenu.TabIndex = 4;
@@ -369,7 +367,7 @@ namespace UI.Desktop
             this.btnDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDoc.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDoc.Location = new System.Drawing.Point(0, 418);
+            this.btnDoc.Location = new System.Drawing.Point(0, 342);
             this.btnDoc.Name = "btnDoc";
             this.btnDoc.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnDoc.Size = new System.Drawing.Size(242, 40);
@@ -384,15 +382,13 @@ namespace UI.Desktop
             this.panelAluSubMenu.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panelAluSubMenu.Controls.Add(this.btnInscribirse);
             this.panelAluSubMenu.Controls.Add(this.btnPersonaAlumno);
-            this.panelAluSubMenu.Controls.Add(this.btnAluEspecialidad);
-            this.panelAluSubMenu.Controls.Add(this.btnAluPlan);
             this.panelAluSubMenu.Controls.Add(this.btnAluMateria);
             this.panelAluSubMenu.Controls.Add(this.btnAluComision);
             this.panelAluSubMenu.Controls.Add(this.btnInscripciones);
             this.panelAluSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelAluSubMenu.Location = new System.Drawing.Point(0, 130);
             this.panelAluSubMenu.Name = "panelAluSubMenu";
-            this.panelAluSubMenu.Size = new System.Drawing.Size(242, 288);
+            this.panelAluSubMenu.Size = new System.Drawing.Size(242, 212);
             this.panelAluSubMenu.TabIndex = 2;
             // 
             // btnInscribirse
@@ -401,7 +397,7 @@ namespace UI.Desktop
             this.btnInscribirse.FlatAppearance.BorderSize = 0;
             this.btnInscribirse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInscribirse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInscribirse.Location = new System.Drawing.Point(0, 240);
+            this.btnInscribirse.Location = new System.Drawing.Point(0, 164);
             this.btnInscribirse.Name = "btnInscribirse";
             this.btnInscribirse.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnInscribirse.Size = new System.Drawing.Size(242, 44);
@@ -417,7 +413,7 @@ namespace UI.Desktop
             this.btnPersonaAlumno.FlatAppearance.BorderSize = 0;
             this.btnPersonaAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPersonaAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPersonaAlumno.Location = new System.Drawing.Point(0, 196);
+            this.btnPersonaAlumno.Location = new System.Drawing.Point(0, 120);
             this.btnPersonaAlumno.Name = "btnPersonaAlumno";
             this.btnPersonaAlumno.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnPersonaAlumno.Size = new System.Drawing.Size(242, 44);
@@ -426,38 +422,6 @@ namespace UI.Desktop
             this.btnPersonaAlumno.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPersonaAlumno.UseVisualStyleBackColor = true;
             this.btnPersonaAlumno.Click += new System.EventHandler(this.btnPersonaAlumno_Click);
-            // 
-            // btnAluEspecialidad
-            // 
-            this.btnAluEspecialidad.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAluEspecialidad.FlatAppearance.BorderSize = 0;
-            this.btnAluEspecialidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAluEspecialidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAluEspecialidad.Location = new System.Drawing.Point(0, 152);
-            this.btnAluEspecialidad.Name = "btnAluEspecialidad";
-            this.btnAluEspecialidad.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnAluEspecialidad.Size = new System.Drawing.Size(242, 44);
-            this.btnAluEspecialidad.TabIndex = 6;
-            this.btnAluEspecialidad.Text = "Especialidad";
-            this.btnAluEspecialidad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAluEspecialidad.UseVisualStyleBackColor = true;
-            this.btnAluEspecialidad.Click += new System.EventHandler(this.btnAluEspecialidad_Click);
-            // 
-            // btnAluPlan
-            // 
-            this.btnAluPlan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAluPlan.FlatAppearance.BorderSize = 0;
-            this.btnAluPlan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAluPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAluPlan.Location = new System.Drawing.Point(0, 120);
-            this.btnAluPlan.Name = "btnAluPlan";
-            this.btnAluPlan.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnAluPlan.Size = new System.Drawing.Size(242, 32);
-            this.btnAluPlan.TabIndex = 5;
-            this.btnAluPlan.Text = "Plan";
-            this.btnAluPlan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAluPlan.UseVisualStyleBackColor = true;
-            this.btnAluPlan.Click += new System.EventHandler(this.btnAluPlan_Click);
             // 
             // btnAluMateria
             // 
@@ -606,8 +570,6 @@ namespace UI.Desktop
         private System.Windows.Forms.Button btnRegistroNotas;
         private System.Windows.Forms.Button btnDoc;
         private System.Windows.Forms.Panel panelAluSubMenu;
-        private System.Windows.Forms.Button btnAluEspecialidad;
-        private System.Windows.Forms.Button btnAluPlan;
         private System.Windows.Forms.Button btnAluMateria;
         private System.Windows.Forms.Button btnAluComision;
         private System.Windows.Forms.Button btnInscripciones;
