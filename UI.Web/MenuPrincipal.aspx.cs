@@ -89,5 +89,10 @@ namespace UI.Web
         {
             Response.Redirect("Persona.aspx");
         }
+
+        protected void btnInscribirseACursado_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("InscribirseACursado.aspx");
+        }
     }
 }
