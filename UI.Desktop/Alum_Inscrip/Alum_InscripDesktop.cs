@@ -54,14 +54,23 @@ namespace UI.Desktop.Alum_Inscrip
                 this.btnModo.Text = "Aceptar";
             else
             {
-                if (Modo == ModoForm.Modificacion) this.btnModo.Text = "Guardar";
-                else if (Modo == ModoForm.Baja) this.btnModo.Text = "Eliminar";
-
                 this.txtNombre.Text = this.Alum_InscripActual.NombrePersona.ToString();
                 this.txtApellido.Text = this.Alum_InscripActual.ApellidoPersona.ToString();
                 this.txtLegajo.Text = this.Alum_InscripActual.legajoPersona.ToString();
                 this.cbCondicion.Text = this.Alum_InscripActual.Condicion;
                 this.txtNota.Text = this.Alum_InscripActual.Nota.ToString();
+
+                if (Modo == ModoForm.Modificacion) this.btnModo.Text = "Guardar";
+                else if (Modo == ModoForm.Baja)
+                {
+                    this.btnModo.Text = "Eliminar";
+
+                    this.txtNombre.Enabled = false;
+                    this.txtApellido.Enabled = false;
+                    this.txtLegajo.Enabled = false;
+                    this.cbCondicion.Enabled = false;
+                    this.txtNota.Enabled = false;
+                }
             }
         }
 
