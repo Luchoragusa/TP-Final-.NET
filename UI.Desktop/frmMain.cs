@@ -120,7 +120,7 @@ namespace UI.Desktop
 
         private void btnAluComision_Click(object sender, EventArgs e)
         {
-            abrirFormHijo(new Comisiones());
+            abrirFormHijo(new Comisiones(us));
         }
 
         private void btnAluMateria_Click(object sender, EventArgs e)
