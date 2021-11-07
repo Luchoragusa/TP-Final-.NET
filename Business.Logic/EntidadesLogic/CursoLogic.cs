@@ -59,6 +59,20 @@ namespace Business.Logic.EntidadesLogic
                 throw ExcepcionManejada;
             }
         }
+
+        public Curso GetCursoComision(int idComision)
+        {
+            try
+            {
+                return CursoData.GetcursoComision(idComision);
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar el Curso.", ex);
+                throw ExcepcionManejada;
+            }
+        }
+
         public List<Curso> GetAll()
         {
             try

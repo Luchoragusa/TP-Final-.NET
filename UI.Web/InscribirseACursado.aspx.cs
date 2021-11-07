@@ -69,7 +69,7 @@ namespace UI.Web
         Business.Entities.Materia mate = new Business.Entities.Materia();
         public Business.Entities.Materia Mate { get => mate; set => mate = value; }
 
-        private void LoadGridComisiones()
+        public void LoadGridComisiones()
         {
             ComisionLogic cl = new ComisionLogic();
 
@@ -79,16 +79,20 @@ namespace UI.Web
             this.gridViewComisionesMateria.DataBind();
         }
 
-        Personas persona = new Personas();
-        Business.Entities.Curso curso = new Business.Entities.Curso();
+        Personas persona;
+        Business.Entities.Curso curso;
         protected void acceptaButton_Click(object sender, EventArgs e)
         {
-            Alumno_InscripcionLogic alumnoLogic = new Alumno_InscripcionLogic();
             CursoLogic cl = new CursoLogic();
             PersonaLogic perl = new PersonaLogic();
             Usuario usuario = (Usuario)Session["usuario"];
 
-            curso = cl.getByMateria(Mate);
+            curso = new Business.Entities.Curso();
+            persona = new Personas();
+
+            //curso = cl.getByMateria(Mate);
+
+            curso = cl.GetCursoComision(SelectedIDComision);
             persona = perl.GetIDPersona(usuario);
 
             Entity = new Alumnos_Inscripciones();

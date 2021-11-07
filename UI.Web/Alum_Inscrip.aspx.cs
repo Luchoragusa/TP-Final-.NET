@@ -66,6 +66,7 @@ namespace UI.Web
 
         protected void LoadForm(int id)
         {
+            Entity = new Alumnos_Inscripciones();
             this.Entity.ID = id;
             this.Entity = this.Logic.GetOne(Entity);
             this.txtNombrePersona.Text = this.Entity.NombrePersona.ToString();

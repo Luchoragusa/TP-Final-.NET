@@ -105,6 +105,7 @@ namespace UI.Web
 
         protected void LoadForm(int id)
         {
+            Entity = new Usuario();
             this.Entity.ID = id;
             this.Entity = this.Logic.GetOne(Entity);
             this.habilitadoCheckBox.Checked = this.Entity.Habilitado;

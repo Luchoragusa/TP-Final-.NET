@@ -60,6 +60,7 @@ namespace UI.Web
 
         protected void LoadForm(int id)
         {
+            Entity = new Business.Entities.Entidades.DocenteCurso();
             this.Entity.ID = id;
             this.Entity = this.Logic.GetOne(Entity);
 

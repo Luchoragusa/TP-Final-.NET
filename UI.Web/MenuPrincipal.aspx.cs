@@ -23,14 +23,19 @@ namespace UI.Web
                     lblDocente.Visible = false;
                     btnDocenteCurso.Visible = false;
                     btnRegistrarNota.Visible = false;
+                    lblAdmin.Visible = false;
+                    btnEspecialidad.Visible = false;
                     break;
                 case 2:     //docente
+                    lblAdmin.Visible = false;
+                    btnEspecialidad.Visible = false;
                     lblAlumno.Visible = false;
                     btnComision.Visible = false;
                     btnEspecialidad.Visible = false;
                     btnCursoAlumno.Visible = false;
                     btnPersonaAlumno.Visible = false;
                     Business.Entities.Entidades.DocenteCurso docente = new Business.Entities.Entidades.DocenteCurso();
+
 
                 //HACER UN CASE 4 ??? SERIA LA PERSONA QUE ENTRA POR PRIMERA VEZ
 

@@ -22,12 +22,12 @@
             <br />
             <asp:Button ID="btnInscripciones" runat="server" BackColor="#33CCCC" OnClick="btnInscripciones_Click" Text="Inscripciones" Width="96px" />
 &nbsp;
-            <asp:Button ID="btnInscribirseACursado" runat="server" BackColor="#33CCCC" OnClick="btnInscribirseACursado_Click" Text="Inscribirse a Cursado" Width="152px" />
+            <asp:Button ID="btnInscribirseACursado" runat="server" BackColor="#33CCCC" OnClick="btnInscribirseACursado_Click" Text="Inscribirse a Cursado" Width="155px" />
             <br />
             <br />
             <asp:Label ID="lblDocente" runat="server" Text="Docente"></asp:Label>
             <br />
-            <asp:Button ID="btnDocenteCurso" class="btn btn-outline-primary btn-lg" runat="server" Text="Inscribirse a un curso" OnClick="btnProfesor_Click" Width="135px" BackColor="#9999FF" />
+            <asp:Button ID="btnDocenteCurso" class="btn btn-outline-primary btn-lg" runat="server" Text="Cursos del docente" OnClick="btnProfesor_Click" Width="141px" BackColor="#9999FF" />
             &nbsp;&nbsp;
             <asp:Button ID="btnRegistrarNota" runat="server" Text="Registrar Nota" Width="108px" BackColor="#9999FF" OnClick="btnRegistrarNota_Click" />
             <br />
