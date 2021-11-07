@@ -16,31 +16,36 @@ namespace Data.Database.EntidadesDB
 
         public List<Alumnos_Inscripciones> GetAll()
         {
-            List<Alumnos_Inscripciones> Alumnos_Inscripcioneses = new List<Alumnos_Inscripciones>();
+            List<Alumnos_Inscripciones> Alumnos_Inscripciones = null;
             try
             {
                 this.OpenConnection();
-
-                SqlCommand cmdAlumnos_Inscripcioneses = new SqlCommand("SELECT * FROM alumnos_inscripciones", sqlConn);
-
+                SqlCommand cmdAlumnos_Inscripcioneses = new SqlCommand("select ai.id_inscripcion, ai.id_alumno, ai.id_curso, ai.condicion, ai.nota, p.nombre, p.apellido, p.legajo from cursos inner join alumnos_inscripciones ai on cursos.id_curso = ai.id_curso inner join personas p on ai.id_alumno = p.id_persona", sqlConn);
                 SqlDataReader drAlumnos_Inscripcioneses = cmdAlumnos_Inscripcioneses.ExecuteReader();
-
-                while (drAlumnos_Inscripcioneses.Read())
+                if (drAlumnos_Inscripcioneses != null)
                 {
-                    Alumnos_Inscripciones Alumnos_Inscripciones = new Alumnos_Inscripciones();
+                    Alumnos_Inscripciones = new List<Alumnos_Inscripciones>();
+                    while (drAlumnos_Inscripcioneses.Read())
+                    {
+                        Alumnos_Inscripciones Alumnos_I = new Alumnos_Inscripciones();
+                        Personas p = new Personas();
+                        p.Nombre = (string)drAlumnos_Inscripcioneses["nombre"];
+                        p.Apellido = (string)drAlumnos_Inscripcioneses["apellido"];
+                        p.Legajo = (int)drAlumnos_Inscripcioneses["legajo"];
 
-                    Alumnos_Inscripciones.ID = (int)drAlumnos_Inscripcioneses["id_inscripcion"];
-                    Alumnos_Inscripciones.IDAlumno = (int)drAlumnos_Inscripcioneses["id_alumno"];
-                    Alumnos_Inscripciones.IDCurso = (int)drAlumnos_Inscripcioneses["id_curso"];
-                    Alumnos_Inscripciones.Condicion = (string)drAlumnos_Inscripcioneses["condicion"];
+                        Alumnos_I.Personas = p;
+                        Alumnos_I.ID = (int)drAlumnos_Inscripcioneses["id_inscripcion"];
+                        Alumnos_I.IDAlumno = (int)drAlumnos_Inscripcioneses["id_alumno"];
+                        Alumnos_I.IDCurso = (int)drAlumnos_Inscripcioneses["id_curso"];
+                        Alumnos_I.Condicion = (string)drAlumnos_Inscripcioneses["condicion"];
 
+                        if (string.IsNullOrEmpty(drAlumnos_Inscripcioneses["nota"].ToString())) // verifico si la nota es null
+                            Alumnos_I.Nota = " - ";
+                        else
+                            Alumnos_I.Nota = (string)drAlumnos_Inscripcioneses["nota"].ToString();
 
-                    if (string.IsNullOrEmpty(drAlumnos_Inscripcioneses["nota"].ToString())) // verifico si la nota es null
-                        Alumnos_Inscripciones.Nota = " - ";
-                    else
-                        Alumnos_Inscripciones.Nota = (string)drAlumnos_Inscripcioneses["nota"].ToString();
-
-                    Alumnos_Inscripcioneses.Add(Alumnos_Inscripciones);
+                        Alumnos_Inscripciones.Add(Alumnos_I);
+                    }
                 }
                 drAlumnos_Inscripcioneses.Close();
             }
@@ -48,13 +53,13 @@ namespace Data.Database.EntidadesDB
             catch (Exception Ex)
             {
                 Exception ExcepcionManejada = new Exception("Error al recuperar la lista de alumnos inscriptos", Ex);
-                //throw ExcepcionManejada;
+                throw ExcepcionManejada;
             }
             finally
             {
                 this.CloseConnection();
             }
-            return Alumnos_Inscripcioneses;
+            return Alumnos_Inscripciones;
         }
 
         public List<Alumnos_Inscripciones> GetAllByCurso(Curso cur)
@@ -67,27 +72,29 @@ namespace Data.Database.EntidadesDB
                 SqlCommand cmdAlumnos_Inscripcioneses = new SqlCommand("select ai.id_inscripcion, ai.id_alumno, ai.id_curso, ai.condicion, ai.nota, p.nombre, p.apellido, p.legajo from cursos inner join alumnos_inscripciones ai on cursos.id_curso = ai.id_curso inner join personas p on ai.id_alumno = p.id_persona where cursos.id_curso = @idCurso", sqlConn);
                 cmdAlumnos_Inscripcioneses.Parameters.Add("@idCurso", SqlDbType.Int).Value = cur.ID;
                 SqlDataReader drAlumnos_Inscripcioneses = cmdAlumnos_Inscripcioneses.ExecuteReader();
-
-                while (drAlumnos_Inscripcioneses.Read())
+                if (drAlumnos_Inscripcioneses != null)
                 {
-                    Alumnos_Inscripciones Alumnos_Inscripciones = new Alumnos_Inscripciones();
-                    Personas p = new Personas();
-                    p.Nombre = (string)drAlumnos_Inscripcioneses["nombre"];
-                    p.Apellido = (string)drAlumnos_Inscripcioneses["apellido"];
-                    p.Legajo = (int)drAlumnos_Inscripcioneses["legajo"];
+                    while (drAlumnos_Inscripcioneses.Read())
+                    {
+                        Alumnos_Inscripciones Alumnos_Inscripciones = new Alumnos_Inscripciones();
+                        Personas p = new Personas();
+                        p.Nombre = (string)drAlumnos_Inscripcioneses["nombre"];
+                        p.Apellido = (string)drAlumnos_Inscripcioneses["apellido"];
+                        p.Legajo = (int)drAlumnos_Inscripcioneses["legajo"];
 
-                    Alumnos_Inscripciones.Personas = p;
-                    Alumnos_Inscripciones.ID = (int)drAlumnos_Inscripcioneses["id_inscripcion"];
-                    Alumnos_Inscripciones.IDAlumno = (int)drAlumnos_Inscripcioneses["id_alumno"];
-                    Alumnos_Inscripciones.IDCurso = (int)drAlumnos_Inscripcioneses["id_curso"];
-                    Alumnos_Inscripciones.Condicion = (string)drAlumnos_Inscripcioneses["condicion"];
+                        Alumnos_Inscripciones.Personas = p;
+                        Alumnos_Inscripciones.ID = (int)drAlumnos_Inscripcioneses["id_inscripcion"];
+                        Alumnos_Inscripciones.IDAlumno = (int)drAlumnos_Inscripcioneses["id_alumno"];
+                        Alumnos_Inscripciones.IDCurso = (int)drAlumnos_Inscripcioneses["id_curso"];
+                        Alumnos_Inscripciones.Condicion = (string)drAlumnos_Inscripcioneses["condicion"];
 
-                    if (string.IsNullOrEmpty(drAlumnos_Inscripcioneses["nota"].ToString())) // verifico si la nota es null
-                        Alumnos_Inscripciones.Nota = " - ";
-                    else
-                        Alumnos_Inscripciones.Nota = (string)drAlumnos_Inscripcioneses["nota"].ToString();
+                        if (string.IsNullOrEmpty(drAlumnos_Inscripcioneses["nota"].ToString())) // verifico si la nota es null
+                            Alumnos_Inscripciones.Nota = " - ";
+                        else
+                            Alumnos_Inscripciones.Nota = (string)drAlumnos_Inscripcioneses["nota"].ToString();
 
-                    AlumnosDeUnCurso.Add(Alumnos_Inscripciones);
+                        AlumnosDeUnCurso.Add(Alumnos_Inscripciones);
+                    }
                 }
                 drAlumnos_Inscripcioneses.Close();
             }
