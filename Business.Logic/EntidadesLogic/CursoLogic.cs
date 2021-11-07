@@ -64,7 +64,7 @@ namespace Business.Logic.EntidadesLogic
         {
             try
             {
-                return CursoData.GetcursoComision(idComision);
+                return CursoData.GetCursoComision(idComision);
             }
             catch (Exception ex)
             {
