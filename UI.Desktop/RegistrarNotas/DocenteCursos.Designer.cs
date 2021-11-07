@@ -43,7 +43,7 @@ namespace UI.Desktop.DocenteCurso
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.tsPlanes = new System.Windows.Forms.ToolStrip();
-            this.tsbIngresar = new System.Windows.Forms.ToolStripButton();
+            this.tsbSeleccionar = new System.Windows.Forms.ToolStripButton();
             this.tcPlanes.ContentPanel.SuspendLayout();
             this.tcPlanes.TopToolStripPanel.SuspendLayout();
             this.tcPlanes.SuspendLayout();
@@ -179,21 +179,21 @@ namespace UI.Desktop.DocenteCurso
             // 
             this.tsPlanes.Dock = System.Windows.Forms.DockStyle.None;
             this.tsPlanes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbIngresar});
+            this.tsbSeleccionar});
             this.tsPlanes.Location = new System.Drawing.Point(3, 0);
             this.tsPlanes.Name = "tsPlanes";
-            this.tsPlanes.Size = new System.Drawing.Size(83, 25);
+            this.tsPlanes.Size = new System.Drawing.Size(114, 25);
             this.tsPlanes.TabIndex = 0;
             // 
-            // tsbIngresar
+            // tsbSeleccionar
             // 
-            this.tsbIngresar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsbIngresar.Image = ((System.Drawing.Image)(resources.GetObject("tsbIngresar.Image")));
-            this.tsbIngresar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbIngresar.Name = "tsbIngresar";
-            this.tsbIngresar.Size = new System.Drawing.Size(71, 22);
-            this.tsbIngresar.Text = "Seleccionar";
-            this.tsbIngresar.Click += new System.EventHandler(this.tsbIngresar_Click);
+            this.tsbSeleccionar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbSeleccionar.Image = ((System.Drawing.Image)(resources.GetObject("tsbSeleccionar.Image")));
+            this.tsbSeleccionar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSeleccionar.Name = "tsbSeleccionar";
+            this.tsbSeleccionar.Size = new System.Drawing.Size(71, 22);
+            this.tsbSeleccionar.Text = "Seleccionar";
+            this.tsbSeleccionar.Click += new System.EventHandler(this.tsbSeleccionar_Click);
             // 
             // DcoenteCursos
             // 
@@ -230,6 +230,6 @@ namespace UI.Desktop.DocenteCurso
         private System.Windows.Forms.DataGridViewTextBoxColumn IDComision;
         private System.Windows.Forms.DataGridViewTextBoxColumn AnioCalendario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cupo;
-        private System.Windows.Forms.ToolStripButton tsbIngresar;
+        private System.Windows.Forms.ToolStripButton tsbSeleccionar;
     }
 }

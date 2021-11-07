@@ -58,7 +58,7 @@ namespace UI.Desktop.DocenteCurso
             this.Close();
         }
 
-        private void tsbIngresar_Click(object sender, EventArgs e)
+        private void tsbSeleccionar_Click(object sender, EventArgs e)
         {
             if (this.dgvCursosDocente.SelectedRows.Count == 0)
             {
