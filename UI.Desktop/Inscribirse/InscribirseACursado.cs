@@ -17,7 +17,7 @@ namespace UI.Desktop
     public partial class InscribirseACursado : Form
     {
         Business.Entities.Materia materia = new Business.Entities.Materia();
-        Business.Entities.Usuario alumno = new Business.Entities.Usuario();
+        Usuario alumno = new Usuario();
         public InscribirseACursado(Usuario us)
         {
             InitializeComponent(); 
@@ -48,12 +48,6 @@ namespace UI.Desktop
         {
             this.Close();
         }
-
-        private void tsbEditar_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void InscribirseACursado_Load(object sender, EventArgs e)
         {
             this.Listar();
@@ -65,14 +59,9 @@ namespace UI.Desktop
             {
                 MessageBox.Show("Accion Invalida", "Seleccione una fila", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-
             }
-            // int ID = ((Business.Entities.Materia)this.dgvInscribirse.SelectedRows[0].DataBoundItem).ID;
-
             materia = (Business.Entities.Materia)this.dgvInscribirse.SelectedRows[0].DataBoundItem;
-
-            UI.Desktop.Inscribirse.ComisionesInscribirse comisiones_insc = new UI.Desktop.Inscribirse.ComisionesInscribirse(materia, alumno);
-
+            Inscribirse.ComisionesInscribirse comisiones_insc = new Inscribirse.ComisionesInscribirse(materia, alumno);
             try
             {
                 comisiones_insc.ShowDialog();
