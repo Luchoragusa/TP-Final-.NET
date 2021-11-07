@@ -7,7 +7,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="PageContent" runat="server">
         <div dir="ltr">
         </div>
-        <asp:Panel ID="gridPanel" runat="server" Height="174px" Width="1498px">
+        <asp:Panel ID="gridPanel" runat="server" Height="457px" Width="1498px">
                 <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False" HorizontalAlign="Center"
                     SelectedRowStyle-BackColor="Blue"
                     SelectedRowStyle-ForeColor="White"
@@ -44,26 +44,7 @@
      <asp:Panel ID="formPanel" Visible="False" runat="server">
         
         
-         <asp:Label ID ="idcursoLabel" runat="server" Text="IDCurso: "></asp:Label>
-        <asp:TextBox ID="idcursoTextBox" runat="server"></asp:TextBox>
-         <asp:RequiredFieldValidator ID="RequiredFieldValidatorIDCurso" runat="server" 
-                    ControlToValidate="idcursoTextBox" 
-                    ErrorMessage="El ID del Curso es obligatorio" 
-                    ForeColor="Red">
-                    *
-                </asp:RequiredFieldValidator>
-         &nbsp;<br />
-        
-         <asp:Label ID="idalumnoLabel" runat="server" Text="IDAlumno: "></asp:Label>
-        <asp:TextBox ID="idalumnoTextBox" runat="server"></asp:TextBox>
-         <asp:RequiredFieldValidator ID="RequiredFieldValidatorIDAlumno" runat="server" 
-                    ControlToValidate="idalumnotextBox" 
-                    ErrorMessage="La ID del alumno es obligatoria" 
-                    ForeColor="Red">
-                    *
-                </asp:RequiredFieldValidator>
-         <br />
-         Nombre:
+         &nbsp;Nombre:
          <asp:TextBox ID="txtNombrePersona" runat="server"></asp:TextBox>
          <br />
          Apellido

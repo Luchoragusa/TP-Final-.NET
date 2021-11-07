@@ -68,7 +68,7 @@ namespace UI.Web
         {
             Alumno_InscripcionLogic alumnoLogic = new Alumno_InscripcionLogic();
             Entity = new Alumnos_Inscripciones();
-            this.Entity.legajoPersona = SelectedlegajoPersona;
+            //this.Entity.legajoPersona = SelectedlegajoPersona;
             this.Entity = alumnoLogic.GetOne(Entity);
             this.Entity.State = BusinessEntity.States.Modified;
             this.LoadEntity(this.Entity);

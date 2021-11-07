@@ -19,7 +19,7 @@ namespace Data.Database.EntidadesDB
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdAlumnos_Inscripcioneses = new SqlCommand("select ai.id_inscripcion, ai.id_alumno, ai.id_curso, ai.condicion, ai.nota, p.nombre, p.apellido, p.legajo from cursos inner join alumnos_inscripciones ai on cursos.id_curso = ai.id_curso inner join personas p on ai.id_alumno = p.id_persona", sqlConn);
+                SqlCommand cmdAlumnos_Inscripcioneses = new SqlCommand("select ai.id_inscripcion, ai.id_alumno, ai.id_curso, ai.condicion, ai.nota, p.nombre, p.apellido, p.legajo from cursos inner join alumnos_inscripciones ai on cursos.id_curso = ai.id_curso inner join personas p on ai.id_alumno = p.id_persona where p.tipo_persona = 1", sqlConn);
                 SqlDataReader drAlumnos_Inscripcioneses = cmdAlumnos_Inscripcioneses.ExecuteReader();
                 if (drAlumnos_Inscripcioneses != null)
                 {
@@ -103,7 +103,7 @@ namespace Data.Database.EntidadesDB
             {
                 Exception ExcepcionManejada = new Exception("Error al recuperar la lista de alumnos inscriptos", Ex);
                 throw ExcepcionManejada;
-            }
+            }///////////////////////////
             finally
             {
                 this.CloseConnection();
@@ -117,7 +117,7 @@ namespace Data.Database.EntidadesDB
             {
                 this.OpenConnection();
 
-                SqlCommand cmdAlumnos_Inscripcioneses = new SqlCommand("select ai.id_inscripcion, ai.id_alumno, ai.id_curso, ai.condicion, ai.nota, p.nombre, p.apellido, p.legajo from cursos inner join alumnos_inscripciones ai on cursos.id_curso = ai.id_curso inner join personas p on ai.id_alumno = p.id_persona where cursos.id_curso = @idCurso", sqlConn);
+                SqlCommand cmdAlumnos_Inscripcioneses = new SqlCommand("select ai.id_inscripcion, ai.id_alumno, ai.id_curso, ai.condicion, ai.nota,p.nombre, p.apellido, p.legajo from cursos inner join alumnos_inscripciones ai on cursos.id_curso = ai.id_curso inner join personas p on ai.id_alumno = p.id_persona where cursos.id_curso = @id_cursoand tipo_persona = 1ersonas p on ai.id_alumno = p.id_persona where cursos.id_curso = @idCurso", sqlConn);
                 cmdAlumnos_Inscripcioneses.Parameters.Add("@idCurso", SqlDbType.Int).Value = cur.ID;
                 SqlDataReader drAlumnos_Inscripcioneses = cmdAlumnos_Inscripcioneses.ExecuteReader();
                 if (drAlumnos_Inscripcioneses != null)
