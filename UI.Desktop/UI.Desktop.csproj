@@ -71,12 +71,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet2.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Alum_Inscrip\Alumno_Curso.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Alum_Inscrip\Alumno_Curso.Designer.cs">
-      <DependentUpon>Alumno_Curso.cs</DependentUpon>
-    </Compile>
     <Compile Include="Alum_Inscrip\Alum_Inscrip.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,12 +117,6 @@
     </Compile>
     <Compile Include="Curso\CursosDesktop.Designer.cs">
       <DependentUpon>CursosDesktop.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Curso\CursosNotas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Curso\CursosNotas.Designer.cs">
-      <DependentUpon>CursosNotas.cs</DependentUpon>
     </Compile>
     <Compile Include="DataSetPersonas.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -276,9 +264,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Alum_Inscrip\Alumno_Curso.resx">
-      <DependentUpon>Alumno_Curso.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Alum_Inscrip\Alum_Inscrip.resx">
       <DependentUpon>Alum_Inscrip.cs</DependentUpon>
     </EmbeddedResource>
@@ -299,9 +284,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Curso\CursosDesktop.resx">
       <DependentUpon>CursosDesktop.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Curso\CursosNotas.resx">
-      <DependentUpon>CursosNotas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegistrarNotas\Docente-Alumnos.resx">
       <DependentUpon>Docente-Alumnos.cs</DependentUpon>

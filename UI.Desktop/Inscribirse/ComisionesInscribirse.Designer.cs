@@ -29,22 +29,28 @@ namespace UI.Desktop.Inscribirse
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ComisionesInscribirse));
             this.tcPlanes = new System.Windows.Forms.ToolStripContainer();
-            this.tlPlanes = new System.Windows.Forms.TableLayoutPanel();
-            this.dgvComInscribirse = new System.Windows.Forms.DataGridView();
-            this.IDComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Anio_Especialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
-            this.btnInscribirse = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.dgvComInscribirse = new System.Windows.Forms.DataGridView();
+            this.Anio_Especialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tlPlanes = new System.Windows.Forms.TableLayoutPanel();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnInscribirse = new System.Windows.Forms.ToolStripButton();
             this.tcPlanes.ContentPanel.SuspendLayout();
+            this.tcPlanes.TopToolStripPanel.SuspendLayout();
             this.tcPlanes.SuspendLayout();
-            this.tlPlanes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComInscribirse)).BeginInit();
+            this.tlPlanes.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcPlanes
@@ -53,7 +59,7 @@ namespace UI.Desktop.Inscribirse
             // tcPlanes.ContentPanel
             // 
             this.tcPlanes.ContentPanel.Controls.Add(this.tlPlanes);
-            this.tcPlanes.ContentPanel.Size = new System.Drawing.Size(800, 478);
+            this.tcPlanes.ContentPanel.Size = new System.Drawing.Size(800, 453);
             this.tcPlanes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcPlanes.Location = new System.Drawing.Point(0, 0);
             this.tcPlanes.Name = "tcPlanes";
@@ -61,24 +67,31 @@ namespace UI.Desktop.Inscribirse
             this.tcPlanes.TabIndex = 2;
             this.tcPlanes.Text = "toolStripContainer1";
             // 
-            // tlPlanes
+            // tcPlanes.TopToolStripPanel
             // 
-            this.tlPlanes.ColumnCount = 2;
-            this.tlPlanes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlPlanes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tlPlanes.Controls.Add(this.dgvComInscribirse, 0, 0);
-            this.tlPlanes.Controls.Add(this.btnSalir, 1, 2);
-            this.tlPlanes.Controls.Add(this.btnActualizar, 0, 2);
-            this.tlPlanes.Controls.Add(this.btnInscribirse, 1, 1);
-            this.tlPlanes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlPlanes.Location = new System.Drawing.Point(0, 0);
-            this.tlPlanes.Name = "tlPlanes";
-            this.tlPlanes.RowCount = 3;
-            this.tlPlanes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlPlanes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tlPlanes.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlPlanes.Size = new System.Drawing.Size(800, 478);
-            this.tlPlanes.TabIndex = 0;
+            this.tcPlanes.TopToolStripPanel.Controls.Add(this.toolStrip1);
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActualizar.Location = new System.Drawing.Point(641, 427);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.TabIndex = 1;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalir.Location = new System.Drawing.Point(722, 427);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 2;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // dgvComInscribirse
             // 
@@ -110,8 +123,27 @@ namespace UI.Desktop.Inscribirse
             this.dgvComInscribirse.Location = new System.Drawing.Point(3, 3);
             this.dgvComInscribirse.MultiSelect = false;
             this.dgvComInscribirse.Name = "dgvComInscribirse";
-            this.dgvComInscribirse.Size = new System.Drawing.Size(794, 412);
+            this.dgvComInscribirse.Size = new System.Drawing.Size(794, 410);
             this.dgvComInscribirse.TabIndex = 0;
+            // 
+            // Anio_Especialidad
+            // 
+            this.Anio_Especialidad.DataPropertyName = "AnioEspecialidad";
+            this.Anio_Especialidad.HeaderText = "Año Especialidad";
+            this.Anio_Especialidad.Name = "Anio_Especialidad";
+            this.Anio_Especialidad.Width = 160;
+            // 
+            // IDPlan
+            // 
+            this.IDPlan.DataPropertyName = "IDPlan";
+            this.IDPlan.HeaderText = "Id Plan";
+            this.IDPlan.Name = "IDPlan";
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "DescComision";
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
             // 
             // IDComision
             // 
@@ -121,58 +153,47 @@ namespace UI.Desktop.Inscribirse
             this.IDComision.ReadOnly = true;
             this.IDComision.Width = 150;
             // 
-            // Descripcion
+            // tlPlanes
             // 
-            this.Descripcion.DataPropertyName = "DescComision";
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
+            this.tlPlanes.ColumnCount = 2;
+            this.tlPlanes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlPlanes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlPlanes.Controls.Add(this.dgvComInscribirse, 0, 0);
+            this.tlPlanes.Controls.Add(this.btnSalir, 1, 2);
+            this.tlPlanes.Controls.Add(this.btnActualizar, 0, 2);
+            this.tlPlanes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlPlanes.Location = new System.Drawing.Point(0, 0);
+            this.tlPlanes.Name = "tlPlanes";
+            this.tlPlanes.RowCount = 3;
+            this.tlPlanes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlPlanes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tlPlanes.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlPlanes.Size = new System.Drawing.Size(800, 453);
+            this.tlPlanes.TabIndex = 0;
             // 
-            // IDPlan
+            // contextMenuStrip1
             // 
-            this.IDPlan.DataPropertyName = "IDPlan";
-            this.IDPlan.HeaderText = "Id Plan";
-            this.IDPlan.Name = "IDPlan";
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // Anio_Especialidad
+            // toolStrip1
             // 
-            this.Anio_Especialidad.DataPropertyName = "AnioEspecialidad";
-            this.Anio_Especialidad.HeaderText = "Año Especialidad";
-            this.Anio_Especialidad.Name = "Anio_Especialidad";
-            this.Anio_Especialidad.Width = 160;
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalir.Location = new System.Drawing.Point(722, 452);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 2;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.Location = new System.Drawing.Point(617, 452);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
-            this.btnActualizar.TabIndex = 1;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnInscribirse});
+            this.toolStrip1.Location = new System.Drawing.Point(3, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(107, 25);
+            this.toolStrip1.TabIndex = 0;
             // 
             // btnInscribirse
             // 
-            this.btnInscribirse.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnInscribirse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInscribirse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInscribirse.Location = new System.Drawing.Point(698, 421);
+            this.btnInscribirse.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnInscribirse.Image = ((System.Drawing.Image)(resources.GetObject("btnInscribirse.Image")));
+            this.btnInscribirse.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnInscribirse.Name = "btnInscribirse";
-            this.btnInscribirse.Size = new System.Drawing.Size(99, 23);
-            this.btnInscribirse.TabIndex = 3;
+            this.btnInscribirse.Size = new System.Drawing.Size(64, 22);
             this.btnInscribirse.Text = "Inscribirse";
-            this.btnInscribirse.UseVisualStyleBackColor = false;
             this.btnInscribirse.Click += new System.EventHandler(this.btnInscribirse_Click);
             // 
             // ComisionesInscribirse
@@ -185,10 +206,14 @@ namespace UI.Desktop.Inscribirse
             this.Text = "ComisionesInscribirse";
             this.Load += new System.EventHandler(this.ComisionesInscribirse_Load);
             this.tcPlanes.ContentPanel.ResumeLayout(false);
+            this.tcPlanes.TopToolStripPanel.ResumeLayout(false);
+            this.tcPlanes.TopToolStripPanel.PerformLayout();
             this.tcPlanes.ResumeLayout(false);
             this.tcPlanes.PerformLayout();
-            this.tlPlanes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvComInscribirse)).EndInit();
+            this.tlPlanes.ResumeLayout(false);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -204,6 +229,8 @@ namespace UI.Desktop.Inscribirse
         private System.Windows.Forms.DataGridViewTextBoxColumn Anio_Especialidad;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnActualizar;
-        private System.Windows.Forms.Button btnInscribirse;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton btnInscribirse;
     }
 }
