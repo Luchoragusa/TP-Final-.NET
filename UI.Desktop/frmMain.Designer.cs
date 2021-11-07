@@ -118,7 +118,7 @@ namespace UI.Desktop
             this.btnAdminReporteCom.Name = "btnAdminReporteCom";
             this.btnAdminReporteCom.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAdminReporteCom.Size = new System.Drawing.Size(242, 40);
-            this.btnAdminReporteCom.TabIndex = 15;
+            this.btnAdminReporteCom.TabIndex = 11;
             this.btnAdminReporteCom.Text = "Reporte Comision";
             this.btnAdminReporteCom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdminReporteCom.UseVisualStyleBackColor = true;
@@ -134,7 +134,7 @@ namespace UI.Desktop
             this.btnAdminReporteAlu.Name = "btnAdminReporteAlu";
             this.btnAdminReporteAlu.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAdminReporteAlu.Size = new System.Drawing.Size(242, 40);
-            this.btnAdminReporteAlu.TabIndex = 14;
+            this.btnAdminReporteAlu.TabIndex = 10;
             this.btnAdminReporteAlu.Text = "Reporte de Personas";
             this.btnAdminReporteAlu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdminReporteAlu.UseVisualStyleBackColor = true;
@@ -150,7 +150,7 @@ namespace UI.Desktop
             this.btnAdminRegistrarNota.Name = "btnAdminRegistrarNota";
             this.btnAdminRegistrarNota.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAdminRegistrarNota.Size = new System.Drawing.Size(242, 40);
-            this.btnAdminRegistrarNota.TabIndex = 13;
+            this.btnAdminRegistrarNota.TabIndex = 9;
             this.btnAdminRegistrarNota.Text = "Registrar Nota";
             this.btnAdminRegistrarNota.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdminRegistrarNota.UseVisualStyleBackColor = true;
@@ -166,7 +166,7 @@ namespace UI.Desktop
             this.btnAdminPersona.Name = "btnAdminPersona";
             this.btnAdminPersona.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAdminPersona.Size = new System.Drawing.Size(242, 40);
-            this.btnAdminPersona.TabIndex = 11;
+            this.btnAdminPersona.TabIndex = 8;
             this.btnAdminPersona.Text = "Persona";
             this.btnAdminPersona.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdminPersona.UseVisualStyleBackColor = true;
@@ -182,7 +182,7 @@ namespace UI.Desktop
             this.btnAdminAlum_Insc.Name = "btnAdminAlum_Insc";
             this.btnAdminAlum_Insc.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAdminAlum_Insc.Size = new System.Drawing.Size(242, 40);
-            this.btnAdminAlum_Insc.TabIndex = 10;
+            this.btnAdminAlum_Insc.TabIndex = 7;
             this.btnAdminAlum_Insc.Text = "Alumno Inscripcion";
             this.btnAdminAlum_Insc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdminAlum_Insc.UseVisualStyleBackColor = true;
@@ -198,7 +198,7 @@ namespace UI.Desktop
             this.btnAdminDocenteCurso.Name = "btnAdminDocenteCurso";
             this.btnAdminDocenteCurso.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAdminDocenteCurso.Size = new System.Drawing.Size(242, 40);
-            this.btnAdminDocenteCurso.TabIndex = 9;
+            this.btnAdminDocenteCurso.TabIndex = 7;
             this.btnAdminDocenteCurso.Text = "Docente Curso";
             this.btnAdminDocenteCurso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdminDocenteCurso.UseVisualStyleBackColor = true;
@@ -214,7 +214,7 @@ namespace UI.Desktop
             this.btnAdminCurso.Name = "btnAdminCurso";
             this.btnAdminCurso.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAdminCurso.Size = new System.Drawing.Size(242, 40);
-            this.btnAdminCurso.TabIndex = 12;
+            this.btnAdminCurso.TabIndex = 6;
             this.btnAdminCurso.Text = "Curso";
             this.btnAdminCurso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdminCurso.UseVisualStyleBackColor = true;
@@ -230,7 +230,7 @@ namespace UI.Desktop
             this.btnAdminEspecialidad.Name = "btnAdminEspecialidad";
             this.btnAdminEspecialidad.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAdminEspecialidad.Size = new System.Drawing.Size(242, 40);
-            this.btnAdminEspecialidad.TabIndex = 8;
+            this.btnAdminEspecialidad.TabIndex = 5;
             this.btnAdminEspecialidad.Text = "Especialidad";
             this.btnAdminEspecialidad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdminEspecialidad.UseVisualStyleBackColor = true;
@@ -246,7 +246,7 @@ namespace UI.Desktop
             this.btnAdminMateria.Name = "btnAdminMateria";
             this.btnAdminMateria.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAdminMateria.Size = new System.Drawing.Size(242, 40);
-            this.btnAdminMateria.TabIndex = 7;
+            this.btnAdminMateria.TabIndex = 4;
             this.btnAdminMateria.Text = "Materia";
             this.btnAdminMateria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdminMateria.UseVisualStyleBackColor = true;
@@ -262,7 +262,7 @@ namespace UI.Desktop
             this.btnAdminPlan.Name = "btnAdminPlan";
             this.btnAdminPlan.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAdminPlan.Size = new System.Drawing.Size(242, 40);
-            this.btnAdminPlan.TabIndex = 6;
+            this.btnAdminPlan.TabIndex = 3;
             this.btnAdminPlan.Text = "Plan";
             this.btnAdminPlan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdminPlan.UseVisualStyleBackColor = true;
@@ -278,7 +278,7 @@ namespace UI.Desktop
             this.btnAdminComision.Name = "btnAdminComision";
             this.btnAdminComision.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAdminComision.Size = new System.Drawing.Size(242, 40);
-            this.btnAdminComision.TabIndex = 5;
+            this.btnAdminComision.TabIndex = 2;
             this.btnAdminComision.Text = "Comision";
             this.btnAdminComision.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdminComision.UseVisualStyleBackColor = true;
@@ -294,7 +294,7 @@ namespace UI.Desktop
             this.btnAdminUsuario.Name = "btnAdminUsuario";
             this.btnAdminUsuario.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAdminUsuario.Size = new System.Drawing.Size(242, 40);
-            this.btnAdminUsuario.TabIndex = 4;
+            this.btnAdminUsuario.TabIndex = 1;
             this.btnAdminUsuario.Text = "Usuario";
             this.btnAdminUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdminUsuario.UseVisualStyleBackColor = true;
@@ -338,7 +338,7 @@ namespace UI.Desktop
             this.btnInscripcionCurso.Name = "btnInscripcionCurso";
             this.btnInscripcionCurso.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnInscripcionCurso.Size = new System.Drawing.Size(242, 40);
-            this.btnInscripcionCurso.TabIndex = 4;
+            this.btnInscripcionCurso.TabIndex = 2;
             this.btnInscripcionCurso.Text = "Cursos del docente";
             this.btnInscripcionCurso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInscripcionCurso.UseVisualStyleBackColor = true;
@@ -354,7 +354,7 @@ namespace UI.Desktop
             this.btnRegistroNotas.Name = "btnRegistroNotas";
             this.btnRegistroNotas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnRegistroNotas.Size = new System.Drawing.Size(242, 40);
-            this.btnRegistroNotas.TabIndex = 3;
+            this.btnRegistroNotas.TabIndex = 1;
             this.btnRegistroNotas.Text = "Registrar Notas";
             this.btnRegistroNotas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRegistroNotas.UseVisualStyleBackColor = true;
@@ -401,7 +401,7 @@ namespace UI.Desktop
             this.btnInscribirse.Name = "btnInscribirse";
             this.btnInscribirse.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnInscribirse.Size = new System.Drawing.Size(242, 44);
-            this.btnInscribirse.TabIndex = 8;
+            this.btnInscribirse.TabIndex = 5;
             this.btnInscribirse.Text = "Inscribirse a Cursado";
             this.btnInscribirse.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInscribirse.UseVisualStyleBackColor = true;
@@ -417,7 +417,7 @@ namespace UI.Desktop
             this.btnPersonaAlumno.Name = "btnPersonaAlumno";
             this.btnPersonaAlumno.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnPersonaAlumno.Size = new System.Drawing.Size(242, 44);
-            this.btnPersonaAlumno.TabIndex = 7;
+            this.btnPersonaAlumno.TabIndex = 4;
             this.btnPersonaAlumno.Text = "PersonaAlumno";
             this.btnPersonaAlumno.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPersonaAlumno.UseVisualStyleBackColor = true;
@@ -433,7 +433,7 @@ namespace UI.Desktop
             this.btnAluMateria.Name = "btnAluMateria";
             this.btnAluMateria.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAluMateria.Size = new System.Drawing.Size(242, 40);
-            this.btnAluMateria.TabIndex = 4;
+            this.btnAluMateria.TabIndex = 3;
             this.btnAluMateria.Text = "Materia";
             this.btnAluMateria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAluMateria.UseVisualStyleBackColor = true;
@@ -449,7 +449,7 @@ namespace UI.Desktop
             this.btnAluComision.Name = "btnAluComision";
             this.btnAluComision.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAluComision.Size = new System.Drawing.Size(242, 40);
-            this.btnAluComision.TabIndex = 3;
+            this.btnAluComision.TabIndex = 2;
             this.btnAluComision.Text = "Comision";
             this.btnAluComision.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAluComision.UseVisualStyleBackColor = true;
@@ -465,7 +465,7 @@ namespace UI.Desktop
             this.btnInscripciones.Name = "btnInscripciones";
             this.btnInscripciones.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnInscripciones.Size = new System.Drawing.Size(242, 40);
-            this.btnInscripciones.TabIndex = 2;
+            this.btnInscripciones.TabIndex = 1;
             this.btnInscripciones.Text = "Inscripciones";
             this.btnInscripciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInscripciones.UseVisualStyleBackColor = true;
