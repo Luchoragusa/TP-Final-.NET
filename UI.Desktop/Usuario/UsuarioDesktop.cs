@@ -19,6 +19,7 @@ namespace UI.Desktop
         public UsuarioDesktop(ModoForm modo) : this()
         {
             this.Modo = modo;
+            MapearDeDatos();
         }
         public UsuarioDesktop(int ID, ModoForm modo) : this()
         {
@@ -46,9 +47,15 @@ namespace UI.Desktop
         }
         public override void MapearDeDatos()
         {
-            this.txtID.Text = this.UsuarioActual.ID.ToString();
-            this.chkHabilitado.Checked = this.UsuarioActual.Habilitado;
-            this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;              
+            if (Modo != ModoForm.Alta)
+            {
+                this.txtID.Text = this.UsuarioActual.ID.ToString();
+                this.chkHabilitado.Checked = this.UsuarioActual.Habilitado;
+                this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
+                this.txtClave.Text = this.UsuarioActual.Clave;
+                this.txtConfClave.Text = this.UsuarioActual.Clave;
+            }
+
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
                 this.btnModo.Text = "Guardar";
@@ -61,11 +68,6 @@ namespace UI.Desktop
                 this.txtUsuario.Enabled = false;
                 this.txtConfClave.Enabled = false;
                 this.txtClave.Enabled = false;
-
-            }
-            else if (Modo == ModoForm.Consulta)
-            {
-                this.btnModo.Text = "Aceptar";
             }
         }
 

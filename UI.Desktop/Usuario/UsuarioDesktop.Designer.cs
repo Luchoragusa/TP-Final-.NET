@@ -49,7 +49,7 @@ namespace UI.Desktop
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.68919F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.31081F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 83F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 84F));
             this.tableLayoutPanel1.Controls.Add(this.txtID, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblID, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblUsuario, 0, 1);
@@ -79,7 +79,7 @@ namespace UI.Desktop
             this.txtID.Location = new System.Drawing.Point(98, 20);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(255, 20);
+            this.txtID.Size = new System.Drawing.Size(254, 20);
             this.txtID.TabIndex = 0;
             // 
             // lblID
@@ -107,7 +107,7 @@ namespace UI.Desktop
             this.txtUsuario.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtUsuario.Location = new System.Drawing.Point(98, 80);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(255, 20);
+            this.txtUsuario.Size = new System.Drawing.Size(254, 20);
             this.txtUsuario.TabIndex = 5;
             // 
             // txtClave
@@ -116,7 +116,7 @@ namespace UI.Desktop
             this.txtClave.Location = new System.Drawing.Point(98, 140);
             this.txtClave.Name = "txtClave";
             this.txtClave.PasswordChar = '*';
-            this.txtClave.Size = new System.Drawing.Size(255, 20);
+            this.txtClave.Size = new System.Drawing.Size(254, 20);
             this.txtClave.TabIndex = 3;
             // 
             // lblClave
@@ -144,7 +144,8 @@ namespace UI.Desktop
             this.txtConfClave.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtConfClave.Location = new System.Drawing.Point(98, 200);
             this.txtConfClave.Name = "txtConfClave";
-            this.txtConfClave.Size = new System.Drawing.Size(255, 20);
+            this.txtConfClave.PasswordChar = '*';
+            this.txtConfClave.Size = new System.Drawing.Size(254, 20);
             this.txtConfClave.TabIndex = 17;
             // 
             // chkHabilitado
@@ -161,7 +162,7 @@ namespace UI.Desktop
             // btnCancelar
             // 
             this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnCancelar.Location = new System.Drawing.Point(278, 258);
+            this.btnCancelar.Location = new System.Drawing.Point(277, 258);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 8;
