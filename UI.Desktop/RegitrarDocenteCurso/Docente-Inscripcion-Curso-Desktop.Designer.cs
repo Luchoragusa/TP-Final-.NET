@@ -37,9 +37,9 @@ namespace UI.Desktop
             this.lblDCurso = new System.Windows.Forms.Label();
             this.lblIDDocente = new System.Windows.Forms.Label();
             this.lblCargo = new System.Windows.Forms.Label();
-            this.txtCargo = new System.Windows.Forms.TextBox();
             this.btnModo = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.cbTipoCargo = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,9 +55,9 @@ namespace UI.Desktop
             this.tableLayoutPanel1.Controls.Add(this.lblDCurso, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblIDDocente, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.lblCargo, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.txtCargo, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.btnModo, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.cbTipoCargo, 1, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -65,9 +65,9 @@ namespace UI.Desktop
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(338, 286);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(338, 270);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // txtIDDictado
@@ -129,24 +129,16 @@ namespace UI.Desktop
             // 
             this.lblCargo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblCargo.AutoSize = true;
-            this.lblCargo.Location = new System.Drawing.Point(3, 203);
+            this.lblCargo.Location = new System.Drawing.Point(3, 200);
             this.lblCargo.Name = "lblCargo";
             this.lblCargo.Size = new System.Drawing.Size(35, 13);
             this.lblCargo.TabIndex = 13;
             this.lblCargo.Text = "Cargo";
             // 
-            // txtCargo
-            // 
-            this.txtCargo.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtCargo.Location = new System.Drawing.Point(106, 200);
-            this.txtCargo.Name = "txtCargo";
-            this.txtCargo.Size = new System.Drawing.Size(229, 20);
-            this.txtCargo.TabIndex = 14;
-            // 
             // btnModo
             // 
             this.btnModo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnModo.Location = new System.Drawing.Point(15, 251);
+            this.btnModo.Location = new System.Drawing.Point(15, 240);
             this.btnModo.Name = "btnModo";
             this.btnModo.Size = new System.Drawing.Size(73, 23);
             this.btnModo.TabIndex = 7;
@@ -157,7 +149,7 @@ namespace UI.Desktop
             // btnCancelar
             // 
             this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnCancelar.Location = new System.Drawing.Point(106, 251);
+            this.btnCancelar.Location = new System.Drawing.Point(106, 240);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 8;
@@ -165,10 +157,23 @@ namespace UI.Desktop
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // cbTipoCargo
+            // 
+            this.cbTipoCargo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbTipoCargo.FormattingEnabled = true;
+            this.cbTipoCargo.Items.AddRange(new object[] {
+            "Titular",
+            "Auxiliar",
+            "JefeCatedra"});
+            this.cbTipoCargo.Location = new System.Drawing.Point(106, 196);
+            this.cbTipoCargo.Name = "cbTipoCargo";
+            this.cbTipoCargo.Size = new System.Drawing.Size(229, 21);
+            this.cbTipoCargo.TabIndex = 14;
+            // 
             // DICDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(338, 286);
+            this.ClientSize = new System.Drawing.Size(338, 270);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "DICDesktop";
             this.Text = "Insrcipcion a curso";
@@ -190,6 +195,6 @@ namespace UI.Desktop
         private System.Windows.Forms.Button btnModo;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lblCargo;
-        private System.Windows.Forms.TextBox txtCargo;
+        private System.Windows.Forms.ComboBox cbTipoCargo;
     }
 }

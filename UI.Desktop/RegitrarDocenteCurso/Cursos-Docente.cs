@@ -48,18 +48,9 @@ namespace UI.Desktop.RegitrarDocenteCurso
             this.Close();
         }
 
-        private void tsbIngresar_Click(object sender, EventArgs e)
+        private void tsbNuevo_Click(object sender, EventArgs e)
         {
-            if (this.dgvCursosDocente.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Accion Invalida", "Seleccione una fila", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-
-            }
-            int ID = ((Business.Entities.Curso)this.dgvCursosDocente.SelectedRows[0].DataBoundItem).ID;
-
-            Docente_Alumnos docente_alumnos = new Docente_Alumnos(ID);
-
+            DICDesktop docente_alumnos = new DICDesktop(ApplicationForm.ModoForm.Alta);
             try
             {
                 docente_alumnos.ShowDialog();
@@ -71,19 +62,44 @@ namespace UI.Desktop.RegitrarDocenteCurso
             }
         }
 
-        private void tsbNuevo_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void tsbEditar_Click(object sender, EventArgs e)
         {
-
+            if (this.dgvCursosDocente.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Accion Invalida", "Seleccione una fila", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            int ID = ((Business.Entities.Entidades.DocenteCurso)this.dgvCursosDocente.SelectedRows[0].DataBoundItem).ID;
+            DICDesktop docente_alumnos = new DICDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+            try
+            {
+                docente_alumnos.ShowDialog();
+                this.Listar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "Error detected: ", "Ha habido un error interno.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            if (this.dgvCursosDocente.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Accion Invalida", "Seleccione una fila", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            int ID = ((Business.Entities.Entidades.DocenteCurso)this.dgvCursosDocente.SelectedRows[0].DataBoundItem).ID;
+            DICDesktop docente_alumnos = new DICDesktop(ID, ApplicationForm.ModoForm.Baja);
+            try
+            {
+                docente_alumnos.ShowDialog();
+                this.Listar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "Error detected: ", "Ha habido un error interno.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void Cursos_Docente_Load(object sender, EventArgs e)

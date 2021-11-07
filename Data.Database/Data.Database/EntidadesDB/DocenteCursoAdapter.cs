@@ -236,29 +236,20 @@ namespace Data.Database.EntidadesDB
                 SqlDataReader drDocenteCursos = cmdDocenteCursos.ExecuteReader();
                 if (drDocenteCursos != null)
                 {
-
-                    while (drDocenteCursos.Read())
-                    {
-                        DocenteCurso.ID = (int)drDocenteCursos["id_dictado"];
-                        DocenteCurso.IDCurso = (int)drDocenteCursos["id_curso"];
-                        DocenteCurso.IDDocente = (int)drDocenteCursos["id_docente"];
-                        int cargo = (int)drDocenteCursos["cargo"];
-
-                        if (cargo == (int)DocenteCurso.TipoCargos.Titular)
-                            DocenteCurso.Cargo = DocenteCurso.TipoCargos.Titular;
-
-                        else if (cargo == (int)DocenteCurso.TipoCargos.Auxiliar)
-                            DocenteCurso.Cargo = DocenteCurso.TipoCargos.Auxiliar;
-
-                        else if (cargo == (int)DocenteCurso.TipoCargos.JefeCatedra)
-                            DocenteCurso.Cargo = DocenteCurso.TipoCargos.JefeCatedra;
-                    }
-                    
                     drDocenteCursos.Read();
+                    DocenteCurso.ID = (int)drDocenteCursos["id_dictado"];
                     DocenteCurso.IDCurso = (int)drDocenteCursos["id_curso"];
                     DocenteCurso.IDDocente = (int)drDocenteCursos["id_docente"];
-                    DocenteCurso.Cargo = (DocenteCurso.TipoCargos)drDocenteCursos["cargo"];
+                    int cargo = (int)drDocenteCursos["cargo"];
 
+                    if (cargo == (int)DocenteCurso.TipoCargos.Titular)
+                        DocenteCurso.Cargo = DocenteCurso.TipoCargos.Titular;
+
+                    else if (cargo == (int)DocenteCurso.TipoCargos.Auxiliar)
+                        DocenteCurso.Cargo = DocenteCurso.TipoCargos.Auxiliar;
+
+                    else if (cargo == (int)DocenteCurso.TipoCargos.JefeCatedra)
+                        DocenteCurso.Cargo = DocenteCurso.TipoCargos.JefeCatedra;
                 }
                 drDocenteCursos.Close();
             }
@@ -299,13 +290,11 @@ namespace Data.Database.EntidadesDB
             try
             {
                 OpenConnection();
-                SqlCommand cmdSave = new SqlCommand("INSERT INTO docentes_cursos (id_dictado,id_curso, id_docente, cargo) values(@id_dictado,@id_curso,@id_docente,@cargo) select @@identity ", sqlConn);
-
-                cmdSave.Parameters.Add("@id_curso", SqlDbType.VarChar, 50).Value = DocenteCurso.IDCurso;
-                cmdSave.Parameters.Add("@id_docente", SqlDbType.VarChar, 50).Value = DocenteCurso.IDDocente;
-                cmdSave.Parameters.Add("@cargo", SqlDbType.VarChar, 50).Value = DocenteCurso.Cargo;
-
-                DocenteCurso.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
+                SqlCommand cmdSave = new SqlCommand("INSERT INTO docentes_cursos (id_curso, id_docente, cargo) values(@id_curso, @id_docente, @cargo)", sqlConn);
+                cmdSave.Parameters.Add("@id_curso", SqlDbType.Int).Value = DocenteCurso.IDCurso;
+                cmdSave.Parameters.Add("@id_docente", SqlDbType.Int).Value = DocenteCurso.IDDocente;
+                cmdSave.Parameters.Add("@cargo", SqlDbType.Int).Value = DocenteCurso.Cargo;
+                cmdSave.ExecuteNonQuery();
             }
             catch (Exception Ex)
             {
@@ -323,11 +312,12 @@ namespace Data.Database.EntidadesDB
             try
             {
                 OpenConnection();
-                SqlCommand cmdUpd = new SqlCommand("UPDATE docentes_cursos SET id_curso = @id_curso, id_docente = @id_docente, cargo = @cargo HERE id_dictado = @id ", sqlConn);
+                SqlCommand cmdUpd = new SqlCommand("UPDATE docentes_cursos SET id_curso = @id_curso, id_docente = @id_docente, cargo=@cargo WHERE id_dictado = @id ", sqlConn);
 
-                cmdUpd.Parameters.Add("@id_curso", SqlDbType.VarChar, 50).Value = DocenteCurso.IDCurso;
-                cmdUpd.Parameters.Add("@id_docente", SqlDbType.VarChar, 50).Value = DocenteCurso.IDDocente;
-                cmdUpd.Parameters.Add("@cargo", SqlDbType.VarChar, 50).Value = DocenteCurso.Cargo;
+                cmdUpd.Parameters.Add("@id", SqlDbType.Int).Value = DocenteCurso.ID;
+                cmdUpd.Parameters.Add("@id_curso", SqlDbType.Int).Value = DocenteCurso.IDCurso;
+                cmdUpd.Parameters.Add("@id_docente", SqlDbType.Int).Value = DocenteCurso.IDDocente;
+                cmdUpd.Parameters.Add("@cargo", SqlDbType.Int).Value = DocenteCurso.Cargo;
 
                 cmdUpd.ExecuteNonQuery();
             }

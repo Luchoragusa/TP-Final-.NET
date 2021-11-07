@@ -60,7 +60,7 @@ namespace UI.Desktop
                 this.txtIDDictado.Text = this.DCActual.ID.ToString();
                 this.txtIDCurso.Text = this.DCActual.IDCurso.ToString();
                 this.txtIDDocente.Text = this.DCActual.IDDocente.ToString();
-                this.txtCargo.Text = this.DCActual.Cargo.ToString();
+                this.cbTipoCargo.Text = this.DCActual.Cargo.ToString();
 
                 if (Modo == ModoForm.Modificacion) this.btnModo.Text = "Guardar";
                 else if (Modo == ModoForm.Baja)
@@ -70,7 +70,7 @@ namespace UI.Desktop
                     this.txtIDDictado.Enabled = false;
                     this.txtIDCurso.Enabled = false;
                     this.txtIDDocente.Enabled = false;
-                    this.txtCargo.Enabled = false;
+                    this.cbTipoCargo.Enabled = false;
                 }
             }
         }
@@ -92,7 +92,13 @@ namespace UI.Desktop
                 }
                 this.DCActual.IDCurso = Convert.ToInt32(this.txtIDCurso.Text);
                 this.DCActual.IDDocente = Convert.ToInt32(this.txtIDDocente.Text);
-                this.DCActual.Cargo = (Business.Entities.Entidades.DocenteCurso.TipoCargos)Convert.ToInt32(this.txtCargo.Text);
+                
+                if (cbTipoCargo.Text == "Titular")
+                    this.DCActual.Cargo = Business.Entities.Entidades.DocenteCurso.TipoCargos.Titular;
+                else if (cbTipoCargo.Text == "Auxiliar")
+                    this.DCActual.Cargo = Business.Entities.Entidades.DocenteCurso.TipoCargos.Auxiliar;
+                else
+                    this.DCActual.Cargo = Business.Entities.Entidades.DocenteCurso.TipoCargos.Auxiliar;
             }
 
             if (this.Modo == ModoForm.Baja) DCActual.State = BusinessEntity.States.Deleted;
@@ -114,12 +120,11 @@ namespace UI.Desktop
 
         public override bool Validar()
         {
-            if (txtIDCurso.Text.Equals(String.Empty) || txtIDDocente.Text.Equals(String.Empty) || txtCargo.Text.Equals(String.Empty))
+            if (txtIDCurso.Text.Equals(String.Empty) || txtIDDocente.Text.Equals(String.Empty) || cbTipoCargo.Text.Equals(String.Empty))
             {
                 Notificar("Algunos de los campos están vaciós", "Complete todos para continuar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-
             if (!Validaciones.validarTexto(txtIDCurso.Text))
             {
                 Notificar("ID del curso incorrecta.", "Intente nuevamente",
@@ -129,12 +134,6 @@ namespace UI.Desktop
             if (!Validaciones.validarTexto(txtIDDocente.Text))    
             {
                 Notificar("ID del docente incorrecta.", "Intente nuevamente",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            if (!Validaciones.validarTexto(txtCargo.Text))
-            {
-                Notificar("Cargo incorrecto.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
