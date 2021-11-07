@@ -25,6 +25,9 @@ namespace UI.Web
                     btnRegistrarNota.Visible = false;
                     lblAdmin.Visible = false;
                     btnEspecialidad.Visible = false;
+                    lblAdmin.Visible = false;
+                    btnReporteAlumno.Visible = false;
+                    btnReporteComision.Visible = false;
                     break;
                 case 2:     //docente
                     lblAdmin.Visible = false;
@@ -32,8 +35,8 @@ namespace UI.Web
                     lblAlumno.Visible = false;
                     btnComision.Visible = false;
                     btnEspecialidad.Visible = false;
-                    Business.Entities.Entidades.DocenteCurso docente = new Business.Entities.Entidades.DocenteCurso();
-
+                    btnReporteAlumno.Visible = false;
+                    btnReporteComision.Visible = false;
 
                 //HACER UN CASE 4 ??? SERIA LA PERSONA QUE ENTRA POR PRIMERA VEZ
 
