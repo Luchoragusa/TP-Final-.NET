@@ -42,7 +42,6 @@ namespace UI.Web
             this.gridView.DataBind();
         }
 
-
         public FormModes FormMode
         {
             get
@@ -54,14 +53,11 @@ namespace UI.Web
                 this.ViewState["FormMode"] = value;
             }
         }
-
-
         public Business.Entities.Comision Entity
         {
             get;
             set;
         }
-
 
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -70,6 +66,7 @@ namespace UI.Web
 
         protected void LoadForm(int id)
         {
+            Entity = new Business.Entities.Comision();
             this.Entity.ID = id;
             this.Entity = this.Logic.GetOne(Entity);
 
