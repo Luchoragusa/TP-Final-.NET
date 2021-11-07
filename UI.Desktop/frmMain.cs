@@ -109,7 +109,7 @@ namespace UI.Desktop
         {
             mostrarSubMenu(panelDocSubMenu);
         }
-        private void btnDocDocenteCurso_Click(object sender, EventArgs e)
+        private void btnRegistroNotas_Click(object sender, EventArgs e)
         {
             abrirFormHijo(new DocenteCurso.DocenteMateria(us));
         }
@@ -143,9 +143,9 @@ namespace UI.Desktop
             abrirFormHijo(new Especialidad());
         }
 
-        private void btnDocRegistrarNota_Click(object sender, EventArgs e)
+        private void btnInscripcionCurso_Click(object sender, EventArgs e)
         {
-            abrirFormHijo(new UI.Desktop.Curso.CursosNotas(us));
+            abrirFormHijo(new Curso.CursosNotas(us));
         }
 
         private void btnAdminUsuario_Click(object sender, EventArgs e)

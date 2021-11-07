@@ -46,10 +46,11 @@ namespace UI.Desktop
             this.btnAdminUsuario = new System.Windows.Forms.Button();
             this.btnAdmin = new System.Windows.Forms.Button();
             this.panelDocSubMenu = new System.Windows.Forms.Panel();
-            this.btnDocRegistrarNota = new System.Windows.Forms.Button();
+            this.btnInscripcionCurso = new System.Windows.Forms.Button();
             this.btnRegistroNotas = new System.Windows.Forms.Button();
             this.btnDoc = new System.Windows.Forms.Button();
             this.panelAluSubMenu = new System.Windows.Forms.Panel();
+            this.btnInscribirse = new System.Windows.Forms.Button();
             this.btnPersonaAlumno = new System.Windows.Forms.Button();
             this.btnAluEspecialidad = new System.Windows.Forms.Button();
             this.btnAluPlan = new System.Windows.Forms.Button();
@@ -61,7 +62,6 @@ namespace UI.Desktop
             this.pboxAcademia = new System.Windows.Forms.PictureBox();
             this.panelCont = new System.Windows.Forms.Panel();
             this.pboxUTN = new System.Windows.Forms.PictureBox();
-            this.btnInscribirse = new System.Windows.Forms.Button();
             this.panelMain.SuspendLayout();
             this.panelAdminSubMenu.SuspendLayout();
             this.panelDocSubMenu.SuspendLayout();
@@ -322,7 +322,7 @@ namespace UI.Desktop
             // panelDocSubMenu
             // 
             this.panelDocSubMenu.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panelDocSubMenu.Controls.Add(this.btnDocRegistrarNota);
+            this.panelDocSubMenu.Controls.Add(this.btnInscripcionCurso);
             this.panelDocSubMenu.Controls.Add(this.btnRegistroNotas);
             this.panelDocSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelDocSubMenu.Location = new System.Drawing.Point(0, 458);
@@ -330,21 +330,21 @@ namespace UI.Desktop
             this.panelDocSubMenu.Size = new System.Drawing.Size(242, 79);
             this.panelDocSubMenu.TabIndex = 4;
             // 
-            // btnDocRegistrarNota
+            // btnInscripcionCurso
             // 
-            this.btnDocRegistrarNota.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDocRegistrarNota.FlatAppearance.BorderSize = 0;
-            this.btnDocRegistrarNota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDocRegistrarNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDocRegistrarNota.Location = new System.Drawing.Point(0, 40);
-            this.btnDocRegistrarNota.Name = "btnDocRegistrarNota";
-            this.btnDocRegistrarNota.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnDocRegistrarNota.Size = new System.Drawing.Size(242, 40);
-            this.btnDocRegistrarNota.TabIndex = 4;
-            this.btnDocRegistrarNota.Text = "Registrar Nota\r\n";
-            this.btnDocRegistrarNota.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDocRegistrarNota.UseVisualStyleBackColor = true;
-            this.btnDocRegistrarNota.Click += new System.EventHandler(this.btnDocRegistrarNota_Click);
+            this.btnInscripcionCurso.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnInscripcionCurso.FlatAppearance.BorderSize = 0;
+            this.btnInscripcionCurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInscripcionCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInscripcionCurso.Location = new System.Drawing.Point(0, 40);
+            this.btnInscripcionCurso.Name = "btnInscripcionCurso";
+            this.btnInscripcionCurso.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnInscripcionCurso.Size = new System.Drawing.Size(242, 40);
+            this.btnInscripcionCurso.TabIndex = 4;
+            this.btnInscripcionCurso.Text = "Incribirse a un curso";
+            this.btnInscripcionCurso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInscripcionCurso.UseVisualStyleBackColor = true;
+            this.btnInscripcionCurso.Click += new System.EventHandler(this.btnInscripcionCurso_Click);
             // 
             // btnRegistroNotas
             // 
@@ -360,7 +360,7 @@ namespace UI.Desktop
             this.btnRegistroNotas.Text = "Registrar Notas";
             this.btnRegistroNotas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRegistroNotas.UseVisualStyleBackColor = true;
-            this.btnRegistroNotas.Click += new System.EventHandler(this.btnDocDocenteCurso_Click);
+            this.btnRegistroNotas.Click += new System.EventHandler(this.btnRegistroNotas_Click);
             // 
             // btnDoc
             // 
@@ -394,6 +394,22 @@ namespace UI.Desktop
             this.panelAluSubMenu.Name = "panelAluSubMenu";
             this.panelAluSubMenu.Size = new System.Drawing.Size(242, 288);
             this.panelAluSubMenu.TabIndex = 2;
+            // 
+            // btnInscribirse
+            // 
+            this.btnInscribirse.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnInscribirse.FlatAppearance.BorderSize = 0;
+            this.btnInscribirse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInscribirse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInscribirse.Location = new System.Drawing.Point(0, 240);
+            this.btnInscribirse.Name = "btnInscribirse";
+            this.btnInscribirse.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnInscribirse.Size = new System.Drawing.Size(242, 44);
+            this.btnInscribirse.TabIndex = 8;
+            this.btnInscribirse.Text = "Inscribirse a Cursado";
+            this.btnInscribirse.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInscribirse.UseVisualStyleBackColor = true;
+            this.btnInscribirse.Click += new System.EventHandler(this.btnInscribirse_Click);
             // 
             // btnPersonaAlumno
             // 
@@ -545,22 +561,6 @@ namespace UI.Desktop
             this.pboxUTN.TabIndex = 0;
             this.pboxUTN.TabStop = false;
             // 
-            // btnInscribirse
-            // 
-            this.btnInscribirse.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnInscribirse.FlatAppearance.BorderSize = 0;
-            this.btnInscribirse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInscribirse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInscribirse.Location = new System.Drawing.Point(0, 240);
-            this.btnInscribirse.Name = "btnInscribirse";
-            this.btnInscribirse.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnInscribirse.Size = new System.Drawing.Size(242, 44);
-            this.btnInscribirse.TabIndex = 8;
-            this.btnInscribirse.Text = "Inscribirse a Cursado";
-            this.btnInscribirse.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInscribirse.UseVisualStyleBackColor = true;
-            this.btnInscribirse.Click += new System.EventHandler(this.btnInscribirse_Click);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -602,7 +602,7 @@ namespace UI.Desktop
         private System.Windows.Forms.Button btnAdminUsuario;
         private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Panel panelDocSubMenu;
-        private System.Windows.Forms.Button btnDocRegistrarNota;
+        private System.Windows.Forms.Button btnInscripcionCurso;
         private System.Windows.Forms.Button btnRegistroNotas;
         private System.Windows.Forms.Button btnDoc;
         private System.Windows.Forms.Panel panelAluSubMenu;
