@@ -20,15 +20,15 @@ namespace UI.Desktop.Inscribirse
         Business.Entities.Materia mate = new Business.Entities.Materia();
         Business.Entities.Curso curso = new Business.Entities.Curso();
         Alumnos_Inscripciones aluInsc = new Alumnos_Inscripciones();
-        Business.Entities.Usuario alumno = new Business.Entities.Usuario();
+        Business.Entities.Usuario usuario = new Business.Entities.Usuario();
         Personas persona = new Personas();
 
         public Business.Entities.Materia Mate { get => mate; set => mate = value; }
-        public ComisionesInscribirse(Business.Entities.Materia mat, Business.Entities.Usuario alu)
+        public ComisionesInscribirse(Business.Entities.Materia mat, Business.Entities.Usuario usu)
         {
             InitializeComponent();
             Mate = mat;
-            alumno = alu;
+            usuario = usu;
             this.dgvComInscribirse.AutoGenerateColumns = true;
             this.dgvComInscribirse.ReadOnly = true;
         }
@@ -59,7 +59,7 @@ namespace UI.Desktop.Inscribirse
             try
             {
                 curso = cursoL.getByMateria(Mate);      //trae los cursos de la materia
-                persona = perL.GetIDPersona(alumno);    //recuperar "id_persona" que es es igual a "id_alumno" 
+                persona = perL.GetIDPersona(usuario);    //recuperar "id_persona" que es es igual a "id_alumno" 
 
                 aluInsc.IDCurso = curso.ID;                
                 aluInsc.IDAlumno = persona.ID;
