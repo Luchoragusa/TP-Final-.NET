@@ -14,18 +14,35 @@ namespace UI.Desktop
 {
     public partial class Materia : Form
     {
+
+        Usuario _us;
+        Boolean _esAlumno = true;
         public Materia()
         {
             InitializeComponent();
             this.dgvMaterias.AutoGenerateColumns = false;
             this.dgvMaterias.ReadOnly = true;
+            _esAlumno = false;
+        }
+        public Materia(Usuario usuario)
+        {
+            InitializeComponent();
+            this.dgvMaterias.AutoGenerateColumns = false;
+            this.dgvMaterias.ReadOnly = true;
+            _us = usuario;
+            tsbEditar.Enabled = false;
+            tsbEliminar.Enabled = false;
+            tsbNuevo.Enabled = false;
         }
         public void Listar()
         {
             MateriaLogic mat = new MateriaLogic();
             try
             {
-                this.dgvMaterias.DataSource = mat.GetAll();
+                if(_esAlumno)
+                    this.dgvMaterias.DataSource = mat.GetAllByAlumno(_us);
+                else
+                    this.dgvMaterias.DataSource = mat.GetAll();
             }
             catch (Exception ex)
             {

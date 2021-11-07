@@ -45,7 +45,20 @@ namespace Business.Logic
                 Exception ExcepcionManejada = new Exception("Error al recuperar la lista de materias.", ex);
                 throw ExcepcionManejada;
             }               
-        }                                               
+        }
+
+        public List<Materia> GetAllByAlumno(Usuario us)
+        {
+            try
+            {
+                return MateriaData.GetAllByAlumno(us);
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar la lista de materias.", ex);
+                throw ExcepcionManejada;
+            }
+        }
 
         public void Save(Materia materia)
         {

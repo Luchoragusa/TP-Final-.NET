@@ -125,7 +125,7 @@ namespace UI.Desktop
 
         private void btnAluMateria_Click(object sender, EventArgs e)
         {
-            abrirFormHijo(new Materia());
+            abrirFormHijo(new Materia(us));
         }
 
         private void btnAluPlan_Click(object sender, EventArgs e)
