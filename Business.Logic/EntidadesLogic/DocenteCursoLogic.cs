@@ -49,11 +49,11 @@ namespace Business.Logic.EntidadesLogic
             }
         }
 
-        public List<Comision> GetAllComisionesDeLasMateriasDelDocente(Usuario docente, Materia materia)
+        public List<Comision> GetAllComisionesMateria(Usuario docente, Materia materia)
         {
             try
             {
-                return DocenteCursoData.GetAllComisionesDeLasMateriaslDelDocente(docente, materia);
+                return DocenteCursoData.GetAllComisionesMateria(docente, materia);
             }
             catch (Exception ex)
             {

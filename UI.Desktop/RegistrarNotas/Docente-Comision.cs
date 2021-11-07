@@ -36,7 +36,7 @@ namespace UI.Desktop.DocenteCurso
             DocenteCursoLogic dcl = new DocenteCursoLogic();
             try
             {
-                this.dgvDocenteMateriasCom.DataSource = dcl.GetAllComisionesDeLasMateriasDelDocente(docente, materia);
+                this.dgvDocenteMateriasCom.DataSource = dcl.GetAllComisionesMateria(docente, materia);
             }
             catch (Exception ex)
             {
