@@ -18,8 +18,6 @@ namespace UI.Desktop.DocenteCurso
     {
         Usuario docente = new Usuario();
         Business.Entities.Materia materia = new Business.Entities.Materia();
-
-
         public DocenteComision(int idMateria, Usuario docent)
         {
             InitializeComponent();
@@ -28,7 +26,6 @@ namespace UI.Desktop.DocenteCurso
             this.dgvDocenteMateriasCom.AutoGenerateColumns = false;
             this.dgvDocenteMateriasCom.ReadOnly = true;
         }
-
         private void DocenteMaterias_Comision_Load(object sender, EventArgs e)
         {
             this.Listar();
@@ -57,7 +54,7 @@ namespace UI.Desktop.DocenteCurso
             this.Close();
         }
 
-        private void tsbEditar_Click_1(object sender, EventArgs e)
+        private void tsbSeleccionar_Click(object sender, EventArgs e)
         {
             if (this.dgvDocenteMateriasCom.SelectedRows.Count == 0)
             {
@@ -65,10 +62,8 @@ namespace UI.Desktop.DocenteCurso
                 return;
 
             }
-            int ID = ((Business.Entities.Comision)this.dgvDocenteMateriasCom.SelectedRows[0].DataBoundItem).ID;
-
+            int ID = ((Comision)this.dgvDocenteMateriasCom.SelectedRows[0].DataBoundItem).ID;
             DcoenteCursos comision_cursos = new DcoenteCursos(ID, docente, materia);
-
             try
             {
                 comision_cursos.ShowDialog();
@@ -80,5 +75,4 @@ namespace UI.Desktop.DocenteCurso
             }
         }
     }
-
 }
