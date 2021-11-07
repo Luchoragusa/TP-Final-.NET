@@ -51,6 +51,53 @@ namespace Data.Database.EntidadesDB
             return DocenteCursoes;
         }
 
+        public List<DocenteCurso> getCursosDocente(Usuario docente)
+        {
+            List<DocenteCurso> cursosDelDocente = null;
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdCursos = new SqlCommand("select * from docentes_cursos dc inner join personas on personas.id_usuario = @id where personas.id_persona = dc.id_docente", sqlConn);
+                cmdCursos.Parameters.Add("@id", SqlDbType.Int).Value = docente.ID;
+                SqlDataReader drCursos = cmdCursos.ExecuteReader();
+
+                if (drCursos != null)
+                {
+                    cursosDelDocente = new List<DocenteCurso>();
+                    while (drCursos.Read())
+                    {
+                        DocenteCurso docenteCurso = new DocenteCurso();
+
+                        docenteCurso.ID = (int)drCursos["id_dictado"];
+                        docenteCurso.IDCurso = (int)drCursos["id_curso"];
+                        docenteCurso.IDDocente = (int)drCursos["id_docente"];
+                        int cargo = (int)drCursos["cargo"];
+
+
+                        if (cargo == (int)DocenteCurso.TipoCargos.Titular)
+                            docenteCurso.Cargo = DocenteCurso.TipoCargos.Titular;
+                        else if (cargo == (int)DocenteCurso.TipoCargos.Auxiliar)
+                            docenteCurso.Cargo = DocenteCurso.TipoCargos.Auxiliar;
+                        else
+                            docenteCurso.Cargo = DocenteCurso.TipoCargos.JefeCatedra;
+
+                        cursosDelDocente.Add(docenteCurso);
+                    }
+                }
+                drCursos.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar la lista de cursos", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+            return cursosDelDocente;
+        }
+
         public List<Materia> GetAllMateriaslDelDocente(Usuario docente)
         {
             List<Materia> materiasDelDocente = new List<Materia>();

@@ -36,6 +36,19 @@ namespace Business.Logic.EntidadesLogic
             }
         }
 
+        public List<DocenteCurso> getCursosDocente(Usuario docente)
+        {
+            try
+            {
+                return DocenteCursoData.getCursosDocente(docente);
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar la lista logica de de materias.", ex);
+                throw ExcepcionManejada;
+            }
+        }
+
         public List<Comision> GetAllComisionesDeLasMateriasDelDocente(Usuario docente, Materia materia)
         {
             try

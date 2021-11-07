@@ -36,7 +36,7 @@ namespace UI.Desktop.RegitrarDocenteCurso
             DocenteCursoLogic dcl = new DocenteCursoLogic();
             try
             {
-               // this.dgvCursosDocente.DataSource = dcl.GetAllCursosDeLaComision(docente, materia, comision);
+                this.dgvCursosDocente.DataSource = dcl.getCursosDocente(docente);
             }
             catch (Exception ex)
             {
