@@ -56,7 +56,7 @@ namespace UI.Desktop
             this.btnAluPlan = new System.Windows.Forms.Button();
             this.btnAluMateria = new System.Windows.Forms.Button();
             this.btnAluComision = new System.Windows.Forms.Button();
-            this.btnAluAlumnoInscripcion = new System.Windows.Forms.Button();
+            this.btnInscripciones = new System.Windows.Forms.Button();
             this.btnAlu = new System.Windows.Forms.Button();
             this.panelImg = new System.Windows.Forms.Panel();
             this.pboxAcademia = new System.Windows.Forms.PictureBox();
@@ -388,7 +388,7 @@ namespace UI.Desktop
             this.panelAluSubMenu.Controls.Add(this.btnAluPlan);
             this.panelAluSubMenu.Controls.Add(this.btnAluMateria);
             this.panelAluSubMenu.Controls.Add(this.btnAluComision);
-            this.panelAluSubMenu.Controls.Add(this.btnAluAlumnoInscripcion);
+            this.panelAluSubMenu.Controls.Add(this.btnInscripciones);
             this.panelAluSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelAluSubMenu.Location = new System.Drawing.Point(0, 130);
             this.panelAluSubMenu.Name = "panelAluSubMenu";
@@ -491,21 +491,21 @@ namespace UI.Desktop
             this.btnAluComision.UseVisualStyleBackColor = true;
             this.btnAluComision.Click += new System.EventHandler(this.btnAluComision_Click);
             // 
-            // btnAluAlumnoInscripcion
+            // btnInscripciones
             // 
-            this.btnAluAlumnoInscripcion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAluAlumnoInscripcion.FlatAppearance.BorderSize = 0;
-            this.btnAluAlumnoInscripcion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAluAlumnoInscripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAluAlumnoInscripcion.Location = new System.Drawing.Point(0, 0);
-            this.btnAluAlumnoInscripcion.Name = "btnAluAlumnoInscripcion";
-            this.btnAluAlumnoInscripcion.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnAluAlumnoInscripcion.Size = new System.Drawing.Size(242, 40);
-            this.btnAluAlumnoInscripcion.TabIndex = 2;
-            this.btnAluAlumnoInscripcion.Text = "Alumno Inscripcion";
-            this.btnAluAlumnoInscripcion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAluAlumnoInscripcion.UseVisualStyleBackColor = true;
-            this.btnAluAlumnoInscripcion.Click += new System.EventHandler(this.btnAluAlumnoInscripcion_Click);
+            this.btnInscripciones.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnInscripciones.FlatAppearance.BorderSize = 0;
+            this.btnInscripciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInscripciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInscripciones.Location = new System.Drawing.Point(0, 0);
+            this.btnInscripciones.Name = "btnInscripciones";
+            this.btnInscripciones.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnInscripciones.Size = new System.Drawing.Size(242, 40);
+            this.btnInscripciones.TabIndex = 2;
+            this.btnInscripciones.Text = "Inscripciones";
+            this.btnInscripciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInscripciones.UseVisualStyleBackColor = true;
+            this.btnInscripciones.Click += new System.EventHandler(this.btnInscripciones_Click);
             // 
             // btnAlu
             // 
@@ -610,7 +610,7 @@ namespace UI.Desktop
         private System.Windows.Forms.Button btnAluPlan;
         private System.Windows.Forms.Button btnAluMateria;
         private System.Windows.Forms.Button btnAluComision;
-        private System.Windows.Forms.Button btnAluAlumnoInscripcion;
+        private System.Windows.Forms.Button btnInscripciones;
         private System.Windows.Forms.Button btnAlu;
         private System.Windows.Forms.Panel panelCont;
         private System.Windows.Forms.Button btnPersonaAlumno;

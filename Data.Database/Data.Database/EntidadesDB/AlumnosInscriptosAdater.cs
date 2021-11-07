@@ -60,10 +60,59 @@ namespace Data.Database.EntidadesDB
             }
             return Alumnos_Inscripciones;
         }
+        public List<Alumnos_Inscripciones> GetAllByAlumno(Usuario u)
+        {
+            List<Alumnos_Inscripciones> inscripciones = null;
+            try
+            {
+                this.OpenConnection();
 
+                SqlCommand cmdAlumnos_Inscripcioneses = new SqlCommand("select * from alumnos_inscripciones ai inner join personas p on ai.id_alumno = p.id_persona inner join usuarios u on p.id_usuario = u.id_usuario where u.id_usuario = @idUsuario", sqlConn);
+                cmdAlumnos_Inscripcioneses.Parameters.Add("@idUsuario", SqlDbType.Int).Value = u.ID;
+                SqlDataReader drAlumnos_Inscripcioneses = cmdAlumnos_Inscripcioneses.ExecuteReader();
+                if (drAlumnos_Inscripcioneses != null)
+                {
+                    inscripciones = new List<Alumnos_Inscripciones>();
+
+                    while (drAlumnos_Inscripcioneses.Read())
+                    {
+                        Alumnos_Inscripciones Alumno_Inscripcion = new Alumnos_Inscripciones();
+                        Personas p = new Personas();
+                        p.Nombre = (string)drAlumnos_Inscripcioneses["nombre"];
+                        p.Apellido = (string)drAlumnos_Inscripcioneses["apellido"];
+                        p.Legajo = (int)drAlumnos_Inscripcioneses["legajo"];
+
+                        Alumno_Inscripcion.Personas = p;
+                        Alumno_Inscripcion.ID = (int)drAlumnos_Inscripcioneses["id_inscripcion"];
+                        Alumno_Inscripcion.IDAlumno = (int)drAlumnos_Inscripcioneses["id_alumno"];
+                        Alumno_Inscripcion.IDCurso = (int)drAlumnos_Inscripcioneses["id_curso"];
+                        Alumno_Inscripcion.Condicion = (string)drAlumnos_Inscripcioneses["condicion"];
+
+                        if (string.IsNullOrEmpty(drAlumnos_Inscripcioneses["nota"].ToString()))
+                            Alumno_Inscripcion.Nota = " - ";
+                        else
+                            Alumno_Inscripcion.Nota = (string)drAlumnos_Inscripcioneses["nota"].ToString();
+
+                        inscripciones.Add(Alumno_Inscripcion);
+                    }
+                }
+                drAlumnos_Inscripcioneses.Close();
+            }
+
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar la lista de alumnos inscriptos", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return inscripciones;
+        }
         public List<Alumnos_Inscripciones> GetAllByCurso(Curso cur)
         {
-            List<Alumnos_Inscripciones> AlumnosDeUnCurso = new List<Alumnos_Inscripciones>();
+            List<Alumnos_Inscripciones> AlumnosDeUnCurso = null;
             try
             {
                 this.OpenConnection();
@@ -73,6 +122,7 @@ namespace Data.Database.EntidadesDB
                 SqlDataReader drAlumnos_Inscripcioneses = cmdAlumnos_Inscripcioneses.ExecuteReader();
                 if (drAlumnos_Inscripcioneses != null)
                 {
+                    AlumnosDeUnCurso = new List<Alumnos_Inscripciones>();
                     while (drAlumnos_Inscripcioneses.Read())
                     {
                         Alumnos_Inscripciones Alumnos_Inscripciones = new Alumnos_Inscripciones();

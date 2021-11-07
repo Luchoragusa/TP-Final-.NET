@@ -124,9 +124,7 @@ namespace Data.Database.EntidadesDB
                 OpenConnection();
                 SqlCommand cmdPersonas = new SqlCommand("SELECT * FROM personas WHERE id_usuario = @id", sqlConn);
                 cmdPersonas.Parameters.Add("@id", SqlDbType.Int).Value = persona.IdUsuario;
-
                 SqlDataReader drPersonas = cmdPersonas.ExecuteReader();
-
                 persona = null;
 
                 if (drPersonas != null)
@@ -184,8 +182,6 @@ namespace Data.Database.EntidadesDB
             {
                 CloseConnection();
             }
-
-
         }
 
         public void Insert(Personas persona)

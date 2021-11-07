@@ -47,7 +47,6 @@ namespace UI.Desktop
                 btnAdmin.Visible = false;
                 panelAluSubMenu.Visible = false;
                 panelAdminSubMenu.Visible = false;
-                us = u;
             }
             else if (tipo == 3)     //admin
             {
@@ -114,16 +113,16 @@ namespace UI.Desktop
         }
         private void btnRegistroNotas_Click(object sender, EventArgs e)
         {
-            abrirFormHijo(new DocenteCurso.DocenteMateria(us));
+            abrirFormHijo(new DocenteMateria(us));
         }
         private void btnAdmin_Click(object sender, EventArgs e)
         {
             mostrarSubMenu(panelAdminSubMenu);
         }
 
-        private void btnAluAlumnoInscripcion_Click(object sender, EventArgs e)
+        private void btnInscripciones_Click(object sender, EventArgs e)
         {
-            abrirFormHijo(new Alum_Inscrip.Alum_Inscrip());
+            abrirFormHijo(new Alum_Inscrip.Alum_Inscrip(us));
         }
 
         private void btnAluComision_Click(object sender, EventArgs e)
@@ -148,7 +147,7 @@ namespace UI.Desktop
 
         private void btnInscripcionCurso_Click(object sender, EventArgs e)
         {
-            abrirFormHijo(new Cursos_Docente(us)); // este es e; de registrar un curso al docente
+            abrirFormHijo(new Cursos_Docente(us));
         }
 
         private void btnAdminUsuario_Click(object sender, EventArgs e)
@@ -208,7 +207,7 @@ namespace UI.Desktop
 
         private void btnAdminReportePer_Click(object sender, EventArgs e)
         {
-            abrirFormHijo(new UI.Desktop.ReporteDePersonas());
+            abrirFormHijo(new ReporteDePersonas());
         }
 
         private void btnPersonaAlumno_Click(object sender, EventArgs e)

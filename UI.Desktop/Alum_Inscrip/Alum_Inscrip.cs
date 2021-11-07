@@ -14,19 +14,33 @@ namespace UI.Desktop.Alum_Inscrip
 {
     public partial class Alum_Inscrip : Form
     {
+        private Business.Entities.Usuario _u;
+        Boolean _esAlumno = true;
         public Alum_Inscrip()
         {
             InitializeComponent();
             this.dgvAlum_Incrip.AutoGenerateColumns = false;
             this.dgvAlum_Incrip.ReadOnly = true;
+            _esAlumno = false;
         }
-
+        public Alum_Inscrip(Business.Entities.Usuario u)
+        {
+            InitializeComponent();
+            this.dgvAlum_Incrip.AutoGenerateColumns = false;
+            this.dgvAlum_Incrip.ReadOnly = true;
+            _u = u;
+            tsbEditar.Enabled = false;
+            tsbNuevo.Enabled = false;
+        }
         public void Listar()
         {
             Alumno_InscripcionLogic ai = new Alumno_InscripcionLogic();
             try
             {
-                this.dgvAlum_Incrip.DataSource = ai.GetAll();
+                if (_esAlumno)
+                    this.dgvAlum_Incrip.DataSource = ai.GetAllByAlumno(_u);
+                else
+                    this.dgvAlum_Incrip.DataSource = ai.GetAll();
             }
             catch (Exception ex)
             {
