@@ -59,12 +59,10 @@ namespace UI.Desktop.Alum_Inscrip
                 this.txtLegajo.Text = this.Alum_InscripActual.legajoPersona.ToString();
                 this.cbCondicion.Text = this.Alum_InscripActual.Condicion;
                 this.txtNota.Text = this.Alum_InscripActual.Nota.ToString();
-
                 if (Modo == ModoForm.Modificacion) this.btnModo.Text = "Guardar";
                 else if (Modo == ModoForm.Baja)
                 {
                     this.btnModo.Text = "Eliminar";
-
                     this.txtNombre.Enabled = false;
                     this.txtApellido.Enabled = false;
                     this.txtLegajo.Enabled = false;
