@@ -19,13 +19,10 @@ namespace UI.Desktop
             InitializeComponent();
             US = new UsuarioLogic();
         }
-
-       
         public UsuarioLogic US
         {
             get; set;
         }
-
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             Usuario usuario = new Usuario();
@@ -42,23 +39,26 @@ namespace UI.Desktop
 
             if (tipo != -1)
             {
-                if (tipo == 1)      //alumno
+                if (tipo == 0)      //Cuenta no habilitada
                 {
-                    MessageBox.Show("Bienvenido al sistema, ALUMNO.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Su cuenta se encuenta desabilitada", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.DialogResult = DialogResult.OK;
+                }
+                else if (tipo == 1)      //alumno
+                {
+                    MessageBox.Show("Bienvenido al sistema, usted ingreso como > ALUMNO.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.DialogResult = DialogResult.OK;
                 }
                 else if (tipo == 2) //docente
                 {
-                    MessageBox.Show("Bienvenido al sistema, DOCENTE.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Bienvenido al sistema, usted ingreso como > DOCENTE.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.DialogResult = DialogResult.OK;
                 }
                 else if (tipo == 3) //admin
                 {
-                    MessageBox.Show("Bienvenido al sistema, ADMINISTRADOR.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Bienvenido al sistema, usted ingreso como > ADMINISTRADOR.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.DialogResult = DialogResult.OK;
-                    
                 }
-
                 else if (tipo == 4) //nuevo
                 {
                     MessageBox.Show("Bienvenido por primera vez al sistema.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -77,7 +77,6 @@ namespace UI.Desktop
             }
             else
             {
-
                 MessageBox.Show("Usuario y/o contraseña incorrectos", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

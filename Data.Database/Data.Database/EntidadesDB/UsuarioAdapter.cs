@@ -183,19 +183,21 @@ namespace Data.Database
             try
             {
                 OpenConnection();
-                SqlCommand cmdUsuarios = new SqlCommand("select p.tipo_persona from usuarios u left join personas p on p.id_usuario = u.id_usuario where u.nombre_usuario = @nombre_usuario and u.clave = @clave", sqlConn);
+                SqlCommand cmdUsuarios = new SqlCommand("select p.tipo_persona, u.habilitado  from usuarios u left join personas p on p.id_usuario = u.id_usuario where u.nombre_usuario = @nombre_usuario and u.clave = @clave", sqlConn);
                 cmdUsuarios.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
                 cmdUsuarios.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;
                 SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
-                
-
                 if (drUsuarios != null)
                 {
                     if (drUsuarios.Read())
                     {
                         if (!string.IsNullOrEmpty(drUsuarios["tipo_persona"].ToString()))
                         {
-                            tipo_persona = (int)(Personas.TipoPersonas)drUsuarios["tipo_persona"];
+                            Boolean estaHabilitado = (Boolean)drUsuarios["habilitado"];
+                            if (estaHabilitado)
+                                tipo_persona = (int)(Personas.TipoPersonas)drUsuarios["tipo_persona"];
+                            else
+                                tipo_persona = 0;
                         }
                         else
                         {
