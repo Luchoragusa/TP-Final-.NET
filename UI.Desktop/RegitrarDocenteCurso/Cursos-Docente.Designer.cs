@@ -187,20 +187,20 @@ namespace UI.Desktop.RegitrarDocenteCurso
             // ID
             // 
             this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "Id Dictado";
+            this.ID.HeaderText = "ID de Dictado";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
             // 
             // idCurso
             // 
             this.idCurso.DataPropertyName = "IDCurso";
-            this.idCurso.HeaderText = "Id Curso";
+            this.idCurso.HeaderText = "ID de Curso";
             this.idCurso.Name = "idCurso";
             // 
             // idDocente
             // 
             this.idDocente.DataPropertyName = "IDDocente";
-            this.idDocente.HeaderText = "Id Docente";
+            this.idDocente.HeaderText = "ID del Docente";
             this.idDocente.Name = "idDocente";
             this.idDocente.Width = 150;
             // 
