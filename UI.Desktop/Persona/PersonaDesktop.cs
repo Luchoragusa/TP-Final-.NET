@@ -66,6 +66,7 @@ namespace UI.Desktop
         public override void MapearDeDatos()
         {
             this.txtID.Text = this.PersonaActual.ID.ToString();
+            this.txtIDUsuario.Text = this.PersonaActual.ID.ToString();
             this.txtNombre.Text = this.PersonaActual.Nombre;
             this.txtApellido.Text = this.PersonaActual.Apellido;
             this.txtDireccion.Text = this.PersonaActual.Direccion;
@@ -86,6 +87,7 @@ namespace UI.Desktop
             {
                 this.btnModo.Text = "Eliminar";
                 this.txtID.Enabled = false;
+                this.txtIDUsuario.Enabled = false;
                 this.txtNombre.Enabled = false;
                 this.txtApellido.Enabled = false;
                 this.txtDireccion.Enabled = false;
@@ -113,6 +115,7 @@ namespace UI.Desktop
                     PersonaActual.State = BusinessEntity.States.Modified;
                     this.txtID.Text = this.PersonaActual.ID.ToString();
                 }
+                this.PersonaActual.IdUsuario = int.Parse(this.txtIDUsuario.Text);
                 this.PersonaActual.Nombre = this.txtNombre.Text;
                 this.PersonaActual.Apellido = this.txtApellido.Text;
                 this.PersonaActual.Direccion = this.txtDireccion.Text;
@@ -196,7 +199,13 @@ namespace UI.Desktop
             }
             if (!Validaciones.validarTexto(txtIdPlan.Text))
             {
-                Notificar("id Plan incorrecto Incorrecta.", "Intente nuevamente",
+                Notificar("id Plan incorrecto ", "Intente nuevamente",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (!Validaciones.validarTexto(txtIDUsuario.Text))
+            {
+                Notificar("ID de usuario incorrecto.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
