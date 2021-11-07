@@ -8,7 +8,7 @@
         <div>
         </div>
 
-        <asp:Panel ID="gridPanel" runat="server" CssClass="auto-style1" Height="225px" Width="1513px">
+        <asp:Panel ID="gridPanel" runat="server" Height="361px" Width="1513px">
             <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False"  HorizontalAlign="Center"
                 SelectedRowStyle-BackColor="Black"
                 SelectedRowStyle-ForeColor="White"

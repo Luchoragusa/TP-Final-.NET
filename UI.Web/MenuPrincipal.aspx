@@ -17,7 +17,7 @@
             <asp:Button ID="btnComision" runat="server" Text="Comision" BackColor="#33CCCC" OnClick="btnComision_Click" />
 &nbsp;
             &nbsp;
-            <asp:Button ID="btnMateria" runat="server" OnClick="btnMateria_Click" Text="Materia" />
+            <asp:Button ID="btnMateria" runat="server" OnClick="btnMateria_Click" Text="Materia" BackColor="#33CCCC" />
             <br />
             <asp:Button ID="btnInscripciones" runat="server" BackColor="#33CCCC" OnClick="btnInscripciones_Click" Text="Inscripciones" Width="96px" />
 &nbsp;
