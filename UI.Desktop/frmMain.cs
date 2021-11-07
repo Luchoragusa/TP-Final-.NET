@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business.Entities;
 using UI.Desktop.DocenteCurso;
@@ -127,12 +120,12 @@ namespace UI.Desktop
 
         private void btnAluComision_Click(object sender, EventArgs e)
         {
-            abrirFormHijo(new Comisiones());
+            abrirFormHijo(new Comisiones(us));
         }
 
         private void btnAluMateria_Click(object sender, EventArgs e)
         {
-            abrirFormHijo(new Materia());
+            abrirFormHijo(new Materia(us));
         }
 
         private void btnAluPlan_Click(object sender, EventArgs e)

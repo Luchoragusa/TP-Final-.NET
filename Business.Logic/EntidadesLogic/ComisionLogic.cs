@@ -45,6 +45,19 @@ namespace Business.Logic
             }       
         }
 
+        public List<Comision> GetAllByAlumno(Usuario u)
+        {
+            try
+            {
+                return ComisionData.GetAllByAlumno(u);
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar la lista logica de Comisiones.", ex);
+                throw ExcepcionManejada;
+            }
+        }
+
         public List<Comision> GetAllMateriasCom(Materia mat)
         {
             try

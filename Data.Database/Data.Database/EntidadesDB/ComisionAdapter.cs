@@ -46,9 +46,46 @@ namespace Data.Database
             return comisiones;
         }
 
+        public List<Comision> GetAllByAlumno(Usuario u)
+        {
+            List<Comision> comisiones = null;
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdComision = new SqlCommand("select co.* from comisiones co inner join cursos cu on cu.id_comision = co.id_comision inner join alumnos_inscripciones ai on ai.id_curso = cu.id_curso inner join personas p on p.id_persona = ai.id_alumno where p.id_usuario = @id", sqlConn);
+                cmdComision.Parameters.Add("@id", SqlDbType.Int).Value = u.ID;
+                SqlDataReader drComision = cmdComision.ExecuteReader();
+                if (drComision != null)
+                {
+                    comisiones = new List<Comision>();
+                    while (drComision.Read())
+                    {
+                        Comision comi = new Comision();
+                        comi.ID = (int)drComision["id_comision"];
+                        comi.DescComision = (string)drComision["desc_comision"];
+                        comi.AnioEspecialidad = (int)drComision["anio_especialidad"];
+                        comi.IDPlan = (int)drComision["id_plan"];
+
+                        comisiones.Add(comi);
+                    }
+                }
+                drComision.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar la lista de Comisiones", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return comisiones;
+        }
+
         public List<Comision> GetAllMateriasCom(Materia mat)
         {
-            List<Comision> comisiones = new List<Comision>();
+            List<Comision> comisiones = null;
             try
             {
                 this.OpenConnection();
@@ -57,6 +94,7 @@ namespace Data.Database
                 SqlDataReader drComision = cmdComision.ExecuteReader();
                 if (drComision != null)
                 {
+                    comisiones = new List<Comision>(); 
                     while (drComision.Read())
                     {
                         Comision comi = new Comision();

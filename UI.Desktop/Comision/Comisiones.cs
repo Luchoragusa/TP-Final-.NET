@@ -14,18 +14,34 @@ namespace UI.Desktop
 {
     public partial class Comisiones : Form
     {
+        Usuario _u;
+        Boolean _esAlumno = true;
         public Comisiones()
         {
             InitializeComponent();
             this.dgvComisiones.AutoGenerateColumns = false;
             this.dgvComisiones.ReadOnly = true;
+            _esAlumno = false;
+        }
+        public Comisiones(Usuario usuario)
+        {
+            InitializeComponent();
+            this.dgvComisiones.AutoGenerateColumns = false;
+            this.dgvComisiones.ReadOnly = true;
+            _u = usuario;
+            tsbEditar.Enabled = false;
+            tsbEliminar.Enabled = false;
+            tsbNuevo.Enabled = false;
         }
         public void Listar()
         {
             ComisionLogic cl = new ComisionLogic();
             try
             {
-                this.dgvComisiones.DataSource = cl.GetAll();
+                if (_esAlumno)
+                    this.dgvComisiones.DataSource = cl.GetAllByAlumno(_u);
+                else
+                    this.dgvComisiones.DataSource = cl.GetAll();
             }
             catch (Exception ex)
             {

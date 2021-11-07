@@ -14,7 +14,7 @@ namespace Data.Database
         public MateriaAdapter() { }
         public List<Materia> GetAll()
         {
-            List<Materia> materias = new List<Materia>();
+            List<Materia> materias = null;
             try
             {
                 this.OpenConnection();
@@ -22,6 +22,46 @@ namespace Data.Database
                 SqlDataReader drMaterias = cmdMaterias.ExecuteReader();
                 if (drMaterias != null)
                 {
+                    materias = new List<Materia>();
+                    while (drMaterias.Read())
+                    {
+                        Materia mat = new Materia();
+
+                        mat.ID = (int)drMaterias["id_materia"];
+                        mat.Descripcion = (string)drMaterias["desc_materia"];
+                        mat.HSSSemanales = (int)drMaterias["hs_semanales"];
+                        mat.HSTotales = (int)drMaterias["hs_totales"];
+                        mat.IDPlan = (int)drMaterias["id_plan"];
+
+                        materias.Add(mat);
+                    }
+                }
+                drMaterias.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar la lista de materias", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return materias;
+        }
+
+        public List<Materia> GetAllByAlumno(Usuario us)
+        {
+            List<Materia> materias = null;
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdMaterias = new SqlCommand("select m.* from materias m  inner join cursos cu on cu.id_materia = m.id_materia inner join alumnos_inscripciones ai on ai.id_curso = cu.id_curso  inner join personas p on p.id_persona = ai.id_alumno  where p.id_usuario = @id", sqlConn);
+                cmdMaterias.Parameters.Add("@id", SqlDbType.Int).Value = us.ID;
+                SqlDataReader drMaterias = cmdMaterias.ExecuteReader();
+                if (drMaterias != null)
+                {
+                    materias = new List<Materia>();
                     while (drMaterias.Read())
                     {
                         Materia mat = new Materia();
