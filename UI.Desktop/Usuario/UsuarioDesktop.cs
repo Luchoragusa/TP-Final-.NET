@@ -102,7 +102,7 @@ namespace UI.Desktop
             {
                 usuarioLogic.Save(UsuarioActual);
                 MessageBox.Show("La operacion se realizo correctamente", "Informacion", MessageBoxButtons.OK);
-                this.Dispose();
+                //this.Dispose();
             }
             catch (Exception ex)
             {
