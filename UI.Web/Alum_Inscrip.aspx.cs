@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using Business.Entities;
 using Business.Entities.Entidades;
-using Business.Logic;
 using Business.Logic.EntidadesLogic;
 
 namespace UI.Web
@@ -38,7 +33,7 @@ namespace UI.Web
         private void LoadGrid()
         {
             Usuario us = (Usuario)Session["usuario"];
-            Business.Entities.Entidades.Personas per = new Business.Entities.Entidades.Personas();
+            Personas per = new Personas();
             per.ID = (int)Session["id_persona"];
             switch (per.ID)
             {
@@ -115,9 +110,7 @@ namespace UI.Web
             {
                 ali.Nota = this.notaTextBox.Text;
                 ali.Condicion = this.condicionTextBox.Text;
-
                 //cargamos ali.NombrePersona/ApellidoPersona/legajoPersona ??? el tema es que es solo lectura (no tiene set)
-
             }
             return band;
         }

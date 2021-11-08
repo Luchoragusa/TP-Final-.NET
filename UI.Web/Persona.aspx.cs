@@ -102,20 +102,6 @@ namespace UI.Web
                 this.LoadForm(this.SelectedID);
             }
         }
-
-        public static bool vpersonadarMail(string email)
-        {
-            try
-            {
-                var addr = new System.Net.Mail.MailAddress(email);
-                return addr.Address == email;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
         private Boolean LoadEntity(Personas persona)
         {
             bool band = false;
@@ -137,24 +123,21 @@ namespace UI.Web
                 persona.IdUsuario = usuario.ID;
 
                 if (this.DropDownList1.SelectedValue == "Alumno")
-                    persona.TipoPersona = Business.Entities.Entidades.Personas.TipoPersonas.Alumno;
+                    persona.TipoPersona = Personas.TipoPersonas.Alumno;
                 else if (this.DropDownList1.SelectedValue == "Docente")
-                    persona.TipoPersona = Business.Entities.Entidades.Personas.TipoPersonas.Docente;
+                    persona.TipoPersona = Personas.TipoPersonas.Docente;
                 else
-                    persona.TipoPersona = Business.Entities.Entidades.Personas.TipoPersonas.Administrador;
+                    persona.TipoPersona = Personas.TipoPersonas.Administrador;
 
                 persona.Apellido = this.apellidoTextBox.Text;
                 persona.Nombre = this.nombreTextBox.Text;
                 persona.Direccion = this.direccionTextBox.Text;
-                if (!vpersonadarMail(this.emailTextBox.Text))
-                {
-                    MessageBox.Show("Direccion de email Incorrecta.", "Intente nuevamente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                if (Validaciones.validarMail(this.emailTextBox.Text))
                     band = true;
-                }
-                else 
-                { 
+                else
                     persona.Email = this.emailTextBox.Text; 
-                }
+
                 persona.Telefono = this.telefonoTextBox.Text;
                 persona.Legajo = int.Parse(this.legajoTextBox.Text);
                 persona.FechaNacimiento = DateTime.Parse(this.fechanacTextBox.Text);

@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using Business.Entities;
-using Business.Entities.Entidades;
 using Business.Logic;
-using Business.Logic.EntidadesLogic;
 
 namespace UI.Web
 {
@@ -21,7 +15,6 @@ namespace UI.Web
                 LoadGrid();
             }
         }
-
         UsuarioLogic _logic;
         private UsuarioLogic Logic
         {
@@ -39,7 +32,6 @@ namespace UI.Web
             this.gridView.DataSource = this.Logic.GetAll();
             this.gridView.DataBind();
         }
-
         public FormModes FormMode
         {
             get
@@ -51,13 +43,11 @@ namespace UI.Web
                 this.ViewState["FormMode"] = value;
             }
         }
-
         public Usuario Entity
         {
             get;
             set;
         }
-
         protected void editarLinkButton_Click(object sender, EventArgs e)
         {
             if (this.IsEntitySelected)
@@ -78,7 +68,6 @@ namespace UI.Web
                 this.LoadForm(this.SelectedID);
             }
         }
-
         protected override void DeleteEntity(int id)
         {
             this.Logic.Delete(id);
@@ -91,7 +80,6 @@ namespace UI.Web
             this.ClearForm();
             this.EnableForm(true);
         }
-
         protected override void ClearForm()
         {
             this.habilitadoCheckBox.Checked = false;
@@ -102,7 +90,6 @@ namespace UI.Web
         {
             this.SelectedID = (int)this.gridView.SelectedValue;
         }
-
         protected void LoadForm(int id)
         {
             Entity = new Usuario();
@@ -111,7 +98,6 @@ namespace UI.Web
             this.habilitadoCheckBox.Checked = this.Entity.Habilitado;
             this.nombreUsuarioTextBox.Text = this.Entity.NombreUsuario;
         }
-
         private Boolean LoadEntity(Usuario usuario)
         {
             bool band = false;
@@ -126,15 +112,15 @@ namespace UI.Web
                 {
                     usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
 
-                    if (this.claveTextBox.Text == this.repetirClaveTextBox.Text)
-                    {
-                        usuario.Clave = this.claveTextBox.Text;
-                    }
+                    if(Validaciones.validarClave(this.claveTextBox.Text) && Validaciones.validarClave(this.repetirClaveTextBox.Text))
+                        {
+                            if (this.claveTextBox.Text == this.repetirClaveTextBox.Text)
+                                usuario.Clave = this.claveTextBox.Text;
+                            else
+                                band = true;
+                        }
                     else
-                       {
-                    MessageBox.Show("Las claves no coinciden.", "Intente nuevamente", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    band = true;
-                    }
+                        band = true;
                     usuario.Habilitado = this.habilitadoCheckBox.Checked;
                 }
             return band;
