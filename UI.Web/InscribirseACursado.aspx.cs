@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using Business.Logic;
 using Business.Logic.EntidadesLogic;
 using Business.Entities;
@@ -61,7 +57,7 @@ namespace UI.Web
         private void LoadGridMaterias ()
         {
             btnVolver.Visible = true;            
-            Business.Logic.MateriaLogic ml = new Business.Logic.MateriaLogic();
+            MateriaLogic ml = new MateriaLogic();
             this.gridViewMateriasInscripcion.DataSource = ml.GetAll();
             this.gridViewMateriasInscripcion.DataBind();
         }
