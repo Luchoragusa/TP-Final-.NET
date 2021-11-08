@@ -21,6 +21,7 @@ namespace UI.Web
             {
                 if ((int)Session["tipo_persona"] == 4)
                 {
+                    this.btnVolver.Visible = true;
                     this.gridPanel.Visible = false;
                     this.Panel4.Visible = true;
                     this.gridActionsPanel.Visible = false;
@@ -247,6 +248,8 @@ namespace UI.Web
             }
             if (!band)
                 this.formPanel.Visible = false;
+
+            Response.Redirect("LoginWeb.aspx");
         }
 
         protected void cancelarButton_Click(object sender, EventArgs e)
