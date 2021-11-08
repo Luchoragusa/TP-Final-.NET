@@ -141,12 +141,6 @@ namespace UI.Desktop
         {
             abrirFormHijo(new Persona.Persona());
         }
-
-        private void btnAdminRegistrarNota_Click(object sender, EventArgs e)
-        {
-            abrirFormHijo(new Docente_Alumnos());
-        }
-
         private void btnAdminComision_Click(object sender, EventArgs e)
         {
             abrirFormHijo(new Comisiones());

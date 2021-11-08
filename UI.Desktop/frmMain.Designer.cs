@@ -34,7 +34,6 @@ namespace UI.Desktop
             this.panelAdminSubMenu = new System.Windows.Forms.Panel();
             this.btnAdminReporteCom = new System.Windows.Forms.Button();
             this.btnAdminReporteAlu = new System.Windows.Forms.Button();
-            this.btnAdminRegistrarNota = new System.Windows.Forms.Button();
             this.btnAdminPersona = new System.Windows.Forms.Button();
             this.btnAdminAlum_Insc = new System.Windows.Forms.Button();
             this.btnAdminDocenteCurso = new System.Windows.Forms.Button();
@@ -91,7 +90,6 @@ namespace UI.Desktop
             this.panelAdminSubMenu.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panelAdminSubMenu.Controls.Add(this.btnAdminReporteCom);
             this.panelAdminSubMenu.Controls.Add(this.btnAdminReporteAlu);
-            this.panelAdminSubMenu.Controls.Add(this.btnAdminRegistrarNota);
             this.panelAdminSubMenu.Controls.Add(this.btnAdminPersona);
             this.panelAdminSubMenu.Controls.Add(this.btnAdminAlum_Insc);
             this.panelAdminSubMenu.Controls.Add(this.btnAdminDocenteCurso);
@@ -104,7 +102,7 @@ namespace UI.Desktop
             this.panelAdminSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelAdminSubMenu.Location = new System.Drawing.Point(0, 452);
             this.panelAdminSubMenu.Name = "panelAdminSubMenu";
-            this.panelAdminSubMenu.Size = new System.Drawing.Size(242, 519);
+            this.panelAdminSubMenu.Size = new System.Drawing.Size(242, 443);
             this.panelAdminSubMenu.TabIndex = 6;
             // 
             // btnAdminReporteCom
@@ -113,7 +111,7 @@ namespace UI.Desktop
             this.btnAdminReporteCom.FlatAppearance.BorderSize = 0;
             this.btnAdminReporteCom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminReporteCom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdminReporteCom.Location = new System.Drawing.Point(0, 440);
+            this.btnAdminReporteCom.Location = new System.Drawing.Point(0, 400);
             this.btnAdminReporteCom.Name = "btnAdminReporteCom";
             this.btnAdminReporteCom.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAdminReporteCom.Size = new System.Drawing.Size(242, 40);
@@ -129,7 +127,7 @@ namespace UI.Desktop
             this.btnAdminReporteAlu.FlatAppearance.BorderSize = 0;
             this.btnAdminReporteAlu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminReporteAlu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdminReporteAlu.Location = new System.Drawing.Point(0, 400);
+            this.btnAdminReporteAlu.Location = new System.Drawing.Point(0, 360);
             this.btnAdminReporteAlu.Name = "btnAdminReporteAlu";
             this.btnAdminReporteAlu.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAdminReporteAlu.Size = new System.Drawing.Size(242, 40);
@@ -138,22 +136,6 @@ namespace UI.Desktop
             this.btnAdminReporteAlu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdminReporteAlu.UseVisualStyleBackColor = true;
             this.btnAdminReporteAlu.Click += new System.EventHandler(this.btnAdminReportePer_Click);
-            // 
-            // btnAdminRegistrarNota
-            // 
-            this.btnAdminRegistrarNota.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAdminRegistrarNota.FlatAppearance.BorderSize = 0;
-            this.btnAdminRegistrarNota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdminRegistrarNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdminRegistrarNota.Location = new System.Drawing.Point(0, 360);
-            this.btnAdminRegistrarNota.Name = "btnAdminRegistrarNota";
-            this.btnAdminRegistrarNota.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnAdminRegistrarNota.Size = new System.Drawing.Size(242, 40);
-            this.btnAdminRegistrarNota.TabIndex = 10;
-            this.btnAdminRegistrarNota.Text = "Registrar Nota";
-            this.btnAdminRegistrarNota.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdminRegistrarNota.UseVisualStyleBackColor = true;
-            this.btnAdminRegistrarNota.Click += new System.EventHandler(this.btnAdminRegistrarNota_Click);
             // 
             // btnAdminPersona
             // 
@@ -536,7 +518,6 @@ namespace UI.Desktop
         private System.Windows.Forms.Panel panelAdminSubMenu;
         private System.Windows.Forms.Button btnAdminReporteCom;
         private System.Windows.Forms.Button btnAdminReporteAlu;
-        private System.Windows.Forms.Button btnAdminRegistrarNota;
         private System.Windows.Forms.Button btnAdminCurso;
         private System.Windows.Forms.Button btnAdminPersona;
         private System.Windows.Forms.Button btnAdminAlum_Insc;

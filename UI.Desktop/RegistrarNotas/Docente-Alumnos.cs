@@ -1,13 +1,6 @@
 ﻿using Business.Entities.Entidades;
 using Business.Logic.EntidadesLogic;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UI.Desktop.RegistrarNotas
@@ -15,15 +8,7 @@ namespace UI.Desktop.RegistrarNotas
     public partial class Docente_Alumnos : Form
     {
         Business.Entities.Curso cur;
-        Boolean esDocente = true;
         public Business.Entities.Curso Curso { get => cur; set => cur = value; }
-        public Docente_Alumnos()
-        {
-            InitializeComponent();
-            this.dgvDocente_Alumnos.AutoGenerateColumns = false;
-            this.dgvDocente_Alumnos.ReadOnly = true;
-            esDocente = false;
-        }
         public Docente_Alumnos(int id)
         {
             InitializeComponent();
@@ -37,7 +22,6 @@ namespace UI.Desktop.RegistrarNotas
         {
             this.Listar(cur);
         }
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -46,16 +30,12 @@ namespace UI.Desktop.RegistrarNotas
         {
             Listar(Curso);
         }
-
         private void Listar(Business.Entities.Curso cur)
         {
             Alumno_InscripcionLogic ai = new Alumno_InscripcionLogic();
             try
             {
-                if (esDocente)
                     this.dgvDocente_Alumnos.DataSource = ai.GetAllByCurso(cur);
-                else
-                    this.dgvDocente_Alumnos.DataSource = ai.GetAll();
             }
             catch (Exception ex)
             {
