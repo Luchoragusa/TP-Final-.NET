@@ -57,11 +57,15 @@
                 </asp:RequiredFieldValidator>
             <br />
             <asp:Label ID="lblCargo" runat="server" Text="Cargo"></asp:Label>
-            &nbsp;<asp:TextBox ID="txtCargo" runat="server" Width="34px"></asp:TextBox>
+            &nbsp;<asp:DropDownList ID="dropDownListCargo" runat="server">
+                <asp:ListItem>Titular</asp:ListItem>
+                <asp:ListItem>Auxiliar</asp:ListItem>
+                <asp:ListItem>Jefe de Catedra</asp:ListItem>
+            </asp:DropDownList>
             <br />
             <br />
             <asp:Button ID="aceptarButton" runat="server" class="btn btn-outline-primary" OnClick="acceptaButton_Click" Text="Aceptar" Width="72px" />
-            &nbsp;
+&nbsp;
             <asp:Button ID="cancelarButton" runat="server" class="btn btn-outline-primary" OnClick="cancelarButton_Click" Text="Cancelar" />
         <br />
         

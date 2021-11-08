@@ -95,6 +95,7 @@ namespace UI.Web
         {
             if (this.IsEntitySelected)
             {
+                this.EnableForm(true);
                 this.formPanel.Visible = true;
                 this.FormMode = FormModes.Modificacion;
                 this.LoadForm(this.SelectedID);
