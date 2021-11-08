@@ -38,7 +38,7 @@ namespace UI.Web
         private void LoadGrid()
         {
             Usuario docente = (Usuario)Session["usuario"];
-            Business.Entities.Entidades.Personas per = new Business.Entities.Entidades.Personas();
+            Personas per = new Personas();
             per.ID = (int)Session["id_persona"];
             switch (per.ID)
             {
@@ -82,8 +82,7 @@ namespace UI.Web
 
             this.iddocenteTextBox.Text = this.Entity.IDDocente.ToString();
             this.idcursoTextBox.Text = this.Entity.IDCurso.ToString();
-            this.dropDownListCargo.SelectedValue = this.Entity.Cargo.ToString();
-           
+            this.dropDownListCargo.SelectedValue = this.Entity.Cargo.ToString(); 
         }
 
         protected override void EnableForm(bool enable)
