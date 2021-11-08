@@ -316,7 +316,7 @@
         <DataSetName>DataSet1</DataSetName>
         <Top>7.82849cm</Top>
         <Left>3.04965cm</Left>
-        <Height>1.72917cm</Height>
+        <Height>1.72916cm</Height>
         <Width>14.94502cm</Width>
         <Style>
           <Border>
@@ -368,7 +368,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>En esta sección, se mostrarán las comisiones que tiene el curso más la cantidad de alumnos inscriptos</Value>
+                <Value>En esta sección, se mostrarán los cursos que están registrados en el sistema.</Value>
                 <Style>
                   <FontFamily>Century Gothic</FontFamily>
                   <FontSize>11pt</FontSize>

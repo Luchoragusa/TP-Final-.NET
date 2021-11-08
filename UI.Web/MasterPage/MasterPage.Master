@@ -28,9 +28,6 @@ Inherits="UI.Web.MasterPage.MasterPage" %>
                         <td align="center">Menu de la pagina</td> 
                     </tr> 
                     <tr> 
-                        <td align="center"><a href="Alum_Inscrip.aspx">Inscripcion de Alumno</a></td> 
-                    </tr>
-                    <tr> 
                         <td align="center"><a href="Materia.aspx">Materia</a></td> 
                     </tr>
                     <tr> 

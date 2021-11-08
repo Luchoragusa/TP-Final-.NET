@@ -13,7 +13,7 @@
         <asp:ScriptManager ID="ScriptManager" runat="server">
         </asp:ScriptManager> 
         <div class="reporte" Align="center">
-            <rsweb:ReportViewer ID="ReportViewerCurso" runat="server" Height="343px" Width="550px">
+            <rsweb:ReportViewer ID="ReportViewerCurso" runat="server" Height="922px" Width="1144px">
             </rsweb:ReportViewer>
             <br />
             <br />
