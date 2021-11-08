@@ -67,7 +67,7 @@ namespace UI.Web
             Business.Entities.Curso curso = new Business.Entities.Curso();
             curso.ID = SelectedIDCurso;  //id de curso
 
-            this.gridViewAlumnosDelCursoDelDocente.DataSource = al.GetAllByCurso(curso);
+            this.gridViewAlumnosDelCursoDelDocente.DataSource = al.GetAllByCurso(curso);    //trae alumnos del curso
             this.gridViewAlumnosDelCursoDelDocente.DataBind();
         }
 

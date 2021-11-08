@@ -35,7 +35,7 @@ namespace UI.Desktop.RegistrarNotas
             Alumno_InscripcionLogic ai = new Alumno_InscripcionLogic();
             try
             {
-                    this.dgvDocente_Alumnos.DataSource = ai.GetAllByCurso(cur);
+                    this.dgvDocente_Alumnos.DataSource = ai.GetAllByCurso(cur);     //muestra los alumnos del curso
             }
             catch (Exception ex)
             {
