@@ -6,27 +6,27 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.55292cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.55292cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.55292cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.55292cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.55292cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.55292cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.79844cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -38,10 +38,17 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Apellido</Value>
-                              <Style />
+                              <Style>
+                                <FontStyle>Italic</FontStyle>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>SemiBold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox3</rd:DefaultName>
@@ -68,10 +75,17 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Nombre</Value>
-                              <Style />
+                              <Style>
+                                <FontStyle>Italic</FontStyle>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>SemiBold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox5</rd:DefaultName>
@@ -98,10 +112,17 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Legajo</Value>
-                              <Style />
+                              <Style>
+                                <FontStyle>Italic</FontStyle>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>SemiBold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox9</rd:DefaultName>
@@ -128,10 +149,17 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Email</Value>
-                              <Style />
+                              <Style>
+                                <FontStyle>Italic</FontStyle>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>SemiBold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox11</rd:DefaultName>
@@ -158,10 +186,17 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Direccion</Value>
-                              <Style />
+                              <Style>
+                                <FontStyle>Italic</FontStyle>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>SemiBold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox15</rd:DefaultName>
@@ -188,10 +223,17 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Telefono</Value>
-                              <Style />
+                              <Style>
+                                <FontStyle>Italic</FontStyle>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>SemiBold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox13</rd:DefaultName>
@@ -211,7 +253,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.79844cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -223,7 +265,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Apellido.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Century Gothic</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -253,7 +297,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Nombre.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Century Gothic</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -283,7 +329,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Legajo.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Century Gothic</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -313,7 +361,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Email.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Century Gothic</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -343,7 +393,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Direccion.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Century Gothic</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -373,7 +425,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Telefono.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Century Gothic</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -418,14 +472,15 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>6.20076cm</Top>
-        <Left>1.70546cm</Left>
-        <Height>1.2cm</Height>
-        <Width>15cm</Width>
+        <Top>7.15326cm</Top>
+        <Left>2.81671cm</Left>
+        <Height>1.59688cm</Height>
+        <Width>15.3175cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
+          <BackgroundColor>White</BackgroundColor>
         </Style>
       </Tablix>
       <Textbox Name="Textbox7">
@@ -449,8 +504,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
-        <Top>0.85911cm</Top>
-        <Left>0.66146cm</Left>
+        <Top>1.20307cm</Top>
+        <Left>1.70546cm</Left>
         <Height>1.69361cm</Height>
         <Width>10.70146cm</Width>
         <ZIndex>1</ZIndex>
@@ -486,8 +541,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>2.65856cm</Top>
-        <Left>2.75167cm</Left>
+        <Top>3.44348cm</Top>
+        <Left>3.79567cm</Left>
         <Height>2.06519cm</Height>
         <Width>8.61125cm</Width>
         <ZIndex>2</ZIndex>
@@ -505,9 +560,10 @@
         <Source>Embedded</Source>
         <Value>Comoatraeryreteneralumnosextranjeros01</Value>
         <Sizing>FitProportional</Sizing>
-        <Left>10.70146cm</Left>
-        <Height>5.73333cm</Height>
-        <Width>7.92937cm</Width>
+        <Top>0.94368cm</Top>
+        <Left>12.28896cm</Left>
+        <Height>6.60646cm</Height>
+        <Width>9.27875cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -516,10 +572,12 @@
         </Style>
       </Image>
     </ReportItems>
-    <Height>3.90625in</Height>
-    <Style />
+    <Height>4.5in</Height>
+    <Style>
+      <BackgroundColor>#d4e0f2</BackgroundColor>
+    </Style>
   </Body>
-  <Width>7.37664in</Width>
+  <Width>8.61622in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
