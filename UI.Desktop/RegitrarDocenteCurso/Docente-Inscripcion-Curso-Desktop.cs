@@ -103,7 +103,7 @@ namespace UI.Desktop
                 else if (cbTipoCargo.Text == "Auxiliar")
                     this.DCActual.Cargo = Business.Entities.Entidades.DocenteCurso.TipoCargos.Auxiliar;
                 else
-                    this.DCActual.Cargo = Business.Entities.Entidades.DocenteCurso.TipoCargos.Auxiliar;
+                    this.DCActual.Cargo = Business.Entities.Entidades.DocenteCurso.TipoCargos.JefeCatedra;
             }
 
             if (this.Modo == ModoForm.Baja) DCActual.State = BusinessEntity.States.Deleted;

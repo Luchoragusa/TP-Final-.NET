@@ -92,12 +92,10 @@ namespace UI.Web
             this.idcursoTextBox.Enabled = enable;
             this.dropDownListCargo.Enabled = enable;
         }
-
         protected override void ClearForm()
         {
             this.iddocenteTextBox.Text = string.Empty;
             this.idcursoTextBox.Text = string.Empty;
-            this.dropDownListCargo.SelectedValue = string.Empty;
         }
         private void SaveEntity(Business.Entities.Entidades.DocenteCurso DocenteCurso)
         {
@@ -112,7 +110,17 @@ namespace UI.Web
         {
             DocenteCurso.IDDocente = int.Parse(this.iddocenteTextBox.Text);
             DocenteCurso.IDCurso = int.Parse(this.idcursoTextBox.Text);
+<<<<<<< HEAD
             //DocenteCurso.Cargo = this.dropDownListCargo.SelectedValue;
+=======
+
+            if (this.dropDownListCargo.SelectedValue == "Titular")
+                DocenteCurso.Cargo = Business.Entities.Entidades.DocenteCurso.TipoCargos.Titular;
+            else if (this.dropDownListCargo.SelectedValue == "Auxiliar")
+                DocenteCurso.Cargo = Business.Entities.Entidades.DocenteCurso.TipoCargos.Auxiliar;
+            else
+                DocenteCurso.Cargo = Business.Entities.Entidades.DocenteCurso.TipoCargos.JefeCatedra;
+>>>>>>> 3aef823b6fb962dea54db8e83cf84905ee8ef67a
         }
 
         protected void nuevoLinkButton_Click(object sender, EventArgs e)
