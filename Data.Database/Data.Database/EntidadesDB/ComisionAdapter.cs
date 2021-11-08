@@ -87,7 +87,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdComision = new SqlCommand("select com.id_comision, com.desc_comision, com.anio_especialidad, com.id_plan from materias m  inner join cursos c on c.id_materia = m.id_materia inner join comisiones com on com.id_comision = c.id_comision where m.id_materia = @id_materia", sqlConn);
+                SqlCommand cmdComision = new SqlCommand("drop table if exists #comiConUltimoAño; select m.id_materia, com.id_comision, MAX(anio_calendario) ultimoAño into #comiConUltimoAño  from comisiones com inner join cursos c on c.id_comision = com.id_comision inner join materias m on m.id_materia = c.id_materia group by   m.id_materia, com.id_comision; select  ultComi.id_comision, c.id_materia, c.id_curso, c.cupo from cursos c inner join #comiConUltimoAño ultComi on ultComi.id_materia = c.id_materia and ultComi.id_comision = c.id_comision and c.anio_calendario = ultComi.ultimoAño where ultComi.id_materia = @id_materia; drop table if exists #comiConUltimoAño", sqlConn);
                 cmdComision.Parameters.Add("@id_materia", SqlDbType.Int).Value = mat.ID;
                 SqlDataReader drComision = cmdComision.ExecuteReader();
                 if (drComision != null)
