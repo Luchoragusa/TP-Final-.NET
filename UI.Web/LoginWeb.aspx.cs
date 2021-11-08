@@ -32,9 +32,17 @@ namespace UI.Web
 
             if (usuario != null)
             {
-                int id_persona = loginUsuario.login(usuario);
+                int tipo_persona = loginUsuario.login(usuario);
                 Session["usuario"] = usuario;
-                Session["id_persona"] = id_persona;
+                Session["tipo_persona"] = tipo_persona;
+                if (tipo_persona == 0)
+                {
+                    Response.Redirect("LoginWeb.aspx");
+                }
+                else if (tipo_persona == 4)
+                {
+                    Response.Redirect("Persona.aspx");
+                }
                 Response.Redirect("MenuPrincipal.aspx");
                 
             }

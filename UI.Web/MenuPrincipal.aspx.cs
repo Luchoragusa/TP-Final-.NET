@@ -15,9 +15,9 @@ namespace UI.Web
         protected void Page_Load(object sender, EventArgs e)
         {
             Usuario us = (Usuario)Session["usuario"];
-            Business.Entities.Entidades.Personas per = new Business.Entities.Entidades.Personas();
-            per.ID = (int)Session["id_persona"];
-            switch (per.ID)
+
+            int tipo_persona = (int)Session["tipo_persona"];
+            switch (tipo_persona)
             {
                 case 1:     //alumno
                     lblDocente.Visible = false;
@@ -44,7 +44,12 @@ namespace UI.Web
                     btnReporteAlumno.Visible = false;
                     btnReporteComision.Visible = false;
                     break;
+                case 3:
+                    btnInscribirseACursado.Visible = false;
+                    btnRegistrarNota.Visible = false;
+                    break;
                 default:
+
                     break;
             }
         }
@@ -102,6 +107,11 @@ namespace UI.Web
         protected void btnMateria_Click(object sender, EventArgs e)
         {
             Response.Redirect("Materia.aspx");
+        }
+
+        protected void btnCurso_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Curso.aspx");
         }
     }
 }

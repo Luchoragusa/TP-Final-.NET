@@ -42,6 +42,8 @@
             <asp:Label ID="lblAdmin" runat="server" Text="Admin"></asp:Label>
             <br />
             <asp:Button ID="btnEspecialidad" runat="server" Text="Especialidad" Width="98px" BackColor="#FFCC66" OnClick="btnEspecialidad_Click" />
+            &nbsp;
+            <asp:Button ID="btnCurso" runat="server" BackColor="#FFCC66" OnClick="btnCurso_Click" Text="Curso" />
             <br />
             <br />
             <asp:Button ID="btnCerrarSesion" CssClass="btn btn-danger btn-lg" runat="server" Text="Cerrar Sesión"  a OnClick="btnCerrarSesion_Click" BackColor="#FF6600" BorderColor="#990000" />

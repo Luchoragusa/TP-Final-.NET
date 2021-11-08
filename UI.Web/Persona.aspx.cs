@@ -19,7 +19,18 @@ namespace UI.Web
         {
             if (!Page.IsPostBack)
             {
-                LoadGrid();
+                if ((int)Session["tipo_persona"] == 4)
+                {
+                    this.gridPanel.Visible = false;
+                    this.Panel4.Visible = true;
+                    this.gridActionsPanel.Visible = false;
+                    this.formPanel.Visible = true;
+                }
+                else
+                {
+                    LoadGrid(); 
+                }
+                               
             }
         }
 
@@ -120,6 +131,16 @@ namespace UI.Web
             }
             else
             {
+                Usuario usuario = (Usuario)Session["usuario"];
+                persona.IdUsuario = usuario.ID;
+
+                if (this.DropDownList1.SelectedValue == "Alumno")
+                    persona.TipoPersona = Business.Entities.Entidades.Personas.TipoPersonas.Alumno;
+                else if (this.DropDownList1.SelectedValue == "Docente")
+                    persona.TipoPersona = Business.Entities.Entidades.Personas.TipoPersonas.Docente;
+                else
+                    persona.TipoPersona = Business.Entities.Entidades.Personas.TipoPersonas.Administrador;
+
                 persona.Apellido = this.apellidoTextBox.Text;
                 persona.Nombre = this.nombreTextBox.Text;
                 persona.Direccion = this.direccionTextBox.Text;

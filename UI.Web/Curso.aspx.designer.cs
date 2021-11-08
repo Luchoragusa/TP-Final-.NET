@@ -168,33 +168,6 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorIDMateria;
 
         /// <summary>
-        /// Control descripcionLabel.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label descripcionLabel;
-
-        /// <summary>
-        /// Control descripcionTextBox.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox descripcionTextBox;
-
-        /// <summary>
-        /// Control RequiredFieldValidatorDescripcion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorDescripcion;
-
-        /// <summary>
         /// Control aceptarButton.
         /// </summary>
         /// <remarks>

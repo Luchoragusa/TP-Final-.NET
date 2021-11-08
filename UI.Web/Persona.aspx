@@ -40,7 +40,7 @@
         <asp:Button ID="btnVolver" runat="server" BackColor="#006666" Font-Bold="True" ForeColor="White" Text="Volver al menu" Width="121px" OnClick="btnVolver_Click" />
              </asp:Panel>
 
-        <asp:Panel ID="formPanel" Visible="False" runat="server">
+        <asp:Panel ID="formPanel" runat="server">
         
          <asp:Label ID ="nombreLabel" runat="server" Text="Nombre: "></asp:Label>
         <asp:TextBox ID="nombreTextBox" runat="server"></asp:TextBox>
@@ -121,16 +121,21 @@
                     *
                 </asp:RequiredFieldValidator>
             <br />
+            <asp:Label ID="lblTipoPersona" runat="server" Text="Tipo Persona: "></asp:Label>
+            &nbsp;
+            <asp:DropDownList ID="DropDownList1" runat="server">
+                <asp:ListItem>Alumno</asp:ListItem>
+                <asp:ListItem>Docente</asp:ListItem>
+                <asp:ListItem>Administrador</asp:ListItem>
+            </asp:DropDownList>
+            <br />
+            <br />
             <br />
             <asp:Button ID="aceptarButton" runat="server" class="btn btn-outline-primary" OnClick="acceptaButton_Click" Text="Aceptar" />
             &nbsp;
             <asp:Button ID="cancelarButton" runat="server" class="btn btn-outline-primary" OnClick="cancelarButton_Click" style="height: 26px" Text="Cancelar" />
         <br />     
            
-    <asp:Panel ID="Panel1" runat="server" HorizontalAlign="Center" Visible="false">
-            &nbsp;
-            </asp:Panel>
-        
      </asp:Panel>
 
         <asp:Panel ID="gridActionsPanel" runat="server" HorizontalAlign="Center">

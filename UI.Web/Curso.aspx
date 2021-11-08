@@ -8,7 +8,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="PageContent" runat="server">
         <div>
         </div>
-        <asp:Panel ID="gridPanel" runat="server" Height="196px">
+        <asp:Panel ID="gridPanel" runat="server" Height="634px">
                 <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False"  HorizontalAlign="Center"
                  SelectedRowStyle-BackColor="Black"
                  SelectedRowStyle-ForeColor="White"
@@ -79,14 +79,6 @@
                     *
                 </asp:RequiredFieldValidator>
         <br />
-                <asp:Label ID="descripcionLabel" runat="server" Text="Descripcion: "></asp:Label>
-        <asp:TextBox ID="descripcionTextBox" runat="server" Width="119px"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidatorDescripcion" runat="server" 
-                    ControlToValidate="descripcionTextBox" 
-                    ErrorMessage="La descripcion es obligatoria" 
-                    ForeColor="Red">
-                    *
-                </asp:RequiredFieldValidator>
                 <br />
                 <br />
                 <asp:Button ID="aceptarButton" runat="server" class="btn btn-outline-primary" OnClick="acceptaButton_Click" Text="Aceptar" />

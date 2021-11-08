@@ -74,7 +74,6 @@ namespace UI.Web
             this.cupoTextBox.Text = this.Entity.Cupo.ToString();
             this.idComisionTextBox.Text = this.Entity.IDComision.ToString();
             this.idMateriaTextBox.Text = this.Entity.IDMateria.ToString();
-            this.descripcionTextBox.Text = this.Entity.Descripcion.ToString();
         }
         
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -93,9 +92,7 @@ namespace UI.Web
             if (this.anioCalendarioTextBox.Text.Equals(string.Empty) ||
                                 this.cupoTextBox.Text.Equals(string.Empty) ||
                                 this.idComisionTextBox.Text.Equals(string.Empty) ||
-                                this.idMateriaTextBox.Text.Equals(string.Empty) ||
-                                this.descripcionTextBox.Text.Equals(string.Empty)
-                                )
+                                this.idMateriaTextBox.Text.Equals(string.Empty))
             {
                 MessageBox.Show("Algunos de los campos están vaciós", "Complete todos para continuar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 band = true;
@@ -106,7 +103,6 @@ namespace UI.Web
                 cur.Cupo = int.Parse(this.cupoTextBox.Text);
                 cur.IDComision = int.Parse(this.idComisionTextBox.Text);
                 cur.IDMateria = int.Parse(this.idMateriaTextBox.Text);
-                cur.Descripcion = this.descripcionTextBox.Text;
                
             }
             return band;
@@ -122,7 +118,6 @@ namespace UI.Web
             this.cupoTextBox.Enabled = enable;
             this.idComisionTextBox.Enabled = enable;
             this.idMateriaTextBox.Enabled = enable;
-            this.descripcionTextBox.Enabled = enable;
 
         }
 
@@ -154,7 +149,6 @@ namespace UI.Web
             this.cupoTextBox.Text = string.Empty;
             this.idComisionTextBox.Text = string.Empty;
             this.idMateriaTextBox.Text = string.Empty;
-            this.descripcionTextBox.Text = string.Empty;
 
         }
 
