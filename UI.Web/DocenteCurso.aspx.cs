@@ -110,9 +110,6 @@ namespace UI.Web
         {
             DocenteCurso.IDDocente = int.Parse(this.iddocenteTextBox.Text);
             DocenteCurso.IDCurso = int.Parse(this.idcursoTextBox.Text);
-<<<<<<< HEAD
-            //DocenteCurso.Cargo = this.dropDownListCargo.SelectedValue;
-=======
 
             if (this.dropDownListCargo.SelectedValue == "Titular")
                 DocenteCurso.Cargo = Business.Entities.Entidades.DocenteCurso.TipoCargos.Titular;
@@ -120,7 +117,6 @@ namespace UI.Web
                 DocenteCurso.Cargo = Business.Entities.Entidades.DocenteCurso.TipoCargos.Auxiliar;
             else
                 DocenteCurso.Cargo = Business.Entities.Entidades.DocenteCurso.TipoCargos.JefeCatedra;
->>>>>>> 3aef823b6fb962dea54db8e83cf84905ee8ef67a
         }
 
         protected void nuevoLinkButton_Click(object sender, EventArgs e)
