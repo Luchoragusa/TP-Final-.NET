@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Business.Entities;
 using Data.Database;
 
@@ -10,20 +7,20 @@ namespace Business.Logic
 {
     public class PlanLogic : BusinessLogic
     {
-        private Data.Database.PlanAdapter planData;
+        private PlanAdapter planData;
 
         public PlanLogic()
         {
-            planData = new Data.Database.PlanAdapter();
+            planData = new PlanAdapter();
         }
-        public Data.Database.PlanAdapter PlanData
+        public PlanAdapter PlanData
         {
             get { return planData; }
             set { planData = value; }
         }
         
         
-        public Business.Entities.Plan GetOne(Business.Entities.Plan plan)
+        public Plan GetOne(Plan plan)
         {
             try
             {
@@ -47,7 +44,7 @@ namespace Business.Logic
                 throw ExcepcionManejada;
             }
         }
-        public void Save(Business.Entities.Plan plan)
+        public void Save(Plan plan)
         {
             try
             {
