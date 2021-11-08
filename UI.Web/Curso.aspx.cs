@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using Business.Entities;
-using Business.Entities.Entidades;
-using Business.Logic;
 using Business.Logic.EntidadesLogic;
 
 namespace UI.Web
@@ -149,7 +143,6 @@ namespace UI.Web
             this.cupoTextBox.Text = string.Empty;
             this.idComisionTextBox.Text = string.Empty;
             this.idMateriaTextBox.Text = string.Empty;
-
         }
 
         protected void acceptaButton_Click(object sender, EventArgs e)
@@ -176,7 +169,6 @@ namespace UI.Web
                     band = this.LoadEntity(this.Entity);
                     if (band)
                         break;
-
                     this.SaveEntity(this.Entity);
                     this.LoadGrid();
                     break;

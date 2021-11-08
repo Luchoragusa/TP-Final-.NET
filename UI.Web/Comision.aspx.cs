@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using Business.Entities;
 using Business.Entities.Entidades;
 using Business.Logic;
-using Business.Logic.EntidadesLogic;
 
 namespace UI.Web
 {
@@ -20,7 +18,6 @@ namespace UI.Web
             {
                 LoadGrid();
             }
-
         }
 
         ComisionLogic _logic;
@@ -35,11 +32,10 @@ namespace UI.Web
                 return _logic;
             }
         }
-
         private void LoadGrid()
         {
             Usuario usuario = (Usuario)Session["usuario"];
-            Business.Entities.Entidades.Personas per = new Business.Entities.Entidades.Personas();
+            Personas per = new Personas();
             per.ID = (int)Session["id_persona"];
             switch (per.ID)
             {
