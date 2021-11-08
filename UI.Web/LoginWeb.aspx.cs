@@ -28,7 +28,6 @@ namespace UI.Web
                 Session["tipo_persona"] = tipo_persona;
                 if (tipo_persona == 0)
                 {
-                    Response.Write("<script LANGUAGE='JavaScript' >alert('Tu cuenta no esta habilitada.')</script>");
                     Response.Redirect("LoginWeb.aspx");
                 }
                 else if (tipo_persona == 4)

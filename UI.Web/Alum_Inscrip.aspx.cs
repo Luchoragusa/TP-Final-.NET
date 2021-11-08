@@ -110,7 +110,6 @@ namespace UI.Web
             {
                 ali.Nota = this.notaTextBox.Text;
                 ali.Condicion = this.condicionTextBox.Text;
-                //cargamos ali.NombrePersona/ApellidoPersona/legajoPersona ??? el tema es que es solo lectura (no tiene set)
             }
             return band;
         }
