@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using Business.Entities;
 using Business.Logic;
@@ -102,7 +97,7 @@ namespace UI.Desktop
             {
                 usuarioLogic.Save(UsuarioActual);
                 MessageBox.Show("La operacion se realizo correctamente", "Informacion", MessageBoxButtons.OK);
-                //this.Dispose();
+                this.Dispose();
             }
             catch (Exception ex)
             {
