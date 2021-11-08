@@ -26,7 +26,6 @@ namespace UI.Web
                 }
             }
         }
-
         private void LoadGridMaterias()
         {
             btnVolver.Visible = true;
@@ -63,7 +62,7 @@ namespace UI.Web
 
         private void LoadGridAlumnos()
         {
-            Business.Logic.EntidadesLogic.Alumno_InscripcionLogic al = new Business.Logic.EntidadesLogic.Alumno_InscripcionLogic();
+            Alumno_InscripcionLogic al = new Alumno_InscripcionLogic();
 
             Business.Entities.Curso curso = new Business.Entities.Curso();
             curso.ID = SelectedIDCurso;  //id de curso
