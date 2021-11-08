@@ -39,13 +39,15 @@ namespace UI.Web
                 case 1:     //alumno
                     nuevoLinkButton.Enabled = false;
                     editarLinkButton.Enabled = false;
+                    this.gridView.DataSource = this.Logic.GetAllByAlumno(us);
+                    this.gridView.DataBind();
                     break;
 
-                default:
+                default:    //admin
+                    this.gridView.DataSource = this.Logic.GetAll();
+                    this.gridView.DataBind();
                     break;
-            }
-            this.gridView.DataSource = this.Logic.GetAll();
-            this.gridView.DataBind();
+            }            
         }
 
         public FormModes FormMode

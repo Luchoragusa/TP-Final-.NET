@@ -89,12 +89,12 @@ namespace UI.Web
             Business.Logic.EntidadesLogic.Alumno_InscripcionLogic al = new Business.Logic.EntidadesLogic.Alumno_InscripcionLogic();
             
 
-            if (al.ValidarInscripcion(Mate, usuario) != null)
-            {
-                Response.Redirect("InscribirseACursado.aspx");
-            }
-            else
-            {
+            //if (al.ValidarInscripcion(Mate, usuario) != null)
+            //{
+            //    Response.Redirect("InscribirseACursado.aspx");
+            //}
+            //else
+            //{
                 com.ID = this.SelectedIDComision;
                 curso = cl.getByComision(com);
                 persona = perl.GetIDPersona(usuario);
@@ -106,9 +106,10 @@ namespace UI.Web
                 this.Entity.Condicion = "Cursando";
                 this.Entity.State = BusinessEntity.States.New;
 
-                this.SaveEntity(Entity);            
+                this.SaveEntity(Entity);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('Ya te inscribiste a la materia');", true);
                 this.LoadGridComisiones();
-            } 
+            //} 
         }
 
         Alumno_InscripcionLogic _logic;
