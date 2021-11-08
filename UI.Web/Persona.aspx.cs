@@ -30,6 +30,8 @@ namespace UI.Web
                 }
                 else
                 {
+                    this.formPanel.Visible = false;
+                    this.gridActionsPanel.Visible = false;
                     LoadGrid(); 
                 }
                                
@@ -76,6 +78,7 @@ namespace UI.Web
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.SelectedID = (int)this.gridView.SelectedValue;
+            this.gridActionsPanel.Visible = true;
         }
 
         protected void LoadForm(int id)
@@ -250,7 +253,15 @@ namespace UI.Web
             if (!band)
                 this.formPanel.Visible = false;
 
-            Response.Redirect("LoginWeb.aspx");
+            if ((int)Session["tipo_persona"] == 4)
+            {
+                Response.Redirect("LoginWeb.aspx");
+            }
+            else
+            {
+                Response.Redirect("MenuPrincipal.aspx");
+            }
+            
         }
 
         protected void cancelarButton_Click(object sender, EventArgs e)
