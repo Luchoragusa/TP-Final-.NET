@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Windows.Forms;
 using Business.Entities;
-using Business.Logic;
 
 namespace UI.Web
 {
-    public partial class MenuPrincipal : System.Web.UI.Page
+    public partial class MenuPrincipal : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
