@@ -61,7 +61,7 @@ namespace UI.Desktop
         public override void MapearDeDatos()
         {
             this.txtID.Text = this.PersonaActual.ID.ToString();
-            this.txtIDUsuario.Text = this.PersonaActual.ID.ToString();
+            this.txtIDUsuario.Text = this.PersonaActual.IdUsuario.ToString();
             this.txtNombre.Text = this.PersonaActual.Nombre;
             this.txtApellido.Text = this.PersonaActual.Apellido;
             this.txtDireccion.Text = this.PersonaActual.Direccion;
@@ -170,19 +170,13 @@ namespace UI.Desktop
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (!Validaciones.validarAlphaNumerico(txtDireccion.Text))    
-            {
-                Notificar("Direccion Incorrecta.", "Intente nuevamente",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
             if (!Validaciones.validarMail(txtEmail.Text))
             {
                 Notificar("Direccion de email Incorrecta.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (Validaciones.validarTexto(txtTelefono.Text))
+            if (!Validaciones.validarTexto(txtTelefono.Text))
             {
                 Notificar("Telefono Incorrecto.", "Intente nuevamente",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
