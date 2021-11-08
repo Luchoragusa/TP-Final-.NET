@@ -49,7 +49,7 @@ namespace UI.Desktop
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.68919F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.31081F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 84F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
             this.tableLayoutPanel1.Controls.Add(this.txtID, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblID, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblUsuario, 0, 1);
@@ -76,7 +76,7 @@ namespace UI.Desktop
             // txtID
             // 
             this.txtID.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtID.Location = new System.Drawing.Point(98, 20);
+            this.txtID.Location = new System.Drawing.Point(97, 20);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(254, 20);
@@ -105,19 +105,19 @@ namespace UI.Desktop
             // txtUsuario
             // 
             this.txtUsuario.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtUsuario.Location = new System.Drawing.Point(98, 80);
+            this.txtUsuario.Location = new System.Drawing.Point(97, 80);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(254, 20);
-            this.txtUsuario.TabIndex = 5;
+            this.txtUsuario.TabIndex = 1;
             // 
             // txtClave
             // 
             this.txtClave.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtClave.Location = new System.Drawing.Point(98, 140);
+            this.txtClave.Location = new System.Drawing.Point(97, 140);
             this.txtClave.Name = "txtClave";
             this.txtClave.PasswordChar = '*';
             this.txtClave.Size = new System.Drawing.Size(254, 20);
-            this.txtClave.TabIndex = 3;
+            this.txtClave.TabIndex = 2;
             // 
             // lblClave
             // 
@@ -142,30 +142,30 @@ namespace UI.Desktop
             // txtConfClave
             // 
             this.txtConfClave.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtConfClave.Location = new System.Drawing.Point(98, 200);
+            this.txtConfClave.Location = new System.Drawing.Point(97, 200);
             this.txtConfClave.Name = "txtConfClave";
             this.txtConfClave.PasswordChar = '*';
             this.txtConfClave.Size = new System.Drawing.Size(254, 20);
-            this.txtConfClave.TabIndex = 17;
+            this.txtConfClave.TabIndex = 3;
             // 
             // chkHabilitado
             // 
             this.chkHabilitado.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.chkHabilitado.AutoSize = true;
-            this.chkHabilitado.Location = new System.Drawing.Point(19, 261);
+            this.chkHabilitado.Location = new System.Drawing.Point(18, 261);
             this.chkHabilitado.Name = "chkHabilitado";
             this.chkHabilitado.Size = new System.Drawing.Size(73, 17);
-            this.chkHabilitado.TabIndex = 9;
+            this.chkHabilitado.TabIndex = 4;
             this.chkHabilitado.Text = "Habilitado";
             this.chkHabilitado.UseVisualStyleBackColor = true;
             // 
             // btnCancelar
             // 
             this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnCancelar.Location = new System.Drawing.Point(277, 258);
+            this.btnCancelar.Location = new System.Drawing.Point(276, 258);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 8;
+            this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.botonCancelarClick);
@@ -176,7 +176,7 @@ namespace UI.Desktop
             this.btnModo.Location = new System.Drawing.Point(362, 258);
             this.btnModo.Name = "btnModo";
             this.btnModo.Size = new System.Drawing.Size(75, 23);
-            this.btnModo.TabIndex = 7;
+            this.btnModo.TabIndex = 5;
             this.btnModo.Text = "Aceptar";
             this.btnModo.UseVisualStyleBackColor = true;
             this.btnModo.Click += new System.EventHandler(this.botonAceptarClick);

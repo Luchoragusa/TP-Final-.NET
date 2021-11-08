@@ -39,8 +39,8 @@ namespace UI.Desktop
             this.lblDesc = new System.Windows.Forms.Label();
             this.txtDesc = new System.Windows.Forms.TextBox();
             this.lblIDMateria = new System.Windows.Forms.Label();
-            this.txtID = new System.Windows.Forms.TextBox();
             this.lblPlan = new System.Windows.Forms.Label();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.txtIDPlan = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -161,15 +161,6 @@ namespace UI.Desktop
             this.lblIDMateria.TabIndex = 10;
             this.lblIDMateria.Text = "ID de Materia";
             // 
-            // txtID
-            // 
-            this.txtID.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtID.Location = new System.Drawing.Point(131, 20);
-            this.txtID.Name = "txtID";
-            this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(256, 20);
-            this.txtID.TabIndex = 1;
-            // 
             // lblPlan
             // 
             this.lblPlan.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -180,13 +171,22 @@ namespace UI.Desktop
             this.lblPlan.TabIndex = 12;
             this.lblPlan.Text = "ID de Plan";
             // 
+            // txtID
+            // 
+            this.txtID.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtID.Location = new System.Drawing.Point(131, 20);
+            this.txtID.Name = "txtID";
+            this.txtID.ReadOnly = true;
+            this.txtID.Size = new System.Drawing.Size(256, 20);
+            this.txtID.TabIndex = 1;
+            // 
             // txtIDPlan
             // 
             this.txtIDPlan.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtIDPlan.Location = new System.Drawing.Point(131, 80);
             this.txtIDPlan.Name = "txtIDPlan";
             this.txtIDPlan.Size = new System.Drawing.Size(256, 20);
-            this.txtIDPlan.TabIndex = 0;
+            this.txtIDPlan.TabIndex = 1;
             // 
             // MateriaDesktop
             // 

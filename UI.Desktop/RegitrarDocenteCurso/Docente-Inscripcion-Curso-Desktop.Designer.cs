@@ -141,7 +141,7 @@ namespace UI.Desktop
             this.btnModo.Location = new System.Drawing.Point(15, 240);
             this.btnModo.Name = "btnModo";
             this.btnModo.Size = new System.Drawing.Size(73, 23);
-            this.btnModo.TabIndex = 7;
+            this.btnModo.TabIndex = 4;
             this.btnModo.Text = "Aceptar";
             this.btnModo.UseVisualStyleBackColor = true;
             this.btnModo.Click += new System.EventHandler(this.btnModo_Click);
@@ -152,7 +152,7 @@ namespace UI.Desktop
             this.btnCancelar.Location = new System.Drawing.Point(106, 240);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 8;
+            this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -168,7 +168,7 @@ namespace UI.Desktop
             this.cbTipoCargo.Location = new System.Drawing.Point(106, 196);
             this.cbTipoCargo.Name = "cbTipoCargo";
             this.cbTipoCargo.Size = new System.Drawing.Size(229, 21);
-            this.cbTipoCargo.TabIndex = 14;
+            this.cbTipoCargo.TabIndex = 3;
             // 
             // DICDesktop
             // 

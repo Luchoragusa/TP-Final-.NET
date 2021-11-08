@@ -63,7 +63,7 @@
                     <asp:BoundField DataField="ID" HeaderText="ID del Curso" />
                     <asp:BoundField DataField="AnioCalendario" HeaderText="AnioCalendario" />
                     <asp:BoundField DataField="IDComision" HeaderText="IDComision" />
-                    <asp:BoundField DataField="IDComision" HeaderText="Cupo" />
+                    <asp:BoundField DataField="Cupo" HeaderText="Cupo" />
                     <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" />
                 </Columns>
                 <FooterStyle BackColor="White" ForeColor="#333333" />
@@ -77,8 +77,6 @@
                 <SortedDescendingHeaderStyle BackColor="#275353" />
             </asp:GridView>
         </asp:Panel>
-        <br />
-        <br />
         <br />
 
 
