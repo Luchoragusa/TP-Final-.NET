@@ -14,9 +14,10 @@ namespace UI.Web
             if (!Page.IsPostBack)
             {
                 LoadGridMaterias();
+                this.Panel5.Visible = true;
                 if (this.gridViewMateriasInscripcion.SelectedIndex == -1)
-                {
-                    this.gridViewComisionesMateria.Visible = false;
+                {                    
+                    this.Panel2.Visible = false;
                 }
             }
         }
@@ -56,6 +57,7 @@ namespace UI.Web
 
         private void LoadGridMaterias ()
         {
+            this.Panel5.Visible = true;
             btnVolver.Visible = true;            
             MateriaLogic ml = new MateriaLogic();
             this.gridViewMateriasInscripcion.DataSource = ml.GetAll();
@@ -66,13 +68,14 @@ namespace UI.Web
         public Business.Entities.Materia Mate { get => mate; set => mate = value; }
 
         public void LoadGridComisiones()
-        {
+        {            
             ComisionLogic cl = new ComisionLogic();
 
             Mate.ID = this.SelectedID;           
 
             this.gridViewComisionesMateria.DataSource = cl.GetAllMateriasCom(Mate);
             this.gridViewComisionesMateria.DataBind();
+            this.gridViewComisionesMateria.Visible = true;
         }
 
         protected void acceptaButton_Click(object sender, EventArgs e)
@@ -92,7 +95,7 @@ namespace UI.Web
             }
             else
             {
-                com.ID = SelectedIDComision;
+                com.ID = this.SelectedIDComision;
                 curso = cl.getByComision(com);
                 persona = perl.GetIDPersona(usuario);
 
@@ -101,10 +104,29 @@ namespace UI.Web
                 this.Entity.IDCurso = curso.ID;
                 this.Entity.IDAlumno = persona.ID;
                 this.Entity.Condicion = "Cursando";
+                this.Entity.State = BusinessEntity.States.New;
 
-                al.Insert(Entity);            
+                this.SaveEntity(Entity);            
                 this.LoadGridComisiones();
             } 
+        }
+
+        Alumno_InscripcionLogic _logic;
+        private Alumno_InscripcionLogic Logic
+        {
+            get
+            {
+                if (_logic == null)
+                {
+                    _logic = new Alumno_InscripcionLogic();
+                }
+                return _logic;
+            }
+        }
+
+        private void SaveEntity(Alumnos_Inscripciones ali)
+        {
+            this.Logic.Save(ali);
         }
 
         protected void btnVolver_Click(object sender, EventArgs e)
@@ -116,6 +138,7 @@ namespace UI.Web
         {
             this.SelectedID = (int)this.gridViewMateriasInscripcion.SelectedValue;
             LoadGridComisiones();
+            this.Panel2.Visible = true;
             this.gridViewComisionesMateria.Visible = true;
         }
 

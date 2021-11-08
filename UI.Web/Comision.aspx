@@ -7,7 +7,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="PageContent" runat="server">
         <div>
         </div>
-            <asp:Panel ID="gridPanel" runat="server" Height="302px">
+            <asp:Panel ID="gridPanel" runat="server" Height="468px">
                 <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False" HorizontalAlign="Center"
                  SelectedRowStyle-BackColor="Black"
                  SelectedRowStyle-ForeColor="White"

@@ -65,17 +65,15 @@
             &nbsp;
                             <br />
             <br />
-            <asp:Button ID="btnVolver" runat="server" BackColor="#006666" Font-Bold="True" ForeColor="White" OnClick="btnVolver_Click" Text="Volver al menu" Width="121px" />
                             <br />
 
             <asp:Panel ID="Panel5" runat="server" HorizontalAlign="Center" Visible="true">
+                <asp:Button ID="btnVolver" runat="server" BackColor="#006666" Font-Bold="True" ForeColor="White" OnClick="btnVolver_Click" Text="Volver al menu" Width="121px" />
             &nbsp;
             
         </asp:Panel>
 
         </asp:Panel>
     </asp:Panel>    
-            <asp:Panel ID="Panel4" runat="server" HorizontalAlign="Center" Visible ="true">
-             </asp:Panel>
-
+            
 </asp:Content>

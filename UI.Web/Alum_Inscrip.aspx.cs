@@ -107,6 +107,9 @@ namespace UI.Web
             }
             else
             {
+                //ali.NombrePersona = this.txtNombrePersona.Text;
+                //ali.ApellidoPersona = this.txtApellidoPersona.Text;
+                //ali.legajoPersona = int.Parse(this.txtLegajoPersona.Text);
                 ali.Nota = this.notaTextBox.Text;
                 ali.Condicion = this.condicionTextBox.Text;
             }
