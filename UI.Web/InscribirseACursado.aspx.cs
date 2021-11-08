@@ -83,24 +83,28 @@ namespace UI.Web
             Business.Entities.Comision com = new Business.Entities.Comision();
             Business.Entities.Curso curso = new Business.Entities.Curso();
             Personas persona = new Personas();
-
-
-            com.ID = SelectedIDComision;
-            curso = cl.getByComision(com);
-            persona = perl.GetIDPersona(usuario);
-
-            Entity = new Alumnos_Inscripciones();
-
-            this.Entity.IDCurso = curso.ID;
-            this.Entity.IDAlumno = persona.ID;
-            this.Entity.Condicion = "Cursando";
-
-            this.Entity.State = BusinessEntity.States.Modified;
-
-            Alumno_InscripcionLogic al = new Alumno_InscripcionLogic();
-            al.Insert(Entity);
+            Business.Logic.EntidadesLogic.Alumno_InscripcionLogic al = new Business.Logic.EntidadesLogic.Alumno_InscripcionLogic();
             
-            this.LoadGridComisiones();
+
+            if (al.ValidarInscripcion(Mate, usuario) != null)
+            {
+                Response.Redirect("InscribirseACursado.aspx");
+            }
+            else
+            {
+                com.ID = SelectedIDComision;
+                curso = cl.getByComision(com);
+                persona = perl.GetIDPersona(usuario);
+
+                Entity = new Alumnos_Inscripciones();
+
+                this.Entity.IDCurso = curso.ID;
+                this.Entity.IDAlumno = persona.ID;
+                this.Entity.Condicion = "Cursando";
+
+                al.Insert(Entity);            
+                this.LoadGridComisiones();
+            } 
         }
 
         protected void btnVolver_Click(object sender, EventArgs e)

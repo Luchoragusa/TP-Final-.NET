@@ -33,9 +33,8 @@ namespace UI.Web
         private void LoadGrid()
         {
             Usuario us = (Usuario)Session["usuario"];
-            Personas per = new Personas();
-            per.ID = (int)Session["id_persona"];
-            switch (per.ID)
+            int tipo_persona = (int)Session["tipo_persona"];
+            switch (tipo_persona)
             {
                 case 1:     //alumno
                     nuevoLinkButton.Enabled = false;
