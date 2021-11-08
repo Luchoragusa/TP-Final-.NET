@@ -37,8 +37,24 @@ namespace UI.Web
         }
         private void LoadGrid()
         {
-            this.gridView.DataSource = this.Logic.GetAll();
-            this.gridView.DataBind();
+            Usuario docente = (Usuario)Session["usuario"];
+            Business.Entities.Entidades.Personas per = new Business.Entities.Entidades.Personas();
+            per.ID = (int)Session["id_persona"];
+            switch (per.ID)
+            {
+                case 1:     //docente
+                    nuevoLinkButton.Enabled = false;
+                    editarLinkButton.Enabled = false;
+                    eliminarLinkButton.Enabled = false;
+                    this.gridView.DataSource = this.Logic.getCursosDocente(docente);
+                    this.gridView.DataBind();
+                    break;
+
+                default:
+                    this.gridView.DataSource = this.Logic.GetAll();
+                    this.gridView.DataBind();
+                    break;
+            }         
         }
 
         public FormModes FormMode
@@ -60,21 +76,6 @@ namespace UI.Web
 
         protected void LoadForm(int id)
         {
-            Usuario us = (Usuario)Session["usuario"];
-            Business.Entities.Entidades.Personas per = new Business.Entities.Entidades.Personas();
-            per.ID = (int)Session["id_persona"];
-            switch (per.ID)
-            {
-                case 1:     //alumno
-                    nuevoLinkButton.Enabled = false;
-                    editarLinkButton.Enabled = false;
-                    eliminarLinkButton.Enabled = false;
-                    break;
-
-                default:
-                    break;
-            }
-
             Entity = new Business.Entities.Entidades.DocenteCurso();
             this.Entity.ID = id;
             this.Entity = this.Logic.GetOne(Entity);

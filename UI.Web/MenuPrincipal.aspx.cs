@@ -26,6 +26,7 @@ namespace UI.Web
                     lblAdmin.Visible = false;
                     btnEspecialidad.Visible = false;
                     lblAdmin.Visible = false;
+                    lblReportes.Visible = false;
                     btnReporteAlumno.Visible = false;
                     btnReporteComision.Visible = false;
                     break;

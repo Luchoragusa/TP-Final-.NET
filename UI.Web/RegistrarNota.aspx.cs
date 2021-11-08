@@ -17,19 +17,46 @@ namespace UI.Web
         {
             if (!Page.IsPostBack)
             {
-                LoadGridCursos();
+                LoadGridMaterias();
                 if (this.gridViewCursosDelDocente.SelectedIndex == -1)
                 {
-                    this.Panel2.Visible = false;
+                    this.PanelComisiones.Visible = false;
+                    this.gridViewCursosDelDocente.Visible = false;
+                    this.Panel2.Visible = false;            //grid view alumno
                 }
             }
         }
+
+        private void LoadGridMaterias()
+        {
+            btnVolver.Visible = true;
+            Usuario docente = (Usuario)Session["usuario"];
+            DocenteCursoLogic dcl = new DocenteCursoLogic();
+            this.gridViewMaterias.DataSource = dcl.GetAllMateriasDelDocente(docente);
+            this.gridViewMaterias.DataBind();
+        }
+
+        private void LoadGridComisiones()
+        {
+            btnVolver.Visible = true;
+            Usuario docente = (Usuario)Session["usuario"];
+            DocenteCursoLogic dcl = new DocenteCursoLogic();
+            Business.Entities.Materia materia = new Business.Entities.Materia();
+            materia.ID = SelectedIDMateria;
+            this.gridViewComisiones.DataSource = dcl.GetAllComisionesMateria(docente, materia);
+        }
+
         private void LoadGridCursos()
         {
             btnVolver.Visible = true;
             Usuario docente = (Usuario)Session["usuario"];
-            Business.Logic.EntidadesLogic.CursoLogic cl = new Business.Logic.EntidadesLogic.CursoLogic();
-            this.gridViewCursosDelDocente.DataSource = cl.GetAllDocente(docente);
+            DocenteCursoLogic dcl = new DocenteCursoLogic();
+            Business.Entities.Materia materia = new Business.Entities.Materia();
+            materia.ID = SelectedIDMateria;
+            Business.Entities.Comision comision = new Business.Entities.Comision();
+            comision.ID = SelectedIDComision;
+
+            this.gridViewCursosDelDocente.DataSource = dcl.GetAllCursosDeLaComision(docente, materia, comision);
             this.gridViewCursosDelDocente.DataBind();
         }
 
@@ -64,11 +91,41 @@ namespace UI.Web
             }
         }
 
+        private int SelectedIDMateria
+        {
+            get
+            {
+                if (this.ViewState["SelectedIDMateria"] != null)
+                    return (int)this.ViewState["SelectedIDMateria"];
+                else
+                    return 0;
+            }
+            set
+            {
+                this.ViewState["SelectedIDMateria"] = value;
+            }
+        }
+
+        private int SelectedIDComision
+        {
+            get
+            {
+                if (this.ViewState["SelectedIDComision"] != null)
+                    return (int)this.ViewState["SelectedIDComision"];
+                else
+                    return 0;
+            }
+            set
+            {
+                this.ViewState["SelectedIDComision"] = value;
+            }
+        }
+
         protected void acceptaButton_Click(object sender, EventArgs e)
         {
             Alumno_InscripcionLogic alumnoLogic = new Alumno_InscripcionLogic();
             Entity = new Alumnos_Inscripciones();
-            //this.Entity.legajoPersona = SelectedlegajoPersona;
+
             this.Entity = alumnoLogic.GetOne(Entity);
             this.Entity.State = BusinessEntity.States.Modified;
             this.LoadEntity(this.Entity);
@@ -86,7 +143,7 @@ namespace UI.Web
             try
             {
                 Alumno_InscripcionLogic alumnoLogic = new Alumno_InscripcionLogic();
-                alumnoLogic.Save(Entity);
+                alumnoLogic.Update(Entity);
 
             }
             catch (Exception ex)
@@ -118,6 +175,18 @@ namespace UI.Web
             Response.Redirect("MenuPrincipal.aspx");
         }
 
+        protected void gridViewMaterias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.SelectedIDMateria = (int)this.gridViewMaterias.SelectedValue;
+            LoadGridComisiones();
+            this.PanelComisiones.Visible = true;
+        }
 
+        protected void gridViewComisiones_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.SelectedIDComision = (int)this.gridViewComisiones.SelectedValue;
+            LoadGridCursos();
+            this.gridViewCursosDelDocente.Visible = true;
+        }
     }
 }

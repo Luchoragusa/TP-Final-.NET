@@ -47,13 +47,15 @@ namespace UI.Web
                     editarLinkButton.Enabled = false;
                     nuevoLinkButton.Enabled = false;
                     eliminarLinkButton.Enabled = false;
+                    this.gridView.DataSource = this.Logic.GetAllByAlumno(usuario);
+                    this.gridView.DataBind();
                     break;
 
                 default:
+                    this.gridView.DataSource = this.Logic.GetAll();
+                    this.gridView.DataBind();
                     break;
-            }
-            this.gridView.DataSource = this.Logic.GetAllByAlumno(usuario);
-            this.gridView.DataBind();
+            }            
         }
 
         public FormModes FormMode

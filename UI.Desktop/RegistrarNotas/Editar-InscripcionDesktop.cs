@@ -1,6 +1,7 @@
 ﻿using Business.Entities;
 using Business.Entities.Entidades;
 using Business.Logic.EntidadesLogic;
+using Business.Logic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -109,19 +110,6 @@ namespace UI.Desktop.RegistrarNotas
                 Notificar("Algunos de los campos están vaciós", "Complete todos para continuar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-
-            //if (!Validaciones.validarTexto(txtIDCurso.Text))
-            //{
-            //    Notificar("Descripcion incorrecta.", "Intente nuevamente",
-            //    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return false;
-            //}
-            //if (Validaciones.validarTexto(txtIDAlumno.Text)) // validar lo de abajo con que sea correspondiente a un plan ya creado
-            //{
-            //    Notificar("ID incorrecta.", "Intente nuevamente",
-            //    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return false;
-            //}
             return true;
         }
 

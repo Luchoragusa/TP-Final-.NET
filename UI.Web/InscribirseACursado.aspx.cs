@@ -79,20 +79,18 @@ namespace UI.Web
             this.gridViewComisionesMateria.DataBind();
         }
 
-        Personas persona;
-        Business.Entities.Curso curso;
         protected void acceptaButton_Click(object sender, EventArgs e)
         {
             CursoLogic cl = new CursoLogic();
             PersonaLogic perl = new PersonaLogic();
             Usuario usuario = (Usuario)Session["usuario"];
+            Business.Entities.Comision com = new Business.Entities.Comision();
+            Business.Entities.Curso curso = new Business.Entities.Curso();
+            Personas persona = new Personas();
 
-            curso = new Business.Entities.Curso();
-            persona = new Personas();
 
-            //curso = cl.getByMateria(Mate);
-
-            curso = cl.GetCursoComision(SelectedIDComision);
+            com.ID = SelectedIDComision;
+            curso = cl.getByComision(com);
             persona = perl.GetIDPersona(usuario);
 
             Entity = new Alumnos_Inscripciones();
@@ -102,25 +100,12 @@ namespace UI.Web
             this.Entity.Condicion = "Cursando";
 
             this.Entity.State = BusinessEntity.States.Modified;
-            this.SaveEntity();
+
+            Alumno_InscripcionLogic al = new Alumno_InscripcionLogic();
+            al.Insert(Entity);
+            
             this.LoadGridComisiones();
         }
-
-
-        private void SaveEntity()
-        {
-            try
-            {
-                Alumno_InscripcionLogic alumnoLogic = new Alumno_InscripcionLogic();
-                alumnoLogic.Save(Entity);
-
-            }
-            catch (Exception ex)
-            {
-                Response.Write("<script>window.alert('" + ex.Message + "');</script>");
-            }
-        }
-
 
         protected void btnVolver_Click(object sender, EventArgs e)
         {
