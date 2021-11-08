@@ -34,7 +34,7 @@
             <br />
             <asp:Label ID="lblReportes" runat="server" Text="Reportes"></asp:Label>
             <br />
-            <asp:Button ID="btnReporteAlumno" runat="server" BackColor="#99CC00" OnClick="btnReporteAlumno_Click" Text="Reporte Alumno" />
+            <asp:Button ID="btnReporteAlumno" runat="server" BackColor="#99CC00" OnClick="btnReporteAlumno_Click" Text="Reporte Personas" />
 &nbsp;
             <asp:Button ID="btnReporteComision" runat="server" BackColor="#99CC00" OnClick="btnReporteComision_Click" Text="Reporte Comision" />
             <br />

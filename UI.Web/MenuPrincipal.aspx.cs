@@ -43,9 +43,6 @@ namespace UI.Web
                     lblReportes.Visible = false;
                     btnReporteAlumno.Visible = false;
                     btnReporteComision.Visible = false;
-
-                //HACER UN CASE 4 ??? SERIA LA PERSONA QUE ENTRA POR PRIMERA VEZ
-
                     break;
                 default:
                     break;
@@ -59,7 +56,7 @@ namespace UI.Web
 
         protected void btnReporteAlumno_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ReporteAlumno.aspx");
+            Response.Redirect("ReportePersonas.aspx");
         }
 
         protected void btnReporteComision_Click(object sender, EventArgs e)

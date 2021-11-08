@@ -9,7 +9,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Reporte académico de Alumnos</Value>
+                <Value>Reporte académico de Personas</Value>
                 <Style>
                   <FontStyle>Italic</FontStyle>
                   <FontSize>18pt</FontSize>
@@ -42,7 +42,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>En esta sección, se mostrarán los cursos donde el alumno está inscripto y sus notas</Value>
+                <Value>En esta sección, se mostrarán las personas registradas en el sistema</Value>
                 <Style>
                   <FontSize>11pt</FontSize>
                   <FontWeight>Bold</FontWeight>
