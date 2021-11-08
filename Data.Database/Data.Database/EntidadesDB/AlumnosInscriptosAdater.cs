@@ -103,7 +103,7 @@ namespace Data.Database.EntidadesDB
             {
                 Exception ExcepcionManejada = new Exception("Error al recuperar la lista de alumnos inscriptos", Ex);
                 throw ExcepcionManejada;
-            }///////////////////////////
+            }
             finally
             {
                 this.CloseConnection();

@@ -55,7 +55,7 @@
                 <SortedDescendingHeaderStyle BackColor="#275353" />
             </asp:GridView>
         </asp:Panel>
-        <asp:Panel ID="Panel6" runat="server">
+        <asp:Panel ID="PanelCursos" runat="server">
             <asp:Label ID="lblCursosDelDocente" runat="server" Text="Cursos asignados del docente:"></asp:Label>
             <br />
             <asp:GridView ID="gridViewCursosDelDocente" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" DataKeyNames="ID" DataKeysNames="ID" GridLines="Horizontal" OnSelectedIndexChanged="gridViewCursos_SelectedIndexChanged" SelectedRowStyle-BackColor="Black" SelectedRowStyle-ForeColor="White">
@@ -83,12 +83,12 @@
 
 
 
-        <asp:Panel ID="Panel2" runat="server">
+        <asp:Panel ID="PanelAlumnos" runat="server">
             <asp:Label ID="lblAlumnosAsignados" runat="server" Text="Alumnos asignados al curso:"></asp:Label>
                  <asp:GridView ID="gridViewAlumnosDelCursoDelDocente" runat="server" AutoGenerateColumns="False"
                  SelectedRowStyle-BackColor="Black"
                  SelectedRowStyle-ForeColor="White"
-                 DataKeysNames="ID" DataKeyNames="legajoPersona" OnSelectedIndexChanged="gridViewAlumnos_SelectedIndexChanged" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
+                 DataKeysNames="ID" DataKeyNames="ID" OnSelectedIndexChanged="gridViewAlumnos_SelectedIndexChanged" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
                <Columns>
                         <asp:BoundField HeaderText="Nombre" DataField="NombrePersona" />
                         <asp:BoundField HeaderText="Apellido" DataField="ApellidoPersona" />

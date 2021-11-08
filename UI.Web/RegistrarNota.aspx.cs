@@ -18,11 +18,11 @@ namespace UI.Web
             if (!Page.IsPostBack)
             {
                 LoadGridMaterias();
-                if (this.gridViewCursosDelDocente.SelectedIndex == -1)
+                if (this.gridViewAlumnosDelCursoDelDocente.SelectedIndex == -1)
                 {
                     this.PanelComisiones.Visible = false;
-                    this.gridViewCursosDelDocente.Visible = false;
-                    this.Panel2.Visible = false;            //grid view alumno
+                    this.PanelCursos.Visible = false;
+                    this.PanelAlumnos.Visible = false;            //grid view alumno
                 }
             }
         }
@@ -44,6 +44,7 @@ namespace UI.Web
             Business.Entities.Materia materia = new Business.Entities.Materia();
             materia.ID = SelectedIDMateria;
             this.gridViewComisiones.DataSource = dcl.GetAllComisionesMateria(docente, materia);
+            this.gridViewComisiones.DataBind();
         }
 
         private void LoadGridCursos()
@@ -65,7 +66,7 @@ namespace UI.Web
             Business.Logic.EntidadesLogic.Alumno_InscripcionLogic al = new Business.Logic.EntidadesLogic.Alumno_InscripcionLogic();
 
             Business.Entities.Curso curso = new Business.Entities.Curso();
-            curso.ID = (int)this.gridViewCursosDelDocente.SelectedValue;
+            curso.ID = SelectedIDCurso;  //id de curso
 
             this.gridViewAlumnosDelCursoDelDocente.DataSource = al.GetAllByCurso(curso);
             this.gridViewAlumnosDelCursoDelDocente.DataBind();
@@ -76,18 +77,18 @@ namespace UI.Web
             get;set;
         }
 
-        private int SelectedlegajoPersona
+        private int SelectedIDCurso
         {
             get
             {
-                if (this.ViewState["SelectedlegajoPersona"] != null)
-                    return (int)this.ViewState["SelectedlegajoPersona"];
+                if (this.ViewState["SelectedIDCurso"] != null)
+                    return (int)this.ViewState["SelectedIDCurso"];
                 else
                     return 0;
             }
             set
             {
-                this.ViewState["SelectedlegajoPersona"] = value;
+                this.ViewState["SelectedIDCurso"] = value;
             }
         }
 
@@ -125,6 +126,7 @@ namespace UI.Web
         {
             Alumno_InscripcionLogic alumnoLogic = new Alumno_InscripcionLogic();
             Entity = new Alumnos_Inscripciones();
+            Entity.ID = SelectedID;
 
             this.Entity = alumnoLogic.GetOne(Entity);
             this.Entity.State = BusinessEntity.States.Modified;
@@ -160,14 +162,14 @@ namespace UI.Web
 
         protected void gridViewCursos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.SelectedID = (int)this.gridViewCursosDelDocente.SelectedValue;
+            this.SelectedIDCurso = (int)this.gridViewCursosDelDocente.SelectedValue;
             LoadGridAlumnos();
-            this.Panel2.Visible = true;
+            this.PanelAlumnos.Visible = true;
         }
 
         protected void gridViewAlumnos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.SelectedlegajoPersona = (int)this.gridViewAlumnosDelCursoDelDocente.SelectedValue;
+            this.SelectedID = (int)this.gridViewAlumnosDelCursoDelDocente.SelectedValue;
         }
 
         protected void btnVolver_Click(object sender, EventArgs e)
@@ -186,7 +188,7 @@ namespace UI.Web
         {
             this.SelectedIDComision = (int)this.gridViewComisiones.SelectedValue;
             LoadGridCursos();
-            this.gridViewCursosDelDocente.Visible = true;
+            this.PanelCursos.Visible = true;
         }
     }
 }

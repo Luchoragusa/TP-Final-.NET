@@ -35,7 +35,12 @@ namespace UI.Web
                     btnEspecialidad.Visible = false;
                     lblAlumno.Visible = false;
                     btnComision.Visible = false;
+                    btnInscribirseACursado.Visible = false;
+                    btnInscripciones.Visible = false;
+                    btnComision.Visible = false;
+                    btnMateria.Visible = false;
                     btnEspecialidad.Visible = false;
+                    lblReportes.Visible = false;
                     btnReporteAlumno.Visible = false;
                     btnReporteComision.Visible = false;
 

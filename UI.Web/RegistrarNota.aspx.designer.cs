@@ -69,13 +69,13 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.GridView gridViewComisiones;
 
         /// <summary>
-        /// Control Panel6.
+        /// Control PanelCursos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel6;
+        protected global::System.Web.UI.WebControls.Panel PanelCursos;
 
         /// <summary>
         /// Control lblCursosDelDocente.
@@ -96,13 +96,13 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.GridView gridViewCursosDelDocente;
 
         /// <summary>
-        /// Control Panel2.
+        /// Control PanelAlumnos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel2;
+        protected global::System.Web.UI.WebControls.Panel PanelAlumnos;
 
         /// <summary>
         /// Control lblAlumnosAsignados.
