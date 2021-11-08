@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using Business.Logic;
 using Business.Entities;
 
 namespace UI.Desktop
 {
-    public partial class CursosDesktop : UI.Desktop.ApplicationForm
+    public partial class CursosDesktop : ApplicationForm
     {
         public CursosDesktop()
         {
@@ -21,8 +16,8 @@ namespace UI.Desktop
             this.Modo = modo;
             MapearDeDatos();
         }
-        private Business.Entities.Curso _Curso;
-        public Business.Entities.Curso CursoActual
+        private Curso _Curso;
+        public Curso CursoActual
         {
             get
             { return _Curso; }
@@ -35,7 +30,7 @@ namespace UI.Desktop
             Business.Logic.EntidadesLogic.CursoLogic curl = new Business.Logic.EntidadesLogic.CursoLogic();
             try
             {
-                CursoActual = new Business.Entities.Curso();
+                CursoActual = new Curso();
                 _Curso.ID = ID;
                 CursoActual = curl.GetOne(CursoActual);
                 MapearDeDatos();

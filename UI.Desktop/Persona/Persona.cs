@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using Business.Logic;
 using Business.Logic.EntidadesLogic;
 using Business.Entities;
 using Business.Entities.Entidades;
