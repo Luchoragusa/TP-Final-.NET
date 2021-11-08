@@ -34,9 +34,9 @@
             <br />
             <asp:Label ID="lblReportes" runat="server" Text="Reportes"></asp:Label>
             <br />
-            <asp:Button ID="btnReporteAlumno" runat="server" BackColor="#99CC00" OnClick="btnReporteAlumno_Click" Text="Reporte Personas" />
+            <asp:Button ID="btnReporteAlumno" runat="server" BackColor="#99CC00" OnClick="btnReporteAlumno_Click" Text="Reporte Personas" Width="147px" />
 &nbsp;
-            <asp:Button ID="btnReporteComision" runat="server" BackColor="#99CC00" OnClick="btnReporteComision_Click" Text="Reporte Comision" />
+            <asp:Button ID="btnReporteComision" runat="server" BackColor="#99CC00" OnClick="btnReporteComision_Click" Text="Reporte Cursos" />
             <br />
             <br />
             <asp:Label ID="lblAdmin" runat="server" Text="Admin"></asp:Label>

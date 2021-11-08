@@ -29,6 +29,7 @@ namespace UI.Web
                     lblReportes.Visible = false;
                     btnReporteAlumno.Visible = false;
                     btnReporteComision.Visible = false;
+                    btnCurso.Visible = false;
                     break;
                 case 2:     //docente
                     lblAdmin.Visible = false;
@@ -43,6 +44,7 @@ namespace UI.Web
                     lblReportes.Visible = false;
                     btnReporteAlumno.Visible = false;
                     btnReporteComision.Visible = false;
+                    btnCurso.Visible = false;
                     break;
                 case 3:
                     btnInscribirseACursado.Visible = false;

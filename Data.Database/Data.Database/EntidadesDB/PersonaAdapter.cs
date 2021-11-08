@@ -259,6 +259,7 @@ namespace Data.Database.EntidadesDB
                 OpenConnection();
                 SqlCommand cmdUpd = new SqlCommand("UPDATE personas SET nombre = @nombre, apellido = @apellido, direccion = @direccion, email = @email, telefono = @telefono, fecha_nac = @fecha_nac, legajo = @legajo, tipo_persona = @tipo_persona, id_plan = @id_plan, id_usuario = @id_usuario WHERE id_persona = @id ", sqlConn);
 
+                cmdUpd.Parameters.Add("@id", SqlDbType.Int).Value = persona.ID;
                 cmdUpd.Parameters.Add("@nombre", SqlDbType.VarChar,50).Value = persona.Nombre;
                 cmdUpd.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = persona.Apellido;
                 cmdUpd.Parameters.Add("@direccion", SqlDbType.VarChar, 50).Value = persona.Direccion;

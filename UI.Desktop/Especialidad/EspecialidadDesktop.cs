@@ -75,7 +75,6 @@ namespace UI.Desktop
                 if (Modo != ModoForm.Alta)
                 {
                     EspecialidadActual.State = BusinessEntity.States.Modified;
-                    //this.txtIDEsp.Text = this.EspecialidadActual.ID.ToString();             preguntar
                 }
                 this.EspecialidadActual.DescEspecialidad = this.txtDescEsp.Text;
                
