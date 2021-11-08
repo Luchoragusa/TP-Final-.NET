@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Business.Entities;
 using System.Data;
 using System.Data.SqlClient;
@@ -13,7 +10,7 @@ namespace Data.Database
     {
         public List<Comision> GetAll()
         {
-            List<Comision> comisiones = new List<Comision>();
+            List<Comision> comisiones = null;
             try
             {
                 this.OpenConnection();
@@ -21,6 +18,7 @@ namespace Data.Database
                 SqlDataReader drComision = cmdComision.ExecuteReader();
                 if (drComision != null)
                 {
+                    comisiones = new List<Comision>();
                     while (drComision.Read())
                     {
                         Comision com = new Comision();
