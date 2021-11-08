@@ -87,7 +87,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdComision = new SqlCommand("select com.* from materias m inner join cursos c on m.id_materia= c.id_materia inner join comisiones com on c.id_comision = com.id_comision where m.id_materia = @id_materia and c.cupo<>0 and c.anio_calendario ='2021'", sqlConn);
+                SqlCommand cmdComision = new SqlCommand("drop table if exists #comiConUltimoAño; drop table if exists #TablaAValidarCupo;  select m.id_materia, com.id_comision, MAX(anio_calendario) ultimoAño into #comiConUltimoAño from comisiones com   inner join cursos c on c.id_comision = com.id_comision inner join materias m on m.id_materia = c.id_materia group by   m.id_materia, com.id_comision; select  ultComi.id_comision, c.id_materia, c.id_curso, c.cupo into #TablaAValidarCupo from cursos c inner join #comiConUltimoAño ultComi on ultComi.id_materia = c.id_materia and ultComi.id_comision = c.id_comision and c.anio_calendario = ultComi.ultimoAño  where ultComi.id_materia = @id_materia;select t.id_comision, com.desc_comision, com.anio_especialidad, com.id_plan	from #TablaAValidarCupo t inner join alumnos_inscripciones ai on t.id_curso = ai.id_curso inner join comisiones com on t.id_comision=com.id_comision group by t.id_comision, com.desc_comision, com.anio_especialidad, com.id_plan, t.cupo, ai.id_curso having t.cupo > COUNT(ai.id_curso)	drop table if exists #TablaAValidarCupo;   drop table if exists #comiConUltimoAño;", sqlConn);
                 cmdComision.Parameters.Add("@id_materia", SqlDbType.Int).Value = mat.ID;
                 SqlDataReader drComision = cmdComision.ExecuteReader();
                 if (drComision != null)
