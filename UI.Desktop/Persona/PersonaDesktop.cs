@@ -21,6 +21,7 @@ namespace UI.Desktop
             {
                 this.Modo = ModoForm.Alta;
                 usuarioNuevo.ID = us.ID;
+                MapearDeDatos();
             }
             catch (Exception ex)
             {
@@ -60,17 +61,25 @@ namespace UI.Desktop
         }
         public override void MapearDeDatos()
         {
-            this.txtID.Text = this.PersonaActual.ID.ToString();
-            this.txtIDUsuario.Text = this.PersonaActual.IdUsuario.ToString();
-            this.txtNombre.Text = this.PersonaActual.Nombre;
-            this.txtApellido.Text = this.PersonaActual.Apellido;
-            this.txtDireccion.Text = this.PersonaActual.Direccion;
-            this.txtEmail.Text = this.PersonaActual.Email;
-            this.txtTelefono.Text = this.PersonaActual.Telefono;
-            this.txtLegajo.Text = this.PersonaActual.Legajo.ToString();
-            this.txtFechaNacimiento.Text = this.PersonaActual.FechaNacimiento.ToString();
-            this.cbTipoPersona.Text = this.PersonaActual.TipoPersona.ToString();
-            this.txtIdPlan.Text = this.PersonaActual.IDPlan.ToString();
+            if (Modo == ModoForm.Alta)
+            {
+                this.txtIDUsuario.Text = this.usuarioNuevo.ID.ToString();
+                this.txtIDUsuario.Enabled = false;
+            }
+            else   
+            {
+                this.txtID.Text = this.PersonaActual.ID.ToString();
+                this.txtIDUsuario.Text = this.PersonaActual.IdUsuario.ToString();
+                this.txtNombre.Text = this.PersonaActual.Nombre;
+                this.txtApellido.Text = this.PersonaActual.Apellido;
+                this.txtDireccion.Text = this.PersonaActual.Direccion;
+                this.txtEmail.Text = this.PersonaActual.Email;
+                this.txtTelefono.Text = this.PersonaActual.Telefono;
+                this.txtLegajo.Text = this.PersonaActual.Legajo.ToString();
+                this.txtFechaNacimiento.Text = this.PersonaActual.FechaNacimiento.ToString();
+                this.cbTipoPersona.Text = this.PersonaActual.TipoPersona.ToString();
+                this.txtIdPlan.Text = this.PersonaActual.IDPlan.ToString();
+            }
 
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
