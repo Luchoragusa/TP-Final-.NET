@@ -112,7 +112,7 @@ namespace UI.Web
         {
             DocenteCurso.IDDocente = int.Parse(this.iddocenteTextBox.Text);
             DocenteCurso.IDCurso = int.Parse(this.idcursoTextBox.Text);
-            DocenteCurso.Cargo = (Business.Entities.Entidades.DocenteCurso.TipoCargos)this.dropDownListCargo.SelectedValue;
+            //DocenteCurso.Cargo = this.dropDownListCargo.SelectedValue;
         }
 
         protected void nuevoLinkButton_Click(object sender, EventArgs e)
