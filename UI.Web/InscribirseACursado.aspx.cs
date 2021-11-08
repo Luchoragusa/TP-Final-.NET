@@ -69,9 +69,7 @@ namespace UI.Web
 
         public void LoadGridComisiones()
         {            
-            ComisionLogic cl = new ComisionLogic();
-
-            Mate.ID = this.SelectedID;           
+            ComisionLogic cl = new ComisionLogic();        
 
             this.gridViewComisionesMateria.DataSource = cl.GetAllMateriasCom(Mate);
             this.gridViewComisionesMateria.DataBind();
@@ -88,14 +86,6 @@ namespace UI.Web
             Personas persona = new Personas();
             Business.Logic.EntidadesLogic.Alumno_InscripcionLogic al = new Business.Logic.EntidadesLogic.Alumno_InscripcionLogic();
 
-
-            if (al.ValidarInscripcion(Mate, usuario) != null)
-            {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('¡Error! Usted ya estas inscripto a esta materia');", true);
-                Response.Redirect("InscribirseACursado.aspx");
-            }
-            else
-            {
                 com.ID = this.SelectedIDComision;
                 curso = cl.getByComision(com);
                 persona = perl.GetIDPersona(usuario);
@@ -110,7 +100,6 @@ namespace UI.Web
                 this.SaveEntity(Entity);
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('¡Felicitaciones! Usted se acaba de inscribir a la materia');", true);
                 this.LoadGridComisiones();
-            }
         }
 
         Alumno_InscripcionLogic _logic;
@@ -138,10 +127,23 @@ namespace UI.Web
 
         protected void gridViewMaterias_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Business.Logic.EntidadesLogic.Alumno_InscripcionLogic al = new Business.Logic.EntidadesLogic.Alumno_InscripcionLogic();
+            Usuario usuario = (Usuario)Session["usuario"];
+
             this.SelectedID = (int)this.gridViewMateriasInscripcion.SelectedValue;
-            LoadGridComisiones();
-            this.Panel2.Visible = true;
-            this.gridViewComisionesMateria.Visible = true;
+            Mate.ID = this.SelectedID;
+
+            if (al.ValidarInscripcion(Mate, usuario) != null)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('¡Error! Usted ya estas inscripto a esta materia');", true);
+                Response.Redirect("InscribirseACursado.aspx");
+            }
+            else
+            {
+                LoadGridComisiones();
+                this.Panel2.Visible = true;
+                this.gridViewComisionesMateria.Visible = true;
+            }            
         }
 
         protected void gridViewAlumnos_SelectedIndexChanged(object sender, EventArgs e)
