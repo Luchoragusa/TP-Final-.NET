@@ -91,7 +91,7 @@ namespace UI.Desktop.RegistrarNotas
             this.txtNota.Location = new System.Drawing.Point(90, 260);
             this.txtNota.Name = "txtNota";
             this.txtNota.Size = new System.Drawing.Size(256, 20);
-            this.txtNota.TabIndex = 4;
+            this.txtNota.TabIndex = 2;
             // 
             // btnModo
             // 
@@ -99,7 +99,7 @@ namespace UI.Desktop.RegistrarNotas
             this.btnModo.Location = new System.Drawing.Point(9, 305);
             this.btnModo.Name = "btnModo";
             this.btnModo.Size = new System.Drawing.Size(75, 23);
-            this.btnModo.TabIndex = 5;
+            this.btnModo.TabIndex = 4;
             this.btnModo.Text = "Aceptar";
             this.btnModo.UseVisualStyleBackColor = true;
             this.btnModo.Click += new System.EventHandler(this.btnModo_Click);
@@ -110,7 +110,7 @@ namespace UI.Desktop.RegistrarNotas
             this.btnCancelar.Location = new System.Drawing.Point(283, 305);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 6;
+            this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -195,7 +195,7 @@ namespace UI.Desktop.RegistrarNotas
             this.cbCondicion.Name = "cbCondicion";
             this.cbCondicion.Size = new System.Drawing.Size(256, 21);
             this.cbCondicion.Sorted = true;
-            this.cbCondicion.TabIndex = 15;
+            this.cbCondicion.TabIndex = 1;
             // 
             // Editar_InscripcionDesktop
             // 

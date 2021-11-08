@@ -30,16 +30,16 @@ namespace UI.Desktop
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblID_Plan = new System.Windows.Forms.Label();
-            this.txtIDPlan_Com = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnModo = new System.Windows.Forms.Button();
             this.txtAnioEsp_Com = new System.Windows.Forms.TextBox();
             this.lblAnioEsp = new System.Windows.Forms.Label();
             this.lblDescCom = new System.Windows.Forms.Label();
             this.txtDesc_Com = new System.Windows.Forms.TextBox();
-            this.lblIDComision = new System.Windows.Forms.Label();
+            this.txtIDPlan_Com = new System.Windows.Forms.TextBox();
             this.txtIDCom = new System.Windows.Forms.TextBox();
+            this.lblID_Plan = new System.Windows.Forms.Label();
+            this.lblIDComision = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,24 +69,6 @@ namespace UI.Desktop
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(384, 262);
             this.tableLayoutPanel1.TabIndex = 2;
-            // 
-            // lblID_Plan
-            // 
-            this.lblID_Plan.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblID_Plan.AutoSize = true;
-            this.lblID_Plan.Location = new System.Drawing.Point(3, 83);
-            this.lblID_Plan.Name = "lblID_Plan";
-            this.lblID_Plan.Size = new System.Drawing.Size(58, 13);
-            this.lblID_Plan.TabIndex = 12;
-            this.lblID_Plan.Text = "ID del plan";
-            // 
-            // txtIDPlan_Com
-            // 
-            this.txtIDPlan_Com.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtIDPlan_Com.Location = new System.Drawing.Point(105, 80);
-            this.txtIDPlan_Com.Name = "txtIDPlan_Com";
-            this.txtIDPlan_Com.Size = new System.Drawing.Size(256, 20);
-            this.txtIDPlan_Com.TabIndex = 0;
             // 
             // btnCancelar
             // 
@@ -146,15 +128,13 @@ namespace UI.Desktop
             this.txtDesc_Com.Size = new System.Drawing.Size(256, 20);
             this.txtDesc_Com.TabIndex = 2;
             // 
-            // lblIDComision
+            // txtIDPlan_Com
             // 
-            this.lblIDComision.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblIDComision.AutoSize = true;
-            this.lblIDComision.Location = new System.Drawing.Point(3, 23);
-            this.lblIDComision.Name = "lblIDComision";
-            this.lblIDComision.Size = new System.Drawing.Size(63, 13);
-            this.lblIDComision.TabIndex = 13;
-            this.lblIDComision.Text = "ID Comision";
+            this.txtIDPlan_Com.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtIDPlan_Com.Location = new System.Drawing.Point(105, 80);
+            this.txtIDPlan_Com.Name = "txtIDPlan_Com";
+            this.txtIDPlan_Com.Size = new System.Drawing.Size(256, 20);
+            this.txtIDPlan_Com.TabIndex = 1;
             // 
             // txtIDCom
             // 
@@ -164,6 +144,26 @@ namespace UI.Desktop
             this.txtIDCom.ReadOnly = true;
             this.txtIDCom.Size = new System.Drawing.Size(256, 20);
             this.txtIDCom.TabIndex = 1;
+            // 
+            // lblID_Plan
+            // 
+            this.lblID_Plan.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblID_Plan.AutoSize = true;
+            this.lblID_Plan.Location = new System.Drawing.Point(3, 83);
+            this.lblID_Plan.Name = "lblID_Plan";
+            this.lblID_Plan.Size = new System.Drawing.Size(58, 13);
+            this.lblID_Plan.TabIndex = 12;
+            this.lblID_Plan.Text = "ID del plan";
+            // 
+            // lblIDComision
+            // 
+            this.lblIDComision.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblIDComision.AutoSize = true;
+            this.lblIDComision.Location = new System.Drawing.Point(3, 23);
+            this.lblIDComision.Name = "lblIDComision";
+            this.lblIDComision.Size = new System.Drawing.Size(63, 13);
+            this.lblIDComision.TabIndex = 13;
+            this.lblIDComision.Text = "ID Comision";
             // 
             // ComisionesDesktop
             // 

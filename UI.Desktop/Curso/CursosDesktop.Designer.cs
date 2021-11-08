@@ -155,7 +155,7 @@ namespace UI.Desktop
             this.btnModo.Location = new System.Drawing.Point(3, 199);
             this.btnModo.Name = "btnModo";
             this.btnModo.Size = new System.Drawing.Size(75, 23);
-            this.btnModo.TabIndex = 4;
+            this.btnModo.TabIndex = 5;
             this.btnModo.Text = "Aceptar";
             this.btnModo.UseVisualStyleBackColor = true;
             this.btnModo.Click += new System.EventHandler(this.btnModo_Click);
@@ -166,7 +166,7 @@ namespace UI.Desktop
             this.btnCancelar.Location = new System.Drawing.Point(334, 199);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 5;
+            this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -187,7 +187,7 @@ namespace UI.Desktop
             this.txtCupo.Location = new System.Drawing.Point(112, 159);
             this.txtCupo.Name = "txtCupo";
             this.txtCupo.Size = new System.Drawing.Size(256, 20);
-            this.txtCupo.TabIndex = 15;
+            this.txtCupo.TabIndex = 4;
             // 
             // CursosDesktop
             // 
