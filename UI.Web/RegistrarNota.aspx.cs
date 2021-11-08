@@ -62,6 +62,7 @@ namespace UI.Web
 
         private void LoadGridAlumnos()
         {
+            this.PanelAlumnos.Visible = true;
             Alumno_InscripcionLogic al = new Alumno_InscripcionLogic();
 
             Business.Entities.Curso curso = new Business.Entities.Curso();
@@ -164,6 +165,7 @@ namespace UI.Web
             this.SelectedIDCurso = (int)this.gridViewCursosDelDocente.SelectedValue;
             LoadGridAlumnos();
             this.PanelAlumnos.Visible = true;
+            this.gridViewAlumnosDelCursoDelDocente.Visible = true;
         }
 
         protected void gridViewAlumnos_SelectedIndexChanged(object sender, EventArgs e)
