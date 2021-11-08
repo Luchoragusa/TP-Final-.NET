@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using Business.Entities;
-using Business.Entities.Entidades;
 using Business.Logic;
-using Business.Logic.EntidadesLogic;
 
 namespace UI.Web
 {
