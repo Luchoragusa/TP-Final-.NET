@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using Business.Entities;
-using Business.Entities.Entidades;
 using Business.Logic;
 using Business.Logic.EntidadesLogic;
 
@@ -14,7 +8,7 @@ namespace UI.Desktop
 {
     public partial class DICDesktop : ApplicationForm
     {
-                private Business.Entities.Entidades.DocenteCurso _dc;
+        private Business.Entities.Entidades.DocenteCurso _dc;
         private Boolean _esDocente;
         public Business.Entities.Entidades.DocenteCurso DCActual
         {

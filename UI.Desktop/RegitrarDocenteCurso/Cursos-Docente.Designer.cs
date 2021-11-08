@@ -190,6 +190,7 @@ namespace UI.Desktop.RegitrarDocenteCurso
             this.ID.HeaderText = "ID de Dictado";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
+            this.ID.Width = 120;
             // 
             // idCurso
             // 

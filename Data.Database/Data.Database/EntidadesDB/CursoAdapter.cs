@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Business.Entities;
 using System.Data;
 using System.Data.SqlClient;
@@ -14,7 +11,7 @@ namespace Data.Database
         public CursoAdapter() { }
         public List<Curso> getCursosDelDocente(int idDoc)
         {
-            List<Curso> cursosDelDocente = new List<Curso>();
+            List<Curso> cursosDelDocente = null;
             try
             {
                 OpenConnection();
@@ -24,6 +21,7 @@ namespace Data.Database
 
                 if (drCursosDelDocente != null)
                 {
+                    cursosDelDocente = new List<Curso>();
                     while (drCursosDelDocente.Read())
                     {
                         Plan plan = new Plan();

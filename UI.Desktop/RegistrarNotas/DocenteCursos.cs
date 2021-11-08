@@ -1,15 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business.Entities;
-using Business.Entities.Entidades;
-using Business.Logic;
 using Business.Logic.EntidadesLogic;
 using UI.Desktop.RegistrarNotas;
 
@@ -66,7 +57,7 @@ namespace UI.Desktop.DocenteCurso
                 return;
 
             }
-            int ID = ((Business.Entities.Curso)this.dgvCursosDocente.SelectedRows[0].DataBoundItem).ID;
+            int ID = ((Curso)this.dgvCursosDocente.SelectedRows[0].DataBoundItem).ID;
 
             Docente_Alumnos docente_alumnos = new Docente_Alumnos(ID);
 
