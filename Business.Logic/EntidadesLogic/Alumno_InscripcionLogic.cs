@@ -66,6 +66,20 @@ namespace Business.Logic.EntidadesLogic
                 throw ExcepcionManejada;
             }
         }
+
+        public Alumnos_Inscripciones ValidarInscripcion(Materia materia, Usuario alumno)
+        {
+            try
+            {
+                return Alumno_InscripcionData.ValidarInscripcion(materia, alumno);
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al verificar la existencia del alumno inscripto.", ex);
+                throw ExcepcionManejada;
+            }
+        }
+
         public void Save(Alumnos_Inscripciones Alumno_Inscripcion)
         {
             try

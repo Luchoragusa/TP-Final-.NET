@@ -57,6 +57,38 @@ namespace Data.Database.EntidadesDB
             }
             return Alumnos_Inscripciones;
         }
+
+        public Alumnos_Inscripciones ValidarInscripcion(Materia materia, Usuario alumno)
+        {
+            Alumnos_Inscripciones alu = null;
+            try
+            {
+                OpenConnection();
+                SqlCommand cmdAlumnos_Inscripcioneses = new SqlCommand("select m.* from alumnos_inscripciones ai inner join cursos c on c.id_curso = ai.id_curso inner join materias m on m.id_materia  = c.id_materia inner join personas p on ai.id_alumno = p.id_persona where ai.id_alumno=@idPersona and m.id_materia = @idMat and c.anio_calendario = '2021'", sqlConn);
+                cmdAlumnos_Inscripcioneses.Parameters.Add("@idMat", SqlDbType.Int).Value = materia.ID;
+                cmdAlumnos_Inscripcioneses.Parameters.Add("@idPersona", SqlDbType.Int).Value = alumno.ID;
+
+                SqlDataReader drAlumnos_Inscripcioneses = cmdAlumnos_Inscripcioneses.ExecuteReader();
+
+                if (drAlumnos_Inscripcioneses != null)
+                {
+                    alu = new Alumnos_Inscripciones();
+                }
+
+                drAlumnos_Inscripcioneses.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar datos del alumno inscripto", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+            return alu;
+        }
+
         public List<Alumnos_Inscripciones> GetAllByAlumno(Usuario u)
         {
             List<Alumnos_Inscripciones> inscripciones = null;

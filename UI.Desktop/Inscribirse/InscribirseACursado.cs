@@ -52,16 +52,29 @@ namespace UI.Desktop
                 return;
             }
             materia = (Business.Entities.Materia)this.dgvInscribirse.SelectedRows[0].DataBoundItem;
-            Inscribirse.ComisionesInscribirse comisiones_insc = new Inscribirse.ComisionesInscribirse(materia, alumno);
-            try
+
+            Business.Logic.EntidadesLogic.Alumno_InscripcionLogic al = new Business.Logic.EntidadesLogic.Alumno_InscripcionLogic();
+
+            if (al.ValidarInscripcion(materia, alumno) != null)
             {
-                comisiones_insc.ShowDialog();
-                this.Listar();
+                MessageBox.Show("Ya estas incripto a la materia.", "Error detectado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message + "Error detected: ", "Ha habido un error interno.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Inscribirse.ComisionesInscribirse comisiones_insc = new Inscribirse.ComisionesInscribirse(materia, alumno);
+                try
+                {
+                    comisiones_insc.ShowDialog();
+                    this.Listar();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + "Error detected: ", "Ha habido un error interno.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+
+            
+            
         }
     }
 }
