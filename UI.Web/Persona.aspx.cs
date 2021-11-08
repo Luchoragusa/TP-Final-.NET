@@ -21,6 +21,7 @@ namespace UI.Web
             {
                 if ((int)Session["tipo_persona"] == 4)
                 {
+                    this.FormMode = FormModes.Alta;
                     this.btnVolver.Visible = true;
                     this.gridPanel.Visible = false;
                     this.Panel4.Visible = true;

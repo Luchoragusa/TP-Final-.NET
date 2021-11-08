@@ -18,7 +18,7 @@
                         <asp:BoundField HeaderText="Apellido" DataField="Apellido" />
                         <asp:BoundField HeaderText="EMail" DataField="Email" />
                         <asp:BoundField HeaderText="Direccion" DataField="Direccion" />
-                        <asp:BoundField HeaderText="Telefono" DataField="Habilitado" />
+                        <asp:BoundField HeaderText="Telefono" DataField="Telefono" />
                         <asp:BoundField HeaderText="ID-Plan" DataField="IDPlan" />
                         <asp:BoundField HeaderText="Legajo" DataField="Legajo" />
                         <asp:BoundField HeaderText="Fecha de nacimiento" DataField="FechaNacimiento" />
