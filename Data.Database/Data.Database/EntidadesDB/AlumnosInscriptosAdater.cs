@@ -64,13 +64,13 @@ namespace Data.Database.EntidadesDB
             try
             {
                 OpenConnection();
-                SqlCommand cmdAlumnos_Inscripcioneses = new SqlCommand("select m.* from alumnos_inscripciones ai inner join cursos c on c.id_curso = ai.id_curso inner join materias m on m.id_materia  = c.id_materia inner join personas p on ai.id_alumno = p.id_persona where ai.id_alumno=@idPersona and m.id_materia = @idMat and c.anio_calendario = '2021'", sqlConn);
+                SqlCommand cmdAlumnos_Inscripcioneses = new SqlCommand("select m.* from alumnos_inscripciones ai inner join cursos c on c.id_curso = ai.id_curso inner join materias m on m.id_materia  = c.id_materia inner join personas p on ai.id_alumno = p.id_persona inner join usuarios u on p.id_usuario = u.id_usuario where u.id_usuario=@idUsuario and m.id_materia = @idMat and c.anio_calendario = 2021", sqlConn);
                 cmdAlumnos_Inscripcioneses.Parameters.Add("@idMat", SqlDbType.Int).Value = materia.ID;
-                cmdAlumnos_Inscripcioneses.Parameters.Add("@idPersona", SqlDbType.Int).Value = alumno.ID;
+                cmdAlumnos_Inscripcioneses.Parameters.Add("@idUsuario", SqlDbType.Int).Value = alumno.ID;
 
                 SqlDataReader drAlumnos_Inscripcioneses = cmdAlumnos_Inscripcioneses.ExecuteReader();
 
-                if (drAlumnos_Inscripcioneses != null)
+                if (drAlumnos_Inscripcioneses.Read())
                 {
                     alu = new Alumnos_Inscripciones();
                 }
