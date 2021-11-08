@@ -33,8 +33,7 @@ namespace UI.Web
                     this.formPanel.Visible = false;
                     this.gridActionsPanel.Visible = false;
                     LoadGrid(); 
-                }
-                               
+                }               
             }
         }
 
@@ -226,7 +225,6 @@ namespace UI.Web
                     band = this.LoadEntity(this.Entity);
                     if (band)
                         break;
-
                     this.SaveEntity(this.Entity);
                     this.LoadGrid();
                     break;
@@ -244,7 +242,6 @@ namespace UI.Web
             {
                 Response.Redirect("MenuPrincipal.aspx");
             }
-            
         }
 
         protected void cancelarButton_Click(object sender, EventArgs e)
