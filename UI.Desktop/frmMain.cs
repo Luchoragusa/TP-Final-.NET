@@ -2,7 +2,6 @@
 using System.Windows.Forms;
 using Business.Entities;
 using UI.Desktop.DocenteCurso;
-using UI.Desktop.RegistrarNotas;
 using UI.Desktop.RegitrarDocenteCurso;
 
 namespace UI.Desktop
@@ -21,12 +20,8 @@ namespace UI.Desktop
         {
             frmLogin appLogin = new frmLogin();
             appLogin.Close();
-
             us = u;
-
             InitializeComponent();
-
-
             if (tipo == 1)          //alumno
             {
                 btnAdmin.Visible = false;
