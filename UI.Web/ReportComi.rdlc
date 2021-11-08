@@ -6,21 +6,21 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.06224cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.06224cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>4.19995cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.06224cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.9175cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -31,11 +31,18 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>IDComision</Value>
-                              <Style />
+                              <Value>ID Comision</Value>
+                              <Style>
+                                <FontStyle>Italic</FontStyle>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>SemiBold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox1</rd:DefaultName>
@@ -62,10 +69,17 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Descripcion</Value>
-                              <Style />
+                              <Style>
+                                <FontStyle>Italic</FontStyle>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>SemiBold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox3</rd:DefaultName>
@@ -91,11 +105,18 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Anio Calendario</Value>
-                              <Style />
+                              <Value>Año Calendario</Value>
+                              <Style>
+                                <FontStyle>Italic</FontStyle>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>SemiBold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox5</rd:DefaultName>
@@ -122,10 +143,17 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Cupo</Value>
-                              <Style />
+                              <Style>
+                                <FontStyle>Italic</FontStyle>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>SemiBold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox9</rd:DefaultName>
@@ -145,7 +173,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.86458cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -157,7 +185,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!IDComision.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Century Gothic</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -187,7 +217,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Descripcion.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Century Gothic</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -217,7 +249,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!AnioCalendario.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Century Gothic</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -247,7 +281,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Cupo.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Century Gothic</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -290,14 +326,15 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>dsReporteCurso</DataSetName>
-        <Top>6.45266cm</Top>
-        <Left>1.88292cm</Left>
-        <Height>1.2cm</Height>
-        <Width>10cm</Width>
+        <Top>7.24641cm</Top>
+        <Left>4.72688cm</Left>
+        <Height>1.78208cm</Height>
+        <Width>13.38667cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
+          <BackgroundColor>White</BackgroundColor>
         </Style>
       </Tablix>
       <Textbox Name="Textbox7">
@@ -321,8 +358,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
-        <Top>1.33669cm</Top>
-        <Left>1.79001cm</Left>
+        <Top>1.62773cm</Top>
+        <Left>3.56272cm</Left>
         <Height>1.48194cm</Height>
         <Width>10.09291cm</Width>
         <ZIndex>1</ZIndex>
@@ -359,7 +396,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
         <Top>3.54928cm</Top>
-        <Left>1.79001cm</Left>
+        <Left>3.56272cm</Left>
         <Height>2.07285cm</Height>
         <Width>10.09291cm</Width>
         <ZIndex>2</ZIndex>
@@ -377,8 +414,8 @@
         <Source>Embedded</Source>
         <Value>IMG_0929</Value>
         <Sizing>FitProportional</Sizing>
-        <Top>1.01919cm</Top>
-        <Left>12.24105cm</Left>
+        <Top>1.33669cm</Top>
+        <Left>14.3048cm</Left>
         <Height>5.25708cm</Height>
         <Width>5.54812cm</Width>
         <ZIndex>3</ZIndex>
@@ -389,10 +426,12 @@
         </Style>
       </Image>
     </ReportItems>
-    <Height>4.08772in</Height>
-    <Style />
+    <Height>4.5in</Height>
+    <Style>
+      <BackgroundColor>#d4e0f2</BackgroundColor>
+    </Style>
   </Body>
-  <Width>7.70834in</Width>
+  <Width>8.61622in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
