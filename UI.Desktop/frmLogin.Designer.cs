@@ -65,7 +65,7 @@ namespace UI.Desktop
             this.btnIngresar.Location = new System.Drawing.Point(275, 230);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(103, 23);
-            this.btnIngresar.TabIndex = 12;
+            this.btnIngresar.TabIndex = 3;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = false;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
@@ -78,7 +78,7 @@ namespace UI.Desktop
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(247, 22);
-            this.txtPass.TabIndex = 11;
+            this.txtPass.TabIndex = 2;
             // 
             // txtUsuario
             // 
@@ -87,7 +87,7 @@ namespace UI.Desktop
             this.txtUsuario.Location = new System.Drawing.Point(97, 124);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(247, 22);
-            this.txtUsuario.TabIndex = 10;
+            this.txtUsuario.TabIndex = 1;
             // 
             // label3
             // 
@@ -116,7 +116,7 @@ namespace UI.Desktop
             this.lnkOlvidaPass.Location = new System.Drawing.Point(66, 237);
             this.lnkOlvidaPass.Name = "lnkOlvidaPass";
             this.lnkOlvidaPass.Size = new System.Drawing.Size(138, 16);
-            this.lnkOlvidaPass.TabIndex = 7;
+            this.lnkOlvidaPass.TabIndex = 4;
             this.lnkOlvidaPass.TabStop = true;
             this.lnkOlvidaPass.Text = "Olvido su contraseña?";
             this.lnkOlvidaPass.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkOlvidaPass_LinkClicked);
@@ -132,14 +132,14 @@ namespace UI.Desktop
             this.label2.Text = "¡Bienvenido al Sistema! \r\nPor favor digite su información de Ingreso";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // nuevoLogin
+            // frmLogin
             // 
             this.AcceptButton = this.btnIngresar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(428, 297);
             this.Controls.Add(this.panelExt);
-            this.Name = "nuevoLogin";
+            this.Name = "frmLogin";
             this.Text = "Login";
             this.panelExt.ResumeLayout(false);
             this.panelExt.PerformLayout();
