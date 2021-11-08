@@ -182,7 +182,6 @@ namespace UI.Web
                     band = this.LoadEntity(this.Entity);
                     if (band)
                         break;
-
                     this.SaveEntity(this.Entity);
                     this.LoadGrid();
                     break;
