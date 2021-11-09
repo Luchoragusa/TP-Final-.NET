@@ -108,6 +108,11 @@ namespace Business.Logic.EntidadesLogic
         {
             try
             {
+                CursoLogic cl = new CursoLogic();
+                if (cl.validarCupo(Alumno_Inscripcion))
+                {
+
+                }
                 Alumno_InscripcionData.Insert(Alumno_Inscripcion);
             }
             catch (Exception ex)

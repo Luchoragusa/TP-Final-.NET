@@ -83,6 +83,19 @@ namespace Business.Logic.EntidadesLogic
             }
         }
 
+        public bool validarCupo( Business.Entities.Entidades.Alumnos_Inscripciones ai)
+        {
+            try
+            {
+                return CursoData.validarCupo(ai);
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar la Materia.", ex);
+                throw ExcepcionManejada;
+            }
+        }
+
         public List<Curso> GetAllDocente(Usuario docente)
         {
             try

@@ -59,15 +59,26 @@ namespace UI.Desktop.Inscribirse
                 else
                 {
                     Comision com = ((Comision)this.dgvComInscribirse.SelectedRows[0].DataBoundItem);
+                    
+                    if (cursoL.validarCupo(com,Mate))
+                    {
+                        curso = cursoL.getByComision(com);      //trae el curso asociado a la comision
+                        persona = perL.GetIDPersona(usuario);    //recuperar "id_persona" que es es igual a "id_alumno" 
+                        aluInsc.IDCurso = curso.ID;
+                        aluInsc.IDAlumno = persona.ID;
+                        aluInsc.Condicion = "Cursando";
 
-                    curso = cursoL.getByComision(com);      //trae el curso asociado a la comision
-                    persona = perL.GetIDPersona(usuario);    //recuperar "id_persona" que es es igual a "id_alumno" 
-                    aluInsc.IDCurso = curso.ID;
-                    aluInsc.IDAlumno = persona.ID;
-                    aluInsc.Condicion = "Cursando";
-                    aluIL.Insert(aluInsc);
-                    MessageBox.Show("Se inscribio correctamente", "Inscripcion a cursado", MessageBoxButtons.OK);
-                    this.Dispose();
+
+                        aluIL.Insert(aluInsc);
+                        MessageBox.Show("Se inscribio correctamente", "Inscripcion a cursado", MessageBoxButtons.OK);
+                        this.Dispose();
+                    }
+                    else
+                    {
+                        MessageBox.Show("La comision no tiene mas cupos", "Error al inscribirse", MessageBoxButtons.OK);
+                    }
+
+                    
                 }
             }
 
