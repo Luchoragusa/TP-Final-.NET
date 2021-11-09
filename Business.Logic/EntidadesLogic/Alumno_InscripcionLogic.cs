@@ -3,6 +3,7 @@ using Business.Entities.Entidades;
 using System;
 using System.Collections.Generic;
 using Data.Database.EntidadesDB;
+using System.Windows.Forms;
 
 namespace Business.Logic.EntidadesLogic
 {
@@ -111,13 +112,20 @@ namespace Business.Logic.EntidadesLogic
                 CursoLogic cl = new CursoLogic();
                 if (cl.validarCupo(Alumno_Inscripcion))
                 {
-
+                    Alumno_InscripcionData.Insert(Alumno_Inscripcion);
+                    MessageBox.Show("Se inscribio correctamente", "Inscripcion a cursado", MessageBoxButtons.OK);
+                   
                 }
-                Alumno_InscripcionData.Insert(Alumno_Inscripcion);
+                else
+                {
+                    MessageBox.Show("Puede que no haya mas cupos, comuniquese con alumnado.", "Error en la inscripcion.", MessageBoxButtons.OK);
+                }
+                
             }
             catch (Exception ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al insertar el alumno inscripto.", ex);
+                Exception ExcepcionManejada = new Exception("Error en la inscripcion. " +
+                    "Puede que no haya mas cupos, comuniquese con alumnado.", ex);
                 throw ExcepcionManejada;
             }
         }

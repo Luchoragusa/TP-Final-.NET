@@ -75,7 +75,7 @@ namespace Data.Database
                 SqlDataReader drcursos = cmdcursos.ExecuteReader();
                 if (drcursos.Read())
                     band = true;
-                //VOY A BUSCAR AGUA
+                
                 drcursos.Close();
             }
             catch (Exception Ex)
