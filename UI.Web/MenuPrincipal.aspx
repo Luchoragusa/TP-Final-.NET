@@ -1,12 +1,19 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" 
     MasterPageFile="~/MasterPage/MasterPage.Master" 
     CodeBehind="MenuPrincipal.aspx.cs" 
-    Inherits="UI.Web.MenuPrincipal" 
-%>
+    Inherits="UI.Web.MenuPrincipal"%>
+<%@ Register Src="~/WebUserControl1.ascx" TagPrefix="uc1" TagName="MP1" %> 
 
+
+
+<asp:Content ID="ContentUC" ContentPlaceHolderID="PageContent1" runat="server">
+    <uc1:MP1 runat="server" id="MP1"/> 
+</asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="PageContent" runat="server">
+    
 
      <div class="d-grid gap-2 col-2 mx-auto" align="center">
+
             ¡<asp:Label ID="lblBienvenido" runat="server" Text="Bienvenido al Sistema"></asp:Label>
             !&nbsp;
             &nbsp;

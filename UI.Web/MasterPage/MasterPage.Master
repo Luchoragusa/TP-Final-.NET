@@ -9,17 +9,23 @@ Inherits="UI.Web.MasterPage.MasterPage" %>
     <title>Untitled Page</title> 
     <style type="text/css">
         .auto-style1 {
-            width: 233px;
+            width: 119px;
+        }
+        .auto-style2 {
+            width: 89%;
         }
     </style>
 </head> 
 <body> 
+
     <form id="form1" runat="server"> 
     <table border="1" cellpadding="0" cellspacing="0" width="100%" height="100%"> 
         <!-- site header --> 
+
         <tr> 
             <td colspan="2" align="center" class="wrapper">[UTN] Academia</td> 
         </tr> 
+        
     <tr> 
             <!-- site navigation --> 
             <td valign="top" class="auto-style1"> 
@@ -41,13 +47,20 @@ Inherits="UI.Web.MasterPage.MasterPage" %>
                     </tr>  
                 </table> 
             </td> 
-             
-            <td valign="top" align="left">              
-                <!-- this is the placeholder for the page content --> 
-                <asp:contentplaceholder id="PageContent" runat="server" /> 
+        <div> 
+         <td valign="top" align="center" fontclass="auto-style2">  
+               <section class="content">
+                <asp:ContentPlaceHolder ID="PageContent1" runat="server">
+                </asp:ContentPlaceHolder>   
+              <td valign="bottom" align="center">     
+                <asp:ContentPlaceHolder ID="PageContent" runat="server">
+                </asp:ContentPlaceHolder>
             </td>
-
-        </tr> 
+        
+            </div>
+        
+        </section>
+              </td>
          
         <!-- site footer --> 
         <tr> 
