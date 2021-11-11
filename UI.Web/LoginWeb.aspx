@@ -20,7 +20,6 @@
         <h2 class="form-signin-heading">&nbsp;</h2>
         <h2 class="form-signin-heading" style="font-family: 'Century Gothic'">¡Bienvenido al Sistema!</h2>
             <p class="form-signin-heading" style="font-family: 'Century Gothic'">Por favor digite su información de Ingreso</p>
-        <p class="form-signin-heading">&nbsp;</p>
         <asp:Label ID="usuarioLabel" runat="server" Text="Usuario" Font-Bold="True" Font-Italic="False" Font-Strikeout="False" Font-Names="Century Gothic"></asp:Label>
         &nbsp;<asp:TextBox ID="txtUsuario" runat="server" Font-Names="Century Gothic"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidatorNombreUsuario" runat="server" 
