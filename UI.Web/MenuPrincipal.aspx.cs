@@ -52,7 +52,7 @@ namespace UI.Web
 
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-            Response.Redirect("LoginWeb.aspx");
+            Response.Redirect("loginEstilo.aspx");
         }
 
         protected void btnReporteAlumno_Click(object sender, EventArgs e)

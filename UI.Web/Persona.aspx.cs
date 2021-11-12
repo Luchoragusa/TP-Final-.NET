@@ -236,7 +236,7 @@ namespace UI.Web
 
             if ((int)Session["tipo_persona"] == 4)
             {
-                Response.Redirect("LoginWeb.aspx");
+                Response.Redirect("loginEstilo.aspx");
             }
             else
             {
