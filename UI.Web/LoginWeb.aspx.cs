@@ -26,11 +26,11 @@ namespace UI.Web
                 int tipo_persona = loginUsuario.login(usuario);
                 Session["usuario"] = usuario;
                 Session["tipo_persona"] = tipo_persona;
-                if (tipo_persona == 0)
+                if (tipo_persona == 0)  //no esta habilitado
                 {
                     Response.Redirect("LoginWeb.aspx");
                 }
-                else if (tipo_persona == 4)
+                else if (tipo_persona == 4) //usuario nuevo, y activa el form de Persona para logearse
                 {
                     Response.Redirect("Persona.aspx");
                 }
