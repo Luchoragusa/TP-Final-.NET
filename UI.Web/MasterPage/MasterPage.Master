@@ -9,10 +9,7 @@ Inherits="UI.Web.MasterPage.MasterPage" %>
     <title>Untitled Page</title> 
     <style type="text/css">
         .auto-style1 {
-            width: 158px;
-        }
-        .auto-style2 {
-            width: 87%;
+            width: 164px;
         }
     </style>
 </head> 
@@ -47,20 +44,20 @@ Inherits="UI.Web.MasterPage.MasterPage" %>
                     </tr>  
                 </table> 
             </td> 
-        <div> 
-         <td valign="top" align="center" fontclass="auto-style2" class="auto-style2">  
-               <section class="content">
+
+        <td valign="top">
+
+            <asp:Panel ID="Panel1" runat="server">
                 <asp:ContentPlaceHolder ID="PageContent1" runat="server">
-                </asp:ContentPlaceHolder>   
-              <td valign="bottom" align="center">     
+                                </asp:ContentPlaceHolder> 
+            </asp:Panel>
+            
+            <asp:Panel ID ="Panel2" runat="server">
                 <asp:ContentPlaceHolder ID="PageContent" runat="server">
-                </asp:ContentPlaceHolder>
-            </td>
-        
-            </div>
-        
-        </section>
-              </td>
+                                </asp:ContentPlaceHolder> 
+            </asp:Panel>   
+
+        </td>
          
         <!-- site footer --> 
         <tr> 
