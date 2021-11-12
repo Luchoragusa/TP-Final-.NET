@@ -53,7 +53,7 @@ namespace UI.Desktop
             this.panelExt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelExt.Location = new System.Drawing.Point(0, 0);
             this.panelExt.Name = "panelExt";
-            this.panelExt.Size = new System.Drawing.Size(428, 297);
+            this.panelExt.Size = new System.Drawing.Size(429, 329);
             this.panelExt.TabIndex = 0;
             // 
             // btnIngresar
@@ -137,7 +137,7 @@ namespace UI.Desktop
             this.AcceptButton = this.btnIngresar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(428, 297);
+            this.ClientSize = new System.Drawing.Size(429, 329);
             this.Controls.Add(this.panelExt);
             this.Name = "frmLogin";
             this.Text = "Login";

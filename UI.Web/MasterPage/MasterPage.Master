@@ -9,49 +9,62 @@ Inherits="UI.Web.MasterPage.MasterPage" %>
     <title>Untitled Page</title> 
     <style type="text/css">
         .auto-style1 {
-            width: 233px;
+            width: 158px;
+        }
+        .auto-style2 {
+            width: 87%;
         }
     </style>
 </head> 
 <body> 
+
     <form id="form1" runat="server"> 
     <table border="1" cellpadding="0" cellspacing="0" width="100%" height="100%"> 
         <!-- site header --> 
+
         <tr> 
-            <td colspan="2" align="center" class="wrapper">[UTN] Academia</td> 
+            <td colspan="2" align="center" class="wrapper" style="font-family: 'Century Gothic'; font-weight: bold">[UTN] Academia</td> 
         </tr> 
+        
     <tr> 
             <!-- site navigation --> 
             <td valign="top" class="auto-style1"> 
                 <table border="0" width="100%" cellpadding="4" cellspacing="0"> 
                     <tr> 
-                        <td align="center">Menu de la pagina</td> 
+                        <td align="center" style="font-family: 'Century Gothic'; font-weight: bold">Menu de la pagina</td> 
                     </tr> 
                     <tr> 
-                        <td align="center"><a href="Materia.aspx">Materia</a></td> 
+                        <td align="center"><a href="Materia.aspx" style="font-family: 'Century Gothic'; font-weight: bold">Materia</a></td> 
                     </tr>
                     <tr> 
-                        <td align="center"><a href="Persona.aspx">Persona</a></td> 
+                        <td align="center"><a href="Persona.aspx" style="font-family: 'Century Gothic'; font-weight: bold">Persona</a></td> 
                     </tr>  
                     <tr> 
-                        <td align="center"><a href="Plan.aspx">Plan</a></td> 
+                        <td align="center"><a href="Plan.aspx" style="font-family: 'Century Gothic'; font-weight: bold">Plan</a></td> 
                     </tr>  
                     <tr> 
-                        <td align="center"><a href="Usuarios.aspx">Usuario</a></td> 
+                        <td align="center"><a href="Usuarios.aspx" style="font-family: 'Century Gothic'; font-weight: bold">Usuario</a></td> 
                     </tr>  
                 </table> 
             </td> 
-             
-            <td valign="top" align="left">              
-                <!-- this is the placeholder for the page content --> 
-                <asp:contentplaceholder id="PageContent" runat="server" /> 
+        <div> 
+         <td valign="top" align="center" fontclass="auto-style2" class="auto-style2">  
+               <section class="content">
+                <asp:ContentPlaceHolder ID="PageContent1" runat="server">
+                </asp:ContentPlaceHolder>   
+              <td valign="bottom" align="center">     
+                <asp:ContentPlaceHolder ID="PageContent" runat="server">
+                </asp:ContentPlaceHolder>
             </td>
-
-        </tr> 
+        
+            </div>
+        
+        </section>
+              </td>
          
         <!-- site footer --> 
         <tr> 
-            <td colspan="2" align="center">LICATTA, Maite || PEREYRA, Camilo || PUCHETA, Juan Ignacio || RAGUSA, Luciano</td> 
+            <td colspan="2" align="center" style="font-family: 'Century Gothic'; font-weight: normal">LICATTA, Maite || PEREYRA, Camilo || PUCHETA, Juan Ignacio || RAGUSA, Luciano</td> 
         </tr> 
     </table> 
     </form> 

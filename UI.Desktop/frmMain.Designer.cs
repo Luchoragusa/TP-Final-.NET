@@ -116,7 +116,7 @@ namespace UI.Desktop
             this.btnAdminReporteCom.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAdminReporteCom.Size = new System.Drawing.Size(242, 40);
             this.btnAdminReporteCom.TabIndex = 12;
-            this.btnAdminReporteCom.Text = "Reporte Comision";
+            this.btnAdminReporteCom.Text = "Reporte Cursos";
             this.btnAdminReporteCom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdminReporteCom.UseVisualStyleBackColor = true;
             this.btnAdminReporteCom.Click += new System.EventHandler(this.btnAdminReporteCom_Click);

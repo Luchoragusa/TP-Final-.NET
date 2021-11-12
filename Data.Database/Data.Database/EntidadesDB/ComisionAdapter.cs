@@ -87,7 +87,8 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdComision = new SqlCommand("drop table if exists #comiConUltimoAño; select m.id_materia, com.desc_comision, com.id_plan, com.id_comision, MAX(anio_calendario) ultimoAño into #comiConUltimoAño from comisiones com inner join cursos c on c.id_comision = com.id_comision inner join materias m on m.id_materia = c.id_materia group by   m.id_materia, com.id_comision, com.desc_comision, com.id_plan; select  ultComi.id_comision, c.id_materia, ultComi.desc_comision, ultComi.id_plan, ultComi.ultimoAño, c.id_curso, c.cupo from cursos c inner join #comiConUltimoAño ultComi on ultComi.id_materia = c.id_materia and ultComi.id_comision = c.id_comision and c.anio_calendario = ultComi.ultimoAño where ultComi.id_materia = @id_materia; drop table if exists #comiConUltimoAño", sqlConn);
+                // SqlCommand cmdComision = new SqlCommand("drop table if exists #comiConUltimoAño; select m.id_materia, com.desc_comision, com.id_plan, com.id_comision, MAX(anio_calendario) ultimoAño into #comiConUltimoAño from comisiones com inner join cursos c on c.id_comision = com.id_comision inner join materias m on m.id_materia = c.id_materia group by   m.id_materia, com.id_comision, com.desc_comision, com.id_plan; select  ultComi.id_comision, c.id_materia, ultComi.desc_comision, ultComi.id_plan, ultComi.ultimoAño, c.id_curso, c.cupo from cursos c inner join #comiConUltimoAño ultComi on ultComi.id_materia = c.id_materia and ultComi.id_comision = c.id_comision and c.anio_calendario = ultComi.ultimoAño where ultComi.id_materia = @id_materia; drop table if exists #comiConUltimoAño", sqlConn);
+                SqlCommand cmdComision = new SqlCommand("select com.id_comision, m.id_materia, com.desc_comision, com.id_plan, com.anio_especialidad, c.cupo from comisiones com inner join cursos c on c.id_comision = com.id_comision inner join materias m on m.id_materia = c.id_materia where m.id_materia = @id_materia", sqlConn);
                 cmdComision.Parameters.Add("@id_materia", SqlDbType.Int).Value = mat.ID;
                 SqlDataReader drComision = cmdComision.ExecuteReader();
                 if (drComision != null)
@@ -98,7 +99,7 @@ namespace Data.Database
                         Comision comi = new Comision();
                         comi.ID = (int)drComision["id_comision"];
                         comi.DescComision = (string)drComision["desc_comision"];
-                        comi.AnioEspecialidad = (int)drComision["ultimoAño"];
+                        comi.AnioEspecialidad = (int)drComision["anio_especialidad"];
                         comi.IDPlan = (int)drComision["id_plan"];
 
                         comisiones.Add(comi);
