@@ -52,7 +52,7 @@ Inherits="UI.Web.MasterPage.MasterPage" %>
                                 </asp:ContentPlaceHolder> 
             </asp:Panel>
             
-            <asp:Panel ID ="Panel2" runat="server">
+            <asp:Panel ID ="Panel2" runat="server" BackColor="#cdecfc">
                 <asp:ContentPlaceHolder ID="PageContent" runat="server">
                                 </asp:ContentPlaceHolder> 
             </asp:Panel>   

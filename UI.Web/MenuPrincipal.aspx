@@ -8,6 +8,7 @@
     <uc1:MP1 runat="server" id="MP2"/> 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="PageContent" runat="server">
+    
 
  <style type ="text/css">
 .margin{
@@ -45,11 +46,8 @@ a:hover{
     <head>
         <title>Menu Principal</title>
     </head>
-
     
-
      <div class="d-grid gap-2 col-2 mx-auto" align="center">
-
             <br />
             <br />
             <asp:Label ID="lblAlumno" runat="server" Text="Alumno" Font-Names="Century Gothic" Font-Bold="True"></asp:Label>
@@ -88,5 +86,5 @@ a:hover{
             <br />
             <asp:Button ID="btnCerrarSesion"  runat="server" Text="Cerrar Sesión"  a OnClick="btnCerrarSesion_Click" BackColor="#FF6600" Font-Names="Century Gothic" Font-Bold="True" Height="55px" class="themeBtn" Width="170px"/>
         </div>
+    </asp:Content>
 
-</asp:Content>

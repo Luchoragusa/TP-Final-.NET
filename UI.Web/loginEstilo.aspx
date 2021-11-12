@@ -12,7 +12,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #94c6d1;
+  background-color: #a2e0d9;
   height: 70vh;
 }
 #login .container #login-row #login-column #login-box {
@@ -20,7 +20,7 @@ body {
   max-width: 600px;
   height: 360px;
   border: 1px solid #9C9C9C;
-  background-color: #EAEAEA;
+  background-color: #edfffe;
 }
 #login .container #login-row #login-column #login-box #login-form {
   padding: 20px;
@@ -29,25 +29,25 @@ body {
   margin-top: -85px;
 }
     </style>
-    <title>Login</title>
+    <title></title>
 </head>
 <body>
     <form id="form1" runat="server">
         <div id="login"> 
-        <h3 class="text-center text-white pt-5">Bienvenido al Sistema!</h3>
+        <h3 class="text-center text-white pt-5" style="font-family: 'Century Gothic'; font-weight: bold; font-size: 20px">Bienvenido al Sistema!</h3>
         <div class="container">
             <div id="login-row" class="row justify-content-center align-items-center">
-                <div id="login-column" class="col-md-6">
+                <div id="login-column" class="col-md-6" style="color: #C9E7F5">
                     <div id="login-box" class="col-md-12">
                         <form id="login-form" class="form" action="" method="post">
                             </br>
-                            <h3 class="text-center text-info" style="color:darkslateblue">Login</h3><br>
+                            <h3 class="text-center text-info" style="color:darkslateblue; font-family: 'Century Gothic'; font-weight: bold;">Login</h3><br>
                             <div class="form-group">
-                                <label for="username" class="text-info">Usuario:</label><br>
+                                <label for="username" class="text-info" style="font-family: 'Century Gothic'">Usuario:</label><br>
                                 <asp:TextBox ID="txtUsuario" runat="server" Font-Names="Century Gothic" Width="504px"></asp:TextBox>
                             </div>
                             <div class="form-group">
-                                <label for="password" class="text-info">Contraseña:</label><br>
+                                <label for="password" class="text-info" style="font-family: 'Century Gothic'">Contraseña:</label><br>
                                 <asp:TextBox ID="txtPass" type="password" runat="server" Font-Names="Century Gothic" Width="502px"></asp:TextBox>
                              <div>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
