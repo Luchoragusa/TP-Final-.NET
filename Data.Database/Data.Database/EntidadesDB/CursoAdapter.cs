@@ -70,9 +70,10 @@ namespace Data.Database
             try
             {
                 OpenConnection();
-                SqlCommand cmdcursos = new SqlCommand("declare @cantInscriptos int; select @cantInscriptos = COUNT(ai.id_curso)   from alumnos_inscripciones ai inner join cursos c on ai.id_curso = c.id_curso where c.id_curso=@id_curso;  select  distinct cur.id_curso from alumnos_inscripciones ai  inner join cursos cur on cur.id_curso = ai.id_curso  where cur.cupo > @cantInscriptos and cur.id_curso=@id_curso;", sqlConn);
+                SqlCommand cmdcursos = new SqlCommand("declare @cantInscriptos int; select @cantInscriptos = COUNT(ai.id_curso)   from alumnos_inscripciones ai inner join cursos c on ai.id_curso = c.id_curso where c.id_curso=@id_curso;  select *from cursos c where c.id_curso = @id_curso and c.cupo > @cantInscriptos", sqlConn);
                 cmdcursos.Parameters.Add("@id_curso", SqlDbType.Int).Value = ai.IDCurso;
                 SqlDataReader drcursos = cmdcursos.ExecuteReader();
+                
                 if (drcursos.Read())
                     band = true;
                 

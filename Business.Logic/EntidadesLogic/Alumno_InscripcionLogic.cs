@@ -114,14 +114,13 @@ namespace Business.Logic.EntidadesLogic
                 {
                     Alumno_InscripcionData.Insert(Alumno_Inscripcion);
                     MessageBox.Show("Se inscribio correctamente", "Inscripcion a cursado", MessageBoxButtons.OK);
-                   
                 }
                 else
                 {
                     MessageBox.Show("Puede que no haya mas cupos, comuniquese con alumnado.", "Error en la inscripcion.", MessageBoxButtons.OK);
                 }
-                
             }
+
             catch (Exception ex)
             {
                 Exception ExcepcionManejada = new Exception("Error en la inscripcion. " +
