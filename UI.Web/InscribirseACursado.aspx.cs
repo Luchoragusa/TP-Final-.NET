@@ -86,20 +86,18 @@ namespace UI.Web
             Personas persona = new Personas();
             Business.Logic.EntidadesLogic.Alumno_InscripcionLogic al = new Business.Logic.EntidadesLogic.Alumno_InscripcionLogic();
 
-                com.ID = this.SelectedIDComision;
-                curso = cl.getByComision(com);
-                persona = perl.GetIDPersona(usuario);
+            com.ID = this.SelectedIDComision;
+            curso = cl.getByComision(com);
+            persona = perl.GetIDPersona(usuario);
 
-                Entity = new Alumnos_Inscripciones();
+            Entity = new Alumnos_Inscripciones();
 
-                this.Entity.IDCurso = curso.ID;
-                this.Entity.IDAlumno = persona.ID;
-                this.Entity.Condicion = "Cursando";
-                this.Entity.State = BusinessEntity.States.New;
-
-                this.SaveEntity(Entity);
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('¡Felicitaciones! Usted se acaba de inscribir a la materia');", true);
-                this.LoadGridComisiones();
+            this.Entity.IDCurso = curso.ID;
+            this.Entity.IDAlumno = persona.ID;
+            this.Entity.Condicion = "Cursando";
+            this.Entity.State = BusinessEntity.States.New; 
+            this.SaveEntity(Entity);
+ 
         }
 
         Alumno_InscripcionLogic _logic;
@@ -117,6 +115,19 @@ namespace UI.Web
 
         private void SaveEntity(Alumnos_Inscripciones ali)
         {
+            CursoLogic crl = new CursoLogic();
+
+            if (crl.validarCupo(ali))
+            {
+
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('¡Felicitaciones! Usted se acaba de inscribir a la materia');", true);
+                this.LoadGridComisiones();
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('No quedan cupos para la comision seleccionada');", true);
+            }
+
             this.Logic.Save(ali);
         }
 
