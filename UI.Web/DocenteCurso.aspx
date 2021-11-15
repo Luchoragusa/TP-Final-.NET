@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" 
+﻿<%@ Page Title="Docente Curso" Language="C#" 
     MasterPageFile="~/MasterPage/MasterPage.Master" 
     AutoEventWireup="true" 
     CodeBehind="DocenteCurso.aspx.cs" 

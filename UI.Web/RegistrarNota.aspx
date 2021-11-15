@@ -1,4 +1,4 @@
-﻿<%@ Page Title="AlumnoInscripcion" Language="C#" 
+﻿<%@ Page Title="Registrar Nota" Language="C#" 
     MasterPageFile="~/MasterPage/MasterPage.Master" 
     AutoEventWireup="true" 
     CodeBehind="RegistrarNota.aspx.cs" 

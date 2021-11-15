@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Reporte Comi" Language="C#" 
+﻿<%@ Page Title="Reporte Cursos" Language="C#" 
     MasterPageFile="~/MasterPage/MasterPage.Master" 
     AutoEventWireup="true" 
     CodeBehind="ReporteComi.aspx.cs" 
@@ -10,19 +10,18 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="PageContent" runat="server">
     
 
-        <asp:ScriptManager ID="ScriptManager" runat="server">
-        </asp:ScriptManager> 
-        <div class="reporte" Align="center">
-            <rsweb:ReportViewer ID="ReportViewerCurso" runat="server" Height="922px" Width="1144px">
+        <div class="reporte" align="Center">
+            <asp:ScriptManager ID="ScriptManager" runat="server">
+            </asp:ScriptManager>
+            <rsweb:ReportViewer ID="ReportViewerCurso" runat="server" Height="573px" Width="1117px">
             </rsweb:ReportViewer>
             <br />
             <br />
-                <asp:Button ID="btnVolver" runat="server" BackColor="#006666" Font-Bold="True" ForeColor="White" OnClick="btnVolver_Click" style="margin-bottom: 0px" Text="Volver al menu" Width="121px" />
-                <br />
+            <br />
+             <asp:Button ID="btnVolver" runat="server" BackColor="#006666" Font-Bold="True" ForeColor="White" OnClick="btnVolver_Click" Text="Volver al menu" Width="121px" />
             <br />
             <br />
-            <br />
-        </div>
+         </div>
         
 
-        </asp:Content>
+</asp:Content>

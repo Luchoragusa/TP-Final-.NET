@@ -326,8 +326,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>dsReporteCurso</DataSetName>
-        <Top>7.24641cm</Top>
-        <Left>4.1448cm</Left>
+        <Top>7.53745cm</Top>
+        <Left>8.066cm</Left>
         <Height>1.78208cm</Height>
         <Width>12.82443cm</Width>
         <Style>
@@ -358,8 +358,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
-        <Top>1.62773cm</Top>
-        <Left>3.56272cm</Left>
+        <Top>1.91877cm</Top>
+        <Left>7.08611cm</Left>
         <Height>1.48194cm</Height>
         <Width>10.09291cm</Width>
         <ZIndex>1</ZIndex>
@@ -395,8 +395,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>3.54928cm</Top>
-        <Left>3.56272cm</Left>
+        <Top>3.84032cm</Top>
+        <Left>7.08611cm</Left>
         <Height>2.07285cm</Height>
         <Width>10.09291cm</Width>
         <ZIndex>2</ZIndex>
@@ -414,8 +414,8 @@
         <Source>Embedded</Source>
         <Value>IMG_0929</Value>
         <Sizing>FitProportional</Sizing>
-        <Top>1.33669cm</Top>
-        <Left>14.3048cm</Left>
+        <Top>1.62773cm</Top>
+        <Left>17.82819cm</Left>
         <Height>5.25708cm</Height>
         <Width>5.54812cm</Width>
         <ZIndex>3</ZIndex>
@@ -426,12 +426,12 @@
         </Style>
       </Image>
     </ReportItems>
-    <Height>4.5in</Height>
+    <Height>5in</Height>
     <Style>
       <BackgroundColor>#d4e0f2</BackgroundColor>
     </Style>
   </Body>
-  <Width>8.61622in</Width>
+  <Width>11.635in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
